@@ -1,0 +1,35 @@
+# textbook-parser toc-chunk
+# time: 2026-04-05T16:44:31
+# argv: D:\ah21\textbook-parser\src\textbook_parser\__main__.py toc-chunk --project-root . --books
+# book_code: b32
+# log_file: D:\ah21\textbook-parser\output\b32_正文分块.log
+# 以下 stdout/stderr 均写入本日志（含警告、错误与提取器提示）。
+# project_root: D:\ah21\textbook-parser
+# output: D:\ah21\textbook-parser\output
+
+正文分块: 条目 54, 命中 32, 未命中 22
+  [问题] 未命中锚点: b32-toc-0003 绝句 keys=['绝句']
+  [问题] 未命中锚点: b32-toc-0005 三衢道中 keys=['三衢道中']
+  [问题] 未命中锚点: b32-toc-0009 口语交际 春游去哪里 keys=['口语交际春游去哪里']
+  [问题] 未命中锚点: b32-toc-0010 习作 我的植物朋友 keys=['习作我的植物朋友']
+  [问题] 未命中锚点: b32-toc-0011 语文园地 keys=['语文园地']
+  [问题] 未命中锚点: b32-toc-0017 口语交际 劝告 keys=['口语交际劝告']
+  [问题] 未命中锚点: b32-toc-0018 习作 看图画，写一写 keys=['习作看图画，写一写']
+  [问题] 未命中锚点: b32-toc-0019 语文园地 keys=['语文园地']
+  [问题] 未命中锚点: b32-toc-0020 快乐读书吧 keys=['快乐读书吧']
+  [问题] 未命中锚点: b32-toc-0025 习作 我做了一项小实验 keys=['习作我做了一项小实验']
+  [问题] 未命中锚点: b32-toc-0026 语文园地 keys=['语文园地']
+  [问题] 未命中锚点: b32-toc-0035 语文园地 keys=['语文园地']
+  [问题] 未命中锚点: b32-toc-0039 习作 奇妙的想象 keys=['习作奇妙的想象']
+  [问题] 未命中锚点: b32-toc-0042 口语交际 趣味故事会 keys=['口语交际趣味故事会']
+  [问题] 未命中锚点: b32-toc-0048 口语交际 应该怎样安排座位 keys=['口语交际应该怎样安排座位']
+  [问题] 未命中锚点: b32-toc-0049 习作 身边那些有特点的人 keys=['习作身边那些有特点的人']
+  [问题] 未命中锚点: b32-toc-0050 语文园地 keys=['语文园地']
+  [问题] 未命中锚点: b32-toc-0055 习作 国宝大熊猫 keys=['习作国宝大熊猫']
+  [问题] 未命中锚点: b32-toc-0056 语文园地 keys=['语文园地']
+  [问题] 未命中锚点: b32-toc-0060 27* 枣核 keys=['枣核', '27枣核', '27*枣核']
+  [问题] 未命中锚点: b32-toc-0061 习作 这样想象真有趣 keys=['习作这样想象真有趣']
+  [问题] 未命中锚点: b32-toc-0062 语文园地 keys=['语文园地']
+已写入: D:\ah21\textbook-parser\output\b32_正文分块.json
+已写入: D:\ah21\textbook-parser\output\b32_正文分块.md
+控制台输出已同步写入日志: D:\ah21\textbook-parser\output\b32_正文分块.log

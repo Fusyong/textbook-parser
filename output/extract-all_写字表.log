@@ -1,0 +1,117 @@
+# textbook-parser extract-all
+# time: 2026-04-05T16:44:24
+# argv: D:\ah21\textbook-parser\src\textbook_parser\__main__.py extract-all --extractor 写字表 --project-root .
+# book_code: 12_books
+# log_file: D:\ah21\textbook-parser\output\extract-all_写字表.log
+# 以下 stdout/stderr 均写入本日志（含警告、错误与提取器提示）。
+# extractor: 写字表
+# project_root: D:\ah21\textbook-parser
+# books_arg: (全部书目)
+
+--- b11 ---
+[b11/写字表 抛弃]   识字                                           
+[b11/写字表 抛弃]   阅读                                          
+[b11/写字表 抛弃] 识字
+[b11/写字表 抛弃]       阅读
+[b11/写字表] 目录 JSON 对齐 — 锚点全部匹配到目录
+写字表: 行数 25，字数合计 104
+已写入: D:\ah21\textbook-parser\output\b11_写字表.json
+已写入: D:\ah21\textbook-parser\output\b11_写字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\b11_写字表.discard.log
+--- b12 ---
+[b12/写字表 抛弃] 识字
+[b12/写字表 抛弃] 阅读
+[b12/写字表 抛弃]                                            117
+[b12/写字表 抛弃] 仅供个人学习使用，未经授权不得另做他用
+[b12/写字表 抛弃]   识字
+[b12/写字表 抛弃]   阅读
+[b12/写字表 抛弃] 118
+[b12/写字表 抛弃]         仅供个人学习使用，未经授权不得另做他用
+[b12/写字表] 目录 JSON 对齐 — 锚点全部匹配到目录
+写字表: 行数 36，字数合计 200
+已写入: D:\ah21\textbook-parser\output\b12_写字表.json
+已写入: D:\ah21\textbook-parser\output\b12_写字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\b12_写字表.discard.log
+--- b21 ---
+[b21/写字表 抛弃] 阅读
+[b21/写字表 抛弃] 识字
+[b21/写字表 抛弃] 阅读
+[b21/写字表 抛弃]                                                                         113
+[b21/写字表 抛弃] 114
+[b21/写字表] 目录 JSON 对齐 — 锚点全部匹配到目录
+写字表: 行数 35，字数合计 250
+已写入: D:\ah21\textbook-parser\output\b21_写字表.json
+已写入: D:\ah21\textbook-parser\output\b21_写字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\b21_写字表.discard.log
+--- b22 ---
+[b22/写字表 抛弃] 阅读
+[b22/写字表 抛弃] 识字
+[b22/写字表 抛弃]                            117
+[b22/写字表 抛弃] 仅供个人学习使用，未经授权不得另做他用
+[b22/写字表 抛弃]       阅读
+[b22/写字表 抛弃] 118
+[b22/写字表 抛弃]           仅供个人学习使用，未经授权不得另做他用
+[b22/写字表] 目录 JSON 对齐 — 锚点全部匹配到目录
+写字表: 行数 36，字数合计 250
+已写入: D:\ah21\textbook-parser\output\b22_写字表.json
+已写入: D:\ah21\textbook-parser\output\b22_写字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\b22_写字表.discard.log
+--- b31 ---
+[b31/写字表 抛弃] 112
+[b31/写字表] 目录 JSON 对齐 — 锚点全部匹配到目录
+写字表: 行数 23，字数合计 250
+已写入: D:\ah21\textbook-parser\output\b31_写字表.json
+已写入: D:\ah21\textbook-parser\output\b31_写字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\b31_写字表.discard.log
+--- b32 ---
+[b32/写字表 抛弃] 114
+[b32/写字表 抛弃]         仅供个人学习使用，未经授权不得另做他用
+[b32/写字表] 目录 JSON 对齐 — 锚点全部匹配到目录
+写字表: 行数 25，字数合计 250
+已写入: D:\ah21\textbook-parser\output\b32_写字表.json
+已写入: D:\ah21\textbook-parser\output\b32_写字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\b32_写字表.discard.log
+--- b41 ---
+[b41/写字表 抛弃] 126
+[b41/写字表] 目录 JSON 对齐 — 锚点全部匹配到目录
+写字表: 行数 20，字数合计 250
+已写入: D:\ah21\textbook-parser\output\b41_写字表.json
+已写入: D:\ah21\textbook-parser\output\b41_写字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\b41_写字表.discard.log
+--- b42 ---
+[b42/写字表 抛弃] 140
+[b42/写字表 抛弃]       仅供个人学习使用，未经授权不得另做他用
+[b42/写字表] 目录 JSON 对齐 — 锚点全部匹配到目录
+写字表: 行数 21，字数合计 250
+已写入: D:\ah21\textbook-parser\output\b42_写字表.json
+已写入: D:\ah21\textbook-parser\output\b42_写字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\b42_写字表.discard.log
+--- b51 ---
+[b51/写字表 抛弃] 120
+[b51/写字表] 目录 JSON 对齐 — 锚点全部匹配到目录
+写字表: 行数 20，字数合计 220
+已写入: D:\ah21\textbook-parser\output\b51_写字表.json
+已写入: D:\ah21\textbook-parser\output\b51_写字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\b51_写字表.discard.log
+--- b52 ---
+[b52/写字表 抛弃]                        121
+[b52/写字表 抛弃]  仅供个人学习使用，未经授权不得另做他用
+[b52/写字表] 目录 JSON 对齐 — 锚点全部匹配到目录
+写字表: 行数 16，字数合计 180
+已写入: D:\ah21\textbook-parser\output\b52_写字表.json
+已写入: D:\ah21\textbook-parser\output\b52_写字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\b52_写字表.discard.log
+--- b61 ---
+[b61/写字表 抛弃] 130
+[b61/写字表] 目录 JSON 对齐 — 锚点全部匹配到目录
+写字表: 行数 18，字数合计 180
+已写入: D:\ah21\textbook-parser\output\b61_写字表.json
+已写入: D:\ah21\textbook-parser\output\b61_写字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\b61_写字表.discard.log
+--- b62 ---
+[b62/写字表] 目录 JSON 对齐 — 锚点全部匹配到目录
+写字表: 行数 12，字数合计 120
+已写入: D:\ah21\textbook-parser\output\b62_写字表.json
+已写入: D:\ah21\textbook-parser\output\b62_写字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\b62_写字表.discard.log
+控制台输出已同步写入日志: D:\ah21\textbook-parser\output\extract-all_写字表.log

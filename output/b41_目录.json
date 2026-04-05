@@ -1,0 +1,1449 @@
+{
+  "book_code": "b41",
+  "extractor": "目录",
+  "entries": [
+    {
+      "kind": "section",
+      "label": "第一单元",
+      "unit_type": "分组",
+      "unit_subtype": null,
+      "group_label": "第一单元",
+      "id": "b41-toc-0001"
+    },
+    {
+      "kind": "lesson",
+      "number": "1",
+      "title": "观潮",
+      "page": 2,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第一单元",
+      "id": "b41-toc-0002"
+    },
+    {
+      "kind": "lesson",
+      "number": "2",
+      "title": "走月亮",
+      "page": 5,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第一单元",
+      "id": "b41-toc-0003"
+    },
+    {
+      "kind": "lesson",
+      "number": "3",
+      "title": "现代诗二首",
+      "page": 8,
+      "optional_reading": true,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第一单元",
+      "id": "b41-toc-0004"
+    },
+    {
+      "kind": "sublesson",
+      "title": "秋晚的江上",
+      "page": 8,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第一单元",
+      "id": "b41-toc-0005"
+    },
+    {
+      "kind": "sublesson",
+      "title": "花牛歌",
+      "page": 9,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第一单元",
+      "id": "b41-toc-0006"
+    },
+    {
+      "kind": "lesson",
+      "number": "4",
+      "title": "繁星",
+      "page": 10,
+      "optional_reading": true,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第一单元",
+      "id": "b41-toc-0007"
+    },
+    {
+      "kind": "block_activity",
+      "block": "口语交际",
+      "title": "我们与环境",
+      "page": 11,
+      "unit_type": "口语交际",
+      "unit_subtype": null,
+      "group_label": "第一单元",
+      "id": "b41-toc-0008"
+    },
+    {
+      "kind": "block_activity",
+      "block": "习作",
+      "title": "推荐一个好地方",
+      "page": 12,
+      "unit_type": "习作",
+      "unit_subtype": null,
+      "group_label": "第一单元",
+      "id": "b41-toc-0009"
+    },
+    {
+      "kind": "garden",
+      "label": "语文园地",
+      "page": 13,
+      "unit_type": "语文园地",
+      "unit_subtype": null,
+      "group_label": "第一单元",
+      "id": "b41-toc-0010"
+    },
+    {
+      "kind": "section",
+      "label": "第二单元",
+      "unit_type": "分组",
+      "unit_subtype": null,
+      "group_label": "第二单元",
+      "id": "b41-toc-0011"
+    },
+    {
+      "kind": "lesson",
+      "number": "5",
+      "title": "一个豆荚里的五粒豆",
+      "page": 16,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第二单元",
+      "id": "b41-toc-0012"
+    },
+    {
+      "kind": "lesson",
+      "number": "6",
+      "title": "夜间飞行的秘密",
+      "page": 21,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第二单元",
+      "id": "b41-toc-0013"
+    },
+    {
+      "kind": "lesson",
+      "number": "7",
+      "title": "呼风唤雨的世纪",
+      "page": 25,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第二单元",
+      "id": "b41-toc-0014"
+    },
+    {
+      "kind": "lesson",
+      "number": "8",
+      "title": "蝴蝶的家",
+      "page": 28,
+      "optional_reading": true,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第二单元",
+      "id": "b41-toc-0015"
+    },
+    {
+      "kind": "block_activity",
+      "block": "习作",
+      "title": "我的家人",
+      "page": 30,
+      "unit_type": "习作",
+      "unit_subtype": null,
+      "group_label": "第二单元",
+      "id": "b41-toc-0016"
+    },
+    {
+      "kind": "garden",
+      "label": "语文园地",
+      "page": 31,
+      "unit_type": "语文园地",
+      "unit_subtype": null,
+      "group_label": "第二单元",
+      "id": "b41-toc-0017"
+    },
+    {
+      "kind": "section",
+      "label": "第三单元",
+      "unit_type": "分组",
+      "unit_subtype": null,
+      "group_label": "第三单元",
+      "id": "b41-toc-0018"
+    },
+    {
+      "kind": "lesson",
+      "number": "9",
+      "title": "古诗三首",
+      "page": 34,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第三单元",
+      "id": "b41-toc-0019"
+    },
+    {
+      "kind": "sublesson",
+      "title": "暮江吟",
+      "page": 34,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第三单元",
+      "id": "b41-toc-0020"
+    },
+    {
+      "kind": "sublesson",
+      "title": "题西林壁",
+      "page": 34,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第三单元",
+      "id": "b41-toc-0021"
+    },
+    {
+      "kind": "sublesson",
+      "title": "雪梅",
+      "page": 35,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第三单元",
+      "id": "b41-toc-0022"
+    },
+    {
+      "kind": "lesson",
+      "number": "10",
+      "title": "爬山虎的脚",
+      "page": 36,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第三单元",
+      "id": "b41-toc-0023"
+    },
+    {
+      "kind": "lesson",
+      "number": "11",
+      "title": "蟋蟀的住宅",
+      "page": 39,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第三单元",
+      "id": "b41-toc-0024"
+    },
+    {
+      "kind": "toc_belt",
+      "title": "爱护眼睛，保护视力",
+      "page": 43,
+      "unit_type": "口语交际",
+      "unit_subtype": null,
+      "group_label": "第三单元",
+      "label": "口语交际",
+      "id": "b41-toc-0025"
+    },
+    {
+      "kind": "block_activity",
+      "block": "习作",
+      "title": "写观察日记",
+      "page": 44,
+      "unit_type": "习作",
+      "unit_subtype": null,
+      "group_label": "第三单元",
+      "id": "b41-toc-0026"
+    },
+    {
+      "kind": "garden",
+      "label": "语文园地",
+      "page": 45,
+      "unit_type": "语文园地",
+      "unit_subtype": null,
+      "group_label": "第三单元",
+      "id": "b41-toc-0027"
+    },
+    {
+      "kind": "section",
+      "label": "第四单元",
+      "unit_type": "分组",
+      "unit_subtype": null,
+      "group_label": "第四单元",
+      "id": "b41-toc-0028"
+    },
+    {
+      "kind": "lesson",
+      "number": "12",
+      "title": "盘古开天地",
+      "page": 48,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第四单元",
+      "id": "b41-toc-0029"
+    },
+    {
+      "kind": "lesson",
+      "number": "13",
+      "title": "精卫填海",
+      "page": 50,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第四单元",
+      "id": "b41-toc-0030"
+    },
+    {
+      "kind": "lesson",
+      "number": "14",
+      "title": "普罗米修斯",
+      "page": 51,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第四单元",
+      "id": "b41-toc-0031"
+    },
+    {
+      "kind": "lesson",
+      "number": "15",
+      "title": "女娲补天",
+      "page": 54,
+      "optional_reading": true,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第四单元",
+      "id": "b41-toc-0032"
+    },
+    {
+      "kind": "block_activity",
+      "block": "习作",
+      "title": "我和    过一天",
+      "page": 56,
+      "unit_type": "习作",
+      "unit_subtype": null,
+      "group_label": "第四单元",
+      "id": "b41-toc-0033"
+    },
+    {
+      "kind": "garden",
+      "label": "语文园地",
+      "page": 57,
+      "unit_type": "语文园地",
+      "unit_subtype": null,
+      "group_label": "第四单元",
+      "id": "b41-toc-0034"
+    },
+    {
+      "kind": "reading_club",
+      "title": "快乐读书吧",
+      "page": 59,
+      "unit_type": "快乐读书吧",
+      "unit_subtype": null,
+      "group_label": "第四单元",
+      "sublesson_title": "很久很久以前",
+      "id": "b41-toc-0035"
+    },
+    {
+      "kind": "section",
+      "label": "第五单元",
+      "unit_type": "分组",
+      "unit_subtype": null,
+      "group_label": "第五单元",
+      "id": "b41-toc-0036"
+    },
+    {
+      "kind": "lesson",
+      "number": "16",
+      "title": "麻雀",
+      "page": 62,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第五单元",
+      "id": "b41-toc-0037"
+    },
+    {
+      "kind": "lesson",
+      "number": "17",
+      "title": "爬天都峰",
+      "page": 65,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第五单元",
+      "id": "b41-toc-0038"
+    },
+    {
+      "kind": "toc_belt",
+      "label": "习作例文",
+      "unit_type": "习作",
+      "unit_subtype": "习作例文",
+      "group_label": "第五单元",
+      "id": "b41-toc-0039"
+    },
+    {
+      "kind": "sublesson",
+      "title": "我家的杏熟了",
+      "page": 68,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第五单元",
+      "id": "b41-toc-0040"
+    },
+    {
+      "kind": "sublesson",
+      "title": "小木船",
+      "page": 70,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第五单元",
+      "id": "b41-toc-0041"
+    },
+    {
+      "kind": "block_activity",
+      "block": "习作",
+      "title": "生活万花筒",
+      "page": 72,
+      "unit_type": "习作",
+      "unit_subtype": null,
+      "group_label": "第五单元",
+      "id": "b41-toc-0042"
+    },
+    {
+      "kind": "section",
+      "label": "第六单元",
+      "unit_type": "分组",
+      "unit_subtype": null,
+      "group_label": "第六单元",
+      "id": "b41-toc-0043"
+    },
+    {
+      "kind": "lesson",
+      "number": "18",
+      "title": "牛和鹅",
+      "page": 74,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第六单元",
+      "id": "b41-toc-0044"
+    },
+    {
+      "kind": "lesson",
+      "number": "19",
+      "title": "一只窝囊的大老虎",
+      "page": 79,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第六单元",
+      "id": "b41-toc-0045"
+    },
+    {
+      "kind": "lesson",
+      "number": "20",
+      "title": "陀螺",
+      "page": 84,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第六单元",
+      "id": "b41-toc-0046"
+    },
+    {
+      "kind": "block_activity",
+      "block": "口语交际",
+      "title": "安慰",
+      "page": 89,
+      "unit_type": "口语交际",
+      "unit_subtype": null,
+      "group_label": "第六单元",
+      "id": "b41-toc-0047"
+    },
+    {
+      "kind": "block_activity",
+      "block": "习作",
+      "title": "记一次游戏",
+      "page": 90,
+      "unit_type": "习作",
+      "unit_subtype": null,
+      "group_label": "第六单元",
+      "id": "b41-toc-0048"
+    },
+    {
+      "kind": "garden",
+      "label": "语文园地",
+      "page": 91,
+      "unit_type": "语文园地",
+      "unit_subtype": null,
+      "group_label": "第六单元",
+      "id": "b41-toc-0049"
+    },
+    {
+      "kind": "section",
+      "label": "第七单元",
+      "unit_type": "分组",
+      "unit_subtype": null,
+      "group_label": "第七单元",
+      "id": "b41-toc-0050"
+    },
+    {
+      "kind": "lesson",
+      "number": "21",
+      "title": "古诗三首",
+      "page": 94,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第七单元",
+      "id": "b41-toc-0051"
+    },
+    {
+      "kind": "sublesson",
+      "title": "出塞",
+      "page": 94,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第七单元",
+      "id": "b41-toc-0052"
+    },
+    {
+      "kind": "sublesson",
+      "title": "凉州词",
+      "page": 94,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第七单元",
+      "id": "b41-toc-0053"
+    },
+    {
+      "kind": "sublesson",
+      "title": "夏日绝句",
+      "page": 95,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第七单元",
+      "id": "b41-toc-0054"
+    },
+    {
+      "kind": "lesson",
+      "number": "22",
+      "title": "为中华之崛起而读书",
+      "page": 96,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第七单元",
+      "id": "b41-toc-0055"
+    },
+    {
+      "kind": "lesson",
+      "number": "23",
+      "title": "梅兰芳蓄须",
+      "page": 99,
+      "optional_reading": true,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第七单元",
+      "id": "b41-toc-0056"
+    },
+    {
+      "kind": "lesson",
+      "number": "24",
+      "title": "延安，我把你追寻",
+      "page": 104,
+      "optional_reading": true,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第七单元",
+      "id": "b41-toc-0057"
+    },
+    {
+      "kind": "block_activity",
+      "block": "习作",
+      "title": "写信",
+      "page": 106,
+      "unit_type": "习作",
+      "unit_subtype": null,
+      "group_label": "第七单元",
+      "id": "b41-toc-0058"
+    },
+    {
+      "kind": "garden",
+      "label": "语文园地",
+      "page": 107,
+      "unit_type": "语文园地",
+      "unit_subtype": null,
+      "group_label": "第七单元",
+      "id": "b41-toc-0059"
+    },
+    {
+      "kind": "section",
+      "label": "第八单元",
+      "unit_type": "分组",
+      "unit_subtype": null,
+      "group_label": "第八单元",
+      "id": "b41-toc-0060"
+    },
+    {
+      "kind": "lesson",
+      "number": "25",
+      "title": "王戎不取道旁李",
+      "page": 110,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第八单元",
+      "id": "b41-toc-0061"
+    },
+    {
+      "kind": "lesson",
+      "number": "26",
+      "title": "西门豹治邺",
+      "page": 111,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第八单元",
+      "id": "b41-toc-0062"
+    },
+    {
+      "kind": "lesson",
+      "number": "27",
+      "title": "故事二则",
+      "page": 115,
+      "optional_reading": true,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第八单元",
+      "id": "b41-toc-0063"
+    },
+    {
+      "kind": "sublesson",
+      "title": "扁鹊治病",
+      "page": 115,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第八单元",
+      "id": "b41-toc-0064"
+    },
+    {
+      "kind": "sublesson",
+      "title": "纪昌学射",
+      "page": 116,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第八单元",
+      "id": "b41-toc-0065"
+    },
+    {
+      "kind": "toc_belt",
+      "title": "讲历史人物故事",
+      "page": 118,
+      "unit_type": "口语交际",
+      "unit_subtype": null,
+      "group_label": "第八单元",
+      "label": "口语交际",
+      "id": "b41-toc-0066"
+    },
+    {
+      "kind": "block_activity",
+      "block": "习作",
+      "title": "我的心儿怦怦跳",
+      "page": 119,
+      "unit_type": "习作",
+      "unit_subtype": null,
+      "group_label": "第八单元",
+      "id": "b41-toc-0067"
+    },
+    {
+      "kind": "garden",
+      "label": "语文园地",
+      "page": 120,
+      "unit_type": "语文园地",
+      "unit_subtype": null,
+      "group_label": "第八单元",
+      "id": "b41-toc-0068"
+    }
+  ],
+  "groups": [
+    {
+      "group_id": 1,
+      "group_label": "第一单元",
+      "units": [
+        {
+          "kind": "lesson",
+          "number": "1",
+          "title": "观潮",
+          "page": 2,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第一单元",
+          "id": "b41-toc-0002"
+        },
+        {
+          "kind": "lesson",
+          "number": "2",
+          "title": "走月亮",
+          "page": 5,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第一单元",
+          "id": "b41-toc-0003"
+        },
+        {
+          "kind": "lesson",
+          "number": "3",
+          "title": "现代诗二首",
+          "page": 8,
+          "optional_reading": true,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第一单元",
+          "id": "b41-toc-0004"
+        },
+        {
+          "kind": "sublesson",
+          "title": "秋晚的江上",
+          "page": 8,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第一单元",
+          "id": "b41-toc-0005"
+        },
+        {
+          "kind": "sublesson",
+          "title": "花牛歌",
+          "page": 9,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第一单元",
+          "id": "b41-toc-0006"
+        },
+        {
+          "kind": "lesson",
+          "number": "4",
+          "title": "繁星",
+          "page": 10,
+          "optional_reading": true,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第一单元",
+          "id": "b41-toc-0007"
+        },
+        {
+          "kind": "block_activity",
+          "block": "口语交际",
+          "title": "我们与环境",
+          "page": 11,
+          "unit_type": "口语交际",
+          "unit_subtype": null,
+          "group_label": "第一单元",
+          "id": "b41-toc-0008"
+        },
+        {
+          "kind": "block_activity",
+          "block": "习作",
+          "title": "推荐一个好地方",
+          "page": 12,
+          "unit_type": "习作",
+          "unit_subtype": null,
+          "group_label": "第一单元",
+          "id": "b41-toc-0009"
+        },
+        {
+          "kind": "garden",
+          "label": "语文园地",
+          "page": 13,
+          "unit_type": "语文园地",
+          "unit_subtype": null,
+          "group_label": "第一单元",
+          "id": "b41-toc-0010"
+        }
+      ]
+    },
+    {
+      "group_id": 2,
+      "group_label": "第二单元",
+      "units": [
+        {
+          "kind": "lesson",
+          "number": "5",
+          "title": "一个豆荚里的五粒豆",
+          "page": 16,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第二单元",
+          "id": "b41-toc-0012"
+        },
+        {
+          "kind": "lesson",
+          "number": "6",
+          "title": "夜间飞行的秘密",
+          "page": 21,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第二单元",
+          "id": "b41-toc-0013"
+        },
+        {
+          "kind": "lesson",
+          "number": "7",
+          "title": "呼风唤雨的世纪",
+          "page": 25,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第二单元",
+          "id": "b41-toc-0014"
+        },
+        {
+          "kind": "lesson",
+          "number": "8",
+          "title": "蝴蝶的家",
+          "page": 28,
+          "optional_reading": true,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第二单元",
+          "id": "b41-toc-0015"
+        },
+        {
+          "kind": "block_activity",
+          "block": "习作",
+          "title": "我的家人",
+          "page": 30,
+          "unit_type": "习作",
+          "unit_subtype": null,
+          "group_label": "第二单元",
+          "id": "b41-toc-0016"
+        },
+        {
+          "kind": "garden",
+          "label": "语文园地",
+          "page": 31,
+          "unit_type": "语文园地",
+          "unit_subtype": null,
+          "group_label": "第二单元",
+          "id": "b41-toc-0017"
+        }
+      ]
+    },
+    {
+      "group_id": 3,
+      "group_label": "第三单元",
+      "units": [
+        {
+          "kind": "lesson",
+          "number": "9",
+          "title": "古诗三首",
+          "page": 34,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第三单元",
+          "id": "b41-toc-0019"
+        },
+        {
+          "kind": "sublesson",
+          "title": "暮江吟",
+          "page": 34,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第三单元",
+          "id": "b41-toc-0020"
+        },
+        {
+          "kind": "sublesson",
+          "title": "题西林壁",
+          "page": 34,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第三单元",
+          "id": "b41-toc-0021"
+        },
+        {
+          "kind": "sublesson",
+          "title": "雪梅",
+          "page": 35,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第三单元",
+          "id": "b41-toc-0022"
+        },
+        {
+          "kind": "lesson",
+          "number": "10",
+          "title": "爬山虎的脚",
+          "page": 36,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第三单元",
+          "id": "b41-toc-0023"
+        },
+        {
+          "kind": "lesson",
+          "number": "11",
+          "title": "蟋蟀的住宅",
+          "page": 39,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第三单元",
+          "id": "b41-toc-0024"
+        },
+        {
+          "kind": "toc_belt",
+          "title": "爱护眼睛，保护视力",
+          "page": 43,
+          "unit_type": "口语交际",
+          "unit_subtype": null,
+          "group_label": "第三单元",
+          "label": "口语交际",
+          "id": "b41-toc-0025"
+        },
+        {
+          "kind": "block_activity",
+          "block": "习作",
+          "title": "写观察日记",
+          "page": 44,
+          "unit_type": "习作",
+          "unit_subtype": null,
+          "group_label": "第三单元",
+          "id": "b41-toc-0026"
+        },
+        {
+          "kind": "garden",
+          "label": "语文园地",
+          "page": 45,
+          "unit_type": "语文园地",
+          "unit_subtype": null,
+          "group_label": "第三单元",
+          "id": "b41-toc-0027"
+        }
+      ]
+    },
+    {
+      "group_id": 4,
+      "group_label": "第四单元",
+      "units": [
+        {
+          "kind": "lesson",
+          "number": "12",
+          "title": "盘古开天地",
+          "page": 48,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第四单元",
+          "id": "b41-toc-0029"
+        },
+        {
+          "kind": "lesson",
+          "number": "13",
+          "title": "精卫填海",
+          "page": 50,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第四单元",
+          "id": "b41-toc-0030"
+        },
+        {
+          "kind": "lesson",
+          "number": "14",
+          "title": "普罗米修斯",
+          "page": 51,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第四单元",
+          "id": "b41-toc-0031"
+        },
+        {
+          "kind": "lesson",
+          "number": "15",
+          "title": "女娲补天",
+          "page": 54,
+          "optional_reading": true,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第四单元",
+          "id": "b41-toc-0032"
+        },
+        {
+          "kind": "block_activity",
+          "block": "习作",
+          "title": "我和    过一天",
+          "page": 56,
+          "unit_type": "习作",
+          "unit_subtype": null,
+          "group_label": "第四单元",
+          "id": "b41-toc-0033"
+        },
+        {
+          "kind": "garden",
+          "label": "语文园地",
+          "page": 57,
+          "unit_type": "语文园地",
+          "unit_subtype": null,
+          "group_label": "第四单元",
+          "id": "b41-toc-0034"
+        },
+        {
+          "kind": "reading_club",
+          "title": "快乐读书吧",
+          "page": 59,
+          "unit_type": "快乐读书吧",
+          "unit_subtype": null,
+          "group_label": "第四单元",
+          "sublesson_title": "很久很久以前",
+          "id": "b41-toc-0035"
+        }
+      ]
+    },
+    {
+      "group_id": 5,
+      "group_label": "第五单元",
+      "units": [
+        {
+          "kind": "lesson",
+          "number": "16",
+          "title": "麻雀",
+          "page": 62,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第五单元",
+          "id": "b41-toc-0037"
+        },
+        {
+          "kind": "lesson",
+          "number": "17",
+          "title": "爬天都峰",
+          "page": 65,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第五单元",
+          "id": "b41-toc-0038"
+        },
+        {
+          "kind": "toc_belt",
+          "label": "习作例文",
+          "unit_type": "习作",
+          "unit_subtype": "习作例文",
+          "group_label": "第五单元",
+          "id": "b41-toc-0039"
+        },
+        {
+          "kind": "sublesson",
+          "title": "我家的杏熟了",
+          "page": 68,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第五单元",
+          "id": "b41-toc-0040"
+        },
+        {
+          "kind": "sublesson",
+          "title": "小木船",
+          "page": 70,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第五单元",
+          "id": "b41-toc-0041"
+        },
+        {
+          "kind": "block_activity",
+          "block": "习作",
+          "title": "生活万花筒",
+          "page": 72,
+          "unit_type": "习作",
+          "unit_subtype": null,
+          "group_label": "第五单元",
+          "id": "b41-toc-0042"
+        }
+      ]
+    },
+    {
+      "group_id": 6,
+      "group_label": "第六单元",
+      "units": [
+        {
+          "kind": "lesson",
+          "number": "18",
+          "title": "牛和鹅",
+          "page": 74,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第六单元",
+          "id": "b41-toc-0044"
+        },
+        {
+          "kind": "lesson",
+          "number": "19",
+          "title": "一只窝囊的大老虎",
+          "page": 79,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第六单元",
+          "id": "b41-toc-0045"
+        },
+        {
+          "kind": "lesson",
+          "number": "20",
+          "title": "陀螺",
+          "page": 84,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第六单元",
+          "id": "b41-toc-0046"
+        },
+        {
+          "kind": "block_activity",
+          "block": "口语交际",
+          "title": "安慰",
+          "page": 89,
+          "unit_type": "口语交际",
+          "unit_subtype": null,
+          "group_label": "第六单元",
+          "id": "b41-toc-0047"
+        },
+        {
+          "kind": "block_activity",
+          "block": "习作",
+          "title": "记一次游戏",
+          "page": 90,
+          "unit_type": "习作",
+          "unit_subtype": null,
+          "group_label": "第六单元",
+          "id": "b41-toc-0048"
+        },
+        {
+          "kind": "garden",
+          "label": "语文园地",
+          "page": 91,
+          "unit_type": "语文园地",
+          "unit_subtype": null,
+          "group_label": "第六单元",
+          "id": "b41-toc-0049"
+        }
+      ]
+    },
+    {
+      "group_id": 7,
+      "group_label": "第七单元",
+      "units": [
+        {
+          "kind": "lesson",
+          "number": "21",
+          "title": "古诗三首",
+          "page": 94,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第七单元",
+          "id": "b41-toc-0051"
+        },
+        {
+          "kind": "sublesson",
+          "title": "出塞",
+          "page": 94,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第七单元",
+          "id": "b41-toc-0052"
+        },
+        {
+          "kind": "sublesson",
+          "title": "凉州词",
+          "page": 94,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第七单元",
+          "id": "b41-toc-0053"
+        },
+        {
+          "kind": "sublesson",
+          "title": "夏日绝句",
+          "page": 95,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第七单元",
+          "id": "b41-toc-0054"
+        },
+        {
+          "kind": "lesson",
+          "number": "22",
+          "title": "为中华之崛起而读书",
+          "page": 96,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第七单元",
+          "id": "b41-toc-0055"
+        },
+        {
+          "kind": "lesson",
+          "number": "23",
+          "title": "梅兰芳蓄须",
+          "page": 99,
+          "optional_reading": true,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第七单元",
+          "id": "b41-toc-0056"
+        },
+        {
+          "kind": "lesson",
+          "number": "24",
+          "title": "延安，我把你追寻",
+          "page": 104,
+          "optional_reading": true,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第七单元",
+          "id": "b41-toc-0057"
+        },
+        {
+          "kind": "block_activity",
+          "block": "习作",
+          "title": "写信",
+          "page": 106,
+          "unit_type": "习作",
+          "unit_subtype": null,
+          "group_label": "第七单元",
+          "id": "b41-toc-0058"
+        },
+        {
+          "kind": "garden",
+          "label": "语文园地",
+          "page": 107,
+          "unit_type": "语文园地",
+          "unit_subtype": null,
+          "group_label": "第七单元",
+          "id": "b41-toc-0059"
+        }
+      ]
+    },
+    {
+      "group_id": 8,
+      "group_label": "第八单元",
+      "units": [
+        {
+          "kind": "lesson",
+          "number": "25",
+          "title": "王戎不取道旁李",
+          "page": 110,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第八单元",
+          "id": "b41-toc-0061"
+        },
+        {
+          "kind": "lesson",
+          "number": "26",
+          "title": "西门豹治邺",
+          "page": 111,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第八单元",
+          "id": "b41-toc-0062"
+        },
+        {
+          "kind": "lesson",
+          "number": "27",
+          "title": "故事二则",
+          "page": 115,
+          "optional_reading": true,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第八单元",
+          "id": "b41-toc-0063"
+        },
+        {
+          "kind": "sublesson",
+          "title": "扁鹊治病",
+          "page": 115,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第八单元",
+          "id": "b41-toc-0064"
+        },
+        {
+          "kind": "sublesson",
+          "title": "纪昌学射",
+          "page": 116,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第八单元",
+          "id": "b41-toc-0065"
+        },
+        {
+          "kind": "toc_belt",
+          "title": "讲历史人物故事",
+          "page": 118,
+          "unit_type": "口语交际",
+          "unit_subtype": null,
+          "group_label": "第八单元",
+          "label": "口语交际",
+          "id": "b41-toc-0066"
+        },
+        {
+          "kind": "block_activity",
+          "block": "习作",
+          "title": "我的心儿怦怦跳",
+          "page": 119,
+          "unit_type": "习作",
+          "unit_subtype": null,
+          "group_label": "第八单元",
+          "id": "b41-toc-0067"
+        },
+        {
+          "kind": "garden",
+          "label": "语文园地",
+          "page": 120,
+          "unit_type": "语文园地",
+          "unit_subtype": null,
+          "group_label": "第八单元",
+          "id": "b41-toc-0068"
+        }
+      ]
+    }
+  ],
+  "toc_unit_strings": [
+    "1 观潮",
+    "2 走月亮",
+    "3* 现代诗二首",
+    "秋晚的江上",
+    "花牛歌",
+    "4* 繁星",
+    "口语交际 我们与环境",
+    "习作 推荐一个好地方",
+    "语文园地",
+    "5 一个豆荚里的五粒豆",
+    "6 夜间飞行的秘密",
+    "7 呼风唤雨的世纪",
+    "8* 蝴蝶的家",
+    "习作 我的家人",
+    "语文园地",
+    "9 古诗三首",
+    "暮江吟",
+    "题西林壁",
+    "雪梅",
+    "10 爬山虎的脚",
+    "11 蟋蟀的住宅",
+    "口语交际爱护眼睛，保护视力",
+    "习作 写观察日记",
+    "语文园地",
+    "12 盘古开天地",
+    "13 精卫填海",
+    "14 普罗米修斯",
+    "15* 女娲补天",
+    "习作 我和    过一天",
+    "语文园地",
+    "快乐读书吧 很久很久以前",
+    "16 麻雀",
+    "17 爬天都峰",
+    "习作例文",
+    "我家的杏熟了",
+    "小木船",
+    "习作 生活万花筒",
+    "18 牛和鹅",
+    "19 一只窝囊的大老虎",
+    "20 陀螺",
+    "口语交际 安慰",
+    "习作 记一次游戏",
+    "语文园地",
+    "21 古诗三首",
+    "出塞",
+    "凉州词",
+    "夏日绝句",
+    "22 为中华之崛起而读书",
+    "23* 梅兰芳蓄须",
+    "24* 延安，我把你追寻",
+    "习作 写信",
+    "语文园地",
+    "25 王戎不取道旁李",
+    "26 西门豹治邺",
+    "27* 故事二则",
+    "扁鹊治病",
+    "纪昌学射",
+    "口语交际讲历史人物故事",
+    "习作 我的心儿怦怦跳",
+    "语文园地"
+  ],
+  "entry_count": 68,
+  "flat_count": 60,
+  "group_count": 8,
+  "source_lines": [
+    "",
+    "",
+    "",
+    "",
+    "第一单元......................................1       第三单元.....................................33",
+    "1    观潮.......................................2   9    古诗三首..............................34",
+    "2    走月亮...................................5      \t\t  暮江吟...............................34",
+    "3* 现代诗二首...........................8              \t\t  题西林壁...........................34",
+    "\t\t  秋晚的江上.........................8               \t\t  雪梅. .................................35",
+    "\t\t  花牛歌................................9          10 爬山虎的脚..........................36",
+    "4* 繁星......................................10     11 蟋蟀的住宅..........................39",
+    "◎ 口语交际：我们与环境.......11                             ◎ 口语交际：",
+    "◎ 习作：推荐一个好地方.......12                             \t\t  爱护眼睛，保护视力.......43",
+    "◎ 语文园地..............................13            ◎ 习作：写观察日记. .............44",
+    "                                                  ◎ 语文园地..............................45",
+    "第二单元.....................................15",
+    "5    一个豆荚里的五粒豆. .........16                       第四单元.....................................47",
+    "6    夜间飞行的秘密..................21                  12 盘古开天地..........................48",
+    "7    呼风唤雨的世纪..................25                  13 精卫填海..............................50",
+    "8* 蝴蝶的家..............................28           14 普罗米修斯..........................51",
+    "◎ 习作：我的家人...................30                    15* 女娲补天..............................54",
+    "◎ 语文园地..............................31     ◎ 习作：我和    过一天......56",
+    "◎ 语文园地..............................57          22 为中华之崛起而读书. .........96",
+    "◎ 快乐读书吧：                                        23* 梅兰芳蓄须..........................99",
+    "\t\t  很久很久以前..................59                  24* 延安，我把你追寻. ............ 104",
+    "                                                ◎ 习作：写信......................... 106",
+    "第五单元.....................................61     ◎ 语文园地............................. 107",
+    "16 麻雀......................................62",
+    "17 爬天都峰..............................65         第八单元....................................109",
+    "◎ 习作例文：                                         25 王戎不取道旁李................. 110",
+    "\t\t  我家的杏熟了..................68                  26 西门豹治邺......................... 111",
+    "\t\t  小木船..............................70         27* 故事二则............................. 115",
+    "◎ 习作：生活万花筒. .............72                     \t\t  扁鹊治病.......................... 115",
+    "                                                \t\t  纪昌学射.......................... 116",
+    "第六单元.....................................73     ◎ 口语交际：",
+    "18 牛和鹅..................................74      \t\t  讲历史人物故事. ............ 118",
+    "19 一只窝囊的大老虎. .............79                    ◎ 习作：我的心儿怦怦跳...... 119",
+    "20 陀螺......................................84   ◎ 语文园地............................. 120",
+    "◎ 口语交际：安慰..................89",
+    "◎ 习作：记一次游戏. .............90                     识字表. ......................................123",
+    "◎ 语文园地..............................91          写字表. ......................................126",
+    "                                                词语表. ......................................128",
+    "第七单元.....................................93",
+    "21 古诗三首..............................94         标 * 的是略读课文",
+    "",
+    "\t\t  出塞. .................................94",
+    "\t\t  凉州词...............................94",
+    "\t\t  夏日绝句...........................95"
+  ],
+  "source_text": "\n\n\n\n第一单元......................................1       第三单元.....................................33\n1    观潮.......................................2   9    古诗三首..............................34\n2    走月亮...................................5      \t\t  暮江吟...............................34\n3* 现代诗二首...........................8              \t\t  题西林壁...........................34\n\t\t  秋晚的江上.........................8               \t\t  雪梅. .................................35\n\t\t  花牛歌................................9          10 爬山虎的脚..........................36\n4* 繁星......................................10     11 蟋蟀的住宅..........................39\n◎ 口语交际：我们与环境.......11                             ◎ 口语交际：\n◎ 习作：推荐一个好地方.......12                             \t\t  爱护眼睛，保护视力.......43\n◎ 语文园地..............................13            ◎ 习作：写观察日记. .............44\n                                                  ◎ 语文园地..............................45\n第二单元.....................................15\n5    一个豆荚里的五粒豆. .........16                       第四单元.....................................47\n6    夜间飞行的秘密..................21                  12 盘古开天地..........................48\n7    呼风唤雨的世纪..................25                  13 精卫填海..............................50\n8* 蝴蝶的家..............................28           14 普罗米修斯..........................51\n◎ 习作：我的家人...................30                    15* 女娲补天..............................54\n◎ 语文园地..............................31     ◎ 习作：我和    过一天......56\n◎ 语文园地..............................57          22 为中华之崛起而读书. .........96\n◎ 快乐读书吧：                                        23* 梅兰芳蓄须..........................99\n\t\t  很久很久以前..................59                  24* 延安，我把你追寻. ............ 104\n                                                ◎ 习作：写信......................... 106\n第五单元.....................................61     ◎ 语文园地............................. 107\n16 麻雀......................................62\n17 爬天都峰..............................65         第八单元....................................109\n◎ 习作例文：                                         25 王戎不取道旁李................. 110\n\t\t  我家的杏熟了..................68                  26 西门豹治邺......................... 111\n\t\t  小木船..............................70         27* 故事二则............................. 115\n◎ 习作：生活万花筒. .............72                     \t\t  扁鹊治病.......................... 115\n                                                \t\t  纪昌学射.......................... 116\n第六单元.....................................73     ◎ 口语交际：\n18 牛和鹅..................................74      \t\t  讲历史人物故事. ............ 118\n19 一只窝囊的大老虎. .............79                    ◎ 习作：我的心儿怦怦跳...... 119\n20 陀螺......................................84   ◎ 语文园地............................. 120\n◎ 口语交际：安慰..................89\n◎ 习作：记一次游戏. .............90                     识字表. ......................................123\n◎ 语文园地..............................91          写字表. ......................................126\n                                                词语表. ......................................128\n第七单元.....................................93\n21 古诗三首..............................94         标 * 的是略读课文\n\n\t\t  出塞. .................................94\n\t\t  凉州词...............................94\n\t\t  夏日绝句...........................95",
+  "discard_log": "D:\\ah21\\textbook-parser\\output\\b41_目录.discard.log"
+}

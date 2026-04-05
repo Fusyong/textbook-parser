@@ -1,0 +1,1362 @@
+{
+  "book_code": "b32",
+  "extractor": "目录",
+  "entries": [
+    {
+      "kind": "section",
+      "label": "第一单元",
+      "unit_type": "分组",
+      "unit_subtype": null,
+      "group_label": "第一单元",
+      "id": "b32-toc-0001"
+    },
+    {
+      "kind": "lesson",
+      "number": "1",
+      "title": "古诗三首",
+      "page": 2,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第一单元",
+      "id": "b32-toc-0002"
+    },
+    {
+      "kind": "sublesson",
+      "title": "绝句",
+      "page": 2,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第一单元",
+      "id": "b32-toc-0003"
+    },
+    {
+      "kind": "sublesson",
+      "title": "惠崇春江晚景",
+      "page": 2,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第一单元",
+      "id": "b32-toc-0004"
+    },
+    {
+      "kind": "sublesson",
+      "title": "三衢道中",
+      "page": 3,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第一单元",
+      "id": "b32-toc-0005"
+    },
+    {
+      "kind": "lesson",
+      "number": "2",
+      "title": "燕子",
+      "page": 4,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第一单元",
+      "id": "b32-toc-0006"
+    },
+    {
+      "kind": "lesson",
+      "number": "3",
+      "title": "荷花",
+      "page": 6,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第一单元",
+      "id": "b32-toc-0007"
+    },
+    {
+      "kind": "lesson",
+      "number": "4",
+      "title": "昆虫备忘录",
+      "page": 8,
+      "optional_reading": true,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第一单元",
+      "id": "b32-toc-0008"
+    },
+    {
+      "kind": "toc_belt",
+      "title": "春游去哪里",
+      "page": 11,
+      "unit_type": "口语交际",
+      "unit_subtype": null,
+      "group_label": "第一单元",
+      "label": "口语交际",
+      "id": "b32-toc-0009"
+    },
+    {
+      "kind": "toc_belt",
+      "title": "我的植物朋友",
+      "page": 12,
+      "unit_type": "习作",
+      "unit_subtype": null,
+      "group_label": "第一单元",
+      "label": "习作",
+      "id": "b32-toc-0010"
+    },
+    {
+      "kind": "garden",
+      "label": "语文园地",
+      "page": 13,
+      "unit_type": "语文园地",
+      "unit_subtype": null,
+      "group_label": "第一单元",
+      "id": "b32-toc-0011"
+    },
+    {
+      "kind": "section",
+      "label": "第二单元",
+      "unit_type": "分组",
+      "unit_subtype": null,
+      "group_label": "第二单元",
+      "id": "b32-toc-0012"
+    },
+    {
+      "kind": "lesson",
+      "number": "5",
+      "title": "守株待兔",
+      "page": 16,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第二单元",
+      "id": "b32-toc-0013"
+    },
+    {
+      "kind": "lesson",
+      "number": "6",
+      "title": "会摇尾巴的狼",
+      "page": 18,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第二单元",
+      "id": "b32-toc-0014"
+    },
+    {
+      "kind": "lesson",
+      "number": "7",
+      "title": "鹿角和鹿腿",
+      "page": 21,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第二单元",
+      "id": "b32-toc-0015"
+    },
+    {
+      "kind": "lesson",
+      "number": "8",
+      "title": "池子与河流",
+      "page": 23,
+      "optional_reading": true,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第二单元",
+      "id": "b32-toc-0016"
+    },
+    {
+      "kind": "toc_belt",
+      "title": "劝告",
+      "page": 27,
+      "unit_type": "口语交际",
+      "unit_subtype": null,
+      "group_label": "第二单元",
+      "label": "口语交际",
+      "id": "b32-toc-0017"
+    },
+    {
+      "kind": "toc_belt",
+      "title": "看图画，写一写",
+      "page": 28,
+      "unit_type": "习作",
+      "unit_subtype": null,
+      "group_label": "第二单元",
+      "label": "习作",
+      "id": "b32-toc-0018"
+    },
+    {
+      "kind": "garden",
+      "label": "语文园地",
+      "page": 29,
+      "unit_type": "语文园地",
+      "unit_subtype": null,
+      "group_label": "第二单元",
+      "id": "b32-toc-0019"
+    },
+    {
+      "kind": "reading_club",
+      "title": "快乐读书吧",
+      "page": 31,
+      "unit_type": "快乐读书吧",
+      "unit_subtype": null,
+      "group_label": "第二单元",
+      "sublesson_title": "小故事大道理",
+      "id": "b32-toc-0020"
+    },
+    {
+      "kind": "section",
+      "label": "第三单元",
+      "unit_type": "分组",
+      "unit_subtype": null,
+      "group_label": "第三单元",
+      "id": "b32-toc-0021"
+    },
+    {
+      "kind": "lesson",
+      "number": "9",
+      "title": "海底世界",
+      "page": 34,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第三单元",
+      "id": "b32-toc-0022"
+    },
+    {
+      "kind": "lesson",
+      "number": "10",
+      "title": "石蜂",
+      "page": 36,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第三单元",
+      "id": "b32-toc-0023"
+    },
+    {
+      "kind": "lesson",
+      "number": "11",
+      "title": "小虾",
+      "page": 38,
+      "optional_reading": true,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第三单元",
+      "id": "b32-toc-0024"
+    },
+    {
+      "kind": "toc_belt",
+      "title": "我做了一项小实验",
+      "page": 40,
+      "unit_type": "习作",
+      "unit_subtype": null,
+      "group_label": "第三单元",
+      "label": "习作",
+      "id": "b32-toc-0025"
+    },
+    {
+      "kind": "garden",
+      "label": "语文园地",
+      "page": 41,
+      "unit_type": "语文园地",
+      "unit_subtype": null,
+      "group_label": "第三单元",
+      "id": "b32-toc-0026"
+    },
+    {
+      "kind": "section",
+      "label": "第四单元",
+      "unit_type": "分组",
+      "unit_subtype": null,
+      "group_label": "第四单元",
+      "id": "b32-toc-0027"
+    },
+    {
+      "kind": "lesson",
+      "number": "12",
+      "title": "古诗三首",
+      "page": 44,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第四单元",
+      "id": "b32-toc-0028"
+    },
+    {
+      "kind": "sublesson",
+      "title": "元日",
+      "page": 44,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第四单元",
+      "id": "b32-toc-0029"
+    },
+    {
+      "kind": "sublesson",
+      "title": "清明",
+      "page": 44,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第四单元",
+      "id": "b32-toc-0030"
+    },
+    {
+      "kind": "sublesson",
+      "title": "九月九日忆山东兄弟",
+      "page": 45,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第四单元",
+      "id": "b32-toc-0031"
+    },
+    {
+      "kind": "lesson",
+      "number": "13",
+      "title": "纸的发明",
+      "page": 47,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第四单元",
+      "id": "b32-toc-0032"
+    },
+    {
+      "kind": "lesson",
+      "number": "14",
+      "title": "赵州桥",
+      "page": 50,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第四单元",
+      "id": "b32-toc-0033"
+    },
+    {
+      "kind": "lesson",
+      "title": "一幅名扬中外的画",
+      "page": 52,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第四单元",
+      "number": "15",
+      "optional_reading": true,
+      "sublesson_title": "中华传统节日",
+      "id": "b32-toc-0034"
+    },
+    {
+      "kind": "garden",
+      "label": "语文园地",
+      "page": 55,
+      "unit_type": "语文园地",
+      "unit_subtype": null,
+      "group_label": "第四单元",
+      "id": "b32-toc-0035"
+    },
+    {
+      "kind": "section",
+      "label": "第五单元",
+      "unit_type": "分组",
+      "unit_subtype": null,
+      "group_label": "第五单元",
+      "id": "b32-toc-0036"
+    },
+    {
+      "kind": "lesson",
+      "number": "16",
+      "title": "胡萝卜先生的长胡子",
+      "page": 58,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第五单元",
+      "id": "b32-toc-0037"
+    },
+    {
+      "kind": "lesson",
+      "number": "17",
+      "title": "我变成了一棵树",
+      "page": 61,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第五单元",
+      "id": "b32-toc-0038"
+    },
+    {
+      "kind": "block_activity",
+      "block": "习作",
+      "title": "奇妙的想象",
+      "page": 65,
+      "unit_type": "习作",
+      "unit_subtype": null,
+      "group_label": "第五单元",
+      "id": "b32-toc-0039"
+    },
+    {
+      "kind": "sublesson",
+      "title": "一支铅笔的梦想",
+      "page": 66,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第五单元",
+      "id": "b32-toc-0040"
+    },
+    {
+      "kind": "sublesson",
+      "title": "尾巴它有一只猫",
+      "page": 67,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第五单元",
+      "id": "b32-toc-0041"
+    },
+    {
+      "kind": "block_activity",
+      "block": "口语交际",
+      "title": "趣味故事会",
+      "page": 107,
+      "unit_type": "口语交际",
+      "unit_subtype": null,
+      "group_label": "第五单元",
+      "id": "b32-toc-0042"
+    },
+    {
+      "kind": "section",
+      "label": "第六单元",
+      "unit_type": "分组",
+      "unit_subtype": null,
+      "group_label": "第六单元",
+      "id": "b32-toc-0043"
+    },
+    {
+      "kind": "lesson",
+      "number": "18",
+      "title": "童年的水墨画",
+      "page": 70,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第六单元",
+      "id": "b32-toc-0044"
+    },
+    {
+      "kind": "lesson",
+      "number": "19",
+      "title": "肥皂泡",
+      "page": 72,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第六单元",
+      "id": "b32-toc-0045"
+    },
+    {
+      "kind": "lesson",
+      "number": "20",
+      "title": "灰雀",
+      "page": 75,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第六单元",
+      "id": "b32-toc-0046"
+    },
+    {
+      "kind": "lesson",
+      "number": "21",
+      "title": "我不能失信",
+      "page": 77,
+      "optional_reading": true,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第六单元",
+      "id": "b32-toc-0047"
+    },
+    {
+      "kind": "block_activity",
+      "block": "口语交际",
+      "title": "应该怎样安排座位",
+      "page": 79,
+      "unit_type": "口语交际",
+      "unit_subtype": null,
+      "group_label": "第六单元",
+      "id": "b32-toc-0048"
+    },
+    {
+      "kind": "block_activity",
+      "block": "习作",
+      "title": "身边那些有特点的人",
+      "page": 80,
+      "unit_type": "习作",
+      "unit_subtype": null,
+      "group_label": "第六单元",
+      "id": "b32-toc-0049"
+    },
+    {
+      "kind": "garden",
+      "label": "语文园地",
+      "page": 81,
+      "unit_type": "语文园地",
+      "unit_subtype": null,
+      "group_label": "第六单元",
+      "id": "b32-toc-0050"
+    },
+    {
+      "kind": "section",
+      "label": "第七单元",
+      "unit_type": "分组",
+      "unit_subtype": null,
+      "group_label": "第七单元",
+      "id": "b32-toc-0051"
+    },
+    {
+      "kind": "lesson",
+      "number": "22",
+      "title": "火烧云",
+      "page": 84,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第七单元",
+      "id": "b32-toc-0052"
+    },
+    {
+      "kind": "lesson",
+      "number": "23",
+      "title": "暴风雨来临之前",
+      "page": 87,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第七单元",
+      "id": "b32-toc-0053"
+    },
+    {
+      "kind": "lesson",
+      "number": "24",
+      "title": "我们奇妙的世界",
+      "page": 89,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第七单元",
+      "id": "b32-toc-0054"
+    },
+    {
+      "kind": "toc_belt",
+      "title": "国宝大熊猫",
+      "page": 92,
+      "unit_type": "习作",
+      "unit_subtype": null,
+      "group_label": "第七单元",
+      "label": "习作",
+      "id": "b32-toc-0055"
+    },
+    {
+      "kind": "garden",
+      "label": "语文园地",
+      "page": 93,
+      "unit_type": "语文园地",
+      "unit_subtype": null,
+      "group_label": "第七单元",
+      "id": "b32-toc-0056"
+    },
+    {
+      "kind": "section",
+      "label": "第八单元",
+      "unit_type": "分组",
+      "unit_subtype": null,
+      "group_label": "第八单元",
+      "id": "b32-toc-0057"
+    },
+    {
+      "kind": "lesson",
+      "number": "25",
+      "title": "慢性子裁缝和急性子顾客",
+      "page": 96,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第八单元",
+      "id": "b32-toc-0058"
+    },
+    {
+      "kind": "lesson",
+      "number": "26",
+      "title": "漏",
+      "page": 100,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第八单元",
+      "id": "b32-toc-0059"
+    },
+    {
+      "kind": "lesson",
+      "number": "27",
+      "title": "枣核",
+      "page": 104,
+      "optional_reading": true,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第八单元",
+      "id": "b32-toc-0060"
+    },
+    {
+      "kind": "toc_belt",
+      "title": "这样想象真有趣",
+      "page": 108,
+      "unit_type": "习作",
+      "unit_subtype": null,
+      "group_label": "第八单元",
+      "label": "习作",
+      "id": "b32-toc-0061"
+    },
+    {
+      "kind": "garden",
+      "label": "语文园地",
+      "page": 109,
+      "unit_type": "语文园地",
+      "unit_subtype": null,
+      "group_label": "第八单元",
+      "id": "b32-toc-0062"
+    }
+  ],
+  "groups": [
+    {
+      "group_id": 1,
+      "group_label": "第一单元",
+      "units": [
+        {
+          "kind": "lesson",
+          "number": "1",
+          "title": "古诗三首",
+          "page": 2,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第一单元",
+          "id": "b32-toc-0002"
+        },
+        {
+          "kind": "sublesson",
+          "title": "绝句",
+          "page": 2,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第一单元",
+          "id": "b32-toc-0003"
+        },
+        {
+          "kind": "sublesson",
+          "title": "惠崇春江晚景",
+          "page": 2,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第一单元",
+          "id": "b32-toc-0004"
+        },
+        {
+          "kind": "sublesson",
+          "title": "三衢道中",
+          "page": 3,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第一单元",
+          "id": "b32-toc-0005"
+        },
+        {
+          "kind": "lesson",
+          "number": "2",
+          "title": "燕子",
+          "page": 4,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第一单元",
+          "id": "b32-toc-0006"
+        },
+        {
+          "kind": "lesson",
+          "number": "3",
+          "title": "荷花",
+          "page": 6,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第一单元",
+          "id": "b32-toc-0007"
+        },
+        {
+          "kind": "lesson",
+          "number": "4",
+          "title": "昆虫备忘录",
+          "page": 8,
+          "optional_reading": true,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第一单元",
+          "id": "b32-toc-0008"
+        },
+        {
+          "kind": "toc_belt",
+          "title": "春游去哪里",
+          "page": 11,
+          "unit_type": "口语交际",
+          "unit_subtype": null,
+          "group_label": "第一单元",
+          "label": "口语交际",
+          "id": "b32-toc-0009"
+        },
+        {
+          "kind": "toc_belt",
+          "title": "我的植物朋友",
+          "page": 12,
+          "unit_type": "习作",
+          "unit_subtype": null,
+          "group_label": "第一单元",
+          "label": "习作",
+          "id": "b32-toc-0010"
+        },
+        {
+          "kind": "garden",
+          "label": "语文园地",
+          "page": 13,
+          "unit_type": "语文园地",
+          "unit_subtype": null,
+          "group_label": "第一单元",
+          "id": "b32-toc-0011"
+        }
+      ]
+    },
+    {
+      "group_id": 2,
+      "group_label": "第二单元",
+      "units": [
+        {
+          "kind": "lesson",
+          "number": "5",
+          "title": "守株待兔",
+          "page": 16,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第二单元",
+          "id": "b32-toc-0013"
+        },
+        {
+          "kind": "lesson",
+          "number": "6",
+          "title": "会摇尾巴的狼",
+          "page": 18,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第二单元",
+          "id": "b32-toc-0014"
+        },
+        {
+          "kind": "lesson",
+          "number": "7",
+          "title": "鹿角和鹿腿",
+          "page": 21,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第二单元",
+          "id": "b32-toc-0015"
+        },
+        {
+          "kind": "lesson",
+          "number": "8",
+          "title": "池子与河流",
+          "page": 23,
+          "optional_reading": true,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第二单元",
+          "id": "b32-toc-0016"
+        },
+        {
+          "kind": "toc_belt",
+          "title": "劝告",
+          "page": 27,
+          "unit_type": "口语交际",
+          "unit_subtype": null,
+          "group_label": "第二单元",
+          "label": "口语交际",
+          "id": "b32-toc-0017"
+        },
+        {
+          "kind": "toc_belt",
+          "title": "看图画，写一写",
+          "page": 28,
+          "unit_type": "习作",
+          "unit_subtype": null,
+          "group_label": "第二单元",
+          "label": "习作",
+          "id": "b32-toc-0018"
+        },
+        {
+          "kind": "garden",
+          "label": "语文园地",
+          "page": 29,
+          "unit_type": "语文园地",
+          "unit_subtype": null,
+          "group_label": "第二单元",
+          "id": "b32-toc-0019"
+        },
+        {
+          "kind": "reading_club",
+          "title": "快乐读书吧",
+          "page": 31,
+          "unit_type": "快乐读书吧",
+          "unit_subtype": null,
+          "group_label": "第二单元",
+          "sublesson_title": "小故事大道理",
+          "id": "b32-toc-0020"
+        }
+      ]
+    },
+    {
+      "group_id": 3,
+      "group_label": "第三单元",
+      "units": [
+        {
+          "kind": "lesson",
+          "number": "9",
+          "title": "海底世界",
+          "page": 34,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第三单元",
+          "id": "b32-toc-0022"
+        },
+        {
+          "kind": "lesson",
+          "number": "10",
+          "title": "石蜂",
+          "page": 36,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第三单元",
+          "id": "b32-toc-0023"
+        },
+        {
+          "kind": "lesson",
+          "number": "11",
+          "title": "小虾",
+          "page": 38,
+          "optional_reading": true,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第三单元",
+          "id": "b32-toc-0024"
+        },
+        {
+          "kind": "toc_belt",
+          "title": "我做了一项小实验",
+          "page": 40,
+          "unit_type": "习作",
+          "unit_subtype": null,
+          "group_label": "第三单元",
+          "label": "习作",
+          "id": "b32-toc-0025"
+        },
+        {
+          "kind": "garden",
+          "label": "语文园地",
+          "page": 41,
+          "unit_type": "语文园地",
+          "unit_subtype": null,
+          "group_label": "第三单元",
+          "id": "b32-toc-0026"
+        }
+      ]
+    },
+    {
+      "group_id": 4,
+      "group_label": "第四单元",
+      "units": [
+        {
+          "kind": "lesson",
+          "number": "12",
+          "title": "古诗三首",
+          "page": 44,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第四单元",
+          "id": "b32-toc-0028"
+        },
+        {
+          "kind": "sublesson",
+          "title": "元日",
+          "page": 44,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第四单元",
+          "id": "b32-toc-0029"
+        },
+        {
+          "kind": "sublesson",
+          "title": "清明",
+          "page": 44,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第四单元",
+          "id": "b32-toc-0030"
+        },
+        {
+          "kind": "sublesson",
+          "title": "九月九日忆山东兄弟",
+          "page": 45,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第四单元",
+          "id": "b32-toc-0031"
+        },
+        {
+          "kind": "lesson",
+          "number": "13",
+          "title": "纸的发明",
+          "page": 47,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第四单元",
+          "id": "b32-toc-0032"
+        },
+        {
+          "kind": "lesson",
+          "number": "14",
+          "title": "赵州桥",
+          "page": 50,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第四单元",
+          "id": "b32-toc-0033"
+        },
+        {
+          "kind": "lesson",
+          "title": "一幅名扬中外的画",
+          "page": 52,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第四单元",
+          "number": "15",
+          "optional_reading": true,
+          "sublesson_title": "中华传统节日",
+          "id": "b32-toc-0034"
+        },
+        {
+          "kind": "garden",
+          "label": "语文园地",
+          "page": 55,
+          "unit_type": "语文园地",
+          "unit_subtype": null,
+          "group_label": "第四单元",
+          "id": "b32-toc-0035"
+        }
+      ]
+    },
+    {
+      "group_id": 5,
+      "group_label": "第五单元",
+      "units": [
+        {
+          "kind": "lesson",
+          "number": "16",
+          "title": "胡萝卜先生的长胡子",
+          "page": 58,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第五单元",
+          "id": "b32-toc-0037"
+        },
+        {
+          "kind": "lesson",
+          "number": "17",
+          "title": "我变成了一棵树",
+          "page": 61,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第五单元",
+          "id": "b32-toc-0038"
+        },
+        {
+          "kind": "block_activity",
+          "block": "习作",
+          "title": "奇妙的想象",
+          "page": 65,
+          "unit_type": "习作",
+          "unit_subtype": null,
+          "group_label": "第五单元",
+          "id": "b32-toc-0039"
+        },
+        {
+          "kind": "sublesson",
+          "title": "一支铅笔的梦想",
+          "page": 66,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第五单元",
+          "id": "b32-toc-0040"
+        },
+        {
+          "kind": "sublesson",
+          "title": "尾巴它有一只猫",
+          "page": 67,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第五单元",
+          "id": "b32-toc-0041"
+        },
+        {
+          "kind": "block_activity",
+          "block": "口语交际",
+          "title": "趣味故事会",
+          "page": 107,
+          "unit_type": "口语交际",
+          "unit_subtype": null,
+          "group_label": "第五单元",
+          "id": "b32-toc-0042"
+        }
+      ]
+    },
+    {
+      "group_id": 6,
+      "group_label": "第六单元",
+      "units": [
+        {
+          "kind": "lesson",
+          "number": "18",
+          "title": "童年的水墨画",
+          "page": 70,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第六单元",
+          "id": "b32-toc-0044"
+        },
+        {
+          "kind": "lesson",
+          "number": "19",
+          "title": "肥皂泡",
+          "page": 72,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第六单元",
+          "id": "b32-toc-0045"
+        },
+        {
+          "kind": "lesson",
+          "number": "20",
+          "title": "灰雀",
+          "page": 75,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第六单元",
+          "id": "b32-toc-0046"
+        },
+        {
+          "kind": "lesson",
+          "number": "21",
+          "title": "我不能失信",
+          "page": 77,
+          "optional_reading": true,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第六单元",
+          "id": "b32-toc-0047"
+        },
+        {
+          "kind": "block_activity",
+          "block": "口语交际",
+          "title": "应该怎样安排座位",
+          "page": 79,
+          "unit_type": "口语交际",
+          "unit_subtype": null,
+          "group_label": "第六单元",
+          "id": "b32-toc-0048"
+        },
+        {
+          "kind": "block_activity",
+          "block": "习作",
+          "title": "身边那些有特点的人",
+          "page": 80,
+          "unit_type": "习作",
+          "unit_subtype": null,
+          "group_label": "第六单元",
+          "id": "b32-toc-0049"
+        },
+        {
+          "kind": "garden",
+          "label": "语文园地",
+          "page": 81,
+          "unit_type": "语文园地",
+          "unit_subtype": null,
+          "group_label": "第六单元",
+          "id": "b32-toc-0050"
+        }
+      ]
+    },
+    {
+      "group_id": 7,
+      "group_label": "第七单元",
+      "units": [
+        {
+          "kind": "lesson",
+          "number": "22",
+          "title": "火烧云",
+          "page": 84,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第七单元",
+          "id": "b32-toc-0052"
+        },
+        {
+          "kind": "lesson",
+          "number": "23",
+          "title": "暴风雨来临之前",
+          "page": 87,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第七单元",
+          "id": "b32-toc-0053"
+        },
+        {
+          "kind": "lesson",
+          "number": "24",
+          "title": "我们奇妙的世界",
+          "page": 89,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第七单元",
+          "id": "b32-toc-0054"
+        },
+        {
+          "kind": "toc_belt",
+          "title": "国宝大熊猫",
+          "page": 92,
+          "unit_type": "习作",
+          "unit_subtype": null,
+          "group_label": "第七单元",
+          "label": "习作",
+          "id": "b32-toc-0055"
+        },
+        {
+          "kind": "garden",
+          "label": "语文园地",
+          "page": 93,
+          "unit_type": "语文园地",
+          "unit_subtype": null,
+          "group_label": "第七单元",
+          "id": "b32-toc-0056"
+        }
+      ]
+    },
+    {
+      "group_id": 8,
+      "group_label": "第八单元",
+      "units": [
+        {
+          "kind": "lesson",
+          "number": "25",
+          "title": "慢性子裁缝和急性子顾客",
+          "page": 96,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第八单元",
+          "id": "b32-toc-0058"
+        },
+        {
+          "kind": "lesson",
+          "number": "26",
+          "title": "漏",
+          "page": 100,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第八单元",
+          "id": "b32-toc-0059"
+        },
+        {
+          "kind": "lesson",
+          "number": "27",
+          "title": "枣核",
+          "page": 104,
+          "optional_reading": true,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第八单元",
+          "id": "b32-toc-0060"
+        },
+        {
+          "kind": "toc_belt",
+          "title": "这样想象真有趣",
+          "page": 108,
+          "unit_type": "习作",
+          "unit_subtype": null,
+          "group_label": "第八单元",
+          "label": "习作",
+          "id": "b32-toc-0061"
+        },
+        {
+          "kind": "garden",
+          "label": "语文园地",
+          "page": 109,
+          "unit_type": "语文园地",
+          "unit_subtype": null,
+          "group_label": "第八单元",
+          "id": "b32-toc-0062"
+        }
+      ]
+    }
+  ],
+  "toc_unit_strings": [
+    "1 古诗三首",
+    "绝句",
+    "惠崇春江晚景",
+    "三衢道中",
+    "2 燕子",
+    "3 荷花",
+    "4* 昆虫备忘录",
+    "口语交际春游去哪里",
+    "习作我的植物朋友",
+    "语文园地",
+    "5 守株待兔",
+    "6 会摇尾巴的狼",
+    "7 鹿角和鹿腿",
+    "8* 池子与河流",
+    "口语交际劝告",
+    "习作看图画，写一写",
+    "语文园地",
+    "快乐读书吧 小故事大道理",
+    "9 海底世界",
+    "10 石蜂",
+    "11* 小虾",
+    "习作我做了一项小实验",
+    "语文园地",
+    "12 古诗三首",
+    "元日",
+    "清明",
+    "九月九日忆山东兄弟",
+    "13 纸的发明",
+    "14 赵州桥",
+    "15* 一幅名扬中外的画（中华传统节日）",
+    "语文园地",
+    "16 胡萝卜先生的长胡子",
+    "17 我变成了一棵树",
+    "习作 奇妙的想象",
+    "一支铅笔的梦想",
+    "尾巴它有一只猫",
+    "口语交际 趣味故事会",
+    "18 童年的水墨画",
+    "19 肥皂泡",
+    "20 灰雀",
+    "21* 我不能失信",
+    "口语交际 应该怎样安排座位",
+    "习作 身边那些有特点的人",
+    "语文园地",
+    "22 火烧云",
+    "23 暴风雨来临之前",
+    "24 我们奇妙的世界",
+    "习作国宝大熊猫",
+    "语文园地",
+    "25 慢性子裁缝和急性子顾客",
+    "26 漏",
+    "27* 枣核",
+    "习作这样想象真有趣",
+    "语文园地"
+  ],
+  "entry_count": 62,
+  "flat_count": 54,
+  "group_count": 8,
+  "source_lines": [
+    "",
+    "",
+    "",
+    "",
+    "第一单元......................................1      习作     看图画，写一写............... 28",
+    "阅读                                               ◎ 语文园地..............................29",
+    "   1   古诗三首............................2         ◎ 快乐读书吧",
+    "\t\t\t 绝句. ................................. 2              小故事大道理..................31",
+    "\t\t\t 惠崇春江晚景................... 2",
+    "",
+    "\t\t\t 三衢道中........................... 3            第三单元.....................................33",
+    "   2   燕子....................................4   阅读",
+    "",
+    "   3   荷花....................................6     9 海底世界...........................34",
+    "   4* 昆虫备忘录........................8               10 石蜂...................................36",
+    "口语交际         春游去哪里................11               11* 小虾...................................38",
+    "习作      我的植物朋友...................12              习作     我做了一项小实验........... 40",
+    "◎ 语文园地..............................13           ◎ 语文园地..............................41",
+    "",
+    "",
+    "第二单元.....................................15      第四单元.....................................43",
+    "阅读                                               阅读",
+    "",
+    "   5   守株待兔...........................16           12 古诗三首...........................44",
+    "   6   会摇尾巴的狼...................18                         元日. ................................ 44",
+    "",
+    "   7   鹿角和鹿腿.......................21            \t\t\t 清明. ................................ 44",
+    "",
+    "   8* 池子与河流.......................23             \t\t\t 九月九日忆山东兄弟. ..... 45",
+    "",
+    "口语交际         劝告...........................27       13 纸的发明...........................47",
+    "",
+    "",
+    "",
+    "       仅供个人学习使用，未经授权不得另做他用",
+    "  14 赵州桥...............................50      第七单元.....................................83",
+    "  15* 一幅名扬中外的画........... 52                   阅读",
+    "",
+    "专题学习活动            中华传统节日..... 54                  22 火烧云...............................84",
+    "◎ 语文园地..............................55            23 暴风雨来临之前...............87",
+    "                                                  24 我们奇妙的世界...............89",
+    "第五单元.....................................57    习作      国宝大熊猫. .....................92",
+    "阅读                                             ◎ 语文园地..............................93",
+    "  16 胡萝卜先生的长胡子. ...... 58",
+    "  17 我变成了一棵树...............61                  第八单元.....................................95",
+    "习作 奇妙的想象....................... 65             阅读",
+    "",
+    "  例文                                              25 慢性子裁缝和急性子顾客. .. 96",
+    "        一支铅笔的梦想..............66                   26 漏. .................................... 100",
+    "",
+    "\t\t  尾巴它有一只猫..............67                       27* 枣核.................................. 104",
+    "                                               口语交际   趣味故事会 ............... 107  ",
+    "第六单元.....................................69    习作      这样想象真有趣.............. 108",
+    "",
+    "阅读                                             ◎ 语文园地............................. 109",
+    "",
+    "  18 童年的水墨画...................70",
+    "  19 肥皂泡...............................72      识字表. ...................................... 111",
+    "",
+    "  20 灰雀...................................75   写字表. ...................................... 114",
+    "",
+    "  21* 我不能失信.......................77           词语表. ...................................... 116",
+    "",
+    "口语交际 应该怎样安排座位.... 79",
+    "",
+    "习作 身边那些有特点的人....... 80                         标 * 的是略读课文。第五单元是习作单元。",
+    "",
+    "◎ 语文园地..............................81",
+    "",
+    "",
+    "",
+    "",
+    "          仅供个人学习使用，未经授权不得另做他用"
+  ],
+  "source_text": "\n\n\n\n第一单元......................................1      习作     看图画，写一写............... 28\n阅读                                               ◎ 语文园地..............................29\n   1   古诗三首............................2         ◎ 快乐读书吧\n\t\t\t 绝句. ................................. 2              小故事大道理..................31\n\t\t\t 惠崇春江晚景................... 2\n\n\t\t\t 三衢道中........................... 3            第三单元.....................................33\n   2   燕子....................................4   阅读\n\n   3   荷花....................................6     9 海底世界...........................34\n   4* 昆虫备忘录........................8               10 石蜂...................................36\n口语交际         春游去哪里................11               11* 小虾...................................38\n习作      我的植物朋友...................12              习作     我做了一项小实验........... 40\n◎ 语文园地..............................13           ◎ 语文园地..............................41\n\n\n第二单元.....................................15      第四单元.....................................43\n阅读                                               阅读\n\n   5   守株待兔...........................16           12 古诗三首...........................44\n   6   会摇尾巴的狼...................18                         元日. ................................ 44\n\n   7   鹿角和鹿腿.......................21            \t\t\t 清明. ................................ 44\n\n   8* 池子与河流.......................23             \t\t\t 九月九日忆山东兄弟. ..... 45\n\n口语交际         劝告...........................27       13 纸的发明...........................47\n\n\n\n       仅供个人学习使用，未经授权不得另做他用\n  14 赵州桥...............................50      第七单元.....................................83\n  15* 一幅名扬中外的画........... 52                   阅读\n\n专题学习活动            中华传统节日..... 54                  22 火烧云...............................84\n◎ 语文园地..............................55            23 暴风雨来临之前...............87\n                                                  24 我们奇妙的世界...............89\n第五单元.....................................57    习作      国宝大熊猫. .....................92\n阅读                                             ◎ 语文园地..............................93\n  16 胡萝卜先生的长胡子. ...... 58\n  17 我变成了一棵树...............61                  第八单元.....................................95\n习作 奇妙的想象....................... 65             阅读\n\n  例文                                              25 慢性子裁缝和急性子顾客. .. 96\n        一支铅笔的梦想..............66                   26 漏. .................................... 100\n\n\t\t  尾巴它有一只猫..............67                       27* 枣核.................................. 104\n                                               口语交际   趣味故事会 ............... 107  \n第六单元.....................................69    习作      这样想象真有趣.............. 108\n\n阅读                                             ◎ 语文园地............................. 109\n\n  18 童年的水墨画...................70\n  19 肥皂泡...............................72      识字表. ...................................... 111\n\n  20 灰雀...................................75   写字表. ...................................... 114\n\n  21* 我不能失信.......................77           词语表. ...................................... 116\n\n口语交际 应该怎样安排座位.... 79\n\n习作 身边那些有特点的人....... 80                         标 * 的是略读课文。第五单元是习作单元。\n\n◎ 语文园地..............................81\n\n\n\n\n          仅供个人学习使用，未经授权不得另做他用",
+  "discard_log": "D:\\ah21\\textbook-parser\\output\\b32_目录.discard.log"
+}

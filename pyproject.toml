@@ -1,0 +1,17 @@
+[project]
+name = "textbook-parser"
+version = "0.1.0"
+description = "Parse textbook PDFs via pdftotext -layout and configurable extractors"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = ["pyyaml>=6.0"]
+
+[project.scripts]
+textbook-parser = "textbook_parser.cli:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,1032 @@
+{
+  "book_code": "b21",
+  "extractor": "目录",
+  "entries": [
+    {
+      "kind": "section",
+      "label": "第一单元·阅读",
+      "unit_type": "分组",
+      "unit_subtype": null,
+      "group_label": "第一单元·阅读",
+      "id": "b21-toc-0001"
+    },
+    {
+      "kind": "lesson",
+      "number": "1",
+      "title": "小蝌蚪找妈妈",
+      "page": 1,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第一单元·阅读",
+      "id": "b21-toc-0002"
+    },
+    {
+      "kind": "lesson",
+      "number": "2",
+      "title": "我是什么",
+      "page": 5,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第一单元·阅读",
+      "id": "b21-toc-0003"
+    },
+    {
+      "kind": "lesson",
+      "number": "3",
+      "title": "植物妈妈有办法",
+      "page": 8,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第一单元·阅读",
+      "id": "b21-toc-0004"
+    },
+    {
+      "kind": "garden",
+      "label": "语文园地一",
+      "page": 11,
+      "unit_type": "语文园地",
+      "unit_subtype": null,
+      "group_label": "第一单元·阅读",
+      "id": "b21-toc-0005"
+    },
+    {
+      "kind": "reading_club",
+      "title": "快乐读书吧",
+      "subtitle": "读读童话故事",
+      "page": 15,
+      "unit_type": "快乐读书吧",
+      "unit_subtype": null,
+      "group_label": "第一单元·阅读",
+      "id": "b21-toc-0006"
+    },
+    {
+      "kind": "section",
+      "label": "第二单元·识字",
+      "unit_type": "分组",
+      "unit_subtype": null,
+      "group_label": "第二单元·识字",
+      "id": "b21-toc-0007"
+    },
+    {
+      "kind": "lesson",
+      "number": "1",
+      "title": "场景歌",
+      "page": 16,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "识字",
+      "group_label": "第二单元·识字",
+      "id": "b21-toc-0008"
+    },
+    {
+      "kind": "lesson",
+      "number": "2",
+      "title": "树之歌",
+      "page": 18,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "识字",
+      "group_label": "第二单元·识字",
+      "id": "b21-toc-0009"
+    },
+    {
+      "kind": "lesson",
+      "number": "3",
+      "title": "拍手歌",
+      "page": 20,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "识字",
+      "group_label": "第二单元·识字",
+      "id": "b21-toc-0010"
+    },
+    {
+      "kind": "lesson",
+      "number": "4",
+      "title": "田家四季歌",
+      "page": 23,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "识字",
+      "group_label": "第二单元·识字",
+      "id": "b21-toc-0011"
+    },
+    {
+      "kind": "garden",
+      "label": "语文园地二",
+      "page": 25,
+      "unit_type": "语文园地",
+      "unit_subtype": null,
+      "group_label": "第二单元·识字",
+      "id": "b21-toc-0012"
+    },
+    {
+      "kind": "section",
+      "label": "第三单元·阅读",
+      "unit_type": "分组",
+      "unit_subtype": null,
+      "group_label": "第三单元·阅读",
+      "id": "b21-toc-0013"
+    },
+    {
+      "kind": "lesson",
+      "number": "4",
+      "title": "彩虹",
+      "page": 28,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第三单元·阅读",
+      "id": "b21-toc-0014"
+    },
+    {
+      "kind": "lesson",
+      "number": "5",
+      "title": "去外婆家",
+      "page": 30,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第三单元·阅读",
+      "id": "b21-toc-0015"
+    },
+    {
+      "kind": "lesson",
+      "number": "6",
+      "title": "数星星的孩子",
+      "page": 32,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第三单元·阅读",
+      "id": "b21-toc-0016"
+    },
+    {
+      "kind": "garden",
+      "label": "语文园地三",
+      "page": 35,
+      "unit_type": "语文园地",
+      "unit_subtype": null,
+      "group_label": "第三单元·阅读",
+      "id": "b21-toc-0017"
+    },
+    {
+      "kind": "section",
+      "label": "第四单元·阅读",
+      "unit_type": "分组",
+      "unit_subtype": null,
+      "group_label": "第四单元·阅读",
+      "id": "b21-toc-0018"
+    },
+    {
+      "kind": "lesson",
+      "number": "7",
+      "title": "古诗二首",
+      "page": 39,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第四单元·阅读",
+      "id": "b21-toc-0019"
+    },
+    {
+      "kind": "sublesson",
+      "title": "登鹳雀楼",
+      "page": 39,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第四单元·阅读",
+      "id": "b21-toc-0020"
+    },
+    {
+      "kind": "sublesson",
+      "title": "望庐山瀑布",
+      "page": 40,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第四单元·阅读",
+      "id": "b21-toc-0021"
+    },
+    {
+      "kind": "lesson",
+      "number": "8",
+      "title": "黄山奇石",
+      "page": 42,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第四单元·阅读",
+      "id": "b21-toc-0022"
+    },
+    {
+      "kind": "lesson",
+      "number": "9",
+      "title": "日月潭",
+      "page": 45,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第四单元·阅读",
+      "id": "b21-toc-0023"
+    },
+    {
+      "kind": "lesson",
+      "number": "10",
+      "title": "葡萄沟",
+      "page": 47,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第四单元·阅读",
+      "id": "b21-toc-0024"
+    },
+    {
+      "kind": "garden",
+      "label": "语文园地四",
+      "page": 50,
+      "unit_type": "语文园地",
+      "unit_subtype": null,
+      "group_label": "第四单元·阅读",
+      "id": "b21-toc-0025"
+    },
+    {
+      "kind": "section",
+      "label": "第五单元·阅读",
+      "unit_type": "分组",
+      "unit_subtype": null,
+      "group_label": "第五单元·阅读",
+      "id": "b21-toc-0026"
+    },
+    {
+      "kind": "lesson",
+      "number": "11",
+      "title": "坐井观天",
+      "page": 54,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第五单元·阅读",
+      "id": "b21-toc-0027"
+    },
+    {
+      "kind": "lesson",
+      "number": "12",
+      "title": "寒号鸟",
+      "page": 56,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第五单元·阅读",
+      "id": "b21-toc-0028"
+    },
+    {
+      "kind": "lesson",
+      "number": "13",
+      "title": "我要的是葫芦",
+      "page": 60,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第五单元·阅读",
+      "id": "b21-toc-0029"
+    },
+    {
+      "kind": "garden",
+      "label": "语文园地五",
+      "page": 63,
+      "unit_type": "语文园地",
+      "unit_subtype": null,
+      "group_label": "第五单元·阅读",
+      "id": "b21-toc-0030"
+    },
+    {
+      "kind": "section",
+      "label": "第六单元·阅读",
+      "unit_type": "分组",
+      "unit_subtype": null,
+      "group_label": "第六单元·阅读",
+      "id": "b21-toc-0031"
+    },
+    {
+      "kind": "lesson",
+      "number": "14",
+      "title": "八角楼上",
+      "page": 67,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第六单元·阅读",
+      "id": "b21-toc-0032"
+    },
+    {
+      "kind": "lesson",
+      "number": "15",
+      "title": "朱德的扁担",
+      "page": 69,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第六单元·阅读",
+      "id": "b21-toc-0033"
+    },
+    {
+      "kind": "lesson",
+      "number": "16",
+      "title": "难忘的泼水节",
+      "page": 72,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第六单元·阅读",
+      "id": "b21-toc-0034"
+    },
+    {
+      "kind": "lesson",
+      "number": "17",
+      "title": "刘胡兰",
+      "page": 75,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第六单元·阅读",
+      "id": "b21-toc-0035"
+    },
+    {
+      "kind": "garden",
+      "label": "语文园地六",
+      "page": 78,
+      "unit_type": "语文园地",
+      "unit_subtype": null,
+      "group_label": "第六单元·阅读",
+      "id": "b21-toc-0036"
+    },
+    {
+      "kind": "section",
+      "label": "第七单元·阅读",
+      "unit_type": "分组",
+      "unit_subtype": null,
+      "group_label": "第七单元·阅读",
+      "id": "b21-toc-0037"
+    },
+    {
+      "kind": "lesson",
+      "number": "18",
+      "title": "古诗二首",
+      "page": 81,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第七单元·阅读",
+      "id": "b21-toc-0038"
+    },
+    {
+      "kind": "sublesson",
+      "title": "江雪",
+      "page": 81,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第七单元·阅读",
+      "id": "b21-toc-0039"
+    },
+    {
+      "kind": "sublesson",
+      "title": "敕勒歌",
+      "page": 82,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第七单元·阅读",
+      "id": "b21-toc-0040"
+    },
+    {
+      "kind": "lesson",
+      "number": "19",
+      "title": "雾在哪里",
+      "page": 84,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第七单元·阅读",
+      "id": "b21-toc-0041"
+    },
+    {
+      "kind": "lesson",
+      "number": "20",
+      "title": "雪孩子",
+      "page": 87,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第七单元·阅读",
+      "id": "b21-toc-0042"
+    },
+    {
+      "kind": "garden",
+      "label": "语文园地七",
+      "page": 91,
+      "unit_type": "语文园地",
+      "unit_subtype": null,
+      "group_label": "第七单元·阅读",
+      "id": "b21-toc-0043"
+    },
+    {
+      "kind": "section",
+      "label": "第八单元·阅读",
+      "unit_type": "分组",
+      "unit_subtype": null,
+      "group_label": "第八单元·阅读",
+      "id": "b21-toc-0044"
+    },
+    {
+      "kind": "lesson",
+      "number": "21",
+      "title": "称赞",
+      "page": 95,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第八单元·阅读",
+      "id": "b21-toc-0045"
+    },
+    {
+      "kind": "lesson",
+      "number": "22",
+      "title": "纸船和风筝",
+      "page": 98,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第八单元·阅读",
+      "id": "b21-toc-0046"
+    },
+    {
+      "kind": "lesson",
+      "number": "23",
+      "title": "快乐的小河",
+      "page": 101,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第八单元·阅读",
+      "id": "b21-toc-0047"
+    },
+    {
+      "kind": "garden",
+      "label": "语文园地八",
+      "page": 104,
+      "unit_type": "语文园地",
+      "unit_subtype": null,
+      "group_label": "第八单元·阅读",
+      "id": "b21-toc-0048"
+    }
+  ],
+  "groups": [
+    {
+      "group_id": 1,
+      "group_label": "第一单元·阅读",
+      "units": [
+        {
+          "kind": "lesson",
+          "number": "1",
+          "title": "小蝌蚪找妈妈",
+          "page": 1,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第一单元·阅读",
+          "id": "b21-toc-0002"
+        },
+        {
+          "kind": "lesson",
+          "number": "2",
+          "title": "我是什么",
+          "page": 5,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第一单元·阅读",
+          "id": "b21-toc-0003"
+        },
+        {
+          "kind": "lesson",
+          "number": "3",
+          "title": "植物妈妈有办法",
+          "page": 8,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第一单元·阅读",
+          "id": "b21-toc-0004"
+        },
+        {
+          "kind": "garden",
+          "label": "语文园地一",
+          "page": 11,
+          "unit_type": "语文园地",
+          "unit_subtype": null,
+          "group_label": "第一单元·阅读",
+          "id": "b21-toc-0005"
+        },
+        {
+          "kind": "reading_club",
+          "title": "快乐读书吧",
+          "subtitle": "读读童话故事",
+          "page": 15,
+          "unit_type": "快乐读书吧",
+          "unit_subtype": null,
+          "group_label": "第一单元·阅读",
+          "id": "b21-toc-0006"
+        }
+      ]
+    },
+    {
+      "group_id": 2,
+      "group_label": "第二单元·识字",
+      "units": [
+        {
+          "kind": "lesson",
+          "number": "1",
+          "title": "场景歌",
+          "page": 16,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "识字",
+          "group_label": "第二单元·识字",
+          "id": "b21-toc-0008"
+        },
+        {
+          "kind": "lesson",
+          "number": "2",
+          "title": "树之歌",
+          "page": 18,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "识字",
+          "group_label": "第二单元·识字",
+          "id": "b21-toc-0009"
+        },
+        {
+          "kind": "lesson",
+          "number": "3",
+          "title": "拍手歌",
+          "page": 20,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "识字",
+          "group_label": "第二单元·识字",
+          "id": "b21-toc-0010"
+        },
+        {
+          "kind": "lesson",
+          "number": "4",
+          "title": "田家四季歌",
+          "page": 23,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "识字",
+          "group_label": "第二单元·识字",
+          "id": "b21-toc-0011"
+        },
+        {
+          "kind": "garden",
+          "label": "语文园地二",
+          "page": 25,
+          "unit_type": "语文园地",
+          "unit_subtype": null,
+          "group_label": "第二单元·识字",
+          "id": "b21-toc-0012"
+        }
+      ]
+    },
+    {
+      "group_id": 3,
+      "group_label": "第三单元·阅读",
+      "units": [
+        {
+          "kind": "lesson",
+          "number": "4",
+          "title": "彩虹",
+          "page": 28,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第三单元·阅读",
+          "id": "b21-toc-0014"
+        },
+        {
+          "kind": "lesson",
+          "number": "5",
+          "title": "去外婆家",
+          "page": 30,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第三单元·阅读",
+          "id": "b21-toc-0015"
+        },
+        {
+          "kind": "lesson",
+          "number": "6",
+          "title": "数星星的孩子",
+          "page": 32,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第三单元·阅读",
+          "id": "b21-toc-0016"
+        },
+        {
+          "kind": "garden",
+          "label": "语文园地三",
+          "page": 35,
+          "unit_type": "语文园地",
+          "unit_subtype": null,
+          "group_label": "第三单元·阅读",
+          "id": "b21-toc-0017"
+        }
+      ]
+    },
+    {
+      "group_id": 4,
+      "group_label": "第四单元·阅读",
+      "units": [
+        {
+          "kind": "lesson",
+          "number": "7",
+          "title": "古诗二首",
+          "page": 39,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第四单元·阅读",
+          "id": "b21-toc-0019"
+        },
+        {
+          "kind": "sublesson",
+          "title": "登鹳雀楼",
+          "page": 39,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第四单元·阅读",
+          "id": "b21-toc-0020"
+        },
+        {
+          "kind": "sublesson",
+          "title": "望庐山瀑布",
+          "page": 40,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第四单元·阅读",
+          "id": "b21-toc-0021"
+        },
+        {
+          "kind": "lesson",
+          "number": "8",
+          "title": "黄山奇石",
+          "page": 42,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第四单元·阅读",
+          "id": "b21-toc-0022"
+        },
+        {
+          "kind": "lesson",
+          "number": "9",
+          "title": "日月潭",
+          "page": 45,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第四单元·阅读",
+          "id": "b21-toc-0023"
+        },
+        {
+          "kind": "lesson",
+          "number": "10",
+          "title": "葡萄沟",
+          "page": 47,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第四单元·阅读",
+          "id": "b21-toc-0024"
+        },
+        {
+          "kind": "garden",
+          "label": "语文园地四",
+          "page": 50,
+          "unit_type": "语文园地",
+          "unit_subtype": null,
+          "group_label": "第四单元·阅读",
+          "id": "b21-toc-0025"
+        }
+      ]
+    },
+    {
+      "group_id": 5,
+      "group_label": "第五单元·阅读",
+      "units": [
+        {
+          "kind": "lesson",
+          "number": "11",
+          "title": "坐井观天",
+          "page": 54,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第五单元·阅读",
+          "id": "b21-toc-0027"
+        },
+        {
+          "kind": "lesson",
+          "number": "12",
+          "title": "寒号鸟",
+          "page": 56,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第五单元·阅读",
+          "id": "b21-toc-0028"
+        },
+        {
+          "kind": "lesson",
+          "number": "13",
+          "title": "我要的是葫芦",
+          "page": 60,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第五单元·阅读",
+          "id": "b21-toc-0029"
+        },
+        {
+          "kind": "garden",
+          "label": "语文园地五",
+          "page": 63,
+          "unit_type": "语文园地",
+          "unit_subtype": null,
+          "group_label": "第五单元·阅读",
+          "id": "b21-toc-0030"
+        }
+      ]
+    },
+    {
+      "group_id": 6,
+      "group_label": "第六单元·阅读",
+      "units": [
+        {
+          "kind": "lesson",
+          "number": "14",
+          "title": "八角楼上",
+          "page": 67,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第六单元·阅读",
+          "id": "b21-toc-0032"
+        },
+        {
+          "kind": "lesson",
+          "number": "15",
+          "title": "朱德的扁担",
+          "page": 69,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第六单元·阅读",
+          "id": "b21-toc-0033"
+        },
+        {
+          "kind": "lesson",
+          "number": "16",
+          "title": "难忘的泼水节",
+          "page": 72,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第六单元·阅读",
+          "id": "b21-toc-0034"
+        },
+        {
+          "kind": "lesson",
+          "number": "17",
+          "title": "刘胡兰",
+          "page": 75,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第六单元·阅读",
+          "id": "b21-toc-0035"
+        },
+        {
+          "kind": "garden",
+          "label": "语文园地六",
+          "page": 78,
+          "unit_type": "语文园地",
+          "unit_subtype": null,
+          "group_label": "第六单元·阅读",
+          "id": "b21-toc-0036"
+        }
+      ]
+    },
+    {
+      "group_id": 7,
+      "group_label": "第七单元·阅读",
+      "units": [
+        {
+          "kind": "lesson",
+          "number": "18",
+          "title": "古诗二首",
+          "page": 81,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第七单元·阅读",
+          "id": "b21-toc-0038"
+        },
+        {
+          "kind": "sublesson",
+          "title": "江雪",
+          "page": 81,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第七单元·阅读",
+          "id": "b21-toc-0039"
+        },
+        {
+          "kind": "sublesson",
+          "title": "敕勒歌",
+          "page": 82,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第七单元·阅读",
+          "id": "b21-toc-0040"
+        },
+        {
+          "kind": "lesson",
+          "number": "19",
+          "title": "雾在哪里",
+          "page": 84,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第七单元·阅读",
+          "id": "b21-toc-0041"
+        },
+        {
+          "kind": "lesson",
+          "number": "20",
+          "title": "雪孩子",
+          "page": 87,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第七单元·阅读",
+          "id": "b21-toc-0042"
+        },
+        {
+          "kind": "garden",
+          "label": "语文园地七",
+          "page": 91,
+          "unit_type": "语文园地",
+          "unit_subtype": null,
+          "group_label": "第七单元·阅读",
+          "id": "b21-toc-0043"
+        }
+      ]
+    },
+    {
+      "group_id": 8,
+      "group_label": "第八单元·阅读",
+      "units": [
+        {
+          "kind": "lesson",
+          "number": "21",
+          "title": "称赞",
+          "page": 95,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第八单元·阅读",
+          "id": "b21-toc-0045"
+        },
+        {
+          "kind": "lesson",
+          "number": "22",
+          "title": "纸船和风筝",
+          "page": 98,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第八单元·阅读",
+          "id": "b21-toc-0046"
+        },
+        {
+          "kind": "lesson",
+          "number": "23",
+          "title": "快乐的小河",
+          "page": 101,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第八单元·阅读",
+          "id": "b21-toc-0047"
+        },
+        {
+          "kind": "garden",
+          "label": "语文园地八",
+          "page": 104,
+          "unit_type": "语文园地",
+          "unit_subtype": null,
+          "group_label": "第八单元·阅读",
+          "id": "b21-toc-0048"
+        }
+      ]
+    }
+  ],
+  "toc_unit_strings": [
+    "1 小蝌蚪找妈妈",
+    "2 我是什么",
+    "3 植物妈妈有办法",
+    "语文园地一",
+    "快乐读书吧 读读童话故事",
+    "1 场景歌",
+    "2 树之歌",
+    "3 拍手歌",
+    "4 田家四季歌",
+    "语文园地二",
+    "4 彩虹",
+    "5 去外婆家",
+    "6 数星星的孩子",
+    "语文园地三",
+    "7 古诗二首",
+    "登鹳雀楼",
+    "望庐山瀑布",
+    "8 黄山奇石",
+    "9 日月潭",
+    "10 葡萄沟",
+    "语文园地四",
+    "11 坐井观天",
+    "12 寒号鸟",
+    "13 我要的是葫芦",
+    "语文园地五",
+    "14 八角楼上",
+    "15 朱德的扁担",
+    "16 难忘的泼水节",
+    "17 刘胡兰",
+    "语文园地六",
+    "18 古诗二首",
+    "江雪",
+    "敕勒歌",
+    "19 雾在哪里",
+    "20 雪孩子",
+    "语文园地七",
+    "21 称赞",
+    "22 纸船和风筝",
+    "23 快乐的小河",
+    "语文园地八"
+  ],
+  "entry_count": 48,
+  "flat_count": 40,
+  "group_count": 8,
+  "source_lines": [
+    "",
+    "第一单元·阅读                                   第三单元·阅读",
+    "1   小蝌蚪找妈妈.................. 1            4    彩虹................................. 28",
+    "2   我是什么.......................... 5      5    去外婆家......................... 30",
+    "3   植物妈妈有办法 ............. 8               6    数星星的孩子................. 32",
+    "◎ 语文园地一..................... 11           ◎ 语文园地三..................... 35",
+    "◎ 快乐读书吧  读读童话故事............. 15             第四单元·阅读",
+    "                                          7    古诗二首......................... 39",
+    "第二单元·识字                                           登鹳雀楼...................... 39",
+    "",
+    "1   场景歌............................. 16           望庐山瀑布. ................. 40",
+    "",
+    "2   树之歌............................. 18   8    黄山奇石......................... 42",
+    "3   拍手歌............................. 20   9    日月潭............................. 45",
+    "4   田家四季歌..................... 23         10 葡萄沟............................. 47",
+    "◎ 语文园地二..................... 25           ◎ 语文园地四..................... 50",
+    "第五单元·阅读                                      19 雾在哪里......................... 84",
+    "11 坐井观天......................... 54          20 雪孩子............................. 87",
+    "12 寒号鸟............................. 56       ◎ 语文园地七..................... 91",
+    "13 我要的是葫芦. ................ 60",
+    "◎ 语文园地五..................... 63              第八单元·阅读",
+    "                                             21 称赞................................. 95",
+    "第六单元·阅读                                      22 纸船和风筝..................... 98",
+    "14 八角楼上......................... 67          23 快乐的小河.................... 101",
+    "15 朱德的扁担..................... 69             ◎ 语文园地八.................... 104",
+    "16 难忘的泼水节. ................ 72",
+    "17 刘胡兰............................. 75       识字表. .................................. 108",
+    "◎ 语文园地六..................... 78              写字表. .................................. 113",
+    "                                             词语表. .................................. 116",
+    "第七单元·阅读",
+    "18 古诗二首......................... 81",
+    "        江雪............................. 81",
+    "        敕勒歌 ......................... 82"
+  ],
+  "source_text": "\n第一单元·阅读                                   第三单元·阅读\n1   小蝌蚪找妈妈.................. 1            4    彩虹................................. 28\n2   我是什么.......................... 5      5    去外婆家......................... 30\n3   植物妈妈有办法 ............. 8               6    数星星的孩子................. 32\n◎ 语文园地一..................... 11           ◎ 语文园地三..................... 35\n◎ 快乐读书吧  读读童话故事............. 15             第四单元·阅读\n                                          7    古诗二首......................... 39\n第二单元·识字                                           登鹳雀楼...................... 39\n\n1   场景歌............................. 16           望庐山瀑布. ................. 40\n\n2   树之歌............................. 18   8    黄山奇石......................... 42\n3   拍手歌............................. 20   9    日月潭............................. 45\n4   田家四季歌..................... 23         10 葡萄沟............................. 47\n◎ 语文园地二..................... 25           ◎ 语文园地四..................... 50\n第五单元·阅读                                      19 雾在哪里......................... 84\n11 坐井观天......................... 54          20 雪孩子............................. 87\n12 寒号鸟............................. 56       ◎ 语文园地七..................... 91\n13 我要的是葫芦. ................ 60\n◎ 语文园地五..................... 63              第八单元·阅读\n                                             21 称赞................................. 95\n第六单元·阅读                                      22 纸船和风筝..................... 98\n14 八角楼上......................... 67          23 快乐的小河.................... 101\n15 朱德的扁担..................... 69             ◎ 语文园地八.................... 104\n16 难忘的泼水节. ................ 72\n17 刘胡兰............................. 75       识字表. .................................. 108\n◎ 语文园地六..................... 78              写字表. .................................. 113\n                                             词语表. .................................. 116\n第七单元·阅读\n18 古诗二首......................... 81\n        江雪............................. 81\n        敕勒歌 ......................... 82",
+  "discard_log": "D:\\ah21\\textbook-parser\\output\\b21_目录.discard.log"
+}

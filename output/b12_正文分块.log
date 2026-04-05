@@ -1,0 +1,13 @@
+# textbook-parser toc-chunk
+# time: 2026-04-05T16:44:30
+# argv: D:\ah21\textbook-parser\src\textbook_parser\__main__.py toc-chunk --project-root . --books
+# book_code: b12
+# log_file: D:\ah21\textbook-parser\output\b12_正文分块.log
+# 以下 stdout/stderr 均写入本日志（含警告、错误与提取器提示）。
+# project_root: D:\ah21\textbook-parser
+# output: D:\ah21\textbook-parser\output
+
+正文分块: 条目 39, 命中 39, 未命中 0
+已写入: D:\ah21\textbook-parser\output\b12_正文分块.json
+已写入: D:\ah21\textbook-parser\output\b12_正文分块.md
+控制台输出已同步写入日志: D:\ah21\textbook-parser\output\b12_正文分块.log

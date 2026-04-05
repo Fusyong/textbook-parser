@@ -1,0 +1,3282 @@
+{
+  "book_code": "b21",
+  "extractor": "识字表",
+  "rows": [
+    {
+      "section": "阅读",
+      "lesson": "1",
+      "garden": null,
+      "chars": [
+        {
+          "char": "蝌",
+          "pinyin": "kē",
+          "polyphone": false
+        },
+        {
+          "char": "蚪",
+          "pinyin": "dǒu",
+          "polyphone": false
+        },
+        {
+          "char": "脑",
+          "pinyin": "nǎo",
+          "polyphone": false
+        },
+        {
+          "char": "袋",
+          "pinyin": "dài",
+          "polyphone": false
+        },
+        {
+          "char": "灰",
+          "pinyin": "huī",
+          "polyphone": false
+        },
+        {
+          "char": "甩",
+          "pinyin": "shuǎi",
+          "polyphone": false
+        },
+        {
+          "char": "活",
+          "pinyin": "huó",
+          "polyphone": false
+        },
+        {
+          "char": "腿",
+          "pinyin": "tuǐ",
+          "polyphone": false
+        },
+        {
+          "char": "教",
+          "pinyin": "jiāo",
+          "polyphone": false
+        },
+        {
+          "char": "迎",
+          "pinyin": "yíng",
+          "polyphone": false
+        },
+        {
+          "char": "嘴",
+          "pinyin": "zuǐ",
+          "polyphone": false
+        },
+        {
+          "char": "龟",
+          "pinyin": "guī",
+          "polyphone": false
+        },
+        {
+          "char": "披",
+          "pinyin": "pī",
+          "polyphone": false
+        },
+        {
+          "char": "蹲",
+          "pinyin": "dūn",
+          "polyphone": false
+        },
+        {
+          "char": "肚",
+          "pinyin": "dù",
+          "polyphone": false
+        },
+        {
+          "char": "鼓",
+          "pinyin": "gǔ",
+          "polyphone": false
+        }
+      ],
+      "pinyin_line": "kE dGu nAo dSi huU shuAi huY tuJ jiQo yIng zuJ guU pU dOn dM gL",
+      "hanzi_line": "      1    蝌 蚪 脑 袋 灰 甩 活 腿 教 迎 嘴 龟 披\n           蹲 肚 鼓",
+      "unit": {
+        "toc_id": "b21-toc-0002",
+        "toc_kind": "lesson",
+        "toc_index": 0,
+        "unit_type": "lesson",
+        "lesson": "1",
+        "garden_cn": null,
+        "title": "小蝌蚪找妈妈",
+        "label": "1 小蝌蚪找妈妈"
+      }
+    },
+    {
+      "section": "阅读",
+      "lesson": "2",
+      "garden": null,
+      "chars": [
+        {
+          "char": "汽",
+          "pinyin": "qì",
+          "polyphone": false
+        },
+        {
+          "char": "越",
+          "pinyin": "yuè",
+          "polyphone": false
+        },
+        {
+          "char": "温",
+          "pinyin": "wēn",
+          "polyphone": false
+        },
+        {
+          "char": "滴",
+          "pinyin": "dī",
+          "polyphone": false
+        },
+        {
+          "char": "奔",
+          "pinyin": "bēn",
+          "polyphone": false
+        },
+        {
+          "char": "海",
+          "pinyin": "hǎi",
+          "polyphone": false
+        },
+        {
+          "char": "洋",
+          "pinyin": "yáng",
+          "polyphone": false
+        },
+        {
+          "char": "发",
+          "pinyin": "fā",
+          "polyphone": false
+        },
+        {
+          "char": "坏",
+          "pinyin": "huài",
+          "polyphone": false
+        },
+        {
+          "char": "没",
+          "pinyin": "mò",
+          "polyphone": false
+        },
+        {
+          "char": "庄",
+          "pinyin": "zhuāng",
+          "polyphone": false
+        },
+        {
+          "char": "稼",
+          "pinyin": "jià",
+          "polyphone": false
+        },
+        {
+          "char": "屋",
+          "pinyin": "wū",
+          "polyphone": false
+        },
+        {
+          "char": "带",
+          "pinyin": "dài",
+          "polyphone": false
+        },
+        {
+          "char": "灾",
+          "pinyin": "zāi",
+          "polyphone": false
+        },
+        {
+          "char": "种",
+          "pinyin": "zhǒng",
+          "polyphone": false
+        },
+        {
+          "char": "管",
+          "pinyin": "guǎn",
+          "polyphone": false
+        }
+      ],
+      "pinyin_line": "qK yuF wEn dU bEn hAi yWng fQ huSi mH zhuQng jiS wO dSi zQi zhGng guAn",
+      "hanzi_line": "      2    汽 越 温 滴 奔 海 洋 发 坏 没 庄 稼 屋\n           带 灾 种 管",
+      "unit": {
+        "toc_id": "b21-toc-0003",
+        "toc_kind": "lesson",
+        "toc_index": 1,
+        "unit_type": "lesson",
+        "lesson": "2",
+        "garden_cn": null,
+        "title": "我是什么",
+        "label": "2 我是什么"
+      }
+    },
+    {
+      "section": "阅读",
+      "lesson": "3",
+      "garden": null,
+      "chars": [
+        {
+          "char": "植",
+          "pinyin": "zhí",
+          "polyphone": false
+        },
+        {
+          "char": "如",
+          "pinyin": "rú",
+          "polyphone": false
+        },
+        {
+          "char": "脚",
+          "pinyin": "jiǎo",
+          "polyphone": false
+        },
+        {
+          "char": "旅",
+          "pinyin": "lǚ",
+          "polyphone": false
+        },
+        {
+          "char": "准",
+          "pinyin": "zhǔn",
+          "polyphone": false
+        },
+        {
+          "char": "备",
+          "pinyin": "bèi",
+          "polyphone": false
+        },
+        {
+          "char": "送",
+          "pinyin": "sòng",
+          "polyphone": false
+        },
+        {
+          "char": "纷",
+          "pinyin": "fēn",
+          "polyphone": false
+        },
+        {
+          "char": "挂",
+          "pinyin": "guà",
+          "polyphone": false
+        },
+        {
+          "char": "挺",
+          "pinyin": "tǐng",
+          "polyphone": false
+        },
+        {
+          "char": "钻",
+          "pinyin": "zuān",
+          "polyphone": false
+        },
+        {
+          "char": "底",
+          "pinyin": "dǐ",
+          "polyphone": false
+        },
+        {
+          "char": "炸",
+          "pinyin": "zhà",
+          "polyphone": false
+        },
+        {
+          "char": "离",
+          "pinyin": "lí",
+          "polyphone": false
+        },
+        {
+          "char": "粗",
+          "pinyin": "cū",
+          "polyphone": false
+        },
+        {
+          "char": "得",
+          "pinyin": "dé",
+          "polyphone": false
+        }
+      ],
+      "pinyin_line": "zhI rP jiAo lV zhLn bFi sHng fEn guS tJng zuQn dJ zhS lI cO dR",
+      "hanzi_line": "      3    植 如 脚 旅 准 备 送 纷 挂 挺 钻 底 炸\n           离 粗 得",
+      "unit": {
+        "toc_id": "b21-toc-0004",
+        "toc_kind": "lesson",
+        "toc_index": 2,
+        "unit_type": "lesson",
+        "lesson": "3",
+        "garden_cn": null,
+        "title": "植物妈妈有办法",
+        "label": "3 植物妈妈有办法"
+      }
+    },
+    {
+      "section": "阅读",
+      "lesson": null,
+      "garden": "一",
+      "chars": [
+        {
+          "char": "朗",
+          "pinyin": "lǎng",
+          "polyphone": false
+        },
+        {
+          "char": "雾",
+          "pinyin": "wù",
+          "polyphone": false
+        },
+        {
+          "char": "暴",
+          "pinyin": "bào",
+          "polyphone": false
+        },
+        {
+          "char": "雷",
+          "pinyin": "léi",
+          "polyphone": false
+        },
+        {
+          "char": "阵",
+          "pinyin": "zhèn",
+          "polyphone": false
+        },
+        {
+          "char": "冻",
+          "pinyin": "dòng",
+          "polyphone": false
+        },
+        {
+          "char": "夹",
+          "pinyin": "jiā",
+          "polyphone": false
+        }
+      ],
+      "pinyin_line": "lAng wM bSo lRi zhFn dHng jiQ",
+      "hanzi_line": "      语文园地一            朗 雾 暴 雷 阵 冻 夹",
+      "unit": {
+        "toc_id": "b21-toc-0005",
+        "toc_kind": "garden",
+        "toc_index": 3,
+        "unit_type": "garden",
+        "lesson": null,
+        "garden_cn": "一",
+        "title": null,
+        "label": "语文园地一"
+      }
+    },
+    {
+      "section": "识字",
+      "lesson": "1",
+      "garden": null,
+      "chars": [
+        {
+          "char": "帆",
+          "pinyin": "fān",
+          "polyphone": false
+        },
+        {
+          "char": "港",
+          "pinyin": "gǎng",
+          "polyphone": false
+        },
+        {
+          "char": "湾",
+          "pinyin": "wān",
+          "polyphone": false
+        },
+        {
+          "char": "塘",
+          "pinyin": "táng",
+          "polyphone": false
+        },
+        {
+          "char": "稻",
+          "pinyin": "dào",
+          "polyphone": false
+        },
+        {
+          "char": "行",
+          "pinyin": "háng",
+          "polyphone": false
+        },
+        {
+          "char": "垂",
+          "pinyin": "chuí",
+          "polyphone": false
+        },
+        {
+          "char": "园",
+          "pinyin": "yuán",
+          "polyphone": false
+        },
+        {
+          "char": "溪",
+          "pinyin": "xī",
+          "polyphone": false
+        },
+        {
+          "char": "丛",
+          "pinyin": "cóng",
+          "polyphone": false
+        },
+        {
+          "char": "翠",
+          "pinyin": "cuì",
+          "polyphone": false
+        },
+        {
+          "char": "群",
+          "pinyin": "qún",
+          "polyphone": false
+        },
+        {
+          "char": "队",
+          "pinyin": "duì",
+          "polyphone": false
+        },
+        {
+          "char": "铜",
+          "pinyin": "tóng",
+          "polyphone": false
+        },
+        {
+          "char": "号",
+          "pinyin": "hào",
+          "polyphone": false
+        }
+      ],
+      "pinyin_line": "fQn gAng wQn tWng dSo hWng chuI yuWn xU cYng cuK qPn duK tYng hSo",
+      "hanzi_line": "      1    帆 港 湾 塘 稻 行 垂 园 溪 丛 翠 群 队\n           铜 号",
+      "unit": {
+        "toc_id": "b21-toc-0008",
+        "toc_kind": "lesson",
+        "toc_index": 4,
+        "unit_type": "lesson",
+        "lesson": "1",
+        "garden_cn": null,
+        "title": "场景歌",
+        "label": "1 场景歌"
+      }
+    },
+    {
+      "section": "识字",
+      "lesson": "2",
+      "garden": null,
+      "chars": [
+        {
+          "char": "榕",
+          "pinyin": "róng",
+          "polyphone": false
+        },
+        {
+          "char": "壮",
+          "pinyin": "zhuàng",
+          "polyphone": false
+        },
+        {
+          "char": "梧",
+          "pinyin": "wú",
+          "polyphone": false
+        },
+        {
+          "char": "桐",
+          "pinyin": "tóng",
+          "polyphone": false
+        },
+        {
+          "char": "掌",
+          "pinyin": "zhǎng",
+          "polyphone": false
+        },
+        {
+          "char": "枫",
+          "pinyin": "fēng",
+          "polyphone": false
+        },
+        {
+          "char": "松",
+          "pinyin": "sōng",
+          "polyphone": false
+        },
+        {
+          "char": "柏",
+          "pinyin": "bǎi",
+          "polyphone": false
+        },
+        {
+          "char": "桦",
+          "pinyin": "huà",
+          "polyphone": false
+        },
+        {
+          "char": "守",
+          "pinyin": "shǒu",
+          "polyphone": false
+        },
+        {
+          "char": "银",
+          "pinyin": "yín",
+          "polyphone": false
+        },
+        {
+          "char": "杏",
+          "pinyin": "xìng",
+          "polyphone": false
+        },
+        {
+          "char": "杉",
+          "pinyin": "shān",
+          "polyphone": false
+        },
+        {
+          "char": "化",
+          "pinyin": "huà",
+          "polyphone": false
+        },
+        {
+          "char": "桂",
+          "pinyin": "guì",
+          "polyphone": false
+        }
+      ],
+      "pinyin_line": "rYng zhuSng wP tYng zhAng fEng sTng bAi huS shGu yIn xKng shQn huS guK",
+      "hanzi_line": "      2    榕 壮 梧 桐 掌 枫 松 柏 桦 守 银 杏 杉\n     化 桂",
+      "unit": {
+        "toc_id": "b21-toc-0009",
+        "toc_kind": "lesson",
+        "toc_index": 5,
+        "unit_type": "lesson",
+        "lesson": "2",
+        "garden_cn": null,
+        "title": "树之歌",
+        "label": "2 树之歌"
+      }
+    },
+    {
+      "section": "识字",
+      "lesson": "3",
+      "garden": null,
+      "chars": [
+        {
+          "char": "世",
+          "pinyin": "shì",
+          "polyphone": false
+        },
+        {
+          "char": "界",
+          "pinyin": "jiè",
+          "polyphone": false
+        },
+        {
+          "char": "孔",
+          "pinyin": "kǒng",
+          "polyphone": false
+        },
+        {
+          "char": "雀",
+          "pinyin": "què",
+          "polyphone": false
+        },
+        {
+          "char": "锦",
+          "pinyin": "jǐn",
+          "polyphone": false
+        },
+        {
+          "char": "雄",
+          "pinyin": "xióng",
+          "polyphone": false
+        },
+        {
+          "char": "鹰",
+          "pinyin": "yīng",
+          "polyphone": false
+        },
+        {
+          "char": "翔",
+          "pinyin": "xiáng",
+          "polyphone": false
+        },
+        {
+          "char": "雁",
+          "pinyin": "yàn",
+          "polyphone": false
+        },
+        {
+          "char": "深",
+          "pinyin": "shēn",
+          "polyphone": false
+        },
+        {
+          "char": "猛",
+          "pinyin": "měng",
+          "polyphone": false
+        },
+        {
+          "char": "灵",
+          "pinyin": "líng",
+          "polyphone": false
+        },
+        {
+          "char": "休",
+          "pinyin": "xiū",
+          "polyphone": false
+        },
+        {
+          "char": "猫",
+          "pinyin": "māo",
+          "polyphone": false
+        }
+      ],
+      "pinyin_line": "shK jiF kGng quF jJn xiYng yUng xiWng ySn shEn mDng lIng xiO mQo",
+      "hanzi_line": "3    世 界 孔 雀 锦 雄 鹰 翔 雁 深 猛 灵 休\n     猫",
+      "unit": {
+        "toc_id": "b21-toc-0010",
+        "toc_kind": "lesson",
+        "toc_index": 6,
+        "unit_type": "lesson",
+        "lesson": "3",
+        "garden_cn": null,
+        "title": "拍手歌",
+        "label": "3 拍手歌"
+      }
+    },
+    {
+      "section": "识字",
+      "lesson": "4",
+      "garden": null,
+      "chars": [
+        {
+          "char": "季",
+          "pinyin": "jì",
+          "polyphone": false
+        },
+        {
+          "char": "蝴",
+          "pinyin": "hú",
+          "polyphone": false
+        },
+        {
+          "char": "蝶",
+          "pinyin": "dié",
+          "polyphone": false
+        },
+        {
+          "char": "麦",
+          "pinyin": "mài",
+          "polyphone": false
+        },
+        {
+          "char": "嫩",
+          "pinyin": "nèn",
+          "polyphone": false
+        },
+        {
+          "char": "肥",
+          "pinyin": "féi",
+          "polyphone": false
+        },
+        {
+          "char": "农",
+          "pinyin": "nóng",
+          "polyphone": false
+        },
+        {
+          "char": "勤",
+          "pinyin": "qín",
+          "polyphone": false
+        },
+        {
+          "char": "归",
+          "pinyin": "guī",
+          "polyphone": false
+        },
+        {
+          "char": "戴",
+          "pinyin": "dài",
+          "polyphone": false
+        },
+        {
+          "char": "场",
+          "pinyin": "cháng",
+          "polyphone": false
+        },
+        {
+          "char": "谷",
+          "pinyin": "gǔ",
+          "polyphone": false
+        },
+        {
+          "char": "虽",
+          "pinyin": "suī",
+          "polyphone": false
+        },
+        {
+          "char": "辛",
+          "pinyin": "xīn",
+          "polyphone": false
+        },
+        {
+          "char": "苦",
+          "pinyin": "kǔ",
+          "polyphone": false
+        },
+        {
+          "char": "制",
+          "pinyin": "zhì",
+          "polyphone": false
+        }
+      ],
+      "pinyin_line": "jK hP diR mSi nFn fRi nYng qIn guU dSi chWng gL suU xUn kL zhK",
+      "hanzi_line": "4    季 蝴 蝶 麦 嫩 肥 农 勤 归 戴 场 谷 虽\n     辛 苦 制",
+      "unit": {
+        "toc_id": "b21-toc-0011",
+        "toc_kind": "lesson",
+        "toc_index": 7,
+        "unit_type": "lesson",
+        "lesson": "4",
+        "garden_cn": null,
+        "title": "田家四季歌",
+        "label": "4 田家四季歌"
+      }
+    },
+    {
+      "section": "识字",
+      "lesson": null,
+      "garden": "二",
+      "chars": [
+        {
+          "char": "丑",
+          "pinyin": "chǒu",
+          "polyphone": false
+        },
+        {
+          "char": "恨",
+          "pinyin": "hèn",
+          "polyphone": false
+        },
+        {
+          "char": "诚",
+          "pinyin": "chéng",
+          "polyphone": false
+        },
+        {
+          "char": "虚",
+          "pinyin": "xū",
+          "polyphone": false
+        },
+        {
+          "char": "假",
+          "pinyin": "jiǎ",
+          "polyphone": false
+        },
+        {
+          "char": "漠",
+          "pinyin": "mò",
+          "polyphone": false
+        },
+        {
+          "char": "助",
+          "pinyin": "zhù",
+          "polyphone": false
+        },
+        {
+          "char": "贫",
+          "pinyin": "pín",
+          "polyphone": false
+        },
+        {
+          "char": "富",
+          "pinyin": "fù",
+          "polyphone": false
+        },
+        {
+          "char": "饥",
+          "pinyin": "jī",
+          "polyphone": false
+        }
+      ],
+      "pinyin_line": "chGu hFn chRng xO jiA mH zhM pIn fM jU",
+      "hanzi_line": "语文园地二              丑 恨 诚 虚 假 漠 助 贫 富 饥",
+      "unit": {
+        "toc_id": "b21-toc-0012",
+        "toc_kind": "garden",
+        "toc_index": 8,
+        "unit_type": "garden",
+        "lesson": null,
+        "garden_cn": "二",
+        "title": null,
+        "label": "语文园地二"
+      }
+    },
+    {
+      "section": "阅读",
+      "lesson": "4",
+      "garden": null,
+      "chars": [
+        {
+          "char": "虹",
+          "pinyin": "hóng",
+          "polyphone": false
+        },
+        {
+          "char": "浇",
+          "pinyin": "jiāo",
+          "polyphone": false
+        },
+        {
+          "char": "壶",
+          "pinyin": "hú",
+          "polyphone": false
+        },
+        {
+          "char": "提",
+          "pinyin": "tí",
+          "polyphone": false
+        },
+        {
+          "char": "洒",
+          "pinyin": "sǎ",
+          "polyphone": false
+        },
+        {
+          "char": "挑",
+          "pinyin": "tiāo",
+          "polyphone": false
+        },
+        {
+          "char": "镜",
+          "pinyin": "jìng",
+          "polyphone": false
+        },
+        {
+          "char": "拿",
+          "pinyin": "ná",
+          "polyphone": false
+        },
+        {
+          "char": "系",
+          "pinyin": "jì",
+          "polyphone": false
+        },
+        {
+          "char": "荡",
+          "pinyin": "dàng",
+          "polyphone": false
+        },
+        {
+          "char": "裙",
+          "pinyin": "qún",
+          "polyphone": false
+        }
+      ],
+      "pinyin_line": "hYng jiQo hP tI sA tiQo jKng nW jK dSng qPn",
+      "hanzi_line": "4    虹 浇 壶 提 洒 挑 镜 拿 系 荡 裙",
+      "unit": {
+        "toc_id": "b21-toc-0014",
+        "toc_kind": "lesson",
+        "toc_index": 9,
+        "unit_type": "lesson",
+        "lesson": "4",
+        "garden_cn": null,
+        "title": "彩虹",
+        "label": "4 彩虹"
+      }
+    },
+    {
+      "section": "阅读",
+      "lesson": "5",
+      "garden": null,
+      "chars": [
+        {
+          "char": "婆",
+          "pinyin": "pó",
+          "polyphone": false
+        },
+        {
+          "char": "候",
+          "pinyin": "hòu",
+          "polyphone": false
+        },
+        {
+          "char": "趣",
+          "pinyin": "qù",
+          "polyphone": false
+        },
+        {
+          "char": "舅",
+          "pinyin": "jiù",
+          "polyphone": false
+        },
+        {
+          "char": "或",
+          "pinyin": "huò",
+          "polyphone": false
+        },
+        {
+          "char": "留",
+          "pinyin": "liú",
+          "polyphone": false
+        },
+        {
+          "char": "份",
+          "pinyin": "fèn",
+          "polyphone": false
+        },
+        {
+          "char": "喂",
+          "pinyin": "wèi",
+          "polyphone": false
+        },
+        {
+          "char": "逃",
+          "pinyin": "táo",
+          "polyphone": false
+        },
+        {
+          "char": "曲",
+          "pinyin": "qǔ",
+          "polyphone": false
+        },
+        {
+          "char": "者",
+          "pinyin": "zhě",
+          "polyphone": false
+        },
+        {
+          "char": "服",
+          "pinyin": "fú",
+          "polyphone": false
+        },
+        {
+          "char": "扑",
+          "pinyin": "pū",
+          "polyphone": false
+        },
+        {
+          "char": "鼻",
+          "pinyin": "bí",
+          "polyphone": false
+        }
+      ],
+      "pinyin_line": "pY hHu qM jiM huH liP fFn wFi tWo qL zhD fP pO bI",
+      "hanzi_line": "5    婆 候 趣 舅 或 留 份 喂 逃 曲 者 服 扑\n     鼻",
+      "unit": {
+        "toc_id": "b21-toc-0015",
+        "toc_kind": "lesson",
+        "toc_index": 10,
+        "unit_type": "lesson",
+        "lesson": "5",
+        "garden_cn": null,
+        "title": "去外婆家",
+        "label": "5 去外婆家"
+      }
+    },
+    {
+      "section": "阅读",
+      "lesson": "6",
+      "garden": null,
+      "chars": [
+        {
+          "char": "珍",
+          "pinyin": "zhēn",
+          "polyphone": false
+        },
+        {
+          "char": "撒",
+          "pinyin": "sǎ",
+          "polyphone": false
+        },
+        {
+          "char": "碧",
+          "pinyin": "bì",
+          "polyphone": false
+        },
+        {
+          "char": "靠",
+          "pinyin": "kào",
+          "polyphone": false
+        },
+        {
+          "char": "仰",
+          "pinyin": "yǎng",
+          "polyphone": false
+        },
+        {
+          "char": "颗",
+          "pinyin": "kē",
+          "polyphone": false
+        },
+        {
+          "char": "距",
+          "pinyin": "jù",
+          "polyphone": false
+        },
+        {
+          "char": "变",
+          "pinyin": "biàn",
+          "polyphone": false
+        },
+        {
+          "char": "祖",
+          "pinyin": "zǔ",
+          "polyphone": false
+        },
+        {
+          "char": "勺",
+          "pinyin": "sháo",
+          "polyphone": false
+        },
+        {
+          "char": "绕",
+          "pinyin": "rào",
+          "polyphone": false
+        },
+        {
+          "char": "转",
+          "pinyin": "zhuàn",
+          "polyphone": false
+        },
+        {
+          "char": "楚",
+          "pinyin": "chǔ",
+          "polyphone": false
+        },
+        {
+          "char": "汉",
+          "pinyin": "hàn",
+          "polyphone": false
+        },
+        {
+          "char": "刻",
+          "pinyin": "kè",
+          "polyphone": false
+        },
+        {
+          "char": "研",
+          "pinyin": "yán",
+          "polyphone": false
+        }
+      ],
+      "pinyin_line": "zhEn sA bK kSo yAng kE jM biSn zL shWo rSo zhuSn chL hSn kF yWn",
+      "hanzi_line": "6    珍 撒 碧 靠 仰 颗 距 变 祖 勺 绕 转 楚\n     汉 刻 研",
+      "unit": {
+        "toc_id": "b21-toc-0016",
+        "toc_kind": "lesson",
+        "toc_index": 11,
+        "unit_type": "lesson",
+        "lesson": "6",
+        "garden_cn": null,
+        "title": "数星星的孩子",
+        "label": "6 数星星的孩子"
+      }
+    },
+    {
+      "section": "阅读",
+      "lesson": null,
+      "garden": "三",
+      "chars": [
+        {
+          "char": "弹",
+          "pinyin": "tán",
+          "polyphone": false
+        },
+        {
+          "char": "钢",
+          "pinyin": "gāng",
+          "polyphone": false
+        },
+        {
+          "char": "琴",
+          "pinyin": "qín",
+          "polyphone": false
+        },
+        {
+          "char": "捏",
+          "pinyin": "niē",
+          "polyphone": false
+        },
+        {
+          "char": "泥",
+          "pinyin": "ní",
+          "polyphone": false
+        },
+        {
+          "char": "围",
+          "pinyin": "wéi",
+          "polyphone": false
+        },
+        {
+          "char": "滚",
+          "pinyin": "gǔn",
+          "polyphone": false
+        },
+        {
+          "char": "铁",
+          "pinyin": "tiě",
+          "polyphone": false
+        },
+        {
+          "char": "环",
+          "pinyin": "huán",
+          "polyphone": false
+        },
+        {
+          "char": "滑",
+          "pinyin": "huá",
+          "polyphone": false
+        },
+        {
+          "char": "梯",
+          "pinyin": "tī",
+          "polyphone": false
+        }
+      ],
+      "pinyin_line": "tWn gQng qIn niE nI wRi gLn tiD huWn huW tU",
+      "hanzi_line": "语文园地三              弹 钢 琴 捏 泥 围 滚 铁 环 滑 梯",
+      "unit": {
+        "toc_id": "b21-toc-0017",
+        "toc_kind": "garden",
+        "toc_index": 12,
+        "unit_type": "garden",
+        "lesson": null,
+        "garden_cn": "三",
+        "title": null,
+        "label": "语文园地三"
+      }
+    },
+    {
+      "section": "阅读",
+      "lesson": "7",
+      "garden": null,
+      "chars": [
+        {
+          "char": "登",
+          "pinyin": "dēng",
+          "polyphone": false
+        },
+        {
+          "char": "唐",
+          "pinyin": "táng",
+          "polyphone": false
+        },
+        {
+          "char": "依",
+          "pinyin": "yī",
+          "polyphone": false
+        },
+        {
+          "char": "尽",
+          "pinyin": "jìn",
+          "polyphone": false
+        },
+        {
+          "char": "欲",
+          "pinyin": "yù",
+          "polyphone": false
+        },
+        {
+          "char": "穷",
+          "pinyin": "qióng",
+          "polyphone": false
+        },
+        {
+          "char": "层",
+          "pinyin": "céng",
+          "polyphone": false
+        },
+        {
+          "char": "瀑",
+          "pinyin": "pù",
+          "polyphone": false
+        },
+        {
+          "char": "布",
+          "pinyin": "bù",
+          "polyphone": false
+        },
+        {
+          "char": "炉",
+          "pinyin": "lú",
+          "polyphone": false
+        },
+        {
+          "char": "紫",
+          "pinyin": "zǐ",
+          "polyphone": false
+        },
+        {
+          "char": "烟",
+          "pinyin": "yān",
+          "polyphone": false
+        },
+        {
+          "char": "遥",
+          "pinyin": "yáo",
+          "polyphone": false
+        }
+      ],
+      "pinyin_line": "dEng tWng yU jKn yM qiYng cRng pM bM lP zJ yQn yWo",
+      "hanzi_line": "7    登 唐 依 尽 欲 穷 层 瀑 布 炉 紫 烟 遥",
+      "unit": {
+        "toc_id": "b21-toc-0019",
+        "toc_kind": "lesson",
+        "toc_index": 13,
+        "unit_type": "lesson",
+        "lesson": "7",
+        "garden_cn": null,
+        "title": "古诗二首",
+        "label": "7 古诗二首"
+      }
+    },
+    {
+      "section": "阅读",
+      "lesson": "8",
+      "garden": null,
+      "chars": [
+        {
+          "char": "闻",
+          "pinyin": "wén",
+          "polyphone": false
+        },
+        {
+          "char": "景",
+          "pinyin": "jǐng",
+          "polyphone": false
+        },
+        {
+          "char": "区",
+          "pinyin": "qū",
+          "polyphone": false
+        },
+        {
+          "char": "省",
+          "pinyin": "shěng",
+          "polyphone": false
+        },
+        {
+          "char": "秀",
+          "pinyin": "xiù",
+          "polyphone": false
+        },
+        {
+          "char": "神",
+          "pinyin": "shén",
+          "polyphone": false
+        },
+        {
+          "char": "仙",
+          "pinyin": "xiān",
+          "polyphone": false
+        },
+        {
+          "char": "盘",
+          "pinyin": "pán",
+          "polyphone": false
+        },
+        {
+          "char": "指",
+          "pinyin": "zhǐ",
+          "polyphone": false
+        },
+        {
+          "char": "巨",
+          "pinyin": "jù",
+          "polyphone": false
+        },
+        {
+          "char": "伸",
+          "pinyin": "shēn",
+          "polyphone": false
+        },
+        {
+          "char": "都",
+          "pinyin": "dū",
+          "polyphone": false
+        },
+        {
+          "char": "著",
+          "pinyin": "zhù",
+          "polyphone": false
+        },
+        {
+          "char": "抢",
+          "pinyin": "qiǎng",
+          "polyphone": false
+        },
+        {
+          "char": "状",
+          "pinyin": "zhuàng",
+          "polyphone": false
+        },
+        {
+          "char": "岩",
+          "pinyin": "yán",
+          "polyphone": false
+        }
+      ],
+      "pinyin_line": "wRn jJng qO shDng xiM shRn xiQn pWn zhJ jM shEn dO zhM qiAng zhuSng yWn",
+      "hanzi_line": "8    闻 景 区 省 秀 神 仙 盘 指 巨 伸 都 著\n          抢 状 岩",
+      "unit": {
+        "toc_id": "b21-toc-0022",
+        "toc_kind": "lesson",
+        "toc_index": 14,
+        "unit_type": "lesson",
+        "lesson": "8",
+        "garden_cn": null,
+        "title": "黄山奇石",
+        "label": "8 黄山奇石"
+      }
+    },
+    {
+      "section": "阅读",
+      "lesson": "9",
+      "garden": null,
+      "chars": [
+        {
+          "char": "潭",
+          "pinyin": "tán",
+          "polyphone": false
+        },
+        {
+          "char": "茂",
+          "pinyin": "mào",
+          "polyphone": false
+        },
+        {
+          "char": "盛",
+          "pinyin": "shèng",
+          "polyphone": false
+        },
+        {
+          "char": "胜",
+          "pinyin": "shèng",
+          "polyphone": false
+        },
+        {
+          "char": "央",
+          "pinyin": "yāng",
+          "polyphone": false
+        },
+        {
+          "char": "岛",
+          "pinyin": "dǎo",
+          "polyphone": false
+        },
+        {
+          "char": "隐",
+          "pinyin": "yǐn",
+          "polyphone": false
+        },
+        {
+          "char": "约",
+          "pinyin": "yuē",
+          "polyphone": false
+        },
+        {
+          "char": "倒",
+          "pinyin": "dào",
+          "polyphone": false
+        },
+        {
+          "char": "映",
+          "pinyin": "yìng",
+          "polyphone": false
+        },
+        {
+          "char": "整",
+          "pinyin": "zhěng",
+          "polyphone": false
+        },
+        {
+          "char": "童",
+          "pinyin": "tóng",
+          "polyphone": false
+        },
+        {
+          "char": "吸",
+          "pinyin": "xī",
+          "polyphone": false
+        },
+        {
+          "char": "引",
+          "pinyin": "yǐn",
+          "polyphone": false
+        },
+        {
+          "char": "客",
+          "pinyin": "kè",
+          "polyphone": false
+        }
+      ],
+      "pinyin_line": "tWn mSo shFng shFng yQng dAo yJn yuE dSo yKng zhDng tYng xU yJn kF",
+      "hanzi_line": "      9   潭 茂 盛 胜 央 岛 隐 约 倒 映 整 童 吸\n          引 客",
+      "unit": {
+        "toc_id": "b21-toc-0023",
+        "toc_kind": "lesson",
+        "toc_index": 15,
+        "unit_type": "lesson",
+        "lesson": "9",
+        "garden_cn": null,
+        "title": "日月潭",
+        "label": "9 日月潭"
+      }
+    },
+    {
+      "section": "阅读",
+      "lesson": "10",
+      "garden": null,
+      "chars": [
+        {
+          "char": "葡",
+          "pinyin": "pú",
+          "polyphone": false
+        },
+        {
+          "char": "萄",
+          "pinyin": "táo",
+          "polyphone": false
+        },
+        {
+          "char": "沟",
+          "pinyin": "gōu",
+          "polyphone": false
+        },
+        {
+          "char": "坡",
+          "pinyin": "pō",
+          "polyphone": false
+        },
+        {
+          "char": "密",
+          "pinyin": "mì",
+          "polyphone": false
+        },
+        {
+          "char": "枝",
+          "pinyin": "zhī",
+          "polyphone": false
+        },
+        {
+          "char": "淡",
+          "pinyin": "dàn",
+          "polyphone": false
+        },
+        {
+          "char": "好",
+          "pinyin": "hào",
+          "polyphone": false
+        },
+        {
+          "char": "族",
+          "pinyin": "zú",
+          "polyphone": false
+        },
+        {
+          "char": "够",
+          "pinyin": "gòu",
+          "polyphone": false
+        },
+        {
+          "char": "收",
+          "pinyin": "shōu",
+          "polyphone": false
+        },
+        {
+          "char": "市",
+          "pinyin": "shì",
+          "polyphone": false
+        },
+        {
+          "char": "干",
+          "pinyin": "gān",
+          "polyphone": false
+        },
+        {
+          "char": "钉",
+          "pinyin": "dìng",
+          "polyphone": false
+        },
+        {
+          "char": "分",
+          "pinyin": "fèn",
+          "polyphone": false
+        },
+        {
+          "char": "颜",
+          "pinyin": "yán",
+          "polyphone": false
+        },
+        {
+          "char": "味",
+          "pinyin": "wèi",
+          "polyphone": false
+        }
+      ],
+      "pinyin_line": "pP tWo gTu pT mK zhU dSn hSo zP gHu shTu shK gQn dKng fFn yWn wFi",
+      "hanzi_line": "      10 葡 萄 沟 坡 密 枝 淡 好 族 够 收 市 干\n          钉 分 颜 味",
+      "unit": {
+        "toc_id": "b21-toc-0024",
+        "toc_kind": "lesson",
+        "toc_index": 16,
+        "unit_type": "lesson",
+        "lesson": "10",
+        "garden_cn": null,
+        "title": "葡萄沟",
+        "label": "10 葡萄沟"
+      }
+    },
+    {
+      "section": "阅读",
+      "lesson": null,
+      "garden": "四",
+      "chars": [
+        {
+          "char": "订",
+          "pinyin": "dìng",
+          "polyphone": false
+        },
+        {
+          "char": "效",
+          "pinyin": "xiào",
+          "polyphone": false
+        },
+        {
+          "char": "丰",
+          "pinyin": "fēng",
+          "polyphone": false
+        },
+        {
+          "char": "昌",
+          "pinyin": "chāng",
+          "polyphone": false
+        },
+        {
+          "char": "付",
+          "pinyin": "fù",
+          "polyphone": false
+        },
+        {
+          "char": "卧",
+          "pinyin": "wò",
+          "polyphone": false
+        },
+        {
+          "char": "铺",
+          "pinyin": "pù",
+          "polyphone": false
+        },
+        {
+          "char": "改",
+          "pinyin": "gǎi",
+          "polyphone": false
+        },
+        {
+          "char": "签",
+          "pinyin": "qiān",
+          "polyphone": false
+        },
+        {
+          "char": "退",
+          "pinyin": "tuì",
+          "polyphone": false
+        },
+        {
+          "char": "更",
+          "pinyin": "gēng",
+          "polyphone": false
+        },
+        {
+          "char": "维",
+          "pinyin": "wéi",
+          "polyphone": false
+        },
+        {
+          "char": "码",
+          "pinyin": "mǎ",
+          "polyphone": false
+        }
+      ],
+      "pinyin_line": "dKng xiSo fEng chQng fM wH pM gAi qiQn tuK gEng wRi mA",
+      "hanzi_line": "      语文园地四              订 效 丰 昌 付 卧 铺 改 签 退 更\n          维 码",
+      "unit": {
+        "toc_id": "b21-toc-0025",
+        "toc_kind": "garden",
+        "toc_index": 17,
+        "unit_type": "garden",
+        "lesson": null,
+        "garden_cn": "四",
+        "title": null,
+        "label": "语文园地四"
+      }
+    },
+    {
+      "section": "阅读",
+      "lesson": "11",
+      "garden": null,
+      "chars": [
+        {
+          "char": "观",
+          "pinyin": "guān",
+          "polyphone": false
+        },
+        {
+          "char": "沿",
+          "pinyin": "yán",
+          "polyphone": false
+        },
+        {
+          "char": "渴",
+          "pinyin": "kě",
+          "polyphone": false
+        },
+        {
+          "char": "话",
+          "pinyin": "huà",
+          "polyphone": false
+        },
+        {
+          "char": "弄",
+          "pinyin": "nòng",
+          "polyphone": false
+        },
+        {
+          "char": "错",
+          "pinyin": "cuò",
+          "polyphone": false
+        },
+        {
+          "char": "际",
+          "pinyin": "jì",
+          "polyphone": false
+        },
+        {
+          "char": "抬",
+          "pinyin": "tái",
+          "polyphone": false
+        },
+        {
+          "char": "信",
+          "pinyin": "xìn",
+          "polyphone": false
+        }
+      ],
+      "pinyin_line": "guQn yWn kD huS nHng cuH jK tWi xKn",
+      "hanzi_line": "      11 观 沿 渴 话 弄 错 际 抬 信",
+      "unit": {
+        "toc_id": "b21-toc-0027",
+        "toc_kind": "lesson",
+        "toc_index": 18,
+        "unit_type": "lesson",
+        "lesson": "11",
+        "garden_cn": null,
+        "title": "坐井观天",
+        "label": "11 坐井观天"
+      }
+    },
+    {
+      "section": "阅读",
+      "lesson": "12",
+      "garden": null,
+      "chars": [
+        {
+          "char": "号",
+          "pinyin": "háo",
+          "polyphone": false
+        },
+        {
+          "char": "当",
+          "pinyin": "dàng",
+          "polyphone": false
+        },
+        {
+          "char": "鹊",
+          "pinyin": "què",
+          "polyphone": false
+        },
+        {
+          "char": "寻",
+          "pinyin": "xún",
+          "polyphone": false
+        },
+        {
+          "char": "枯",
+          "pinyin": "kū",
+          "polyphone": false
+        },
+        {
+          "char": "却",
+          "pinyin": "què",
+          "polyphone": false
+        },
+        {
+          "char": "劝",
+          "pinyin": "quàn",
+          "polyphone": false
+        },
+        {
+          "char": "刮",
+          "pinyin": "guā",
+          "polyphone": false
+        },
+        {
+          "char": "死",
+          "pinyin": "sǐ",
+          "polyphone": false
+        },
+        {
+          "char": "将",
+          "pinyin": "jiāng",
+          "polyphone": false
+        },
+        {
+          "char": "且",
+          "pinyin": "qiě",
+          "polyphone": false
+        },
+        {
+          "char": "狂",
+          "pinyin": "kuáng",
+          "polyphone": false
+        },
+        {
+          "char": "冷",
+          "pinyin": "lěng",
+          "polyphone": false
+        },
+        {
+          "char": "重",
+          "pinyin": "chóng",
+          "polyphone": false
+        },
+        {
+          "char": "复",
+          "pinyin": "fù",
+          "polyphone": false
+        },
+        {
+          "char": "哀",
+          "pinyin": "āi",
+          "polyphone": false
+        },
+        {
+          "char": "唤",
+          "pinyin": "huàn",
+          "polyphone": false
+        }
+      ],
+      "pinyin_line": "hWo dSng quF xPn kO quF quSn guQ sJ jiQng qiD kuWng lDng chYng fM Qi huSn",
+      "hanzi_line": "      12 号 当 鹊 寻 枯 却 劝 刮 死 将 且 狂 冷\n          重 复 哀 唤",
+      "unit": {
+        "toc_id": "b21-toc-0028",
+        "toc_kind": "lesson",
+        "toc_index": 19,
+        "unit_type": "lesson",
+        "lesson": "12",
+        "garden_cn": null,
+        "title": "寒号鸟",
+        "label": "12 寒号鸟"
+      }
+    },
+    {
+      "section": "阅读",
+      "lesson": "13",
+      "garden": null,
+      "chars": [
+        {
+          "char": "葫",
+          "pinyin": "hú",
+          "polyphone": false
+        },
+        {
+          "char": "芦",
+          "pinyin": "lú",
+          "polyphone": false
+        },
+        {
+          "char": "谢",
+          "pinyin": "xiè",
+          "polyphone": false
+        },
+        {
+          "char": "以",
+          "pinyin": "yǐ",
+          "polyphone": false
+        },
+        {
+          "char": "盯",
+          "pinyin": "dīng",
+          "polyphone": false
+        },
+        {
+          "char": "赛",
+          "pinyin": "sài",
+          "polyphone": false
+        },
+        {
+          "char": "怪",
+          "pinyin": "guài",
+          "polyphone": false
+        },
+        {
+          "char": "慢",
+          "pinyin": "màn",
+          "polyphone": false
+        }
+      ],
+      "pinyin_line": "hP lP xiF yJ dUng sSi guSi mSn",
+      "hanzi_line": "      13 葫 芦 谢 以 盯 赛 怪 慢",
+      "unit": {
+        "toc_id": "b21-toc-0029",
+        "toc_kind": "lesson",
+        "toc_index": 20,
+        "unit_type": "lesson",
+        "lesson": "13",
+        "garden_cn": null,
+        "title": "我要的是葫芦",
+        "label": "13 我要的是葫芦"
+      }
+    },
+    {
+      "section": "阅读",
+      "lesson": null,
+      "garden": "五",
+      "chars": [
+        {
+          "char": "轿",
+          "pinyin": "jiào",
+          "polyphone": false
+        },
+        {
+          "char": "救",
+          "pinyin": "jiù",
+          "polyphone": false
+        },
+        {
+          "char": "摩",
+          "pinyin": "mó",
+          "polyphone": false
+        },
+        {
+          "char": "托",
+          "pinyin": "tuō",
+          "polyphone": false
+        },
+        {
+          "char": "防",
+          "pinyin": "fáng",
+          "polyphone": false
+        },
+        {
+          "char": "渔",
+          "pinyin": "yú",
+          "polyphone": false
+        },
+        {
+          "char": "货",
+          "pinyin": "huò",
+          "polyphone": false
+        },
+        {
+          "char": "科",
+          "pinyin": "kē",
+          "polyphone": false
+        },
+        {
+          "char": "考",
+          "pinyin": "kǎo",
+          "polyphone": false
+        },
+        {
+          "char": "察",
+          "pinyin": "chá",
+          "polyphone": false
+        }
+      ],
+      "pinyin_line": "jiSo jiM mY tuT fWng yP huH kE kAo chW",
+      "hanzi_line": "      语文园地五              轿 救 摩 托 防 渔 货 科 考 察",
+      "unit": {
+        "toc_id": "b21-toc-0030",
+        "toc_kind": "garden",
+        "toc_index": 21,
+        "unit_type": "garden",
+        "lesson": null,
+        "garden_cn": "五",
+        "title": null,
+        "label": "语文园地五"
+      }
+    },
+    {
+      "section": "阅读",
+      "lesson": "14",
+      "garden": null,
+      "chars": [
+        {
+          "char": "楼",
+          "pinyin": "lóu",
+          "polyphone": false
+        },
+        {
+          "char": "艰",
+          "pinyin": "jiān",
+          "polyphone": false
+        },
+        {
+          "char": "斗",
+          "pinyin": "dòu",
+          "polyphone": false
+        },
+        {
+          "char": "代",
+          "pinyin": "dài",
+          "polyphone": false
+        },
+        {
+          "char": "临",
+          "pinyin": "lín",
+          "polyphone": false
+        },
+        {
+          "char": "腊",
+          "pinyin": "là",
+          "polyphone": false
+        },
+        {
+          "char": "军",
+          "pinyin": "jūn",
+          "polyphone": false
+        },
+        {
+          "char": "薄",
+          "pinyin": "báo",
+          "polyphone": false
+        },
+        {
+          "char": "章",
+          "pinyin": "zhāng",
+          "polyphone": false
+        },
+        {
+          "char": "握",
+          "pinyin": "wò",
+          "polyphone": false
+        },
+        {
+          "char": "凝",
+          "pinyin": "níng",
+          "polyphone": false
+        },
+        {
+          "char": "觉",
+          "pinyin": "jué",
+          "polyphone": false
+        },
+        {
+          "char": "油",
+          "pinyin": "yóu",
+          "polyphone": false
+        },
+        {
+          "char": "辉",
+          "pinyin": "huī",
+          "polyphone": false
+        },
+        {
+          "char": "革",
+          "pinyin": "gé",
+          "polyphone": false
+        },
+        {
+          "char": "命",
+          "pinyin": "mìng",
+          "polyphone": false
+        },
+        {
+          "char": "利",
+          "pinyin": "lì",
+          "polyphone": false
+        }
+      ],
+      "pinyin_line": "lYu jiQn dHu dSi lIn lS jOn bWo zhQng wH nIng juR yYu huU gR mKng lK",
+      "hanzi_line": "      14 楼 艰 斗 代 临 腊 军 薄 章 握 凝 觉 油\n          辉 革 命 利",
+      "unit": {
+        "toc_id": "b21-toc-0032",
+        "toc_kind": "lesson",
+        "toc_index": 22,
+        "unit_type": "lesson",
+        "lesson": "14",
+        "garden_cn": null,
+        "title": "八角楼上",
+        "label": "14 八角楼上"
+      }
+    },
+    {
+      "section": "阅读",
+      "lesson": "15",
+      "garden": null,
+      "chars": [
+        {
+          "char": "朱",
+          "pinyin": "zhū",
+          "polyphone": false
+        },
+        {
+          "char": "德",
+          "pinyin": "dé",
+          "polyphone": false
+        },
+        {
+          "char": "扁",
+          "pinyin": "biǎn",
+          "polyphone": false
+        },
+        {
+          "char": "担",
+          "pinyin": "dàn",
+          "polyphone": false
+        },
+        {
+          "char": "同",
+          "pinyin": "tóng",
+          "polyphone": false
+        },
+        {
+          "char": "志",
+          "pinyin": "zhì",
+          "polyphone": false
+        },
+        {
+          "char": "伍",
+          "pinyin": "wǔ",
+          "polyphone": false
+        },
+        {
+          "char": "敌",
+          "pinyin": "dí",
+          "polyphone": false
+        },
+        {
+          "char": "根",
+          "pinyin": "gēn",
+          "polyphone": false
+        },
+        {
+          "char": "据",
+          "pinyin": "jù",
+          "polyphone": false
+        },
+        {
+          "char": "抽",
+          "pinyin": "chōu",
+          "polyphone": false
+        },
+        {
+          "char": "陡",
+          "pinyin": "dǒu",
+          "polyphone": false
+        },
+        {
+          "char": "鞋",
+          "pinyin": "xié",
+          "polyphone": false
+        },
+        {
+          "char": "疼",
+          "pinyin": "téng",
+          "polyphone": false
+        },
+        {
+          "char": "敬",
+          "pinyin": "jìng",
+          "polyphone": false
+        }
+      ],
+      "pinyin_line": "zhO dR biAn dSn tYng zhK wL dI gEn jM chTu dGu xiR tRng jKng",
+      "hanzi_line": "      15 朱 德 扁 担 同 志 伍 敌 根 据 抽 陡 鞋\n  疼 敬",
+      "unit": {
+        "toc_id": "b21-toc-0033",
+        "toc_kind": "lesson",
+        "toc_index": 23,
+        "unit_type": "lesson",
+        "lesson": "15",
+        "garden_cn": null,
+        "title": "朱德的扁担",
+        "label": "15 朱德的扁担"
+      }
+    },
+    {
+      "section": "阅读",
+      "lesson": "16",
+      "garden": null,
+      "chars": [
+        {
+          "char": "泼",
+          "pinyin": "pō",
+          "polyphone": false
+        },
+        {
+          "char": "民",
+          "pinyin": "mín",
+          "polyphone": false
+        },
+        {
+          "char": "度",
+          "pinyin": "dù",
+          "polyphone": false
+        },
+        {
+          "char": "特",
+          "pinyin": "tè",
+          "polyphone": false
+        },
+        {
+          "char": "周",
+          "pinyin": "zhōu",
+          "polyphone": false
+        },
+        {
+          "char": "恩",
+          "pinyin": "ēn",
+          "polyphone": false
+        },
+        {
+          "char": "敲",
+          "pinyin": "qiāo",
+          "polyphone": false
+        },
+        {
+          "char": "铺",
+          "pinyin": "pū",
+          "polyphone": false
+        },
+        {
+          "char": "龙",
+          "pinyin": "lóng",
+          "polyphone": false
+        },
+        {
+          "char": "串",
+          "pinyin": "chuàn",
+          "polyphone": false
+        },
+        {
+          "char": "容",
+          "pinyin": "róng",
+          "polyphone": false
+        },
+        {
+          "char": "踩",
+          "pinyin": "cǎi",
+          "polyphone": false
+        },
+        {
+          "char": "始",
+          "pinyin": "shǐ",
+          "polyphone": false
+        },
+        {
+          "char": "盛",
+          "pinyin": "chéng",
+          "polyphone": false
+        },
+        {
+          "char": "碗",
+          "pinyin": "wǎn",
+          "polyphone": false
+        },
+        {
+          "char": "祝",
+          "pinyin": "zhù",
+          "polyphone": false
+        },
+        {
+          "char": "寿",
+          "pinyin": "shòu",
+          "polyphone": false
+        }
+      ],
+      "pinyin_line": "pT mIn dM tF zhTu En qiQo pO lYng chuSn rYng cAi shJ chRng wAn zhM shHu",
+      "hanzi_line": "16 泼 民 度 特 周 恩 敲 铺 龙 串 容 踩 始\n  盛 碗 祝 寿",
+      "unit": {
+        "toc_id": "b21-toc-0034",
+        "toc_kind": "lesson",
+        "toc_index": 24,
+        "unit_type": "lesson",
+        "lesson": "16",
+        "garden_cn": null,
+        "title": "难忘的泼水节",
+        "label": "16 难忘的泼水节"
+      }
+    },
+    {
+      "section": "阅读",
+      "lesson": "17",
+      "garden": null,
+      "chars": [
+        {
+          "char": "刘",
+          "pinyin": "liú",
+          "polyphone": false
+        },
+        {
+          "char": "兰",
+          "pinyin": "lán",
+          "polyphone": false
+        },
+        {
+          "char": "派",
+          "pinyin": "pài",
+          "polyphone": false
+        },
+        {
+          "char": "由",
+          "pinyin": "yóu",
+          "polyphone": false
+        },
+        {
+          "char": "于",
+          "pinyin": "yú",
+          "polyphone": false
+        },
+        {
+          "char": "卖",
+          "pinyin": "mài",
+          "polyphone": false
+        },
+        {
+          "char": "员",
+          "pinyin": "yuán",
+          "polyphone": false
+        },
+        {
+          "char": "捕",
+          "pinyin": "bǔ",
+          "polyphone": false
+        },
+        {
+          "char": "买",
+          "pinyin": "mǎi",
+          "polyphone": false
+        },
+        {
+          "char": "似",
+          "pinyin": "shì",
+          "polyphone": false
+        },
+        {
+          "char": "踏",
+          "pinyin": "tà",
+          "polyphone": false
+        },
+        {
+          "char": "烈",
+          "pinyin": "liè",
+          "polyphone": false
+        },
+        {
+          "char": "荣",
+          "pinyin": "róng",
+          "polyphone": false
+        },
+        {
+          "char": "岁",
+          "pinyin": "suì",
+          "polyphone": false
+        },
+        {
+          "char": "题",
+          "pinyin": "tí",
+          "polyphone": false
+        }
+      ],
+      "pinyin_line": "liP lWn pSi yYu yP mSi yuWn bL mAi shK tS liF rYng suK tI",
+      "hanzi_line": "17 刘 兰 派 由 于 卖 员 捕 买 似 踏 烈 荣\n  岁 题",
+      "unit": {
+        "toc_id": "b21-toc-0035",
+        "toc_kind": "lesson",
+        "toc_index": 25,
+        "unit_type": "lesson",
+        "lesson": "17",
+        "garden_cn": null,
+        "title": "刘胡兰",
+        "label": "17 刘胡兰"
+      }
+    },
+    {
+      "section": "阅读",
+      "lesson": null,
+      "garden": "六",
+      "chars": [
+        {
+          "char": "锋",
+          "pinyin": "fēng",
+          "polyphone": false
+        },
+        {
+          "char": "蜜",
+          "pinyin": "mì",
+          "polyphone": false
+        },
+        {
+          "char": "峰",
+          "pinyin": "fēng",
+          "polyphone": false
+        },
+        {
+          "char": "蜂",
+          "pinyin": "fēng",
+          "polyphone": false
+        },
+        {
+          "char": "爆",
+          "pinyin": "bào",
+          "polyphone": false
+        },
+        {
+          "char": "争",
+          "pinyin": "zhēng",
+          "polyphone": false
+        },
+        {
+          "char": "抄",
+          "pinyin": "chāo",
+          "polyphone": false
+        },
+        {
+          "char": "炒",
+          "pinyin": "chǎo",
+          "polyphone": false
+        },
+        {
+          "char": "幕",
+          "pinyin": "mù",
+          "polyphone": false
+        },
+        {
+          "char": "墓",
+          "pinyin": "mù",
+          "polyphone": false
+        },
+        {
+          "char": "慕",
+          "pinyin": "mù",
+          "polyphone": false
+        }
+      ],
+      "pinyin_line": "fEng mK fEng fEng bSo zhEng chQo chAo mM mM mM",
+      "hanzi_line": "语文园地六            锋 蜜 峰 蜂 爆 争 抄 炒 幕 墓 慕",
+      "unit": {
+        "toc_id": "b21-toc-0036",
+        "toc_kind": "garden",
+        "toc_index": 26,
+        "unit_type": "garden",
+        "lesson": null,
+        "garden_cn": "六",
+        "title": null,
+        "label": "语文园地六"
+      }
+    },
+    {
+      "section": "阅读",
+      "lesson": "18",
+      "garden": null,
+      "chars": [
+        {
+          "char": "绝",
+          "pinyin": "jué",
+          "polyphone": false
+        },
+        {
+          "char": "径",
+          "pinyin": "jìng",
+          "polyphone": false
+        },
+        {
+          "char": "踪",
+          "pinyin": "zōng",
+          "polyphone": false
+        },
+        {
+          "char": "灭",
+          "pinyin": "miè",
+          "polyphone": false
+        },
+        {
+          "char": "舟",
+          "pinyin": "zhōu",
+          "polyphone": false
+        },
+        {
+          "char": "钓",
+          "pinyin": "diào",
+          "polyphone": false
+        },
+        {
+          "char": "似",
+          "pinyin": "sì",
+          "polyphone": false
+        },
+        {
+          "char": "庐",
+          "pinyin": "lú",
+          "polyphone": false
+        },
+        {
+          "char": "笼",
+          "pinyin": "lǒng",
+          "polyphone": false
+        },
+        {
+          "char": "盖",
+          "pinyin": "gài",
+          "polyphone": false
+        },
+        {
+          "char": "苍",
+          "pinyin": "cāng",
+          "polyphone": false
+        },
+        {
+          "char": "茫",
+          "pinyin": "máng",
+          "polyphone": false
+        }
+      ],
+      "pinyin_line": "juR jKng zTng miF zhTu diSo sK lP lGng gSi cQng mWng",
+      "hanzi_line": "18 绝 径 踪 灭 舟 钓 似 庐 笼 盖 苍 茫",
+      "unit": {
+        "toc_id": "b21-toc-0038",
+        "toc_kind": "lesson",
+        "toc_index": 27,
+        "unit_type": "lesson",
+        "lesson": "18",
+        "garden_cn": null,
+        "title": "古诗二首",
+        "label": "18 古诗二首"
+      }
+    },
+    {
+      "section": "阅读",
+      "lesson": "19",
+      "garden": null,
+      "chars": [
+        {
+          "char": "论",
+          "pinyin": "lùn",
+          "polyphone": false
+        },
+        {
+          "char": "暗",
+          "pinyin": "àn",
+          "polyphone": false
+        },
+        {
+          "char": "岸",
+          "pinyin": "àn",
+          "polyphone": false
+        },
+        {
+          "char": "街",
+          "pinyin": "jiē",
+          "polyphone": false
+        },
+        {
+          "char": "梁",
+          "pinyin": "liáng",
+          "polyphone": false
+        },
+        {
+          "char": "甚",
+          "pinyin": "shèn",
+          "polyphone": false
+        },
+        {
+          "char": "至",
+          "pinyin": "zhì",
+          "polyphone": false
+        },
+        {
+          "char": "切",
+          "pinyin": "qiè",
+          "polyphone": false
+        },
+        {
+          "char": "躲",
+          "pinyin": "duǒ",
+          "polyphone": false
+        },
+        {
+          "char": "该",
+          "pinyin": "gāi",
+          "polyphone": false
+        },
+        {
+          "char": "悠",
+          "pinyin": "yōu",
+          "polyphone": false
+        },
+        {
+          "char": "闲",
+          "pinyin": "xián",
+          "polyphone": false
+        },
+        {
+          "char": "散",
+          "pinyin": "sàn",
+          "polyphone": false
+        },
+        {
+          "char": "失",
+          "pinyin": "shī",
+          "polyphone": false
+        }
+      ],
+      "pinyin_line": "lMn Sn Sn jiE liWng shFn zhK qiF duG gQi yTu xiWn sSn shU",
+      "hanzi_line": "19 论 暗 岸 街 梁 甚 至 切 躲 该 悠 闲 散\n  失",
+      "unit": {
+        "toc_id": "b21-toc-0041",
+        "toc_kind": "lesson",
+        "toc_index": 28,
+        "unit_type": "lesson",
+        "lesson": "19",
+        "garden_cn": null,
+        "title": "雾在哪里",
+        "label": "19 雾在哪里"
+      }
+    },
+    {
+      "section": "阅读",
+      "lesson": "20",
+      "garden": null,
+      "chars": [
+        {
+          "char": "堆",
+          "pinyin": "duī",
+          "polyphone": false
+        },
+        {
+          "char": "累",
+          "pinyin": "lèi",
+          "polyphone": false
+        },
+        {
+          "char": "添",
+          "pinyin": "tiān",
+          "polyphone": false
+        },
+        {
+          "char": "柴",
+          "pinyin": "chái",
+          "polyphone": false
+        },
+        {
+          "char": "烧",
+          "pinyin": "shāo",
+          "polyphone": false
+        },
+        {
+          "char": "旺",
+          "pinyin": "wàng",
+          "polyphone": false
+        },
+        {
+          "char": "闭",
+          "pinyin": "bì",
+          "polyphone": false
+        },
+        {
+          "char": "哎",
+          "pinyin": "āi",
+          "polyphone": false
+        },
+        {
+          "char": "旁",
+          "pinyin": "páng",
+          "polyphone": false
+        },
+        {
+          "char": "冲",
+          "pinyin": "chōng",
+          "polyphone": false
+        },
+        {
+          "char": "哇",
+          "pinyin": "wa",
+          "polyphone": false
+        },
+        {
+          "char": "终",
+          "pinyin": "zhōng",
+          "polyphone": false
+        },
+        {
+          "char": "浑",
+          "pinyin": "hún",
+          "polyphone": false
+        },
+        {
+          "char": "淋",
+          "pinyin": "lín",
+          "polyphone": false
+        },
+        {
+          "char": "晒",
+          "pinyin": "shài",
+          "polyphone": false
+        }
+      ],
+      "pinyin_line": "duU lFi tiQn chWi shQo wSng bK Qi pWng chTng wa zhTng hPn lIn shSi",
+      "hanzi_line": "20 堆 累 添 柴 烧 旺 闭 哎 旁 冲 哇 终 浑\n  淋 晒",
+      "unit": {
+        "toc_id": "b21-toc-0042",
+        "toc_kind": "lesson",
+        "toc_index": 29,
+        "unit_type": "lesson",
+        "lesson": "20",
+        "garden_cn": null,
+        "title": "雪孩子",
+        "label": "20 雪孩子"
+      }
+    },
+    {
+      "section": "阅读",
+      "lesson": null,
+      "garden": "七",
+      "chars": [
+        {
+          "char": "漱",
+          "pinyin": "shù",
+          "polyphone": false
+        },
+        {
+          "char": "饿",
+          "pinyin": "è",
+          "polyphone": false
+        },
+        {
+          "char": "沼",
+          "pinyin": "zhǎo",
+          "polyphone": false
+        },
+        {
+          "char": "泽",
+          "pinyin": "zé",
+          "polyphone": false
+        },
+        {
+          "char": "宁",
+          "pinyin": "níng",
+          "polyphone": false
+        },
+        {
+          "char": "杠",
+          "pinyin": "gàng",
+          "polyphone": false
+        },
+        {
+          "char": "杆",
+          "pinyin": "gǎn",
+          "polyphone": false
+        },
+        {
+          "char": "栋",
+          "pinyin": "dòng",
+          "polyphone": false
+        },
+        {
+          "char": "库",
+          "pinyin": "kù",
+          "polyphone": false
+        },
+        {
+          "char": "闸",
+          "pinyin": "zhá",
+          "polyphone": false
+        },
+        {
+          "char": "羔",
+          "pinyin": "gāo",
+          "polyphone": false
+        },
+        {
+          "char": "蝗",
+          "pinyin": "huáng",
+          "polyphone": false
+        }
+      ],
+      "pinyin_line": "shM F zhAo zR nIng gSng gAn dHng kM zhW gQo huWng",
+      "hanzi_line": "语文园地七            漱 饿 沼 泽 宁 杠 杆 栋 库 闸 羔\n  蝗",
+      "unit": {
+        "toc_id": "b21-toc-0043",
+        "toc_kind": "garden",
+        "toc_index": 30,
+        "unit_type": "garden",
+        "lesson": null,
+        "garden_cn": "七",
+        "title": null,
+        "label": "语文园地七"
+      }
+    },
+    {
+      "section": "阅读",
+      "lesson": "21",
+      "garden": null,
+      "chars": [
+        {
+          "char": "称",
+          "pinyin": "chēng",
+          "polyphone": false
+        },
+        {
+          "char": "赞",
+          "pinyin": "zàn",
+          "polyphone": false
+        },
+        {
+          "char": "刺",
+          "pinyin": "cì",
+          "polyphone": false
+        },
+        {
+          "char": "猬",
+          "pinyin": "wèi",
+          "polyphone": false
+        },
+        {
+          "char": "板",
+          "pinyin": "bǎn",
+          "polyphone": false
+        },
+        {
+          "char": "凳",
+          "pinyin": "dèng",
+          "polyphone": false
+        },
+        {
+          "char": "但",
+          "pinyin": "dàn",
+          "polyphone": false
+        },
+        {
+          "char": "极",
+          "pinyin": "jí",
+          "polyphone": false
+        },
+        {
+          "char": "傍",
+          "pinyin": "bàng",
+          "polyphone": false
+        },
+        {
+          "char": "苹",
+          "pinyin": "píng",
+          "polyphone": false
+        },
+        {
+          "char": "泄",
+          "pinyin": "xiè",
+          "polyphone": false
+        },
+        {
+          "char": "接",
+          "pinyin": "jiē",
+          "polyphone": false
+        },
+        {
+          "char": "除",
+          "pinyin": "chú",
+          "polyphone": false
+        },
+        {
+          "char": "疲",
+          "pinyin": "pí",
+          "polyphone": false
+        },
+        {
+          "char": "劳",
+          "pinyin": "láo",
+          "polyphone": false
+        }
+      ],
+      "pinyin_line": "chEng zSn cK wFi bAn dFng dSn jI bSng pIng xiF jiE chP pI lWo",
+      "hanzi_line": "21 称 赞 刺 猬 板 凳 但 极 傍 苹 泄 接 除\n  疲 劳",
+      "unit": {
+        "toc_id": "b21-toc-0045",
+        "toc_kind": "lesson",
+        "toc_index": 31,
+        "unit_type": "lesson",
+        "lesson": "21",
+        "garden_cn": null,
+        "title": "称赞",
+        "label": "21 称赞"
+      }
+    },
+    {
+      "section": "阅读",
+      "lesson": "22",
+      "garden": null,
+      "chars": [
+        {
+          "char": "筝",
+          "pinyin": "zhēng",
+          "polyphone": false
+        },
+        {
+          "char": "鼠",
+          "pinyin": "shǔ",
+          "polyphone": false
+        },
+        {
+          "char": "折",
+          "pinyin": "zhé",
+          "polyphone": false
+        },
+        {
+          "char": "漂",
+          "pinyin": "piāo",
+          "polyphone": false
+        },
+        {
+          "char": "扎",
+          "pinyin": "zā",
+          "polyphone": false
+        },
+        {
+          "char": "乘",
+          "pinyin": "chéng",
+          "polyphone": false
+        },
+        {
+          "char": "抓",
+          "pinyin": "zhuā",
+          "polyphone": false
+        },
+        {
+          "char": "线",
+          "pinyin": "xiàn",
+          "polyphone": false
+        },
+        {
+          "char": "莓",
+          "pinyin": "méi",
+          "polyphone": false
+        },
+        {
+          "char": "俩",
+          "pinyin": "liǎ",
+          "polyphone": false
+        },
+        {
+          "char": "架",
+          "pinyin": "jià",
+          "polyphone": false
+        },
+        {
+          "char": "受",
+          "pinyin": "shòu",
+          "polyphone": false
+        },
+        {
+          "char": "愿",
+          "pinyin": "yuàn",
+          "polyphone": false
+        },
+        {
+          "char": "朝",
+          "pinyin": "cháo",
+          "polyphone": false
+        },
+        {
+          "char": "取",
+          "pinyin": "qǔ",
+          "polyphone": false
+        }
+      ],
+      "pinyin_line": "zhEng shL zhR piQo zQ chRng zhuQ xiSn mRi liA jiS shHu yuSn chWo qL",
+      "hanzi_line": "      22 筝 鼠 折 漂 扎 乘 抓 线 莓 俩 架 受 愿\n         朝 取",
+      "unit": {
+        "toc_id": "b21-toc-0046",
+        "toc_kind": "lesson",
+        "toc_index": 32,
+        "unit_type": "lesson",
+        "lesson": "22",
+        "garden_cn": null,
+        "title": "纸船和风筝",
+        "label": "22 纸船和风筝"
+      }
+    },
+    {
+      "section": "阅读",
+      "lesson": "23",
+      "garden": null,
+      "chars": [
+        {
+          "char": "撞",
+          "pinyin": "zhuàng",
+          "polyphone": false
+        },
+        {
+          "char": "怨",
+          "pinyin": "yuàn",
+          "polyphone": false
+        },
+        {
+          "char": "软",
+          "pinyin": "ruǎn",
+          "polyphone": false
+        },
+        {
+          "char": "呜",
+          "pinyin": "wū",
+          "polyphone": false
+        },
+        {
+          "char": "慈",
+          "pinyin": "cí",
+          "polyphone": false
+        },
+        {
+          "char": "祥",
+          "pinyin": "xiáng",
+          "polyphone": false
+        },
+        {
+          "char": "量",
+          "pinyin": "liàng",
+          "polyphone": false
+        },
+        {
+          "char": "跌",
+          "pinyin": "diē",
+          "polyphone": false
+        },
+        {
+          "char": "摔",
+          "pinyin": "shuāi",
+          "polyphone": false
+        },
+        {
+          "char": "擦",
+          "pinyin": "cā",
+          "polyphone": false
+        },
+        {
+          "char": "咱",
+          "pinyin": "zán",
+          "polyphone": false
+        },
+        {
+          "char": "推",
+          "pinyin": "tuī",
+          "polyphone": false
+        },
+        {
+          "char": "驶",
+          "pinyin": "shǐ",
+          "polyphone": false
+        },
+        {
+          "char": "坚",
+          "pinyin": "jiān",
+          "polyphone": false
+        },
+        {
+          "char": "硬",
+          "pinyin": "yìng",
+          "polyphone": false
+        }
+      ],
+      "pinyin_line": "zhuSng yuSn ruAn wO cI xiWng liSng diE shuQi cQ zWn tuU shJ jiQn yKng",
+      "hanzi_line": "      23 撞 怨 软 呜 慈 祥 量 跌 摔 擦 咱 推 驶\n         坚 硬",
+      "unit": {
+        "toc_id": "b21-toc-0047",
+        "toc_kind": "lesson",
+        "toc_index": 33,
+        "unit_type": "lesson",
+        "lesson": "23",
+        "garden_cn": null,
+        "title": "快乐的小河",
+        "label": "23 快乐的小河"
+      }
+    },
+    {
+      "section": "阅读",
+      "lesson": null,
+      "garden": "八",
+      "chars": [
+        {
+          "char": "狼",
+          "pinyin": "láng",
+          "polyphone": false
+        },
+        {
+          "char": "猩",
+          "pinyin": "xīng",
+          "polyphone": false
+        },
+        {
+          "char": "鹤",
+          "pinyin": "hè",
+          "polyphone": false
+        },
+        {
+          "char": "蛇",
+          "pinyin": "shé",
+          "polyphone": false
+        },
+        {
+          "char": "鸽",
+          "pinyin": "gē",
+          "polyphone": false
+        },
+        {
+          "char": "蚕",
+          "pinyin": "cán",
+          "polyphone": false
+        },
+        {
+          "char": "蚯",
+          "pinyin": "qiū",
+          "polyphone": false
+        },
+        {
+          "char": "蚓",
+          "pinyin": "yǐn",
+          "polyphone": false
+        },
+        {
+          "char": "骆",
+          "pinyin": "luò",
+          "polyphone": false
+        },
+        {
+          "char": "驼",
+          "pinyin": "tuó",
+          "polyphone": false
+        },
+        {
+          "char": "狮",
+          "pinyin": "shī",
+          "polyphone": false
+        }
+      ],
+      "pinyin_line": "lWng xUng hF shR gE cWn qiO yJn luH tuY shU",
+      "hanzi_line": "      语文园地八            狼 猩 鹤 蛇 鸽 蚕 蚯 蚓 骆 驼 狮",
+      "unit": {
+        "toc_id": "b21-toc-0048",
+        "toc_kind": "garden",
+        "toc_index": 34,
+        "unit_type": "garden",
+        "lesson": null,
+        "garden_cn": "八",
+        "title": null,
+        "label": "语文园地八"
+      }
+    }
+  ],
+  "total_note": "（共 460 个生字）",
+  "char_count_computed": 480,
+  "units_from_toc": [
+    {
+      "id": "b21-toc-0002",
+      "kind": "lesson",
+      "line": "1 小蝌蚪找妈妈 · p.1 · b21-toc-0002 · 课文 / 阅读"
+    },
+    {
+      "id": "b21-toc-0003",
+      "kind": "lesson",
+      "line": "2 我是什么 · p.5 · b21-toc-0003 · 课文 / 阅读"
+    },
+    {
+      "id": "b21-toc-0004",
+      "kind": "lesson",
+      "line": "3 植物妈妈有办法 · p.8 · b21-toc-0004 · 课文 / 阅读"
+    },
+    {
+      "id": "b21-toc-0005",
+      "kind": "garden",
+      "line": "语文园地一 · p.11 · b21-toc-0005 · 语文园地"
+    },
+    {
+      "id": "b21-toc-0006",
+      "kind": "reading_club",
+      "line": "快乐读书吧（读读童话故事） · p.15 · b21-toc-0006 · 快乐读书吧"
+    },
+    {
+      "id": "b21-toc-0008",
+      "kind": "lesson",
+      "line": "1 场景歌 · p.16 · b21-toc-0008 · 课文 / 识字"
+    },
+    {
+      "id": "b21-toc-0009",
+      "kind": "lesson",
+      "line": "2 树之歌 · p.18 · b21-toc-0009 · 课文 / 识字"
+    },
+    {
+      "id": "b21-toc-0010",
+      "kind": "lesson",
+      "line": "3 拍手歌 · p.20 · b21-toc-0010 · 课文 / 识字"
+    },
+    {
+      "id": "b21-toc-0011",
+      "kind": "lesson",
+      "line": "4 田家四季歌 · p.23 · b21-toc-0011 · 课文 / 识字"
+    },
+    {
+      "id": "b21-toc-0012",
+      "kind": "garden",
+      "line": "语文园地二 · p.25 · b21-toc-0012 · 语文园地"
+    },
+    {
+      "id": "b21-toc-0014",
+      "kind": "lesson",
+      "line": "4 彩虹 · p.28 · b21-toc-0014 · 课文 / 阅读"
+    },
+    {
+      "id": "b21-toc-0015",
+      "kind": "lesson",
+      "line": "5 去外婆家 · p.30 · b21-toc-0015 · 课文 / 阅读"
+    },
+    {
+      "id": "b21-toc-0016",
+      "kind": "lesson",
+      "line": "6 数星星的孩子 · p.32 · b21-toc-0016 · 课文 / 阅读"
+    },
+    {
+      "id": "b21-toc-0017",
+      "kind": "garden",
+      "line": "语文园地三 · p.35 · b21-toc-0017 · 语文园地"
+    },
+    {
+      "id": "b21-toc-0019",
+      "kind": "lesson",
+      "line": "7 古诗二首 · p.39 · b21-toc-0019 · 课文 / 阅读"
+    },
+    {
+      "id": "b21-toc-0020",
+      "kind": "sublesson",
+      "line": "登鹳雀楼 · p.39 · b21-toc-0020 · 课文 / 阅读"
+    },
+    {
+      "id": "b21-toc-0021",
+      "kind": "sublesson",
+      "line": "望庐山瀑布 · p.40 · b21-toc-0021 · 课文 / 阅读"
+    },
+    {
+      "id": "b21-toc-0022",
+      "kind": "lesson",
+      "line": "8 黄山奇石 · p.42 · b21-toc-0022 · 课文 / 阅读"
+    },
+    {
+      "id": "b21-toc-0023",
+      "kind": "lesson",
+      "line": "9 日月潭 · p.45 · b21-toc-0023 · 课文 / 阅读"
+    },
+    {
+      "id": "b21-toc-0024",
+      "kind": "lesson",
+      "line": "10 葡萄沟 · p.47 · b21-toc-0024 · 课文 / 阅读"
+    },
+    {
+      "id": "b21-toc-0025",
+      "kind": "garden",
+      "line": "语文园地四 · p.50 · b21-toc-0025 · 语文园地"
+    },
+    {
+      "id": "b21-toc-0027",
+      "kind": "lesson",
+      "line": "11 坐井观天 · p.54 · b21-toc-0027 · 课文 / 阅读"
+    },
+    {
+      "id": "b21-toc-0028",
+      "kind": "lesson",
+      "line": "12 寒号鸟 · p.56 · b21-toc-0028 · 课文 / 阅读"
+    },
+    {
+      "id": "b21-toc-0029",
+      "kind": "lesson",
+      "line": "13 我要的是葫芦 · p.60 · b21-toc-0029 · 课文 / 阅读"
+    },
+    {
+      "id": "b21-toc-0030",
+      "kind": "garden",
+      "line": "语文园地五 · p.63 · b21-toc-0030 · 语文园地"
+    },
+    {
+      "id": "b21-toc-0032",
+      "kind": "lesson",
+      "line": "14 八角楼上 · p.67 · b21-toc-0032 · 课文 / 阅读"
+    },
+    {
+      "id": "b21-toc-0033",
+      "kind": "lesson",
+      "line": "15 朱德的扁担 · p.69 · b21-toc-0033 · 课文 / 阅读"
+    },
+    {
+      "id": "b21-toc-0034",
+      "kind": "lesson",
+      "line": "16 难忘的泼水节 · p.72 · b21-toc-0034 · 课文 / 阅读"
+    },
+    {
+      "id": "b21-toc-0035",
+      "kind": "lesson",
+      "line": "17 刘胡兰 · p.75 · b21-toc-0035 · 课文 / 阅读"
+    },
+    {
+      "id": "b21-toc-0036",
+      "kind": "garden",
+      "line": "语文园地六 · p.78 · b21-toc-0036 · 语文园地"
+    },
+    {
+      "id": "b21-toc-0038",
+      "kind": "lesson",
+      "line": "18 古诗二首 · p.81 · b21-toc-0038 · 课文 / 阅读"
+    },
+    {
+      "id": "b21-toc-0039",
+      "kind": "sublesson",
+      "line": "江雪 · p.81 · b21-toc-0039 · 课文 / 阅读"
+    },
+    {
+      "id": "b21-toc-0040",
+      "kind": "sublesson",
+      "line": "敕勒歌 · p.82 · b21-toc-0040 · 课文 / 阅读"
+    },
+    {
+      "id": "b21-toc-0041",
+      "kind": "lesson",
+      "line": "19 雾在哪里 · p.84 · b21-toc-0041 · 课文 / 阅读"
+    },
+    {
+      "id": "b21-toc-0042",
+      "kind": "lesson",
+      "line": "20 雪孩子 · p.87 · b21-toc-0042 · 课文 / 阅读"
+    },
+    {
+      "id": "b21-toc-0043",
+      "kind": "garden",
+      "line": "语文园地七 · p.91 · b21-toc-0043 · 语文园地"
+    },
+    {
+      "id": "b21-toc-0045",
+      "kind": "lesson",
+      "line": "21 称赞 · p.95 · b21-toc-0045 · 课文 / 阅读"
+    },
+    {
+      "id": "b21-toc-0046",
+      "kind": "lesson",
+      "line": "22 纸船和风筝 · p.98 · b21-toc-0046 · 课文 / 阅读"
+    },
+    {
+      "id": "b21-toc-0047",
+      "kind": "lesson",
+      "line": "23 快乐的小河 · p.101 · b21-toc-0047 · 课文 / 阅读"
+    },
+    {
+      "id": "b21-toc-0048",
+      "kind": "garden",
+      "line": "语文园地八 · p.104 · b21-toc-0048 · 语文园地"
+    }
+  ],
+  "toc_layout_source": "output\\b21_目录.json",
+  "toc_alignment": {
+    "toc_anchor_group_count": 35,
+    "toc_assigned_count": 35,
+    "toc_layout_match_ok": true
+  },
+  "discard_log": "D:\\ah21\\textbook-parser\\output\\b21_识字表.discard.log"
+}

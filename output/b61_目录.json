@@ -1,0 +1,1454 @@
+{
+  "book_code": "b61",
+  "extractor": "目录",
+  "entries": [
+    {
+      "kind": "section",
+      "label": "第一单元",
+      "unit_type": "分组",
+      "unit_subtype": null,
+      "group_label": "第一单元",
+      "id": "b61-toc-0001"
+    },
+    {
+      "kind": "lesson",
+      "number": "1",
+      "title": "草原",
+      "page": 2,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第一单元",
+      "id": "b61-toc-0002"
+    },
+    {
+      "kind": "lesson",
+      "number": "2",
+      "title": "丁香结",
+      "page": 5,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第一单元",
+      "id": "b61-toc-0003"
+    },
+    {
+      "kind": "lesson",
+      "number": "3",
+      "title": "古诗词三首",
+      "page": 8,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第一单元",
+      "id": "b61-toc-0004"
+    },
+    {
+      "kind": "sublesson",
+      "title": "宿建德江",
+      "page": 8,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第一单元",
+      "id": "b61-toc-0005"
+    },
+    {
+      "kind": "sublesson",
+      "title": "六月二十七日望湖楼醉书",
+      "page": 8,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第一单元",
+      "id": "b61-toc-0006"
+    },
+    {
+      "kind": "sublesson",
+      "title": "西江月·夜行黄沙道中",
+      "page": 9,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第一单元",
+      "id": "b61-toc-0007"
+    },
+    {
+      "kind": "lesson",
+      "number": "4",
+      "title": "花之歌",
+      "page": 10,
+      "optional_reading": true,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第一单元",
+      "id": "b61-toc-0008"
+    },
+    {
+      "kind": "block_activity",
+      "block": "习作",
+      "title": "变形记",
+      "page": 12,
+      "unit_type": "习作",
+      "unit_subtype": null,
+      "group_label": "第一单元",
+      "id": "b61-toc-0009"
+    },
+    {
+      "kind": "garden",
+      "label": "语文园地",
+      "page": 13,
+      "unit_type": "语文园地",
+      "unit_subtype": null,
+      "group_label": "第一单元",
+      "id": "b61-toc-0010"
+    },
+    {
+      "kind": "section",
+      "label": "第二单元",
+      "unit_type": "分组",
+      "unit_subtype": null,
+      "group_label": "第二单元",
+      "id": "b61-toc-0011"
+    },
+    {
+      "kind": "lesson",
+      "number": "5",
+      "title": "七律·长征",
+      "page": 16,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第二单元",
+      "id": "b61-toc-0012"
+    },
+    {
+      "kind": "lesson",
+      "number": "6",
+      "title": "狼牙山五壮士",
+      "page": 18,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第二单元",
+      "id": "b61-toc-0013"
+    },
+    {
+      "kind": "lesson",
+      "number": "7",
+      "title": "开国大典",
+      "page": 21,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第二单元",
+      "id": "b61-toc-0014"
+    },
+    {
+      "kind": "lesson",
+      "number": "8",
+      "title": "灯光",
+      "page": 26,
+      "optional_reading": true,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第二单元",
+      "id": "b61-toc-0015"
+    },
+    {
+      "kind": "lesson",
+      "number": "9",
+      "title": "我的战友邱少云",
+      "page": 28,
+      "optional_reading": true,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第二单元",
+      "id": "b61-toc-0016"
+    },
+    {
+      "kind": "block_activity",
+      "block": "口语交际",
+      "title": "演讲",
+      "page": 31,
+      "unit_type": "口语交际",
+      "unit_subtype": null,
+      "group_label": "第二单元",
+      "id": "b61-toc-0017"
+    },
+    {
+      "kind": "block_activity",
+      "block": "习作",
+      "title": "多彩的活动",
+      "page": 32,
+      "unit_type": "习作",
+      "unit_subtype": null,
+      "group_label": "第二单元",
+      "id": "b61-toc-0018"
+    },
+    {
+      "kind": "garden",
+      "label": "语文园地",
+      "page": 33,
+      "unit_type": "语文园地",
+      "unit_subtype": null,
+      "group_label": "第二单元",
+      "id": "b61-toc-0019"
+    },
+    {
+      "kind": "section",
+      "label": "第三单元",
+      "unit_type": "分组",
+      "unit_subtype": null,
+      "group_label": "第三单元",
+      "id": "b61-toc-0020"
+    },
+    {
+      "kind": "lesson",
+      "number": "10",
+      "title": "竹节人",
+      "page": 36,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第三单元",
+      "id": "b61-toc-0021"
+    },
+    {
+      "kind": "lesson",
+      "number": "11",
+      "title": "宇宙生命之谜",
+      "page": 40,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第三单元",
+      "id": "b61-toc-0022"
+    },
+    {
+      "kind": "lesson",
+      "number": "12",
+      "title": "故宫博物院",
+      "page": 44,
+      "optional_reading": true,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第三单元",
+      "id": "b61-toc-0023"
+    },
+    {
+      "kind": "toc_belt",
+      "title": "让生活更美好",
+      "page": 50,
+      "unit_type": "习作",
+      "unit_subtype": null,
+      "group_label": "第三单元",
+      "label": "习作",
+      "id": "b61-toc-0024"
+    },
+    {
+      "kind": "garden",
+      "label": "语文园地",
+      "page": 51,
+      "unit_type": "语文园地",
+      "unit_subtype": null,
+      "group_label": "第三单元",
+      "id": "b61-toc-0025"
+    },
+    {
+      "kind": "section",
+      "label": "第四单元",
+      "unit_type": "分组",
+      "unit_subtype": null,
+      "group_label": "第四单元",
+      "id": "b61-toc-0026"
+    },
+    {
+      "kind": "lesson",
+      "number": "13",
+      "title": "桥",
+      "page": 54,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第四单元",
+      "id": "b61-toc-0027"
+    },
+    {
+      "kind": "lesson",
+      "number": "14",
+      "title": "穷人",
+      "page": 57,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第四单元",
+      "id": "b61-toc-0028"
+    },
+    {
+      "kind": "lesson",
+      "number": "15",
+      "title": "金色的鱼钩",
+      "page": 62,
+      "optional_reading": true,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第四单元",
+      "id": "b61-toc-0029"
+    },
+    {
+      "kind": "block_activity",
+      "block": "口语交际",
+      "title": "请你支持我",
+      "page": 67,
+      "unit_type": "口语交际",
+      "unit_subtype": null,
+      "group_label": "第四单元",
+      "id": "b61-toc-0030"
+    },
+    {
+      "kind": "block_activity",
+      "block": "习作",
+      "title": "笔尖流出的故事",
+      "page": 68,
+      "unit_type": "习作",
+      "unit_subtype": null,
+      "group_label": "第四单元",
+      "id": "b61-toc-0031"
+    },
+    {
+      "kind": "garden",
+      "label": "语文园地",
+      "page": 69,
+      "unit_type": "语文园地",
+      "unit_subtype": null,
+      "group_label": "第四单元",
+      "id": "b61-toc-0032"
+    },
+    {
+      "kind": "reading_club",
+      "title": "快乐读书吧",
+      "page": 71,
+      "unit_type": "快乐读书吧",
+      "unit_subtype": null,
+      "group_label": "第四单元",
+      "sublesson_title": "笑与泪，经历与成长",
+      "id": "b61-toc-0033"
+    },
+    {
+      "kind": "section",
+      "label": "第五单元",
+      "unit_type": "分组",
+      "unit_subtype": null,
+      "group_label": "第五单元",
+      "id": "b61-toc-0034"
+    },
+    {
+      "kind": "lesson",
+      "number": "16",
+      "title": "夏天里的成长",
+      "page": 74,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第五单元",
+      "id": "b61-toc-0035"
+    },
+    {
+      "kind": "lesson",
+      "number": "17",
+      "title": "盼",
+      "page": 76,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第五单元",
+      "id": "b61-toc-0036"
+    },
+    {
+      "kind": "toc_belt",
+      "label": "习作例文",
+      "unit_type": "习作",
+      "unit_subtype": "习作例文",
+      "group_label": "第五单元",
+      "id": "b61-toc-0037"
+    },
+    {
+      "kind": "sublesson",
+      "title": "爸爸的计划",
+      "page": 81,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第五单元",
+      "id": "b61-toc-0038"
+    },
+    {
+      "kind": "sublesson",
+      "title": "小站",
+      "page": 82,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第五单元",
+      "id": "b61-toc-0039"
+    },
+    {
+      "kind": "block_activity",
+      "block": "习作",
+      "title": "围绕中心意思写",
+      "page": 84,
+      "unit_type": "习作",
+      "unit_subtype": null,
+      "group_label": "第五单元",
+      "id": "b61-toc-0040"
+    },
+    {
+      "kind": "section",
+      "label": "第六单元",
+      "unit_type": "分组",
+      "unit_subtype": null,
+      "group_label": "第六单元",
+      "id": "b61-toc-0041"
+    },
+    {
+      "kind": "lesson",
+      "number": "18",
+      "title": "古诗三首",
+      "page": 86,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第六单元",
+      "id": "b61-toc-0042"
+    },
+    {
+      "kind": "sublesson",
+      "title": "浪淘沙（其一）",
+      "page": 86,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第六单元",
+      "id": "b61-toc-0043"
+    },
+    {
+      "kind": "sublesson",
+      "title": "江南春",
+      "page": 86,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第六单元",
+      "id": "b61-toc-0044"
+    },
+    {
+      "kind": "sublesson",
+      "title": "书湖阴先生壁",
+      "page": 87,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第六单元",
+      "id": "b61-toc-0045"
+    },
+    {
+      "kind": "lesson",
+      "number": "19",
+      "title": "只有一个地球",
+      "page": 88,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第六单元",
+      "id": "b61-toc-0046"
+    },
+    {
+      "kind": "lesson",
+      "number": "20",
+      "title": "青山不老",
+      "page": 90,
+      "optional_reading": true,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第六单元",
+      "id": "b61-toc-0047"
+    },
+    {
+      "kind": "lesson",
+      "number": "21",
+      "title": "三黑和土地",
+      "page": 92,
+      "optional_reading": true,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第六单元",
+      "id": "b61-toc-0048"
+    },
+    {
+      "kind": "block_activity",
+      "block": "口语交际",
+      "title": "意见不同怎么办",
+      "page": 97,
+      "unit_type": "口语交际",
+      "unit_subtype": null,
+      "group_label": "第六单元",
+      "id": "b61-toc-0049"
+    },
+    {
+      "kind": "block_activity",
+      "block": "习作",
+      "title": "学写倡议书",
+      "page": 98,
+      "unit_type": "习作",
+      "unit_subtype": null,
+      "group_label": "第六单元",
+      "id": "b61-toc-0050"
+    },
+    {
+      "kind": "garden",
+      "label": "语文园地",
+      "page": 99,
+      "unit_type": "语文园地",
+      "unit_subtype": null,
+      "group_label": "第六单元",
+      "id": "b61-toc-0051"
+    },
+    {
+      "kind": "section",
+      "label": "第七单元",
+      "unit_type": "分组",
+      "unit_subtype": null,
+      "group_label": "第七单元",
+      "id": "b61-toc-0052"
+    },
+    {
+      "kind": "lesson",
+      "number": "22",
+      "title": "文言文二则",
+      "page": 102,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第七单元",
+      "id": "b61-toc-0053"
+    },
+    {
+      "kind": "sublesson",
+      "title": "伯牙鼓琴",
+      "page": 102,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第七单元",
+      "id": "b61-toc-0054"
+    },
+    {
+      "kind": "sublesson",
+      "title": "书戴嵩画牛",
+      "page": 103,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第七单元",
+      "id": "b61-toc-0055"
+    },
+    {
+      "kind": "lesson",
+      "number": "23",
+      "title": "月光曲",
+      "page": 105,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第七单元",
+      "id": "b61-toc-0056"
+    },
+    {
+      "kind": "lesson",
+      "number": "24",
+      "title": "京剧趣谈",
+      "page": 107,
+      "optional_reading": true,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第七单元",
+      "id": "b61-toc-0057"
+    },
+    {
+      "kind": "block_activity",
+      "block": "口语交际",
+      "title": "聊聊书法",
+      "page": 109,
+      "unit_type": "口语交际",
+      "unit_subtype": null,
+      "group_label": "第七单元",
+      "id": "b61-toc-0058"
+    },
+    {
+      "kind": "block_activity",
+      "block": "习作",
+      "title": "我的拿手好戏",
+      "page": 110,
+      "unit_type": "习作",
+      "unit_subtype": null,
+      "group_label": "第七单元",
+      "id": "b61-toc-0059"
+    },
+    {
+      "kind": "garden",
+      "label": "语文园地",
+      "page": 111,
+      "unit_type": "语文园地",
+      "unit_subtype": null,
+      "group_label": "第七单元",
+      "id": "b61-toc-0060"
+    },
+    {
+      "kind": "section",
+      "label": "第八单元",
+      "unit_type": "分组",
+      "unit_subtype": null,
+      "group_label": "第八单元",
+      "id": "b61-toc-0061"
+    },
+    {
+      "kind": "lesson",
+      "number": "25",
+      "title": "少年闰土",
+      "page": 114,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第八单元",
+      "id": "b61-toc-0062"
+    },
+    {
+      "kind": "lesson",
+      "number": "26",
+      "title": "好的故事",
+      "page": 118,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第八单元",
+      "id": "b61-toc-0063"
+    },
+    {
+      "kind": "lesson",
+      "number": "27",
+      "title": "我的伯父鲁迅先生",
+      "page": 121,
+      "optional_reading": true,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第八单元",
+      "id": "b61-toc-0064"
+    },
+    {
+      "kind": "lesson",
+      "number": "28",
+      "title": "有的人—纪念鲁迅有感",
+      "page": 125,
+      "optional_reading": true,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第八单元",
+      "id": "b61-toc-0065"
+    },
+    {
+      "kind": "block_activity",
+      "block": "习作",
+      "title": "有你，真好",
+      "page": 127,
+      "unit_type": "习作",
+      "unit_subtype": null,
+      "group_label": "第八单元",
+      "id": "b61-toc-0066"
+    },
+    {
+      "kind": "garden",
+      "label": "语文园地",
+      "page": 128,
+      "unit_type": "语文园地",
+      "unit_subtype": null,
+      "group_label": "第八单元",
+      "id": "b61-toc-0067"
+    }
+  ],
+  "groups": [
+    {
+      "group_id": 1,
+      "group_label": "第一单元",
+      "units": [
+        {
+          "kind": "lesson",
+          "number": "1",
+          "title": "草原",
+          "page": 2,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第一单元",
+          "id": "b61-toc-0002"
+        },
+        {
+          "kind": "lesson",
+          "number": "2",
+          "title": "丁香结",
+          "page": 5,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第一单元",
+          "id": "b61-toc-0003"
+        },
+        {
+          "kind": "lesson",
+          "number": "3",
+          "title": "古诗词三首",
+          "page": 8,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第一单元",
+          "id": "b61-toc-0004"
+        },
+        {
+          "kind": "sublesson",
+          "title": "宿建德江",
+          "page": 8,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第一单元",
+          "id": "b61-toc-0005"
+        },
+        {
+          "kind": "sublesson",
+          "title": "六月二十七日望湖楼醉书",
+          "page": 8,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第一单元",
+          "id": "b61-toc-0006"
+        },
+        {
+          "kind": "sublesson",
+          "title": "西江月·夜行黄沙道中",
+          "page": 9,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第一单元",
+          "id": "b61-toc-0007"
+        },
+        {
+          "kind": "lesson",
+          "number": "4",
+          "title": "花之歌",
+          "page": 10,
+          "optional_reading": true,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第一单元",
+          "id": "b61-toc-0008"
+        },
+        {
+          "kind": "block_activity",
+          "block": "习作",
+          "title": "变形记",
+          "page": 12,
+          "unit_type": "习作",
+          "unit_subtype": null,
+          "group_label": "第一单元",
+          "id": "b61-toc-0009"
+        },
+        {
+          "kind": "garden",
+          "label": "语文园地",
+          "page": 13,
+          "unit_type": "语文园地",
+          "unit_subtype": null,
+          "group_label": "第一单元",
+          "id": "b61-toc-0010"
+        }
+      ]
+    },
+    {
+      "group_id": 2,
+      "group_label": "第二单元",
+      "units": [
+        {
+          "kind": "lesson",
+          "number": "5",
+          "title": "七律·长征",
+          "page": 16,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第二单元",
+          "id": "b61-toc-0012"
+        },
+        {
+          "kind": "lesson",
+          "number": "6",
+          "title": "狼牙山五壮士",
+          "page": 18,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第二单元",
+          "id": "b61-toc-0013"
+        },
+        {
+          "kind": "lesson",
+          "number": "7",
+          "title": "开国大典",
+          "page": 21,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第二单元",
+          "id": "b61-toc-0014"
+        },
+        {
+          "kind": "lesson",
+          "number": "8",
+          "title": "灯光",
+          "page": 26,
+          "optional_reading": true,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第二单元",
+          "id": "b61-toc-0015"
+        },
+        {
+          "kind": "lesson",
+          "number": "9",
+          "title": "我的战友邱少云",
+          "page": 28,
+          "optional_reading": true,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第二单元",
+          "id": "b61-toc-0016"
+        },
+        {
+          "kind": "block_activity",
+          "block": "口语交际",
+          "title": "演讲",
+          "page": 31,
+          "unit_type": "口语交际",
+          "unit_subtype": null,
+          "group_label": "第二单元",
+          "id": "b61-toc-0017"
+        },
+        {
+          "kind": "block_activity",
+          "block": "习作",
+          "title": "多彩的活动",
+          "page": 32,
+          "unit_type": "习作",
+          "unit_subtype": null,
+          "group_label": "第二单元",
+          "id": "b61-toc-0018"
+        },
+        {
+          "kind": "garden",
+          "label": "语文园地",
+          "page": 33,
+          "unit_type": "语文园地",
+          "unit_subtype": null,
+          "group_label": "第二单元",
+          "id": "b61-toc-0019"
+        }
+      ]
+    },
+    {
+      "group_id": 3,
+      "group_label": "第三单元",
+      "units": [
+        {
+          "kind": "lesson",
+          "number": "10",
+          "title": "竹节人",
+          "page": 36,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第三单元",
+          "id": "b61-toc-0021"
+        },
+        {
+          "kind": "lesson",
+          "number": "11",
+          "title": "宇宙生命之谜",
+          "page": 40,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第三单元",
+          "id": "b61-toc-0022"
+        },
+        {
+          "kind": "lesson",
+          "number": "12",
+          "title": "故宫博物院",
+          "page": 44,
+          "optional_reading": true,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第三单元",
+          "id": "b61-toc-0023"
+        },
+        {
+          "kind": "toc_belt",
+          "title": "让生活更美好",
+          "page": 50,
+          "unit_type": "习作",
+          "unit_subtype": null,
+          "group_label": "第三单元",
+          "label": "习作",
+          "id": "b61-toc-0024"
+        },
+        {
+          "kind": "garden",
+          "label": "语文园地",
+          "page": 51,
+          "unit_type": "语文园地",
+          "unit_subtype": null,
+          "group_label": "第三单元",
+          "id": "b61-toc-0025"
+        }
+      ]
+    },
+    {
+      "group_id": 4,
+      "group_label": "第四单元",
+      "units": [
+        {
+          "kind": "lesson",
+          "number": "13",
+          "title": "桥",
+          "page": 54,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第四单元",
+          "id": "b61-toc-0027"
+        },
+        {
+          "kind": "lesson",
+          "number": "14",
+          "title": "穷人",
+          "page": 57,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第四单元",
+          "id": "b61-toc-0028"
+        },
+        {
+          "kind": "lesson",
+          "number": "15",
+          "title": "金色的鱼钩",
+          "page": 62,
+          "optional_reading": true,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第四单元",
+          "id": "b61-toc-0029"
+        },
+        {
+          "kind": "block_activity",
+          "block": "口语交际",
+          "title": "请你支持我",
+          "page": 67,
+          "unit_type": "口语交际",
+          "unit_subtype": null,
+          "group_label": "第四单元",
+          "id": "b61-toc-0030"
+        },
+        {
+          "kind": "block_activity",
+          "block": "习作",
+          "title": "笔尖流出的故事",
+          "page": 68,
+          "unit_type": "习作",
+          "unit_subtype": null,
+          "group_label": "第四单元",
+          "id": "b61-toc-0031"
+        },
+        {
+          "kind": "garden",
+          "label": "语文园地",
+          "page": 69,
+          "unit_type": "语文园地",
+          "unit_subtype": null,
+          "group_label": "第四单元",
+          "id": "b61-toc-0032"
+        },
+        {
+          "kind": "reading_club",
+          "title": "快乐读书吧",
+          "page": 71,
+          "unit_type": "快乐读书吧",
+          "unit_subtype": null,
+          "group_label": "第四单元",
+          "sublesson_title": "笑与泪，经历与成长",
+          "id": "b61-toc-0033"
+        }
+      ]
+    },
+    {
+      "group_id": 5,
+      "group_label": "第五单元",
+      "units": [
+        {
+          "kind": "lesson",
+          "number": "16",
+          "title": "夏天里的成长",
+          "page": 74,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第五单元",
+          "id": "b61-toc-0035"
+        },
+        {
+          "kind": "lesson",
+          "number": "17",
+          "title": "盼",
+          "page": 76,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第五单元",
+          "id": "b61-toc-0036"
+        },
+        {
+          "kind": "toc_belt",
+          "label": "习作例文",
+          "unit_type": "习作",
+          "unit_subtype": "习作例文",
+          "group_label": "第五单元",
+          "id": "b61-toc-0037"
+        },
+        {
+          "kind": "sublesson",
+          "title": "爸爸的计划",
+          "page": 81,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第五单元",
+          "id": "b61-toc-0038"
+        },
+        {
+          "kind": "sublesson",
+          "title": "小站",
+          "page": 82,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第五单元",
+          "id": "b61-toc-0039"
+        },
+        {
+          "kind": "block_activity",
+          "block": "习作",
+          "title": "围绕中心意思写",
+          "page": 84,
+          "unit_type": "习作",
+          "unit_subtype": null,
+          "group_label": "第五单元",
+          "id": "b61-toc-0040"
+        }
+      ]
+    },
+    {
+      "group_id": 6,
+      "group_label": "第六单元",
+      "units": [
+        {
+          "kind": "lesson",
+          "number": "18",
+          "title": "古诗三首",
+          "page": 86,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第六单元",
+          "id": "b61-toc-0042"
+        },
+        {
+          "kind": "sublesson",
+          "title": "浪淘沙（其一）",
+          "page": 86,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第六单元",
+          "id": "b61-toc-0043"
+        },
+        {
+          "kind": "sublesson",
+          "title": "江南春",
+          "page": 86,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第六单元",
+          "id": "b61-toc-0044"
+        },
+        {
+          "kind": "sublesson",
+          "title": "书湖阴先生壁",
+          "page": 87,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第六单元",
+          "id": "b61-toc-0045"
+        },
+        {
+          "kind": "lesson",
+          "number": "19",
+          "title": "只有一个地球",
+          "page": 88,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第六单元",
+          "id": "b61-toc-0046"
+        },
+        {
+          "kind": "lesson",
+          "number": "20",
+          "title": "青山不老",
+          "page": 90,
+          "optional_reading": true,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第六单元",
+          "id": "b61-toc-0047"
+        },
+        {
+          "kind": "lesson",
+          "number": "21",
+          "title": "三黑和土地",
+          "page": 92,
+          "optional_reading": true,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第六单元",
+          "id": "b61-toc-0048"
+        },
+        {
+          "kind": "block_activity",
+          "block": "口语交际",
+          "title": "意见不同怎么办",
+          "page": 97,
+          "unit_type": "口语交际",
+          "unit_subtype": null,
+          "group_label": "第六单元",
+          "id": "b61-toc-0049"
+        },
+        {
+          "kind": "block_activity",
+          "block": "习作",
+          "title": "学写倡议书",
+          "page": 98,
+          "unit_type": "习作",
+          "unit_subtype": null,
+          "group_label": "第六单元",
+          "id": "b61-toc-0050"
+        },
+        {
+          "kind": "garden",
+          "label": "语文园地",
+          "page": 99,
+          "unit_type": "语文园地",
+          "unit_subtype": null,
+          "group_label": "第六单元",
+          "id": "b61-toc-0051"
+        }
+      ]
+    },
+    {
+      "group_id": 7,
+      "group_label": "第七单元",
+      "units": [
+        {
+          "kind": "lesson",
+          "number": "22",
+          "title": "文言文二则",
+          "page": 102,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第七单元",
+          "id": "b61-toc-0053"
+        },
+        {
+          "kind": "sublesson",
+          "title": "伯牙鼓琴",
+          "page": 102,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第七单元",
+          "id": "b61-toc-0054"
+        },
+        {
+          "kind": "sublesson",
+          "title": "书戴嵩画牛",
+          "page": 103,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第七单元",
+          "id": "b61-toc-0055"
+        },
+        {
+          "kind": "lesson",
+          "number": "23",
+          "title": "月光曲",
+          "page": 105,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第七单元",
+          "id": "b61-toc-0056"
+        },
+        {
+          "kind": "lesson",
+          "number": "24",
+          "title": "京剧趣谈",
+          "page": 107,
+          "optional_reading": true,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第七单元",
+          "id": "b61-toc-0057"
+        },
+        {
+          "kind": "block_activity",
+          "block": "口语交际",
+          "title": "聊聊书法",
+          "page": 109,
+          "unit_type": "口语交际",
+          "unit_subtype": null,
+          "group_label": "第七单元",
+          "id": "b61-toc-0058"
+        },
+        {
+          "kind": "block_activity",
+          "block": "习作",
+          "title": "我的拿手好戏",
+          "page": 110,
+          "unit_type": "习作",
+          "unit_subtype": null,
+          "group_label": "第七单元",
+          "id": "b61-toc-0059"
+        },
+        {
+          "kind": "garden",
+          "label": "语文园地",
+          "page": 111,
+          "unit_type": "语文园地",
+          "unit_subtype": null,
+          "group_label": "第七单元",
+          "id": "b61-toc-0060"
+        }
+      ]
+    },
+    {
+      "group_id": 8,
+      "group_label": "第八单元",
+      "units": [
+        {
+          "kind": "lesson",
+          "number": "25",
+          "title": "少年闰土",
+          "page": 114,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第八单元",
+          "id": "b61-toc-0062"
+        },
+        {
+          "kind": "lesson",
+          "number": "26",
+          "title": "好的故事",
+          "page": 118,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第八单元",
+          "id": "b61-toc-0063"
+        },
+        {
+          "kind": "lesson",
+          "number": "27",
+          "title": "我的伯父鲁迅先生",
+          "page": 121,
+          "optional_reading": true,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第八单元",
+          "id": "b61-toc-0064"
+        },
+        {
+          "kind": "lesson",
+          "number": "28",
+          "title": "有的人—纪念鲁迅有感",
+          "page": 125,
+          "optional_reading": true,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第八单元",
+          "id": "b61-toc-0065"
+        },
+        {
+          "kind": "block_activity",
+          "block": "习作",
+          "title": "有你，真好",
+          "page": 127,
+          "unit_type": "习作",
+          "unit_subtype": null,
+          "group_label": "第八单元",
+          "id": "b61-toc-0066"
+        },
+        {
+          "kind": "garden",
+          "label": "语文园地",
+          "page": 128,
+          "unit_type": "语文园地",
+          "unit_subtype": null,
+          "group_label": "第八单元",
+          "id": "b61-toc-0067"
+        }
+      ]
+    }
+  ],
+  "toc_unit_strings": [
+    "1 草原",
+    "2 丁香结",
+    "3 古诗词三首",
+    "宿建德江",
+    "六月二十七日望湖楼醉书",
+    "西江月·夜行黄沙道中",
+    "4* 花之歌",
+    "习作 变形记",
+    "语文园地",
+    "5 七律·长征",
+    "6 狼牙山五壮士",
+    "7 开国大典",
+    "8* 灯光",
+    "9* 我的战友邱少云",
+    "口语交际 演讲",
+    "习作 多彩的活动",
+    "语文园地",
+    "10 竹节人",
+    "11 宇宙生命之谜",
+    "12* 故宫博物院",
+    "习作让生活更美好",
+    "语文园地",
+    "13 桥",
+    "14 穷人",
+    "15* 金色的鱼钩",
+    "口语交际 请你支持我",
+    "习作 笔尖流出的故事",
+    "语文园地",
+    "快乐读书吧 笑与泪，经历与成长",
+    "16 夏天里的成长",
+    "17 盼",
+    "习作例文",
+    "爸爸的计划",
+    "小站",
+    "习作 围绕中心意思写",
+    "18 古诗三首",
+    "浪淘沙（其一）",
+    "江南春",
+    "书湖阴先生壁",
+    "19 只有一个地球",
+    "20* 青山不老",
+    "21* 三黑和土地",
+    "口语交际 意见不同怎么办",
+    "习作 学写倡议书",
+    "语文园地",
+    "22 文言文二则",
+    "伯牙鼓琴",
+    "书戴嵩画牛",
+    "23 月光曲",
+    "24* 京剧趣谈",
+    "口语交际 聊聊书法",
+    "习作 我的拿手好戏",
+    "语文园地",
+    "25 少年闰土",
+    "26 好的故事",
+    "27* 我的伯父鲁迅先生",
+    "28* 有的人—纪念鲁迅有感",
+    "习作 有你，真好",
+    "语文园地"
+  ],
+  "entry_count": 67,
+  "flat_count": 59,
+  "group_count": 8,
+  "source_lines": [
+    "",
+    "",
+    "",
+    "",
+    "第一单元....................................... 1            ◎ 语文园地 .................................. 33",
+    "",
+    "1    草原. ........................................... 2",
+    "",
+    "2    丁香结. ....................................... 5      第三单元...................................... 35",
+    "3    古诗词三首................................ 8             10 竹节人. ...................................... 36",
+    "",
+    "\t\t  宿建德江................................. 8              11 宇宙生命之谜........................... 40",
+    "\t\t  六月二十七日望湖楼醉书....... 8                                 12* 故宫博物院............................... 44",
+    "\t\t  西江月·夜行黄沙道中........... 9                              ◎ 习作：                    让生活更美好. .... 50",
+    "",
+    "4* 花之歌. ...................................... 10        ◎ 语文园地 .................................. 51",
+    "◎ 习作：变形记........................... 12",
+    "",
+    "◎ 语文园地 .................................. 13             第四单元...................................... 53",
+    "                                                         13 桥. .............................................. 54",
+    "",
+    "第二单元...................................... 15            14 穷人. .......................................... 57",
+    "5    七律·长征............................... 16             15* 金色的鱼钩............................... 62",
+    "6    狼牙山五壮士........................... 18                ◎ 口语交际：请你支持我........... 67",
+    "",
+    "7    开国大典................................... 21          ◎ 习作：笔尖流出的故事........... 68",
+    "",
+    "8* 灯光. .......................................... 26     ◎ 语文园地................................... 69",
+    "",
+    "9* 我的战友邱少云....................... 28                     ◎ 快乐读书吧：",
+    "",
+    "◎ 口语交际：演讲....................... 31                      \t\t  笑与泪，经历与成长........... 71",
+    "",
+    "◎ 习作：多彩的活动................... 32",
+    "第五单元...................................... 73             \t\t\t 伯牙鼓琴.............................. 102",
+    "",
+    "16 夏天里的成长........................... 74                   \t\t\t 书戴嵩画牛.......................... 103",
+    "",
+    "17 盼. .............................................. 76   23 月光曲. ..................................... 105",
+    "◎ 习作例文：                                                   24* 京剧趣谈.................................. 107",
+    "\t\t  爸爸的计划........................... 81                   ◎ 口语交际：聊聊书法.............. 109",
+    "",
+    "\t\t  小站. ...................................... 82         ◎ 习作：我的拿手好戏.............. 110",
+    "",
+    "◎ 习作：围绕中心意思写........... 84                                ◎ 语文园地.................................. 111",
+    "",
+    "",
+    "",
+    "第六单元...................................... 85             第八单元..................................... 113",
+    "18 古诗三首................................... 86             25 少年闰土.................................. 114",
+    "",
+    "\t\t\t 浪淘沙（其一）..................... 86                       26 好的故事.................................. 118",
+    "",
+    "\t\t\t 江南春. .................................. 86            27* 我的伯父鲁迅先生.................. 121",
+    "\t\t\t 书湖阴先生壁....................... 87                      28* 有的人—纪念鲁迅有感...... 125",
+    "19 只有一个地球........................... 88                   ◎ 习作：有你，真好.................. 127",
+    "",
+    "20* 青山不老................................... 90            ◎ 语文园地.................................. 128",
+    "",
+    "21* 三黑和土地............................... 92",
+    "◎ 口语交际：意见不同怎么办.... 97                                     写字表.............................................. 130",
+    "",
+    "◎ 习作：学写倡议书................... 98                          词语表.............................................. 132",
+    "",
+    "◎ 语文园地................................... 99",
+    "                                                          标 * 的是略读课文",
+    "第七单元..................................... 101",
+    "22 文言文二则.............................. 102"
+  ],
+  "source_text": "\n\n\n\n第一单元....................................... 1            ◎ 语文园地 .................................. 33\n\n1    草原. ........................................... 2\n\n2    丁香结. ....................................... 5      第三单元...................................... 35\n3    古诗词三首................................ 8             10 竹节人. ...................................... 36\n\n\t\t  宿建德江................................. 8              11 宇宙生命之谜........................... 40\n\t\t  六月二十七日望湖楼醉书....... 8                                 12* 故宫博物院............................... 44\n\t\t  西江月·夜行黄沙道中........... 9                              ◎ 习作：                    让生活更美好. .... 50\n\n4* 花之歌. ...................................... 10        ◎ 语文园地 .................................. 51\n◎ 习作：变形记........................... 12\n\n◎ 语文园地 .................................. 13             第四单元...................................... 53\n                                                         13 桥. .............................................. 54\n\n第二单元...................................... 15            14 穷人. .......................................... 57\n5    七律·长征............................... 16             15* 金色的鱼钩............................... 62\n6    狼牙山五壮士........................... 18                ◎ 口语交际：请你支持我........... 67\n\n7    开国大典................................... 21          ◎ 习作：笔尖流出的故事........... 68\n\n8* 灯光. .......................................... 26     ◎ 语文园地................................... 69\n\n9* 我的战友邱少云....................... 28                     ◎ 快乐读书吧：\n\n◎ 口语交际：演讲....................... 31                      \t\t  笑与泪，经历与成长........... 71\n\n◎ 习作：多彩的活动................... 32\n第五单元...................................... 73             \t\t\t 伯牙鼓琴.............................. 102\n\n16 夏天里的成长........................... 74                   \t\t\t 书戴嵩画牛.......................... 103\n\n17 盼. .............................................. 76   23 月光曲. ..................................... 105\n◎ 习作例文：                                                   24* 京剧趣谈.................................. 107\n\t\t  爸爸的计划........................... 81                   ◎ 口语交际：聊聊书法.............. 109\n\n\t\t  小站. ...................................... 82         ◎ 习作：我的拿手好戏.............. 110\n\n◎ 习作：围绕中心意思写........... 84                                ◎ 语文园地.................................. 111\n\n\n\n第六单元...................................... 85             第八单元..................................... 113\n18 古诗三首................................... 86             25 少年闰土.................................. 114\n\n\t\t\t 浪淘沙（其一）..................... 86                       26 好的故事.................................. 118\n\n\t\t\t 江南春. .................................. 86            27* 我的伯父鲁迅先生.................. 121\n\t\t\t 书湖阴先生壁....................... 87                      28* 有的人—纪念鲁迅有感...... 125\n19 只有一个地球........................... 88                   ◎ 习作：有你，真好.................. 127\n\n20* 青山不老................................... 90            ◎ 语文园地.................................. 128\n\n21* 三黑和土地............................... 92\n◎ 口语交际：意见不同怎么办.... 97                                     写字表.............................................. 130\n\n◎ 习作：学写倡议书................... 98                          词语表.............................................. 132\n\n◎ 语文园地................................... 99\n                                                          标 * 的是略读课文\n第七单元..................................... 101\n22 文言文二则.............................. 102",
+  "discard_log": "D:\\ah21\\textbook-parser\\output\\b61_目录.discard.log"
+}

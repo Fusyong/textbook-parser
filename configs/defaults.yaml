@@ -1,0 +1,104 @@
+# 各册共用的提取器与 pdftotext；单册仅通过 books.yaml（及可选 configs/bXX.yaml）覆盖差异字段。
+pdftotext:
+  enc: UTF-8
+  layout: true
+  extra_args: []
+
+extractors:
+  目录:
+    module: layout_toc
+    start_line_pattern:
+      - "目录"
+    # 均对 compact 整行 fullmatch；双栏行内嵌「识字表」不会命中。
+    # 停止行须距「目录」起始行至少 N 行（0-based 行距），避免文前偶发误匹配。
+    end_line_min_lines_after_start: 20
+    # 「识字表」「写字表」整行仅在目录起始后若干行内有效，避免正文识字表章首行误停。
+    end_appendix_fullmatch_within_lines: 250
+    # 命中识字表/写字表停止行时：若其后 N 行内仍有「第×单元」，则忽略（双栏目录中夹附录表头，后接第七单元等）
+    toc_appendix_ignore_if_unit_within_lines: 20
+    end_line_patterns:
+      - "识字表.*\\d+"
+      - "写字表.*\\d+"
+      - "第一单元.*"
+      # - "◎.*语文园地\\.{2,}.*写字表.*"
+    column_number: 2
+    # 双栏目录版心宽度（全角汉字当量）。行首空白宽度（emu：半角=1，汉字=2，\t 默认=4）严格大于「版心全宽 (=本值×2) 的 1/3」时判左栏为空、整行归右栏。
+    toc_content_width_han: 36
+    # 列优先：同行「左格空、右格有文」解析出的条目带内部标记；若某栏块活动误排在指定分组头之后，将首条匹配项挪到该头之前（按栏块类型，不依赖具体课题名）。设为 null 或 "" 可关闭。
+    toc_dual_right_only_move_before_section: "第六单元"
+    toc_dual_right_only_move_blocks:
+      - 口语交际
+    # 行首 \t 默认折合 2 个全角汉字宽（4 半角单位）；若需覆盖可设 toc_tab_width_emu。
+    # 学习单位类型：按顺序匹配 compact 后的目录行/标题；未命中则用 kind 与单元组头推断。
+    # 每项写 keyword 即可（勿写正则）；代码侧兼容 ◎/○、全半角冒号等。高级用法可改用 match 手写正则。
+    unit_type_rules:
+      - keyword: 汉语拼音
+        unit_type: 汉语拼音
+      - keyword: 口语交际
+        unit_type: 口语交际
+      - keyword: 习作例文
+        unit_type: 习作
+        unit_subtype: 习作例文
+      - keyword: 习作
+        unit_type: 习作
+      - keyword: 快乐读书吧
+        unit_type: 快乐读书吧
+      - keyword: 语文园地
+        unit_type: 语文园地
+      - keyword: 古诗词诵读
+        unit_type: 古诗词诵读
+      - keyword: 综合性学习
+        unit_type: 综合性学习
+      - keyword: 综合实践
+        unit_type: 综合活动
+      - keyword: 综合活动
+        unit_type: 综合活动
+      - keyword: 专题学习活动
+        unit_type: 专题学习活动
+
+  识字表:
+    module: char_tables
+    start_line_pattern:
+      - "识字表"
+    end_line_pattern:
+      - "(\\(|（)共\\d+个生字(\\)|）)"
+    unit_head_pattern:
+      - "\\d{1,2}"
+      - "语文园地[一二三四五六七八九十]?"
+    discard_line_patterns:
+      - "仅供个人.*"
+      - "识字"
+      - "阅读"
+    options:
+      total_pattern: "(\\(|（)共\\d+个生字(\\)|）)"
+
+  写字表:
+    module: char_tables
+    start_line_pattern:
+      - "写字表"
+    end_line_pattern:
+      - "(\\(|（)共\\d+个字(\\)|）)"
+    unit_head_pattern:
+      - "\\d{1,2}"
+      - "语文园地[一二三四五六七八九十]?"
+    discard_line_patterns:
+      - "仅供个人.*"
+      - "识字"
+      - "阅读"
+    options:
+      total_pattern: "(\\(|（)共\\d+个字(\\)|）)"
+
+  词语表:
+    module: word_table
+    start_line_pattern:
+      - "词语表"
+    # 低年级脚注多为「（共 N 个词）」；部分高年级版式无此行，以「后记」整行（compact 后记）为结束。
+    end_line_pattern:
+      - "(\\(|（)共\\d+个词(\\)|）)"
+      - "后记"
+    discard_line_patterns:
+      - "仅供个人.*"
+      - "识字"
+      - "阅读"
+    options:
+      total_pattern: "(\\(|（)共\\d+个词(\\)|）)"

@@ -1,0 +1,116 @@
+# textbook-parser extract-all
+# time: 2026-04-05T16:44:25
+# argv: D:\ah21\textbook-parser\src\textbook_parser\__main__.py extract-all --extractor 词语表 --project-root .
+# book_code: 12_books
+# log_file: D:\ah21\textbook-parser\output\extract-all_词语表.log
+# 以下 stdout/stderr 均写入本日志（含警告、错误与提取器提示）。
+# extractor: 词语表
+# project_root: D:\ah21\textbook-parser
+# books_arg: (全部书目)
+
+--- b11 ---
+b11: 跳过（本册未配置 «词语表»，多为 extractors_drop）
+--- b12 ---
+b12: 跳过（本册未配置 «词语表»，多为 extractors_drop）
+--- b21 ---
+[b21/词语表 抛弃]       阅读
+[b21/词语表 抛弃]       识字
+[b21/词语表 抛弃]       阅读
+[b21/词语表 抛弃] 116
+[b21/词语表 抛弃]                                          117
+[b21/词语表] 目录 JSON 对齐 — 锚点全部匹配到目录
+词语表: 行数 25，词语合计 239
+已写入: D:\ah21\textbook-parser\output\b21_词语表.json
+已写入: D:\ah21\textbook-parser\output\b21_词语表.md
+抛弃行日志: D:\ah21\textbook-parser\output\b21_词语表.discard.log
+--- b22 ---
+[b22/词语表 抛弃]       阅读
+[b22/词语表 抛弃]       识字
+[b22/词语表 抛弃] 120
+[b22/词语表 抛弃]        仅供个人学习使用，未经授权不得另做他用
+[b22/词语表 抛弃] 阅读
+[b22/词语表 抛弃]                                      121
+[b22/词语表 抛弃] 仅供个人学习使用，未经授权不得另做他用
+[b22/词语表] 目录 JSON 对齐 — 锚点全部匹配到目录
+词语表: 行数 26，词语合计 240
+已写入: D:\ah21\textbook-parser\output\b22_词语表.json
+已写入: D:\ah21\textbook-parser\output\b22_词语表.md
+抛弃行日志: D:\ah21\textbook-parser\output\b22_词语表.discard.log
+--- b31 ---
+[b31/词语表 抛弃] 114
+[b31/词语表 抛弃]                                               115
+[b31/词语表] 目录 JSON 对齐 — 锚点全部匹配到目录
+词语表: 行数 20，词语合计 250
+已写入: D:\ah21\textbook-parser\output\b31_词语表.json
+已写入: D:\ah21\textbook-parser\output\b31_词语表.md
+抛弃行日志: D:\ah21\textbook-parser\output\b31_词语表.discard.log
+--- b32 ---
+[b32/词语表 抛弃] 116
+[b32/词语表 抛弃]           仅供个人学习使用，未经授权不得另做他用
+[b32/词语表 抛弃]                                           117
+[b32/词语表 抛弃]  仅供个人学习使用，未经授权不得另做他用
+[b32/词语表] 目录 JSON 对齐 — 锚点全部匹配到目录
+词语表: 行数 22，词语合计 271
+已写入: D:\ah21\textbook-parser\output\b32_词语表.json
+已写入: D:\ah21\textbook-parser\output\b32_词语表.md
+抛弃行日志: D:\ah21\textbook-parser\output\b32_词语表.discard.log
+--- b41 ---
+[b41/词语表 抛弃] 128
+[b41/词语表 抛弃]                                         129
+[b41/词语表 抛弃] 130
+[b41/词语表] 目录 JSON 对齐 — 锚点全部匹配到目录
+词语表: 行数 16，词语合计 241
+已写入: D:\ah21\textbook-parser\output\b41_词语表.json
+已写入: D:\ah21\textbook-parser\output\b41_词语表.md
+抛弃行日志: D:\ah21\textbook-parser\output\b41_词语表.discard.log
+--- b42 ---
+[b42/词语表 抛弃] 142
+[b42/词语表 抛弃]       仅供个人学习使用，未经授权不得另做他用
+[b42/词语表 抛弃]                                         143
+[b42/词语表 抛弃]  仅供个人学习使用，未经授权不得另做他用
+[b42/词语表 抛弃] 144
+[b42/词语表 抛弃]       仅供个人学习使用，未经授权不得另做他用
+[b42/词语表] 目录 JSON 对齐 — 锚点全部匹配到目录
+词语表: 行数 18，词语合计 213
+已写入: D:\ah21\textbook-parser\output\b42_词语表.json
+已写入: D:\ah21\textbook-parser\output\b42_词语表.md
+抛弃行日志: D:\ah21\textbook-parser\output\b42_词语表.discard.log
+--- b51 ---
+[b51/词语表 抛弃] 122
+[b51/词语表 抛弃]                                               123
+[b51/词语表 抛弃] 124
+[b51/词语表] 目录 JSON 对齐 — 锚点全部匹配到目录
+词语表: 行数 16，词语合计 222
+已写入: D:\ah21\textbook-parser\output\b51_词语表.json
+已写入: D:\ah21\textbook-parser\output\b51_词语表.md
+抛弃行日志: D:\ah21\textbook-parser\output\b51_词语表.discard.log
+--- b52 ---
+[b52/词语表 抛弃]                                       123
+[b52/词语表 抛弃] 仅供个人学习使用，未经授权不得另做他用
+[b52/词语表 抛弃] 124
+[b52/词语表 抛弃]       仅供个人学习使用，未经授权不得另做他用
+[b52/词语表] 目录 JSON 对齐 — 锚点全部匹配到目录
+词语表: 行数 12，词语合计 142
+已写入: D:\ah21\textbook-parser\output\b52_词语表.json
+已写入: D:\ah21\textbook-parser\output\b52_词语表.md
+抛弃行日志: D:\ah21\textbook-parser\output\b52_词语表.discard.log
+--- b61 ---
+[b61/词语表 抛弃] 132
+[b61/词语表 抛弃]                                       133
+[b61/词语表 抛弃] 134
+[b61/词语表] 目录 JSON 对齐 — 锚点全部匹配到目录
+词语表: 行数 14，词语合计 224
+已写入: D:\ah21\textbook-parser\output\b61_词语表.json
+已写入: D:\ah21\textbook-parser\output\b61_词语表.md
+抛弃行日志: D:\ah21\textbook-parser\output\b61_词语表.discard.log
+--- b62 ---
+[b62/词语表 抛弃] 122
+[b62/词语表 抛弃]        仅供个人学习使用，未经授权不得另做他用
+[b62/词语表 抛弃]                                        123
+[b62/词语表 抛弃]  仅供个人学习使用，未经授权不得另做他用
+[b62/词语表] 目录 JSON 对齐 — 锚点全部匹配到目录
+词语表: 行数 9，词语合计 162
+已写入: D:\ah21\textbook-parser\output\b62_词语表.json
+已写入: D:\ah21\textbook-parser\output\b62_词语表.md
+抛弃行日志: D:\ah21\textbook-parser\output\b62_词语表.discard.log
+控制台输出已同步写入日志: D:\ah21\textbook-parser\output\extract-all_词语表.log

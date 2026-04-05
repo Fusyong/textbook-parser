@@ -1,0 +1,35 @@
+# textbook-parser toc-chunk
+# time: 2026-04-05T16:44:33
+# argv: D:\ah21\textbook-parser\src\textbook_parser\__main__.py toc-chunk --project-root . --books
+# book_code: b42
+# log_file: D:\ah21\textbook-parser\output\b42_正文分块.log
+# 以下 stdout/stderr 均写入本日志（含警告、错误与提取器提示）。
+# project_root: D:\ah21\textbook-parser
+# output: D:\ah21\textbook-parser\output
+
+正文分块: 条目 61, 命中 39, 未命中 22
+  [问题] 未命中锚点: b42-toc-0005 清平乐·村居 keys=['清平乐·村居']
+  [问题] 未命中锚点: b42-toc-0009 口语交际 转述 keys=['口语交际转述']
+  [问题] 未命中锚点: b42-toc-0010 习作 我的乐园 keys=['习作我的乐园']
+  [问题] 未命中锚点: b42-toc-0011 语文园地 keys=['语文园地']
+  [问题] 未命中锚点: b42-toc-0017 口语交际 说新闻 keys=['口语交际说新闻']
+  [问题] 未命中锚点: b42-toc-0018 习作 我的奇思妙想 keys=['习作我的奇思妙想']
+  [问题] 未命中锚点: b42-toc-0019 语文园地 keys=['语文园地']
+  [问题] 未命中锚点: b42-toc-0020 快乐读书吧 keys=['快乐读书吧']
+  [问题] 未命中锚点: b42-toc-0030 语文园地 keys=['语文园地']
+  [问题] 未命中锚点: b42-toc-0035 习作 我的动物朋友 keys=['习作我的动物朋友']
+  [问题] 未命中锚点: b42-toc-0036 语文园地 keys=['语文园地']
+  [问题] 未命中锚点: b42-toc-0043 习作 游 keys=['习作游']
+  [问题] 未命中锚点: b42-toc-0047 铁杵成针 keys=['铁杵成针']
+  [问题] 未命中锚点: b42-toc-0051 口语交际 朋友相处的秘诀 keys=['口语交际朋友相处的秘诀']
+  [问题] 未命中锚点: b42-toc-0052 习作 我学会了 keys=['习作我学会了']
+  [问题] 未命中锚点: b42-toc-0053 语文园地 keys=['语文园地']
+  [问题] 未命中锚点: b42-toc-0056 芙蓉楼送辛渐 keys=['芙蓉楼送辛渐']
+  [问题] 未命中锚点: b42-toc-0062 口语交际 自我介绍 keys=['口语交际自我介绍']
+  [问题] 未命中锚点: b42-toc-0063 习作 我的“自画像” keys=['习作我的“自画像”']
+  [问题] 未命中锚点: b42-toc-0064 语文园地 keys=['语文园地']
+  [问题] 未命中锚点: b42-toc-0069 习作 故事新编 keys=['习作故事新编']
+  [问题] 未命中锚点: b42-toc-0070 语文园地 keys=['语文园地']
+已写入: D:\ah21\textbook-parser\output\b42_正文分块.json
+已写入: D:\ah21\textbook-parser\output\b42_正文分块.md
+控制台输出已同步写入日志: D:\ah21\textbook-parser\output\b42_正文分块.log

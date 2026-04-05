@@ -1,0 +1,40 @@
+# book_code → 书目元数据。pdf 为 material/ 下文件名。
+# toc_csv 仅用于非识字表/写字表/词语表的遗留场景；识字表等已与 output/{book}_目录.json 对齐。
+# toc_columns: 目录版式栏数；一年级上下册为 1（单栏），其余默认 2（双栏）
+# 目录版心 toc_content_width_han 默认见 configs/defaults.yaml；仅当某册与默认不同时再在本文件对应条目下书写。
+book_code:
+  b11:
+    pdf: （根据2022年版课程标准修订）义务教育教科书·语文一年级上册.pdf
+    toc_columns: 1
+    extractors_drop:
+      - 词语表
+  b12:
+    pdf: （根据2022年版课程标准修订）义务教育教科书·语文一年级下册.pdf
+    toc_columns: 1
+    extractors_drop:
+      - 词语表
+  b21:
+    pdf: （根据2022年版课程标准修订）义务教育教科书·语文二年级上册.pdf
+  b22:
+    pdf: （根据2022年版课程标准修订）义务教育教科书·语文二年级下册.pdf
+  b31:
+    pdf: （根据2022年版课程标准修订）义务教育教科书·语文三年级上册.pdf
+  b32:
+    pdf: （根据2022年版课程标准修订）义务教育教科书·语文三年级下册.pdf
+  b41:
+    pdf: 义务教育教科书·语文四年级上册.pdf
+  b42:
+    pdf: 义务教育教科书·语文四年级下册.pdf
+  b51:
+    pdf: 义务教育教科书·语文五年级上册.pdf
+  b52:
+    pdf: 义务教育教科书·语文五年级下册.pdf
+  b61:
+    pdf: 义务教育教科书·语文六年级上册.pdf
+    # 本册版式文本中无独立「识字表」附录（仅有写字表、词语表），勿运行该提取器。
+    extractors_drop:
+      - 识字表
+  b62:
+    pdf: 义务教育教科书·语文六年级下册.pdf
+    extractors_drop:
+      - 识字表

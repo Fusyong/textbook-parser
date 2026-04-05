@@ -1,0 +1,128 @@
+# textbook-parser extract-all
+# time: 2026-04-05T16:44:23
+# argv: D:\ah21\textbook-parser\src\textbook_parser\__main__.py extract-all --extractor 识字表 --project-root .
+# book_code: 12_books
+# log_file: D:\ah21\textbook-parser\output\extract-all_识字表.log
+# 以下 stdout/stderr 均写入本日志（含警告、错误与提取器提示）。
+# extractor: 识字表
+# project_root: D:\ah21\textbook-parser
+# books_arg: (全部书目)
+
+--- b11 ---
+[b11/识字表 抛弃]  识字
+[b11/识字表 抛弃] ① 识字表中蓝色的字此前已作为生字认读，此处作为多音字学习，不计入生字总数。
+[b11/识字表 抛弃]                                                                                          105
+[b11/识字表 抛弃]   阅读
+[b11/识字表 抛弃]   识字
+[b11/识字表 抛弃] 106
+[b11/识字表 抛弃]   阅读
+[b11/识字表] 目录 JSON 对齐 — 锚点全部匹配到目录
+识字表: 行数 38，字数合计 288
+已写入: D:\ah21\textbook-parser\output\b11_识字表.json
+已写入: D:\ah21\textbook-parser\output\b11_识字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\b11_识字表.discard.log
+--- b12 ---
+[b12/识字表 抛弃]   识字
+[b12/识字表 抛弃]   阅读
+[b12/识字表 抛弃] ① 识字表中蓝色的字此前已作为生字认读，此处作为多音字学习，不计入生字总数。
+[b12/识字表 抛弃] 114
+[b12/识字表 抛弃]         仅供个人学习使用，未经授权不得另做他用
+[b12/识字表 抛弃] 识字
+[b12/识字表 抛弃] 阅读
+[b12/识字表 抛弃]                                                                                           115
+[b12/识字表 抛弃]  仅供个人学习使用，未经授权不得另做他用
+[b12/识字表] 目录 JSON 对齐 — 锚点全部匹配到目录
+识字表: 行数 36，字数合计 419
+已写入: D:\ah21\textbook-parser\output\b12_识字表.json
+已写入: D:\ah21\textbook-parser\output\b12_识字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\b12_识字表.discard.log
+--- b21 ---
+[b21/识字表 抛弃]       阅读
+[b21/识字表 抛弃]       识字
+[b21/识字表 抛弃] ① 识字表中蓝色的字此前已作为生字认读，此处作为多音字学习，不计入生字总数。
+[b21/识字表 抛弃] 108
+[b21/识字表 抛弃] 阅读
+[b21/识字表 抛弃]                                                                                           109
+[b21/识字表 抛弃] 110
+[b21/识字表 抛弃]                                                                                            111
+[b21/识字表] 目录 JSON 对齐 — 锚点全部匹配到目录
+识字表: 行数 35，字数合计 480
+已写入: D:\ah21\textbook-parser\output\b21_识字表.json
+已写入: D:\ah21\textbook-parser\output\b21_识字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\b21_识字表.discard.log
+--- b22 ---
+[b22/识字表 抛弃]   阅读
+[b22/识字表 抛弃] ① 识字表中蓝色的字此前已作为生字认读，此处作为多音字学习，不计入生字总数。
+[b22/识字表 抛弃]                                                                                             113
+[b22/识字表 抛弃]   仅供个人学习使用，未经授权不得另做他用
+[b22/识字表 抛弃]       识字
+[b22/识字表 抛弃]       阅读
+[b22/识字表 抛弃] 114
+[b22/识字表 抛弃]           仅供个人学习使用，未经授权不得另做他用
+[b22/识字表 抛弃]                                                                                          115
+[b22/识字表 抛弃] 仅供个人学习使用，未经授权不得另做他用
+[b22/识字表] 目录 JSON 对齐 — 锚点全部匹配到目录
+识字表: 行数 36，字数合计 465
+已写入: D:\ah21\textbook-parser\output\b22_识字表.json
+已写入: D:\ah21\textbook-parser\output\b22_识字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\b22_识字表.discard.log
+--- b31 ---
+[b31/识字表 抛弃] ① 识字表中蓝色的字此前已作为生字认读，此处作为多音字学习，不计入生字总数。
+[b31/识字表 抛弃]                                                                                      109
+[b31/识字表 抛弃] 110
+[b31/识字表] 目录 JSON 对齐 — 锚点全部匹配到目录
+识字表: 行数 30，字数合计 276
+已写入: D:\ah21\textbook-parser\output\b31_识字表.json
+已写入: D:\ah21\textbook-parser\output\b31_识字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\b31_识字表.discard.log
+--- b32 ---
+[b32/识字表 抛弃]                                                    ①
+[b32/识字表 抛弃] ① 识字表中蓝色的字此前已作为生字认读，此处作为多音字学习，不计入生字总数。
+[b32/识字表 抛弃]                                                                                        111
+[b32/识字表 抛弃]   仅供个人学习使用，未经授权不得另做他用
+[b32/识字表 抛弃] 112
+[b32/识字表 抛弃]            仅供个人学习使用，未经授权不得另做他用
+[b32/识字表] 目录 JSON 对齐 — 锚点全部匹配到目录
+识字表: 行数 31，字数合计 275
+已写入: D:\ah21\textbook-parser\output\b32_识字表.json
+已写入: D:\ah21\textbook-parser\output\b32_识字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\b32_识字表.discard.log
+--- b41 ---
+[b41/识字表 抛弃]                                                                                  123
+[b41/识字表 抛弃] 124
+[b41/识字表] 目录 JSON 对齐 — 锚点全部匹配到目录
+识字表: 行数 31，字数合计 290
+已写入: D:\ah21\textbook-parser\output\b41_识字表.json
+已写入: D:\ah21\textbook-parser\output\b41_识字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\b41_识字表.discard.log
+--- b42 ---
+[b42/识字表 抛弃]                                                                                   137
+[b42/识字表 抛弃]   仅供个人学习使用，未经授权不得另做他用
+[b42/识字表 抛弃] 138
+[b42/识字表 抛弃]        仅供个人学习使用，未经授权不得另做他用
+[b42/识字表] 目录 JSON 对齐 — 锚点全部匹配到目录
+识字表: 行数 32，字数合计 288
+已写入: D:\ah21\textbook-parser\output\b42_识字表.json
+已写入: D:\ah21\textbook-parser\output\b42_识字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\b42_识字表.discard.log
+--- b51 ---
+[b51/识字表 抛弃]                                                                                     117
+[b51/识字表 抛弃] 118
+[b51/识字表] 目录 JSON 对齐 — 锚点全部匹配到目录
+识字表: 行数 26，字数合计 235
+已写入: D:\ah21\textbook-parser\output\b51_识字表.json
+已写入: D:\ah21\textbook-parser\output\b51_识字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\b51_识字表.discard.log
+--- b52 ---
+[b52/识字表 抛弃]                                                                                           119
+[b52/识字表 抛弃]   仅供个人学习使用，未经授权不得另做他用
+[b52/识字表] 目录 JSON 对齐 — 锚点全部匹配到目录
+识字表: 行数 23，字数合计 231
+已写入: D:\ah21\textbook-parser\output\b52_识字表.json
+已写入: D:\ah21\textbook-parser\output\b52_识字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\b52_识字表.discard.log
+--- b61 ---
+b61: 跳过（本册未配置 «识字表»，多为 extractors_drop）
+--- b62 ---
+b62: 跳过（本册未配置 «识字表»，多为 extractors_drop）
+控制台输出已同步写入日志: D:\ah21\textbook-parser\output\extract-all_识字表.log

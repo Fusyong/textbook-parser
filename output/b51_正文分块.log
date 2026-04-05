@@ -1,0 +1,37 @@
+# textbook-parser toc-chunk
+# time: 2026-04-05T16:44:34
+# argv: D:\ah21\textbook-parser\src\textbook_parser\__main__.py toc-chunk --project-root . --books
+# book_code: b51
+# log_file: D:\ah21\textbook-parser\output\b51_正文分块.log
+# 以下 stdout/stderr 均写入本日志（含警告、错误与提取器提示）。
+# project_root: D:\ah21\textbook-parser
+# output: D:\ah21\textbook-parser\output
+
+正文分块: 条目 53, 命中 29, 未命中 24
+  [问题] 未命中锚点: b51-toc-0006 口语交际 制定班级公约 keys=['口语交际制定班级公约']
+  [问题] 未命中锚点: b51-toc-0007 习作 我的心爱之物 keys=['习作我的心爱之物']
+  [问题] 未命中锚点: b51-toc-0008 语文园地 keys=['语文园地']
+  [问题] 未命中锚点: b51-toc-0014 习作 “漫画”老师 keys=['习作“漫画”老师']
+  [问题] 未命中锚点: b51-toc-0015 语文园地 keys=['语文园地']
+  [问题] 未命中锚点: b51-toc-0020 口语交际 讲民间故事 keys=['口语交际讲民间故事']
+  [问题] 未命中锚点: b51-toc-0021 习作 缩写故事 keys=['习作缩写故事']
+  [问题] 未命中锚点: b51-toc-0022 语文园地 keys=['语文园地']
+  [问题] 未命中锚点: b51-toc-0026 示儿 keys=['示儿']
+  [问题] 未命中锚点: b51-toc-0027 题临安邸 keys=['题临安邸']
+  [问题] 未命中锚点: b51-toc-0028 己亥杂诗 keys=['己亥杂诗']
+  [问题] 未命中锚点: b51-toc-0032 习作 二十年后的家乡 keys=['习作二十年后的家乡']
+  [问题] 未命中锚点: b51-toc-0033 语文园地 keys=['语文园地']
+  [问题] 未命中锚点: b51-toc-0040 习作 介绍一种事物 keys=['习作介绍一种事物']
+  [问题] 未命中锚点: b51-toc-0045 口语交际 父母之爱 keys=['口语交际父母之爱']
+  [问题] 未命中锚点: b51-toc-0046 习作 我想对您说 keys=['习作我想对您说']
+  [问题] 未命中锚点: b51-toc-0047 语文园地 keys=['语文园地']
+  [问题] 未命中锚点: b51-toc-0050 山居秋暝 keys=['山居秋暝']
+  [问题] 未命中锚点: b51-toc-0052 长相思 keys=['长相思']
+  [问题] 未命中锚点: b51-toc-0055 习作 即景 keys=['习作即景']
+  [问题] 未命中锚点: b51-toc-0056 语文园地 keys=['语文园地']
+  [问题] 未命中锚点: b51-toc-0061 口语交际 我最喜欢的人物形象 keys=['口语交际我最喜欢的人物形象']
+  [问题] 未命中锚点: b51-toc-0062 习作 推荐一本书 keys=['习作推荐一本书']
+  [问题] 未命中锚点: b51-toc-0063 语文园地 keys=['语文园地']
+已写入: D:\ah21\textbook-parser\output\b51_正文分块.json
+已写入: D:\ah21\textbook-parser\output\b51_正文分块.md
+控制台输出已同步写入日志: D:\ah21\textbook-parser\output\b51_正文分块.log

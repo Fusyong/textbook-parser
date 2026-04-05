@@ -1,0 +1,9 @@
+*.pdf
+
+__pycache__
+*.egg-info
+*.zip
+*.7z
+
+tests
+
