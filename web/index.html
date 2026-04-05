@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>教材字词工具</title>
+    <link rel="stylesheet" href="css/app.css" />
+  </head>
+  <body class="app">
+    <header class="app-header">
+      <h1 class="app-title">教材字词工具</h1>
+      <nav class="tabs" aria-label="功能切换">
+        <button type="button" class="tab active" data-tab="chars">生字检查</button>
+        <button type="button" class="tab" data-tab="words">组词</button>
+      </nav>
+    </header>
+
+    <div id="data-banner" class="banner banner-warn hidden" role="status"></div>
+
+    <main class="app-main">
+      <section id="panel-chars" class="panel panel-fill active">
+        <div class="panel-head">
+          <div class="panel-toolbar">
+            <label class="lbl-compact lbl-book"
+              >起点册 <select id="char-start-book"></select
+            ></label>
+            <label class="lbl-compact lbl-toc"
+              >起点课 <select id="char-start-toc"></select
+            ></label>
+            <label class="lbl-compact lbl-book"
+              >终点册 <select id="char-end-book"></select
+            ></label>
+            <label class="lbl-compact lbl-toc"
+              >终点课 <select id="char-end-toc"></select
+            ></label>
+            <label class="lbl-compact lbl-replace"
+              >替换为 <input type="text" id="char-placeholder" value="□" maxlength="120" spellcheck="false"
+            /></label>
+            <fieldset class="fieldset fieldset-inline">
+              <legend>来源</legend>
+              <label class="inline"><input type="checkbox" id="char-use-shizi" checked />识字</label>
+              <label class="inline"><input type="checkbox" id="char-use-xiezi" checked />写字</label>
+            </fieldset>
+            <fieldset class="fieldset fieldset-inline">
+              <legend>模式</legend>
+              <label class="inline"><input type="radio" name="char-mode" value="replace-known" checked />换已学</label>
+              <label class="inline"><input type="radio" name="char-mode" value="replace-unknown" />换未学</label>
+            </fieldset>
+            <button type="button" id="char-run" class="btn-run">检查</button>
+            <details class="hint-fold">
+              <summary><mark>说明</summary>mark></summary>
+              <span class="hint-fold-body"
+                >「册」为书目简称，如 <code>b11</code> 指一年级上册。字表范围：起点、终点对应目录项及其之间的识字表／写字表行（<code>toc_id</code>）。替换：<code>$1</code> 为当前字，例 <code>【$1】</code>；无 <code>$1</code> 则为固定字符。所用教材资源是某一时刻各册的在用版本，而不是同一批学生使用的同一套。</span
+              >
+            </details>
+          </div>
+        </div>
+        <div class="dual-textareas">
+          <label class="ta-wrap">
+            <span class="ta-label">待检查</span>
+            <textarea id="char-input" placeholder="粘贴正文…"></textarea>
+          </label>
+          <label class="ta-wrap">
+            <span class="ta-label">结果</span>
+            <textarea id="char-output" readonly></textarea>
+          </label>
+        </div>
+        <p class="hint hint-tight" id="char-stats"></p>
+      </section>
+
+      <section id="panel-words" class="panel panel-fill">
+        <div class="panel-head">
+          <div class="panel-toolbar">
+            <label class="lbl-compact lbl-book"
+              >起点册 <select id="word-start-book"></select
+            ></label>
+            <label class="lbl-compact lbl-toc"
+              >起点课 <select id="word-start-toc"></select
+            ></label>
+            <label class="lbl-compact lbl-book"
+              >终点册 <select id="word-end-book"></select
+            ></label>
+            <label class="lbl-compact lbl-toc"
+              >终点课 <select id="word-end-toc"></select
+            ></label>
+            <label class="lbl-compact lbl-replace"
+              >目标字
+              <input type="text" id="word-char" maxlength="80" placeholder="首字有效" spellcheck="false"
+            /></label>
+            <label class="inline"><input type="checkbox" id="word-only-ok" checked />仅正文</label>
+            <label class="inline"><input type="checkbox" id="word-include-words-table" checked />词语表</label>
+            <button type="button" id="word-run" class="btn-run">检索</button>
+            <details class="hint-fold">
+              <summary><mark>说明</mark></summary>
+              <span class="hint-fold-body"
+                >「册」为书目简称（如 <code>b11</code> 指一年级上册）。目标字多字时只取<strong>第一个汉字</strong>。三列分桶以<strong>所选「终点课」</strong>为锚（在全套目录顺序上）：该课、其<strong>前两课</strong>、其余；列内词语按<strong>全套教材词频</strong>（正文分词 + 词语表出现次数）从高到低排列。所用教材资源是某一时刻各册的在用版本，而不是同一批学生使用的同一套。</span
+              >
+            </details>
+            <span id="word-status" class="hint hint-toolbar-status"></span>
+          </div>
+        </div>
+        <div class="word-hit-panel">
+          <div class="word-hit-grid" aria-label="组词结果">
+            <div class="word-hit-corner" aria-hidden="true"></div>
+            <div class="word-hit-colhead">终点课</div>
+            <div class="word-hit-colhead">前两课</div>
+            <div class="word-hit-colhead">其他</div>
+            <div class="word-hit-rowhead">正文</div>
+            <textarea id="word-out-body-last" class="word-hit-cell" readonly rows="6"></textarea>
+            <textarea id="word-out-body-near" class="word-hit-cell" readonly rows="6"></textarea>
+            <textarea id="word-out-body-other" class="word-hit-cell" readonly rows="6"></textarea>
+            <div class="word-hit-rowhead">词语表</div>
+            <textarea id="word-out-table-last" class="word-hit-cell" readonly rows="6"></textarea>
+            <textarea id="word-out-table-near" class="word-hit-cell" readonly rows="6"></textarea>
+            <textarea id="word-out-table-other" class="word-hit-cell" readonly rows="6"></textarea>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="generated/data.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
