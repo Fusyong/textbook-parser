@@ -5,5 +5,9 @@ __pycache__
 *.zip
 *.7z
 
+venv
+.venv
+
+
 tests
 
