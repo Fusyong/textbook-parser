@@ -92,7 +92,7 @@ python -m textbook_parser toc-chunk --project-root . --book b31 --body-start-lin
 python -m textbook_parser toc-chunk --project-root . --books --continue-on-error
 ```
 
-## 到出到web应用数据
+## 导出到web应用数据
 
 ```bash
 python scripts/export_web_data.py
