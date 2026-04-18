@@ -3,7 +3,8 @@
 web/generated/data.js，供静态网页使用。
 
 - 标准库即可完成表数据与分块元数据；
-- 组词用正文预分词列表 chunkTokensByBook（与分块一一对齐，需安装 jieba）：
+- 组词用正文预分词列表 chunkTokensByBook（与分块一一对齐，需安装 jieba；
+  丢弃仅 ASCII 字母、仅数字、仅标点（含全角/半角）的词形，各分块内去重后按 Unicode 排序）：
     pip install -e ".[web]"
   或: pip install jieba
 
@@ -17,6 +18,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+import unicodedata
 from collections import defaultdict
 from pathlib import Path
 
@@ -138,18 +140,42 @@ def _char_rows(table_json: dict | None) -> list[dict]:
     for i, row in enumerate(rows):
         if not isinstance(row, dict):
             continue
-        chars: list[str] = []
+        char_items: list[dict[str, str]] = []
         for item in row.get("chars") or []:
-            if isinstance(item, dict) and item.get("char"):
-                chars.append(str(item["char"]))
+            if not isinstance(item, dict) or not item.get("char"):
+                continue
+            ch = str(item["char"])
+            py_raw = item.get("pinyin")
+            py = str(py_raw).strip() if py_raw else ""
+            char_items.append({"char": ch, "pinyin": py})
+        chars = [x["char"] for x in char_items]
         out.append(
             {
                 "i": i,
                 "label": _row_label(row),
                 "chars": chars,
+                "charItems": char_items,
                 "tocId": _unit_toc_id(row),
             }
         )
+    return out
+
+
+def _word_items_from_row(row: dict) -> list[dict[str, str]]:
+    """词语表行：仅使用 JSON 中已有的拼音（若有）；否则 pinyin 为空字符串。"""
+    raw = row.get("words") or []
+    out: list[dict[str, str]] = []
+    for w in raw:
+        if isinstance(w, dict):
+            word = str(w.get("word") or w.get("w") or "").strip()
+            py_raw = w.get("pinyin")
+            py = str(py_raw).strip() if py_raw else ""
+            if word:
+                out.append({"word": word, "pinyin": py})
+            continue
+        s = str(w).strip()
+        if s:
+            out.append({"word": s, "pinyin": ""})
     return out
 
 
@@ -161,12 +187,14 @@ def _word_rows(word_json: dict | None) -> list[dict]:
     for i, row in enumerate(rows):
         if not isinstance(row, dict):
             continue
-        words = [str(w) for w in (row.get("words") or []) if w]
+        word_items = _word_items_from_row(row)
+        words = [x["word"] for x in word_items]
         out.append(
             {
                 "i": i,
                 "label": _row_label(row),
                 "words": words,
+                "wordItems": word_items,
                 "tocId": _unit_toc_id(row),
             }
         )
@@ -219,12 +247,45 @@ def _public_chunks_meta(chunks_with_text: list[dict]) -> list[dict]:
     ]
 
 
+def _is_pure_ascii_alpha_token(s: str) -> bool:
+    """仅由 ASCII 拉丁字母构成（无数字、空格、符号）。"""
+    return bool(s) and s.isascii() and s.isalpha()
+
+
+def _is_pure_digit_token(s: str) -> bool:
+    """仅由 Unicode 十进制数字字符构成（如 12、３４）。"""
+    return bool(s) and all(ch.isdigit() for ch in s)
+
+
+def _is_pure_punctuation_token(s: str) -> bool:
+    """仅由标点构成（Unicode 大类 P：含中文全角标点、ASCII 半角标点等）。"""
+    if not s:
+        return False
+    return all(unicodedata.category(ch).startswith("P") for ch in s)
+
+
+def _keep_segment_token(tok: str) -> bool:
+    if not tok:
+        return False
+    if _is_pure_ascii_alpha_token(tok):
+        return False
+    if _is_pure_digit_token(tok):
+        return False
+    if _is_pure_punctuation_token(tok):
+        return False
+    return True
+
+
 def _tokenize_chunks(
     book_code: str,
     chunks: list[dict],
     jieba_cut,
 ) -> list[list[str]]:
-    """与 chunks 等长的分词结果列表；无正文则为空列表。"""
+    """与 chunks 等长的分词结果列表；无正文则为空列表。
+
+    各分块：去掉纯英文（ASCII 字母）、纯数字、纯标点（全角/半角）词形，去重后
+    按 Unicode 码点排序（不保留原文出现顺序）。
+    """
     out: list[list[str]] = []
     for ci, ch in enumerate(chunks):
         text = (ch.get("text") or "").strip()
@@ -237,15 +298,13 @@ def _tokenize_chunks(
             sys.stderr.write(f"{book_code} 分块 {ci} 分词失败: {e}\n")
             out.append([])
             continue
-        seen: set[str] = set()
-        row: list[str] = []
+        kept: set[str] = set()
         for t in raw:
             tok = str(t).strip()
-            if not tok or tok in seen:
+            if not _keep_segment_token(tok):
                 continue
-            seen.add(tok)
-            row.append(tok)
-        out.append(row)
+            kept.add(tok)
+        out.append(sorted(kept))
     return out
 
 
@@ -333,7 +392,7 @@ def build_payload(root: Path, out_dir: Path) -> dict:
     word_freq = _build_word_freq(chunk_tokens_by_book, word_by_book)
 
     return {
-        "version": 4,
+        "version": 8,
         "books": books_meta,
         "tocByBook": toc_by_book,
         "charByBook": char_by_book,

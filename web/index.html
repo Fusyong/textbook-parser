@@ -12,6 +12,7 @@
       <nav class="tabs" aria-label="功能切换">
         <button type="button" class="tab active" data-tab="chars">生字检查</button>
         <button type="button" class="tab" data-tab="words">组词</button>
+        <button type="button" class="tab" data-tab="lexicon">字词表</button>
       </nav>
     </header>
 
@@ -48,7 +49,7 @@
             </fieldset>
             <button type="button" id="char-run" class="btn-run">检查</button>
             <details class="hint-fold">
-              <summary><mark>说明</summary>mark></summary>
+              <summary><mark>说明</mark></summary>
               <span class="hint-fold-body"
                 >「册」为书目简称，如 <code>b11</code> 指一年级上册。字表范围：起点、终点对应目录项及其之间的识字表／写字表行（<code>toc_id</code>）。替换：<code>$1</code> 为当前字，例 <code>【$1】</code>；无 <code>$1</code> 则为固定字符。所用教材资源是某一时刻各册的在用版本，而不是同一批学生使用的同一套。</span
               >
@@ -115,6 +116,33 @@
             <textarea id="word-out-table-other" class="word-hit-cell" readonly rows="6"></textarea>
           </div>
         </div>
+      </section>
+
+      <section id="panel-lexicon" class="panel panel-fill">
+        <div class="panel-head">
+          <div class="panel-toolbar">
+            <div class="lex-toolbar-row">
+              <label class="lbl-compact lbl-book lex-inline"
+                >册 <select id="lexicon-book" aria-label="选择分册"></select></label
+              >
+              <label class="lbl-compact lbl-lexicon-kind lex-inline"
+                >表
+                <select id="lexicon-kind" aria-label="字词表类型">
+                  <option value="识字表">识字表</option>
+                  <option value="写字表">写字表</option>
+                  <option value="词语表">词语表</option>
+                </select></label
+              >
+            </div>
+            <details class="hint-fold">
+              <summary><mark>说明</mark></summary>
+              <span class="hint-fold-body"
+                >按分册（书目代码，如 <code>b11</code>）浏览识字表、写字表、词语表。拼音仅展示导出数据里原有的字段（识字表／写字表来自 JSON；当前词语表 JSON 一般无逐词拼音，故词语表通常只显示词语）。数据过旧无 <code>charItems</code>／<code>wordItems</code> 时请重新运行 <code>python scripts/export_web_data.py</code>。</span
+              >
+            </details>
+          </div>
+        </div>
+        <div id="lexicon-body" class="lexicon-body" aria-live="polite"></div>
       </section>
     </main>
 

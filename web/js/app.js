@@ -63,6 +63,14 @@ function posInRange(p, range) {
   return comparePos(range.lo, p) <= 0 && comparePos(p, range.hi) <= 0;
 }
 
+/** 字表行中的汉字列表（兼容仅有 chars[] 的旧导出）。 */
+function rowCharsFromRow(row) {
+  if (row?.charItems?.length) {
+    return row.charItems.map((x) => x?.char).filter(Boolean);
+  }
+  return row.chars || [];
+}
+
 /**
  * @param {{ lo, hi }} range
  * @param {{ useShizi: boolean, useXiezi: boolean }} opts
@@ -82,7 +90,7 @@ function charSetForLessonRange(range, opts) {
         if (!row.tocId) continue;
         const p = tocPosition(d, code, row.tocId);
         if (!p || !posInRange(p, range)) continue;
-        for (const c of row.chars || []) {
+        for (const c of rowCharsFromRow(row)) {
           if (c) set.add(c);
         }
       }
@@ -92,7 +100,7 @@ function charSetForLessonRange(range, opts) {
         if (!row.tocId) continue;
         const p = tocPosition(d, code, row.tocId);
         if (!p || !posInRange(p, range)) continue;
-        for (const c of row.chars || []) {
+        for (const c of rowCharsFromRow(row)) {
           if (c) set.add(c);
         }
       }
@@ -345,6 +353,7 @@ function setupTabs() {
   const panels = {
     chars: document.getElementById("panel-chars"),
     words: document.getElementById("panel-words"),
+    lexicon: document.getElementById("panel-lexicon"),
   };
   tabs.forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -353,8 +362,100 @@ function setupTabs() {
       Object.entries(panels).forEach(([k, el]) => {
         if (el) el.classList.toggle("active", k === id);
       });
+      if (id === "lexicon") renderLexicon();
     });
   });
+}
+
+function renderLexicon() {
+  const body = document.getElementById("lexicon-body");
+  const bookSel = document.getElementById("lexicon-book");
+  const kindSel = document.getElementById("lexicon-kind");
+  if (!body || !bookSel || !kindSel) return;
+
+  const d = data();
+  const book = bookSel.value;
+  const kind = kindSel.value;
+  /** @type {unknown[]} */
+  let rows = [];
+  if (kind === "词语表") {
+    rows = d.wordByBook?.[book]?.["词语表"] || [];
+  } else {
+    rows = d.charByBook?.[book]?.[kind] || [];
+  }
+
+  if (!rows.length) {
+    body.replaceChildren();
+    const p = document.createElement("p");
+    p.className = "hint";
+    p.textContent = `本册暂无「${kind}」数据，或该表在导出时为空。`;
+    body.appendChild(p);
+    return;
+  }
+
+  const frag = document.createDocumentFragment();
+  for (const row of rows) {
+    if (!row || typeof row !== "object") continue;
+    const lab = row.label || "";
+    const wrap = document.createElement("section");
+    wrap.className = "lex-block";
+
+    const titleEl = document.createElement("span");
+    titleEl.className = "lex-block-title";
+    titleEl.textContent = lab || `行 ${(row.i ?? 0) + 1}`;
+    wrap.appendChild(titleEl);
+
+    const flow = document.createElement("div");
+    flow.className =
+      kind === "词语表" ? "lex-flow lex-flow--words" : "lex-flow lex-flow--chars";
+
+    if (kind === "词语表") {
+      const items =
+        row.wordItems?.length > 0
+          ? row.wordItems
+          : (row.words || []).map((w) => ({ word: w, pinyin: "" }));
+      for (const it of items) {
+        const cell = document.createElement("span");
+        cell.className = "lex-item";
+        const py = (it.pinyin && String(it.pinyin).trim()) || "";
+        if (py) {
+          const pEl = document.createElement("span");
+          pEl.className = "lex-item-py";
+          pEl.textContent = py;
+          cell.appendChild(pEl);
+        }
+        const wEl = document.createElement("span");
+        wEl.className = "lex-item-han";
+        wEl.textContent = it.word || "";
+        cell.appendChild(wEl);
+        flow.appendChild(cell);
+      }
+    } else {
+      const items =
+        row.charItems?.length > 0
+          ? row.charItems
+          : (row.chars || []).map((c) => ({ char: c, pinyin: "" }));
+      for (const it of items) {
+        const cell = document.createElement("span");
+        cell.className = "lex-item";
+        const py = (it.pinyin && String(it.pinyin).trim()) || "";
+        if (py) {
+          const pEl = document.createElement("span");
+          pEl.className = "lex-item-py";
+          pEl.textContent = py;
+          cell.appendChild(pEl);
+        }
+        const cEl = document.createElement("span");
+        cEl.className = "lex-item-han";
+        cEl.textContent = it.char || "";
+        cell.appendChild(cEl);
+        flow.appendChild(cell);
+      }
+    }
+    wrap.appendChild(flow);
+    frag.appendChild(wrap);
+  }
+  body.replaceChildren(frag);
 }
 
 function fillBookSelect(selectId) {
@@ -524,7 +625,7 @@ function runWordSearch() {
 
   if (!d.wordFreq || typeof d.wordFreq !== "object") {
     showDataBanner(
-      "数据缺少 wordFreq（请重新运行 scripts/export_web_data.py 生成 v4 数据）以按全套教材词频排序。",
+      "数据缺少 wordFreq（请重新运行 scripts/export_web_data.py 重新导出）以按全套教材词频排序。",
     );
     clearWordOutputCells();
     if (statusEl) statusEl.textContent = "";
@@ -607,7 +708,13 @@ function init() {
 
   setupTabs();
 
-  for (const id of ["char-start-book", "char-end-book", "word-start-book", "word-end-book"]) {
+  for (const id of [
+    "char-start-book",
+    "char-end-book",
+    "word-start-book",
+    "word-end-book",
+    "lexicon-book",
+  ]) {
     fillBookSelect(id);
   }
   bindBookTocPair("char-start");
@@ -618,6 +725,12 @@ function init() {
 
   document.getElementById("char-run")?.addEventListener("click", runCharCheck);
   document.getElementById("word-run")?.addEventListener("click", runWordSearch);
+
+  const lexBook = document.getElementById("lexicon-book");
+  const lexKind = document.getElementById("lexicon-kind");
+  if (lexBook && d.books?.[0]?.code) lexBook.value = d.books[0].code;
+  lexBook?.addEventListener("change", renderLexicon);
+  lexKind?.addEventListener("change", renderLexicon);
 }
 
 function bindInputEnterShortcuts() {
