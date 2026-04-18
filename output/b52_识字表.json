@@ -693,105 +693,10 @@
           "char": "襄",
           "pinyin": "xiāng",
           "polyphone": false
-        },
-        {
-          "char": "识",
-          "pinyin": null,
-          "polyphone": false
-        },
-        {
-          "char": "字",
-          "pinyin": null,
-          "polyphone": false
-        },
-        {
-          "char": "表",
-          "pinyin": null,
-          "polyphone": false
-        },
-        {
-          "char": "中",
-          "pinyin": null,
-          "polyphone": false
-        },
-        {
-          "char": "蓝",
-          "pinyin": null,
-          "polyphone": false
-        },
-        {
-          "char": "色",
-          "pinyin": null,
-          "polyphone": false
-        },
-        {
-          "char": "的",
-          "pinyin": null,
-          "polyphone": false
-        },
-        {
-          "char": "字",
-          "pinyin": null,
-          "polyphone": false
-        },
-        {
-          "char": "是",
-          "pinyin": null,
-          "polyphone": false
-        },
-        {
-          "char": "多",
-          "pinyin": null,
-          "polyphone": false
-        },
-        {
-          "char": "音",
-          "pinyin": null,
-          "polyphone": false
-        },
-        {
-          "char": "字",
-          "pinyin": null,
-          "polyphone": false
-        },
-        {
-          "char": "不",
-          "pinyin": null,
-          "polyphone": false
-        },
-        {
-          "char": "计",
-          "pinyin": null,
-          "polyphone": false
-        },
-        {
-          "char": "入",
-          "pinyin": null,
-          "polyphone": false
-        },
-        {
-          "char": "生",
-          "pinyin": null,
-          "polyphone": false
-        },
-        {
-          "char": "字",
-          "pinyin": null,
-          "polyphone": false
-        },
-        {
-          "char": "总",
-          "pinyin": null,
-          "polyphone": false
-        },
-        {
-          "char": "数",
-          "pinyin": null,
-          "polyphone": false
         }
       ],
       "pinyin_line": "rFn yuF jK tK chWng xiQng",
-      "hanzi_line": " 9   仞 岳 蓟 涕 裳 襄\n识字表中蓝色的字是多音字，不计入生字总数。",
+      "hanzi_line": " 9   仞 岳 蓟 涕 裳 襄",
       "unit": {
         "toc_id": "b52-toc-0026",
         "toc_kind": "lesson",
@@ -1596,7 +1501,7 @@
     }
   ],
   "total_note": "（共 200 个生字）",
-  "char_count_computed": 231,
+  "char_count_computed": 212,
   "units_from_toc": [
     {
       "id": "b52-toc-0002",

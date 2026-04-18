@@ -1,5 +1,5 @@
 # textbook-parser extract-all
-# time: 2026-04-05T16:44:24
+# time: 2026-04-18T10:38:41
 # argv: D:\ah21\textbook-parser\src\textbook_parser\__main__.py extract-all --extractor 写字表 --project-root .
 # book_code: 12_books
 # log_file: D:\ah21\textbook-parser\output\extract-all_写字表.log
@@ -10,11 +10,12 @@
 
 --- b11 ---
 [b11/写字表 抛弃]   识字                                           
+[b11/写字表 抛弃]   汉语拼音                                      
 [b11/写字表 抛弃]   阅读                                          
 [b11/写字表 抛弃] 识字
 [b11/写字表 抛弃]       阅读
 [b11/写字表] 目录 JSON 对齐 — 锚点全部匹配到目录
-写字表: 行数 25，字数合计 104
+写字表: 行数 25，字数合计 100
 已写入: D:\ah21\textbook-parser\output\b11_写字表.json
 已写入: D:\ah21\textbook-parser\output\b11_写字表.md
 抛弃行日志: D:\ah21\textbook-parser\output\b11_写字表.discard.log

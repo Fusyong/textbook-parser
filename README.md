@@ -24,7 +24,7 @@ python -m venv .venv
 
 将 PDF 放到 `material/`，文件名与 `configs/books.yaml` 中对应代码一致。
 
-## pdftotext
+## pdftotext !!! 小心覆盖，注意备份
 
 ```bash
 # 转换 books.yaml 中全部书目（每个 PDF → material/text-by-layout/ 下对应版式文件）
@@ -90,6 +90,13 @@ python -m textbook_parser toc-chunk --project-root . --book b31 --body-start-lin
 
 # 批量时某一册失败仍继续其余册
 python -m textbook_parser toc-chunk --project-root . --books --continue-on-error
+```
+
+## 到出到web应用数据
+
+```bash
+python scripts/export_web_data.py
+python scripts/export_web_data.py --output web/generated/data.js
 ```
 
 ## TODO

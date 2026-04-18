@@ -143,30 +143,10 @@
           "char": "十",
           "pinyin": "shí",
           "polyphone": false
-        },
-        {
-          "char": "汉",
-          "pinyin": null,
-          "polyphone": false
-        },
-        {
-          "char": "语",
-          "pinyin": null,
-          "polyphone": false
-        },
-        {
-          "char": "拼",
-          "pinyin": null,
-          "polyphone": false
-        },
-        {
-          "char": "音",
-          "pinyin": null,
-          "polyphone": false
         }
       ],
       "pinyin_line": "liM qU bQ shI",
-      "hanzi_line": "      语文园地一         六 七 八 十\n  汉语拼音",
+      "hanzi_line": "      语文园地一         六 七 八 十",
       "unit": {
         "toc_id": "b11-toc-0011",
         "toc_kind": "garden",
@@ -999,7 +979,7 @@
     }
   ],
   "total_note": "（共 100 个字）",
-  "char_count_computed": 104,
+  "char_count_computed": 100,
   "units_from_toc": [
     {
       "id": "b11-toc-0002",

@@ -611,105 +611,10 @@
           "char": "叉",
           "pinyin": "chā",
           "polyphone": false
-        },
-        {
-          "char": "识",
-          "pinyin": null,
-          "polyphone": false
-        },
-        {
-          "char": "字",
-          "pinyin": null,
-          "polyphone": false
-        },
-        {
-          "char": "表",
-          "pinyin": null,
-          "polyphone": false
-        },
-        {
-          "char": "中",
-          "pinyin": null,
-          "polyphone": false
-        },
-        {
-          "char": "蓝",
-          "pinyin": null,
-          "polyphone": false
-        },
-        {
-          "char": "色",
-          "pinyin": null,
-          "polyphone": false
-        },
-        {
-          "char": "的",
-          "pinyin": null,
-          "polyphone": false
-        },
-        {
-          "char": "字",
-          "pinyin": null,
-          "polyphone": false
-        },
-        {
-          "char": "是",
-          "pinyin": null,
-          "polyphone": false
-        },
-        {
-          "char": "多",
-          "pinyin": null,
-          "polyphone": false
-        },
-        {
-          "char": "音",
-          "pinyin": null,
-          "polyphone": false
-        },
-        {
-          "char": "字",
-          "pinyin": null,
-          "polyphone": false
-        },
-        {
-          "char": "不",
-          "pinyin": null,
-          "polyphone": false
-        },
-        {
-          "char": "计",
-          "pinyin": null,
-          "polyphone": false
-        },
-        {
-          "char": "入",
-          "pinyin": null,
-          "polyphone": false
-        },
-        {
-          "char": "生",
-          "pinyin": null,
-          "polyphone": false
-        },
-        {
-          "char": "字",
-          "pinyin": null,
-          "polyphone": false
-        },
-        {
-          "char": "总",
-          "pinyin": null,
-          "polyphone": false
-        },
-        {
-          "char": "数",
-          "pinyin": null,
-          "polyphone": false
         }
       ],
       "pinyin_line": "jJ chQ",
-      "hanzi_line": " 10   挤 叉\n识字表中蓝色的字是多音字，不计入生字总数。",
+      "hanzi_line": " 10   挤 叉",
       "unit": {
         "toc_id": "b42-toc-0026",
         "toc_kind": "lesson",
@@ -2052,7 +1957,7 @@
     }
   ],
   "total_note": "（共 250 个生字）",
-  "char_count_computed": 288,
+  "char_count_computed": 269,
   "units_from_toc": [
     {
       "id": "b42-toc-0002",

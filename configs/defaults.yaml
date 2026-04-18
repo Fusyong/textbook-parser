@@ -67,8 +67,10 @@ extractors:
       - "语文园地[一二三四五六七八九十]?"
     discard_line_patterns:
       - "仅供个人.*"
+      - "识字表中.*"
       - "识字"
       - "阅读"
+      - "汉语拼音"
     options:
       total_pattern: "(\\(|（)共\\d+个生字(\\)|）)"
 
@@ -85,6 +87,7 @@ extractors:
       - "仅供个人.*"
       - "识字"
       - "阅读"
+      - "汉语拼音"
     options:
       total_pattern: "(\\(|（)共\\d+个字(\\)|）)"
 

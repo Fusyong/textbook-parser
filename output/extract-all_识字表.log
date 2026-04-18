@@ -1,5 +1,5 @@
 # textbook-parser extract-all
-# time: 2026-04-05T16:44:23
+# time: 2026-04-18T10:59:45
 # argv: D:\ah21\textbook-parser\src\textbook_parser\__main__.py extract-all --extractor 识字表 --project-root .
 # book_code: 12_books
 # log_file: D:\ah21\textbook-parser\output\extract-all_识字表.log
@@ -10,6 +10,7 @@
 
 --- b11 ---
 [b11/识字表 抛弃]  识字
+[b11/识字表 抛弃]  汉语拼音
 [b11/识字表 抛弃] ① 识字表中蓝色的字此前已作为生字认读，此处作为多音字学习，不计入生字总数。
 [b11/识字表 抛弃]                                                                                          105
 [b11/识字表 抛弃]   阅读
@@ -17,7 +18,7 @@
 [b11/识字表 抛弃] 106
 [b11/识字表 抛弃]   阅读
 [b11/识字表] 目录 JSON 对齐 — 锚点全部匹配到目录
-识字表: 行数 38，字数合计 288
+识字表: 行数 38，字数合计 284
 已写入: D:\ah21\textbook-parser\output\b11_识字表.json
 已写入: D:\ah21\textbook-parser\output\b11_识字表.md
 抛弃行日志: D:\ah21\textbook-parser\output\b11_识字表.discard.log
@@ -88,36 +89,40 @@
 已写入: D:\ah21\textbook-parser\output\b32_识字表.md
 抛弃行日志: D:\ah21\textbook-parser\output\b32_识字表.discard.log
 --- b41 ---
+[b41/识字表 抛弃] 识字表中蓝色的字是多音字，不计入生字总数。
 [b41/识字表 抛弃]                                                                                  123
 [b41/识字表 抛弃] 124
 [b41/识字表] 目录 JSON 对齐 — 锚点全部匹配到目录
-识字表: 行数 31，字数合计 290
+识字表: 行数 31，字数合计 271
 已写入: D:\ah21\textbook-parser\output\b41_识字表.json
 已写入: D:\ah21\textbook-parser\output\b41_识字表.md
 抛弃行日志: D:\ah21\textbook-parser\output\b41_识字表.discard.log
 --- b42 ---
+[b42/识字表 抛弃] 识字表中蓝色的字是多音字，不计入生字总数。
 [b42/识字表 抛弃]                                                                                   137
 [b42/识字表 抛弃]   仅供个人学习使用，未经授权不得另做他用
 [b42/识字表 抛弃] 138
 [b42/识字表 抛弃]        仅供个人学习使用，未经授权不得另做他用
 [b42/识字表] 目录 JSON 对齐 — 锚点全部匹配到目录
-识字表: 行数 32，字数合计 288
+识字表: 行数 32，字数合计 269
 已写入: D:\ah21\textbook-parser\output\b42_识字表.json
 已写入: D:\ah21\textbook-parser\output\b42_识字表.md
 抛弃行日志: D:\ah21\textbook-parser\output\b42_识字表.discard.log
 --- b51 ---
+[b51/识字表 抛弃] 识字表中蓝色的字是多音字，不计入生字总数。
 [b51/识字表 抛弃]                                                                                     117
 [b51/识字表 抛弃] 118
 [b51/识字表] 目录 JSON 对齐 — 锚点全部匹配到目录
-识字表: 行数 26，字数合计 235
+识字表: 行数 26，字数合计 216
 已写入: D:\ah21\textbook-parser\output\b51_识字表.json
 已写入: D:\ah21\textbook-parser\output\b51_识字表.md
 抛弃行日志: D:\ah21\textbook-parser\output\b51_识字表.discard.log
 --- b52 ---
+[b52/识字表 抛弃] 识字表中蓝色的字是多音字，不计入生字总数。
 [b52/识字表 抛弃]                                                                                           119
 [b52/识字表 抛弃]   仅供个人学习使用，未经授权不得另做他用
 [b52/识字表] 目录 JSON 对齐 — 锚点全部匹配到目录
-识字表: 行数 23，字数合计 231
+识字表: 行数 23，字数合计 212
 已写入: D:\ah21\textbook-parser\output\b52_识字表.json
 已写入: D:\ah21\textbook-parser\output\b52_识字表.md
 抛弃行日志: D:\ah21\textbook-parser\output\b52_识字表.discard.log

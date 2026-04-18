@@ -417,15 +417,23 @@ code {
   padding: 2px 0 6px;
   display: grid;
   grid-template-columns: max-content minmax(0, 1fr);
-  column-gap: 0.65rem;
-  row-gap: 0.28rem;
-  align-items: baseline;
+  column-gap: 0.5rem;
+  row-gap: 0.2rem;
+  align-items: center;
   /* 字词：仿宋 → 楷体 → 宋体（跨平台常见名） */
   --lex-font: "FangSong", "仿宋", "STFangsong", "FZFangSong-Z02", "KaiTi", "楷体",
     "STKaiti", "Kaiti SC", "SimSun", "宋体", "NSimSun", "Songti SC", "STSong",
     serif;
-  /* 识字表／写字表：等宽字格（无框线） */
-  --lex-char-col: 2.75rem;
+  /* 拼音字号（与 .lex-item-py 一致） */
+  --lex-py-size: 0.8125rem;
+  /*
+   * 字格列宽 ≈ 「zhuang」在默认界面字体下的可视宽度：
+   * 6 个拉丁字母 × 均宽系数 + 余量（略增宽以贴合实际渲染）。
+   */
+  --lex-char-col: calc(6 * 0.48 * var(--lex-py-size) + 0.42rem);
+  /* 左列课文标题：宋体 → 仿宋 */
+  --lex-title-font: "SimSun", "宋体", "NSimSun", "Songti SC", "STSong", "FangSong",
+    "仿宋", "STFangsong", "FZFangSong-Z02", serif;
 }
 
 .lexicon-body > .hint {
@@ -439,6 +447,7 @@ code {
 .lex-block-title {
   margin: 0;
   padding: 0;
+  font-family: var(--lex-title-font);
   font-size: var(--font-sm);
   font-weight: 650;
   color: var(--muted);
@@ -460,7 +469,7 @@ code {
 .lex-flow--chars {
   display: grid;
   grid-template-columns: repeat(auto-fill, var(--lex-char-col));
-  gap: 0.3rem 0.12rem;
+  gap: 0;
   align-content: start;
   justify-items: stretch;
 }
@@ -484,7 +493,7 @@ code {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.12rem;
+  gap: 0.05rem;
   padding: 0;
   border: none;
   background: none;
@@ -504,8 +513,34 @@ code {
 }
 
 .lex-item-py {
-  font-size: 0.8125rem;
+  font-size: var(--lex-py-size, 0.8125rem);
   color: var(--muted);
   line-height: 1.15;
   word-break: break-all;
+}
+
+/* 字词表：由页面整体滚动，不用内部滚动条 */
+body.app:has(#panel-lexicon.active) {
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: auto;
+  min-height: 100%;
+}
+
+.app-main:has(#panel-lexicon.active) {
+  overflow: visible;
+  flex: 0 0 auto;
+  min-height: auto;
+}
+
+#panel-lexicon.panel-fill.active {
+  overflow: visible;
+  flex: 0 0 auto;
+  min-height: auto;
+}
+
+#panel-lexicon.active .lexicon-body {
+  flex: 0 0 auto;
+  min-height: auto;
+  overflow: visible;
 }
