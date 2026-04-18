@@ -394,6 +394,43 @@ code {
   min-width: 6.5rem;
 }
 
+/* 查询：输入框在「类型」之前，与工具条同一行 */
+.panel-toolbar.lookup-toolbar {
+  align-items: center;
+}
+
+/* 与「类型」同为 fieldset + legend，宽度可伸缩 */
+.lookup-input-fieldset {
+  flex: 1 1 14rem;
+  min-width: 8rem;
+  max-width: min(40rem, 100%);
+  min-inline-size: 0;
+  margin: 0;
+}
+
+.lookup-input-fieldset input[type="text"] {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+.lookup-output-panel {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.lookup-output-panel .ta-wrap {
+  flex: 1;
+  min-height: 0;
+}
+
+.lookup-output-panel .ta-wrap textarea {
+  min-height: 160px;
+}
+
 /* 字词表：「册 + 下拉」「表 + 下拉」同一行 */
 .lex-toolbar-row {
   display: flex;

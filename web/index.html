@@ -3,15 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>教材字词工具</title>
+    <title>小学语文教材字词工具</title>
     <link rel="stylesheet" href="css/app.css" />
   </head>
   <body class="app">
     <header class="app-header">
-      <h1 class="app-title">教材字词工具</h1>
+      <h1 class="app-title">小学语文教材字词工具</h1>
       <nav class="tabs" aria-label="功能切换">
-        <button type="button" class="tab active" data-tab="chars">生字检查</button>
+        <button type="button" class="tab active" data-tab="chars">文本生字词检查</button>
         <button type="button" class="tab" data-tab="words">组词</button>
+        <button type="button" class="tab" data-tab="lookup">字词查询</button>
         <button type="button" class="tab" data-tab="lexicon">字词表</button>
       </nav>
     </header>
@@ -39,8 +40,9 @@
             /></label>
             <fieldset class="fieldset fieldset-inline">
               <legend>来源</legend>
+              <label class="inline"><input type="checkbox" id="char-use-ciyu" />词语</label>
               <label class="inline"><input type="checkbox" id="char-use-shizi" checked />识字</label>
-              <label class="inline"><input type="checkbox" id="char-use-xiezi" checked />写字</label>
+              <label class="inline"><input type="checkbox" id="char-use-xiezi" />写字</label>
             </fieldset>
             <fieldset class="fieldset fieldset-inline">
               <legend>模式</legend>
@@ -51,7 +53,7 @@
             <details class="hint-fold">
               <summary><mark>说明</mark></summary>
               <span class="hint-fold-body"
-                >「册」为书目简称，如 <code>b11</code> 指一年级上册。字表范围：起点、终点对应目录项及其之间的识字表／写字表行（<code>toc_id</code>）。替换：<code>$1</code> 为当前字，例 <code>【$1】</code>；无 <code>$1</code> 则为固定字符。所用教材资源是某一时刻各册的在用版本，而不是同一批学生使用的同一套。</span
+                >「册」为书目简称，如 <code>b11</code> 指一年级上册。范围：起点、终点对应目录项及其之间的表行。勾选「词语」时，先按<strong>词语表整词</strong>匹配（长词优先），再对其余汉字按识字／写字判断。替换：<code>$1</code> 为当前字，例 <code>【$1】</code>；无 <code>$1</code> 时整词替换为一段占位。所用教材资源是某一时刻各册的在用版本，而不是同一批学生使用的同一套。</span
               >
             </details>
           </div>
@@ -115,6 +117,45 @@
             <textarea id="word-out-table-near" class="word-hit-cell" readonly rows="6"></textarea>
             <textarea id="word-out-table-other" class="word-hit-cell" readonly rows="6"></textarea>
           </div>
+        </div>
+      </section>
+
+      <section id="panel-lookup" class="panel panel-fill">
+        <div class="panel-head">
+          <div class="panel-toolbar lookup-toolbar">
+            <fieldset class="fieldset fieldset-inline lookup-input-fieldset">
+              <legend>输入</legend>
+              <input
+                type="text"
+                id="lookup-input"
+                placeholder="单字：可连续输入多字。词语：春天 夏天（空格分隔）"
+                spellcheck="false"
+                autocomplete="off"
+              />
+            </fieldset>
+            <fieldset class="fieldset fieldset-inline">
+              <legend>类型</legend>
+              <label class="inline"
+                ><input type="radio" name="lookup-mode" value="chars" checked />单字（识字表、写字表）</label
+              >
+              <label class="inline"
+                ><input type="radio" name="lookup-mode" value="words" />词语（词语表，空格分隔）</label
+              >
+            </fieldset>
+            <button type="button" id="lookup-run" class="btn-run">查询</button>
+            <details class="hint-fold">
+              <summary><mark>说明</mark></summary>
+              <span class="hint-fold-body"
+                >单字模式：连续输入或粘贴汉字，去重后逐个在全套教材<strong>识字表、写字表</strong>中查找，列出所在<strong>册</strong>（书目代码）与<strong>课</strong>（表内单元标签）。词语模式：多个词用<strong>空格</strong>分隔，在<strong>词语表</strong>中精确匹配整词。</span
+              >
+            </details>
+          </div>
+        </div>
+        <div class="lookup-output-panel">
+          <label class="ta-wrap">
+            <span class="ta-label">结果</span>
+            <textarea id="lookup-output" readonly></textarea>
+          </label>
         </div>
       </section>
 

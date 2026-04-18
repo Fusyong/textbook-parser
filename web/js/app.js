@@ -1,6 +1,6 @@
 /**
- * 教材字词工具 — 依赖 window.TEXTBOOK_WEB_DATA（由 scripts/export_web_data.py 生成）
- * 字表范围、组词范围均由「册 + 目录项」起点/终点确定（按书目顺序与目录顺序比较，可跨册）。
+ * 小学语文教材字词工具 — 依赖 window.TEXTBOOK_WEB_DATA（由 scripts/export_web_data.py 生成）
+ * 文本检查、组词范围均由「册 + 目录项」起点/终点确定（按书目顺序与目录顺序比较，可跨册）。
  */
 
 const HAN_RE = /\p{Script=Han}/u;
@@ -71,6 +71,182 @@ function rowCharsFromRow(row) {
   return row.chars || [];
 }
 
+/** 全文按字素拆成数组（含非汉字），用于整词对齐与替换。 */
+function graphemesOfString(s) {
+  const t = s || "";
+  if (typeof Intl !== "undefined" && Intl.Segmenter) {
+    const out = [];
+    const iter = new Intl.Segmenter("zh", { granularity: "grapheme" });
+    for (const { segment } of iter.segment(t)) {
+      if (segment) out.push(segment);
+    }
+    return out;
+  }
+  return [...t];
+}
+
+/** 按出现顺序取出文本中全部汉字（去重时保留首次出现顺序）。 */
+function hanGraphemesInOrder(s) {
+  return graphemesOfString(s).filter((g) => isHanChar(g));
+}
+
+function uniqueHanFirstOrder(s) {
+  const seen = new Set();
+  const out = [];
+  for (const ch of hanGraphemesInOrder(s)) {
+    if (seen.has(ch)) continue;
+    seen.add(ch);
+    out.push(ch);
+  }
+  return out;
+}
+
+/**
+ * @param {string} ch
+ * @returns {{ book: string, table: string, label: string, rowI: number }[]}
+ */
+function collectCharLookupHits(d, ch) {
+  const hits = [];
+  for (const b of d.books || []) {
+    const code = b.code;
+    const pack = d.charByBook?.[code];
+    if (!pack) continue;
+    for (const tableName of ["识字表", "写字表"]) {
+      const rows = pack[tableName] || [];
+      for (const row of rows) {
+        if (!row || typeof row !== "object") continue;
+        const cs = rowCharsFromRow(row);
+        if (!cs.includes(ch)) continue;
+        hits.push({
+          book: code,
+          table: tableName,
+          label: row.label || "",
+          rowI: typeof row.i === "number" ? row.i : 0,
+        });
+      }
+    }
+  }
+  return hits;
+}
+
+/**
+ * @param {string} word
+ * @returns {{ book: string, label: string, rowI: number }[]}
+ */
+function collectWordLookupHits(d, word) {
+  const w = String(word).trim();
+  const hits = [];
+  if (!w) return hits;
+  for (const b of d.books || []) {
+    const code = b.code;
+    const rows = d.wordByBook?.[code]?.["词语表"] || [];
+    for (const row of rows) {
+      if (!row || typeof row !== "object") continue;
+      const words = row.words || [];
+      if (!words.includes(w)) continue;
+      hits.push({
+        book: code,
+        label: row.label || "",
+        rowI: typeof row.i === "number" ? row.i : 0,
+      });
+    }
+  }
+  return hits;
+}
+
+function sortCharLookupHits(hits, d) {
+  const bookIdx = {};
+  (d.books || []).forEach((b, i) => {
+    bookIdx[b.code] = i;
+  });
+  const tOrder = { 识字表: 0, 写字表: 1 };
+  return [...hits].sort((a, b) => {
+    const bi = bookIdx[a.book] ?? 999;
+    const bj = bookIdx[b.book] ?? 999;
+    if (bi !== bj) return bi - bj;
+    const ti = tOrder[a.table] ?? 9;
+    const tj = tOrder[b.table] ?? 9;
+    if (ti !== tj) return ti - tj;
+    return a.rowI - b.rowI;
+  });
+}
+
+function sortWordLookupHits(hits, d) {
+  const bookIdx = {};
+  (d.books || []).forEach((b, i) => {
+    bookIdx[b.code] = i;
+  });
+  return [...hits].sort((a, b) => {
+    const bi = bookIdx[a.book] ?? 999;
+    const bj = bookIdx[b.book] ?? 999;
+    if (bi !== bj) return bi - bj;
+    return a.rowI - b.rowI;
+  });
+}
+
+function runLookup() {
+  const d = data();
+  const outEl = document.getElementById("lookup-output");
+  const mode = document.querySelector('input[name="lookup-mode"]:checked')?.value || "chars";
+  const raw = document.getElementById("lookup-input")?.value || "";
+
+  if (!outEl) return;
+
+  if (mode === "words") {
+    const parts = raw
+      .trim()
+      .split(/\s+/)
+      .map((x) => x.trim())
+      .filter(Boolean);
+    if (!parts.length) {
+      outEl.value = "请输入至少一个词（多个词用空格分隔）。";
+      showDataBanner("");
+      return;
+    }
+    const lines = [];
+    for (const w of parts) {
+      lines.push(w);
+      const hits = sortWordLookupHits(collectWordLookupHits(d, w), d);
+      if (!hits.length) {
+        lines.push("  （全套教材词语表中未出现。）");
+      } else {
+        for (const h of hits) {
+          const lab = h.label ? ` · ${h.label}` : "";
+          lines.push(`  册 ${h.book}${lab}`);
+        }
+      }
+      lines.push("");
+    }
+    outEl.value = lines.join("\n").trimEnd();
+    showDataBanner("");
+    return;
+  }
+
+  const chars = uniqueHanFirstOrder(raw);
+  if (!chars.length) {
+    outEl.value = "请输入至少一个汉字。";
+    showDataBanner("");
+    return;
+  }
+
+  const lines = [];
+  for (const ch of chars) {
+    lines.push(ch);
+    const hits = sortCharLookupHits(collectCharLookupHits(d, ch), d);
+    if (!hits.length) {
+      lines.push("  （识字表、写字表中均未出现。）");
+    } else {
+      for (const h of hits) {
+        const lab = h.label ? ` · ${h.label}` : "";
+        lines.push(`  册 ${h.book} · ${h.table}${lab}`);
+      }
+    }
+    lines.push("");
+  }
+  outEl.value = lines.join("\n").trimEnd();
+  showDataBanner("");
+}
+
 /**
  * @param {{ lo, hi }} range
  * @param {{ useShizi: boolean, useXiezi: boolean }} opts
@@ -106,7 +282,117 @@ function charSetForLessonRange(range, opts) {
       }
     }
   }
+
   return set;
+}
+
+/** 范围内词语表中的词形（去重），用于整词匹配。 */
+function knownWordsInLessonRange(d, range) {
+  const words = new Set();
+  for (const b of d.books || []) {
+    const code = b.code;
+    const rows = d.wordByBook?.[code]?.["词语表"] || [];
+    for (const row of rows) {
+      if (!row.tocId) continue;
+      const p = tocPosition(d, code, row.tocId);
+      if (!p || !posInRange(p, range)) continue;
+      for (const w of row.words || []) {
+        const s = String(w).trim();
+        if (s) words.add(s);
+      }
+    }
+  }
+  return [...words];
+}
+
+function sortWordsLongestFirst(words) {
+  const arr = [...words];
+  arr.sort((a, b) => {
+    const la = graphemesOfString(a).length;
+    const lb = graphemesOfString(b).length;
+    if (lb !== la) return lb - la;
+    return a.localeCompare(b, "zh");
+  });
+  return arr;
+}
+
+/**
+ * 先按词语表整词匹配（长词优先），再对其余字素按识字／写字集合替换。
+ * @param {string} text
+ * @param {string[]} sortedWords 已按词长降序
+ * @param {Set<string>} charKnownSet
+ */
+function replaceWordThenChar(text, sortedWords, charKnownSet, placeholder, mode) {
+  const g = graphemesOfString(text);
+  let hanCount = 0;
+  for (const x of g) {
+    if (isHanChar(x)) hanCount++;
+  }
+
+  const out = [];
+  let replaced = 0;
+  let i = 0;
+  while (i < g.length) {
+    let matched = null;
+    for (const w of sortedWords) {
+      const wg = graphemesOfString(w);
+      if (wg.length === 0 || i + wg.length > g.length) continue;
+      let same = true;
+      for (let k = 0; k < wg.length; k++) {
+        if (g[i + k] !== wg[k]) {
+          same = false;
+          break;
+        }
+      }
+      if (same) {
+        matched = w;
+        break;
+      }
+    }
+
+    if (matched !== null) {
+      const wg = graphemesOfString(matched);
+      const nHan = wg.reduce((n, ch) => n + (isHanChar(ch) ? 1 : 0), 0);
+      const shouldReplace =
+        mode === "replace-known" ? true : false;
+      if (shouldReplace) {
+        if (placeholder.includes("$1")) {
+          out.push(wg.map((ch) => applyReplaceTemplate(placeholder, ch)).join(""));
+        } else {
+          out.push(placeholder);
+        }
+        replaced += nHan;
+      } else {
+        out.push(...wg);
+      }
+      i += wg.length;
+      continue;
+    }
+
+    const ch = g[i];
+    if (!isHanChar(ch)) {
+      out.push(ch);
+      i++;
+      continue;
+    }
+    const known = charKnownSet.has(ch);
+    const shouldReplace =
+      mode === "replace-known" ? known : !known;
+    if (shouldReplace) {
+      replaced++;
+      out.push(applyReplaceTemplate(placeholder, ch));
+    } else {
+      out.push(ch);
+    }
+    i++;
+  }
+
+  return {
+    text: out.join(""),
+    replaced,
+    hanCount,
+    knownSetSize: charKnownSet.size,
+  };
 }
 
 /**
@@ -353,6 +639,7 @@ function setupTabs() {
   const panels = {
     chars: document.getElementById("panel-chars"),
     words: document.getElementById("panel-words"),
+    lookup: document.getElementById("panel-lookup"),
     lexicon: document.getElementById("panel-lexicon"),
   };
   tabs.forEach((btn) => {
@@ -552,27 +839,32 @@ function runCharCheck() {
 
   const useShizi = document.getElementById("char-use-shizi")?.checked;
   const useXiezi = document.getElementById("char-use-xiezi")?.checked;
+  const useCiyu = document.getElementById("char-use-ciyu")?.checked;
 
-  if (!useShizi && !useXiezi) {
-    showDataBanner("请至少勾选「识字表」或「写字表」之一。");
+  if (!useShizi && !useXiezi && !useCiyu) {
+    showDataBanner("请至少勾选「识字」「写字」「词语」之一。");
     return;
   }
 
-  const knownSet = charSetForLessonRange(range, { useShizi, useXiezi });
+  const charKnownSet = charSetForLessonRange(range, { useShizi, useXiezi });
+  const m = mode === "replace-unknown" ? "replace-unknown" : "replace-known";
 
-  const result = replaceByKnownSet(
-    input,
-    knownSet,
-    placeholder,
-    mode === "replace-unknown" ? "replace-unknown" : "replace-known",
-  );
+  const result = useCiyu
+    ? replaceWordThenChar(
+        input,
+        sortWordsLongestFirst(knownWordsInLessonRange(d, range)),
+        charKnownSet,
+        placeholder,
+        m,
+      )
+    : replaceByKnownSet(input, charKnownSet, placeholder, m);
 
   const outEl = document.getElementById("char-output");
   if (outEl) outEl.value = result.text;
 
   const stats = document.getElementById("char-stats");
   if (stats) {
-    stats.textContent = `汉字共 ${result.hanCount} 个；本次替换 ${result.replaced} 个；当前范围内字表去重后 ${result.knownSetSize} 字。`;
+    stats.textContent = `汉字共 ${result.hanCount} 个；本次替换 ${result.replaced} 个；当前范围内所选来源去重后 ${result.knownSetSize} 字。`;
   }
   showDataBanner("");
 }
@@ -725,6 +1017,7 @@ function init() {
 
   document.getElementById("char-run")?.addEventListener("click", runCharCheck);
   document.getElementById("word-run")?.addEventListener("click", runWordSearch);
+  document.getElementById("lookup-run")?.addEventListener("click", runLookup);
 
   const lexBook = document.getElementById("lexicon-book");
   const lexKind = document.getElementById("lexicon-kind");
@@ -744,6 +1037,7 @@ function bindInputEnterShortcuts() {
   };
   onEnter("char-placeholder", runCharCheck);
   onEnter("word-char", runWordSearch);
+  onEnter("lookup-input", runLookup);
 }
 
 init();
