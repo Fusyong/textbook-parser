@@ -508,7 +508,14 @@ def _run_toc_chunk_single(
             json.dumps(result, ensure_ascii=False, indent=2) + "\n",
             encoding="utf-8",
         )
-        out_md.write_text(render_toc_chunk_markdown(result), encoding="utf-8")
+        out_md.write_text(
+            render_toc_chunk_markdown(
+                result,
+                full_text=full_text,
+                toc_entries=entries,
+            ),
+            encoding="utf-8",
+        )
 
         print(
             f"正文分块: 条目 {result.get('chunk_entry_count')}, "

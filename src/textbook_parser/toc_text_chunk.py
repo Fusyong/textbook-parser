@@ -56,7 +56,7 @@ from __future__ import annotations
 import re
 from typing import Any
 
-from .extractors.char_tables import compact_for_match
+from .extractors.char_tables import compact_for_match, transcribe_layout_line_pinyin
 
 # 带圈数字（常见脚注标记）；可扩展至 UNICODE 带圈
 _CIRCLED_HEAD_RE = re.compile(
@@ -80,6 +80,18 @@ _COL_HEAD_COMPACT = frozenset(
         "书写提示",
         "我的发现",
         "交流平台",
+    }
+)
+
+# 参与正文锚点扫描的目录 kind（section 分组头仅作层级标题，不参与锚定）
+TOC_CHUNK_ANCHORABLE_KINDS: frozenset[str] = frozenset(
+    {
+        "lesson",
+        "sublesson",
+        "garden",
+        "reading_club",
+        "block_activity",
+        "toc_belt",
     }
 )
 
@@ -277,22 +289,12 @@ def propose_chunk_line_spans(
     """
     lines = full_text.splitlines()
     n = len(lines)
-    anchorable_kinds = frozenset(
-        {
-            "lesson",
-            "sublesson",
-            "garden",
-            "reading_club",
-            "block_activity",
-            "toc_belt",
-        }
-    )
     anchors: list[dict[str, Any]] = []
     cursor = max(0, body_start_line)
 
     for e in toc_entries:
         kind = e.get("kind")
-        if kind not in anchorable_kinds:
+        if kind not in TOC_CHUNK_ANCHORABLE_KINDS:
             continue
         keys = toc_title_keys(e)
         if not keys:
@@ -360,6 +362,14 @@ def suggest_body_start_line(lines: list[str], *, scan_limit: int = 500) -> int:
 def _toc_entry_display_label(e: dict[str, Any]) -> str:
     """目录条目的简短可读标签（用于 Markdown）。"""
     k = e.get("kind")
+    if k == "section":
+        lb = e.get("label")
+        if isinstance(lb, str) and lb.strip():
+            return lb.strip()
+        gl = e.get("group_label")
+        if isinstance(gl, str) and gl.strip():
+            return gl.strip()
+        return str(e.get("id") or "")
     if k == "lesson":
         n = e.get("number")
         t = e.get("title")
@@ -446,10 +456,10 @@ def run_toc_text_chunk(
         sl = sp.get("start_line")
         el = sp.get("end_line")
         if isinstance(sl, int) and 0 <= sl < n:
-            raw = lines[sl]
+            raw = transcribe_layout_line_pinyin(lines[sl])
             row["start_line_text"] = raw[:200] + ("…" if len(raw) > 200 else "")
         if sp.get("ok") and isinstance(el, int) and isinstance(sl, int) and el > sl + 1:
-            tail_ln = lines[el - 1] if el - 1 < n else ""
+            tail_ln = transcribe_layout_line_pinyin(lines[el - 1] if el - 1 < n else "")
             row["chunk_tail_preview"] = tail_ln[:120] + ("…" if len(tail_ln) > 120 else "")
         if not sp.get("ok"):
             keys = sp.get("keys_tried") or []
@@ -473,53 +483,97 @@ def run_toc_text_chunk(
     }
 
 
-def render_toc_chunk_markdown(result: dict[str, Any]) -> str:
-    """生成便于人工核对的分块 Markdown。"""
-    book = str(result.get("book_code") or "")
-    lines_out: list[str] = [
-        f"# 正文分块核对：{book}",
-        "",
-        "由 **正文分块**（目录标题锚点）生成，行号为 `splitlines()` 的 0 基索引，区间为半开 `[start, end)`。",
-        "",
-    ]
-    if ls := result.get("layout_source"):
-        lines_out.append(f"- 版式文本：`{ls}`")
-    if ts := result.get("toc_source"):
-        lines_out.append(f"- 目录 JSON：`{ts}`")
-    lines_out.append(f"- 正文起始行（启发式）：`{result.get('body_start_line', 0)}`")
-    lines_out.append(
-        f"- 锚点条目 {result.get('chunk_entry_count', 0)}，"
-        f"命中 {result.get('chunk_matched_count', 0)}，"
-        f"未命中 {result.get('chunk_unmatched_count', 0)}"
-    )
-    lines_out.extend(["", "---", ""])
+def _markdown_fenced_verbatim(body: str) -> str:
+    """用可嵌套闭合的围栏包裹正文，保留版式行宽与空格。"""
+    text = body.replace("\r\n", "\n").replace("\r", "\n")
+    fence = "```"
+    while fence in text:
+        fence += "`"
+    if text and not text.endswith("\n"):
+        text += "\n"
+    return f"{fence}\n{text}{fence}\n"
 
-    for i, ch in enumerate(result.get("chunks") or []):
-        eid = ch.get("id", "")
-        label = ch.get("toc_label") or eid
-        head = f"### [{i + 1}] "
-        if ch.get("ok"):
-            head += f"`{eid}` · {label}"
-        else:
-            head += f"（未命中）`{eid}` · {label}"
-        lines_out.append(head)
-        if ch.get("ok"):
-            sl, el = ch.get("start_line"), ch.get("end_line")
-            mode = ch.get("match_mode") or "?"
-            lines_out.append(f"- 行范围：`[{sl}, {el})` · 共 `{el - sl if isinstance(sl, int) and isinstance(el, int) else '?'}` 行 · 匹配：`{mode}`")
-            if pg := (ch.get("toc_snapshot") or {}).get("page"):
-                lines_out.append(f"- 目录页码：p.{pg}")
-            if pv := ch.get("start_line_text"):
-                lines_out.append(f"- 锚点行预览：`{pv}`")
-        else:
+
+def render_toc_chunk_markdown(
+    result: dict[str, Any],
+    *,
+    full_text: str,
+    toc_entries: list[dict[str, Any]],
+) -> str:
+    """
+    按目录全层级串联版式正文：section 输出分组标题（三级标题），
+    可锚点条目输出正文块；未命中锚点的条目标题带【未命中】。
+    """
+    lines_src = full_text.splitlines()
+    n = len(lines_src)
+    chunks = result.get("chunks") or []
+    chunks_by_id = {str(c.get("id")): c for c in chunks if c.get("id")}
+
+    has_section = any(e.get("kind") == "section" for e in toc_entries)
+    leaf_level = "####" if has_section else "##"
+    section_level = "###"
+
+    lines_out: list[str] = []
+
+    unmatched = [c for c in chunks if not c.get("ok")]
+    if unmatched:
+        lines_out.append(f"未在版式正文中匹配到目录锚点的条目（共 {len(unmatched)} 条）：")
+        lines_out.append("")
+        for ch in unmatched:
+            eid = ch.get("id", "")
+            label = (ch.get("toc_label") or "").strip() or eid or "（无标题）"
             kt = ch.get("keys_tried") or []
-            lines_out.append(f"- 尝试键：`{', '.join(str(x) for x in kt[:6])}{'…' if len(kt) > 6 else ''}`")
+            parts = [f"- `{eid}` · {label}"]
+            if kt:
+                ks = ", ".join(str(x) for x in kt[:10])
+                if len(kt) > 10:
+                    ks += "…"
+                parts[0] += f" · 尝试键：{ks}"
+            lines_out.append(parts[0])
         lines_out.append("")
 
-    if w := result.get("warnings"):
-        lines_out.extend(["---", "", "## 问题摘要（须核对）", ""])
-        for x in w:
-            lines_out.append(f"- {x}")
+    for e in toc_entries:
+        k = e.get("kind")
+        if k == "section":
+            sec_title = _toc_entry_display_label(e).strip() or str(e.get("id") or "（无标题）")
+            lines_out.append(f"{section_level} {sec_title}")
+            lines_out.append("")
+            continue
+        if k not in TOC_CHUNK_ANCHORABLE_KINDS:
+            continue
+        eid = str(e.get("id") or "")
+        ch = chunks_by_id.get(eid)
+        if ch is None:
+            fallback = _toc_entry_display_label(e).strip() or eid or "（无标题）"
+            lines_out.append(f"{leaf_level} {fallback}")
+            lines_out.append("")
+            lines_out.append("*（无可用锚点键，未参与正文分块。）*")
+            lines_out.append("")
+            continue
+
+        label = (ch.get("toc_label") or eid or "（无标题）").strip()
+        head = f"{leaf_level} {label}"
+        if not ch.get("ok"):
+            head += " 【未命中】"
+        lines_out.append(head)
         lines_out.append("")
 
-    return "\n".join(lines_out)
+        if not ch.get("ok"):
+            continue
+
+        sl, el = ch.get("start_line"), ch.get("end_line")
+        if not isinstance(sl, int) or not isinstance(el, int) or not (0 <= sl < n) or el <= sl:
+            lines_out.append("*（锚点异常，无法截取正文。）*")
+            lines_out.append("")
+            continue
+
+        el = min(el, n)
+        chunk_lines = lines_src[sl:el]
+        body = "\n".join(transcribe_layout_line_pinyin(ln) for ln in chunk_lines)
+        if body.strip():
+            lines_out.append(_markdown_fenced_verbatim(body))
+        else:
+            lines_out.append("*（本节对应行区间为空。）*")
+        lines_out.append("")
+
+    return "\n".join(lines_out).rstrip() + "\n"

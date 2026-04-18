@@ -77,6 +77,84 @@ def layout_pinyin_to_tone_marked(token: str) -> str:
     return "".join(parts)
 
 
+# 成对引号（开、闭）：ASCII 直引号、弯引号、日式引号；用于判断拉丁字母连写是否处于引号内
+_LAYOUT_QUOTE_PAIRS: tuple[tuple[str, str], ...] = (
+    ('"', '"'),
+    ("'", "'"),
+    ("\u201c", "\u201d"),
+    ("\u2018", "\u2019"),
+    ("\u300c", "\u300d"),
+    ("\u300e", "\u300f"),
+)
+
+
+def _layout_quoted_interior_spans(line: str) -> list[tuple[int, int]]:
+    """
+    返回若干半开区间 [qs, qe)，为成对引号之间的内容（不含引号字符本身）。
+    自左向右贪心配对；与嵌套或英文缩写内撇号可能不完全一致。
+    """
+    spans: list[tuple[int, int]] = []
+    i = 0
+    n = len(line)
+    while i < n:
+        matched = False
+        for open_ch, close_ch in _LAYOUT_QUOTE_PAIRS:
+            if line[i] == open_ch:
+                j = line.find(close_ch, i + 1)
+                if j != -1:
+                    spans.append((i + 1, j))
+                    i = j + 1
+                    matched = True
+                    break
+        if not matched:
+            i += 1
+    return spans
+
+
+def _letter_run_inside_pair_quotes(line: str, start: int, end: int) -> bool:
+    """半开区间 [start, end) 是否完全落在某一成对引号的内容区内。"""
+    for qs, qe in _layout_quoted_interior_spans(line):
+        if qs <= start and end <= qe:
+            return True
+    return False
+
+
+def _should_apply_layout_tone_map_token(
+    token: str,
+    *,
+    line: str,
+    match_start: int,
+    match_end: int,
+) -> bool:
+    """
+    是否对该拉丁连写做 _LAYOUT_TONE_MAP 转写。
+    仅一种情况不转写：一个或多个字母的整段匹配完全落在成对引号（单/双及常见弯引号、直角引号）内。
+    """
+    if not token:
+        return False
+    if _letter_run_inside_pair_quotes(line, match_start, match_end):
+        return False
+    return True
+
+
+def transcribe_layout_line_pinyin(line: str) -> str:
+    """
+    行内连续 [a-zA-ZüÜ]+：默认按 layout_pinyin_to_tone_marked（_LAYOUT_TONE_MAP）转写；
+    完全处于成对引号内的字母连写保持原样。
+    """
+
+    def repl(m: re.Match[str]) -> str:
+        token = m.group(0)
+        s, e = m.span()
+        if not _should_apply_layout_tone_map_token(
+            token, line=line, match_start=s, match_end=e
+        ):
+            return token
+        return layout_pinyin_to_tone_marked(token)
+
+    return re.sub(r"[a-zA-ZüÜ]+", repl, line)
+
+
 def _chars_with_pinyin(
     char_list: list[str],
     pinyin_block: str,
