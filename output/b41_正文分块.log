@@ -1,5 +1,5 @@
 # textbook-parser toc-chunk
-# time: 2026-04-18T13:06:48
+# time: 2026-06-21T09:25:38
 # argv: D:\ah21\textbook-parser\src\textbook_parser\__main__.py toc-chunk --project-root . --books
 # book_code: b41
 # log_file: D:\ah21\textbook-parser\output\b41_正文分块.log
@@ -37,6 +37,7 @@
   [问题] 未命中锚点: b41-toc-0066 口语交际 讲历史人物故事 keys=['口语交际讲历史人物故事']
   [问题] 未命中锚点: b41-toc-0067 习作 我的心儿怦怦跳 keys=['习作我的心儿怦怦跳']
   [问题] 未命中锚点: b41-toc-0068 语文园地 keys=['语文园地']
+  [问题] 正文在 L3993「识字表」处截断，其后附录表未纳入分块
 已写入: D:\ah21\textbook-parser\output\b41_正文分块.json
 已写入: D:\ah21\textbook-parser\output\b41_正文分块.md
 控制台输出已同步写入日志: D:\ah21\textbook-parser\output\b41_正文分块.log

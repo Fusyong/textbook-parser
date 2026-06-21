@@ -5,10 +5,12 @@
   "toc_source": "output\\b11_目录.json",
   "body_start_line": 0,
   "body_start_line_note": "启发式：首个独占一行的「第×单元」；可用 body_start_override 覆盖",
-  "line_count": 3225,
+  "body_end_line": 2954,
+  "body_end_line_note": "遇「识字表 / 写字表 / 词语表」独占标题行即截断（不含该行）",
+  "line_count": 3226,
   "chunk_entry_count": 45,
-  "chunk_matched_count": 43,
-  "chunk_unmatched_count": 2,
+  "chunk_matched_count": 45,
+  "chunk_unmatched_count": 0,
   "chunks": [
     {
       "id": "b11-toc-0002",
@@ -418,7 +420,7 @@
         "语文园地二"
       ],
       "start_line": 638,
-      "end_line": 832,
+      "end_line": 779,
       "match_mode": "single",
       "ok": true,
       "toc_label": "语文园地二",
@@ -446,10 +448,10 @@
         "gkh",
         "5gkh"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 779,
+      "end_line": 832,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "5 g k h",
       "toc_snapshot": {
         "kind": "lesson",
@@ -464,7 +466,9 @@
         "unit_type": "课文",
         "unit_subtype": "汉语拼音",
         "group_label": "第三单元·汉语拼音"
-      }
+      },
+      "start_line_text": "                         g       k       h",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b11-toc-0021",
@@ -532,7 +536,7 @@
         "8zhchshr"
       ],
       "start_line": 935,
-      "end_line": 1045,
+      "end_line": 987,
       "match_mode": "single",
       "ok": true,
       "toc_label": "8 zh ch sh r",
@@ -560,10 +564,10 @@
         "yw",
         "9yw"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 987,
+      "end_line": 1046,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "9 y w",
       "toc_snapshot": {
         "kind": "lesson",
@@ -578,7 +582,9 @@
         "unit_type": "课文",
         "unit_subtype": "汉语拼音",
         "group_label": "第三单元·汉语拼音"
-      }
+      },
+      "start_line_text": "     y w",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b11-toc-0025",
@@ -586,8 +592,8 @@
       "keys_tried": [
         "语文园地三"
       ],
-      "start_line": 1045,
-      "end_line": 1154,
+      "start_line": 1046,
+      "end_line": 1155,
       "match_mode": "single",
       "ok": true,
       "toc_label": "语文园地三",
@@ -615,8 +621,8 @@
         "aieiui",
         "10aieiui"
       ],
-      "start_line": 1154,
-      "end_line": 1203,
+      "start_line": 1155,
+      "end_line": 1204,
       "match_mode": "single",
       "ok": true,
       "toc_label": "10 ai ei ui",
@@ -644,8 +650,8 @@
         "aoouiu",
         "11aoouiu"
       ],
-      "start_line": 1203,
-      "end_line": 1255,
+      "start_line": 1204,
+      "end_line": 1256,
       "match_mode": "single",
       "ok": true,
       "toc_label": "11 ao ou iu",
@@ -673,8 +679,8 @@
         "ieüeer",
         "12ieüeer"
       ],
-      "start_line": 1255,
-      "end_line": 1305,
+      "start_line": 1256,
+      "end_line": 1306,
       "match_mode": "single",
       "ok": true,
       "toc_label": "12 ie üe er",
@@ -702,8 +708,8 @@
         "aneninunün",
         "13aneninunün"
       ],
-      "start_line": 1305,
-      "end_line": 1376,
+      "start_line": 1306,
+      "end_line": 1377,
       "match_mode": "single",
       "ok": true,
       "toc_label": "13 an en in un ün",
@@ -731,8 +737,8 @@
         "angengingong",
         "14angengingong"
       ],
-      "start_line": 1376,
-      "end_line": 1433,
+      "start_line": 1377,
+      "end_line": 1434,
       "match_mode": "single",
       "ok": true,
       "toc_label": "14 ang eng ing ong",
@@ -759,8 +765,8 @@
       "keys_tried": [
         "语文园地四"
       ],
-      "start_line": 1433,
-      "end_line": 1570,
+      "start_line": 1434,
+      "end_line": 1571,
       "match_mode": "single",
       "ok": true,
       "toc_label": "语文园地四",
@@ -788,8 +794,8 @@
         "秋天",
         "1秋天"
       ],
-      "start_line": 1570,
-      "end_line": 1621,
+      "start_line": 1571,
+      "end_line": 1622,
       "match_mode": "single",
       "ok": true,
       "toc_label": "1 秋天",
@@ -817,8 +823,8 @@
         "江南",
         "2江南"
       ],
-      "start_line": 1621,
-      "end_line": 1667,
+      "start_line": 1622,
+      "end_line": 1668,
       "match_mode": "single",
       "ok": true,
       "toc_label": "2 江南",
@@ -846,8 +852,8 @@
         "雪地里的小画家",
         "3雪地里的小画家"
       ],
-      "start_line": 1667,
-      "end_line": 1721,
+      "start_line": 1668,
+      "end_line": 1722,
       "match_mode": "single",
       "ok": true,
       "toc_label": "3 雪地里的小画家",
@@ -875,8 +881,8 @@
         "四季",
         "4四季"
       ],
-      "start_line": 1721,
-      "end_line": 1787,
+      "start_line": 1722,
+      "end_line": 1788,
       "match_mode": "single",
       "ok": true,
       "toc_label": "4 四季",
@@ -903,8 +909,8 @@
       "keys_tried": [
         "语文园地五"
       ],
-      "start_line": 1787,
-      "end_line": 1955,
+      "start_line": 1788,
+      "end_line": 1956,
       "match_mode": "single",
       "ok": true,
       "toc_label": "语文园地五",
@@ -932,8 +938,8 @@
         "对韵歌",
         "5对韵歌"
       ],
-      "start_line": 1955,
-      "end_line": 1986,
+      "start_line": 1956,
+      "end_line": 1987,
       "match_mode": "single",
       "ok": true,
       "toc_label": "5 对韵歌",
@@ -961,8 +967,8 @@
         "日月明",
         "6日月明"
       ],
-      "start_line": 1986,
-      "end_line": 2053,
+      "start_line": 1987,
+      "end_line": 2054,
       "match_mode": "single",
       "ok": true,
       "toc_label": "6 日月明",
@@ -990,8 +996,8 @@
         "小书包",
         "7小书包"
       ],
-      "start_line": 2053,
-      "end_line": 2118,
+      "start_line": 2054,
+      "end_line": 2119,
       "match_mode": "single",
       "ok": true,
       "toc_label": "7 小书包",
@@ -1019,8 +1025,8 @@
         "升国旗",
         "8升国旗"
       ],
-      "start_line": 2118,
-      "end_line": 2163,
+      "start_line": 2119,
+      "end_line": 2164,
       "match_mode": "single",
       "ok": true,
       "toc_label": "8 升国旗",
@@ -1047,8 +1053,8 @@
       "keys_tried": [
         "语文园地六"
       ],
-      "start_line": 2163,
-      "end_line": 2297,
+      "start_line": 2164,
+      "end_line": 2298,
       "match_mode": "single",
       "ok": true,
       "toc_label": "语文园地六",
@@ -1076,8 +1082,8 @@
         "小小的船",
         "5小小的船"
       ],
-      "start_line": 2297,
-      "end_line": 2341,
+      "start_line": 2298,
+      "end_line": 2342,
       "match_mode": "single",
       "ok": true,
       "toc_label": "5 小小的船",
@@ -1105,8 +1111,8 @@
         "影子",
         "6影子"
       ],
-      "start_line": 2341,
-      "end_line": 2400,
+      "start_line": 2342,
+      "end_line": 2401,
       "match_mode": "single",
       "ok": true,
       "toc_label": "6 影子",
@@ -1134,8 +1140,8 @@
         "两件宝",
         "7两件宝"
       ],
-      "start_line": 2400,
-      "end_line": 2457,
+      "start_line": 2401,
+      "end_line": 2458,
       "match_mode": "single",
       "ok": true,
       "toc_label": "7 两件宝",
@@ -1162,8 +1168,8 @@
       "keys_tried": [
         "语文园地七"
       ],
-      "start_line": 2457,
-      "end_line": 2631,
+      "start_line": 2458,
+      "end_line": 2632,
       "match_mode": "single",
       "ok": true,
       "toc_label": "语文园地七",
@@ -1191,8 +1197,8 @@
         "比尾巴",
         "8比尾巴"
       ],
-      "start_line": 2631,
-      "end_line": 2699,
+      "start_line": 2632,
+      "end_line": 2700,
       "match_mode": "single",
       "ok": true,
       "toc_label": "8 比尾巴",
@@ -1220,8 +1226,8 @@
         "乌鸦喝水",
         "9乌鸦喝水"
       ],
-      "start_line": 2699,
-      "end_line": 2769,
+      "start_line": 2700,
+      "end_line": 2770,
       "match_mode": "single",
       "ok": true,
       "toc_label": "9 乌鸦喝水",
@@ -1249,8 +1255,8 @@
         "雨点儿",
         "10雨点儿"
       ],
-      "start_line": 2769,
-      "end_line": 2833,
+      "start_line": 2770,
+      "end_line": 2834,
       "match_mode": "single",
       "ok": true,
       "toc_label": "10 雨点儿",
@@ -1277,8 +1283,8 @@
       "keys_tried": [
         "语文园地八"
       ],
-      "start_line": 2833,
-      "end_line": 3225,
+      "start_line": 2834,
+      "end_line": 2954,
       "match_mode": "single",
       "ok": true,
       "toc_label": "语文园地八",
@@ -1297,11 +1303,10 @@
         "group_label": "第八单元·阅读"
       },
       "start_line_text": "                                     语文园地八",
-      "chunk_tail_preview": ""
+      "chunk_tail_preview": "                                                   ①"
     }
   ],
   "warnings": [
-    "未命中锚点: b11-toc-0020 5 g k h keys=['gkh', '5gkh']",
-    "未命中锚点: b11-toc-0024 9 y w keys=['yw', '9yw']"
+    "正文在 L2955「识字表」处截断，其后附录表未纳入分块"
   ]
 }

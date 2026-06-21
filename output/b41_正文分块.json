@@ -5,6 +5,8 @@
   "toc_source": "output\\b41_目录.json",
   "body_start_line": 107,
   "body_start_line_note": "启发式：首个独占一行的「第×单元」；可用 body_start_override 覆盖",
+  "body_end_line": 3992,
+  "body_end_line_note": "遇「识字表 / 写字表 / 词语表」独占标题行即截断（不含该行）",
   "line_count": 4258,
   "chunk_entry_count": 59,
   "chunk_matched_count": 30,
@@ -1494,7 +1496,7 @@
         "27＊故事二则"
       ],
       "start_line": 3713,
-      "end_line": 4258,
+      "end_line": 3992,
       "match_mode": "single",
       "ok": true,
       "toc_label": "27* 故事二则",
@@ -1675,6 +1677,7 @@
     "未命中锚点: b41-toc-0065 纪昌学射 keys=['纪昌学射']",
     "未命中锚点: b41-toc-0066 口语交际 讲历史人物故事 keys=['口语交际讲历史人物故事']",
     "未命中锚点: b41-toc-0067 习作 我的心儿怦怦跳 keys=['习作我的心儿怦怦跳']",
-    "未命中锚点: b41-toc-0068 语文园地 keys=['语文园地']"
+    "未命中锚点: b41-toc-0068 语文园地 keys=['语文园地']",
+    "正文在 L3993「识字表」处截断，其后附录表未纳入分块"
   ]
 }

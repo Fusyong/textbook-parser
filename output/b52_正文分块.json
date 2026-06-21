@@ -5,6 +5,8 @@
   "toc_source": "output\\b52_目录.json",
   "body_start_line": 148,
   "body_start_line_note": "启发式：首个独占一行的「第×单元」；可用 body_start_override 覆盖",
+  "body_end_line": 4511,
+  "body_end_line_note": "遇「识字表 / 写字表 / 词语表」独占标题行即截断（不含该行）",
   "line_count": 4742,
   "chunk_entry_count": 57,
   "chunk_matched_count": 31,
@@ -1492,7 +1494,7 @@
         "23＊童年的发现"
       ],
       "start_line": 4259,
-      "end_line": 4742,
+      "end_line": 4511,
       "match_mode": "single",
       "ok": true,
       "toc_label": "23* 童年的发现",
@@ -1618,6 +1620,7 @@
     "未命中锚点: b52-toc-0059 语文园地 keys=['语文园地']",
     "未命中锚点: b52-toc-0064 口语交际 我们都来讲笑话 keys=['口语交际我们都来讲笑话']",
     "未命中锚点: b52-toc-0065 习作 漫画的启示 keys=['习作漫画的启示']",
-    "未命中锚点: b52-toc-0066 语文园地 keys=['语文园地']"
+    "未命中锚点: b52-toc-0066 语文园地 keys=['语文园地']",
+    "正文在 L4512「识字表」处截断，其后附录表未纳入分块"
   ]
 }

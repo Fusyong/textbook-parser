@@ -5,6 +5,8 @@
   "toc_source": "output\\b32_目录.json",
   "body_start_line": 143,
   "body_start_line_note": "启发式：首个独占一行的「第×单元」；可用 body_start_override 覆盖",
+  "body_end_line": 3863,
+  "body_end_line_note": "遇「识字表 / 写字表 / 词语表」独占标题行即截断（不含该行）",
   "line_count": 4164,
   "chunk_entry_count": 54,
   "chunk_matched_count": 32,
@@ -1414,7 +1416,7 @@
         "26漏"
       ],
       "start_line": 3475,
-      "end_line": 4164,
+      "end_line": 3863,
       "match_mode": "single",
       "ok": true,
       "toc_label": "26 漏",
@@ -1539,6 +1541,7 @@
     "未命中锚点: b32-toc-0056 语文园地 keys=['语文园地']",
     "未命中锚点: b32-toc-0060 27* 枣核 keys=['枣核', '27枣核', '27*枣核']",
     "未命中锚点: b32-toc-0061 习作 这样想象真有趣 keys=['习作这样想象真有趣']",
-    "未命中锚点: b32-toc-0062 语文园地 keys=['语文园地']"
+    "未命中锚点: b32-toc-0062 语文园地 keys=['语文园地']",
+    "正文在 L3864「识字表」处截断，其后附录表未纳入分块"
   ]
 }

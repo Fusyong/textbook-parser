@@ -5,6 +5,8 @@
   "toc_source": "output\\b31_目录.json",
   "body_start_line": 126,
   "body_start_line_note": "启发式：首个独占一行的「第×单元」；可用 body_start_override 覆盖",
+  "body_end_line": 3709,
+  "body_end_line_note": "遇「识字表 / 写字表 / 词语表」独占标题行即截断（不含该行）",
   "line_count": 3966,
   "chunk_entry_count": 55,
   "chunk_matched_count": 31,
@@ -1414,7 +1416,7 @@
         "25手术台就是阵地"
       ],
       "start_line": 3375,
-      "end_line": 3966,
+      "end_line": 3709,
       "match_mode": "single",
       "ok": true,
       "toc_label": "25 手术台就是阵地",
@@ -1433,7 +1435,7 @@
         "group_label": "第八单元"
       },
       "start_line_text": "             25 手术台就是阵地",
-      "chunk_tail_preview": ""
+      "chunk_tail_preview": "                                                     ①"
     },
     {
       "id": "b31-toc-0061",
@@ -1567,6 +1569,7 @@
     "未命中锚点: b31-toc-0061 26* 一个粗瓷大碗 keys=['一个粗瓷大碗', '26一个粗瓷大碗', '26*一个粗瓷大碗']",
     "未命中锚点: b31-toc-0062 口语交际 请教 keys=['口语交际请教']",
     "未命中锚点: b31-toc-0063 习作 那次经历真难忘 keys=['习作那次经历真难忘']",
-    "未命中锚点: b31-toc-0064 语文园地 keys=['语文园地']"
+    "未命中锚点: b31-toc-0064 语文园地 keys=['语文园地']",
+    "正文在 L3710「识字表」处截断，其后附录表未纳入分块"
   ]
 }

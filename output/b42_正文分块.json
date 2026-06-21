@@ -5,6 +5,8 @@
   "toc_source": "output\\b42_目录.json",
   "body_start_line": 139,
   "body_start_line_note": "启发式：首个独占一行的「第×单元」；可用 body_start_override 覆盖",
+  "body_end_line": 4915,
+  "body_end_line_note": "遇「识字表 / 写字表 / 词语表」独占标题行即截断（不含该行）",
   "line_count": 5211,
   "chunk_entry_count": 61,
   "chunk_matched_count": 39,
@@ -1641,7 +1643,7 @@
         "28＊海的女儿"
       ],
       "start_line": 4636,
-      "end_line": 5211,
+      "end_line": 4915,
       "match_mode": "single",
       "ok": true,
       "toc_label": "28* 海的女儿",
@@ -1737,6 +1739,7 @@
     "未命中锚点: b42-toc-0063 习作 我的“自画像” keys=['习作我的“自画像”']",
     "未命中锚点: b42-toc-0064 语文园地 keys=['语文园地']",
     "未命中锚点: b42-toc-0069 习作 故事新编 keys=['习作故事新编']",
-    "未命中锚点: b42-toc-0070 语文园地 keys=['语文园地']"
+    "未命中锚点: b42-toc-0070 语文园地 keys=['语文园地']",
+    "正文在 L4916「识字表」处截断，其后附录表未纳入分块"
   ]
 }
