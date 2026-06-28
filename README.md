@@ -5,6 +5,7 @@
 
 * 生字检查：检查文章中的字是否已经在指定范围的教材中学过、写过；
 * 组词：从指定范围的教材和词语表中给一个字组词，结果分成最后一课（正在学习）、倒数第二第三课（近期复习）和其他三桶，按词频降序排列。
+* 字词打印：生成 A4 描红练习纸 PDF（田字格／米字格等，可选课次字词或手动输入）。字体来自本机系统楷体，推荐 Chrome / Edge；详见网页「字词打印」→「字体说明」。
 
 ## 安装
 
@@ -97,6 +98,13 @@ python -m textbook_parser toc-chunk --project-root . --books --continue-on-error
 ```bash
 python scripts/export_web_data.py
 python scripts/export_web_data.py --output web/generated/data.js
+```
+
+在浏览器中打开 `web/index.html`（推荐通过本地 HTTP 服务，以便读取系统字体生成 PDF）：
+
+```bash
+python -m http.server 8080 --directory web
+# 访问 http://localhost:8080/
 ```
 
 ## TODO

@@ -641,6 +641,7 @@ function setupTabs() {
     words: document.getElementById("panel-words"),
     lookup: document.getElementById("panel-lookup"),
     lexicon: document.getElementById("panel-lexicon"),
+    print: document.getElementById("panel-print"),
   };
   tabs.forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -650,6 +651,7 @@ function setupTabs() {
         if (el) el.classList.toggle("active", k === id);
       });
       if (id === "lexicon") renderLexicon();
+      if (id === "print" && window.initPrintSheet) window.initPrintSheet();
     });
   });
 }

@@ -14,6 +14,7 @@
         <button type="button" class="tab" data-tab="words">组词</button>
         <button type="button" class="tab" data-tab="lookup">字词查询</button>
         <button type="button" class="tab" data-tab="lexicon">字词表</button>
+        <button type="button" class="tab" data-tab="print">字词打印</button>
       </nav>
     </header>
 
@@ -185,9 +186,206 @@
         </div>
         <div id="lexicon-body" class="lexicon-body" aria-live="polite"></div>
       </section>
+
+      <section id="panel-print" class="panel panel-fill">
+        <div class="panel-head">
+          <div class="panel-toolbar print-toolbar">
+            <fieldset class="fieldset fieldset-inline">
+              <legend>输入方式</legend>
+              <label class="inline"
+                ><input type="radio" name="print-input-mode" value="lesson" checked />课次字词列表</label
+              >
+              <label class="inline"
+                ><input type="radio" name="print-input-mode" value="manual" />手动输入</label
+              >
+            </fieldset>
+            <details class="hint-fold">
+              <summary><mark>说明</mark></summary>
+              <span class="hint-fold-body"
+                >生成 A4 描红练习纸 PDF。课次模式从识字表／写字表／词语表选字（词语拆为单字）；手动模式可输入字词与可选拼音（空格分词，单换行→空格，双换行→分段）。<strong>字体</strong>来自本机，不随页面下载；详见「字体说明」。</span
+              >
+            </details>
+          </div>
+        </div>
+
+        <div class="print-body">
+          <div id="print-panel-lesson" class="print-input-panel">
+            <div class="print-lesson-toolbar">
+              <label class="lbl-compact lbl-book"
+                >册 <select id="print-book"></select
+              ></label>
+              <label class="lbl-compact lbl-toc"
+                >课 <select id="print-toc"></select
+              ></label>
+              <label class="lbl-compact"
+                >表
+                <select id="print-kind">
+                  <option value="识字表">识字表</option>
+                  <option value="写字表" selected>写字表</option>
+                  <option value="词语表">词语表</option>
+                </select></label
+              >
+              <button type="button" id="print-select-all" class="btn-secondary">全选</button>
+              <button type="button" id="print-select-none" class="btn-secondary">清空</button>
+            </div>
+            <div id="print-char-checklist" class="print-char-checklist" aria-live="polite"></div>
+          </div>
+
+          <div id="print-panel-manual" class="print-input-panel hidden">
+            <div class="dual-textareas print-manual-textareas">
+              <label class="ta-wrap">
+                <span class="ta-label">汉字</span>
+                <textarea
+                  id="print-manual-hanzi"
+                  placeholder="春 夏 冬&#10;&#10;下一组字词"
+                  spellcheck="false"
+                ></textarea>
+              </label>
+              <label class="ta-wrap">
+                <span class="ta-label">拼音（可选，可留空）</span>
+                <textarea
+                  id="print-manual-pinyin"
+                  placeholder="chūn xià dōng（与汉字空格对应）"
+                  spellcheck="false"
+                ></textarea>
+              </label>
+            </div>
+          </div>
+
+          <div class="print-options">
+            <fieldset class="fieldset fieldset-inline">
+              <legend>字格</legend>
+              <select id="print-grid">
+                <option value="tian">田字格</option>
+                <option value="mi" selected>米字格</option>
+                <option value="jiugong">九宫格</option>
+                <option value="huigong">回宫格</option>
+                <option value="fang">方格</option>
+                <option value="hengxian">横线格</option>
+              </select>
+            </fieldset>
+
+            <fieldset class="fieldset fieldset-inline print-size-fieldset">
+              <legend>格子尺寸 (cm)</legend>
+              <button type="button" class="btn-secondary" data-print-size="0.8">0.8</button>
+              <button type="button" class="btn-secondary" data-print-size="1.2">1.2</button>
+              <button type="button" class="btn-secondary" data-print-size="1.4">1.4</button>
+              <input
+                type="range"
+                id="print-cell-size"
+                min="0.8"
+                max="2.5"
+                step="0.1"
+                value="1.2"
+              />
+              <span id="print-cell-size-val" class="print-size-readout">1.2</span>
+            </fieldset>
+
+            <fieldset class="fieldset fieldset-inline">
+              <legend>重分布</legend>
+              <label class="inline lbl-compact"
+                >范字
+                <select id="print-model-count">
+                  <option value="0">0</option>
+                  <option value="1" selected>1</option>
+                </select></label
+              >
+              <label class="inline lbl-compact"
+                >描红
+                <select id="print-trace-count">
+                  <option value="1">1</option>
+                  <option value="2" selected>2</option>
+                  <option value="3">3</option>
+                </select></label
+              >
+              <label class="inline lbl-compact"
+                >空格
+                <select id="print-blank-count">
+                  <option value="1">1</option>
+                  <option value="2" selected>2</option>
+                  <option value="3">3</option>
+                </select></label
+              >
+              <label class="inline lbl-compact"
+                >描红色 <input type="color" id="print-trace-color" value="#cc0000"
+              /></label>
+              <label class="inline lbl-compact"
+                >透明度
+                <input
+                  type="range"
+                  id="print-trace-opacity"
+                  min="0.3"
+                  max="1"
+                  step="0.05"
+                  value="0.7"
+              /></label>
+            </fieldset>
+
+            <fieldset class="fieldset fieldset-inline">
+              <legend>拼音</legend>
+              <label class="inline"
+                ><input type="checkbox" id="print-show-pinyin" checked />显示拼音</label
+              >
+            </fieldset>
+
+            <fieldset class="fieldset fieldset-inline">
+              <legend>排版</legend>
+              <label class="inline"
+                ><input type="radio" name="print-layout" value="continuous" checked />横向连续</label
+              >
+              <label class="inline"
+                ><input type="radio" name="print-layout" value="grouped" />纵向分组</label
+              >
+              <label class="inline lbl-compact"
+                >行间距(mm)
+                <input type="number" id="print-row-gap" min="0" max="30" step="1" value="4"
+              /></label>
+              <label class="inline lbl-compact"
+                >组间距(mm)
+                <input type="number" id="print-group-gap" min="0" max="40" step="1" value="10"
+              /></label>
+            </fieldset>
+
+            <fieldset class="fieldset fieldset-inline print-font-fieldset">
+              <legend>字体</legend>
+              <select id="print-font">
+                <option value="kaiti_gb2312">楷体_GB2312</option>
+                <option value="kaiti" selected>楷体</option>
+                <option value="stkaiti">华文楷体</option>
+              </select>
+              <details class="hint-fold print-font-hint">
+                <summary><mark>字体说明</mark></summary>
+                <span class="hint-fold-body"
+                  >PDF 使用本机已安装的楷体。首次生成时浏览器可能询问「是否允许访问本地字体」，请点允许。推荐
+                  <strong>Chrome / Edge 桌面版</strong>；须通过 http://localhost 或 https:// 打开。Firefox、Safari
+                  不支持自动读取系统字体，请用下方「指定字体文件」。Windows 常见路径：<code>C:\Windows\Fonts\simkai.ttf</code>（楷体）、<code>STKAITI.TTF</code>（华文楷体）。手动指定的字体仅在本次浏览会话内有效。</span
+                >
+              </details>
+            </fieldset>
+            <p class="hint hint-tight print-font-short-hint">
+              PDF 使用本机楷体；首次生成时浏览器可能询问字体访问权限。详见「字体说明」。
+            </p>
+
+            <div id="print-font-file-wrap" class="print-font-file-wrap">
+              <details id="print-font-file-details">
+                <summary>指定字体文件（.ttf / .otf，可选）</summary>
+                <input type="file" id="print-font-file" accept=".ttf,.otf,.ttc" />
+              </details>
+            </div>
+          </div>
+
+          <div class="print-actions">
+            <p id="print-estimate" class="hint" aria-live="polite">尚未选择字词。</p>
+            <p id="print-font-status" class="hint" aria-live="polite"></p>
+            <button type="button" id="print-generate" class="btn-run">生成 PDF</button>
+          </div>
+        </div>
+      </section>
     </main>
 
     <script src="generated/data.js"></script>
+    <script src="vendor/pdf-fontkit/fontkit.umd.min.js"></script>
     <script src="js/app.js"></script>
+    <script type="module" src="js/print/ui.js"></script>
   </body>
 </html>

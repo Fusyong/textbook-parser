@@ -581,3 +581,137 @@ body.app:has(#panel-lexicon.active) {
   min-height: auto;
   overflow: visible;
 }
+
+/* —— 字词打印 —— */
+.btn-secondary {
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  padding: 4px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: var(--font-sm);
+}
+
+.btn-secondary:hover {
+  background: #f4f6f9;
+}
+
+.print-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: auto;
+  flex: 1;
+  min-height: 0;
+  padding-bottom: 8px;
+}
+
+.print-lesson-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.print-char-checklist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  padding: 8px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  max-height: 140px;
+  overflow: auto;
+}
+
+.print-char-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-family: "KaiTi", "楷体", "STKaiti", "华文楷体", serif;
+  font-size: 1.05rem;
+  cursor: pointer;
+}
+
+.print-char-check-label {
+  user-select: none;
+}
+
+.print-manual-textareas {
+  min-height: 120px;
+}
+
+.print-manual-textareas textarea {
+  min-height: 100px;
+}
+
+.print-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  align-items: flex-start;
+}
+
+.print-size-fieldset {
+  align-items: center;
+}
+
+.print-size-fieldset input[type="range"] {
+  width: 100px;
+  vertical-align: middle;
+}
+
+.print-size-readout {
+  min-width: 2.5rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.print-font-fieldset {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.print-font-hint {
+  margin-top: 4px;
+}
+
+.print-font-short-hint {
+  flex-basis: 100%;
+  margin: 0;
+}
+
+.print-font-file-wrap {
+  flex-basis: 100%;
+}
+
+.print-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 16px;
+  padding-top: 4px;
+  border-top: 1px solid var(--border);
+}
+
+body.app:has(#panel-print.active) {
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: auto;
+  min-height: 100%;
+}
+
+.app-main:has(#panel-print.active) {
+  overflow: visible;
+  flex: 0 0 auto;
+  min-height: auto;
+}
+
+#panel-print.panel-fill.active {
+  overflow: visible;
+  flex: 0 0 auto;
+  min-height: auto;
+}
+
