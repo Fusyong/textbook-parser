@@ -6,6 +6,12 @@ from typing import Any
 
 import yaml
 
+from .batch import (
+    batch_material_dir,
+    resolve_batch_id,
+    resolve_slot_file,
+)
+
 
 def load_config(path: Path) -> dict[str, Any]:
     data = yaml.safe_load(path.read_text(encoding="utf-8"))
@@ -45,7 +51,10 @@ def _read_books_yaml(root: Path) -> dict[str, Any]:
 
 
 def _parse_registry_row(code: str, value: Any) -> dict[str, Any]:
+    if value is None:
+        value = {}
     if isinstance(value, str):
+        # 兼容旧写法：仅写 PDF 文件名
         return {
             "pdf": value,
             "toc_csv": None,
@@ -56,8 +65,6 @@ def _parse_registry_row(code: str, value: Any) -> dict[str, Any]:
         }
     if isinstance(value, dict):
         pdf = value.get("pdf")
-        if not pdf:
-            raise ValueError(f"configs/books.yaml 中 «{code}» 缺少 pdf 字段")
         tc = value.get("toc_columns", 2)
         drop = value.get("extractors_drop") or []
         if not isinstance(drop, list):
@@ -67,7 +74,7 @@ def _parse_registry_row(code: str, value: Any) -> dict[str, Any]:
             raise ValueError(f"configs/books.yaml «{code}» 的 extractors_patch 须为映射")
         tch = value.get("toc_content_width_han")
         return {
-            "pdf": str(pdf),
+            "pdf": str(pdf) if pdf else None,
             "toc_csv": value.get("toc_csv"),
             "toc_columns": int(tc),
             "extractors_drop": [str(x) for x in drop],
@@ -77,8 +84,8 @@ def _parse_registry_row(code: str, value: Any) -> dict[str, Any]:
     raise ValueError(f"configs/books.yaml 中 «{code}» 取值类型无效: {type(value)!r}")
 
 
-def load_books_registry(root: Path) -> dict[str, str]:
-    """book_code → PDF 文件名（与 books.yaml 一致）。"""
+def load_books_registry(root: Path) -> dict[str, str | None]:
+    """book_code → 可选的优先 PDF 文件名。"""
     reg = _read_books_yaml(root)
     return {str(k): _parse_registry_row(str(k), v)["pdf"] for k, v in reg.items()}
 
@@ -125,10 +132,12 @@ def effective_book_config(
     book_code: str,
     *,
     file_overlay: dict[str, Any] | None = None,
+    batch: str | None = None,
 ) -> dict[str, Any]:
     """
     defaults.yaml 与可选单册 YAML 深度合并，再套用 books.yaml 中的 toc_csv / 目录栏数。
     file_overlay 中已写字段优先于注册表默认值。
+    batch: 学期批次 ID，None/'latest' 表示最新一批。
     """
     entry = load_book_entry(root, book_code)
     overlay = dict(file_overlay or {})
@@ -149,25 +158,72 @@ def effective_book_config(
     for name in entry.get("extractors_drop") or []:
         if isinstance(merged.get("extractors"), dict):
             merged["extractors"].pop(name, None)
-    return resolve_book_paths(merged, root)
+    if "batch" in overlay and overlay["batch"] is not None:
+        batch = str(overlay["batch"])
+    return resolve_book_paths(merged, root, batch=batch, preferred_pdf=entry.get("pdf"))
 
 
-def resolve_book_paths(cfg: dict[str, Any], root: Path) -> dict[str, Any]:
-    """根据 book_code 与 configs/books.yaml 补全 source_pdf、layout_text（未手写时）。"""
+def resolve_book_paths(
+    cfg: dict[str, Any],
+    root: Path,
+    *,
+    batch: str | None = None,
+    preferred_pdf: str | None = None,
+) -> dict[str, Any]:
+    """根据 book_code 与批次目录补全 source_pdf、layout_text、batch（未手写时）。"""
     out = dict(cfg)
     code = out.get("book_code")
     if not code:
         raise ValueError(
-            "单书配置须设置 book_code，且须在 configs/books.yaml 的 book_code 下登记对应 PDF 文件名"
+            "单书配置须设置 book_code，且须在 configs/books.yaml 的 book_code 下登记"
         )
     code = str(code)
-    books = load_books_registry(root)
-    if code not in books:
+    reg = _read_books_yaml(root)
+    if code not in reg:
         raise KeyError(
             f"未知 book_code «{code}»，请在 configs/books.yaml 的 book_code 下添加该键"
         )
-    pdf_name = books[code]
-    stem = Path(pdf_name).stem
-    out.setdefault("source_pdf", f"material/{pdf_name}")
-    out.setdefault("layout_text", f"material/text-by-layout/{stem}.md")
+
+    if out.get("batch"):
+        batch_id = resolve_batch_id(root, str(out["batch"]))
+    else:
+        batch_id = resolve_batch_id(root, batch)
+    out["batch"] = batch_id
+
+    bdir = batch_material_dir(root, batch_id)
+    pref = preferred_pdf or out.get("pdf")
+    pref_s = str(pref) if pref else None
+
+    if "source_pdf" not in out:
+        pdf_path = resolve_slot_file(bdir, code, suffix=".pdf", preferred_name=pref_s)
+        if pdf_path is not None:
+            try:
+                out["source_pdf"] = str(pdf_path.relative_to(root)).replace("\\", "/")
+            except ValueError:
+                out["source_pdf"] = str(pdf_path)
+        else:
+            # 占位路径，便于报错信息指向预期位置
+            hint = pref_s or f"（含「{_slot_kw(code)}」的 PDF）"
+            out["source_pdf"] = f"material/{batch_id}/{hint}"
+
+    if "layout_text" not in out:
+        md_path = resolve_slot_file(bdir, code, suffix=".md", preferred_name=pref_s)
+        if md_path is not None:
+            try:
+                out["layout_text"] = str(md_path.relative_to(root)).replace("\\", "/")
+            except ValueError:
+                out["layout_text"] = str(md_path)
+        else:
+            stem_hint = Path(pref_s).stem if pref_s else f"（含「{_slot_kw(code)}」）"
+            out["layout_text"] = f"material/{batch_id}/{stem_hint}.md"
+
     return out
+
+
+def _slot_kw(code: str) -> str:
+    from .batch import keyword_for_slot
+
+    try:
+        return keyword_for_slot(code)
+    except KeyError:
+        return code

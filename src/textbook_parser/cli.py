@@ -7,6 +7,11 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 
+from .batch import (
+    batch_output_dir,
+    list_slots_in_batch,
+    resolve_batch_id,
+)
 from .config import (
     effective_book_config,
     iter_book_codes,
@@ -57,6 +62,28 @@ def _project_root_for_book_mode(args: argparse.Namespace) -> Path:
     return root
 
 
+def _batch_from_args(args: argparse.Namespace) -> str | None:
+    return getattr(args, "batch", None)
+
+
+def _resolve_batch(root: Path, args: argparse.Namespace) -> str:
+    try:
+        return resolve_batch_id(root, _batch_from_args(args))
+    except (FileNotFoundError, ValueError) as e:
+        print(str(e), file=sys.stderr)
+        raise SystemExit(1) from e
+
+
+def _default_out_dir(root: Path, args: argparse.Namespace, batch_id: str) -> Path:
+    """未显式传 --output 时写入 output/{batch}/；显式路径则原样使用。"""
+    raw = getattr(args, "output", None)
+    if raw is None or str(raw).strip() == "" or str(raw).strip() == "output":
+        # 默认值 "output" 视为未指定，改用分批目录
+        if raw is None or str(raw).strip() == "output":
+            return batch_output_dir(root, batch_id, "output")
+    return (root / str(raw)).resolve() if not Path(str(raw)).is_absolute() else Path(str(raw)).resolve()
+
+
 def _load_effective_cfg(args: argparse.Namespace) -> tuple[Path, dict[str, Any], Path | None]:
     """
     返回 (项目根, 已 resolve 的配置, 单书 YAML 路径或 None)。
@@ -64,7 +91,10 @@ def _load_effective_cfg(args: argparse.Namespace) -> tuple[Path, dict[str, Any],
     """
     if getattr(args, "book", None):
         root = _project_root_for_book_mode(args)
-        cfg = effective_book_config(root, str(args.book).strip(), file_overlay=None)
+        batch_id = _resolve_batch(root, args)
+        cfg = effective_book_config(
+            root, str(args.book).strip(), file_overlay=None, batch=batch_id
+        )
         return root, cfg, None
     cfg_path = Path(args.config).resolve()
     root = project_root_from_config(cfg_path)
@@ -73,7 +103,8 @@ def _load_effective_cfg(args: argparse.Namespace) -> tuple[Path, dict[str, Any],
     if not code:
         print("YAML 配置须包含 book_code", file=sys.stderr)
         raise SystemExit(1)
-    cfg = effective_book_config(root, str(code), file_overlay=overlay)
+    batch_id = _resolve_batch(root, args)
+    cfg = effective_book_config(root, str(code), file_overlay=overlay, batch=batch_id)
     return root, cfg, cfg_path
 
 
@@ -111,7 +142,8 @@ def _cmd_convert(args: argparse.Namespace) -> int:
 def _cmd_extract(args: argparse.Namespace) -> int:
     root, cfg, cfg_path = _load_effective_cfg(args)
     book_code = str(cfg["book_code"])
-    out_dir = (root / (args.output or "output")).resolve()
+    batch_id = str(cfg.get("batch") or _resolve_batch(root, args))
+    out_dir = _default_out_dir(root, args, batch_id)
     out_dir.mkdir(parents=True, exist_ok=True)
     ext_only = getattr(args, "extractor", None)
     ext_s = str(ext_only).strip() if ext_only else ""
@@ -119,7 +151,7 @@ def _cmd_extract(args: argparse.Namespace) -> int:
         log_path = out_dir / f"{book_code}_{ext_s}.log"
     else:
         log_path = out_dir / f"{book_code}_extract.log"
-    extra: dict[str, str] = {"project_root": str(root)}
+    extra: dict[str, str] = {"project_root": str(root), "batch": batch_id}
     if cfg_path:
         extra["config"] = str(cfg_path)
     else:
@@ -304,20 +336,32 @@ def _cmd_extract_core(
     return 0
 
 
-def _parse_book_list(arg: str | None, root: Path) -> list[str]:
-    if not arg or not str(arg).strip():
-        return iter_book_codes(root)
-    return [x.strip() for x in str(arg).split(",") if x.strip()]
+def _parse_book_list(
+    arg: str | None,
+    root: Path,
+    *,
+    batch_id: str | None = None,
+) -> list[str]:
+    if arg and str(arg).strip():
+        return [x.strip() for x in str(arg).split(",") if x.strip()]
+    if batch_id:
+        present = list_slots_in_batch(root, batch_id)
+        if present:
+            # 保持 books.yaml 顺序，仅保留本批有文件的册
+            registered = iter_book_codes(root)
+            return [c for c in registered if c in set(present)]
+    return iter_book_codes(root)
 
 
 def _cmd_extract_all(args: argparse.Namespace) -> int:
     root = _project_root_for_book_mode(args)
-    codes = _parse_book_list(args.books, root)
+    batch_id = _resolve_batch(root, args)
+    codes = _parse_book_list(args.books, root, batch_id=batch_id)
     ext_name = args.extractor.strip()
     if not ext_name:
         print("须指定 --extractor", file=sys.stderr)
         return 1
-    out_dir = (root / (args.output or "output")).resolve()
+    out_dir = _default_out_dir(root, args, batch_id)
     out_dir.mkdir(parents=True, exist_ok=True)
     log_path = out_dir / f"extract-all_{ext_name}.log"
     restore = install_run_logging(
@@ -329,17 +373,21 @@ def _cmd_extract_all(args: argparse.Namespace) -> int:
             extra={
                 "extractor": ext_name,
                 "project_root": str(root),
-                "books_arg": (args.books or "").strip() or "(全部书目)",
+                "batch": batch_id,
+                "books_arg": (args.books or "").strip() or "(本批全部书目)",
             },
         ),
     )
     fail = 0
     any_ran = False
     try:
+        print(f"批次: {batch_id} → {out_dir}")
         for code in codes:
             print(f"--- {code} ---")
             try:
-                cfg = effective_book_config(root, code, file_overlay=None)
+                cfg = effective_book_config(
+                    root, code, file_overlay=None, batch=batch_id
+                )
             except KeyError as e:
                 print(f"{code}: {e}", file=sys.stderr)
                 fail += 1
@@ -358,7 +406,16 @@ def _cmd_extract_all(args: argparse.Namespace) -> int:
                 extractor=ext_name,
                 output=args.output,
             )
-            rc = _cmd_extract_core(sub, root, cfg, code, out_dir, None, full_text=None)
+            try:
+                rc = _cmd_extract_core(
+                    sub, root, cfg, code, out_dir, None, full_text=None
+                )
+            except Exception as e:
+                print(f"{code}: 提取失败: {e}", file=sys.stderr)
+                fail += 1
+                if not args.continue_on_error:
+                    return 1
+                continue
             if rc != 0:
                 fail += 1
                 if not args.continue_on_error:
@@ -377,8 +434,9 @@ def _cmd_extract_all(args: argparse.Namespace) -> int:
 
 def _cmd_convert_all(args: argparse.Namespace) -> int:
     root = _project_root_for_book_mode(args)
-    codes = _parse_book_list(args.books, root)
-    out_dir = (root / "output").resolve()
+    batch_id = _resolve_batch(root, args)
+    codes = _parse_book_list(args.books, root, batch_id=batch_id)
+    out_dir = batch_output_dir(root, batch_id, "output")
     out_dir.mkdir(parents=True, exist_ok=True)
     log_path = out_dir / "convert-all.log"
     restore = install_run_logging(
@@ -389,16 +447,20 @@ def _cmd_convert_all(args: argparse.Namespace) -> int:
             log_path=log_path,
             extra={
                 "project_root": str(root),
-                "books_arg": (args.books or "").strip() or "(全部书目)",
+                "batch": batch_id,
+                "books_arg": (args.books or "").strip() or "(本批全部书目)",
             },
         ),
     )
     fail = 0
     try:
+        print(f"批次: {batch_id}")
         for code in codes:
             print(f"--- {code} ---")
             try:
-                cfg = effective_book_config(root, code, file_overlay=None)
+                cfg = effective_book_config(
+                    root, code, file_overlay=None, batch=batch_id
+                )
             except KeyError as e:
                 print(f"{code}: {e}", file=sys.stderr)
                 fail += 1
@@ -454,9 +516,11 @@ def _run_toc_chunk_single(
     book_code: str,
     out_dir: Path,
     body_start_line: int | None,
+    *,
+    batch_id: str,
 ) -> int:
     """单册正文分块；各册独立日志 `{book}_正文分块.log`。"""
-    cfg = effective_book_config(root, book_code, file_overlay=None)
+    cfg = effective_book_config(root, book_code, file_overlay=None, batch=batch_id)
     book_code = str(cfg["book_code"])
     text_path = (root / cfg["layout_text"]).resolve()
     toc_path = out_dir / f"{book_code}_目录.json"
@@ -468,7 +532,11 @@ def _run_toc_chunk_single(
             "toc-chunk",
             book_code=book_code,
             log_path=log_path,
-            extra={"project_root": str(root), "output": str(out_dir)},
+            extra={
+                "project_root": str(root),
+                "batch": batch_id,
+                "output": str(out_dir),
+            },
         ),
     )
     try:
@@ -497,10 +565,11 @@ def _run_toc_chunk_single(
             book_code,
             full_text,
             entries,
-            layout_source=layout_src,
-            toc_source=toc_src,
+            layout_source=layout_src.replace("\\", "/"),
+            toc_source=toc_src.replace("\\", "/"),
             body_start_override=body_start_line,
         )
+        result["batch"] = batch_id
 
         out_json = out_dir / f"{book_code}_正文分块.json"
         out_md = out_dir / f"{book_code}_正文分块.md"
@@ -535,7 +604,8 @@ def _run_toc_chunk_single(
 def _cmd_toc_chunk(args: argparse.Namespace) -> int:
     """按目录 JSON 为版式正文估计分块；`--book` 单册或 `--books` 多册/全表。"""
     root = _project_root_for_book_mode(args)
-    out_dir = (root / (args.output or "output")).resolve()
+    batch_id = _resolve_batch(root, args)
+    out_dir = _default_out_dir(root, args, batch_id)
     out_dir.mkdir(parents=True, exist_ok=True)
 
     one = getattr(args, "book", None)
@@ -552,22 +622,27 @@ def _cmd_toc_chunk(args: argparse.Namespace) -> int:
     if one_s:
         codes = [one_s]
     else:
-        codes = _parse_book_list(books_mode if books_mode != "" else None, root)
+        codes = _parse_book_list(
+            books_mode if books_mode != "" else None, root, batch_id=batch_id
+        )
 
     body_start = getattr(args, "body_start_line", None)
     cont = bool(getattr(args, "continue_on_error", False))
     fail = 0
+    print(f"批次: {batch_id} → {out_dir}")
     for code in codes:
         print(f"--- {code} ---")
         try:
-            effective_book_config(root, code, file_overlay=None)
+            effective_book_config(root, code, file_overlay=None, batch=batch_id)
         except KeyError as e:
             print(f"{code}: {e}", file=sys.stderr)
             fail += 1
             if not cont:
                 return 1
             continue
-        rc = _run_toc_chunk_single(root, code, out_dir, body_start)
+        rc = _run_toc_chunk_single(
+            root, code, out_dir, body_start, batch_id=batch_id
+        )
         if rc != 0:
             fail += 1
             if not cont:
@@ -583,6 +658,14 @@ def _add_project_root(p: argparse.ArgumentParser) -> None:
     )
 
 
+def _add_batch(p: argparse.ArgumentParser) -> None:
+    p.add_argument(
+        "--batch",
+        default=None,
+        help="学期批次目录名（material/ 下 YYYY-MM 或 YYYY-MM-DD）；省略或 latest 表示最新一批",
+    )
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="教材 PDF → pdftotext 版式文本 → 结构化提取")
     sub = parser.add_subparsers(dest="command", required=True)
@@ -592,6 +675,7 @@ def main(argv: list[str] | None = None) -> int:
     cx.add_argument("--config", help="单册 YAML（可与 defaults.yaml 合并）")
     cx.add_argument("--book", help="book_code，等价于仅含该代码的合并配置")
     _add_project_root(p_conv)
+    _add_batch(p_conv)
     p_conv.set_defaults(func=_cmd_convert)
 
     p_ext = sub.add_parser("extract", help="按配置从版式文本提取 JSON")
@@ -599,6 +683,7 @@ def main(argv: list[str] | None = None) -> int:
     ex.add_argument("--config", help="单册 YAML（可与 defaults.yaml 合并）")
     ex.add_argument("--book", help="book_code")
     _add_project_root(p_ext)
+    _add_batch(p_ext)
     p_ext.add_argument(
         "--extractor",
         help="只运行某一提取器（默认运行配置中的全部）",
@@ -606,15 +691,16 @@ def main(argv: list[str] | None = None) -> int:
     p_ext.add_argument(
         "--output",
         default="output",
-        help="JSON 输出目录（相对项目根，默认 output）",
+        help="JSON 输出目录（相对项目根；默认 output/{batch}/）",
     )
     p_ext.set_defaults(func=_cmd_extract)
 
     p_all = sub.add_parser(
         "extract-all",
-        help="对书目表中全部（或指定）图书只运行某一种提取器",
+        help="对当前批次（默认最新）全部或指定图书只运行某一种提取器",
     )
     _add_project_root(p_all)
+    _add_batch(p_all)
     p_all.add_argument(
         "--extractor",
         required=True,
@@ -622,9 +708,13 @@ def main(argv: list[str] | None = None) -> int:
     )
     p_all.add_argument(
         "--books",
-        help="逗号分隔 book_code，省略则处理 books.yaml 中全部书目",
+        help="逗号分隔 book_code，省略则处理本批 material 中有文件的书目",
     )
-    p_all.add_argument("--output", default="output", help="JSON 输出目录（相对项目根）")
+    p_all.add_argument(
+        "--output",
+        default="output",
+        help="JSON 输出目录（相对项目根；默认 output/{batch}/）",
+    )
     p_all.add_argument(
         "--continue-on-error",
         action="store_true",
@@ -634,12 +724,13 @@ def main(argv: list[str] | None = None) -> int:
 
     p_c_all = sub.add_parser(
         "convert-all",
-        help="对书目表中全部（或指定）图书批量 pdftotext",
+        help="对当前批次（默认最新）全部或指定图书批量 pdftotext",
     )
     _add_project_root(p_c_all)
+    _add_batch(p_c_all)
     p_c_all.add_argument(
         "--books",
-        help="逗号分隔 book_code，省略则处理 books.yaml 中全部书目",
+        help="逗号分隔 book_code，省略则处理本批 material 中有文件的书目",
     )
     p_c_all.add_argument(
         "--continue-on-error",
@@ -663,13 +754,14 @@ def main(argv: list[str] | None = None) -> int:
         const="",
         default=None,
         metavar="LIST",
-        help="逗号分隔多册 book_code；仅写 --books 不写值则处理 books.yaml 中全部书目（与 --book 二选一）",
+        help="逗号分隔多册 book_code；仅写 --books 不写值则处理本批全部书目（与 --book 二选一）",
     )
     _add_project_root(p_chunk)
+    _add_batch(p_chunk)
     p_chunk.add_argument(
         "--output",
         default="output",
-        help="输出目录（相对项目根，默认 output）",
+        help="输出目录（相对项目根；默认 output/{batch}/）",
     )
     p_chunk.add_argument(
         "--body-start-line",

@@ -1,0 +1,130 @@
+# textbook-parser extract-all
+# time: 2026-09-29T16:21:50
+# argv: D:\ah21\textbook-parser\src\textbook_parser\__main__.py extract-all --extractor 词语表 --project-root . --batch 2026-09-16 --continue-on-error
+# book_code: 12_books
+# log_file: D:\ah21\textbook-parser\output\2026-09-16\extract-all_词语表.log
+# 以下 stdout/stderr 均写入本日志（含警告、错误与提取器提示）。
+# extractor: 词语表
+# project_root: D:\ah21\textbook-parser
+# batch: 2026-09-16
+# books_arg: (本批全部书目)
+
+批次: 2026-09-16 → D:\ah21\textbook-parser\output\2026-09-16
+--- b11 ---
+b11: 跳过（本册未配置 «词语表»，多为 extractors_drop）
+--- b12 ---
+b12: 跳过（本册未配置 «词语表»，多为 extractors_drop）
+--- b21 ---
+[b21/词语表 抛弃]     阅读
+[b21/词语表 抛弃]     识字
+[b21/词语表 抛弃]     阅读
+[b21/词语表 抛弃] 116
+[b21/词语表 抛弃]                                                                                                117
+[b21/词语表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 18 起）: ['    4 天上\u2003 美丽\u2003 爸爸\u2003 下来\u2003 不用\u2003 高兴\u2003 哥哥', '        秋千\u2003 彩云']
+[b21/词语表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 18 起）: ['5 宝贝\u2003 干活\u2003 回来\u2003 一些\u2003 天气\u2003 欢快\u2003 它们', '     告诉\u2003 名字\u2003 出门']
+[b21/词语表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 18 起）: ['6 星星\u2003 晚上\u2003 无数\u2003 奶奶\u2003 中间\u2003 总是\u2003 爷爷', '     北边\u2003 勺子\u2003 转动\u2003 这个\u2003 后来']
+[b21/词语表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 18 起）: ['8 那些\u2003 山顶\u2003 山头\u2003 云海\u2003 仙人\u2003 前方\u2003 仙女']
+[b21/词语表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 18 起）: ['9 山区\u2003 群山\u2003 树木\u2003 灯光\u2003 中午\u2003 眼前\u2003 细雨', '     风光\u2003 中外']
+[b21/词语表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 18 起）: ['10 地方\u2003 水果\u2003 月份\u2003 枝叶\u2003 五光十色\u2003 好客\u2003 老乡', '     有的\u2003 城市\u2003 空气\u2003 水分\u2003 这里\u2003 味道\u2003 有名']
+[b21/词语表] 目录 JSON 对齐 — 锚点 25 条，成功绑定目录 19 条
+词语表: 行数 25，词语合计 236
+[词语表 目录对齐] 核对未通过: {'toc_anchor_group_count': 25, 'toc_assigned_count': 19, 'toc_layout_match_ok': False}
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b21_词语表.json
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b21_词语表.md
+抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b21_词语表.discard.log
+--- b22 ---
+[b22/词语表 抛弃]      阅读
+[b22/词语表 抛弃]      识字
+[b22/词语表 抛弃] 120
+[b22/词语表 抛弃]        N¯ON*N”[fN‘Ou(g*~ˇcgCN_SPZNu(
+[b22/词语表 抛弃]  阅读
+[b22/词语表 抛弃]                                                                                                121
+[b22/词语表 抛弃]  N¯ON*N”[fN‘Ou(g*~ˇcgCN_SPZNu(
+[b22/词语表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 16 起）: ['    1 神州\u2003 中华\u2003 山川\u2003 长江\u2003 长城\u2003 民族\u2003 情谊']
+[b22/词语表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 16 起）: ['    2 传统\u2003 节日\u2003 春节\u2003 花灯\u2003 清明节\u2003 先人\u2003 龙舟', '        中秋\u2003 转眼\u2003 团圆']
+[b22/词语表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 16 起）: ['3 故事\u2003 生活\u2003 甲骨文\u2003 样子\u2003 钱币\u2003 钱财\u2003 有关']
+[b22/词语表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 16 起）: ['4 美食\u2003 茄子\u2003 烤鸭\u2003 水煮鱼\u2003 羊肉\u2003 蛋炒饭']
+[b22/词语表] 目录 JSON 对齐 — 锚点 26 条，成功绑定目录 22 条
+词语表: 行数 26，词语合计 240
+[词语表 目录对齐] 核对未通过: {'toc_anchor_group_count': 26, 'toc_assigned_count': 22, 'toc_layout_match_ok': False}
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b22_词语表.json
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b22_词语表.md
+抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b22_词语表.discard.log
+--- b31 ---
+[b31/词语表 抛弃] 114
+[b31/词语表 抛弃]                                                                                                115
+[b31/词语表] 目录 JSON 对齐 — 锚点全部匹配到目录
+词语表: 行数 20，词语合计 250
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b31_词语表.json
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b31_词语表.md
+抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b31_词语表.discard.log
+--- b32 ---
+[b32/词语表 抛弃] 116
+[b32/词语表 抛弃]        N¯ON*N”[fN‘Ou(g*~ˇcgCN_SPZNu(
+[b32/词语表 抛弃]                                                                                                 117
+[b32/词语表 抛弃]  N¯ON*N”[fN‘Ou(g*~ˇcgCN_SPZNu(
+[b32/词语表] 目录 JSON 对齐 — 锚点全部匹配到目录
+词语表: 行数 22，词语合计 271
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b32_词语表.json
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b32_词语表.md
+抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b32_词语表.discard.log
+--- b41 ---
+[b41/词语表 抛弃]                                                                                                127
+[b41/词语表 抛弃] 128
+[b41/词语表] 目录 JSON 对齐 — 锚点全部匹配到目录
+词语表: 行数 21，词语合计 220
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b41_词语表.json
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b41_词语表.md
+抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b41_词语表.discard.log
+--- b42 ---
+[b42/词语表 抛弃] 142
+[b42/词语表 抛弃]        N¯ON*N”[fN‘Ou(g*~ˇcgCN_SPZNu(
+[b42/词语表 抛弃]                                                                                               143
+[b42/词语表 抛弃]  N¯ON*N”[fN‘Ou(g*~ˇcgCN_SPZNu(
+[b42/词语表 抛弃] 144
+[b42/词语表 抛弃]        N¯ON*N”[fN‘Ou(g*~ˇcgCN_SPZNu(
+[b42/词语表] 目录 JSON 对齐 — 锚点全部匹配到目录
+词语表: 行数 18，词语合计 213
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b42_词语表.json
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b42_词语表.md
+抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b42_词语表.discard.log
+--- b51 ---
+[b51/词语表 抛弃] 120
+[b51/词语表 抛弃]                                                                                                  121
+[b51/词语表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 32 起）: ['   9 眉开眼笑\u2003 美中不足\u2003 成家立业\u2003 稀罕\u2003 幸亏', '       相依为命']
+[b51/词语表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 32 起）: ['  13 毁灭\u2003 不可估量\u2003 举世闻名\u2003 众星拱月\u2003 环绕', '       殿堂\u2003 亭台楼阁\u2003 象征\u2003 仿照\u2003 诗情画意\u2003 漫步', '       漫游\u2003 天南海北\u2003 饱览\u2003 奇珍异宝\u2003 销毁\u2003 罪证', '       侵略\u2003 奉命\u2003 瑰宝\u2003 精华']
+[b51/词语表] 目录 JSON 对齐 — 锚点 18 条，成功绑定目录 16 条
+词语表: 行数 18，词语合计 213
+[词语表 目录对齐] 核对未通过: {'toc_anchor_group_count': 18, 'toc_assigned_count': 16, 'toc_layout_match_ok': False}
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b51_词语表.json
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b51_词语表.md
+抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b51_词语表.discard.log
+--- b52 ---
+[b52/词语表 抛弃]                                                                                                   123
+[b52/词语表 抛弃]    N¯ON*N”[fN‘Ou(g*~ˇcgCN_SPZNu(
+[b52/词语表 抛弃] 124
+[b52/词语表 抛弃]        N¯ON*N”[fN‘Ou(g*~ˇcgCN_SPZNu(
+[b52/词语表] 目录 JSON 对齐 — 锚点全部匹配到目录
+词语表: 行数 12，词语合计 142
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b52_词语表.json
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b52_词语表.md
+抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b52_词语表.discard.log
+--- b61 ---
+[b61/词语表 抛弃] 128
+[b61/词语表 抛弃]                                                                                               129
+[b61/词语表] 目录 JSON 对齐 — 锚点全部匹配到目录
+词语表: 行数 15，词语合计 215
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b61_词语表.json
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b61_词语表.md
+抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b61_词语表.discard.log
+--- b62 ---
+[b62/词语表 抛弃] 122
+[b62/词语表 抛弃]        N¯ON*N”[fN‘Ou(g*~ˇcgCN_SPZNu(
+[b62/词语表 抛弃]                                                                                             123
+[b62/词语表 抛弃] N¯ON*N”[fN‘Ou(g*~ˇcgCN_SPZNu(
+[b62/词语表] 目录 JSON 对齐 — 锚点全部匹配到目录
+词语表: 行数 9，词语合计 162
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b62_词语表.json
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b62_词语表.md
+抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b62_词语表.discard.log
+控制台输出已同步写入日志: D:\ah21\textbook-parser\output\2026-09-16\extract-all_词语表.log

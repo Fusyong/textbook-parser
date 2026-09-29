@@ -9,6 +9,8 @@ extractors:
     module: layout_toc
     start_line_pattern:
       - "目录"
+      # 部分批次双栏行：左侧书名/栏目标题与右侧「目录」挤在同一行（compact 后非纯「目录」）
+      - ".{1,40}目录"
     # 均对 compact 整行 fullmatch；双栏行内嵌「识字表」不会命中。
     # 停止行须距「目录」起始行至少 N 行（0-based 行距），避免文前偶发误匹配。
     end_line_min_lines_after_start: 20

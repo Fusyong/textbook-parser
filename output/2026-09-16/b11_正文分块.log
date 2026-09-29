@@ -1,0 +1,27 @@
+# textbook-parser toc-chunk
+# time: 2026-09-29T16:21:51
+# argv: D:\ah21\textbook-parser\src\textbook_parser\__main__.py toc-chunk --project-root . --batch 2026-09-16 --books --continue-on-error
+# book_code: b11
+# log_file: D:\ah21\textbook-parser\output\2026-09-16\b11_正文分块.log
+# 以下 stdout/stderr 均写入本日志（含警告、错误与提取器提示）。
+# project_root: D:\ah21\textbook-parser
+# batch: 2026-09-16
+# output: D:\ah21\textbook-parser\output\2026-09-16
+
+正文分块: 条目 45, 命中 32, 未命中 13
+  [问题] 未命中锚点: b11-toc-0007 2 金木水火土 keys=['金木水火土', '2金木水火土']
+  [问题] 未命中锚点: b11-toc-0034 2 江南 keys=['江南', '2江南']
+  [问题] 未命中锚点: b11-toc-0035 3 雪地里的小画家 keys=['雪地里的小画家', '3雪地里的小画家']
+  [问题] 未命中锚点: b11-toc-0036 4 四季 keys=['四季', '4四季']
+  [问题] 未命中锚点: b11-toc-0037 语文园地五 keys=['语文园地五']
+  [问题] 未命中锚点: b11-toc-0040 6 日月明 keys=['日月明', '6日月明']
+  [问题] 未命中锚点: b11-toc-0042 8 升国旗 keys=['升国旗', '8升国旗']
+  [问题] 未命中锚点: b11-toc-0045 5 小小的船 keys=['小小的船', '5小小的船']
+  [问题] 未命中锚点: b11-toc-0046 6 影子 keys=['影子', '6影子']
+  [问题] 未命中锚点: b11-toc-0047 7 两件宝 keys=['两件宝', '7两件宝']
+  [问题] 未命中锚点: b11-toc-0050 8 比尾巴 keys=['比尾巴', '8比尾巴']
+  [问题] 未命中锚点: b11-toc-0051 9 乌鸦喝水 keys=['乌鸦喝水', '9乌鸦喝水']
+  [问题] 未命中锚点: b11-toc-0052 10 雨点儿 keys=['雨点儿', '10雨点儿']
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b11_正文分块.json
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b11_正文分块.md
+控制台输出已同步写入日志: D:\ah21\textbook-parser\output\2026-09-16\b11_正文分块.log

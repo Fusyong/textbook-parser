@@ -1,0 +1,1525 @@
+{
+  "book_code": "b31",
+  "extractor": "正文分块",
+  "layout_source": "material/2026-09-16/（根据2022年版课程标准修订）义务教育教科书·语文三年级上册.md",
+  "toc_source": "output/2026-09-16/b31_目录.json",
+  "body_start_line": 0,
+  "body_start_line_note": "启发式：首个独占一行的「第×单元」；可用 body_start_override 覆盖",
+  "line_count": 4268,
+  "chunk_entry_count": 54,
+  "chunk_matched_count": 10,
+  "chunk_unmatched_count": 44,
+  "chunks": [
+    {
+      "id": "b31-toc-0002",
+      "kind": "lesson",
+      "keys_tried": [
+        "大青树下的小学",
+        "1大青树下的小学"
+      ],
+      "start_line": null,
+      "end_line": null,
+      "match_mode": null,
+      "ok": false,
+      "toc_label": "1 大青树下的小学",
+      "toc_snapshot": {
+        "kind": "lesson",
+        "id": "b31-toc-0002",
+        "number": "1",
+        "title": "大青树下的小学",
+        "label": null,
+        "page": 2,
+        "optional_reading": false,
+        "subtitle": null,
+        "block": null,
+        "unit_type": "课文",
+        "unit_subtype": "阅读",
+        "group_label": "第一单元"
+      }
+    },
+    {
+      "id": "b31-toc-0003",
+      "kind": "lesson",
+      "keys_tried": [
+        "花的学校",
+        "2花的学校"
+      ],
+      "start_line": null,
+      "end_line": null,
+      "match_mode": null,
+      "ok": false,
+      "toc_label": "2 花的学校",
+      "toc_snapshot": {
+        "kind": "lesson",
+        "id": "b31-toc-0003",
+        "number": "2",
+        "title": "花的学校",
+        "label": null,
+        "page": 5,
+        "optional_reading": false,
+        "subtitle": null,
+        "block": null,
+        "unit_type": "课文",
+        "unit_subtype": "阅读",
+        "group_label": "第一单元"
+      }
+    },
+    {
+      "id": "b31-toc-0004",
+      "kind": "lesson",
+      "keys_tried": [
+        "不懂就要问",
+        "3不懂就要问",
+        "3*不懂就要问",
+        "3＊不懂就要问"
+      ],
+      "start_line": null,
+      "end_line": null,
+      "match_mode": null,
+      "ok": false,
+      "toc_label": "3* 不懂就要问",
+      "toc_snapshot": {
+        "kind": "lesson",
+        "id": "b31-toc-0004",
+        "number": "3",
+        "title": "不懂就要问",
+        "label": null,
+        "page": 7,
+        "optional_reading": true,
+        "subtitle": null,
+        "block": null,
+        "unit_type": "课文",
+        "unit_subtype": "阅读",
+        "group_label": "第一单元"
+      }
+    },
+    {
+      "id": "b31-toc-0005",
+      "kind": "block_activity",
+      "keys_tried": [
+        "口语交际我的暑假生活"
+      ],
+      "start_line": null,
+      "end_line": null,
+      "match_mode": null,
+      "ok": false,
+      "toc_label": "口语交际 我的暑假生活",
+      "toc_snapshot": {
+        "kind": "block_activity",
+        "id": "b31-toc-0005",
+        "number": null,
+        "title": "我的暑假生活",
+        "label": null,
+        "page": 9,
+        "optional_reading": null,
+        "subtitle": null,
+        "block": "口语交际",
+        "unit_type": "口语交际",
+        "unit_subtype": null,
+        "group_label": "第一单元"
+      }
+    },
+    {
+      "id": "b31-toc-0006",
+      "kind": "block_activity",
+      "keys_tried": [
+        "习作猜猜他是谁"
+      ],
+      "start_line": null,
+      "end_line": null,
+      "match_mode": null,
+      "ok": false,
+      "toc_label": "习作 猜猜他是谁",
+      "toc_snapshot": {
+        "kind": "block_activity",
+        "id": "b31-toc-0006",
+        "number": null,
+        "title": "猜猜他是谁",
+        "label": null,
+        "page": 10,
+        "optional_reading": null,
+        "subtitle": null,
+        "block": "习作",
+        "unit_type": "习作",
+        "unit_subtype": null,
+        "group_label": "第一单元"
+      }
+    },
+    {
+      "id": "b31-toc-0007",
+      "kind": "garden",
+      "keys_tried": [
+        "语文园地"
+      ],
+      "start_line": null,
+      "end_line": null,
+      "match_mode": null,
+      "ok": false,
+      "toc_label": "语文园地",
+      "toc_snapshot": {
+        "kind": "garden",
+        "id": "b31-toc-0007",
+        "number": null,
+        "title": null,
+        "label": "语文园地",
+        "page": 11,
+        "optional_reading": null,
+        "subtitle": null,
+        "block": null,
+        "unit_type": "语文园地",
+        "unit_subtype": null,
+        "group_label": "第一单元"
+      }
+    },
+    {
+      "id": "b31-toc-0009",
+      "kind": "lesson",
+      "keys_tried": [
+        "古诗三首",
+        "4古诗三首"
+      ],
+      "start_line": 512,
+      "end_line": 518,
+      "match_mode": "window",
+      "ok": true,
+      "toc_label": "4 古诗三首",
+      "toc_snapshot": {
+        "kind": "lesson",
+        "id": "b31-toc-0009",
+        "number": "4",
+        "title": "古诗三首",
+        "label": null,
+        "page": 14,
+        "optional_reading": false,
+        "subtitle": null,
+        "block": null,
+        "unit_type": "课文",
+        "unit_subtype": "阅读",
+        "group_label": "第二单元"
+      },
+      "start_line_text": "    阅读     4 古诗三首",
+      "chunk_tail_preview": "                                                                  湖南北部。"
+    },
+    {
+      "id": "b31-toc-0010",
+      "kind": "sublesson",
+      "keys_tried": [
+        "望洞庭"
+      ],
+      "start_line": 518,
+      "end_line": 958,
+      "match_mode": "single",
+      "ok": true,
+      "toc_label": "望洞庭",
+      "toc_snapshot": {
+        "kind": "sublesson",
+        "id": "b31-toc-0010",
+        "number": null,
+        "title": "望洞庭",
+        "label": null,
+        "page": 14,
+        "optional_reading": null,
+        "subtitle": null,
+        "block": null,
+        "unit_type": "课文",
+        "unit_subtype": "阅读",
+        "group_label": "第二单元"
+      },
+      "start_line_text": "             望洞庭",
+      "chunk_tail_preview": "   罚票"
+    },
+    {
+      "id": "b31-toc-0011",
+      "kind": "sublesson",
+      "keys_tried": [
+        "山行"
+      ],
+      "start_line": null,
+      "end_line": null,
+      "match_mode": null,
+      "ok": false,
+      "toc_label": "山行",
+      "toc_snapshot": {
+        "kind": "sublesson",
+        "id": "b31-toc-0011",
+        "number": null,
+        "title": "山行",
+        "label": null,
+        "page": 14,
+        "optional_reading": null,
+        "subtitle": null,
+        "block": null,
+        "unit_type": "课文",
+        "unit_subtype": "阅读",
+        "group_label": "第二单元"
+      }
+    },
+    {
+      "id": "b31-toc-0012",
+      "kind": "sublesson",
+      "keys_tried": [
+        "夜书所见"
+      ],
+      "start_line": 958,
+      "end_line": 1661,
+      "match_mode": "window",
+      "ok": true,
+      "toc_label": "夜书所见",
+      "toc_snapshot": {
+        "kind": "sublesson",
+        "id": "b31-toc-0012",
+        "number": null,
+        "title": "夜书所见",
+        "label": null,
+        "page": 15,
+        "optional_reading": null,
+        "subtitle": null,
+        "block": null,
+        "unit_type": "课文",
+        "unit_subtype": "阅读",
+        "group_label": "第二单元"
+      },
+      "start_line_text": "   笛频                              舟夜书所见",
+      "chunk_tail_preview": ""
+    },
+    {
+      "id": "b31-toc-0013",
+      "kind": "lesson",
+      "keys_tried": [
+        "铺满金色巴掌的水泥道",
+        "5铺满金色巴掌的水泥道"
+      ],
+      "start_line": null,
+      "end_line": null,
+      "match_mode": null,
+      "ok": false,
+      "toc_label": "5 铺满金色巴掌的水泥道",
+      "toc_snapshot": {
+        "kind": "lesson",
+        "id": "b31-toc-0013",
+        "number": "5",
+        "title": "铺满金色巴掌的水泥道",
+        "label": null,
+        "page": 16,
+        "optional_reading": false,
+        "subtitle": null,
+        "block": null,
+        "unit_type": "课文",
+        "unit_subtype": "阅读",
+        "group_label": "第二单元"
+      }
+    },
+    {
+      "id": "b31-toc-0014",
+      "kind": "lesson",
+      "keys_tried": [
+        "秋天的雨",
+        "6秋天的雨"
+      ],
+      "start_line": null,
+      "end_line": null,
+      "match_mode": null,
+      "ok": false,
+      "toc_label": "6 秋天的雨",
+      "toc_snapshot": {
+        "kind": "lesson",
+        "id": "b31-toc-0014",
+        "number": "6",
+        "title": "秋天的雨",
+        "label": null,
+        "page": 19,
+        "optional_reading": false,
+        "subtitle": null,
+        "block": null,
+        "unit_type": "课文",
+        "unit_subtype": "阅读",
+        "group_label": "第二单元"
+      }
+    },
+    {
+      "id": "b31-toc-0015",
+      "kind": "lesson",
+      "keys_tried": [
+        "听听，秋的声音",
+        "7听听，秋的声音",
+        "7*听听，秋的声音",
+        "7＊听听，秋的声音"
+      ],
+      "start_line": null,
+      "end_line": null,
+      "match_mode": null,
+      "ok": false,
+      "toc_label": "7* 听听，秋的声音",
+      "toc_snapshot": {
+        "kind": "lesson",
+        "id": "b31-toc-0015",
+        "number": "7",
+        "title": "听听，秋的声音",
+        "label": null,
+        "page": 22,
+        "optional_reading": true,
+        "subtitle": null,
+        "block": null,
+        "unit_type": "课文",
+        "unit_subtype": "阅读",
+        "group_label": "第二单元"
+      }
+    },
+    {
+      "id": "b31-toc-0016",
+      "kind": "block_activity",
+      "keys_tried": [
+        "习作写日记"
+      ],
+      "start_line": null,
+      "end_line": null,
+      "match_mode": null,
+      "ok": false,
+      "toc_label": "习作 写日记",
+      "toc_snapshot": {
+        "kind": "block_activity",
+        "id": "b31-toc-0016",
+        "number": null,
+        "title": "写日记",
+        "label": null,
+        "page": 24,
+        "optional_reading": null,
+        "subtitle": null,
+        "block": "习作",
+        "unit_type": "习作",
+        "unit_subtype": null,
+        "group_label": "第二单元"
+      }
+    },
+    {
+      "id": "b31-toc-0017",
+      "kind": "garden",
+      "keys_tried": [
+        "语文园地"
+      ],
+      "start_line": null,
+      "end_line": null,
+      "match_mode": null,
+      "ok": false,
+      "toc_label": "语文园地",
+      "toc_snapshot": {
+        "kind": "garden",
+        "id": "b31-toc-0017",
+        "number": null,
+        "title": null,
+        "label": "语文园地",
+        "page": 25,
+        "optional_reading": null,
+        "subtitle": null,
+        "block": null,
+        "unit_type": "语文园地",
+        "unit_subtype": null,
+        "group_label": "第二单元"
+      }
+    },
+    {
+      "id": "b31-toc-0019",
+      "kind": "lesson",
+      "keys_tried": [
+        "总也倒不了的老屋",
+        "8总也倒不了的老屋"
+      ],
+      "start_line": null,
+      "end_line": null,
+      "match_mode": null,
+      "ok": false,
+      "toc_label": "8 总也倒不了的老屋",
+      "toc_snapshot": {
+        "kind": "lesson",
+        "id": "b31-toc-0019",
+        "number": "8",
+        "title": "总也倒不了的老屋",
+        "label": null,
+        "page": 28,
+        "optional_reading": false,
+        "subtitle": null,
+        "block": null,
+        "unit_type": "课文",
+        "unit_subtype": "阅读",
+        "group_label": "第三单元"
+      }
+    },
+    {
+      "id": "b31-toc-0020",
+      "kind": "lesson",
+      "keys_tried": [
+        "犟龟",
+        "9犟龟",
+        "9*犟龟",
+        "9＊犟龟"
+      ],
+      "start_line": null,
+      "end_line": null,
+      "match_mode": null,
+      "ok": false,
+      "toc_label": "9* 犟龟",
+      "toc_snapshot": {
+        "kind": "lesson",
+        "id": "b31-toc-0020",
+        "number": "9",
+        "title": "犟龟",
+        "label": null,
+        "page": 32,
+        "optional_reading": true,
+        "subtitle": null,
+        "block": null,
+        "unit_type": "课文",
+        "unit_subtype": "阅读",
+        "group_label": "第三单元"
+      }
+    },
+    {
+      "id": "b31-toc-0021",
+      "kind": "lesson",
+      "keys_tried": [
+        "小狗学叫",
+        "10小狗学叫",
+        "10*小狗学叫",
+        "10＊小狗学叫"
+      ],
+      "start_line": null,
+      "end_line": null,
+      "match_mode": null,
+      "ok": false,
+      "toc_label": "10* 小狗学叫",
+      "toc_snapshot": {
+        "kind": "lesson",
+        "id": "b31-toc-0021",
+        "number": "10",
+        "title": "小狗学叫",
+        "label": null,
+        "page": 36,
+        "optional_reading": true,
+        "subtitle": null,
+        "block": null,
+        "unit_type": "课文",
+        "unit_subtype": "阅读",
+        "group_label": "第三单元"
+      }
+    },
+    {
+      "id": "b31-toc-0022",
+      "kind": "block_activity",
+      "keys_tried": [
+        "口语交际名字里的故事"
+      ],
+      "start_line": null,
+      "end_line": null,
+      "match_mode": null,
+      "ok": false,
+      "toc_label": "口语交际 名字里的故事",
+      "toc_snapshot": {
+        "kind": "block_activity",
+        "id": "b31-toc-0022",
+        "number": null,
+        "title": "名字里的故事",
+        "label": null,
+        "page": 41,
+        "optional_reading": null,
+        "subtitle": null,
+        "block": "口语交际",
+        "unit_type": "口语交际",
+        "unit_subtype": null,
+        "group_label": "第三单元"
+      }
+    },
+    {
+      "id": "b31-toc-0023",
+      "kind": "block_activity",
+      "keys_tried": [
+        "习作续写故事"
+      ],
+      "start_line": null,
+      "end_line": null,
+      "match_mode": null,
+      "ok": false,
+      "toc_label": "习作 续写故事",
+      "toc_snapshot": {
+        "kind": "block_activity",
+        "id": "b31-toc-0023",
+        "number": null,
+        "title": "续写故事",
+        "label": null,
+        "page": 42,
+        "optional_reading": null,
+        "subtitle": null,
+        "block": "习作",
+        "unit_type": "习作",
+        "unit_subtype": null,
+        "group_label": "第三单元"
+      }
+    },
+    {
+      "id": "b31-toc-0024",
+      "kind": "garden",
+      "keys_tried": [
+        "语文园地"
+      ],
+      "start_line": null,
+      "end_line": null,
+      "match_mode": null,
+      "ok": false,
+      "toc_label": "语文园地",
+      "toc_snapshot": {
+        "kind": "garden",
+        "id": "b31-toc-0024",
+        "number": null,
+        "title": null,
+        "label": "语文园地",
+        "page": 43,
+        "optional_reading": null,
+        "subtitle": null,
+        "block": null,
+        "unit_type": "语文园地",
+        "unit_subtype": null,
+        "group_label": "第三单元"
+      }
+    },
+    {
+      "id": "b31-toc-0026",
+      "kind": "lesson",
+      "keys_tried": [
+        "宝葫芦的秘密（节选）",
+        "11宝葫芦的秘密（节选）"
+      ],
+      "start_line": 1661,
+      "end_line": 2483,
+      "match_mode": "single",
+      "ok": true,
+      "toc_label": "11 宝葫芦的秘密（节选）",
+      "toc_snapshot": {
+        "kind": "lesson",
+        "id": "b31-toc-0026",
+        "number": "11",
+        "title": "宝葫芦的秘密（节选）",
+        "label": null,
+        "page": 46,
+        "optional_reading": false,
+        "subtitle": null,
+        "block": null,
+        "unit_type": "课文",
+        "unit_subtype": "阅读",
+        "group_label": "第四单元"
+      },
+      "start_line_text": "              11 宝葫芦的秘密（节选）",
+      "chunk_tail_preview": ""
+    },
+    {
+      "id": "b31-toc-0027",
+      "kind": "lesson",
+      "keys_tried": [
+        "在牛肚子里旅行",
+        "12在牛肚子里旅行"
+      ],
+      "start_line": null,
+      "end_line": null,
+      "match_mode": null,
+      "ok": false,
+      "toc_label": "12 在牛肚子里旅行",
+      "toc_snapshot": {
+        "kind": "lesson",
+        "id": "b31-toc-0027",
+        "number": "12",
+        "title": "在牛肚子里旅行",
+        "label": null,
+        "page": 49,
+        "optional_reading": false,
+        "subtitle": null,
+        "block": null,
+        "unit_type": "课文",
+        "unit_subtype": "阅读",
+        "group_label": "第四单元"
+      }
+    },
+    {
+      "id": "b31-toc-0028",
+      "kind": "lesson",
+      "keys_tried": [
+        "一块奶酪",
+        "13一块奶酪",
+        "13*一块奶酪",
+        "13＊一块奶酪"
+      ],
+      "start_line": null,
+      "end_line": null,
+      "match_mode": null,
+      "ok": false,
+      "toc_label": "13* 一块奶酪",
+      "toc_snapshot": {
+        "kind": "lesson",
+        "id": "b31-toc-0028",
+        "number": "13",
+        "title": "一块奶酪",
+        "label": null,
+        "page": 52,
+        "optional_reading": true,
+        "subtitle": null,
+        "block": null,
+        "unit_type": "课文",
+        "unit_subtype": "阅读",
+        "group_label": "第四单元"
+      }
+    },
+    {
+      "id": "b31-toc-0029",
+      "kind": "block_activity",
+      "keys_tried": [
+        "习作我来编童话"
+      ],
+      "start_line": null,
+      "end_line": null,
+      "match_mode": null,
+      "ok": false,
+      "toc_label": "习作 我来编童话",
+      "toc_snapshot": {
+        "kind": "block_activity",
+        "id": "b31-toc-0029",
+        "number": null,
+        "title": "我来编童话",
+        "label": null,
+        "page": 54,
+        "optional_reading": null,
+        "subtitle": null,
+        "block": "习作",
+        "unit_type": "习作",
+        "unit_subtype": null,
+        "group_label": "第四单元"
+      }
+    },
+    {
+      "id": "b31-toc-0030",
+      "kind": "garden",
+      "keys_tried": [
+        "语文园地"
+      ],
+      "start_line": null,
+      "end_line": null,
+      "match_mode": null,
+      "ok": false,
+      "toc_label": "语文园地",
+      "toc_snapshot": {
+        "kind": "garden",
+        "id": "b31-toc-0030",
+        "number": null,
+        "title": null,
+        "label": "语文园地",
+        "page": 55,
+        "optional_reading": null,
+        "subtitle": null,
+        "block": null,
+        "unit_type": "语文园地",
+        "unit_subtype": null,
+        "group_label": "第四单元"
+      }
+    },
+    {
+      "id": "b31-toc-0031",
+      "kind": "reading_club",
+      "keys_tried": [
+        "快乐读书吧"
+      ],
+      "start_line": null,
+      "end_line": null,
+      "match_mode": null,
+      "ok": false,
+      "toc_label": "快乐读书吧",
+      "toc_snapshot": {
+        "kind": "reading_club",
+        "id": "b31-toc-0031",
+        "number": null,
+        "title": "快乐读书吧",
+        "label": null,
+        "page": 57,
+        "optional_reading": null,
+        "subtitle": null,
+        "block": null,
+        "unit_type": "快乐读书吧",
+        "unit_subtype": null,
+        "group_label": "第四单元"
+      }
+    },
+    {
+      "id": "b31-toc-0033",
+      "kind": "lesson",
+      "keys_tried": [
+        "搭船的鸟",
+        "14搭船的鸟"
+      ],
+      "start_line": null,
+      "end_line": null,
+      "match_mode": null,
+      "ok": false,
+      "toc_label": "14 搭船的鸟",
+      "toc_snapshot": {
+        "kind": "lesson",
+        "id": "b31-toc-0033",
+        "number": "14",
+        "title": "搭船的鸟",
+        "label": null,
+        "page": 60,
+        "optional_reading": false,
+        "subtitle": null,
+        "block": null,
+        "unit_type": "课文",
+        "unit_subtype": "阅读",
+        "group_label": "第五单元"
+      }
+    },
+    {
+      "id": "b31-toc-0034",
+      "kind": "lesson",
+      "keys_tried": [
+        "金色的草地",
+        "15金色的草地"
+      ],
+      "start_line": null,
+      "end_line": null,
+      "match_mode": null,
+      "ok": false,
+      "toc_label": "15 金色的草地",
+      "toc_snapshot": {
+        "kind": "lesson",
+        "id": "b31-toc-0034",
+        "number": "15",
+        "title": "金色的草地",
+        "label": null,
+        "page": 62,
+        "optional_reading": false,
+        "subtitle": null,
+        "block": null,
+        "unit_type": "课文",
+        "unit_subtype": "阅读",
+        "group_label": "第五单元"
+      }
+    },
+    {
+      "id": "b31-toc-0035",
+      "kind": "block_activity",
+      "keys_tried": [
+        "习作我们眼中的缤纷世界"
+      ],
+      "start_line": null,
+      "end_line": null,
+      "match_mode": null,
+      "ok": false,
+      "toc_label": "习作 我们眼中的缤纷世界",
+      "toc_snapshot": {
+        "kind": "block_activity",
+        "id": "b31-toc-0035",
+        "number": null,
+        "title": "我们眼中的缤纷世界",
+        "label": null,
+        "page": 65,
+        "optional_reading": null,
+        "subtitle": null,
+        "block": "习作",
+        "unit_type": "习作",
+        "unit_subtype": null,
+        "group_label": "第五单元"
+      }
+    },
+    {
+      "id": "b31-toc-0036",
+      "kind": "sublesson",
+      "keys_tried": [
+        "我家的小狗"
+      ],
+      "start_line": null,
+      "end_line": null,
+      "match_mode": null,
+      "ok": false,
+      "toc_label": "我家的小狗",
+      "toc_snapshot": {
+        "kind": "sublesson",
+        "id": "b31-toc-0036",
+        "number": null,
+        "title": "我家的小狗",
+        "label": null,
+        "page": 66,
+        "optional_reading": null,
+        "subtitle": null,
+        "block": null,
+        "unit_type": "课文",
+        "unit_subtype": "阅读",
+        "group_label": "第五单元"
+      }
+    },
+    {
+      "id": "b31-toc-0037",
+      "kind": "sublesson",
+      "keys_tried": [
+        "我爱故乡的杨梅"
+      ],
+      "start_line": 2483,
+      "end_line": 2562,
+      "match_mode": "single",
+      "ok": true,
+      "toc_label": "我爱故乡的杨梅",
+      "toc_snapshot": {
+        "kind": "sublesson",
+        "id": "b31-toc-0037",
+        "number": null,
+        "title": "我爱故乡的杨梅",
+        "label": null,
+        "page": 67,
+        "optional_reading": null,
+        "subtitle": null,
+        "block": null,
+        "unit_type": "课文",
+        "unit_subtype": "阅读",
+        "group_label": "第五单元"
+      },
+      "start_line_text": "               我爱故乡的杨梅",
+      "chunk_tail_preview": ""
+    },
+    {
+      "id": "b31-toc-0039",
+      "kind": "lesson",
+      "keys_tried": [
+        "富饶的西沙群岛",
+        "16富饶的西沙群岛"
+      ],
+      "start_line": 2562,
+      "end_line": 2657,
+      "match_mode": "single",
+      "ok": true,
+      "toc_label": "16 富饶的西沙群岛",
+      "toc_snapshot": {
+        "kind": "lesson",
+        "id": "b31-toc-0039",
+        "number": "16",
+        "title": "富饶的西沙群岛",
+        "label": null,
+        "page": 70,
+        "optional_reading": false,
+        "subtitle": null,
+        "block": null,
+        "unit_type": "课文",
+        "unit_subtype": "阅读",
+        "group_label": "第六单元"
+      },
+      "start_line_text": "    16 富饶的西沙群岛",
+      "chunk_tail_preview": ""
+    },
+    {
+      "id": "b31-toc-0040",
+      "kind": "lesson",
+      "keys_tried": [
+        "海滨小城",
+        "17海滨小城"
+      ],
+      "start_line": 2657,
+      "end_line": 2759,
+      "match_mode": "single",
+      "ok": true,
+      "toc_label": "17 海滨小城",
+      "toc_snapshot": {
+        "kind": "lesson",
+        "id": "b31-toc-0040",
+        "number": "17",
+        "title": "海滨小城",
+        "label": null,
+        "page": 73,
+        "optional_reading": false,
+        "subtitle": null,
+        "block": null,
+        "unit_type": "课文",
+        "unit_subtype": "阅读",
+        "group_label": "第六单元"
+      },
+      "start_line_text": "            17 海滨小城",
+      "chunk_tail_preview": ""
+    },
+    {
+      "id": "b31-toc-0041",
+      "kind": "lesson",
+      "keys_tried": [
+        "美丽的小兴安岭",
+        "18美丽的小兴安岭"
+      ],
+      "start_line": 2759,
+      "end_line": 3049,
+      "match_mode": "single",
+      "ok": true,
+      "toc_label": "18 美丽的小兴安岭",
+      "toc_snapshot": {
+        "kind": "lesson",
+        "id": "b31-toc-0041",
+        "number": "18",
+        "title": "美丽的小兴安岭",
+        "label": null,
+        "page": 75,
+        "optional_reading": false,
+        "subtitle": null,
+        "block": null,
+        "unit_type": "课文",
+        "unit_subtype": "阅读",
+        "group_label": "第六单元"
+      },
+      "start_line_text": "      18 美丽的小兴安岭",
+      "chunk_tail_preview": ""
+    },
+    {
+      "id": "b31-toc-0042",
+      "kind": "lesson",
+      "keys_tried": [
+        "香港，璀璨的明珠",
+        "19香港，璀璨的明珠",
+        "19*香港，璀璨的明珠",
+        "19＊香港，璀璨的明珠"
+      ],
+      "start_line": null,
+      "end_line": null,
+      "match_mode": null,
+      "ok": false,
+      "toc_label": "19* 香港，璀璨的明珠",
+      "toc_snapshot": {
+        "kind": "lesson",
+        "id": "b31-toc-0042",
+        "number": "19",
+        "title": "香港，璀璨的明珠",
+        "label": null,
+        "page": 78,
+        "optional_reading": true,
+        "subtitle": null,
+        "block": null,
+        "unit_type": "课文",
+        "unit_subtype": "阅读",
+        "group_label": "第六单元"
+      }
+    },
+    {
+      "id": "b31-toc-0043",
+      "kind": "block_activity",
+      "keys_tried": [
+        "习作这儿真美"
+      ],
+      "start_line": null,
+      "end_line": null,
+      "match_mode": null,
+      "ok": false,
+      "toc_label": "习作 这儿真美",
+      "toc_snapshot": {
+        "kind": "block_activity",
+        "id": "b31-toc-0043",
+        "number": null,
+        "title": "这儿真美",
+        "label": null,
+        "page": 80,
+        "optional_reading": null,
+        "subtitle": null,
+        "block": "习作",
+        "unit_type": "习作",
+        "unit_subtype": null,
+        "group_label": "第六单元"
+      }
+    },
+    {
+      "id": "b31-toc-0044",
+      "kind": "garden",
+      "keys_tried": [
+        "语文园地"
+      ],
+      "start_line": null,
+      "end_line": null,
+      "match_mode": null,
+      "ok": false,
+      "toc_label": "语文园地",
+      "toc_snapshot": {
+        "kind": "garden",
+        "id": "b31-toc-0044",
+        "number": null,
+        "title": null,
+        "label": "语文园地",
+        "page": 81,
+        "optional_reading": null,
+        "subtitle": null,
+        "block": null,
+        "unit_type": "语文园地",
+        "unit_subtype": null,
+        "group_label": "第六单元"
+      }
+    },
+    {
+      "id": "b31-toc-0046",
+      "kind": "lesson",
+      "keys_tried": [
+        "古诗三首",
+        "20古诗三首"
+      ],
+      "start_line": 3049,
+      "end_line": 3476,
+      "match_mode": "window",
+      "ok": true,
+      "toc_label": "20 古诗三首",
+      "toc_snapshot": {
+        "kind": "lesson",
+        "id": "b31-toc-0046",
+        "number": "20",
+        "title": "古诗三首",
+        "label": null,
+        "page": 84,
+        "optional_reading": false,
+        "subtitle": null,
+        "block": null,
+        "unit_type": "课文",
+        "unit_subtype": "阅读",
+        "group_label": "第七单元"
+      },
+      "start_line_text": "阅读  20 古诗三首",
+      "chunk_tail_preview": ""
+    },
+    {
+      "id": "b31-toc-0047",
+      "kind": "sublesson",
+      "keys_tried": [
+        "鹿柴"
+      ],
+      "start_line": null,
+      "end_line": null,
+      "match_mode": null,
+      "ok": false,
+      "toc_label": "鹿柴",
+      "toc_snapshot": {
+        "kind": "sublesson",
+        "id": "b31-toc-0047",
+        "number": null,
+        "title": "鹿柴",
+        "label": null,
+        "page": 84,
+        "optional_reading": null,
+        "subtitle": null,
+        "block": null,
+        "unit_type": "课文",
+        "unit_subtype": "阅读",
+        "group_label": "第七单元"
+      }
+    },
+    {
+      "id": "b31-toc-0048",
+      "kind": "sublesson",
+      "keys_tried": [
+        "望天门山"
+      ],
+      "start_line": null,
+      "end_line": null,
+      "match_mode": null,
+      "ok": false,
+      "toc_label": "望天门山",
+      "toc_snapshot": {
+        "kind": "sublesson",
+        "id": "b31-toc-0048",
+        "number": null,
+        "title": "望天门山",
+        "label": null,
+        "page": 84,
+        "optional_reading": null,
+        "subtitle": null,
+        "block": null,
+        "unit_type": "课文",
+        "unit_subtype": "阅读",
+        "group_label": "第七单元"
+      }
+    },
+    {
+      "id": "b31-toc-0049",
+      "kind": "sublesson",
+      "keys_tried": [
+        "饮湖上初晴后雨"
+      ],
+      "start_line": null,
+      "end_line": null,
+      "match_mode": null,
+      "ok": false,
+      "toc_label": "饮湖上初晴后雨",
+      "toc_snapshot": {
+        "kind": "sublesson",
+        "id": "b31-toc-0049",
+        "number": null,
+        "title": "饮湖上初晴后雨",
+        "label": null,
+        "page": 85,
+        "optional_reading": null,
+        "subtitle": null,
+        "block": null,
+        "unit_type": "课文",
+        "unit_subtype": "阅读",
+        "group_label": "第七单元"
+      }
+    },
+    {
+      "id": "b31-toc-0050",
+      "kind": "lesson",
+      "keys_tried": [
+        "大自然的声音",
+        "21大自然的声音"
+      ],
+      "start_line": null,
+      "end_line": null,
+      "match_mode": null,
+      "ok": false,
+      "toc_label": "21 大自然的声音",
+      "toc_snapshot": {
+        "kind": "lesson",
+        "id": "b31-toc-0050",
+        "number": "21",
+        "title": "大自然的声音",
+        "label": null,
+        "page": 86,
+        "optional_reading": false,
+        "subtitle": null,
+        "block": null,
+        "unit_type": "课文",
+        "unit_subtype": "阅读",
+        "group_label": "第七单元"
+      }
+    },
+    {
+      "id": "b31-toc-0051",
+      "kind": "lesson",
+      "keys_tried": [
+        "读不完的大书",
+        "22读不完的大书"
+      ],
+      "start_line": null,
+      "end_line": null,
+      "match_mode": null,
+      "ok": false,
+      "toc_label": "22 读不完的大书",
+      "toc_snapshot": {
+        "kind": "lesson",
+        "id": "b31-toc-0051",
+        "number": "22",
+        "title": "读不完的大书",
+        "label": null,
+        "page": 89,
+        "optional_reading": false,
+        "subtitle": null,
+        "block": null,
+        "unit_type": "课文",
+        "unit_subtype": "阅读",
+        "group_label": "第七单元"
+      }
+    },
+    {
+      "id": "b31-toc-0052",
+      "kind": "block_activity",
+      "keys_tried": [
+        "口语交际身边的“小事”"
+      ],
+      "start_line": null,
+      "end_line": null,
+      "match_mode": null,
+      "ok": false,
+      "toc_label": "口语交际 身边的“小事”",
+      "toc_snapshot": {
+        "kind": "block_activity",
+        "id": "b31-toc-0052",
+        "number": null,
+        "title": "身边的“小事”",
+        "label": null,
+        "page": 91,
+        "optional_reading": null,
+        "subtitle": null,
+        "block": "口语交际",
+        "unit_type": "口语交际",
+        "unit_subtype": null,
+        "group_label": "第七单元"
+      }
+    },
+    {
+      "id": "b31-toc-0053",
+      "kind": "block_activity",
+      "keys_tried": [
+        "习作我有一个想法"
+      ],
+      "start_line": null,
+      "end_line": null,
+      "match_mode": null,
+      "ok": false,
+      "toc_label": "习作 我有一个想法",
+      "toc_snapshot": {
+        "kind": "block_activity",
+        "id": "b31-toc-0053",
+        "number": null,
+        "title": "我有一个想法",
+        "label": null,
+        "page": 92,
+        "optional_reading": null,
+        "subtitle": null,
+        "block": "习作",
+        "unit_type": "习作",
+        "unit_subtype": null,
+        "group_label": "第七单元"
+      }
+    },
+    {
+      "id": "b31-toc-0054",
+      "kind": "garden",
+      "keys_tried": [
+        "语文园地"
+      ],
+      "start_line": null,
+      "end_line": null,
+      "match_mode": null,
+      "ok": false,
+      "toc_label": "语文园地",
+      "toc_snapshot": {
+        "kind": "garden",
+        "id": "b31-toc-0054",
+        "number": null,
+        "title": null,
+        "label": "语文园地",
+        "page": 93,
+        "optional_reading": null,
+        "subtitle": null,
+        "block": null,
+        "unit_type": "语文园地",
+        "unit_subtype": null,
+        "group_label": "第七单元"
+      }
+    },
+    {
+      "id": "b31-toc-0056",
+      "kind": "lesson",
+      "keys_tried": [
+        "司马光",
+        "23司马光"
+      ],
+      "start_line": 3476,
+      "end_line": 4268,
+      "match_mode": "single",
+      "ok": true,
+      "toc_label": "23 司马光",
+      "toc_snapshot": {
+        "kind": "lesson",
+        "id": "b31-toc-0056",
+        "number": "23",
+        "title": "司马光",
+        "label": null,
+        "page": 96,
+        "optional_reading": false,
+        "subtitle": null,
+        "block": null,
+        "unit_type": "课文",
+        "unit_subtype": "阅读",
+        "group_label": "第八单元"
+      },
+      "start_line_text": "    23 司马光",
+      "chunk_tail_preview": ""
+    },
+    {
+      "id": "b31-toc-0057",
+      "kind": "lesson",
+      "keys_tried": [
+        "一定要争气",
+        "24一定要争气"
+      ],
+      "start_line": null,
+      "end_line": null,
+      "match_mode": null,
+      "ok": false,
+      "toc_label": "24 一定要争气",
+      "toc_snapshot": {
+        "kind": "lesson",
+        "id": "b31-toc-0057",
+        "number": "24",
+        "title": "一定要争气",
+        "label": null,
+        "page": 97,
+        "optional_reading": false,
+        "subtitle": null,
+        "block": null,
+        "unit_type": "课文",
+        "unit_subtype": "阅读",
+        "group_label": "第八单元"
+      }
+    },
+    {
+      "id": "b31-toc-0058",
+      "kind": "lesson",
+      "keys_tried": [
+        "手术台就是阵地",
+        "25手术台就是阵地"
+      ],
+      "start_line": null,
+      "end_line": null,
+      "match_mode": null,
+      "ok": false,
+      "toc_label": "25 手术台就是阵地",
+      "toc_snapshot": {
+        "kind": "lesson",
+        "id": "b31-toc-0058",
+        "number": "25",
+        "title": "手术台就是阵地",
+        "label": null,
+        "page": 100,
+        "optional_reading": false,
+        "subtitle": null,
+        "block": null,
+        "unit_type": "课文",
+        "unit_subtype": "阅读",
+        "group_label": "第八单元"
+      }
+    },
+    {
+      "id": "b31-toc-0059",
+      "kind": "lesson",
+      "keys_tried": [
+        "一个粗瓷大碗",
+        "26一个粗瓷大碗",
+        "26*一个粗瓷大碗",
+        "26＊一个粗瓷大碗"
+      ],
+      "start_line": null,
+      "end_line": null,
+      "match_mode": null,
+      "ok": false,
+      "toc_label": "26* 一个粗瓷大碗",
+      "toc_snapshot": {
+        "kind": "lesson",
+        "id": "b31-toc-0059",
+        "number": "26",
+        "title": "一个粗瓷大碗",
+        "label": null,
+        "page": 103,
+        "optional_reading": true,
+        "subtitle": null,
+        "block": null,
+        "unit_type": "课文",
+        "unit_subtype": "阅读",
+        "group_label": "第八单元"
+      }
+    },
+    {
+      "id": "b31-toc-0060",
+      "kind": "block_activity",
+      "keys_tried": [
+        "口语交际请教"
+      ],
+      "start_line": null,
+      "end_line": null,
+      "match_mode": null,
+      "ok": false,
+      "toc_label": "口语交际 请教",
+      "toc_snapshot": {
+        "kind": "block_activity",
+        "id": "b31-toc-0060",
+        "number": null,
+        "title": "请教",
+        "label": null,
+        "page": 105,
+        "optional_reading": null,
+        "subtitle": null,
+        "block": "口语交际",
+        "unit_type": "口语交际",
+        "unit_subtype": null,
+        "group_label": "第八单元"
+      }
+    },
+    {
+      "id": "b31-toc-0061",
+      "kind": "block_activity",
+      "keys_tried": [
+        "习作那次经历真难忘"
+      ],
+      "start_line": null,
+      "end_line": null,
+      "match_mode": null,
+      "ok": false,
+      "toc_label": "习作 那次经历真难忘",
+      "toc_snapshot": {
+        "kind": "block_activity",
+        "id": "b31-toc-0061",
+        "number": null,
+        "title": "那次经历真难忘",
+        "label": null,
+        "page": 106,
+        "optional_reading": null,
+        "subtitle": null,
+        "block": "习作",
+        "unit_type": "习作",
+        "unit_subtype": null,
+        "group_label": "第八单元"
+      }
+    },
+    {
+      "id": "b31-toc-0062",
+      "kind": "garden",
+      "keys_tried": [
+        "语文园地"
+      ],
+      "start_line": null,
+      "end_line": null,
+      "match_mode": null,
+      "ok": false,
+      "toc_label": "语文园地",
+      "toc_snapshot": {
+        "kind": "garden",
+        "id": "b31-toc-0062",
+        "number": null,
+        "title": null,
+        "label": "语文园地",
+        "page": 107,
+        "optional_reading": null,
+        "subtitle": null,
+        "block": null,
+        "unit_type": "语文园地",
+        "unit_subtype": null,
+        "group_label": "第八单元"
+      }
+    }
+  ],
+  "warnings": [
+    "未命中锚点: b31-toc-0002 1 大青树下的小学 keys=['大青树下的小学', '1大青树下的小学']",
+    "未命中锚点: b31-toc-0003 2 花的学校 keys=['花的学校', '2花的学校']",
+    "未命中锚点: b31-toc-0004 3* 不懂就要问 keys=['不懂就要问', '3不懂就要问', '3*不懂就要问']",
+    "未命中锚点: b31-toc-0005 口语交际 我的暑假生活 keys=['口语交际我的暑假生活']",
+    "未命中锚点: b31-toc-0006 习作 猜猜他是谁 keys=['习作猜猜他是谁']",
+    "未命中锚点: b31-toc-0007 语文园地 keys=['语文园地']",
+    "未命中锚点: b31-toc-0011 山行 keys=['山行']",
+    "未命中锚点: b31-toc-0013 5 铺满金色巴掌的水泥道 keys=['铺满金色巴掌的水泥道', '5铺满金色巴掌的水泥道']",
+    "未命中锚点: b31-toc-0014 6 秋天的雨 keys=['秋天的雨', '6秋天的雨']",
+    "未命中锚点: b31-toc-0015 7* 听听，秋的声音 keys=['听听，秋的声音', '7听听，秋的声音', '7*听听，秋的声音']",
+    "未命中锚点: b31-toc-0016 习作 写日记 keys=['习作写日记']",
+    "未命中锚点: b31-toc-0017 语文园地 keys=['语文园地']",
+    "未命中锚点: b31-toc-0019 8 总也倒不了的老屋 keys=['总也倒不了的老屋', '8总也倒不了的老屋']",
+    "未命中锚点: b31-toc-0020 9* 犟龟 keys=['犟龟', '9犟龟', '9*犟龟']",
+    "未命中锚点: b31-toc-0021 10* 小狗学叫 keys=['小狗学叫', '10小狗学叫', '10*小狗学叫']",
+    "未命中锚点: b31-toc-0022 口语交际 名字里的故事 keys=['口语交际名字里的故事']",
+    "未命中锚点: b31-toc-0023 习作 续写故事 keys=['习作续写故事']",
+    "未命中锚点: b31-toc-0024 语文园地 keys=['语文园地']",
+    "未命中锚点: b31-toc-0027 12 在牛肚子里旅行 keys=['在牛肚子里旅行', '12在牛肚子里旅行']",
+    "未命中锚点: b31-toc-0028 13* 一块奶酪 keys=['一块奶酪', '13一块奶酪', '13*一块奶酪']",
+    "未命中锚点: b31-toc-0029 习作 我来编童话 keys=['习作我来编童话']",
+    "未命中锚点: b31-toc-0030 语文园地 keys=['语文园地']",
+    "未命中锚点: b31-toc-0031 快乐读书吧 keys=['快乐读书吧']",
+    "未命中锚点: b31-toc-0033 14 搭船的鸟 keys=['搭船的鸟', '14搭船的鸟']",
+    "未命中锚点: b31-toc-0034 15 金色的草地 keys=['金色的草地', '15金色的草地']",
+    "未命中锚点: b31-toc-0035 习作 我们眼中的缤纷世界 keys=['习作我们眼中的缤纷世界']",
+    "未命中锚点: b31-toc-0036 我家的小狗 keys=['我家的小狗']",
+    "未命中锚点: b31-toc-0042 19* 香港，璀璨的明珠 keys=['香港，璀璨的明珠', '19香港，璀璨的明珠', '19*香港，璀璨的明珠']",
+    "未命中锚点: b31-toc-0043 习作 这儿真美 keys=['习作这儿真美']",
+    "未命中锚点: b31-toc-0044 语文园地 keys=['语文园地']",
+    "未命中锚点: b31-toc-0047 鹿柴 keys=['鹿柴']",
+    "未命中锚点: b31-toc-0048 望天门山 keys=['望天门山']",
+    "未命中锚点: b31-toc-0049 饮湖上初晴后雨 keys=['饮湖上初晴后雨']",
+    "未命中锚点: b31-toc-0050 21 大自然的声音 keys=['大自然的声音', '21大自然的声音']",
+    "未命中锚点: b31-toc-0051 22 读不完的大书 keys=['读不完的大书', '22读不完的大书']",
+    "未命中锚点: b31-toc-0052 口语交际 身边的“小事” keys=['口语交际身边的“小事”']",
+    "未命中锚点: b31-toc-0053 习作 我有一个想法 keys=['习作我有一个想法']",
+    "未命中锚点: b31-toc-0054 语文园地 keys=['语文园地']",
+    "未命中锚点: b31-toc-0057 24 一定要争气 keys=['一定要争气', '24一定要争气']",
+    "未命中锚点: b31-toc-0058 25 手术台就是阵地 keys=['手术台就是阵地', '25手术台就是阵地']",
+    "未命中锚点: b31-toc-0059 26* 一个粗瓷大碗 keys=['一个粗瓷大碗', '26一个粗瓷大碗', '26*一个粗瓷大碗']",
+    "未命中锚点: b31-toc-0060 口语交际 请教 keys=['口语交际请教']",
+    "未命中锚点: b31-toc-0061 习作 那次经历真难忘 keys=['习作那次经历真难忘']",
+    "未命中锚点: b31-toc-0062 语文园地 keys=['语文园地']"
+  ],
+  "batch": "2026-09-16"
+}

@@ -1,0 +1,206 @@
+# textbook-parser extract-all
+# time: 2026-09-29T16:21:50
+# argv: D:\ah21\textbook-parser\src\textbook_parser\__main__.py extract-all --extractor 写字表 --project-root . --batch 2026-09-16 --continue-on-error
+# book_code: 12_books
+# log_file: D:\ah21\textbook-parser\output\2026-09-16\extract-all_写字表.log
+# 以下 stdout/stderr 均写入本日志（含警告、错误与提取器提示）。
+# extractor: 写字表
+# project_root: D:\ah21\textbook-parser
+# batch: 2026-09-16
+# books_arg: (本批全部书目)
+
+批次: 2026-09-16 → D:\ah21\textbook-parser\output\2026-09-16
+--- b11 ---
+[b11/写字表 抛弃] 
+[b11/写字表 抛弃] 
+[b11/写字表 抛弃] 
+[b11/写字表 抛弃] 
+[b11/写字表 抛弃] 
+[b11/写字表 抛弃] 
+[b11/写字表 抛弃] 
+[b11/写字表 抛弃] 
+[b11/写字表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 0 起）: '识字                               识字'
+[b11/写字表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 41 起）: '1 了子大人                           语文园地七 爸 妈'
+[b11/写字表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 41 起）: '2 可叶东西                           8 比巴长公'
+[b11/写字表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 41 起）: '3 竹马牙用几                          9 只多办石出'
+[b11/写字表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 41 起）: '4 四小鸟是天\u2003                         10 来 半 你 有'
+[b11/写字表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 41 起）: '     语文园地五  nV kQi guQn xiQn            niP yWng zhuA bWi\n            女 开 关 先 \u2002 语文园地八             牛羊爪白'
+[b11/写字表] 目录 JSON 对齐 — 锚点 14 条，成功绑定目录 8 条
+写字表: 行数 14，字数合计 127
+[写字表 目录对齐] 核对未通过: {'toc_anchor_group_count': 14, 'toc_assigned_count': 8, 'toc_layout_match_ok': False}
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b11_写字表.json
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b11_写字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b11_写字表.discard.log
+--- b12 ---
+[b12/写字表 抛弃] 识字
+[b12/写字表 抛弃] 
+[b12/写字表 抛弃] 
+[b12/写字表 抛弃] 
+[b12/写字表 抛弃] 
+[b12/写字表 抛弃] 阅读
+[b12/写字表 抛弃] 
+[b12/写字表 抛弃] 
+[b12/写字表 抛弃] 
+[b12/写字表 抛弃] 
+[b12/写字表 抛弃] 
+[b12/写字表 抛弃] 
+[b12/写字表 抛弃]                                                                                              117
+[b12/写字表 抛弃] N¯ON*N”[fN‘Ou(g*~ˇcgCN_SPZNu(
+[b12/写字表 抛弃] 
+[b12/写字表 抛弃] 
+[b12/写字表 抛弃] 
+[b12/写字表 抛弃] 识字
+[b12/写字表 抛弃] 
+[b12/写字表 抛弃] 
+[b12/写字表 抛弃] 
+[b12/写字表 抛弃] 
+[b12/写字表 抛弃] 阅读
+[b12/写字表 抛弃] 
+[b12/写字表 抛弃] 
+[b12/写字表 抛弃] 
+[b12/写字表 抛弃] 
+[b12/写字表 抛弃] 118
+[b12/写字表 抛弃]        N¯ON*N”[fN‘Ou(g*~ˇcgCN_SPZNu(
+[b12/写字表 抛弃] 
+[b12/写字表 抛弃] 
+[b12/写字表 抛弃] 
+[b12/写字表 抛弃] 
+[b12/写字表 抛弃] 
+[b12/写字表 抛弃] 
+[b12/写字表 抛弃] 
+[b12/写字表] 目录 JSON 对齐 — 锚点全部匹配到目录
+写字表: 行数 36，字数合计 200
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b12_写字表.json
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b12_写字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b12_写字表.discard.log
+--- b21 ---
+[b21/写字表 抛弃] 阅读
+[b21/写字表 抛弃] 
+[b21/写字表 抛弃] 
+[b21/写字表 抛弃] 
+[b21/写字表 抛弃] 识字
+[b21/写字表 抛弃] 
+[b21/写字表 抛弃] 
+[b21/写字表 抛弃] 
+[b21/写字表 抛弃] 
+[b21/写字表 抛弃] 阅读
+[b21/写字表 抛弃] 
+[b21/写字表 抛弃]                                                    113
+[b21/写字表 抛弃] 
+[b21/写字表 抛弃] 
+[b21/写字表 抛弃] 
+[b21/写字表 抛弃] 
+[b21/写字表 抛弃] 
+[b21/写字表 抛弃] 
+[b21/写字表 抛弃] 
+[b21/写字表 抛弃] 
+[b21/写字表 抛弃] 
+[b21/写字表 抛弃] 
+[b21/写字表 抛弃] 
+[b21/写字表 抛弃] 
+[b21/写字表 抛弃] 114
+[b21/写字表 抛弃] 
+[b21/写字表 抛弃] 
+[b21/写字表 抛弃] 
+[b21/写字表 抛弃] 
+[b21/写字表 抛弃] 
+[b21/写字表 抛弃] 
+[b21/写字表 抛弃] 
+[b21/写字表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 19 起）: '4 丽提吗圆哥秋挂啊'
+[b21/写字表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 19 起）: '     5 宝玩活些总给诉曲名香'
+[b21/写字表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 19 起）: '     6 数晚奶您爷很变勺张汉'
+[b21/写字表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 19 起）: '     语文园地三   tP nI tiD huWn\n            图泥铁环'
+[b21/写字表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 19 起）: '     7 依尽穷层照炉烟川直银'
+[b21/写字表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 19 起）: '     8 仙顶巨位闪狗形状'
+[b21/写字表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 19 起）: '     9 湖区胜岛弯现就外'
+[b21/写字表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 19 起）: '10 份 枝 客 城 市 孔 钉 味'
+[b21/写字表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 19 起）: '     语文园地四  hSo fEng\n            号丰'
+[b21/写字表] 目录 JSON 对齐 — 锚点 35 条，成功绑定目录 26 条
+写字表: 行数 35，字数合计 250
+[写字表 目录对齐] 核对未通过: {'toc_anchor_group_count': 35, 'toc_assigned_count': 26, 'toc_layout_match_ok': False}
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b21_写字表.json
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b21_写字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b21_写字表.discard.log
+--- b22 ---
+[b22/写字表 抛弃] 阅读
+[b22/写字表 抛弃] 识字
+[b22/写字表 抛弃]                                                                                               117
+[b22/写字表 抛弃] N¯ON*N”[fN‘Ou(g*~ˇcgCN_SPZNu(
+[b22/写字表 抛弃]     阅读
+[b22/写字表 抛弃] 118
+[b22/写字表 抛弃]        N¯ON*N”[fN‘Ou(g*~ˇcgCN_SPZNu(
+[b22/写字表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 17 起）: '1 神州华各族情谊齐'
+[b22/写字表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 17 起）: '2 传统贴街扫龙艾全团真'
+[b22/写字表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 17 起）: '3 甲骨觉品钱币与财'
+[b22/写字表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 17 起）: '   4 食茄烤鸭煮鸡蛋饭'
+[b22/写字表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 17 起）: '    语文园地三 \u2002 辣 乎'
+[b22/写字表] 目录 JSON 对齐 — 锚点 36 条，成功绑定目录 31 条
+写字表: 行数 36，字数合计 250
+[写字表 目录对齐] 核对未通过: {'toc_anchor_group_count': 36, 'toc_assigned_count': 31, 'toc_layout_match_ok': False}
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b22_写字表.json
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b22_写字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b22_写字表.discard.log
+--- b31 ---
+[b31/写字表 抛弃] 112
+[b31/写字表] 目录 JSON 对齐 — 锚点全部匹配到目录
+写字表: 行数 23，字数合计 250
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b31_写字表.json
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b31_写字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b31_写字表.discard.log
+--- b32 ---
+[b32/写字表 抛弃] 114
+[b32/写字表 抛弃]        N¯ON*N”[fN‘Ou(g*~ˇcgCN_SPZNu(
+[b32/写字表] 目录 JSON 对齐 — 锚点全部匹配到目录
+写字表: 行数 25，字数合计 250
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b32_写字表.json
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b32_写字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b32_写字表.discard.log
+--- b41 ---
+[b41/写字表 抛弃]                                                                                                 125
+[b41/写字表] 目录 JSON 对齐 — 锚点全部匹配到目录
+写字表: 行数 25，字数合计 250
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b41_写字表.json
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b41_写字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b41_写字表.discard.log
+--- b42 ---
+[b42/写字表 抛弃] 140
+[b42/写字表 抛弃]        N¯ON*N”[fN‘Ou(g*~ˇcgCN_SPZNu(
+[b42/写字表] 目录 JSON 对齐 — 锚点全部匹配到目录
+写字表: 行数 21，字数合计 250
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b42_写字表.json
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b42_写字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b42_写字表.discard.log
+--- b51 ---
+[b51/写字表 抛弃] 118
+[b51/写字表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 32 起）: '  \u20069 郎 嫂 棚 挺 罕 幸 柴 惯 纱 哎 姑 娘 婚 辈'
+[b51/写字表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 32 起）: '  11 祭 乃 翁 杭 珍 哀'
+[b51/写字表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 32 起）: '  12 欧 洲 泻 潜 腾 兽 胎 皇 途'
+[b51/写字表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 32 起）: '  13 估 损 组 殿 征 览 境 宏 唐 侵 销 罪 略'
+[b51/写字表] 目录 JSON 对齐 — 锚点 22 条，成功绑定目录 18 条
+写字表: 行数 22，字数合计 220
+[写字表 目录对齐] 核对未通过: {'toc_anchor_group_count': 22, 'toc_assigned_count': 18, 'toc_layout_match_ok': False}
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b51_写字表.json
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b51_写字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b51_写字表.discard.log
+--- b52 ---
+[b52/写字表 抛弃]                                                                                               121
+[b52/写字表 抛弃]  N¯ON*N”[fN‘Ou(g*~ˇcgCN_SPZNu(
+[b52/写字表] 目录 JSON 对齐 — 锚点全部匹配到目录
+写字表: 行数 16，字数合计 180
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b52_写字表.json
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b52_写字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b52_写字表.discard.log
+--- b61 ---
+[b61/写字表 抛弃] 126
+[b61/写字表] 目录 JSON 对齐 — 锚点全部匹配到目录
+写字表: 行数 19，字数合计 180
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b61_写字表.json
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b61_写字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b61_写字表.discard.log
+--- b62 ---
+[b62/写字表] 目录 JSON 对齐 — 锚点全部匹配到目录
+写字表: 行数 12，字数合计 120
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b62_写字表.json
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b62_写字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b62_写字表.discard.log
+控制台输出已同步写入日志: D:\ah21\textbook-parser\output\2026-09-16\extract-all_写字表.log
