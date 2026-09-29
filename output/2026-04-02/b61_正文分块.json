@@ -5,6 +5,8 @@
   "toc_source": "output\\b61_目录.json",
   "body_start_line": 127,
   "body_start_line_note": "启发式：首个独占一行的「第×单元」；可用 body_start_override 覆盖",
+  "body_end_line": 4304,
+  "body_end_line_note": "遇「识字表 / 写字表 / 词语表」独占标题行即截断（不含该行）",
   "line_count": 4456,
   "chunk_entry_count": 58,
   "chunk_matched_count": 34,
@@ -1530,7 +1532,7 @@
         "27＊我的伯父鲁迅先生"
       ],
       "start_line": 4008,
-      "end_line": 4456,
+      "end_line": 4304,
       "match_mode": "single",
       "ok": true,
       "toc_label": "27* 我的伯父鲁迅先生",
@@ -1657,6 +1659,7 @@
     "未命中锚点: b61-toc-0060 语文园地 keys=['语文园地']",
     "未命中锚点: b61-toc-0065 28* 有的人—纪念鲁迅有感 keys=['有的人—纪念鲁迅有感', '28有的人—纪念鲁迅有感', '28*有的人—纪念鲁迅有感']",
     "未命中锚点: b61-toc-0066 习作 有你，真好 keys=['习作有你，真好']",
-    "未命中锚点: b61-toc-0067 语文园地 keys=['语文园地']"
+    "未命中锚点: b61-toc-0067 语文园地 keys=['语文园地']",
+    "正文在 L4305「写字表」处截断，其后附录表未纳入分块"
   ]
 }

@@ -65,6 +65,9 @@ _CIRCLED_HEAD_RE = re.compile(
 # 略读星号（目录 * 与正文）
 _STAR_CHARS = frozenset("*＊")
 
+# 版式正文末尾附录表头（compact 后须为整行，以区别于目录「识字表105」及脚注「①识字表中…」）
+_TABLE_APPENDIX_HEADER_COMPACT = frozenset({"识字表", "写字表", "词语表"})
+
 _COL_HEAD_COMPACT = frozenset(
     {
         "阅读",
@@ -114,6 +117,11 @@ def is_page_number_line(c: str) -> bool:
 def is_column_head_line(c: str) -> bool:
     """栏头短行（阅读/识字等）。"""
     return c in _COL_HEAD_COMPACT
+
+
+def is_table_appendix_header_line(c: str) -> bool:
+    """正文末尾「识字表 / 写字表 / 词语表」独占标题行（compact 后精确匹配）。"""
+    return c in _TABLE_APPENDIX_HEADER_COMPACT
 
 
 def is_noise_short_line(c: str, *, max_len: int = 2) -> bool:
@@ -216,16 +224,20 @@ def find_forward_title_line(
     keys: list[str],
     *,
     start: int = 0,
+    end: int | None = None,
     title_slack: int = 6,
 ) -> int | None:
     """
     从 start 起向前扫描，找第一行其 compact（去带圈前缀后）等于某一 key，
     且 |line| <= |key| + title_slack，以降低正文子串误匹配。
     """
-    for i in range(max(0, start), len(lines)):
+    stop = len(lines) if end is None else min(end, len(lines))
+    for i in range(max(0, start), stop):
         raw = lines[i]
         c0 = line_compact(raw)
         c = strip_leading_circled(c0)
+        if is_table_appendix_header_line(c):
+            break
         if is_page_number_line(c) or is_column_head_line(c):
             continue
         if is_footnote_author_line(c):
@@ -245,6 +257,7 @@ def find_forward_title_multiline(
     keys: list[str],
     *,
     start: int = 0,
+    end: int | None = None,
     window: int = 3,
     title_slack: int = 8,
 ) -> int | None:
@@ -252,14 +265,18 @@ def find_forward_title_multiline(
     在 window 行滑动窗口内拼接 compact（忽略空行）后尝试匹配 keys；
     用于「课次行 + 标题行」分裂的情况。返回命中窗口内**最后一行**索引作为展示锚点。
     """
-    n = len(lines)
+    n = len(lines) if end is None else min(end, len(lines))
     for i in range(max(0, start), n):
         parts: list[str] = []
         line_idxs: list[int] = []
+        hit_appendix = False
         for j in range(i, min(i + window, n)):
             cj = strip_leading_circled(line_compact(lines[j]))
             if not cj:
                 continue
+            if is_table_appendix_header_line(cj):
+                hit_appendix = True
+                break
             if is_page_number_line(cj) and len(parts) == 0:
                 continue
             if is_column_head_line(cj) and len(parts) == 0:
@@ -271,6 +288,8 @@ def find_forward_title_multiline(
                 if key in merged and len(merged) <= len(key) + title_slack + 4:
                     if merged == key or merged.endswith(key) or key == merged[-len(key) :]:
                         return line_idxs[-1]
+        if hit_appendix:
+            return None
     return None
 
 
@@ -289,6 +308,8 @@ def propose_chunk_line_spans(
     """
     lines = full_text.splitlines()
     n = len(lines)
+    body_end = suggest_body_end_line(lines, scan_from=max(0, body_start_line))
+    n_body = body_end if body_end is not None else n
     anchors: list[dict[str, Any]] = []
     cursor = max(0, body_start_line)
 
@@ -299,10 +320,10 @@ def propose_chunk_line_spans(
         keys = toc_title_keys(e)
         if not keys:
             continue
-        idx = find_forward_title_line(lines, keys, start=cursor)
+        idx = find_forward_title_line(lines, keys, start=cursor, end=n_body)
         mode = "single"
         if idx is None and use_multiline:
-            idx = find_forward_title_multiline(lines, keys, start=cursor)
+            idx = find_forward_title_multiline(lines, keys, start=cursor, end=n_body)
             mode = "window"
         eid = e.get("id", "")
         if idx is None:
@@ -335,7 +356,7 @@ def propose_chunk_line_spans(
         if not a.get("ok") or a.get("start_line") is None:
             continue
         start = a["start_line"]
-        end = n
+        end = n_body
         for j in range(i + 1, len(anchors)):
             if anchors[j].get("ok") and anchors[j].get("start_line") is not None:
                 end = anchors[j]["start_line"]
@@ -357,6 +378,22 @@ def suggest_body_start_line(lines: list[str], *, scan_limit: int = 500) -> int:
         if unit_only.match(c):
             return i
     return 0
+
+
+def suggest_body_end_line(
+    lines: list[str],
+    *,
+    scan_from: int = 0,
+) -> int | None:
+    """
+    自 scan_from 起找首个「识字表 / 写字表 / 词语表」独占标题行（行号半开区间上界）。
+    未找到则返回 None（表示可用至文件末尾）。
+    """
+    for i in range(max(0, scan_from), len(lines)):
+        c = line_compact(lines[i])
+        if is_table_appendix_header_line(c):
+            return i
+    return None
 
 
 def _toc_entry_display_label(e: dict[str, Any]) -> str:
@@ -430,6 +467,8 @@ def run_toc_text_chunk(
     else:
         body_start = suggest_body_start_line(lines)
 
+    body_end = suggest_body_end_line(lines, scan_from=body_start)
+
     by_id: dict[str, dict[str, Any]] = {}
     for e in toc_entries:
         eid = e.get("id")
@@ -467,6 +506,11 @@ def run_toc_text_chunk(
         chunks_out.append(row)
 
     matched = sum(1 for c in chunks_out if c.get("ok"))
+    if body_end is not None:
+        header_c = line_compact(lines[body_end])
+        warnings.append(
+            f"正文在 L{body_end + 1}「{header_c}」处截断，其后附录表未纳入分块",
+        )
     return {
         "book_code": book_code,
         "extractor": "正文分块",
@@ -474,6 +518,8 @@ def run_toc_text_chunk(
         "toc_source": toc_source,
         "body_start_line": body_start,
         "body_start_line_note": "启发式：首个独占一行的「第×单元」；可用 body_start_override 覆盖",
+        "body_end_line": body_end,
+        "body_end_line_note": "遇「识字表 / 写字表 / 词语表」独占标题行即截断（不含该行）",
         "line_count": n,
         "chunk_entry_count": len(chunks_out),
         "chunk_matched_count": matched,

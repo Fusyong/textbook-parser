@@ -1,5 +1,5 @@
 # textbook-parser toc-chunk
-# time: 2026-04-18T13:06:46
+# time: 2026-06-21T09:25:36
 # argv: D:\ah21\textbook-parser\src\textbook_parser\__main__.py toc-chunk --project-root . --books
 # book_code: b21
 # log_file: D:\ah21\textbook-parser\output\b21_正文分块.log
@@ -8,6 +8,7 @@
 # output: D:\ah21\textbook-parser\output
 
 正文分块: 条目 40, 命中 40, 未命中 0
+  [问题] 正文在 L3566「识字表」处截断，其后附录表未纳入分块
 已写入: D:\ah21\textbook-parser\output\b21_正文分块.json
 已写入: D:\ah21\textbook-parser\output\b21_正文分块.md
 控制台输出已同步写入日志: D:\ah21\textbook-parser\output\b21_正文分块.log

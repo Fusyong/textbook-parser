@@ -1,5 +1,5 @@
 # textbook-parser toc-chunk
-# time: 2026-04-18T13:06:54
+# time: 2026-06-21T09:25:42
 # argv: D:\ah21\textbook-parser\src\textbook_parser\__main__.py toc-chunk --project-root . --books
 # book_code: b62
 # log_file: D:\ah21\textbook-parser\output\b62_正文分块.log
@@ -34,6 +34,7 @@
   [问题] 未命中锚点: b62-toc-0059 8 卜算子·送鲍浩然之浙东 keys=['卜算子·送鲍浩然之浙东', '8卜算子·送鲍浩然之浙东']
   [问题] 未命中锚点: b62-toc-0060 9 浣溪沙 keys=['浣溪沙', '9浣溪沙']
   [问题] 未命中锚点: b62-toc-0061 10 清平乐 keys=['清平乐', '10清平乐']
+  [问题] 正文在 L4357「写字表」处截断，其后附录表未纳入分块
 已写入: D:\ah21\textbook-parser\output\b62_正文分块.json
 已写入: D:\ah21\textbook-parser\output\b62_正文分块.md
 控制台输出已同步写入日志: D:\ah21\textbook-parser\output\b62_正文分块.log

@@ -1,5 +1,5 @@
 # textbook-parser toc-chunk
-# time: 2026-04-18T13:06:45
+# time: 2026-06-21T09:25:36
 # argv: D:\ah21\textbook-parser\src\textbook_parser\__main__.py toc-chunk --project-root . --books
 # book_code: b11
 # log_file: D:\ah21\textbook-parser\output\b11_正文分块.log
@@ -7,9 +7,8 @@
 # project_root: D:\ah21\textbook-parser
 # output: D:\ah21\textbook-parser\output
 
-正文分块: 条目 45, 命中 43, 未命中 2
-  [问题] 未命中锚点: b11-toc-0020 5 g k h keys=['gkh', '5gkh']
-  [问题] 未命中锚点: b11-toc-0024 9 y w keys=['yw', '9yw']
+正文分块: 条目 45, 命中 45, 未命中 0
+  [问题] 正文在 L2955「识字表」处截断，其后附录表未纳入分块
 已写入: D:\ah21\textbook-parser\output\b11_正文分块.json
 已写入: D:\ah21\textbook-parser\output\b11_正文分块.md
 控制台输出已同步写入日志: D:\ah21\textbook-parser\output\b11_正文分块.log

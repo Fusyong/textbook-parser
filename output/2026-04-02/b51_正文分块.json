@@ -5,6 +5,8 @@
   "toc_source": "output\\b51_目录.json",
   "body_start_line": 128,
   "body_start_line_note": "启发式：首个独占一行的「第×单元」；可用 body_start_override 覆盖",
+  "body_end_line": 3923,
+  "body_end_line_note": "遇「识字表 / 写字表 / 词语表」独占标题行即截断（不含该行）",
   "line_count": 4173,
   "chunk_entry_count": 53,
   "chunk_matched_count": 29,
@@ -1386,7 +1388,7 @@
         "26＊我的“长生果”"
       ],
       "start_line": 3641,
-      "end_line": 4173,
+      "end_line": 3923,
       "match_mode": "single",
       "ok": true,
       "toc_label": "26* 我的“长生果”",
@@ -1510,6 +1512,7 @@
     "未命中锚点: b51-toc-0056 语文园地 keys=['语文园地']",
     "未命中锚点: b51-toc-0061 口语交际 我最喜欢的人物形象 keys=['口语交际我最喜欢的人物形象']",
     "未命中锚点: b51-toc-0062 习作 推荐一本书 keys=['习作推荐一本书']",
-    "未命中锚点: b51-toc-0063 语文园地 keys=['语文园地']"
+    "未命中锚点: b51-toc-0063 语文园地 keys=['语文园地']",
+    "正文在 L3924「识字表」处截断，其后附录表未纳入分块"
   ]
 }

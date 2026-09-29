@@ -5,6 +5,8 @@
   "toc_source": "output\\b21_目录.json",
   "body_start_line": 0,
   "body_start_line_note": "启发式：首个独占一行的「第×单元」；可用 body_start_override 覆盖",
+  "body_end_line": 3565,
+  "body_end_line_note": "遇「识字表 / 写字表 / 词语表」独占标题行即截断（不含该行）",
   "line_count": 3913,
   "chunk_entry_count": 40,
   "chunk_matched_count": 40,
@@ -1137,7 +1139,7 @@
         "语文园地八"
       ],
       "start_line": 3439,
-      "end_line": 3913,
+      "end_line": 3565,
       "match_mode": "single",
       "ok": true,
       "toc_label": "语文园地八",
@@ -1156,8 +1158,10 @@
         "group_label": "第八单元·阅读"
       },
       "start_line_text": "                                   语文园地八",
-      "chunk_tail_preview": ""
+      "chunk_tail_preview": "                                                         ①"
     }
   ],
-  "warnings": []
+  "warnings": [
+    "正文在 L3566「识字表」处截断，其后附录表未纳入分块"
+  ]
 }

@@ -1,5 +1,5 @@
 # textbook-parser toc-chunk
-# time: 2026-04-18T13:06:50
+# time: 2026-06-21T09:25:40
 # argv: D:\ah21\textbook-parser\src\textbook_parser\__main__.py toc-chunk --project-root . --books
 # book_code: b51
 # log_file: D:\ah21\textbook-parser\output\b51_正文分块.log
@@ -32,6 +32,7 @@
   [问题] 未命中锚点: b51-toc-0061 口语交际 我最喜欢的人物形象 keys=['口语交际我最喜欢的人物形象']
   [问题] 未命中锚点: b51-toc-0062 习作 推荐一本书 keys=['习作推荐一本书']
   [问题] 未命中锚点: b51-toc-0063 语文园地 keys=['语文园地']
+  [问题] 正文在 L3924「识字表」处截断，其后附录表未纳入分块
 已写入: D:\ah21\textbook-parser\output\b51_正文分块.json
 已写入: D:\ah21\textbook-parser\output\b51_正文分块.md
 控制台输出已同步写入日志: D:\ah21\textbook-parser\output\b51_正文分块.log
