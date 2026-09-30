@@ -29,7 +29,8 @@ from .config import (
 )
 from .extractors import get_extractor
 from .extractors.layout_toc import render_layout_toc_markdown
-from .pdftotext import run_pdftotext
+from .pdftotext import run_pdftotext, sidecar_path_for_mode
+from .raw_char_stream import normalize_raw_char_stream
 from .run_logging import install_run_logging
 from .toc_csv import toc_units_for_column
 from .toc_layout_assign import render_table_unit_markdown, toc_entries_from_layout_result
@@ -214,10 +215,44 @@ def _cmd_convert(args: argparse.Namespace) -> int:
     root, cfg, cfg_path = _load_effective_cfg(args)
     book_code = str(cfg["book_code"])
     batch_id = str(cfg.get("batch") or _resolve_batch(root, args))
-    _guard_slot(
-        root, batch_id, book_code, out_dir=None, action="convert", force_official=True
-    )
-    out = (root / cfg["layout_text"]).resolve()
+    text_mode = str(getattr(args, "text_mode", None) or "layout").strip().lower()
+    layout_md = (root / cfg["layout_text"]).resolve()
+    # 非 layout 一律写旁路文件，绝不覆盖正式版式 Markdown
+    if text_mode == "layout":
+        out = layout_md
+        _guard_slot(
+            root, batch_id, book_code, out_dir=None, action="convert", force_official=True
+        )
+    else:
+        out_arg = getattr(args, "output_file", None)
+        if out_arg:
+            out = Path(str(out_arg))
+            if not out.is_absolute():
+                out = (root / out).resolve()
+        elif bool(getattr(args, "scratch", False)):
+            ws = load_active_workspace(root)
+            out = (
+                root / ws.scratch_dir / batch_id / f"{book_code}.{text_mode}.txt"
+            ).resolve()
+        else:
+            out = sidecar_path_for_mode(layout_md, text_mode)
+        if out.resolve() == layout_md.resolve():
+            print(
+                f"拒绝覆盖正式版式 Markdown: {layout_md}\n"
+                f"请使用 --text-mode raw/default，或 --scratch / --output-file。",
+                file=sys.stderr,
+            )
+            return 1
+        if not bool(getattr(args, "scratch", False)):
+            _guard_slot(
+                root,
+                batch_id,
+                book_code,
+                out_dir=None,
+                action="convert",
+                force_official=True,
+            )
+
     log_path = out.parent / f"{out.stem}.convert.log"
     restore = install_run_logging(
         log_path,
@@ -225,20 +260,30 @@ def _cmd_convert(args: argparse.Namespace) -> int:
             "convert",
             book_code=book_code,
             log_path=log_path,
-            extra={"config": str(cfg_path) if cfg_path else "(--book)", "project_root": str(root)},
+            extra={
+                "config": str(cfg_path) if cfg_path else "(--book)",
+                "project_root": str(root),
+                "text_mode": text_mode,
+            },
         ),
     )
     try:
         pdf = root / cfg["source_pdf"]
         pt = cfg.get("pdftotext") or {}
+        first = getattr(args, "first_page", None)
+        last = getattr(args, "last_page", None)
         run_pdftotext(
             pdf,
             out,
             enc=str(pt.get("enc", "UTF-8")),
-            layout=bool(pt.get("layout", True)),
+            text_mode=text_mode,
+            first_page=int(first) if first is not None else None,
+            last_page=int(last) if last is not None else None,
             extra_args=list(pt.get("extra_args") or []),
         )
-        print(f"已写入: {out}")
+        print(f"已写入 ({text_mode}): {out}")
+        if text_mode != "layout":
+            print(f"正式版式 Markdown 未改动: {layout_md}")
         return 0
     finally:
         print(f"控制台输出已同步写入日志: {log_path}")
@@ -267,6 +312,9 @@ def _cmd_extract(args: argparse.Namespace) -> int:
         extra["extractor_only"] = ext_s
     if bool(getattr(args, "scratch", False)):
         extra["scratch"] = "1"
+    text_mode = str(getattr(args, "text_mode", None) or "layout").strip().lower()
+    if text_mode != "layout":
+        extra["text_mode"] = text_mode
     restore = install_run_logging(
         log_path,
         header_lines=_log_header_lines(
@@ -277,11 +325,43 @@ def _cmd_extract(args: argparse.Namespace) -> int:
         ),
     )
     try:
-        text_path = root / cfg["layout_text"]
+        layout_md = root / cfg["layout_text"]
+        text_file = getattr(args, "text_file", None)
+        if text_file:
+            text_path = Path(str(text_file))
+            if not text_path.is_absolute():
+                text_path = (root / text_path).resolve()
+        elif text_mode != "layout":
+            # 优先 scratch 旁路，再 material 旁路
+            ws = load_active_workspace(root)
+            scratch_cand = (
+                root / ws.scratch_dir / batch_id / f"{book_code}.{text_mode}.txt"
+            )
+            side = sidecar_path_for_mode(layout_md, text_mode)
+            if scratch_cand.is_file():
+                text_path = scratch_cand
+            elif side.is_file():
+                text_path = side
+            else:
+                print(
+                    f"缺少 {text_mode} 文本，请先:\n"
+                    f"  python -m textbook_parser convert --book {book_code} "
+                    f"--batch {batch_id} --text-mode {text_mode} --scratch\n"
+                    f"期望: {scratch_cand} 或 {side}",
+                    file=sys.stderr,
+                )
+                return 1
+        else:
+            text_path = layout_md
         if not text_path.is_file():
             print(f"缺少版式文本，请先 convert: {text_path}", file=sys.stderr)
             return 1
         full_text = text_path.read_text(encoding="utf-8")
+        if text_mode == "raw":
+            full_text = normalize_raw_char_stream(full_text)
+            print(f"[extract] 已对 raw 文本流做字/拼音折叠: {text_path}")
+        elif text_mode != "layout":
+            print(f"[extract] 使用文本源 ({text_mode}): {text_path}")
         return _cmd_extract_core(
             args, root, cfg, book_code, out_dir, cfg_path, full_text=full_text
         )
@@ -824,12 +904,29 @@ def main(argv: list[str] | None = None) -> int:
     _add_project_root(p_active)
     p_active.set_defaults(func=_cmd_active)
 
-    p_conv = sub.add_parser("convert", help="pdftotext -enc UTF-8 -layout 生成版式文本")
+    p_conv = sub.add_parser("convert", help="pdftotext 生成版式/旁路文本（默认 -layout）")
     cx = p_conv.add_mutually_exclusive_group(required=True)
     cx.add_argument("--config", help="单册 YAML（可与 defaults.yaml 合并）")
     cx.add_argument("--book", help="book_code，等价于仅含该代码的合并配置")
     _add_project_root(p_conv)
     _add_batch(p_conv)
+    _add_scratch(p_conv)
+    p_conv.add_argument(
+        "--text-mode",
+        default="layout",
+        choices=["layout", "raw", "default", "simple", "simple2", "table"],
+        help=(
+            "pdftotext 模式：layout=物理版式（写入正式 .md）；"
+            "raw=内容流顺序（旁路 .raw.txt，不覆盖 .md）；"
+            "default=阅读顺序拆栏（旁路 .default.txt）"
+        ),
+    )
+    p_conv.add_argument("--first-page", type=int, help="起始页（pdftotext -f）")
+    p_conv.add_argument("--last-page", type=int, help="结束页（pdftotext -l）")
+    p_conv.add_argument(
+        "--output-file",
+        help="旁路输出路径（相对项目根或绝对路径）；仅非 layout 模式；默认 material 旁路或 --scratch",
+    )
     p_conv.set_defaults(func=_cmd_convert)
 
     p_ext = sub.add_parser("extract", help="按配置从版式文本提取 JSON")
@@ -847,6 +944,16 @@ def main(argv: list[str] | None = None) -> int:
         "--output",
         default="output",
         help="JSON 输出目录（相对项目根；默认 output/{batch}/；与 --scratch 互斥优先 scratch）",
+    )
+    p_ext.add_argument(
+        "--text-mode",
+        default="layout",
+        choices=["layout", "raw", "default", "simple", "simple2", "table"],
+        help="文本源模式：layout=正式 Markdown；raw/default=旁路 txt（raw 会先折叠字/拼音）",
+    )
+    p_ext.add_argument(
+        "--text-file",
+        help="显式指定输入文本（覆盖 text-mode 旁路推断）；不改动正式 Markdown",
     )
     p_ext.set_defaults(func=_cmd_extract)
 

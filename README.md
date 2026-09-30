@@ -117,6 +117,22 @@ python -m textbook_parser convert --config configs\b12.yaml
 pdftotext -enc UTF-8 -layout <源.pdf> <输出.txt 或 .md>
 ```
 
+### 旁路模式（不覆盖正式 Markdown）
+
+识字表/写字表可改用内容流顺序（`raw`）或阅读顺序拆栏（`default`），写入旁路 `.raw.txt` / `.default.txt` 或 `--scratch`，**不会改正式 `.md`**：
+
+```bash
+# 仅表页试转（页码按 PDF）
+python -m textbook_parser convert --book b11 --batch 2026-09-16 --text-mode raw --first-page 110 --last-page 113 --scratch --project-root .
+python -m textbook_parser convert --book b11 --batch 2026-09-16 --text-mode default --first-page 110 --last-page 113 --scratch --project-root .
+
+# 从旁路文本提取（结果建议也用 --scratch）
+python -m textbook_parser extract --book b11 --batch 2026-09-16 --extractor 写字表 --text-mode raw --scratch --project-root .
+python -m textbook_parser extract --book b11 --batch 2026-09-16 --extractor 识字表 --text-mode default --scratch --project-root .
+```
+
+经验（一上 b11）：写字表用 `raw`（先左栏后右栏）更顺；识字表用 `default` 更稳。`raw` 提取前会把「一字一行 + 拼音」折叠成现有解析器可用的块。
+
 ## 按配置从 md 中提取到 JSON
 
 ```bash

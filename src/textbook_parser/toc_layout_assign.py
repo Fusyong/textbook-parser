@@ -4,10 +4,12 @@
 匹配策略（在真实册别数据上归纳）：
 - 跳过 kind 为 section 的分组头，不参与表内学习单位序列。
 - 课文行：表内 section（识字/阅读）与目录 unit_subtype 或 group_label（·识字 / ·阅读 / ·汉语拼音）
-  一致；课号与目录 lesson.number 相同；自上一匹配位置起向前扫描，可自动跳过表中未收录的目录项。
+  一致；课号与目录 lesson.number 相同；自上一匹配位置起向前扫描，可自动跳过表中未收录的目录项；
+  双栏解析乱序时亦可回看尚未占用的更早条目。
 - 语文园地：有园地序号时与目录 label 的紧凑串一致（语文园地一…）；无序号（版式仅「语文园地」）
   则取扫描方向上第一条 strand 相符的 garden 条目。
 - 词语表中园地行以 lesson == \"语文园地\" 标识，按 garden 条目匹配。
+- 对齐完成后按 unit.toc_index（目录 entries 下标）重排行组，保证 JSON/Markdown 为目录学习顺序。
 """
 
 from __future__ import annotations
@@ -45,6 +47,7 @@ def entry_strand(e: dict[str, Any]) -> str | None:
 
 
 def strand_compatible(table_section: str | None, e: dict[str, Any]) -> bool:
+    """表内 section 与目录 unit_subtype / group_label 栏须一致（识字≠汉语拼音）。"""
     if not table_section:
         return True
     es = entry_strand(e)
@@ -53,7 +56,9 @@ def strand_compatible(table_section: str | None, e: dict[str, Any]) -> bool:
     if table_section == "阅读":
         return es == "阅读"
     if table_section == "识字":
-        return es in ("识字", "汉语拼音")
+        return es == "识字"
+    if table_section == "汉语拼音":
+        return es == "汉语拼音"
     return True
 
 
@@ -110,8 +115,8 @@ def layout_entry_matches_word_row(entry: dict[str, Any], row: dict[str, Any]) ->
     return _lesson_number_match(entry, ls)
 
 
-def build_unit_from_layout_entry(entry: dict[str, Any], seq: int) -> dict[str, Any]:
-    """生成写入表行 unit 字段的结构（含目录 id），并尽量兼容原 parse_toc_entry 形态。"""
+def build_unit_from_layout_entry(entry: dict[str, Any], toc_index: int) -> dict[str, Any]:
+    """生成写入表行 unit 字段的结构（含目录 id）；toc_index 为目录 entries 下标。"""
     from .extractors.char_tables import compact_for_match
 
     k = entry.get("kind")
@@ -126,7 +131,7 @@ def build_unit_from_layout_entry(entry: dict[str, Any], seq: int) -> dict[str, A
         return {
             "toc_id": tid,
             "toc_kind": k,
-            "toc_index": seq,
+            "toc_index": toc_index,
             "unit_type": "lesson",
             "lesson": num or None,
             "garden_cn": None,
@@ -140,7 +145,7 @@ def build_unit_from_layout_entry(entry: dict[str, Any], seq: int) -> dict[str, A
         return {
             "toc_id": tid,
             "toc_kind": k,
-            "toc_index": seq,
+            "toc_index": toc_index,
             "unit_type": "garden",
             "lesson": None,
             "garden_cn": gn or None,
@@ -155,7 +160,7 @@ def build_unit_from_layout_entry(entry: dict[str, Any], seq: int) -> dict[str, A
         return {
             "toc_id": tid,
             "toc_kind": k,
-            "toc_index": seq,
+            "toc_index": toc_index,
             "unit_type": "reading_club",
             "lesson": None,
             "garden_cn": None,
@@ -169,7 +174,7 @@ def build_unit_from_layout_entry(entry: dict[str, Any], seq: int) -> dict[str, A
         return {
             "toc_id": tid,
             "toc_kind": k,
-            "toc_index": seq,
+            "toc_index": toc_index,
             "unit_type": "block",
             "lesson": None,
             "garden_cn": None,
@@ -183,7 +188,7 @@ def build_unit_from_layout_entry(entry: dict[str, Any], seq: int) -> dict[str, A
         return {
             "toc_id": tid,
             "toc_kind": k,
-            "toc_index": seq,
+            "toc_index": toc_index,
             "unit_type": "belt",
             "lesson": None,
             "garden_cn": None,
@@ -195,7 +200,7 @@ def build_unit_from_layout_entry(entry: dict[str, Any], seq: int) -> dict[str, A
         return {
             "toc_id": tid,
             "toc_kind": k,
-            "toc_index": seq,
+            "toc_index": toc_index,
             "unit_type": "sublesson",
             "lesson": None,
             "garden_cn": None,
@@ -205,7 +210,7 @@ def build_unit_from_layout_entry(entry: dict[str, Any], seq: int) -> dict[str, A
     return {
         "toc_id": tid,
         "toc_kind": k,
-        "toc_index": seq,
+        "toc_index": toc_index,
         "unit_type": str(k or "unknown"),
         "lesson": None,
         "garden_cn": None,
@@ -236,7 +241,27 @@ def assign_units_from_layout_toc(
     out: list[dict[str, Any]] = []
     prev_unit: dict[str, Any] | None = None
     cursor = 0
-    seq = 0
+    used: set[int] = set()
+
+    def find_entry(row: dict[str, Any]) -> int | None:
+        """优先自 cursor 向前未占用条目；双栏冲刷乱序时再回看更早的未占用条目。"""
+        for j in range(cursor, len(toc_entries)):
+            if j in used:
+                continue
+            e = toc_entries[j]
+            if e.get("kind") == "section":
+                continue
+            if match_fn(e, row):
+                return j
+        for j in range(0, cursor):
+            if j in used:
+                continue
+            e = toc_entries[j]
+            if e.get("kind") == "section":
+                continue
+            if match_fn(e, row):
+                return j
+        return None
 
     for row in rows:
         if not is_primary(row):
@@ -248,17 +273,7 @@ def assign_units_from_layout_toc(
             out.append({**row, "unit": u})
             continue
 
-        found: int | None = None
-        j = cursor
-        while j < len(toc_entries):
-            e = toc_entries[j]
-            if e.get("kind") == "section":
-                j += 1
-                continue
-            if match_fn(e, row):
-                found = j
-                break
-            j += 1
+        found = find_entry(row)
 
         if found is None:
             ref = row.get("hanzi_line", row.get("lines", ""))
@@ -268,14 +283,52 @@ def assign_units_from_layout_toc(
             unit = None
             prev_unit = None
         else:
-            unit = build_unit_from_layout_entry(toc_entries[found], seq)
-            seq += 1
-            cursor = found + 1
+            # toc_index = 目录 entries 下标，供最终按目录顺序输出
+            unit = build_unit_from_layout_entry(toc_entries[found], found)
+            used.add(found)
+            if found >= cursor:
+                cursor = found + 1
             prev_unit = unit
 
         out.append({**row, "unit": unit})
 
-    return out, warnings
+    return reorder_rows_by_toc_order(out), warnings
+
+
+def reorder_rows_by_toc_order(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """
+    最终输出按目录顺序：以锚点行为组（其后非锚点续行随组移动），
+    按 unit.toc_index（目录 entries 下标）排序；未绑定目录的组保持相对次序排在末尾。
+    """
+    if len(rows) <= 1:
+        return rows
+
+    groups: list[tuple[int, int, list[dict[str, Any]]]] = []
+    i = 0
+    ord_i = 0
+    while i < len(rows):
+        group = [rows[i]]
+        j = i + 1
+        while j < len(rows) and not _is_primary_row(rows[j]):
+            group.append(rows[j])
+            j += 1
+        u = rows[i].get("unit")
+        if isinstance(u, dict) and u.get("toc_index") is not None:
+            try:
+                key = int(u["toc_index"])
+            except (TypeError, ValueError):
+                key = 10**9
+        else:
+            key = 10**9
+        groups.append((key, ord_i, group))
+        ord_i += 1
+        i = j
+
+    groups.sort(key=lambda g: (g[0], g[1]))
+    out: list[dict[str, Any]] = []
+    for _, _, g in groups:
+        out.extend(g)
+    return out
 
 
 def _is_primary_row(row: dict[str, Any]) -> bool:
