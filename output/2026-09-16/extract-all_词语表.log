@@ -1,19 +1,18 @@
 # textbook-parser extract-all
-# time: 2026-09-29T16:21:50
-# argv: D:\ah21\textbook-parser\src\textbook_parser\__main__.py extract-all --extractor 词语表 --project-root . --batch 2026-09-16 --continue-on-error
-# book_code: 12_books
+# time: 2026-09-30T13:40:34
+# argv: D:\ah21\textbook-parser\src\textbook_parser\__main__.py extract-all --extractor 词语表 --project-root .
+# book_code: b11,b21,b31,b41,b51,b61
 # log_file: D:\ah21\textbook-parser\output\2026-09-16\extract-all_词语表.log
 # 以下 stdout/stderr 均写入本日志（含警告、错误与提取器提示）。
 # extractor: 词语表
 # project_root: D:\ah21\textbook-parser
 # batch: 2026-09-16
 # books_arg: (本批全部书目)
+# scratch: 0
 
 批次: 2026-09-16 → D:\ah21\textbook-parser\output\2026-09-16
 --- b11 ---
 b11: 跳过（本册未配置 «词语表»，多为 extractors_drop）
---- b12 ---
-b12: 跳过（本册未配置 «词语表»，多为 extractors_drop）
 --- b21 ---
 [b21/词语表 抛弃]     阅读
 [b21/词语表 抛弃]     识字
@@ -32,24 +31,6 @@ b12: 跳过（本册未配置 «词语表»，多为 extractors_drop）
 已写入: D:\ah21\textbook-parser\output\2026-09-16\b21_词语表.json
 已写入: D:\ah21\textbook-parser\output\2026-09-16\b21_词语表.md
 抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b21_词语表.discard.log
---- b22 ---
-[b22/词语表 抛弃]      阅读
-[b22/词语表 抛弃]      识字
-[b22/词语表 抛弃] 120
-[b22/词语表 抛弃]        N¯ON*N”[fN‘Ou(g*~ˇcgCN_SPZNu(
-[b22/词语表 抛弃]  阅读
-[b22/词语表 抛弃]                                                                                                121
-[b22/词语表 抛弃]  N¯ON*N”[fN‘Ou(g*~ˇcgCN_SPZNu(
-[b22/词语表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 16 起）: ['    1 神州\u2003 中华\u2003 山川\u2003 长江\u2003 长城\u2003 民族\u2003 情谊']
-[b22/词语表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 16 起）: ['    2 传统\u2003 节日\u2003 春节\u2003 花灯\u2003 清明节\u2003 先人\u2003 龙舟', '        中秋\u2003 转眼\u2003 团圆']
-[b22/词语表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 16 起）: ['3 故事\u2003 生活\u2003 甲骨文\u2003 样子\u2003 钱币\u2003 钱财\u2003 有关']
-[b22/词语表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 16 起）: ['4 美食\u2003 茄子\u2003 烤鸭\u2003 水煮鱼\u2003 羊肉\u2003 蛋炒饭']
-[b22/词语表] 目录 JSON 对齐 — 锚点 26 条，成功绑定目录 22 条
-词语表: 行数 26，词语合计 240
-[词语表 目录对齐] 核对未通过: {'toc_anchor_group_count': 26, 'toc_assigned_count': 22, 'toc_layout_match_ok': False}
-已写入: D:\ah21\textbook-parser\output\2026-09-16\b22_词语表.json
-已写入: D:\ah21\textbook-parser\output\2026-09-16\b22_词语表.md
-抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b22_词语表.discard.log
 --- b31 ---
 [b31/词语表 抛弃] 114
 [b31/词语表 抛弃]                                                                                                115
@@ -58,16 +39,6 @@ b12: 跳过（本册未配置 «词语表»，多为 extractors_drop）
 已写入: D:\ah21\textbook-parser\output\2026-09-16\b31_词语表.json
 已写入: D:\ah21\textbook-parser\output\2026-09-16\b31_词语表.md
 抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b31_词语表.discard.log
---- b32 ---
-[b32/词语表 抛弃] 116
-[b32/词语表 抛弃]        N¯ON*N”[fN‘Ou(g*~ˇcgCN_SPZNu(
-[b32/词语表 抛弃]                                                                                                 117
-[b32/词语表 抛弃]  N¯ON*N”[fN‘Ou(g*~ˇcgCN_SPZNu(
-[b32/词语表] 目录 JSON 对齐 — 锚点全部匹配到目录
-词语表: 行数 22，词语合计 271
-已写入: D:\ah21\textbook-parser\output\2026-09-16\b32_词语表.json
-已写入: D:\ah21\textbook-parser\output\2026-09-16\b32_词语表.md
-抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b32_词语表.discard.log
 --- b41 ---
 [b41/词语表 抛弃]                                                                                                127
 [b41/词语表 抛弃] 128
@@ -76,18 +47,6 @@ b12: 跳过（本册未配置 «词语表»，多为 extractors_drop）
 已写入: D:\ah21\textbook-parser\output\2026-09-16\b41_词语表.json
 已写入: D:\ah21\textbook-parser\output\2026-09-16\b41_词语表.md
 抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b41_词语表.discard.log
---- b42 ---
-[b42/词语表 抛弃] 142
-[b42/词语表 抛弃]        N¯ON*N”[fN‘Ou(g*~ˇcgCN_SPZNu(
-[b42/词语表 抛弃]                                                                                               143
-[b42/词语表 抛弃]  N¯ON*N”[fN‘Ou(g*~ˇcgCN_SPZNu(
-[b42/词语表 抛弃] 144
-[b42/词语表 抛弃]        N¯ON*N”[fN‘Ou(g*~ˇcgCN_SPZNu(
-[b42/词语表] 目录 JSON 对齐 — 锚点全部匹配到目录
-词语表: 行数 18，词语合计 213
-已写入: D:\ah21\textbook-parser\output\2026-09-16\b42_词语表.json
-已写入: D:\ah21\textbook-parser\output\2026-09-16\b42_词语表.md
-抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b42_词语表.discard.log
 --- b51 ---
 [b51/词语表 抛弃] 120
 [b51/词语表 抛弃]                                                                                                  121
@@ -99,16 +58,6 @@ b12: 跳过（本册未配置 «词语表»，多为 extractors_drop）
 已写入: D:\ah21\textbook-parser\output\2026-09-16\b51_词语表.json
 已写入: D:\ah21\textbook-parser\output\2026-09-16\b51_词语表.md
 抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b51_词语表.discard.log
---- b52 ---
-[b52/词语表 抛弃]                                                                                                   123
-[b52/词语表 抛弃]    N¯ON*N”[fN‘Ou(g*~ˇcgCN_SPZNu(
-[b52/词语表 抛弃] 124
-[b52/词语表 抛弃]        N¯ON*N”[fN‘Ou(g*~ˇcgCN_SPZNu(
-[b52/词语表] 目录 JSON 对齐 — 锚点全部匹配到目录
-词语表: 行数 12，词语合计 142
-已写入: D:\ah21\textbook-parser\output\2026-09-16\b52_词语表.json
-已写入: D:\ah21\textbook-parser\output\2026-09-16\b52_词语表.md
-抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b52_词语表.discard.log
 --- b61 ---
 [b61/词语表 抛弃] 128
 [b61/词语表 抛弃]                                                                                               129
@@ -117,14 +66,4 @@ b12: 跳过（本册未配置 «词语表»，多为 extractors_drop）
 已写入: D:\ah21\textbook-parser\output\2026-09-16\b61_词语表.json
 已写入: D:\ah21\textbook-parser\output\2026-09-16\b61_词语表.md
 抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b61_词语表.discard.log
---- b62 ---
-[b62/词语表 抛弃] 122
-[b62/词语表 抛弃]        N¯ON*N”[fN‘Ou(g*~ˇcgCN_SPZNu(
-[b62/词语表 抛弃]                                                                                             123
-[b62/词语表 抛弃] N¯ON*N”[fN‘Ou(g*~ˇcgCN_SPZNu(
-[b62/词语表] 目录 JSON 对齐 — 锚点全部匹配到目录
-词语表: 行数 9，词语合计 162
-已写入: D:\ah21\textbook-parser\output\2026-09-16\b62_词语表.json
-已写入: D:\ah21\textbook-parser\output\2026-09-16\b62_词语表.md
-抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b62_词语表.discard.log
 控制台输出已同步写入日志: D:\ah21\textbook-parser\output\2026-09-16\extract-all_词语表.log

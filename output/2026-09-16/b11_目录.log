@@ -1,0 +1,16 @@
+# textbook-parser extract
+# time: 2026-09-30T08:57:36
+# argv: D:\ah21\textbook-parser\src\textbook_parser\__main__.py extract --book b11 --batch 2026-09-16 --extractor 目录 --project-root .
+# book_code: b11
+# log_file: D:\ah21\textbook-parser\output\2026-09-16\b11_目录.log
+# 以下 stdout/stderr 均写入本日志（含警告、错误与提取器提示）。
+# project_root: D:\ah21\textbook-parser
+# batch: 2026-09-16
+# config: (--book)
+# extractor_only: 目录
+
+目录: 条目 54，扁平 45 条，分组 9
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b11_目录.json
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b11_目录.md
+抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b11_目录.discard.log
+控制台输出已同步写入日志: D:\ah21\textbook-parser\output\2026-09-16\b11_目录.log

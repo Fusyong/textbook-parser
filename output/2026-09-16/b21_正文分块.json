@@ -5,10 +5,12 @@
   "toc_source": "output/2026-09-16/b21_目录.json",
   "body_start_line": 0,
   "body_start_line_note": "启发式：首个独占一行的「第×单元」；可用 body_start_override 覆盖",
+  "body_end_line": 4305,
+  "body_end_line_note": "遇「识字表 / 写字表 / 词语表」独占标题行即截断（不含该行）",
   "line_count": 4831,
   "chunk_entry_count": 40,
-  "chunk_matched_count": 14,
-  "chunk_unmatched_count": 26,
+  "chunk_matched_count": 34,
+  "chunk_unmatched_count": 6,
   "chunks": [
     {
       "id": "b21-toc-0002",
@@ -17,10 +19,10 @@
         "小蝌蚪找妈妈",
         "1小蝌蚪找妈妈"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 107,
+      "end_line": 283,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "1 小蝌蚪找妈妈",
       "toc_snapshot": {
         "kind": "lesson",
@@ -35,7 +37,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第一单元·阅读"
-      }
+      },
+      "start_line_text": "                   1 小蝌蚪找妈妈①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b21-toc-0003",
@@ -44,10 +48,10 @@
         "我是什么",
         "2我是什么"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 283,
+      "end_line": 422,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "2 我是什么",
       "toc_snapshot": {
         "kind": "lesson",
@@ -62,7 +66,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第一单元·阅读"
-      }
+      },
+      "start_line_text": "                            2 我是什么①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b21-toc-0004",
@@ -71,10 +77,10 @@
         "植物妈妈有办法",
         "3植物妈妈有办法"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 422,
+      "end_line": 550,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "3 植物妈妈有办法",
       "toc_snapshot": {
         "kind": "lesson",
@@ -89,7 +95,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第一单元·阅读"
-      }
+      },
+      "start_line_text": "3 植物妈妈有办法①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b21-toc-0005",
@@ -98,7 +106,7 @@
         "语文园地一"
       ],
       "start_line": 550,
-      "end_line": 1265,
+      "end_line": 1217,
       "match_mode": "single",
       "ok": true,
       "toc_label": "语文园地一",
@@ -117,7 +125,7 @@
         "group_label": "第一单元·阅读"
       },
       "start_line_text": "                               语文园地一",
-      "chunk_tail_preview": ""
+      "chunk_tail_preview": "                                     cǎi  hóng"
     },
     {
       "id": "b21-toc-0006",
@@ -152,9 +160,9 @@
         "彩虹",
         "4彩虹"
       ],
-      "start_line": 1265,
-      "end_line": 1512,
-      "match_mode": "window",
+      "start_line": 1217,
+      "end_line": 1297,
+      "match_mode": "single",
       "ok": true,
       "toc_label": "4 彩虹",
       "toc_snapshot": {
@@ -171,7 +179,7 @@
         "unit_subtype": "阅读",
         "group_label": "第三单元·阅读"
       },
-      "start_line_text": "秋千呢？如果我把它挂在彩虹",
+      "start_line_text": "                      4 彩  虹 ①",
       "chunk_tail_preview": ""
     },
     {
@@ -181,10 +189,10 @@
         "去外婆家",
         "5去外婆家"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 1297,
+      "end_line": 1382,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "5 去外婆家",
       "toc_snapshot": {
         "kind": "lesson",
@@ -199,7 +207,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第三单元·阅读"
-      }
+      },
+      "start_line_text": "                        5 去外婆家①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b21-toc-0010",
@@ -208,10 +218,10 @@
         "数星星的孩子",
         "6数星星的孩子"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 1382,
+      "end_line": 1512,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "6 数星星的孩子",
       "toc_snapshot": {
         "kind": "lesson",
@@ -226,7 +236,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第三单元·阅读"
-      }
+      },
+      "start_line_text": "        6 数星星的孩子①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b21-toc-0011",
@@ -454,7 +466,7 @@
         "望庐山瀑布"
       ],
       "start_line": 1694,
-      "end_line": 2110,
+      "end_line": 1748,
       "match_mode": "single",
       "ok": true,
       "toc_label": "望庐山瀑布",
@@ -482,10 +494,10 @@
         "黄山奇石",
         "8黄山奇石"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 1748,
+      "end_line": 1881,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "8 黄山奇石",
       "toc_snapshot": {
         "kind": "lesson",
@@ -500,7 +512,9 @@
         "unit_type": "课文",
         "unit_subtype": "识字",
         "group_label": "第二单元·识字"
-      }
+      },
+      "start_line_text": "            8 黄山奇石①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b21-toc-0023",
@@ -509,10 +523,10 @@
         "日月潭",
         "9日月潭"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 1881,
+      "end_line": 1978,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "9 日月潭",
       "toc_snapshot": {
         "kind": "lesson",
@@ -527,7 +541,9 @@
         "unit_type": "课文",
         "unit_subtype": "识字",
         "group_label": "第二单元·识字"
-      }
+      },
+      "start_line_text": "                      9 日月潭①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b21-toc-0024",
@@ -536,10 +552,10 @@
         "葡萄沟",
         "10葡萄沟"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 1978,
+      "end_line": 2110,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "10 葡萄沟",
       "toc_snapshot": {
         "kind": "lesson",
@@ -554,7 +570,9 @@
         "unit_type": "课文",
         "unit_subtype": "识字",
         "group_label": "第二单元·识字"
-      }
+      },
+      "start_line_text": "                             10 葡 萄 沟 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b21-toc-0025",
@@ -563,7 +581,7 @@
         "语文园地四"
       ],
       "start_line": 2110,
-      "end_line": 2612,
+      "end_line": 2278,
       "match_mode": "single",
       "ok": true,
       "toc_label": "语文园地四",
@@ -591,10 +609,10 @@
         "坐井观天",
         "11坐井观天"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 2278,
+      "end_line": 2363,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "11 坐井观天",
       "toc_snapshot": {
         "kind": "lesson",
@@ -609,7 +627,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第五单元·阅读"
-      }
+      },
+      "start_line_text": "                               11 坐 井 观 天 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b21-toc-0028",
@@ -618,10 +638,10 @@
         "寒号鸟",
         "12寒号鸟"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 2363,
+      "end_line": 2522,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "12 寒号鸟",
       "toc_snapshot": {
         "kind": "lesson",
@@ -636,7 +656,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第五单元·阅读"
-      }
+      },
+      "start_line_text": "                            12 寒 号 鸟 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b21-toc-0029",
@@ -645,10 +667,10 @@
         "我要的是葫芦",
         "13我要的是葫芦"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 2522,
+      "end_line": 2612,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "13 我要的是葫芦",
       "toc_snapshot": {
         "kind": "lesson",
@@ -663,7 +685,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第五单元·阅读"
-      }
+      },
+      "start_line_text": "             13 我 要 的 是 葫 芦 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b21-toc-0030",
@@ -672,7 +696,7 @@
         "语文园地五"
       ],
       "start_line": 2612,
-      "end_line": 3246,
+      "end_line": 2782,
       "match_mode": "single",
       "ok": true,
       "toc_label": "语文园地五",
@@ -700,10 +724,10 @@
         "八角楼上",
         "14八角楼上"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 2782,
+      "end_line": 2872,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "14 八角楼上",
       "toc_snapshot": {
         "kind": "lesson",
@@ -718,7 +742,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第六单元·阅读"
-      }
+      },
+      "start_line_text": "                    14 八 角 楼 上 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b21-toc-0033",
@@ -727,10 +753,10 @@
         "朱德的扁担",
         "15朱德的扁担"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 2872,
+      "end_line": 2978,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "15 朱德的扁担",
       "toc_snapshot": {
         "kind": "lesson",
@@ -745,7 +771,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第六单元·阅读"
-      }
+      },
+      "start_line_text": "                     15 朱 德 的 扁 担 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b21-toc-0034",
@@ -754,10 +782,10 @@
         "难忘的泼水节",
         "16难忘的泼水节"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 2978,
+      "end_line": 3100,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "16 难忘的泼水节",
       "toc_snapshot": {
         "kind": "lesson",
@@ -772,7 +800,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第六单元·阅读"
-      }
+      },
+      "start_line_text": "                 16 难 忘 的 泼 水 节 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b21-toc-0035",
@@ -781,10 +811,10 @@
         "刘胡兰",
         "17刘胡兰"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 3100,
+      "end_line": 3246,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "17 刘胡兰",
       "toc_snapshot": {
         "kind": "lesson",
@@ -799,7 +829,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第六单元·阅读"
-      }
+      },
+      "start_line_text": "                  17 刘 胡 兰 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b21-toc-0036",
@@ -893,7 +925,7 @@
         "敕勒歌"
       ],
       "start_line": 3397,
-      "end_line": 3738,
+      "end_line": 3444,
       "match_mode": "single",
       "ok": true,
       "toc_label": "敕勒歌",
@@ -921,10 +953,10 @@
         "雾在哪里",
         "19雾在哪里"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 3444,
+      "end_line": 3570,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "19 雾在哪里",
       "toc_snapshot": {
         "kind": "lesson",
@@ -939,7 +971,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第七单元·阅读"
-      }
+      },
+      "start_line_text": "                        19 雾 在 哪 里 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b21-toc-0042",
@@ -948,10 +982,10 @@
         "雪孩子",
         "20雪孩子"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 3570,
+      "end_line": 3738,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "20 雪孩子",
       "toc_snapshot": {
         "kind": "lesson",
@@ -966,7 +1000,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第七单元·阅读"
-      }
+      },
+      "start_line_text": "                         20 雪 孩 子 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b21-toc-0043",
@@ -975,7 +1011,7 @@
         "语文园地七"
       ],
       "start_line": 3738,
-      "end_line": 4157,
+      "end_line": 3897,
       "match_mode": "single",
       "ok": true,
       "toc_label": "语文园地七",
@@ -1003,10 +1039,10 @@
         "称赞",
         "21称赞"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 3897,
+      "end_line": 4033,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "21 称赞",
       "toc_snapshot": {
         "kind": "lesson",
@@ -1021,7 +1057,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第八单元·阅读"
-      }
+      },
+      "start_line_text": "                      21 称   赞 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b21-toc-0046",
@@ -1030,10 +1068,10 @@
         "纸船和风筝",
         "22纸船和风筝"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 4033,
+      "end_line": 4104,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "22 纸船和风筝",
       "toc_snapshot": {
         "kind": "lesson",
@@ -1048,7 +1086,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第八单元·阅读"
-      }
+      },
+      "start_line_text": "            22 纸船和风筝 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b21-toc-0047",
@@ -1057,10 +1097,10 @@
         "快乐的小河",
         "23快乐的小河"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 4104,
+      "end_line": 4157,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "23 快乐的小河",
       "toc_snapshot": {
         "kind": "lesson",
@@ -1075,7 +1115,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第八单元·阅读"
-      }
+      },
+      "start_line_text": "            23 快乐的小河 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b21-toc-0048",
@@ -1084,7 +1126,7 @@
         "语文园地八"
       ],
       "start_line": 4157,
-      "end_line": 4831,
+      "end_line": 4305,
       "match_mode": "single",
       "ok": true,
       "toc_label": "语文园地八",
@@ -1107,32 +1149,13 @@
     }
   ],
   "warnings": [
-    "未命中锚点: b21-toc-0002 1 小蝌蚪找妈妈 keys=['小蝌蚪找妈妈', '1小蝌蚪找妈妈']",
-    "未命中锚点: b21-toc-0003 2 我是什么 keys=['我是什么', '2我是什么']",
-    "未命中锚点: b21-toc-0004 3 植物妈妈有办法 keys=['植物妈妈有办法', '3植物妈妈有办法']",
     "未命中锚点: b21-toc-0006 快乐读书吧 keys=['快乐读书吧']",
-    "未命中锚点: b21-toc-0009 5 去外婆家 keys=['去外婆家', '5去外婆家']",
-    "未命中锚点: b21-toc-0010 6 数星星的孩子 keys=['数星星的孩子', '6数星星的孩子']",
     "未命中锚点: b21-toc-0015 1 场景歌 keys=['场景歌', '1场景歌']",
     "未命中锚点: b21-toc-0016 2 树之歌 keys=['树之歌', '2树之歌']",
     "未命中锚点: b21-toc-0017 3 拍手歌 keys=['拍手歌', '3拍手歌']",
     "未命中锚点: b21-toc-0018 4 田家四季歌 keys=['田家四季歌', '4田家四季歌']",
     "未命中锚点: b21-toc-0019 语文园地二 keys=['语文园地二']",
-    "未命中锚点: b21-toc-0022 8 黄山奇石 keys=['黄山奇石', '8黄山奇石']",
-    "未命中锚点: b21-toc-0023 9 日月潭 keys=['日月潭', '9日月潭']",
-    "未命中锚点: b21-toc-0024 10 葡萄沟 keys=['葡萄沟', '10葡萄沟']",
-    "未命中锚点: b21-toc-0027 11 坐井观天 keys=['坐井观天', '11坐井观天']",
-    "未命中锚点: b21-toc-0028 12 寒号鸟 keys=['寒号鸟', '12寒号鸟']",
-    "未命中锚点: b21-toc-0029 13 我要的是葫芦 keys=['我要的是葫芦', '13我要的是葫芦']",
-    "未命中锚点: b21-toc-0032 14 八角楼上 keys=['八角楼上', '14八角楼上']",
-    "未命中锚点: b21-toc-0033 15 朱德的扁担 keys=['朱德的扁担', '15朱德的扁担']",
-    "未命中锚点: b21-toc-0034 16 难忘的泼水节 keys=['难忘的泼水节', '16难忘的泼水节']",
-    "未命中锚点: b21-toc-0035 17 刘胡兰 keys=['刘胡兰', '17刘胡兰']",
-    "未命中锚点: b21-toc-0041 19 雾在哪里 keys=['雾在哪里', '19雾在哪里']",
-    "未命中锚点: b21-toc-0042 20 雪孩子 keys=['雪孩子', '20雪孩子']",
-    "未命中锚点: b21-toc-0045 21 称赞 keys=['称赞', '21称赞']",
-    "未命中锚点: b21-toc-0046 22 纸船和风筝 keys=['纸船和风筝', '22纸船和风筝']",
-    "未命中锚点: b21-toc-0047 23 快乐的小河 keys=['快乐的小河', '23快乐的小河']"
+    "正文在 L4306「识字表」处截断，其后附录表未纳入分块"
   ],
   "batch": "2026-09-16"
 }

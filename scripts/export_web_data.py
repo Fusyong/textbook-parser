@@ -31,6 +31,7 @@ from textbook_parser.batch import (  # noqa: E402
     SLOT_KEYWORDS,
     build_all_sets,
     discover_batch_ids,
+    list_slots_in_batch,
     set_assembly_to_dict,
 )
 
@@ -500,6 +501,11 @@ def build_payload(root: Path) -> dict:
             f"未在 {root / 'output'} 下找到任何批次解析结果（output/YYYY-MM…/）"
         )
 
+    # 成套错位按 material 全部批次回溯；界面锚点仅最新一批（见 build_all_sets）
+    material_batches = discover_batch_ids(root)
+    if not material_batches:
+        material_batches = list(batch_ids)
+
     batch_payloads: dict[str, dict] = {}
     batches_meta: list[dict] = []
     for bid in batch_ids:
@@ -508,22 +514,46 @@ def build_payload(root: Path) -> dict:
         batches_meta.append({"id": bid, "label": bid})
         all_warnings.extend(warns)
 
-    inventory = _inventory_from_batches(batch_payloads)
-    assemblies = build_all_sets(root, batch_ids, inventory=inventory)
+    # 拼装清单以 material 为准（避免 output 残留错册污染错位）
+    inventory: dict[str, set[str]] = {
+        b: set(list_slots_in_batch(root, b)) for b in material_batches
+    }
+
+    latest_material = material_batches[-1]
+    assemblies = build_all_sets(
+        root,
+        material_batches,
+        inventory=inventory,
+        anchor_batch=latest_material,
+    )
 
     sets_out: list[dict] = []
     for asm in assemblies:
         sd = set_assembly_to_dict(asm)
         view = _assemble_set_view(sd, batch_payloads)
+        # 槽位有 material 但无 output 时提示
+        for ref in sd.get("slots") or []:
+            if not ref:
+                continue
+            bid, code = ref.get("batch"), ref.get("code")
+            if bid and code and bid not in batch_payloads:
+                all_warnings.append(
+                    f"成套 {sd['id']}: {code} 依赖批次 {bid}，但尚无 output/{bid}/，请先解析该批"
+                )
+            elif bid and code and code not in {
+                b["code"] for b in (batch_payloads.get(bid) or {}).get("books") or []
+            }:
+                all_warnings.append(
+                    f"成套 {sd['id']}: {bid}/{code} 缺少解析产物"
+                )
         sd["view"] = view
         sets_out.append(sd)
 
-    # 默认套：最新批次中锚定槽位最高（学习序列最后）的一套
+    # 默认套：最新一批中学习序列最后一册
     default_set_id = sets_out[-1]["id"] if sets_out else None
-    latest = batch_ids[-1]
-    latest_codes = [c for c in SLOT_CODES if c in inventory.get(latest, set())]
+    latest_codes = [c for c in SLOT_CODES if c in inventory.get(latest_material, set())]
     if latest_codes:
-        want = f"{latest}/{latest_codes[-1]}"
+        want = f"{latest_material}/{latest_codes[-1]}"
         if any(s["id"] == want for s in sets_out):
             default_set_id = want
 

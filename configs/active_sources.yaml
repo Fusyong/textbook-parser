@@ -1,0 +1,17 @@
+# 当前解析工作区：只允许对下列教材源做正式 convert / extract / toc-chunk，
+# 并写入 output/{batch}/。未列入的册不会被正式解析覆盖（已核对数据受保护）。
+#
+# 兼容性测试：加 CLI --scratch，结果写到 scratch_dir/{batch}/，不改正式 output。
+#
+# enabled: false 时不限制（等同未启用本机制）。
+enabled: true
+
+# 临时/兼容性测试输出根目录（相对项目根）
+scratch_dir: tmp/parse-scratch
+
+# 允许的源。每项可以是：
+#   - 路径或 glob（相对项目根）：文件、目录、如 material/2026-09-16/
+#   - "批次:册码" 简写：2026-09-16:b11
+#   - 映射：{ batch: 2026-09-16, codes: [b11, b21] }；省略 codes 表示该批全部已有册
+sources:
+  - material/2026-09-16/

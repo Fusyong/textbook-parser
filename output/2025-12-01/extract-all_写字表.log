@@ -1,0 +1,63 @@
+# textbook-parser extract-all
+# time: 2026-09-30T08:48:26
+# argv: D:\ah21\textbook-parser\src\textbook_parser\__main__.py extract-all --extractor 写字表 --project-root . --batch 2025-12-01 --continue-on-error
+# book_code: b11,b21,b31,b41,b51,b61
+# log_file: D:\ah21\textbook-parser\output\2025-12-01\extract-all_写字表.log
+# 以下 stdout/stderr 均写入本日志（含警告、错误与提取器提示）。
+# extractor: 写字表
+# project_root: D:\ah21\textbook-parser
+# batch: 2025-12-01
+# books_arg: (本批全部书目)
+
+批次: 2025-12-01 → D:\ah21\textbook-parser\output\2025-12-01
+--- b11 ---
+[b11/写字表 抛弃]   识字                                           
+[b11/写字表 抛弃]   汉语拼音                                      
+[b11/写字表 抛弃]   阅读                                          
+[b11/写字表 抛弃] 识字
+[b11/写字表 抛弃]       阅读
+[b11/写字表] 目录 JSON 对齐 — 锚点全部匹配到目录
+写字表: 行数 25，字数合计 100
+已写入: D:\ah21\textbook-parser\output\2025-12-01\b11_写字表.json
+已写入: D:\ah21\textbook-parser\output\2025-12-01\b11_写字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\2025-12-01\b11_写字表.discard.log
+--- b21 ---
+[b21/写字表 抛弃] 阅读
+[b21/写字表 抛弃] 识字
+[b21/写字表 抛弃] 阅读
+[b21/写字表 抛弃]                                                                         113
+[b21/写字表 抛弃] 114
+[b21/写字表] 目录 JSON 对齐 — 锚点全部匹配到目录
+写字表: 行数 35，字数合计 250
+已写入: D:\ah21\textbook-parser\output\2025-12-01\b21_写字表.json
+已写入: D:\ah21\textbook-parser\output\2025-12-01\b21_写字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\2025-12-01\b21_写字表.discard.log
+--- b31 ---
+[b31/写字表 抛弃] 112
+[b31/写字表] 目录 JSON 对齐 — 锚点全部匹配到目录
+写字表: 行数 23，字数合计 250
+已写入: D:\ah21\textbook-parser\output\2025-12-01\b31_写字表.json
+已写入: D:\ah21\textbook-parser\output\2025-12-01\b31_写字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\2025-12-01\b31_写字表.discard.log
+--- b41 ---
+[b41/写字表 抛弃] 126
+[b41/写字表] 目录 JSON 对齐 — 锚点全部匹配到目录
+写字表: 行数 20，字数合计 250
+已写入: D:\ah21\textbook-parser\output\2025-12-01\b41_写字表.json
+已写入: D:\ah21\textbook-parser\output\2025-12-01\b41_写字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\2025-12-01\b41_写字表.discard.log
+--- b51 ---
+[b51/写字表 抛弃] 120
+[b51/写字表] 目录 JSON 对齐 — 锚点全部匹配到目录
+写字表: 行数 20，字数合计 220
+已写入: D:\ah21\textbook-parser\output\2025-12-01\b51_写字表.json
+已写入: D:\ah21\textbook-parser\output\2025-12-01\b51_写字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\2025-12-01\b51_写字表.discard.log
+--- b61 ---
+[b61/写字表 抛弃] 130
+[b61/写字表] 目录 JSON 对齐 — 锚点全部匹配到目录
+写字表: 行数 18，字数合计 180
+已写入: D:\ah21\textbook-parser\output\2025-12-01\b61_写字表.json
+已写入: D:\ah21\textbook-parser\output\2025-12-01\b61_写字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\2025-12-01\b61_写字表.discard.log
+控制台输出已同步写入日志: D:\ah21\textbook-parser\output\2025-12-01\extract-all_写字表.log

@@ -5,10 +5,12 @@
   "toc_source": "output/2026-09-16/b41_目录.json",
   "body_start_line": 0,
   "body_start_line_note": "启发式：首个独占一行的「第×单元」；可用 body_start_override 覆盖",
+  "body_end_line": 4404,
+  "body_end_line_note": "遇「识字表 / 写字表 / 词语表」独占标题行即截断（不含该行）",
   "line_count": 4678,
   "chunk_entry_count": 58,
-  "chunk_matched_count": 11,
-  "chunk_unmatched_count": 47,
+  "chunk_matched_count": 32,
+  "chunk_unmatched_count": 26,
   "chunks": [
     {
       "id": "b41-toc-0002",
@@ -17,10 +19,10 @@
         "观潮",
         "1观潮"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 143,
+      "end_line": 253,
+      "match_mode": "window",
+      "ok": true,
       "toc_label": "1 观潮",
       "toc_snapshot": {
         "kind": "lesson",
@@ -35,7 +37,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第一单元"
-      }
+      },
+      "start_line_text": "阅读            1 观  潮 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b41-toc-0003",
@@ -44,10 +48,10 @@
         "繁星",
         "2繁星"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 253,
+      "end_line": 320,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "2 繁星",
       "toc_snapshot": {
         "kind": "lesson",
@@ -62,7 +66,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第一单元"
-      }
+      },
+      "start_line_text": "      2 繁  星 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b41-toc-0004",
@@ -74,7 +80,7 @@
         "3＊现代诗二首"
       ],
       "start_line": 320,
-      "end_line": 506,
+      "end_line": 325,
       "match_mode": "single",
       "ok": true,
       "toc_label": "3* 现代诗二首",
@@ -101,10 +107,10 @@
       "keys_tried": [
         "秋晚的江上"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 325,
+      "end_line": 348,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "秋晚的江上",
       "toc_snapshot": {
         "kind": "sublesson",
@@ -119,7 +125,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第一单元"
-      }
+      },
+      "start_line_text": "                          秋晚的江上 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b41-toc-0006",
@@ -127,10 +135,10 @@
       "keys_tried": [
         "花牛歌"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 348,
+      "end_line": 506,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "花牛歌",
       "toc_snapshot": {
         "kind": "sublesson",
@@ -145,7 +153,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第一单元"
-      }
+      },
+      "start_line_text": "                      花牛歌 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b41-toc-0007",
@@ -233,7 +243,7 @@
         "4一个豆荚里的五粒豆"
       ],
       "start_line": 506,
-      "end_line": 1227,
+      "end_line": 691,
       "match_mode": "single",
       "ok": true,
       "toc_label": "4 一个豆荚里的五粒豆",
@@ -261,10 +271,10 @@
         "夜间飞行的秘密",
         "5夜间飞行的秘密"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 691,
+      "end_line": 844,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "5 夜间飞行的秘密",
       "toc_snapshot": {
         "kind": "lesson",
@@ -279,7 +289,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第二单元"
-      }
+      },
+      "start_line_text": "              5 夜间飞行的秘密 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b41-toc-0013",
@@ -288,10 +300,10 @@
         "方帽子店",
         "6方帽子店"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 844,
+      "end_line": 1016,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "6 方帽子店",
       "toc_snapshot": {
         "kind": "lesson",
@@ -306,7 +318,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第二单元"
-      }
+      },
+      "start_line_text": "                 6 方帽子店 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b41-toc-0014",
@@ -317,10 +331,10 @@
         "7*田忌赛马",
         "7＊田忌赛马"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 1016,
+      "end_line": 1227,
+      "match_mode": "window",
+      "ok": true,
       "toc_label": "7* 田忌赛马",
       "toc_snapshot": {
         "kind": "lesson",
@@ -335,7 +349,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第二单元"
-      }
+      },
+      "start_line_text": "                 7 * jì 田忌赛马 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b41-toc-0015",
@@ -451,7 +467,7 @@
         "题西林壁"
       ],
       "start_line": 1254,
-      "end_line": 1843,
+      "end_line": 1313,
       "match_mode": "single",
       "ok": true,
       "toc_label": "题西林壁",
@@ -505,10 +521,10 @@
         "爬山虎的脚",
         "9爬山虎的脚"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 1313,
+      "end_line": 1416,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "9 爬山虎的脚",
       "toc_snapshot": {
         "kind": "lesson",
@@ -523,7 +539,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第三单元"
-      }
+      },
+      "start_line_text": "          9 爬山虎的脚 ①",
+      "chunk_tail_preview": "             xī shuài  zhái"
     },
     {
       "id": "b41-toc-0023",
@@ -532,10 +550,10 @@
         "蟋蟀的住宅",
         "10蟋蟀的住宅"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 1416,
+      "end_line": 1719,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "10 蟋蟀的住宅",
       "toc_snapshot": {
         "kind": "lesson",
@@ -550,7 +568,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第三单元"
-      }
+      },
+      "start_line_text": "             10 蟋 蟀 的住宅 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b41-toc-0024",
@@ -637,10 +657,10 @@
         "盘古开天地",
         "11盘古开天地"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 1719,
+      "end_line": 1804,
+      "match_mode": "window",
+      "ok": true,
       "toc_label": "11 盘古开天地",
       "toc_snapshot": {
         "kind": "lesson",
@@ -655,7 +675,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第四单元"
-      }
+      },
+      "start_line_text": "阅读  11 盘古开天地 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b41-toc-0029",
@@ -664,10 +686,10 @@
         "精卫填海",
         "12精卫填海"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 1804,
+      "end_line": 1843,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "12 精卫填海",
       "toc_snapshot": {
         "kind": "lesson",
@@ -682,7 +704,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第四单元"
-      }
+      },
+      "start_line_text": "    12 精卫填海 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b41-toc-0030",
@@ -692,7 +716,7 @@
         "13普罗米修斯"
       ],
       "start_line": 1843,
-      "end_line": 2699,
+      "end_line": 1976,
       "match_mode": "single",
       "ok": true,
       "toc_label": "13 普罗米修斯",
@@ -722,10 +746,10 @@
         "14*女娲补天",
         "14＊女娲补天"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 1976,
+      "end_line": 2208,
+      "match_mode": "window",
+      "ok": true,
       "toc_label": "14* 女娲补天",
       "toc_snapshot": {
         "kind": "lesson",
@@ -740,7 +764,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第四单元"
-      }
+      },
+      "start_line_text": "             14 * wā 女娲补天 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b41-toc-0032",
@@ -827,10 +853,10 @@
         "麻雀",
         "15麻雀"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 2208,
+      "end_line": 2288,
+      "match_mode": "window",
+      "ok": true,
       "toc_label": "15 麻雀",
       "toc_snapshot": {
         "kind": "lesson",
@@ -845,7 +871,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第五单元"
-      }
+      },
+      "start_line_text": "阅读    15 麻  雀 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b41-toc-0037",
@@ -854,10 +882,10 @@
         "爬天都峰",
         "16爬天都峰"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 2288,
+      "end_line": 2408,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "16 爬天都峰",
       "toc_snapshot": {
         "kind": "lesson",
@@ -872,7 +900,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第五单元"
-      }
+      },
+      "start_line_text": "         16 爬天都峰 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b41-toc-0038",
@@ -906,10 +936,10 @@
       "keys_tried": [
         "我家的杏熟了"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 2408,
+      "end_line": 2491,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "我家的杏熟了",
       "toc_snapshot": {
         "kind": "sublesson",
@@ -924,7 +954,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第五单元"
-      }
+      },
+      "start_line_text": "       我家的杏熟了①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b41-toc-0040",
@@ -932,10 +964,10 @@
       "keys_tried": [
         "小木船"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 2491,
+      "end_line": 2591,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "小木船",
       "toc_snapshot": {
         "kind": "sublesson",
@@ -950,7 +982,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第五单元"
-      }
+      },
+      "start_line_text": "小木船①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b41-toc-0041",
@@ -985,10 +1019,10 @@
         "长城",
         "17长城"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 2591,
+      "end_line": 2699,
+      "match_mode": "window",
+      "ok": true,
       "toc_label": "17 长城",
       "toc_snapshot": {
         "kind": "lesson",
@@ -1003,7 +1037,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第六单元"
-      }
+      },
+      "start_line_text": "阅读   17 长  城 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b41-toc-0044",
@@ -1013,7 +1049,7 @@
         "18颐和园"
       ],
       "start_line": 2699,
-      "end_line": 3069,
+      "end_line": 2803,
       "match_mode": "single",
       "ok": true,
       "toc_label": "18 颐和园",
@@ -1032,7 +1068,7 @@
         "group_label": "第六单元"
       },
       "start_line_text": "         18 颐和园",
-      "chunk_tail_preview": ""
+      "chunk_tail_preview": "                       qín           yǒng"
     },
     {
       "id": "b41-toc-0045",
@@ -1043,10 +1079,10 @@
         "19*秦兵马俑",
         "19＊秦兵马俑"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 2803,
+      "end_line": 3069,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "19* 秦兵马俑",
       "toc_snapshot": {
         "kind": "lesson",
@@ -1061,7 +1097,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第六单元"
-      }
+      },
+      "start_line_text": "                19 * 秦兵马俑 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b41-toc-0046",
@@ -1178,7 +1216,7 @@
         "21一只窝囊的大老虎"
       ],
       "start_line": 3298,
-      "end_line": 3706,
+      "end_line": 3499,
       "match_mode": "single",
       "ok": true,
       "toc_label": "21 一只窝囊的大老虎",
@@ -1208,10 +1246,10 @@
         "22*陀螺",
         "22＊陀螺"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 3499,
+      "end_line": 3706,
+      "match_mode": "window",
+      "ok": true,
       "toc_label": "22* 陀螺",
       "toc_snapshot": {
         "kind": "lesson",
@@ -1226,7 +1264,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第七单元"
-      }
+      },
+      "start_line_text": "                      22 * tuó 陀  螺 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b41-toc-0053",
@@ -1236,7 +1276,7 @@
         "23王戎不取道旁李"
       ],
       "start_line": 3706,
-      "end_line": 3964,
+      "end_line": 3884,
       "match_mode": "single",
       "ok": true,
       "toc_label": "23 王戎不取道旁李",
@@ -1316,10 +1356,10 @@
         "我将无我，不负人民",
         "24我将无我，不负人民"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 3884,
+      "end_line": 3964,
+      "match_mode": "window",
+      "ok": true,
       "toc_label": "24 我将无我，不负人民",
       "toc_snapshot": {
         "kind": "lesson",
@@ -1334,7 +1374,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第八单元"
-      }
+      },
+      "start_line_text": "阅 读 24 我将无我，不负人民①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b41-toc-0058",
@@ -1344,7 +1386,7 @@
         "25为中华之崛起而读书"
       ],
       "start_line": 3964,
-      "end_line": 4223,
+      "end_line": 4154,
       "match_mode": "single",
       "ok": true,
       "toc_label": "25 为中华之崛起而读书",
@@ -1374,10 +1416,10 @@
         "26*延安，我把你追寻",
         "26＊延安，我把你追寻"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 4154,
+      "end_line": 4223,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "26* 延安，我把你追寻",
       "toc_snapshot": {
         "kind": "lesson",
@@ -1392,7 +1434,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第八单元"
-      }
+      },
+      "start_line_text": "               26 * 延安，我把你追寻 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b41-toc-0060",
@@ -1402,7 +1446,7 @@
         "27古诗三首"
       ],
       "start_line": 4223,
-      "end_line": 4678,
+      "end_line": 4404,
       "match_mode": "single",
       "ok": true,
       "toc_label": "27 古诗三首",
@@ -1557,8 +1601,8 @@
       "id": "b41-toc-0066",
       "kind": "lesson",
       "keys_tried": [
-        "观潮①",
-        "1观潮①"
+        "观潮",
+        "1观潮"
       ],
       "start_line": null,
       "end_line": null,
@@ -1582,53 +1626,33 @@
     }
   ],
   "warnings": [
-    "未命中锚点: b41-toc-0002 1 观潮 keys=['观潮', '1观潮']",
-    "未命中锚点: b41-toc-0003 2 繁星 keys=['繁星', '2繁星']",
-    "未命中锚点: b41-toc-0005 秋晚的江上 keys=['秋晚的江上']",
-    "未命中锚点: b41-toc-0006 花牛歌 keys=['花牛歌']",
     "未命中锚点: b41-toc-0007 口语交际 我们与环境 keys=['口语交际我们与环境']",
     "未命中锚点: b41-toc-0008 习作 推荐一个好地方 keys=['习作推荐一个好地方']",
     "未命中锚点: b41-toc-0009 语文园地 keys=['语文园地']",
-    "未命中锚点: b41-toc-0012 5 夜间飞行的秘密 keys=['夜间飞行的秘密', '5夜间飞行的秘密']",
-    "未命中锚点: b41-toc-0013 6 方帽子店 keys=['方帽子店', '6方帽子店']",
-    "未命中锚点: b41-toc-0014 7* 田忌赛马 keys=['田忌赛马', '7田忌赛马', '7*田忌赛马']",
     "未命中锚点: b41-toc-0015 习作 我的家人 keys=['习作我的家人']",
     "未命中锚点: b41-toc-0016 语文园地 keys=['语文园地']",
     "未命中锚点: b41-toc-0019 暮江吟 keys=['暮江吟']",
     "未命中锚点: b41-toc-0021 雪梅 keys=['雪梅']",
-    "未命中锚点: b41-toc-0022 9 爬山虎的脚 keys=['爬山虎的脚', '9爬山虎的脚']",
-    "未命中锚点: b41-toc-0023 10 蟋蟀的住宅 keys=['蟋蟀的住宅', '10蟋蟀的住宅']",
     "未命中锚点: b41-toc-0024 口语交际 爱护眼睛，保护视力 keys=['口语交际爱护眼睛，保护视力']",
     "未命中锚点: b41-toc-0025 习作 写观察日记 keys=['习作写观察日记']",
     "未命中锚点: b41-toc-0026 语文园地 keys=['语文园地']",
-    "未命中锚点: b41-toc-0028 11 盘古开天地 keys=['盘古开天地', '11盘古开天地']",
-    "未命中锚点: b41-toc-0029 12 精卫填海 keys=['精卫填海', '12精卫填海']",
-    "未命中锚点: b41-toc-0031 14* 女娲补天 keys=['女娲补天', '14女娲补天', '14*女娲补天']",
     "未命中锚点: b41-toc-0032 习作 我和  过一天 keys=['习作我和过一天']",
     "未命中锚点: b41-toc-0033 语文园地 keys=['语文园地']",
     "未命中锚点: b41-toc-0034 快乐读书吧 keys=['快乐读书吧']",
-    "未命中锚点: b41-toc-0036 15 麻雀 keys=['麻雀', '15麻雀']",
-    "未命中锚点: b41-toc-0037 16 爬天都峰 keys=['爬天都峰', '16爬天都峰']",
     "未命中锚点: b41-toc-0038 习作 生活万花筒 keys=['习作生活万花筒']",
-    "未命中锚点: b41-toc-0039 我家的杏熟了 keys=['我家的杏熟了']",
-    "未命中锚点: b41-toc-0040 小木船 keys=['小木船']",
     "未命中锚点: b41-toc-0041 口语交际 安慰 keys=['口语交际安慰']",
-    "未命中锚点: b41-toc-0043 17 长城 keys=['长城', '17长城']",
-    "未命中锚点: b41-toc-0045 19* 秦兵马俑 keys=['秦兵马俑', '19秦兵马俑', '19*秦兵马俑']",
     "未命中锚点: b41-toc-0046 口语交际 我是小小讲解员 keys=['口语交际我是小小讲解员']",
     "未命中锚点: b41-toc-0047 习作 中国的世界文化遗产 keys=['习作中国的世界文化遗产']",
     "未命中锚点: b41-toc-0048 语文园地 keys=['语文园地']",
-    "未命中锚点: b41-toc-0052 22* 陀螺 keys=['陀螺', '22陀螺', '22*陀螺']",
     "未命中锚点: b41-toc-0054 习作 我的心儿怦怦跳 keys=['习作我的心儿怦怦跳']",
     "未命中锚点: b41-toc-0055 语文园地 keys=['语文园地']",
-    "未命中锚点: b41-toc-0057 24 我将无我，不负人民 keys=['我将无我，不负人民', '24我将无我，不负人民']",
-    "未命中锚点: b41-toc-0059 26* 延安，我把你追寻 keys=['延安，我把你追寻', '26延安，我把你追寻', '26*延安，我把你追寻']",
     "未命中锚点: b41-toc-0061 凉州词 keys=['凉州词']",
     "未命中锚点: b41-toc-0062 出塞 keys=['出塞']",
     "未命中锚点: b41-toc-0063 夏日绝句 keys=['夏日绝句']",
     "未命中锚点: b41-toc-0064 习作 写信 keys=['习作写信']",
     "未命中锚点: b41-toc-0065 语文园地 keys=['语文园地']",
-    "未命中锚点: b41-toc-0066 1 观  潮 ① keys=['观潮①', '1观潮①']"
+    "未命中锚点: b41-toc-0066 1 观  潮 ① keys=['观潮', '1观潮']",
+    "正文在 L4405「识字表」处截断，其后附录表未纳入分块"
   ],
   "batch": "2026-09-16"
 }

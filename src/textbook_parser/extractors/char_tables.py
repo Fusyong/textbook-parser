@@ -16,6 +16,20 @@ _TOC_GARDEN_FULL = re.compile(r"^语文园地[一二三四五六七八九十]+$"
 # 三年级起常见：标题「语文园地」独占一行，生字在下一行；上一行可能是该块的拼音（版式错位）
 _STANDALONE_PLAIN_GARDEN_TITLE = "语文园地"
 
+# 各类空白（半角/全角空格、NBSP、en/em space、零宽等），匹配前一律去掉
+_SPACE_LIKE_RE = re.compile(
+    r"[\s\u00a0\u2000-\u200b\u202f\u205f\u3000\ufeff]+"
+)
+# 带圈/带括注释码（如 识字表①）；标志行与其它整行匹配时忽略
+_MARKER_ANNOTATION_RE = re.compile(
+    "["
+    "①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳⓪"
+    "❶❷❸❹❺❻❼❽❾❿"
+    "⑴⑵⑶⑷⑸⑹⑺⑻⑼⑽⑾⑿⒀⒁⒂⒃⒄⒅⒆⒇"
+    "⒈⒉⒊⒋⒌⒍⒎⒏⒐⒑⒒⒓⒔⒕⒖⒗⒘⒙⒚⒛"
+    "]"
+)
+
 
 def _strip_tabs(s: str) -> str:
     """匹配与解析前去掉制表符（版式里常用 \\t 对齐，不应影响 unit 边界）。"""
@@ -23,14 +37,16 @@ def _strip_tabs(s: str) -> str:
 
 
 def compact_for_match(line: str) -> str:
-    """匹配用：先删 \\t，再去掉其余空白（空格、换页等）。"""
+    """匹配用：去制表符、各类空白、带圈注释码（如「识 字 表①」→「识字表」）。"""
     s = _strip_tabs(line)
-    return re.sub(r"\s+", "", s)
+    s = _SPACE_LIKE_RE.sub("", s)
+    s = _MARKER_ANNOTATION_RE.sub("", s)
+    return s
 
 
 def _normalize_spaces(s: str) -> str:
     """各类空白（含 NBSP、全角空格、制表符等）规范为单一半角空格。"""
-    return re.sub(r"[\s\u00a0\u2000-\u200b\u202f\u205f\u3000\ufeff]+", " ", s).strip()
+    return _SPACE_LIKE_RE.sub(" ", s).strip()
 
 
 # 版式文本中 QWERTY 大写字母表示韵母及声调（与教材 PDF 一致）
@@ -247,6 +263,9 @@ def _noise_category(stripped: str) -> str | None:
     return None
 
 
+_SECTION_LABELS = frozenset({"识字", "阅读", "写字", "汉语拼音"})
+
+
 def _chars_from_garden_tail(tail: str) -> list[str]:
     """课号行 / 园地标题后的生字区：按空白分词，每词内逐字拆开（「负责 讶恼」→ 负责讶恼 各一字）。"""
     tail = tail.strip()
@@ -260,38 +279,247 @@ def _chars_from_garden_tail(tail: str) -> list[str]:
     return chars
 
 
+def _collapse_spaced_garden_heading(s: str) -> str:
+    """版式把标题拉开时：「语　文　园　地　一」→「语文园地一」。"""
+    return re.sub(
+        r"语\s*文\s*园\s*地\s*([一二三四五六七八九十]+)",
+        lambda m: f"语文园地{m.group(1)}",
+        s,
+    )
+
+
+def _layout_pinyin_tokens(s: str) -> list[str]:
+    return re.findall(r"[a-zA-ZüÜ]+", s)
+
+
+def _split_wide_gap(line: str) -> tuple[str, str] | None:
+    """按行内最宽空白带（≥4）切成左右两栏；左右皆非空才算；无则返回 None。"""
+    best: tuple[str, str] | None = None
+    best_w = -1
+    for m in _SPACE_LIKE_RE.finditer(line):
+        w = m.end() - m.start()
+        if w < 4:
+            continue
+        left, right = line[: m.start()].strip(), line[m.end() :].strip()
+        # 跳过行首/行尾空白（切完一侧为空）
+        if not left or not right:
+            continue
+        if w > best_w:
+            best_w = w
+            best = (left, right)
+    return best
+
+
+def _is_lesson_head_line(s: str) -> bool:
+    return bool(re.match(r"^\d{1,2}\s+\S", _normalize_spaces(s)))
+
+
+def _is_section_label_text(s: str) -> bool:
+    """单元栏目标题「识字」「阅读」「汉语拼音」等（可出现在双栏一侧）。"""
+    return _split_section_label_line(s) is not None
+
+
+def _split_section_label_line(s: str) -> tuple[str, str] | None:
+    """
+    栏目标题行：「阅读」或「阅读   wL xiS」（后接纯拼音）。
+    返回 (栏目名, 拼音块)；非此类行返回 None。
+    """
+    norm = _normalize_spaces(s)
+    if not norm:
+        return None
+    for lab in sorted(_SECTION_LABELS, key=len, reverse=True):
+        if norm == lab:
+            return lab, ""
+        if norm.startswith(lab + " "):
+            rest = norm[len(lab) :].strip()
+            if not rest:
+                return lab, ""
+            if _CJK_RE.search(rest):
+                return None
+            toks = _layout_pinyin_tokens(rest)
+            if toks and _is_pinyin_line(rest):
+                return lab, _normalize_spaces(rest)
+            if toks and not re.search(r"[^\s a-zA-ZüÜ]", rest):
+                return lab, " ".join(toks)
+            return None
+    return None
+
+
+def _is_garden_head_line(s: str) -> bool:
+    norm = _collapse_spaced_garden_heading(_normalize_spaces(s))
+    if not norm:
+        return False
+    if norm == _STANDALONE_PLAIN_GARDEN_TITLE:
+        return True
+    return bool(_GARDEN_RE.match(norm) or _GARDEN_PLAIN_RE.match(norm))
+
+
+def _is_dual_unit_half(s: str) -> bool:
+    """双栏一侧是否为课号行 / 园地标题 / 栏目标题 / 纯拼音。"""
+    if _is_section_label_text(s):
+        return True
+    if _is_pinyin_line(s):
+        return True
+    if _is_lesson_head_line(s):
+        return True
+    return _is_garden_head_line(s)
+
+
+def _split_garden_and_trailing_lesson(line: str) -> tuple[str, str] | None:
+    """
+    双栏粘连且中间空白不足时：
+    「语文园地一  六七八十 8 中五风 立正」→ 园地行 + 课号行。
+    """
+    s = _collapse_spaced_garden_heading(_normalize_spaces(line))
+    m = re.match(
+        r"^(语文园地[一二三四五六七八九十]+)\s+(.+)\s+(\d{1,2}\s+\S.*)$",
+        s,
+    )
+    if not m:
+        return None
+    mid = m.group(2).strip()
+    # 中间段须含汉字（生字），避免把「语文园地六 bDn xuR」误切
+    if not _CJK_RE.search(mid):
+        return None
+    left = f"{m.group(1)} {mid}".strip()
+    right = m.group(3).strip()
+    return left, right
+
+
+def _split_leading_chars_and_garden(line: str) -> tuple[str, str] | None:
+    """
+    「女 开 关 先  语文园地八  牛羊爪白」：生字在前、园地标题在后时切开。
+    """
+    s = _collapse_spaced_garden_heading(_normalize_spaces(line))
+    m = re.match(
+        r"^(.+?)(语文园地[一二三四五六七八九十]+(?:\s+.*)?)$",
+        s,
+    )
+    if not m:
+        return None
+    left, right = m.group(1).strip(), m.group(2).strip()
+    if not left or not _CJK_RE.search(left):
+        return None
+    # 左侧不应已是园地/课号标题
+    if _is_garden_head_line(left) or _is_lesson_head_line(left):
+        return None
+    return left, right
+
+
+def _is_bare_char_half(s: str) -> bool:
+    """双栏一侧为无课号/园地标题的纯生字（如「午下」「个去」）。"""
+    p = _parse_hanzi_line(s)
+    return (
+        p is not None
+        and bool(p["chars"])
+        and p.get("lesson") is None
+        and p.get("garden") is None
+        and not p.get("embedded_pinyin")
+    )
+
+
+def _is_dual_half(s: str) -> bool:
+    return _is_dual_unit_half(s) or _is_bare_char_half(s)
+
+
+def _dual_hanzi_halves(hanzi_raw: str) -> tuple[str, str] | None:
+    """汉字行双栏切分：宽空白，园地+课号粘连，或生字+园地标题粘连。"""
+    wide = _split_wide_gap(hanzi_raw)
+    if wide and _is_dual_half(wide[0]) and _is_dual_half(wide[1]):
+        # 至少一侧是课号/园地/栏目/拼音，避免两段普通正文误切
+        if _is_dual_unit_half(wide[0]) or _is_dual_unit_half(wide[1]):
+            return wide
+    # 宽空白左侧误含「生字+园地标题」时再切
+    if wide:
+        sub = _split_leading_chars_and_garden(wide[0])
+        if sub and _is_dual_half(wide[1]):
+            # 女开关先 | 园地八牛羊爪白 — 右侧若是纯生字则拼回园地侧
+            if _is_bare_char_half(wide[1]) and _is_garden_head_line(sub[1]):
+                return sub[0], f"{sub[1]} {wide[1]}".strip()
+            if _is_garden_head_line(sub[1]) or _is_garden_head_line(wide[1]):
+                return sub[0], wide[1] if _is_garden_head_line(wide[1]) else sub[1]
+    glued = _split_garden_and_trailing_lesson(hanzi_raw)
+    if glued:
+        return glued
+    lead = _split_leading_chars_and_garden(hanzi_raw)
+    if lead:
+        return lead
+    return None
+
+
 def _parse_hanzi_line(line: str) -> dict[str, Any] | None:
     raw = line.rstrip()
-    s = _normalize_spaces(raw)
+    s = _collapse_spaced_garden_heading(_normalize_spaces(raw))
     if not s or not _CJK_RE.search(s):
         return None
-    if s in ("识字", "阅读", "写字"):
+    if _split_section_label_line(raw) is not None or s in _SECTION_LABELS:
         return None
 
     m = _GARDEN_RE.match(s)
     if m:
         garden, tail = m.group(1), m.group(2).strip()
         chars = _chars_from_garden_tail(tail)
-        return {"lesson": None, "garden": garden, "chars": chars, "raw": raw}
+        embedded = ""
+        if not chars:
+            toks = _layout_pinyin_tokens(tail)
+            if toks:
+                embedded = " ".join(toks)
+        return {
+            "lesson": None,
+            "garden": garden,
+            "chars": chars,
+            "raw": raw,
+            "embedded_pinyin": embedded or None,
+        }
 
     m = _GARDEN_PLAIN_RE.match(s)
     if m:
         tail = m.group(1).strip()
         chars = _chars_from_garden_tail(tail)
-        return {"lesson": None, "garden": "", "chars": chars, "raw": raw}
+        embedded = ""
+        if not chars:
+            toks = _layout_pinyin_tokens(tail)
+            if toks:
+                embedded = " ".join(toks)
+        return {
+            "lesson": None,
+            "garden": "",
+            "chars": chars,
+            "raw": raw,
+            "embedded_pinyin": embedded or None,
+        }
 
     m = _LESSON_RE.match(s)
     if m:
         lesson, tail = m.group(1), m.group(2).strip()
+        # 双栏残留：「3 爸妈 4 大马路土」归一化后仍可能粘在同一课号下，由上层按宽空白切开
         chars = _chars_from_garden_tail(tail)
-        return {"lesson": lesson, "garden": None, "chars": chars, "raw": raw}
+        return {
+            "lesson": lesson,
+            "garden": None,
+            "chars": chars,
+            "raw": raw,
+            "embedded_pinyin": None,
+        }
 
     if s == _STANDALONE_PLAIN_GARDEN_TITLE:
-        return {"lesson": None, "garden": "", "chars": [], "raw": raw}
+        return {
+            "lesson": None,
+            "garden": "",
+            "chars": [],
+            "raw": raw,
+            "embedded_pinyin": None,
+        }
 
     chars = _chars_from_garden_tail(s)
     if chars:
-        return {"lesson": None, "garden": None, "chars": chars, "raw": raw}
+        return {
+            "lesson": None,
+            "garden": None,
+            "chars": chars,
+            "raw": raw,
+            "embedded_pinyin": None,
+        }
     return None
 
 
@@ -410,12 +638,8 @@ def _toc_alignment_report(
 
 
 def _section_from_compact(compact: str) -> str | None:
-    if compact == "识字":
-        return "识字"
-    if compact == "阅读":
-        return "阅读"
-    if compact == "写字":
-        return "写字"
+    if compact in _SECTION_LABELS:
+        return compact
     return None
 
 
@@ -494,6 +718,41 @@ def _append_char_table_row(
     """将一条生字行（可有或可无拼音块）并入 rows：续行合并或新起一行。"""
     compact_hanzi = compact_for_match(hanzi_raw)
     toc_anchor = _toc_anchor_row(compact_hanzi, unit_head_compiled)
+
+    # 版式错位：空园地行已带拼音，生字落在后续行（甚至误挂到下一园地标题下）
+    if parsed["chars"] and _try_fill_empty_garden(
+        rows,
+        parsed["chars"],
+        pinyin_block,
+        hanzi_extra=parsed.get("raw") or hanzi_raw,
+        log_prefix=log_prefix,
+    ):
+        # 当前行若本身是新的园地/课号标题，仍留下空标题行占位
+        if parsed.get("garden") is not None or parsed.get("lesson") is not None:
+            empty = {
+                "lesson": parsed["lesson"],
+                "garden": parsed["garden"],
+                "chars": [],
+                "raw": parsed.get("raw") or hanzi_raw,
+                "embedded_pinyin": None,
+            }
+            # 仅标题、无生字时才追加，避免空课号行
+            if parsed.get("garden") is not None and not (
+                parsed.get("lesson") is not None
+            ):
+                rows.append(
+                    {
+                        "section": section,
+                        "lesson": None,
+                        "garden": parsed["garden"],
+                        "chars": [],
+                        "pinyin_line": "",
+                        "hanzi_line": empty["raw"],
+                        "toc_anchor": True,
+                    }
+                )
+        return
+
     # 版式常见：先独占一行「语文园地」，下一行又是「语文园地 + 生字」；第二行也会命中 unit_head，需并回上一条空标题行以免多计 TOC 锚点
     if (
         rows
@@ -517,6 +776,15 @@ def _append_char_table_row(
             prev["hanzi_line"] = prev["hanzi_line"] + "\n" + parsed["raw"]
             return
     if not toc_anchor and rows:
+        # 纯生字续行：优先填先前空园地，避免并进上一课/园地造成粘连
+        if parsed["chars"] and _try_fill_empty_garden(
+            rows,
+            parsed["chars"],
+            pinyin_block,
+            hanzi_extra=parsed.get("raw") or hanzi_raw,
+            log_prefix=log_prefix,
+        ):
+            return
         prev = rows[-1]
         prev["chars"].extend(
             _chars_with_pinyin(parsed["chars"], pinyin_block, log_prefix=log_prefix)
@@ -540,6 +808,121 @@ def _append_char_table_row(
             "toc_anchor": toc_anchor,
         }
     )
+
+
+def _try_fill_empty_garden(
+    rows: list[dict[str, Any]],
+    chars: list[str],
+    pinyin_block: str,
+    *,
+    hanzi_extra: str,
+    log_prefix: str,
+) -> bool:
+    """
+    将生字填入最早的「空园地」行。
+    仅当该园地行上已有拼音且分词数与字数一致时回填（避免右栏课文/拼音误填左栏）。
+    pinyin_block 若与已有拼音一致可忽略；若园地尚无拼音则不填。
+    """
+    if not chars:
+        return False
+    for row in rows:
+        if row.get("garden") is None:
+            continue
+        if row.get("chars"):
+            continue
+        existing_py = (row.get("pinyin_line") or "").strip()
+        if not existing_py:
+            continue
+        tokens = [t for t in existing_py.split() if t]
+        if len(tokens) != len(chars):
+            continue
+        # 若本次也带拼音，分词数须一致（或为空）
+        bring = (pinyin_block or "").strip()
+        if bring:
+            bring_toks = [t for t in bring.split() if t]
+            if len(bring_toks) != len(chars):
+                continue
+        row["chars"] = _chars_with_pinyin(chars, existing_py, log_prefix=log_prefix)
+        extra = (hanzi_extra or "").strip()
+        if extra:
+            row["hanzi_line"] = (row.get("hanzi_line") or "") + (
+                "\n" if row.get("hanzi_line") else ""
+            ) + extra
+        return True
+    return False
+
+
+def _attach_pinyin_to_empty_garden(rows: list[dict[str, Any]], pinyin_block: str) -> bool:
+    """把待配拼音挂到最早仍无拼音的空园地行。"""
+    py = (pinyin_block or "").strip()
+    if not py:
+        return False
+    for row in rows:
+        if row.get("garden") is None:
+            continue
+        if row.get("chars"):
+            continue
+        if (row.get("pinyin_line") or "").strip():
+            continue
+        row["pinyin_line"] = py
+        return True
+    return False
+
+
+def _is_pinyin_only_half(s: str) -> bool:
+    """双栏一侧仅为版式拼音（无汉字）。"""
+    return _is_pinyin_line(s)
+
+
+def _dual_item(
+    *,
+    section: str | None,
+    hanzi_raw: str,
+    parsed: dict[str, Any],
+    pinyin_block: str,
+) -> dict[str, Any]:
+    return {
+        "section": section,
+        "hanzi_raw": hanzi_raw,
+        "parsed": parsed,
+        "pinyin_block": pinyin_block,
+    }
+
+
+def _flush_dual_columns(
+    rows: list[dict[str, Any]],
+    dual_lefts: list[dict[str, Any]],
+    dual_rights: list[dict[str, Any]],
+    *,
+    unit_head_compiled: re.Pattern[str] | None,
+    log_prefix: str,
+) -> None:
+    """双栏版式按列输出：先左栏自上而下，再右栏（与目录课序一致）。"""
+    for item in dual_lefts + dual_rights:
+        _append_char_table_row(
+            rows,
+            section=item["section"],
+            hanzi_raw=item["hanzi_raw"],
+            parsed=item["parsed"],
+            pinyin_block=item["pinyin_block"],
+            unit_head_compiled=unit_head_compiled,
+            log_prefix=log_prefix,
+        )
+    dual_lefts.clear()
+    dual_rights.clear()
+
+
+def _min_lesson_num(items: list[dict[str, Any]]) -> int | None:
+    nums: list[int] = []
+    for it in items:
+        les = it["parsed"].get("lesson")
+        if les is None:
+            return None
+        try:
+            nums.append(int(les))
+        except (TypeError, ValueError):
+            return None
+    return min(nums) if nums else None
 
 
 def parse_char_table_body(
@@ -572,6 +955,90 @@ def parse_char_table_body(
 
     i = 0
     pending_pinyin = ""
+    pending_right_pinyin = ""
+    # 双栏缓冲：同行左右课号先入队，遇左栏续行或非双栏时再按列冲刷
+    dual_lefts: list[dict[str, Any]] = []
+    dual_rights: list[dict[str, Any]] = []
+
+    def flush_dual() -> None:
+        _flush_dual_columns(
+            rows,
+            dual_lefts,
+            dual_rights,
+            unit_head_compiled=unit_head_compiled,
+            log_prefix=log_prefix,
+        )
+
+    def emit_row(
+        *,
+        hanzi_raw: str,
+        parsed: dict[str, Any],
+        pinyin_block: str,
+    ) -> None:
+        """非双栏行：先冲刷双栏缓冲，再写入。"""
+        flush_dual()
+        _append_char_table_row(
+            rows,
+            section=section,
+            hanzi_raw=hanzi_raw,
+            parsed=parsed,
+            pinyin_block=pinyin_block,
+            unit_head_compiled=unit_head_compiled,
+            log_prefix=log_prefix,
+        )
+
+    def apply_section_half(hz: str) -> str:
+        """处理栏目标题侧；若带拼音则挂到空园地或返回之。"""
+        nonlocal section
+        sp = _split_section_label_line(hz)
+        if sp is None:
+            return ""
+        section = sp[0]
+        extra = sp[1]
+        if extra and _attach_pinyin_to_empty_garden(rows, extra):
+            return ""
+        return extra
+
+    def emit_content_half(hz: str, py: str, *, as_right: bool) -> None:
+        """写出双栏一侧正文；园地空标题+内嵌拼音写在行上，供后续填字。"""
+        nonlocal pending_pinyin, pending_right_pinyin
+        if _is_pinyin_line(hz):
+            block = _normalize_spaces(hz)
+            if as_right:
+                pending_right_pinyin = (
+                    f"{pending_right_pinyin} {block}".strip()
+                    if pending_right_pinyin
+                    else block
+                )
+            else:
+                # 左栏纯拼音：优先挂到空园地
+                if not _attach_pinyin_to_empty_garden(rows, block):
+                    pending_pinyin = (
+                        f"{pending_pinyin} {block}".strip() if pending_pinyin else block
+                    )
+            return
+        parsed_h = _parse_hanzi_line(hz)
+        if parsed_h is None:
+            return
+        emb = parsed_h.get("embedded_pinyin") or ""
+        py_h = py
+        if as_right:
+            if pending_right_pinyin and parsed_h["chars"]:
+                py_h = (
+                    f"{pending_right_pinyin} {py_h}".strip()
+                    if py_h
+                    else pending_right_pinyin
+                )
+                pending_right_pinyin = ""
+        else:
+            if pending_pinyin and parsed_h["chars"]:
+                py_h = f"{pending_pinyin} {py_h}".strip() if py_h else pending_pinyin
+                pending_pinyin = ""
+        if emb and not parsed_h["chars"]:
+            # 空园地：拼音落在本行，等待生字回填
+            py_h = emb if not py_h else f"{py_h} {emb}".strip()
+        emit_row(hanzi_raw=hz, parsed=parsed_h, pinyin_block=py_h)
+
     while i < len(lines):
         raw = _strip_tabs(lines[i])
         stripped = raw.strip()
@@ -600,32 +1067,155 @@ def parse_char_table_body(
             continue
 
         if _is_pinyin_line(raw):
-            pinyin_parts: list[str] = []
+            # 保留行内宽空白，供双栏切分；归一化块仅用于单行配对
+            pinyin_raw_parts: list[str] = []
             while i < len(lines) and _is_pinyin_line(_strip_tabs(lines[i])):
-                pinyin_parts.append(_normalize_spaces(_strip_tabs(lines[i])))
+                pinyin_raw_parts.append(_strip_tabs(lines[i]).rstrip())
                 i += 1
 
-            pinyin_block = " ".join(p for p in pinyin_parts if p)
+            pinyin_block = " ".join(
+                _normalize_spaces(p) for p in pinyin_raw_parts if p.strip()
+            )
+
+            # 拼音与汉字之间常有空行（新版式）；跳过后再取汉字行
+            while i < len(lines) and _noise_category(
+                _strip_tabs(lines[i]).strip()
+            ) == "空行":
+                i += 1
 
             if i >= len(lines):
-                if pinyin_block and rows:
-                    prev = rows[-1]
-                    prev["pinyin_line"] = (prev["pinyin_line"] + " " + pinyin_block).strip()
+                if pinyin_block.strip():
+                    pending_pinyin = (
+                        f"{pending_pinyin} {pinyin_block}".strip()
+                        if pending_pinyin
+                        else pinyin_block.strip()
+                    )
                 break
 
             hanzi_raw = _strip_tabs(lines[i])
+
+            # 双栏：一行拼音 + 一行汉字（课号/园地/栏目标题）
+            py_halves = (
+                _split_wide_gap(pinyin_raw_parts[0])
+                if len(pinyin_raw_parts) == 1
+                else None
+            )
+            hz_halves = _dual_hanzi_halves(hanzi_raw)
+            # 拼音已双栏而汉字粘连时，再尝试园地+课号切开
+            if py_halves and hz_halves is None:
+                hz_halves = _split_garden_and_trailing_lesson(hanzi_raw)
+            if (
+                py_halves
+                and hz_halves
+                and _is_dual_half(hz_halves[0])
+                and _is_dual_half(hz_halves[1])
+            ):
+                left_py = _normalize_spaces(py_halves[0])
+                right_py = _normalize_spaces(py_halves[1])
+                left_hz, right_hz = hz_halves
+                left_is_sec = _split_section_label_line(left_hz) is not None
+                right_is_sec = _split_section_label_line(right_hz) is not None
+                left_is_py = _is_pinyin_line(left_hz)
+                right_is_py = _is_pinyin_line(right_hz)
+
+                if left_is_sec and right_is_sec:
+                    flush_dual()
+                    apply_section_half(left_hz)
+                    apply_section_half(right_hz)
+                    _log_discard(log_prefix, hanzi_raw, discard_sink=discard_sink)
+                    i += 1
+                    continue
+
+                # 任一侧为栏目或纯拼音：不宜再进课号双栏缓冲，立即分列处理
+                if left_is_sec or right_is_sec or left_is_py or right_is_py:
+                    flush_dual()
+                    if left_is_sec:
+                        extra = apply_section_half(left_hz)
+                        if extra:
+                            pending_pinyin = (
+                                f"{pending_pinyin} {extra}".strip()
+                                if pending_pinyin
+                                else extra
+                            )
+                    else:
+                        py_l = left_py
+                        if pending_pinyin and not left_is_py:
+                            py_l = (
+                                f"{pending_pinyin} {py_l}".strip()
+                                if py_l
+                                else pending_pinyin
+                            )
+                            pending_pinyin = ""
+                        emit_content_half(left_hz, py_l, as_right=False)
+                    if right_is_sec:
+                        apply_section_half(right_hz)
+                    else:
+                        py_r = right_py
+                        if pending_right_pinyin and not right_is_py:
+                            py_r = (
+                                f"{pending_right_pinyin} {py_r}".strip()
+                                if py_r
+                                else pending_right_pinyin
+                            )
+                            pending_right_pinyin = ""
+                        emit_content_half(right_hz, py_r, as_right=True)
+                    i += 1
+                    continue
+
+                left_parsed = _parse_hanzi_line(left_hz)
+                right_parsed = _parse_hanzi_line(right_hz)
+                if left_parsed is not None and right_parsed is not None:
+                    if pending_pinyin:
+                        left_py = (
+                            f"{pending_pinyin} {left_py}".strip()
+                            if left_py
+                            else pending_pinyin
+                        )
+                        pending_pinyin = ""
+                    if pending_right_pinyin:
+                        right_py = (
+                            f"{pending_right_pinyin} {right_py}".strip()
+                            if right_py
+                            else pending_right_pinyin
+                        )
+                        pending_right_pinyin = ""
+                    dual_lefts.append(
+                        _dual_item(
+                            section=section,
+                            hanzi_raw=left_hz,
+                            parsed=left_parsed,
+                            pinyin_block=left_py,
+                        )
+                    )
+                    dual_rights.append(
+                        _dual_item(
+                            section=section,
+                            hanzi_raw=right_hz,
+                            parsed=right_parsed,
+                            pinyin_block=right_py,
+                        )
+                    )
+                    i += 1
+                    continue
+                # 解析失败则退回逐行处理
+
             parsed = _parse_hanzi_line(hanzi_raw)
             if parsed is None:
-                if pinyin_block and rows:
-                    rows[-1]["pinyin_line"] = (
-                        rows[-1]["pinyin_line"] + " " + pinyin_block
-                    ).strip()
+                # 无法配对汉字：留给后续汉字行（pending），勿误挂到上一行
+                if pinyin_block.strip():
+                    pending_pinyin = (
+                        f"{pending_pinyin} {pinyin_block}".strip()
+                        if pending_pinyin
+                        else pinyin_block.strip()
+                    )
                 _log_discard(log_prefix, hanzi_raw, discard_sink=discard_sink)
                 i += 1
                 continue
 
             hanzi_norm = _normalize_spaces(_strip_tabs(hanzi_raw))
+            hanzi_norm = _collapse_spaced_garden_heading(hanzi_norm)
             if hanzi_norm == _STANDALONE_PLAIN_GARDEN_TITLE and not parsed["chars"]:
+                flush_dual()
                 toc_a = _toc_anchor_row(
                     compact_for_match(hanzi_raw), unit_head_compiled
                 )
@@ -643,55 +1233,201 @@ def parse_char_table_body(
                     }
                 )
                 if pinyin_block.strip():
-                    pending_pinyin = (
-                        f"{pending_pinyin} {pinyin_block}".strip()
-                        if pending_pinyin
-                        else pinyin_block.strip()
-                    )
+                    # 空「语文园地」标题不吞拼音 pending
+                    pass
                 i += 1
                 continue
 
-            merged_pinyin = pinyin_block
-            if pending_pinyin:
-                merged_pinyin = (
-                    f"{pending_pinyin} {pinyin_block}".strip()
-                    if pinyin_block.strip()
-                    else pending_pinyin
-                )
-                pending_pinyin = ""
+            emb = parsed.get("embedded_pinyin") or ""
+            if parsed["chars"]:
+                merged_pinyin = pinyin_block
+                if pending_pinyin:
+                    merged_pinyin = (
+                        f"{pending_pinyin} {pinyin_block}".strip()
+                        if pinyin_block.strip()
+                        else pending_pinyin
+                    )
+                    pending_pinyin = ""
+            else:
+                # 空标题不消耗 pending；内嵌拼音写在本行供回填
+                merged_pinyin = emb
 
-            _append_char_table_row(
-                rows,
-                section=section,
+            # 双栏左栏续行：课号落在右栏最小课号之前
+            if (
+                dual_rights
+                and parsed.get("lesson") is not None
+                and parsed.get("garden") is None
+            ):
+                try:
+                    les_n = int(parsed["lesson"])
+                except (TypeError, ValueError):
+                    les_n = None
+                right_min = _min_lesson_num(dual_rights)
+                if les_n is not None and right_min is not None and les_n < right_min:
+                    dual_lefts.append(
+                        _dual_item(
+                            section=section,
+                            hanzi_raw=hanzi_raw,
+                            parsed=parsed,
+                            pinyin_block=merged_pinyin,
+                        )
+                    )
+                    i += 1
+                    continue
+
+            emit_row(
                 hanzi_raw=hanzi_raw,
                 parsed=parsed,
                 pinyin_block=merged_pinyin,
-                unit_head_compiled=unit_head_compiled,
-                log_prefix=log_prefix,
             )
+            i += 1
+            continue
+
+        # 无先行拼音的双栏（含一侧纯拼音）
+        hz_only_halves = _dual_hanzi_halves(raw)
+        if (
+            hz_only_halves
+            and _is_dual_half(hz_only_halves[0])
+            and _is_dual_half(hz_only_halves[1])
+        ):
+            left_hz, right_hz = hz_only_halves
+            left_is_sec = _split_section_label_line(left_hz) is not None
+            right_is_sec = _split_section_label_line(right_hz) is not None
+            left_is_py = _is_pinyin_line(left_hz)
+            right_is_py = _is_pinyin_line(right_hz)
+
+            if left_is_sec and right_is_sec:
+                flush_dual()
+                apply_section_half(left_hz)
+                apply_section_half(right_hz)
+                _log_discard(log_prefix, raw, discard_sink=discard_sink)
+                i += 1
+                continue
+
+            if left_is_sec or right_is_sec or left_is_py or right_is_py:
+                flush_dual()
+                if left_is_sec:
+                    extra = apply_section_half(left_hz)
+                    if extra:
+                        pending_pinyin = (
+                            f"{pending_pinyin} {extra}".strip()
+                            if pending_pinyin
+                            else extra
+                        )
+                else:
+                    emit_content_half(left_hz, "", as_right=False)
+                if right_is_sec:
+                    apply_section_half(right_hz)
+                else:
+                    emit_content_half(right_hz, "", as_right=True)
+                i += 1
+                continue
+
+            # 两侧皆课号/园地正文：按列缓冲
+            left_parsed = _parse_hanzi_line(left_hz)
+            right_parsed = _parse_hanzi_line(right_hz)
+            if left_parsed is not None and right_parsed is not None:
+                py_l = ""
+                if left_parsed["chars"] and pending_pinyin:
+                    py_l = pending_pinyin
+                    pending_pinyin = ""
+                elif not left_parsed["chars"]:
+                    emb_l = left_parsed.get("embedded_pinyin") or ""
+                    py_l = emb_l
+                py_r = ""
+                if right_parsed["chars"] and pending_right_pinyin:
+                    py_r = pending_right_pinyin
+                    pending_right_pinyin = ""
+                elif not right_parsed["chars"]:
+                    emb_r = right_parsed.get("embedded_pinyin") or ""
+                    py_r = emb_r
+                dual_lefts.append(
+                    _dual_item(
+                        section=section,
+                        hanzi_raw=left_hz,
+                        parsed=left_parsed,
+                        pinyin_block=py_l,
+                    )
+                )
+                dual_rights.append(
+                    _dual_item(
+                        section=section,
+                        hanzi_raw=right_hz,
+                        parsed=right_parsed,
+                        pinyin_block=py_r,
+                    )
+                )
+                i += 1
+                continue
+
+        # 单行栏目标题（可带拼音）
+        sec_line = _split_section_label_line(raw)
+        if sec_line is not None:
+            flush_dual()
+            section = sec_line[0]
+            if sec_line[1]:
+                pending_pinyin = (
+                    f"{pending_pinyin} {sec_line[1]}".strip()
+                    if pending_pinyin
+                    else sec_line[1]
+                )
+            _log_discard(log_prefix, raw, discard_sink=discard_sink)
             i += 1
             continue
 
         parsed_only = _parse_hanzi_line(raw)
         if parsed_only is not None:
-            py_only = pending_pinyin
-            if pending_pinyin:
-                pending_pinyin = ""
-            _append_char_table_row(
-                rows,
-                section=section,
+            emb = parsed_only.get("embedded_pinyin") or ""
+            if parsed_only["chars"]:
+                if pending_pinyin:
+                    py_only = pending_pinyin
+                    pending_pinyin = ""
+                elif pending_right_pinyin:
+                    # 右栏课号独占一行（仅有左缩进）时，用右栏待配拼音
+                    py_only = pending_right_pinyin
+                    pending_right_pinyin = ""
+                else:
+                    py_only = ""
+            else:
+                # 空园地/空标题：拼音写在行上；不消耗 pending
+                py_only = emb
+
+            if (
+                dual_rights
+                and parsed_only.get("lesson") is not None
+                and parsed_only.get("garden") is None
+                and parsed_only["chars"]
+            ):
+                try:
+                    les_n = int(parsed_only["lesson"])
+                except (TypeError, ValueError):
+                    les_n = None
+                right_min = _min_lesson_num(dual_rights)
+                if les_n is not None and right_min is not None and les_n < right_min:
+                    dual_lefts.append(
+                        _dual_item(
+                            section=section,
+                            hanzi_raw=raw,
+                            parsed=parsed_only,
+                            pinyin_block=py_only,
+                        )
+                    )
+                    i += 1
+                    continue
+
+            emit_row(
                 hanzi_raw=raw,
                 parsed=parsed_only,
                 pinyin_block=py_only,
-                unit_head_compiled=unit_head_compiled,
-                log_prefix=log_prefix,
             )
             i += 1
             continue
 
+        flush_dual()
         _log_discard(log_prefix, raw, discard_sink=discard_sink)
         i += 1
 
+    flush_dual()
     meta["char_count_computed"] = sum(len(r["chars"]) for r in rows)
     return rows, meta
 

@@ -7,6 +7,15 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 
+from .active_sources import (
+    ActiveSourcesError,
+    ActiveWorkspace,
+    ensure_slot_allowed,
+    filter_codes_for_active,
+    format_workspace_status,
+    is_official_output_dir,
+    load_active_workspace,
+)
 from .batch import (
     batch_output_dir,
     list_slots_in_batch,
@@ -75,13 +84,106 @@ def _resolve_batch(root: Path, args: argparse.Namespace) -> str:
 
 
 def _default_out_dir(root: Path, args: argparse.Namespace, batch_id: str) -> Path:
-    """未显式传 --output 时写入 output/{batch}/；显式路径则原样使用。"""
+    """未显式传 --output 时写入 output/{batch}/；--scratch 时写入临时目录；显式路径则原样使用。"""
+    if bool(getattr(args, "scratch", False)):
+        ws = load_active_workspace(root)
+        return ws.scratch_path(root, batch_id)
     raw = getattr(args, "output", None)
     if raw is None or str(raw).strip() == "" or str(raw).strip() == "output":
         # 默认值 "output" 视为未指定，改用分批目录
         if raw is None or str(raw).strip() == "output":
             return batch_output_dir(root, batch_id, "output")
     return (root / str(raw)).resolve() if not Path(str(raw)).is_absolute() else Path(str(raw)).resolve()
+
+
+def _workspace(root: Path) -> ActiveWorkspace:
+    return load_active_workspace(root)
+
+
+def _guard_slot(
+    root: Path,
+    batch_id: str,
+    book_code: str,
+    *,
+    out_dir: Path | None,
+    action: str,
+    force_official: bool = False,
+) -> None:
+    """
+    convert 始终视为正式写入（改 material）；
+    extract/toc-chunk 仅在写入正式 output/{batch}/ 时受白名单约束。
+    """
+    ws = _workspace(root)
+    if force_official:
+        official = True
+    elif out_dir is None:
+        official = True
+    else:
+        official = is_official_output_dir(root, batch_id, out_dir)
+    try:
+        ensure_slot_allowed(
+            ws,
+            batch_id,
+            book_code,
+            official_write=official,
+            action=action,
+        )
+    except ActiveSourcesError as e:
+        print(str(e), file=sys.stderr)
+        raise SystemExit(1) from e
+
+
+def _apply_active_book_filter(
+    root: Path,
+    batch_id: str,
+    codes: list[str],
+    *,
+    out_dir: Path | None,
+    force_official: bool = False,
+) -> list[str]:
+    ws = _workspace(root)
+    if force_official:
+        official = True
+    elif out_dir is None:
+        official = True
+    else:
+        official = is_official_output_dir(root, batch_id, out_dir)
+    keep, skip = filter_codes_for_active(
+        ws, batch_id, codes, official_write=official
+    )
+    if skip:
+        print(
+            f"当前解析白名单已跳过 {len(skip)} 册（不写入正式数据）: {', '.join(skip)}",
+            file=sys.stderr,
+        )
+    if not keep and codes:
+        print(
+            "白名单过滤后无剩余书目。请编辑 configs/active_sources.yaml，或改用 --scratch。",
+            file=sys.stderr,
+        )
+        raise SystemExit(1)
+    return keep
+
+
+def _resolve_sidecar_json(
+    root: Path,
+    batch_id: str,
+    out_dir: Path,
+    filename: str,
+) -> Path | None:
+    """
+    查找依赖 JSON：优先当前输出目录；若为 scratch/自定义目录且缺失，
+    则只读回退到正式 output/{batch}/（兼容性测试不必先拷目录）。
+    """
+    primary = out_dir / filename
+    if primary.is_file():
+        return primary
+    if is_official_output_dir(root, batch_id, out_dir):
+        return None
+    fallback = batch_output_dir(root, batch_id, "output") / filename
+    if fallback.is_file():
+        return fallback
+    return None
 
 
 def _load_effective_cfg(args: argparse.Namespace) -> tuple[Path, dict[str, Any], Path | None]:
@@ -111,6 +213,10 @@ def _load_effective_cfg(args: argparse.Namespace) -> tuple[Path, dict[str, Any],
 def _cmd_convert(args: argparse.Namespace) -> int:
     root, cfg, cfg_path = _load_effective_cfg(args)
     book_code = str(cfg["book_code"])
+    batch_id = str(cfg.get("batch") or _resolve_batch(root, args))
+    _guard_slot(
+        root, batch_id, book_code, out_dir=None, action="convert", force_official=True
+    )
     out = (root / cfg["layout_text"]).resolve()
     log_path = out.parent / f"{out.stem}.convert.log"
     restore = install_run_logging(
@@ -144,6 +250,7 @@ def _cmd_extract(args: argparse.Namespace) -> int:
     book_code = str(cfg["book_code"])
     batch_id = str(cfg.get("batch") or _resolve_batch(root, args))
     out_dir = _default_out_dir(root, args, batch_id)
+    _guard_slot(root, batch_id, book_code, out_dir=out_dir, action="extract")
     out_dir.mkdir(parents=True, exist_ok=True)
     ext_only = getattr(args, "extractor", None)
     ext_s = str(ext_only).strip() if ext_only else ""
@@ -158,6 +265,8 @@ def _cmd_extract(args: argparse.Namespace) -> int:
         extra["config"] = "(--book)"
     if ext_s:
         extra["extractor_only"] = ext_s
+    if bool(getattr(args, "scratch", False)):
+        extra["scratch"] = "1"
     restore = install_run_logging(
         log_path,
         header_lines=_log_header_lines(
@@ -224,13 +333,18 @@ def _cmd_extract_core(
         mod = str(module)
         omit_toc_md = bool(inner.pop("omit_toc_markdown", False))
         if mod in _MODULES_USING_TOC_LAYOUT_JSON:
-            toc_json = out_dir / f"{book_code}_目录.json"
-            if not toc_json.is_file():
+            batch_id = str(cfg.get("batch") or "")
+            toc_name = f"{book_code}_目录.json"
+            toc_json = _resolve_sidecar_json(root, batch_id, out_dir, toc_name)
+            if toc_json is None:
                 print(
-                    f"缺少目录 JSON，请先对本书运行 extract 目录: {toc_json}",
+                    f"缺少目录 JSON，请先对本书运行 extract 目录: "
+                    f"{out_dir / toc_name}",
                     file=sys.stderr,
                 )
                 return 1
+            if toc_json.parent.resolve() != out_dir.resolve():
+                print(f"目录 JSON 只读回退: {toc_json}")
             try:
                 toc_data = json.loads(toc_json.read_text(encoding="utf-8"))
             except (OSError, json.JSONDecodeError) as e:
@@ -362,6 +476,7 @@ def _cmd_extract_all(args: argparse.Namespace) -> int:
         print("须指定 --extractor", file=sys.stderr)
         return 1
     out_dir = _default_out_dir(root, args, batch_id)
+    codes = _apply_active_book_filter(root, batch_id, codes, out_dir=out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
     log_path = out_dir / f"extract-all_{ext_name}.log"
     restore = install_run_logging(
@@ -375,6 +490,7 @@ def _cmd_extract_all(args: argparse.Namespace) -> int:
                 "project_root": str(root),
                 "batch": batch_id,
                 "books_arg": (args.books or "").strip() or "(本批全部书目)",
+                "scratch": "1" if bool(getattr(args, "scratch", False)) else "0",
             },
         ),
     )
@@ -405,6 +521,7 @@ def _cmd_extract_all(args: argparse.Namespace) -> int:
             sub = argparse.Namespace(
                 extractor=ext_name,
                 output=args.output,
+                scratch=bool(getattr(args, "scratch", False)),
             )
             try:
                 rc = _cmd_extract_core(
@@ -436,6 +553,10 @@ def _cmd_convert_all(args: argparse.Namespace) -> int:
     root = _project_root_for_book_mode(args)
     batch_id = _resolve_batch(root, args)
     codes = _parse_book_list(args.books, root, batch_id=batch_id)
+    # convert 改写 material，始终按正式写入约束
+    codes = _apply_active_book_filter(
+        root, batch_id, codes, out_dir=None, force_official=True
+    )
     out_dir = batch_output_dir(root, batch_id, "output")
     out_dir.mkdir(parents=True, exist_ok=True)
     log_path = out_dir / "convert-all.log"
@@ -523,7 +644,8 @@ def _run_toc_chunk_single(
     cfg = effective_book_config(root, book_code, file_overlay=None, batch=batch_id)
     book_code = str(cfg["book_code"])
     text_path = (root / cfg["layout_text"]).resolve()
-    toc_path = out_dir / f"{book_code}_目录.json"
+    toc_name = f"{book_code}_目录.json"
+    toc_path = _resolve_sidecar_json(root, batch_id, out_dir, toc_name)
     log_path = out_dir / f"{book_code}_正文分块.log"
 
     restore = install_run_logging(
@@ -543,9 +665,14 @@ def _run_toc_chunk_single(
         if not text_path.is_file():
             print(f"缺少版式文本: {text_path}", file=sys.stderr)
             return 1
-        if not toc_path.is_file():
-            print(f"缺少目录 JSON，请先 extract 目录: {toc_path}", file=sys.stderr)
+        if toc_path is None:
+            print(
+                f"缺少目录 JSON，请先 extract 目录: {out_dir / toc_name}",
+                file=sys.stderr,
+            )
             return 1
+        if toc_path.parent.resolve() != out_dir.resolve():
+            print(f"目录 JSON 只读回退: {toc_path}")
         toc_data = json.loads(toc_path.read_text(encoding="utf-8"))
         entries = toc_entries_from_layout_result(toc_data)
         if not entries:
@@ -626,6 +753,8 @@ def _cmd_toc_chunk(args: argparse.Namespace) -> int:
             books_mode if books_mode != "" else None, root, batch_id=batch_id
         )
 
+    codes = _apply_active_book_filter(root, batch_id, codes, out_dir=out_dir)
+
     body_start = getattr(args, "body_start_line", None)
     cont = bool(getattr(args, "continue_on_error", False))
     fail = 0
@@ -650,6 +779,13 @@ def _cmd_toc_chunk(args: argparse.Namespace) -> int:
     return 1 if fail else 0
 
 
+def _cmd_active(args: argparse.Namespace) -> int:
+    root = _project_root_for_book_mode(args)
+    ws = _workspace(root)
+    print(format_workspace_status(root, ws))
+    return 0
+
+
 def _add_project_root(p: argparse.ArgumentParser) -> None:
     p.add_argument(
         "--project-root",
@@ -666,9 +802,27 @@ def _add_batch(p: argparse.ArgumentParser) -> None:
     )
 
 
+def _add_scratch(p: argparse.ArgumentParser) -> None:
+    p.add_argument(
+        "--scratch",
+        action="store_true",
+        help=(
+            "兼容性测试：结果写入 configs/active_sources.yaml 的 scratch_dir/{batch}/，"
+            "不覆盖正式 output/{batch}/；且不受当前解析白名单限制"
+        ),
+    )
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="教材 PDF → pdftotext 版式文本 → 结构化提取")
     sub = parser.add_subparsers(dest="command", required=True)
+
+    p_active = sub.add_parser(
+        "active",
+        help="显示当前解析白名单（configs/active_sources.yaml）",
+    )
+    _add_project_root(p_active)
+    p_active.set_defaults(func=_cmd_active)
 
     p_conv = sub.add_parser("convert", help="pdftotext -enc UTF-8 -layout 生成版式文本")
     cx = p_conv.add_mutually_exclusive_group(required=True)
@@ -684,6 +838,7 @@ def main(argv: list[str] | None = None) -> int:
     ex.add_argument("--book", help="book_code")
     _add_project_root(p_ext)
     _add_batch(p_ext)
+    _add_scratch(p_ext)
     p_ext.add_argument(
         "--extractor",
         help="只运行某一提取器（默认运行配置中的全部）",
@@ -691,7 +846,7 @@ def main(argv: list[str] | None = None) -> int:
     p_ext.add_argument(
         "--output",
         default="output",
-        help="JSON 输出目录（相对项目根；默认 output/{batch}/）",
+        help="JSON 输出目录（相对项目根；默认 output/{batch}/；与 --scratch 互斥优先 scratch）",
     )
     p_ext.set_defaults(func=_cmd_extract)
 
@@ -701,6 +856,7 @@ def main(argv: list[str] | None = None) -> int:
     )
     _add_project_root(p_all)
     _add_batch(p_all)
+    _add_scratch(p_all)
     p_all.add_argument(
         "--extractor",
         required=True,
@@ -713,7 +869,7 @@ def main(argv: list[str] | None = None) -> int:
     p_all.add_argument(
         "--output",
         default="output",
-        help="JSON 输出目录（相对项目根；默认 output/{batch}/）",
+        help="JSON 输出目录（相对项目根；默认 output/{batch}/；与 --scratch 互斥优先 scratch）",
     )
     p_all.add_argument(
         "--continue-on-error",
@@ -758,10 +914,11 @@ def main(argv: list[str] | None = None) -> int:
     )
     _add_project_root(p_chunk)
     _add_batch(p_chunk)
+    _add_scratch(p_chunk)
     p_chunk.add_argument(
         "--output",
         default="output",
-        help="输出目录（相对项目根；默认 output/{batch}/）",
+        help="输出目录（相对项目根；默认 output/{batch}/；与 --scratch 互斥优先 scratch）",
     )
     p_chunk.add_argument(
         "--body-start-line",

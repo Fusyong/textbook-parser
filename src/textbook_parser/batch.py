@@ -259,12 +259,13 @@ def _borrow_slot(
     j: int,
 ) -> tuple[SlotRef | None, str]:
     """从前一套或更早批次借入某槽；返回 (SlotRef|None, fromSetId)。"""
+    n = len(batch_ids)
     for j2 in range(j - 1, -1, -1):
         for i2 in range(i, -1, -1):
             if not _batch_has_slot(inventory, batch_ids[i2], SLOT_CODES[j2]):
                 continue
             need2 = i2 - (j2 - k)
-            if need2 < 0:
+            if need2 < 0 or need2 >= n:
                 continue
             bid2 = batch_ids[need2]
             if _batch_has_slot(inventory, bid2, code):
@@ -272,7 +273,7 @@ def _borrow_slot(
                     SlotRef(batch=bid2, code=code),
                     f"{batch_ids[i2]}/{SLOT_CODES[j2]}",
                 )
-    for i2 in range(min(i, len(batch_ids) - 1), -1, -1):
+    for i2 in range(min(i, n - 1), -1, -1):
         bid2 = batch_ids[i2]
         if _batch_has_slot(inventory, bid2, code):
             return SlotRef(batch=bid2, code=code), f"{bid2}/{code}"
@@ -319,9 +320,13 @@ def assemble_set(
                 substitutions.append(
                     {
                         "code": code,
+                        "expectedBatch": bid,
                         "fromSet": from_set,
                         "fromBatch": borrowed.batch,
-                        "message": f"{SLOT_KEYWORDS[code]}（{short}）借自批次 {borrowed.batch}",
+                        "message": (
+                            f"{SLOT_KEYWORDS[code]}（{short}）本应由批次 {bid} 提供，"
+                            f"现以 {borrowed.batch} 顶替"
+                        ),
                     }
                 )
             continue
@@ -348,34 +353,41 @@ def build_all_sets(
     batch_ids: list[str] | None = None,
     *,
     inventory: dict[str, set[str]] | None = None,
+    anchor_batch: str | None = None,
 ) -> list[SetAssembly]:
-    """为每个（批次, 该批有数据的册）生成锚定套；同年同标签冲突时加月份消歧。"""
+    """
+    仅为「锚定批」中实际有的册生成成套（默认锚定批 = 最新一批）。
+    历史批只参与错位拼装，不作为界面可选锚点。
+    """
     ids = batch_ids if batch_ids is not None else discover_batch_ids(root)
+    if not ids:
+        return []
     if inventory is None:
         inventory = {b: set(list_slots_in_batch(root, b)) for b in ids}
 
-    raw: list[SetAssembly] = []
-    label_counts: dict[str, int] = {}
-    for bid in ids:
-        for code in SLOT_CODES:
-            if code not in inventory.get(bid, set()):
-                continue
-            lab = set_display_label(bid, code, disambiguate=False)
-            label_counts[lab] = label_counts.get(lab, 0) + 1
+    ab = anchor_batch or ids[-1]
+    if ab not in ids:
+        raise KeyError(f"锚定批次不在列表中: {ab}")
 
-    for bid in ids:
-        for code in SLOT_CODES:
-            if code not in inventory.get(bid, set()):
-                continue
-            base = set_display_label(bid, code, disambiguate=False)
-            lab = (
-                set_display_label(bid, code, disambiguate=True)
-                if label_counts.get(base, 0) > 1
-                else base
-            )
-            raw.append(
-                assemble_set(ids, inventory, bid, code, label=lab)
-            )
+    # 同年多批时标签可能撞车；仅最新批作锚点时通常不需要消歧，仍保留计数逻辑
+    label_counts: dict[str, int] = {}
+    for code in SLOT_CODES:
+        if code not in inventory.get(ab, set()):
+            continue
+        lab = set_display_label(ab, code, disambiguate=False)
+        label_counts[lab] = label_counts.get(lab, 0) + 1
+
+    raw: list[SetAssembly] = []
+    for code in SLOT_CODES:
+        if code not in inventory.get(ab, set()):
+            continue
+        base = set_display_label(ab, code, disambiguate=False)
+        lab = (
+            set_display_label(ab, code, disambiguate=True)
+            if label_counts.get(base, 0) > 1
+            else base
+        )
+        raw.append(assemble_set(ids, inventory, ab, code, label=lab))
     return raw
 
 

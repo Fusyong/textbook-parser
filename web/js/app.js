@@ -56,26 +56,37 @@ function showDataBanner(msg) {
   el.classList.remove("hidden");
 }
 
+function formatSubstitutionTip(subs) {
+  if (!subs?.length) return "";
+  return (
+    "教材替换情况：" +
+    subs
+      .map((s) => {
+        if (s.message) return s.message;
+        const expect = s.expectedBatch ? `本应由 ${s.expectedBatch} 提供，` : "";
+        return `${s.code}：${expect}现以 ${s.fromBatch || "?"} 顶替`;
+      })
+      .join("；")
+  );
+}
+
 function setBannerForActiveSet() {
   const d = data();
   const set = d?._set;
   const subs = set?.substitutions || [];
-  const exportWarns = (rawData()?.exportWarnings || []).slice(0, 2);
+  const setId = set?.id || "";
+  const exportWarns = (rawData()?.exportWarnings || [])
+    .filter((w) => !setId || String(w).includes(setId))
+    .slice(0, 3);
   const parts = [];
-  if (set?.label) {
-    parts.push(`当前教材套：${set.label}`);
-  }
-  if (subs.length) {
-    parts.push(
-      "顶替：" +
-        subs
-          .map((s) => s.message || `${s.code}←${s.fromBatch}`)
-          .join("；"),
-    );
+  const subTip = formatSubstitutionTip(subs);
+  if (subTip) {
+    parts.push(subTip);
   }
   if (exportWarns.length) {
     parts.push(`导出提示：${exportWarns.join("；")}`);
   }
+  // 仅在有替换或导出告警时显示横幅，避免无事也占一条警告条
   showDataBanner(parts.length ? parts.join("。") : "");
 }
 
@@ -100,7 +111,12 @@ function fillSetSelect() {
     const opt = document.createElement("option");
     opt.value = s.id;
     const n = (s.slots || []).filter(Boolean).length;
-    opt.textContent = `${s.label}（${n}册）`;
+    const subs = s.substitutions || [];
+    opt.textContent = subs.length
+      ? `${s.label}（${n}册，有替换）`
+      : `${s.label}（${n}册）`;
+    const tip = formatSubstitutionTip(subs);
+    if (tip) opt.title = tip;
     sel.appendChild(opt);
   }
   const want = activeSetId || r.defaultSetId || ordered[0]?.id;

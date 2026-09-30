@@ -1,73 +1,44 @@
 # textbook-parser extract-all
-# time: 2026-09-29T16:21:49
-# argv: D:\ah21\textbook-parser\src\textbook_parser\__main__.py extract-all --extractor 目录 --project-root . --batch 2026-09-16 --continue-on-error
-# book_code: 12_books
+# time: 2026-09-30T13:40:34
+# argv: D:\ah21\textbook-parser\src\textbook_parser\__main__.py extract-all --extractor 目录 --project-root .
+# book_code: b11,b21,b31,b41,b51,b61
 # log_file: D:\ah21\textbook-parser\output\2026-09-16\extract-all_目录.log
 # 以下 stdout/stderr 均写入本日志（含警告、错误与提取器提示）。
 # extractor: 目录
 # project_root: D:\ah21\textbook-parser
 # batch: 2026-09-16
 # books_arg: (本批全部书目)
+# scratch: 0
 
 批次: 2026-09-16 → D:\ah21\textbook-parser\output\2026-09-16
 --- b11 ---
-目录: 条目 53，扁平 45 条，分组 9
+目录: 条目 54，扁平 45 条，分组 9
 已写入: D:\ah21\textbook-parser\output\2026-09-16\b11_目录.json
 已写入: D:\ah21\textbook-parser\output\2026-09-16\b11_目录.md
 抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b11_目录.discard.log
---- b12 ---
-目录: 条目 46，扁平 38 条，分组 8
-已写入: D:\ah21\textbook-parser\output\2026-09-16\b12_目录.json
-已写入: D:\ah21\textbook-parser\output\2026-09-16\b12_目录.md
-抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b12_目录.discard.log
 --- b21 ---
 目录: 条目 48，扁平 40 条，分组 8
 已写入: D:\ah21\textbook-parser\output\2026-09-16\b21_目录.json
 已写入: D:\ah21\textbook-parser\output\2026-09-16\b21_目录.md
 抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b21_目录.discard.log
---- b22 ---
-目录: 条目 48，扁平 41 条，分组 7
-已写入: D:\ah21\textbook-parser\output\2026-09-16\b22_目录.json
-已写入: D:\ah21\textbook-parser\output\2026-09-16\b22_目录.md
-抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b22_目录.discard.log
 --- b31 ---
 目录: 条目 62，扁平 54 条，分组 8
 已写入: D:\ah21\textbook-parser\output\2026-09-16\b31_目录.json
 已写入: D:\ah21\textbook-parser\output\2026-09-16\b31_目录.md
 抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b31_目录.discard.log
---- b32 ---
-目录: 条目 64，扁平 56 条，分组 8
-已写入: D:\ah21\textbook-parser\output\2026-09-16\b32_目录.json
-已写入: D:\ah21\textbook-parser\output\2026-09-16\b32_目录.md
-抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b32_目录.discard.log
 --- b41 ---
 目录: 条目 66，扁平 58 条，分组 8
 已写入: D:\ah21\textbook-parser\output\2026-09-16\b41_目录.json
 已写入: D:\ah21\textbook-parser\output\2026-09-16\b41_目录.md
 抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b41_目录.discard.log
---- b42 ---
-目录: 条目 68，扁平 61 条，分组 7
-已写入: D:\ah21\textbook-parser\output\2026-09-16\b42_目录.json
-已写入: D:\ah21\textbook-parser\output\2026-09-16\b42_目录.md
-抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b42_目录.discard.log
 --- b51 ---
 目录: 条目 66，扁平 58 条，分组 8
 已写入: D:\ah21\textbook-parser\output\2026-09-16\b51_目录.json
 已写入: D:\ah21\textbook-parser\output\2026-09-16\b51_目录.md
 抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b51_目录.discard.log
---- b52 ---
-目录: 条目 67，扁平 59 条，分组 8
-已写入: D:\ah21\textbook-parser\output\2026-09-16\b52_目录.json
-已写入: D:\ah21\textbook-parser\output\2026-09-16\b52_目录.md
-抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b52_目录.discard.log
 --- b61 ---
 目录: 条目 64，扁平 56 条，分组 8
 已写入: D:\ah21\textbook-parser\output\2026-09-16\b61_目录.json
 已写入: D:\ah21\textbook-parser\output\2026-09-16\b61_目录.md
 抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b61_目录.discard.log
---- b62 ---
-目录: 条目 61，扁平 54 条，分组 7
-已写入: D:\ah21\textbook-parser\output\2026-09-16\b62_目录.json
-已写入: D:\ah21\textbook-parser\output\2026-09-16\b62_目录.md
-抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b62_目录.discard.log
 控制台输出已同步写入日志: D:\ah21\textbook-parser\output\2026-09-16\extract-all_目录.log

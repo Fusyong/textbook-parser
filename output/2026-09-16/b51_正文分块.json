@@ -5,10 +5,12 @@
   "toc_source": "output/2026-09-16/b51_目录.json",
   "body_start_line": 0,
   "body_start_line_note": "启发式：首个独占一行的「第×单元」；可用 body_start_override 覆盖",
+  "body_end_line": 4225,
+  "body_end_line_note": "遇「识字表 / 写字表 / 词语表」独占标题行即截断（不含该行）",
   "line_count": 4496,
   "chunk_entry_count": 55,
-  "chunk_matched_count": 11,
-  "chunk_unmatched_count": 44,
+  "chunk_matched_count": 28,
+  "chunk_unmatched_count": 27,
   "chunks": [
     {
       "id": "b51-toc-0002",
@@ -17,10 +19,10 @@
         "桂花雨",
         "1桂花雨"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 137,
+      "end_line": 247,
+      "match_mode": "window",
+      "ok": true,
       "toc_label": "1 桂花雨",
       "toc_snapshot": {
         "kind": "lesson",
@@ -35,7 +37,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第一单元"
-      }
+      },
+      "start_line_text": "阅读  1 桂花雨 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b51-toc-0003",
@@ -44,10 +48,10 @@
         "落花生",
         "2落花生"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 247,
+      "end_line": 313,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "2 落花生",
       "toc_snapshot": {
         "kind": "lesson",
@@ -62,7 +66,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第一单元"
-      }
+      },
+      "start_line_text": "                      2 落花生 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b51-toc-0004",
@@ -73,10 +79,10 @@
         "3*珍珠鸟",
         "3＊珍珠鸟"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 313,
+      "end_line": 550,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "3* 珍珠鸟",
       "toc_snapshot": {
         "kind": "lesson",
@@ -91,7 +97,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第一单元"
-      }
+      },
+      "start_line_text": "                      3 * 珍珠鸟 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b51-toc-0005",
@@ -178,10 +186,10 @@
         "冀中的地道战",
         "4冀中的地道战"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 550,
+      "end_line": 675,
+      "match_mode": "window",
+      "ok": true,
       "toc_label": "4 冀中的地道战",
       "toc_snapshot": {
         "kind": "lesson",
@@ -196,7 +204,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第二单元"
-      }
+      },
+      "start_line_text": "阅读  4 冀中的地道战 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b51-toc-0010",
@@ -205,10 +215,10 @@
         "将相和",
         "5将相和"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 675,
+      "end_line": 883,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "5 将相和",
       "toc_snapshot": {
         "kind": "lesson",
@@ -223,7 +233,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第二单元"
-      }
+      },
+      "start_line_text": "                      5 将相和 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b51-toc-0011",
@@ -232,10 +244,10 @@
         "什么比猎豹的速度更快",
         "6什么比猎豹的速度更快"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 883,
+      "end_line": 968,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "6 什么比猎豹的速度更快",
       "toc_snapshot": {
         "kind": "lesson",
@@ -250,7 +262,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第二单元"
-      }
+      },
+      "start_line_text": "           6 什么比猎豹的速度更快 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b51-toc-0012",
@@ -614,7 +628,7 @@
         "12少年中国说（节选）"
       ],
       "start_line": 2039,
-      "end_line": 2513,
+      "end_line": 2096,
       "match_mode": "single",
       "ok": true,
       "toc_label": "12 少年中国说（节选）",
@@ -642,10 +656,10 @@
         "圆明园的毁灭",
         "13圆明园的毁灭"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 2096,
+      "end_line": 2241,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "13 圆明园的毁灭",
       "toc_snapshot": {
         "kind": "lesson",
@@ -660,7 +674,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第四单元"
-      }
+      },
+      "start_line_text": "                 13 圆明园的毁灭 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b51-toc-0028",
@@ -671,10 +687,10 @@
         "14*梅兰芳蓄须明志",
         "14＊梅兰芳蓄须明志"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 2241,
+      "end_line": 2435,
+      "match_mode": "window",
+      "ok": true,
       "toc_label": "14* 梅兰芳蓄须明志",
       "toc_snapshot": {
         "kind": "lesson",
@@ -689,7 +705,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第四单元"
-      }
+      },
+      "start_line_text": "               14 * xù 梅兰芳蓄须明志①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b51-toc-0029",
@@ -777,10 +795,10 @@
         "太阳",
         "15太阳"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 2435,
+      "end_line": 2513,
+      "match_mode": "window",
+      "ok": true,
       "toc_label": "15 太阳",
       "toc_snapshot": {
         "kind": "lesson",
@@ -795,7 +813,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第五单元"
-      }
+      },
+      "start_line_text": "阅读  15 太  阳 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b51-toc-0035",
@@ -859,7 +879,7 @@
         "风向袋的制作"
       ],
       "start_line": 2712,
-      "end_line": 3410,
+      "end_line": 2759,
       "match_mode": "single",
       "ok": true,
       "toc_label": "风向袋的制作",
@@ -887,10 +907,10 @@
         "慈母情深",
         "17慈母情深"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 2759,
+      "end_line": 2937,
+      "match_mode": "window",
+      "ok": true,
       "toc_label": "17 慈母情深",
       "toc_snapshot": {
         "kind": "lesson",
@@ -905,7 +925,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第六单元"
-      }
+      },
+      "start_line_text": "阅读      17 慈母情深 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b51-toc-0041",
@@ -914,10 +936,10 @@
         "父爱之舟",
         "18父爱之舟"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 2937,
+      "end_line": 3137,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "18 父爱之舟",
       "toc_snapshot": {
         "kind": "lesson",
@@ -932,7 +954,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第六单元"
-      }
+      },
+      "start_line_text": "           18 父爱之舟 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b51-toc-0042",
@@ -943,10 +967,10 @@
         "19*航天员写给孩子的信",
         "19＊航天员写给孩子的信"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 3137,
+      "end_line": 3410,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "19* 航天员写给孩子的信",
       "toc_snapshot": {
         "kind": "lesson",
@@ -961,7 +985,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第六单元"
-      }
+      },
+      "start_line_text": "      19 * 航天员写给孩子的信 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b51-toc-0043",
@@ -1049,7 +1075,7 @@
         "20古诗三首"
       ],
       "start_line": 3410,
-      "end_line": 3586,
+      "end_line": 3414,
       "match_mode": "window",
       "ok": true,
       "toc_label": "20 古诗三首",
@@ -1076,10 +1102,10 @@
       "keys_tried": [
         "山居秋暝"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 3414,
+      "end_line": 3431,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "山居秋暝",
       "toc_snapshot": {
         "kind": "sublesson",
@@ -1094,7 +1120,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第七单元"
-      }
+      },
+      "start_line_text": "        山居秋暝①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b51-toc-0049",
@@ -1102,10 +1130,10 @@
       "keys_tried": [
         "枫桥夜泊"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 3431,
+      "end_line": 3479,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "枫桥夜泊",
       "toc_snapshot": {
         "kind": "sublesson",
@@ -1120,7 +1148,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第七单元"
-      }
+      },
+      "start_line_text": "        枫桥①夜泊",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b51-toc-0050",
@@ -1155,10 +1185,10 @@
         "第一场雪",
         "21第一场雪"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 3479,
+      "end_line": 3586,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "21 第一场雪",
       "toc_snapshot": {
         "kind": "lesson",
@@ -1173,7 +1203,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第七单元"
-      }
+      },
+      "start_line_text": "               21 第一场雪 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b51-toc-0052",
@@ -1264,7 +1296,7 @@
         "23古人谈读书"
       ],
       "start_line": 3763,
-      "end_line": 4496,
+      "end_line": 3823,
       "match_mode": "window",
       "ok": true,
       "toc_label": "23 古人谈读书",
@@ -1292,10 +1324,10 @@
         "忆读书",
         "24忆读书"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 3823,
+      "end_line": 4054,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "24 忆读书",
       "toc_snapshot": {
         "kind": "lesson",
@@ -1310,7 +1342,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第八单元"
-      }
+      },
+      "start_line_text": "            24 忆读书 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b51-toc-0058",
@@ -1321,10 +1355,10 @@
         "25*走遍天下书为侣",
         "25＊走遍天下书为侣"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 4054,
+      "end_line": 4225,
+      "match_mode": "window",
+      "ok": true,
       "toc_label": "25* 走遍天下书为侣",
       "toc_snapshot": {
         "kind": "lesson",
@@ -1339,7 +1373,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第八单元"
-      }
+      },
+      "start_line_text": "               25 * lǚ 走遍天下书为侣 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b51-toc-0059",
@@ -1397,8 +1433,8 @@
       "id": "b51-toc-0061",
       "kind": "lesson",
       "keys_tried": [
-        "落花生①",
-        "2落花生①"
+        "落花生",
+        "2落花生"
       ],
       "start_line": null,
       "end_line": null,
@@ -1424,8 +1460,8 @@
       "id": "b51-toc-0062",
       "kind": "lesson",
       "keys_tried": [
-        "*珍珠鸟①",
-        "3*珍珠鸟①"
+        "*珍珠鸟",
+        "3*珍珠鸟"
       ],
       "start_line": null,
       "end_line": null,
@@ -1477,8 +1513,8 @@
       "id": "b51-toc-0066",
       "kind": "lesson",
       "keys_tried": [
-        "将相和①",
-        "5将相和①"
+        "将相和",
+        "5将相和"
       ],
       "start_line": null,
       "end_line": null,
@@ -1502,15 +1538,9 @@
     }
   ],
   "warnings": [
-    "未命中锚点: b51-toc-0002 1 桂花雨 keys=['桂花雨', '1桂花雨']",
-    "未命中锚点: b51-toc-0003 2 落花生 keys=['落花生', '2落花生']",
-    "未命中锚点: b51-toc-0004 3* 珍珠鸟 keys=['珍珠鸟', '3珍珠鸟', '3*珍珠鸟']",
     "未命中锚点: b51-toc-0005 口语交际 制定班级公约 keys=['口语交际制定班级公约']",
     "未命中锚点: b51-toc-0006 习作 我的心爱之物 keys=['习作我的心爱之物']",
     "未命中锚点: b51-toc-0007 语文园地 keys=['语文园地']",
-    "未命中锚点: b51-toc-0009 4 冀中的地道战 keys=['冀中的地道战', '4冀中的地道战']",
-    "未命中锚点: b51-toc-0010 5 将相和 keys=['将相和', '5将相和']",
-    "未命中锚点: b51-toc-0011 6 什么比猎豹的速度更快 keys=['什么比猎豹的速度更快', '6什么比猎豹的速度更快']",
     "未命中锚点: b51-toc-0013 习作 “漫画”老师 keys=['习作“漫画”老师']",
     "未命中锚点: b51-toc-0014 语文园地 keys=['语文园地']",
     "未命中锚点: b51-toc-0017 口语交际 讲民间故事 keys=['口语交际讲民间故事']",
@@ -1519,33 +1549,23 @@
     "未命中锚点: b51-toc-0020 快乐读书吧 keys=['快乐读书吧']",
     "未命中锚点: b51-toc-0023 示儿 keys=['示儿']",
     "未命中锚点: b51-toc-0025 己亥杂诗 keys=['己亥杂诗']",
-    "未命中锚点: b51-toc-0027 13 圆明园的毁灭 keys=['圆明园的毁灭', '13圆明园的毁灭']",
-    "未命中锚点: b51-toc-0028 14* 梅兰芳蓄须明志 keys=['梅兰芳蓄须明志', '14梅兰芳蓄须明志', '14*梅兰芳蓄须明志']",
     "未命中锚点: b51-toc-0029 习作 二十年后的家乡 keys=['习作二十年后的家乡']",
     "未命中锚点: b51-toc-0030 语文园地 keys=['语文园地']",
     "未命中锚点: b51-toc-0032 8 猎人海力布 keys=['猎人海力布', '8猎人海力布']",
-    "未命中锚点: b51-toc-0034 15 太阳 keys=['太阳', '15太阳']",
     "未命中锚点: b51-toc-0036 习作 介绍一种事物 keys=['习作介绍一种事物']",
-    "未命中锚点: b51-toc-0040 17 慈母情深 keys=['慈母情深', '17慈母情深']",
-    "未命中锚点: b51-toc-0041 18 父爱之舟 keys=['父爱之舟', '18父爱之舟']",
-    "未命中锚点: b51-toc-0042 19* 航天员写给孩子的信 keys=['航天员写给孩子的信', '19航天员写给孩子的信', '19*航天员写给孩子的信']",
     "未命中锚点: b51-toc-0043 口语交际 父母之爱 keys=['口语交际父母之爱']",
     "未命中锚点: b51-toc-0044 习作 我想对您说 keys=['习作我想对您说']",
     "未命中锚点: b51-toc-0045 语文园地 keys=['语文园地']",
-    "未命中锚点: b51-toc-0048 山居秋暝 keys=['山居秋暝']",
-    "未命中锚点: b51-toc-0049 枫桥夜泊 keys=['枫桥夜泊']",
     "未命中锚点: b51-toc-0050 早春呈水部张十八员外 keys=['早春呈水部张十八员外']",
-    "未命中锚点: b51-toc-0051 21 第一场雪 keys=['第一场雪', '21第一场雪']",
     "未命中锚点: b51-toc-0053 习作 我最喜爱的季节 keys=['习作我最喜爱的季节']",
     "未命中锚点: b51-toc-0054 语文园地 keys=['语文园地']",
-    "未命中锚点: b51-toc-0057 24 忆读书 keys=['忆读书', '24忆读书']",
-    "未命中锚点: b51-toc-0058 25* 走遍天下书为侣 keys=['走遍天下书为侣', '25走遍天下书为侣', '25*走遍天下书为侣']",
     "未命中锚点: b51-toc-0059 习作 推荐一本书 keys=['习作推荐一本书']",
     "未命中锚点: b51-toc-0060 语文园地 keys=['语文园地']",
-    "未命中锚点: b51-toc-0061 2 落花生 ① keys=['落花生①', '2落花生①']",
-    "未命中锚点: b51-toc-0062 3 * 珍珠鸟 ① keys=['*珍珠鸟①', '3*珍珠鸟①']",
+    "未命中锚点: b51-toc-0061 2 落花生 ① keys=['落花生', '2落花生']",
+    "未命中锚点: b51-toc-0062 3 * 珍珠鸟 ① keys=['*珍珠鸟', '3*珍珠鸟']",
     "未命中锚点: b51-toc-0065 语文园地 keys=['语文园地']",
-    "未命中锚点: b51-toc-0066 5 将相和 ① keys=['将相和①', '5将相和①']"
+    "未命中锚点: b51-toc-0066 5 将相和 ① keys=['将相和', '5将相和']",
+    "正文在 L4226「识字表」处截断，其后附录表未纳入分块"
   ],
   "batch": "2026-09-16"
 }

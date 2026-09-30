@@ -3,40 +3,48 @@
   "extractor": "目录",
   "entries": [
     {
+      "kind": "section",
+      "label": "我上学了",
+      "unit_type": "分组",
+      "unit_subtype": "入学教育",
+      "group_label": "我上学了",
+      "id": "b11-toc-0001"
+    },
+    {
       "kind": "sublesson",
       "title": "我是中国人",
       "page": 2,
-      "unit_type": "课文",
+      "unit_type": "入学教育",
       "unit_subtype": null,
-      "group_label": null,
-      "id": "b11-toc-0001"
+      "group_label": "我上学了",
+      "id": "b11-toc-0002"
     },
     {
       "kind": "sublesson",
       "title": "我爱我们的祖国",
       "page": 4,
-      "unit_type": "课文",
+      "unit_type": "入学教育",
       "unit_subtype": null,
-      "group_label": null,
-      "id": "b11-toc-0002"
+      "group_label": "我上学了",
+      "id": "b11-toc-0003"
     },
     {
       "kind": "sublesson",
       "title": "我是小学生",
       "page": 6,
-      "unit_type": "课文",
+      "unit_type": "入学教育",
       "unit_subtype": null,
-      "group_label": null,
-      "id": "b11-toc-0003"
+      "group_label": "我上学了",
+      "id": "b11-toc-0004"
     },
     {
       "kind": "sublesson",
       "title": "我爱学语文",
       "page": 7,
-      "unit_type": "课文",
+      "unit_type": "入学教育",
       "unit_subtype": null,
-      "group_label": null,
-      "id": "b11-toc-0004"
+      "group_label": "我上学了",
+      "id": "b11-toc-0005"
     },
     {
       "kind": "section",
@@ -44,7 +52,7 @@
       "unit_type": "分组",
       "unit_subtype": null,
       "group_label": "第一单元·识字",
-      "id": "b11-toc-0005"
+      "id": "b11-toc-0006"
     },
     {
       "kind": "lesson",
@@ -55,7 +63,7 @@
       "unit_type": "课文",
       "unit_subtype": "识字",
       "group_label": "第一单元·识字",
-      "id": "b11-toc-0006"
+      "id": "b11-toc-0007"
     },
     {
       "kind": "lesson",
@@ -66,7 +74,7 @@
       "unit_type": "课文",
       "unit_subtype": "识字",
       "group_label": "第一单元·识字",
-      "id": "b11-toc-0007"
+      "id": "b11-toc-0008"
     },
     {
       "kind": "lesson",
@@ -77,7 +85,7 @@
       "unit_type": "课文",
       "unit_subtype": "识字",
       "group_label": "第一单元·识字",
-      "id": "b11-toc-0008"
+      "id": "b11-toc-0009"
     },
     {
       "kind": "lesson",
@@ -88,7 +96,7 @@
       "unit_type": "课文",
       "unit_subtype": "识字",
       "group_label": "第一单元·识字",
-      "id": "b11-toc-0009"
+      "id": "b11-toc-0010"
     },
     {
       "kind": "garden",
@@ -97,7 +105,7 @@
       "unit_type": "语文园地",
       "unit_subtype": null,
       "group_label": "第一单元·识字",
-      "id": "b11-toc-0010"
+      "id": "b11-toc-0011"
     },
     {
       "kind": "reading_club",
@@ -107,7 +115,7 @@
       "unit_type": "快乐读书吧",
       "unit_subtype": null,
       "group_label": "第一单元·识字",
-      "id": "b11-toc-0011"
+      "id": "b11-toc-0012"
     },
     {
       "kind": "section",
@@ -115,7 +123,7 @@
       "unit_type": "分组",
       "unit_subtype": null,
       "group_label": "第二单元·汉语拼音",
-      "id": "b11-toc-0012"
+      "id": "b11-toc-0013"
     },
     {
       "kind": "lesson",
@@ -126,7 +134,7 @@
       "unit_type": "课文",
       "unit_subtype": "汉语拼音",
       "group_label": "第二单元·汉语拼音",
-      "id": "b11-toc-0013"
+      "id": "b11-toc-0014"
     },
     {
       "kind": "lesson",
@@ -137,7 +145,7 @@
       "unit_type": "课文",
       "unit_subtype": "汉语拼音",
       "group_label": "第二单元·汉语拼音",
-      "id": "b11-toc-0014"
+      "id": "b11-toc-0015"
     },
     {
       "kind": "lesson",
@@ -148,7 +156,7 @@
       "unit_type": "课文",
       "unit_subtype": "汉语拼音",
       "group_label": "第二单元·汉语拼音",
-      "id": "b11-toc-0015"
+      "id": "b11-toc-0016"
     },
     {
       "kind": "lesson",
@@ -159,7 +167,7 @@
       "unit_type": "课文",
       "unit_subtype": "汉语拼音",
       "group_label": "第二单元·汉语拼音",
-      "id": "b11-toc-0016"
+      "id": "b11-toc-0017"
     },
     {
       "kind": "garden",
@@ -168,7 +176,7 @@
       "unit_type": "语文园地",
       "unit_subtype": null,
       "group_label": "第二单元·汉语拼音",
-      "id": "b11-toc-0017"
+      "id": "b11-toc-0018"
     },
     {
       "kind": "section",
@@ -176,7 +184,7 @@
       "unit_type": "分组",
       "unit_subtype": null,
       "group_label": "第三单元·汉语拼音",
-      "id": "b11-toc-0018"
+      "id": "b11-toc-0019"
     },
     {
       "kind": "lesson",
@@ -187,7 +195,7 @@
       "unit_type": "课文",
       "unit_subtype": "汉语拼音",
       "group_label": "第三单元·汉语拼音",
-      "id": "b11-toc-0019"
+      "id": "b11-toc-0020"
     },
     {
       "kind": "lesson",
@@ -198,7 +206,7 @@
       "unit_type": "课文",
       "unit_subtype": "汉语拼音",
       "group_label": "第三单元·汉语拼音",
-      "id": "b11-toc-0020"
+      "id": "b11-toc-0021"
     },
     {
       "kind": "lesson",
@@ -209,7 +217,7 @@
       "unit_type": "课文",
       "unit_subtype": "汉语拼音",
       "group_label": "第三单元·汉语拼音",
-      "id": "b11-toc-0021"
+      "id": "b11-toc-0022"
     },
     {
       "kind": "lesson",
@@ -220,7 +228,7 @@
       "unit_type": "课文",
       "unit_subtype": "汉语拼音",
       "group_label": "第三单元·汉语拼音",
-      "id": "b11-toc-0022"
+      "id": "b11-toc-0023"
     },
     {
       "kind": "lesson",
@@ -231,7 +239,7 @@
       "unit_type": "课文",
       "unit_subtype": "汉语拼音",
       "group_label": "第三单元·汉语拼音",
-      "id": "b11-toc-0023"
+      "id": "b11-toc-0024"
     },
     {
       "kind": "garden",
@@ -240,7 +248,7 @@
       "unit_type": "语文园地",
       "unit_subtype": null,
       "group_label": "第三单元·汉语拼音",
-      "id": "b11-toc-0024"
+      "id": "b11-toc-0025"
     },
     {
       "kind": "section",
@@ -248,7 +256,7 @@
       "unit_type": "分组",
       "unit_subtype": null,
       "group_label": "第四单元·汉语拼音",
-      "id": "b11-toc-0025"
+      "id": "b11-toc-0026"
     },
     {
       "kind": "lesson",
@@ -259,7 +267,7 @@
       "unit_type": "课文",
       "unit_subtype": "汉语拼音",
       "group_label": "第四单元·汉语拼音",
-      "id": "b11-toc-0026"
+      "id": "b11-toc-0027"
     },
     {
       "kind": "lesson",
@@ -270,7 +278,7 @@
       "unit_type": "课文",
       "unit_subtype": "汉语拼音",
       "group_label": "第四单元·汉语拼音",
-      "id": "b11-toc-0027"
+      "id": "b11-toc-0028"
     },
     {
       "kind": "lesson",
@@ -281,7 +289,7 @@
       "unit_type": "课文",
       "unit_subtype": "汉语拼音",
       "group_label": "第四单元·汉语拼音",
-      "id": "b11-toc-0028"
+      "id": "b11-toc-0029"
     },
     {
       "kind": "lesson",
@@ -292,7 +300,7 @@
       "unit_type": "课文",
       "unit_subtype": "汉语拼音",
       "group_label": "第四单元·汉语拼音",
-      "id": "b11-toc-0029"
+      "id": "b11-toc-0030"
     },
     {
       "kind": "lesson",
@@ -303,7 +311,7 @@
       "unit_type": "课文",
       "unit_subtype": "汉语拼音",
       "group_label": "第四单元·汉语拼音",
-      "id": "b11-toc-0030"
+      "id": "b11-toc-0031"
     },
     {
       "kind": "garden",
@@ -312,7 +320,7 @@
       "unit_type": "语文园地",
       "unit_subtype": null,
       "group_label": "第四单元·汉语拼音",
-      "id": "b11-toc-0031"
+      "id": "b11-toc-0032"
     },
     {
       "kind": "section",
@@ -320,7 +328,7 @@
       "unit_type": "分组",
       "unit_subtype": null,
       "group_label": "第五单元·阅读",
-      "id": "b11-toc-0032"
+      "id": "b11-toc-0033"
     },
     {
       "kind": "lesson",
@@ -331,7 +339,7 @@
       "unit_type": "课文",
       "unit_subtype": "阅读",
       "group_label": "第五单元·阅读",
-      "id": "b11-toc-0033"
+      "id": "b11-toc-0034"
     },
     {
       "kind": "lesson",
@@ -342,7 +350,7 @@
       "unit_type": "课文",
       "unit_subtype": "阅读",
       "group_label": "第五单元·阅读",
-      "id": "b11-toc-0034"
+      "id": "b11-toc-0035"
     },
     {
       "kind": "lesson",
@@ -353,7 +361,7 @@
       "unit_type": "课文",
       "unit_subtype": "阅读",
       "group_label": "第五单元·阅读",
-      "id": "b11-toc-0035"
+      "id": "b11-toc-0036"
     },
     {
       "kind": "lesson",
@@ -364,7 +372,7 @@
       "unit_type": "课文",
       "unit_subtype": "阅读",
       "group_label": "第五单元·阅读",
-      "id": "b11-toc-0036"
+      "id": "b11-toc-0037"
     },
     {
       "kind": "garden",
@@ -373,7 +381,7 @@
       "unit_type": "语文园地",
       "unit_subtype": null,
       "group_label": "第五单元·阅读",
-      "id": "b11-toc-0037"
+      "id": "b11-toc-0038"
     },
     {
       "kind": "section",
@@ -381,7 +389,7 @@
       "unit_type": "分组",
       "unit_subtype": null,
       "group_label": "第六单元·识字",
-      "id": "b11-toc-0038"
+      "id": "b11-toc-0039"
     },
     {
       "kind": "lesson",
@@ -392,7 +400,7 @@
       "unit_type": "课文",
       "unit_subtype": "识字",
       "group_label": "第六单元·识字",
-      "id": "b11-toc-0039"
+      "id": "b11-toc-0040"
     },
     {
       "kind": "lesson",
@@ -403,7 +411,7 @@
       "unit_type": "课文",
       "unit_subtype": "识字",
       "group_label": "第六单元·识字",
-      "id": "b11-toc-0040"
+      "id": "b11-toc-0041"
     },
     {
       "kind": "lesson",
@@ -414,7 +422,7 @@
       "unit_type": "课文",
       "unit_subtype": "识字",
       "group_label": "第六单元·识字",
-      "id": "b11-toc-0041"
+      "id": "b11-toc-0042"
     },
     {
       "kind": "lesson",
@@ -425,7 +433,7 @@
       "unit_type": "课文",
       "unit_subtype": "识字",
       "group_label": "第六单元·识字",
-      "id": "b11-toc-0042"
+      "id": "b11-toc-0043"
     },
     {
       "kind": "garden",
@@ -434,7 +442,7 @@
       "unit_type": "语文园地",
       "unit_subtype": null,
       "group_label": "第六单元·识字",
-      "id": "b11-toc-0043"
+      "id": "b11-toc-0044"
     },
     {
       "kind": "section",
@@ -442,7 +450,7 @@
       "unit_type": "分组",
       "unit_subtype": null,
       "group_label": "第七单元·阅读",
-      "id": "b11-toc-0044"
+      "id": "b11-toc-0045"
     },
     {
       "kind": "lesson",
@@ -453,7 +461,7 @@
       "unit_type": "课文",
       "unit_subtype": "阅读",
       "group_label": "第七单元·阅读",
-      "id": "b11-toc-0045"
+      "id": "b11-toc-0046"
     },
     {
       "kind": "lesson",
@@ -464,7 +472,7 @@
       "unit_type": "课文",
       "unit_subtype": "阅读",
       "group_label": "第七单元·阅读",
-      "id": "b11-toc-0046"
+      "id": "b11-toc-0047"
     },
     {
       "kind": "lesson",
@@ -475,7 +483,7 @@
       "unit_type": "课文",
       "unit_subtype": "阅读",
       "group_label": "第七单元·阅读",
-      "id": "b11-toc-0047"
+      "id": "b11-toc-0048"
     },
     {
       "kind": "garden",
@@ -484,7 +492,7 @@
       "unit_type": "语文园地",
       "unit_subtype": null,
       "group_label": "第七单元·阅读",
-      "id": "b11-toc-0048"
+      "id": "b11-toc-0049"
     },
     {
       "kind": "section",
@@ -492,7 +500,7 @@
       "unit_type": "分组",
       "unit_subtype": null,
       "group_label": "第八单元·阅读",
-      "id": "b11-toc-0049"
+      "id": "b11-toc-0050"
     },
     {
       "kind": "lesson",
@@ -503,7 +511,7 @@
       "unit_type": "课文",
       "unit_subtype": "阅读",
       "group_label": "第八单元·阅读",
-      "id": "b11-toc-0050"
+      "id": "b11-toc-0051"
     },
     {
       "kind": "lesson",
@@ -514,7 +522,7 @@
       "unit_type": "课文",
       "unit_subtype": "阅读",
       "group_label": "第八单元·阅读",
-      "id": "b11-toc-0051"
+      "id": "b11-toc-0052"
     },
     {
       "kind": "lesson",
@@ -525,7 +533,7 @@
       "unit_type": "课文",
       "unit_subtype": "阅读",
       "group_label": "第八单元·阅读",
-      "id": "b11-toc-0052"
+      "id": "b11-toc-0053"
     },
     {
       "kind": "garden",
@@ -534,49 +542,49 @@
       "unit_type": "语文园地",
       "unit_subtype": null,
       "group_label": "第八单元·阅读",
-      "id": "b11-toc-0053"
+      "id": "b11-toc-0054"
     }
   ],
   "groups": [
     {
       "group_id": 1,
-      "group_label": null,
+      "group_label": "我上学了",
       "units": [
         {
           "kind": "sublesson",
           "title": "我是中国人",
           "page": 2,
-          "unit_type": "课文",
+          "unit_type": "入学教育",
           "unit_subtype": null,
-          "group_label": null,
-          "id": "b11-toc-0001"
+          "group_label": "我上学了",
+          "id": "b11-toc-0002"
         },
         {
           "kind": "sublesson",
           "title": "我爱我们的祖国",
           "page": 4,
-          "unit_type": "课文",
+          "unit_type": "入学教育",
           "unit_subtype": null,
-          "group_label": null,
-          "id": "b11-toc-0002"
+          "group_label": "我上学了",
+          "id": "b11-toc-0003"
         },
         {
           "kind": "sublesson",
           "title": "我是小学生",
           "page": 6,
-          "unit_type": "课文",
+          "unit_type": "入学教育",
           "unit_subtype": null,
-          "group_label": null,
-          "id": "b11-toc-0003"
+          "group_label": "我上学了",
+          "id": "b11-toc-0004"
         },
         {
           "kind": "sublesson",
           "title": "我爱学语文",
           "page": 7,
-          "unit_type": "课文",
+          "unit_type": "入学教育",
           "unit_subtype": null,
-          "group_label": null,
-          "id": "b11-toc-0004"
+          "group_label": "我上学了",
+          "id": "b11-toc-0005"
         }
       ]
     },
@@ -593,7 +601,7 @@
           "unit_type": "课文",
           "unit_subtype": "识字",
           "group_label": "第一单元·识字",
-          "id": "b11-toc-0006"
+          "id": "b11-toc-0007"
         },
         {
           "kind": "lesson",
@@ -604,7 +612,7 @@
           "unit_type": "课文",
           "unit_subtype": "识字",
           "group_label": "第一单元·识字",
-          "id": "b11-toc-0007"
+          "id": "b11-toc-0008"
         },
         {
           "kind": "lesson",
@@ -615,7 +623,7 @@
           "unit_type": "课文",
           "unit_subtype": "识字",
           "group_label": "第一单元·识字",
-          "id": "b11-toc-0008"
+          "id": "b11-toc-0009"
         },
         {
           "kind": "lesson",
@@ -626,7 +634,7 @@
           "unit_type": "课文",
           "unit_subtype": "识字",
           "group_label": "第一单元·识字",
-          "id": "b11-toc-0009"
+          "id": "b11-toc-0010"
         },
         {
           "kind": "garden",
@@ -635,7 +643,7 @@
           "unit_type": "语文园地",
           "unit_subtype": null,
           "group_label": "第一单元·识字",
-          "id": "b11-toc-0010"
+          "id": "b11-toc-0011"
         },
         {
           "kind": "reading_club",
@@ -645,7 +653,7 @@
           "unit_type": "快乐读书吧",
           "unit_subtype": null,
           "group_label": "第一单元·识字",
-          "id": "b11-toc-0011"
+          "id": "b11-toc-0012"
         }
       ]
     },
@@ -662,7 +670,7 @@
           "unit_type": "课文",
           "unit_subtype": "汉语拼音",
           "group_label": "第二单元·汉语拼音",
-          "id": "b11-toc-0013"
+          "id": "b11-toc-0014"
         },
         {
           "kind": "lesson",
@@ -673,7 +681,7 @@
           "unit_type": "课文",
           "unit_subtype": "汉语拼音",
           "group_label": "第二单元·汉语拼音",
-          "id": "b11-toc-0014"
+          "id": "b11-toc-0015"
         },
         {
           "kind": "lesson",
@@ -684,7 +692,7 @@
           "unit_type": "课文",
           "unit_subtype": "汉语拼音",
           "group_label": "第二单元·汉语拼音",
-          "id": "b11-toc-0015"
+          "id": "b11-toc-0016"
         },
         {
           "kind": "lesson",
@@ -695,7 +703,7 @@
           "unit_type": "课文",
           "unit_subtype": "汉语拼音",
           "group_label": "第二单元·汉语拼音",
-          "id": "b11-toc-0016"
+          "id": "b11-toc-0017"
         },
         {
           "kind": "garden",
@@ -704,7 +712,7 @@
           "unit_type": "语文园地",
           "unit_subtype": null,
           "group_label": "第二单元·汉语拼音",
-          "id": "b11-toc-0017"
+          "id": "b11-toc-0018"
         }
       ]
     },
@@ -721,7 +729,7 @@
           "unit_type": "课文",
           "unit_subtype": "汉语拼音",
           "group_label": "第三单元·汉语拼音",
-          "id": "b11-toc-0019"
+          "id": "b11-toc-0020"
         },
         {
           "kind": "lesson",
@@ -732,7 +740,7 @@
           "unit_type": "课文",
           "unit_subtype": "汉语拼音",
           "group_label": "第三单元·汉语拼音",
-          "id": "b11-toc-0020"
+          "id": "b11-toc-0021"
         },
         {
           "kind": "lesson",
@@ -743,7 +751,7 @@
           "unit_type": "课文",
           "unit_subtype": "汉语拼音",
           "group_label": "第三单元·汉语拼音",
-          "id": "b11-toc-0021"
+          "id": "b11-toc-0022"
         },
         {
           "kind": "lesson",
@@ -754,7 +762,7 @@
           "unit_type": "课文",
           "unit_subtype": "汉语拼音",
           "group_label": "第三单元·汉语拼音",
-          "id": "b11-toc-0022"
+          "id": "b11-toc-0023"
         },
         {
           "kind": "lesson",
@@ -765,7 +773,7 @@
           "unit_type": "课文",
           "unit_subtype": "汉语拼音",
           "group_label": "第三单元·汉语拼音",
-          "id": "b11-toc-0023"
+          "id": "b11-toc-0024"
         },
         {
           "kind": "garden",
@@ -774,7 +782,7 @@
           "unit_type": "语文园地",
           "unit_subtype": null,
           "group_label": "第三单元·汉语拼音",
-          "id": "b11-toc-0024"
+          "id": "b11-toc-0025"
         }
       ]
     },
@@ -791,7 +799,7 @@
           "unit_type": "课文",
           "unit_subtype": "汉语拼音",
           "group_label": "第四单元·汉语拼音",
-          "id": "b11-toc-0026"
+          "id": "b11-toc-0027"
         },
         {
           "kind": "lesson",
@@ -802,7 +810,7 @@
           "unit_type": "课文",
           "unit_subtype": "汉语拼音",
           "group_label": "第四单元·汉语拼音",
-          "id": "b11-toc-0027"
+          "id": "b11-toc-0028"
         },
         {
           "kind": "lesson",
@@ -813,7 +821,7 @@
           "unit_type": "课文",
           "unit_subtype": "汉语拼音",
           "group_label": "第四单元·汉语拼音",
-          "id": "b11-toc-0028"
+          "id": "b11-toc-0029"
         },
         {
           "kind": "lesson",
@@ -824,7 +832,7 @@
           "unit_type": "课文",
           "unit_subtype": "汉语拼音",
           "group_label": "第四单元·汉语拼音",
-          "id": "b11-toc-0029"
+          "id": "b11-toc-0030"
         },
         {
           "kind": "lesson",
@@ -835,7 +843,7 @@
           "unit_type": "课文",
           "unit_subtype": "汉语拼音",
           "group_label": "第四单元·汉语拼音",
-          "id": "b11-toc-0030"
+          "id": "b11-toc-0031"
         },
         {
           "kind": "garden",
@@ -844,7 +852,7 @@
           "unit_type": "语文园地",
           "unit_subtype": null,
           "group_label": "第四单元·汉语拼音",
-          "id": "b11-toc-0031"
+          "id": "b11-toc-0032"
         }
       ]
     },
@@ -861,7 +869,7 @@
           "unit_type": "课文",
           "unit_subtype": "阅读",
           "group_label": "第五单元·阅读",
-          "id": "b11-toc-0033"
+          "id": "b11-toc-0034"
         },
         {
           "kind": "lesson",
@@ -872,7 +880,7 @@
           "unit_type": "课文",
           "unit_subtype": "阅读",
           "group_label": "第五单元·阅读",
-          "id": "b11-toc-0034"
+          "id": "b11-toc-0035"
         },
         {
           "kind": "lesson",
@@ -883,7 +891,7 @@
           "unit_type": "课文",
           "unit_subtype": "阅读",
           "group_label": "第五单元·阅读",
-          "id": "b11-toc-0035"
+          "id": "b11-toc-0036"
         },
         {
           "kind": "lesson",
@@ -894,7 +902,7 @@
           "unit_type": "课文",
           "unit_subtype": "阅读",
           "group_label": "第五单元·阅读",
-          "id": "b11-toc-0036"
+          "id": "b11-toc-0037"
         },
         {
           "kind": "garden",
@@ -903,7 +911,7 @@
           "unit_type": "语文园地",
           "unit_subtype": null,
           "group_label": "第五单元·阅读",
-          "id": "b11-toc-0037"
+          "id": "b11-toc-0038"
         }
       ]
     },
@@ -920,7 +928,7 @@
           "unit_type": "课文",
           "unit_subtype": "识字",
           "group_label": "第六单元·识字",
-          "id": "b11-toc-0039"
+          "id": "b11-toc-0040"
         },
         {
           "kind": "lesson",
@@ -931,7 +939,7 @@
           "unit_type": "课文",
           "unit_subtype": "识字",
           "group_label": "第六单元·识字",
-          "id": "b11-toc-0040"
+          "id": "b11-toc-0041"
         },
         {
           "kind": "lesson",
@@ -942,7 +950,7 @@
           "unit_type": "课文",
           "unit_subtype": "识字",
           "group_label": "第六单元·识字",
-          "id": "b11-toc-0041"
+          "id": "b11-toc-0042"
         },
         {
           "kind": "lesson",
@@ -953,7 +961,7 @@
           "unit_type": "课文",
           "unit_subtype": "识字",
           "group_label": "第六单元·识字",
-          "id": "b11-toc-0042"
+          "id": "b11-toc-0043"
         },
         {
           "kind": "garden",
@@ -962,7 +970,7 @@
           "unit_type": "语文园地",
           "unit_subtype": null,
           "group_label": "第六单元·识字",
-          "id": "b11-toc-0043"
+          "id": "b11-toc-0044"
         }
       ]
     },
@@ -979,7 +987,7 @@
           "unit_type": "课文",
           "unit_subtype": "阅读",
           "group_label": "第七单元·阅读",
-          "id": "b11-toc-0045"
+          "id": "b11-toc-0046"
         },
         {
           "kind": "lesson",
@@ -990,7 +998,7 @@
           "unit_type": "课文",
           "unit_subtype": "阅读",
           "group_label": "第七单元·阅读",
-          "id": "b11-toc-0046"
+          "id": "b11-toc-0047"
         },
         {
           "kind": "lesson",
@@ -1001,7 +1009,7 @@
           "unit_type": "课文",
           "unit_subtype": "阅读",
           "group_label": "第七单元·阅读",
-          "id": "b11-toc-0047"
+          "id": "b11-toc-0048"
         },
         {
           "kind": "garden",
@@ -1010,7 +1018,7 @@
           "unit_type": "语文园地",
           "unit_subtype": null,
           "group_label": "第七单元·阅读",
-          "id": "b11-toc-0048"
+          "id": "b11-toc-0049"
         }
       ]
     },
@@ -1027,7 +1035,7 @@
           "unit_type": "课文",
           "unit_subtype": "阅读",
           "group_label": "第八单元·阅读",
-          "id": "b11-toc-0050"
+          "id": "b11-toc-0051"
         },
         {
           "kind": "lesson",
@@ -1038,7 +1046,7 @@
           "unit_type": "课文",
           "unit_subtype": "阅读",
           "group_label": "第八单元·阅读",
-          "id": "b11-toc-0051"
+          "id": "b11-toc-0052"
         },
         {
           "kind": "lesson",
@@ -1049,7 +1057,7 @@
           "unit_type": "课文",
           "unit_subtype": "阅读",
           "group_label": "第八单元·阅读",
-          "id": "b11-toc-0052"
+          "id": "b11-toc-0053"
         },
         {
           "kind": "garden",
@@ -1058,7 +1066,7 @@
           "unit_type": "语文园地",
           "unit_subtype": null,
           "group_label": "第八单元·阅读",
-          "id": "b11-toc-0053"
+          "id": "b11-toc-0054"
         }
       ]
     }
@@ -1110,10 +1118,11 @@
     "10 雨点儿",
     "语文园地八"
   ],
-  "entry_count": 53,
+  "entry_count": 54,
   "flat_count": 45,
   "group_count": 9,
   "source_lines": [
+    "我上学了",
     "",
     " 我是中国人                  2",
     " 我爱我们的祖国                4",
@@ -1217,6 +1226,6 @@
     "◎ 语文园地八    101",
     ""
   ],
-  "source_text": "\n 我是中国人                  2\n 我爱我们的祖国                4\n 我是小学生                  6\n 我爱学语文                  7\n\n第一单元·识字\n\n1 天地人           8\n\n2 金木水火土         9\n\n3 口耳目手足         11\n\n4 日月山川          13\n\n◎ 语文园地一         15\n\n◎ 快乐读书吧  读书真快乐  19\n\n第二单元·汉语拼音\n\n1 aoe           20\n\n2 iuü           22\n\n3 bpmf          24\n\n4 dtnl          26\n\n◎ 语文园地二         28\n第三单元·汉语拼音\n\n5 gh                32\n\n6 jqx               34\n\n7 zcs               36\n\n8 zh ch sh r        38\n\n9 yw                40\n\n◎ 语文园地三             42\n\n第四单元·汉语拼音\n\n10 ai ei ui         45\n\n11 ao ou iu         47\n\n12 ie üe er         49\n\n13 an en in un ün   51\n\n14 ang eng ing ong  54\n\n◎ 语文园地四             56\n\n第五单元·阅读\n\n1 秋天                60\n\n2 江南                62\n\n3 雪地里的小画家           64\n\n4 四季                66\n\n◎ 语文园地五             68\n第六单元·识字\n\n5 对韵歌      73\n\n6 日月明      74\n\n7 小书包      76\n\n8 升国旗      78\n\n◎ 语文园地六    80\n\n第七单元·阅读\n\n5 小小的船     84\n\n6 影子       86\n\n7 两件宝      88\n\n◎ 语文园地七    90\n\n第八单元·阅读\n\n8 比尾巴      95\n\n9 乌鸦喝水     97\n\n10 雨点儿     99\n\n◎ 语文园地八    101\n",
+  "source_text": "我上学了\n\n 我是中国人                  2\n 我爱我们的祖国                4\n 我是小学生                  6\n 我爱学语文                  7\n\n第一单元·识字\n\n1 天地人           8\n\n2 金木水火土         9\n\n3 口耳目手足         11\n\n4 日月山川          13\n\n◎ 语文园地一         15\n\n◎ 快乐读书吧  读书真快乐  19\n\n第二单元·汉语拼音\n\n1 aoe           20\n\n2 iuü           22\n\n3 bpmf          24\n\n4 dtnl          26\n\n◎ 语文园地二         28\n第三单元·汉语拼音\n\n5 gh                32\n\n6 jqx               34\n\n7 zcs               36\n\n8 zh ch sh r        38\n\n9 yw                40\n\n◎ 语文园地三             42\n\n第四单元·汉语拼音\n\n10 ai ei ui         45\n\n11 ao ou iu         47\n\n12 ie üe er         49\n\n13 an en in un ün   51\n\n14 ang eng ing ong  54\n\n◎ 语文园地四             56\n\n第五单元·阅读\n\n1 秋天                60\n\n2 江南                62\n\n3 雪地里的小画家           64\n\n4 四季                66\n\n◎ 语文园地五             68\n第六单元·识字\n\n5 对韵歌      73\n\n6 日月明      74\n\n7 小书包      76\n\n8 升国旗      78\n\n◎ 语文园地六    80\n\n第七单元·阅读\n\n5 小小的船     84\n\n6 影子       86\n\n7 两件宝      88\n\n◎ 语文园地七    90\n\n第八单元·阅读\n\n8 比尾巴      95\n\n9 乌鸦喝水     97\n\n10 雨点儿     99\n\n◎ 语文园地八    101\n",
   "discard_log": "D:\\ah21\\textbook-parser\\output\\2026-09-16\\b11_目录.discard.log"
 }

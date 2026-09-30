@@ -9,46 +9,46 @@
       "chars": [
         {
           "char": "两",
-          "pinyin": null,
+          "pinyin": "liǎng",
           "polyphone": false
         },
         {
           "char": "条",
-          "pinyin": null,
+          "pinyin": "tiáo",
           "polyphone": false
         },
         {
           "char": "哪",
-          "pinyin": null,
+          "pinyin": "nǎ",
           "polyphone": false
         },
         {
           "char": "宽",
-          "pinyin": null,
+          "pinyin": "kuān",
           "polyphone": false
         },
         {
           "char": "那",
-          "pinyin": null,
+          "pinyin": "nà",
           "polyphone": false
         },
         {
           "char": "短",
-          "pinyin": null,
+          "pinyin": "duǎn",
           "polyphone": false
         },
         {
           "char": "孩",
-          "pinyin": null,
+          "pinyin": "hái",
           "polyphone": false
         },
         {
           "char": "成",
-          "pinyin": null,
+          "pinyin": "chéng",
           "polyphone": false
         }
       ],
-      "pinyin_line": "shEng liWn qJ hAi yWng xL zuH fA",
+      "pinyin_line": "liAng tiWo nA kuQn nS duAn hWi chRng",
       "hanzi_line": "1 两条哪宽那短孩成",
       "unit": {
         "toc_id": "b21-toc-0002",
@@ -68,46 +68,46 @@
       "chars": [
         {
           "char": "升",
-          "pinyin": null,
+          "pinyin": "shēng",
           "polyphone": false
         },
         {
           "char": "连",
-          "pinyin": null,
+          "pinyin": "lián",
           "polyphone": false
         },
         {
           "char": "起",
-          "pinyin": null,
+          "pinyin": "qǐ",
           "polyphone": false
         },
         {
           "char": "海",
-          "pinyin": null,
+          "pinyin": "hǎi",
           "polyphone": false
         },
         {
           "char": "洋",
-          "pinyin": null,
+          "pinyin": "yáng",
           "polyphone": false
         },
         {
           "char": "许",
-          "pinyin": null,
+          "pinyin": "xǔ",
           "polyphone": false
         },
         {
           "char": "作",
-          "pinyin": null,
+          "pinyin": "zuò",
           "polyphone": false
         },
         {
           "char": "法",
-          "pinyin": null,
+          "pinyin": "fǎ",
           "polyphone": false
         }
       ],
-      "pinyin_line": "rP guG yJ jUng biR qUng fQ dAn dM shI",
+      "pinyin_line": "shEng liWn qJ hAi yWng xL zuH fA",
       "hanzi_line": "2 升连起海洋许作法",
       "unit": {
         "toc_id": "b21-toc-0003",
@@ -127,56 +127,56 @@
       "chars": [
         {
           "char": "如",
-          "pinyin": null,
+          "pinyin": "rú",
           "polyphone": false
         },
         {
           "char": "果",
-          "pinyin": null,
+          "pinyin": "guǒ",
           "polyphone": false
         },
         {
           "char": "已",
-          "pinyin": null,
+          "pinyin": "yǐ",
           "polyphone": false
         },
         {
           "char": "经",
-          "pinyin": null,
+          "pinyin": "jīng",
           "polyphone": false
         },
         {
           "char": "别",
-          "pinyin": null,
+          "pinyin": "bié",
           "polyphone": false
         },
         {
           "char": "轻",
-          "pinyin": null,
+          "pinyin": "qīng",
           "polyphone": false
         },
         {
           "char": "发",
-          "pinyin": null,
+          "pinyin": "fā",
           "polyphone": false
         },
         {
           "char": "胆",
-          "pinyin": null,
+          "pinyin": "dǎn",
           "polyphone": false
         },
         {
           "char": "肚",
-          "pinyin": null,
+          "pinyin": "dù",
           "polyphone": false
         },
         {
           "char": "识",
-          "pinyin": null,
+          "pinyin": "shí",
           "polyphone": false
         }
       ],
-      "pinyin_line": "",
+      "pinyin_line": "rP guG yJ jUng biR qUng fQ dAn dM shI",
       "hanzi_line": "3 如果已经别轻发胆肚识",
       "unit": {
         "toc_id": "b21-toc-0004",
@@ -196,16 +196,16 @@
       "chars": [
         {
           "char": "转",
-          "pinyin": null,
+          "pinyin": "zhuǎn",
           "polyphone": false
         },
         {
           "char": "夹",
-          "pinyin": null,
+          "pinyin": "jiā",
           "polyphone": false
         }
       ],
-      "pinyin_line": "chM kuSi zuH yuWn qPn duK lJng",
+      "pinyin_line": "zhuAn jiQ",
       "hanzi_line": "语文园地一  zhuAn jiQ\n       转夹",
       "unit": {
         "toc_id": "b21-toc-0005",
@@ -225,41 +225,41 @@
       "chars": [
         {
           "char": "处",
-          "pinyin": null,
+          "pinyin": "chù",
           "polyphone": false
         },
         {
           "char": "块",
-          "pinyin": null,
+          "pinyin": "kuài",
           "polyphone": false
         },
         {
           "char": "座",
-          "pinyin": null,
+          "pinyin": "zuò",
           "polyphone": false
         },
         {
           "char": "园",
-          "pinyin": null,
+          "pinyin": "yuán",
           "polyphone": false
         },
         {
           "char": "群",
-          "pinyin": null,
+          "pinyin": "qún",
           "polyphone": false
         },
         {
           "char": "队",
-          "pinyin": null,
+          "pinyin": "duì",
           "polyphone": false
         },
         {
           "char": "领",
-          "pinyin": null,
+          "pinyin": "lǐng",
           "polyphone": false
         }
       ],
-      "pinyin_line": "shM zhU yWng sTng bAi huS jUn guK",
+      "pinyin_line": "chM kuSi zuH yuWn qPn duK lJng",
       "hanzi_line": "1 处块座园群队领",
       "unit": {
         "toc_id": "b21-toc-0015",
@@ -279,46 +279,46 @@
       "chars": [
         {
           "char": "树",
-          "pinyin": null,
+          "pinyin": "shù",
           "polyphone": false
         },
         {
           "char": "之",
-          "pinyin": null,
+          "pinyin": "zhī",
           "polyphone": false
         },
         {
           "char": "杨",
-          "pinyin": null,
+          "pinyin": "yáng",
           "polyphone": false
         },
         {
           "char": "松",
-          "pinyin": null,
+          "pinyin": "sōng",
           "polyphone": false
         },
         {
           "char": "柏",
-          "pinyin": null,
+          "pinyin": "bǎi",
           "polyphone": false
         },
         {
           "char": "化",
-          "pinyin": null,
+          "pinyin": "huà",
           "polyphone": false
         },
         {
           "char": "金",
-          "pinyin": null,
+          "pinyin": "jīn",
           "polyphone": false
         },
         {
           "char": "桂",
-          "pinyin": null,
+          "pinyin": "guì",
           "polyphone": false
         }
       ],
-      "pinyin_line": "pQi shK jiF cAi cYng xiO pRng yGu bAo hM",
+      "pinyin_line": "shM zhU yWng sTng bAi huS jUn guK",
       "hanzi_line": "2 树之杨松柏化金桂",
       "unit": {
         "toc_id": "b21-toc-0016",
@@ -338,56 +338,56 @@
       "chars": [
         {
           "char": "拍",
-          "pinyin": null,
+          "pinyin": "pāi",
           "polyphone": false
         },
         {
           "char": "世",
-          "pinyin": null,
+          "pinyin": "shì",
           "polyphone": false
         },
         {
           "char": "界",
-          "pinyin": null,
+          "pinyin": "jiè",
           "polyphone": false
         },
         {
           "char": "彩",
-          "pinyin": null,
+          "pinyin": "cǎi",
           "polyphone": false
         },
         {
           "char": "丛",
-          "pinyin": null,
+          "pinyin": "cóng",
           "polyphone": false
         },
         {
           "char": "休",
-          "pinyin": null,
+          "pinyin": "xiū",
           "polyphone": false
         },
         {
           "char": "朋",
-          "pinyin": null,
+          "pinyin": "péng",
           "polyphone": false
         },
         {
           "char": "友",
-          "pinyin": null,
+          "pinyin": "yǒu",
           "polyphone": false
         },
         {
           "char": "保",
-          "pinyin": null,
+          "pinyin": "bǎo",
           "polyphone": false
         },
         {
           "char": "护",
-          "pinyin": null,
+          "pinyin": "hù",
           "polyphone": false
         }
       ],
-      "pinyin_line": "jK fRi nYng shK gL tJ xUn kL chO niWn",
+      "pinyin_line": "pQi shK jiF cAi cYng xiO pRng yGu bAo hM",
       "hanzi_line": "3 拍世界彩丛休朋友保护",
       "unit": {
         "toc_id": "b21-toc-0017",
@@ -407,56 +407,56 @@
       "chars": [
         {
           "char": "季",
-          "pinyin": null,
+          "pinyin": "jì",
           "polyphone": false
         },
         {
           "char": "肥",
-          "pinyin": null,
+          "pinyin": "féi",
           "polyphone": false
         },
         {
           "char": "农",
-          "pinyin": null,
+          "pinyin": "nóng",
           "polyphone": false
         },
         {
           "char": "事",
-          "pinyin": null,
+          "pinyin": "shì",
           "polyphone": false
         },
         {
           "char": "谷",
-          "pinyin": null,
+          "pinyin": "gǔ",
           "polyphone": false
         },
         {
           "char": "体",
-          "pinyin": null,
+          "pinyin": "tǐ",
           "polyphone": false
         },
         {
           "char": "辛",
-          "pinyin": null,
+          "pinyin": "xīn",
           "polyphone": false
         },
         {
           "char": "苦",
-          "pinyin": null,
+          "pinyin": "kǔ",
           "polyphone": false
         },
         {
           "char": "初",
-          "pinyin": null,
+          "pinyin": "chū",
           "polyphone": false
         },
         {
           "char": "年",
-          "pinyin": null,
+          "pinyin": "nián",
           "polyphone": false
         }
       ],
-      "pinyin_line": "",
+      "pinyin_line": "jK fRi nYng shK gL tJ xUn kL chO niWn",
       "hanzi_line": "4 季肥农事谷体辛苦初年",
       "unit": {
         "toc_id": "b21-toc-0018",
@@ -476,16 +476,16 @@
       "chars": [
         {
           "char": "丑",
-          "pinyin": null,
+          "pinyin": "chǒu",
           "polyphone": false
         },
         {
           "char": "诚",
-          "pinyin": null,
+          "pinyin": "chéng",
           "polyphone": false
         }
       ],
-      "pinyin_line": "lK tI ma yuWn gE qiO guS a",
+      "pinyin_line": "chGu chRng",
       "hanzi_line": "语文园地二  chGu chRng\n       丑诚",
       "unit": {
         "toc_id": "b21-toc-0019",
@@ -505,46 +505,46 @@
       "chars": [
         {
           "char": "丽",
-          "pinyin": null,
+          "pinyin": "lì",
           "polyphone": false
         },
         {
           "char": "提",
-          "pinyin": null,
+          "pinyin": "tí",
           "polyphone": false
         },
         {
           "char": "吗",
-          "pinyin": null,
+          "pinyin": "ma",
           "polyphone": false
         },
         {
           "char": "圆",
-          "pinyin": null,
+          "pinyin": "yuán",
           "polyphone": false
         },
         {
           "char": "哥",
-          "pinyin": null,
+          "pinyin": "gē",
           "polyphone": false
         },
         {
           "char": "秋",
-          "pinyin": null,
+          "pinyin": "qiū",
           "polyphone": false
         },
         {
           "char": "挂",
-          "pinyin": null,
+          "pinyin": "guà",
           "polyphone": false
         },
         {
           "char": "啊",
-          "pinyin": null,
+          "pinyin": "a",
           "polyphone": false
         }
       ],
-      "pinyin_line": "bAo wWn huY xiE zGng gDi sM qL mIng xiQng",
+      "pinyin_line": "lK tI ma yuWn gE qiO guS a",
       "hanzi_line": "4 丽提吗圆哥秋挂啊",
       "unit": null
     },
@@ -555,56 +555,56 @@
       "chars": [
         {
           "char": "宝",
-          "pinyin": null,
+          "pinyin": "bǎo",
           "polyphone": false
         },
         {
           "char": "玩",
-          "pinyin": null,
+          "pinyin": "wán",
           "polyphone": false
         },
         {
           "char": "活",
-          "pinyin": null,
+          "pinyin": "huó",
           "polyphone": false
         },
         {
           "char": "些",
-          "pinyin": null,
+          "pinyin": "xiē",
           "polyphone": false
         },
         {
           "char": "总",
-          "pinyin": null,
+          "pinyin": "zǒng",
           "polyphone": false
         },
         {
           "char": "给",
-          "pinyin": null,
+          "pinyin": "gěi",
           "polyphone": false
         },
         {
           "char": "诉",
-          "pinyin": null,
+          "pinyin": "sù",
           "polyphone": false
         },
         {
           "char": "曲",
-          "pinyin": null,
+          "pinyin": "qǔ",
           "polyphone": false
         },
         {
           "char": "名",
-          "pinyin": null,
+          "pinyin": "míng",
           "polyphone": false
         },
         {
           "char": "香",
-          "pinyin": null,
+          "pinyin": "xiāng",
           "polyphone": false
         }
       ],
-      "pinyin_line": "shL wAn nAi nIn yR hDn biSn shWo zhQng hSn",
+      "pinyin_line": "bAo wWn huY xiE zGng gDi sM qL mIng xiQng",
       "hanzi_line": "     5 宝玩活些总给诉曲名香",
       "unit": null
     },
@@ -615,56 +615,56 @@
       "chars": [
         {
           "char": "数",
-          "pinyin": null,
+          "pinyin": "shǔ",
           "polyphone": false
         },
         {
           "char": "晚",
-          "pinyin": null,
+          "pinyin": "wǎn",
           "polyphone": false
         },
         {
           "char": "奶",
-          "pinyin": null,
+          "pinyin": "nǎi",
           "polyphone": false
         },
         {
           "char": "您",
-          "pinyin": null,
+          "pinyin": "nín",
           "polyphone": false
         },
         {
           "char": "爷",
-          "pinyin": null,
+          "pinyin": "yé",
           "polyphone": false
         },
         {
           "char": "很",
-          "pinyin": null,
+          "pinyin": "hěn",
           "polyphone": false
         },
         {
           "char": "变",
-          "pinyin": null,
+          "pinyin": "biàn",
           "polyphone": false
         },
         {
           "char": "勺",
-          "pinyin": null,
+          "pinyin": "sháo",
           "polyphone": false
         },
         {
           "char": "张",
-          "pinyin": null,
+          "pinyin": "zhāng",
           "polyphone": false
         },
         {
           "char": "汉",
-          "pinyin": null,
+          "pinyin": "hàn",
           "polyphone": false
         }
       ],
-      "pinyin_line": "",
+      "pinyin_line": "shL wAn nAi nIn yR hDn biSn shWo zhQng hSn",
       "hanzi_line": "     6 数晚奶您爷很变勺张汉",
       "unit": null
     },
@@ -675,26 +675,26 @@
       "chars": [
         {
           "char": "图",
-          "pinyin": null,
+          "pinyin": "tú",
           "polyphone": false
         },
         {
           "char": "泥",
-          "pinyin": null,
+          "pinyin": "ní",
           "polyphone": false
         },
         {
           "char": "铁",
-          "pinyin": null,
+          "pinyin": "tiě",
           "polyphone": false
         },
         {
           "char": "环",
-          "pinyin": null,
+          "pinyin": "huán",
           "polyphone": false
         }
       ],
-      "pinyin_line": "yU jKn qiYng cRng zhSo lP yQn chuQn zhI yIn",
+      "pinyin_line": "tP nI tiD huWn",
       "hanzi_line": "     语文园地三   tP nI tiD huWn\n            图泥铁环",
       "unit": null
     },
@@ -705,56 +705,56 @@
       "chars": [
         {
           "char": "依",
-          "pinyin": null,
+          "pinyin": "yī",
           "polyphone": false
         },
         {
           "char": "尽",
-          "pinyin": null,
+          "pinyin": "jìn",
           "polyphone": false
         },
         {
           "char": "穷",
-          "pinyin": null,
+          "pinyin": "qióng",
           "polyphone": false
         },
         {
           "char": "层",
-          "pinyin": null,
+          "pinyin": "céng",
           "polyphone": false
         },
         {
           "char": "照",
-          "pinyin": null,
+          "pinyin": "zhào",
           "polyphone": false
         },
         {
           "char": "炉",
-          "pinyin": null,
+          "pinyin": "lú",
           "polyphone": false
         },
         {
           "char": "烟",
-          "pinyin": null,
+          "pinyin": "yān",
           "polyphone": false
         },
         {
           "char": "川",
-          "pinyin": null,
+          "pinyin": "chuān",
           "polyphone": false
         },
         {
           "char": "直",
-          "pinyin": null,
+          "pinyin": "zhí",
           "polyphone": false
         },
         {
           "char": "银",
-          "pinyin": null,
+          "pinyin": "yín",
           "polyphone": false
         }
       ],
-      "pinyin_line": "xiQn dJng jM wFi shAn gGu xIng zhuSng",
+      "pinyin_line": "yU jKn qiYng cRng zhSo lP yQn chuQn zhI yIn",
       "hanzi_line": "     7 依尽穷层照炉烟川直银",
       "unit": null
     },
@@ -765,46 +765,46 @@
       "chars": [
         {
           "char": "仙",
-          "pinyin": null,
+          "pinyin": "xiān",
           "polyphone": false
         },
         {
           "char": "顶",
-          "pinyin": null,
+          "pinyin": "dǐng",
           "polyphone": false
         },
         {
           "char": "巨",
-          "pinyin": null,
+          "pinyin": "jù",
           "polyphone": false
         },
         {
           "char": "位",
-          "pinyin": null,
+          "pinyin": "wèi",
           "polyphone": false
         },
         {
           "char": "闪",
-          "pinyin": null,
+          "pinyin": "shǎn",
           "polyphone": false
         },
         {
           "char": "狗",
-          "pinyin": null,
+          "pinyin": "gǒu",
           "polyphone": false
         },
         {
           "char": "形",
-          "pinyin": null,
+          "pinyin": "xíng",
           "polyphone": false
         },
         {
           "char": "状",
-          "pinyin": null,
+          "pinyin": "zhuàng",
           "polyphone": false
         }
       ],
-      "pinyin_line": "hP qO shFng dAo wQn xiSn jiM wSi",
+      "pinyin_line": "xiQn dJng jM wFi shAn gGu xIng zhuSng",
       "hanzi_line": "     8 仙顶巨位闪狗形状",
       "unit": null
     },
@@ -815,46 +815,46 @@
       "chars": [
         {
           "char": "湖",
-          "pinyin": null,
+          "pinyin": "hú",
           "polyphone": false
         },
         {
           "char": "区",
-          "pinyin": null,
+          "pinyin": "qū",
           "polyphone": false
         },
         {
           "char": "胜",
-          "pinyin": null,
+          "pinyin": "shèng",
           "polyphone": false
         },
         {
           "char": "岛",
-          "pinyin": null,
+          "pinyin": "dǎo",
           "polyphone": false
         },
         {
           "char": "弯",
-          "pinyin": null,
+          "pinyin": "wān",
           "polyphone": false
         },
         {
           "char": "现",
-          "pinyin": null,
+          "pinyin": "xiàn",
           "polyphone": false
         },
         {
           "char": "就",
-          "pinyin": null,
+          "pinyin": "jiù",
           "polyphone": false
         },
         {
           "char": "外",
-          "pinyin": null,
+          "pinyin": "wài",
           "polyphone": false
         }
       ],
-      "pinyin_line": "fFn zhU kF chRng shK kGng dKng wFi",
+      "pinyin_line": "hP qO shFng dAo wQn xiSn jiM wSi",
       "hanzi_line": "     9 湖区胜岛弯现就外",
       "unit": null
     },
@@ -865,46 +865,46 @@
       "chars": [
         {
           "char": "份",
-          "pinyin": null,
+          "pinyin": "fèn",
           "polyphone": false
         },
         {
           "char": "枝",
-          "pinyin": null,
+          "pinyin": "zhī",
           "polyphone": false
         },
         {
           "char": "客",
-          "pinyin": null,
+          "pinyin": "kè",
           "polyphone": false
         },
         {
           "char": "城",
-          "pinyin": null,
+          "pinyin": "chéng",
           "polyphone": false
         },
         {
           "char": "市",
-          "pinyin": null,
+          "pinyin": "shì",
           "polyphone": false
         },
         {
           "char": "孔",
-          "pinyin": null,
+          "pinyin": "kǒng",
           "polyphone": false
         },
         {
           "char": "钉",
-          "pinyin": null,
+          "pinyin": "dìng",
           "polyphone": false
         },
         {
           "char": "味",
-          "pinyin": null,
+          "pinyin": "wèi",
           "polyphone": false
         }
       ],
-      "pinyin_line": "",
+      "pinyin_line": "fFn zhU kF chRng shK kGng dKng wFi",
       "hanzi_line": "10 份 枝 客 城 市 孔 钉 味",
       "unit": null
     },
@@ -915,16 +915,16 @@
       "chars": [
         {
           "char": "号",
-          "pinyin": null,
+          "pinyin": "hào",
           "polyphone": false
         },
         {
           "char": "丰",
-          "pinyin": null,
+          "pinyin": "fēng",
           "polyphone": false
         }
       ],
-      "pinyin_line": "guQn ya dW huS tWi nRng xKn",
+      "pinyin_line": "hSo fEng",
       "hanzi_line": "     语文园地四  hSo fEng\n            号丰",
       "unit": null
     },
@@ -935,41 +935,41 @@
       "chars": [
         {
           "char": "观",
-          "pinyin": null,
+          "pinyin": "guān",
           "polyphone": false
         },
         {
           "char": "呀",
-          "pinyin": null,
+          "pinyin": "ya",
           "polyphone": false
         },
         {
           "char": "答",
-          "pinyin": null,
+          "pinyin": "dá",
           "polyphone": false
         },
         {
           "char": "话",
-          "pinyin": null,
+          "pinyin": "huà",
           "polyphone": false
         },
         {
           "char": "抬",
-          "pinyin": null,
+          "pinyin": "tái",
           "polyphone": false
         },
         {
           "char": "能",
-          "pinyin": null,
+          "pinyin": "néng",
           "polyphone": false
         },
         {
           "char": "信",
-          "pinyin": null,
+          "pinyin": "xìn",
           "polyphone": false
         }
       ],
-      "pinyin_line": "zhFn zuH dHng dK xiSng lDng bUng liSng",
+      "pinyin_line": "guQn ya dW huS tWi nRng xKn",
       "hanzi_line": "11 观 呀 答 话 抬 能 信",
       "unit": {
         "toc_id": "b21-toc-0027",
@@ -989,46 +989,46 @@
       "chars": [
         {
           "char": "阵",
-          "pinyin": null,
+          "pinyin": "zhèn",
           "polyphone": false
         },
         {
           "char": "做",
-          "pinyin": null,
+          "pinyin": "zuò",
           "polyphone": false
         },
         {
           "char": "冻",
-          "pinyin": null,
+          "pinyin": "dòng",
           "polyphone": false
         },
         {
           "char": "第",
-          "pinyin": null,
+          "pinyin": "dì",
           "polyphone": false
         },
         {
           "char": "像",
-          "pinyin": null,
+          "pinyin": "xiàng",
           "polyphone": false
         },
         {
           "char": "冷",
-          "pinyin": null,
+          "pinyin": "lěng",
           "polyphone": false
         },
         {
           "char": "冰",
-          "pinyin": null,
+          "pinyin": "bīng",
           "polyphone": false
         },
         {
           "char": "亮",
-          "pinyin": null,
+          "pinyin": "liàng",
           "polyphone": false
         }
       ],
-      "pinyin_line": "zhHng kE yJ cK xiAng lIn jO ba qI guSi",
+      "pinyin_line": "zhFn zuH dHng dK xiSng lDng bUng liSng",
       "hanzi_line": "12 阵 做 冻 第 像 冷 冰 亮",
       "unit": {
         "toc_id": "b21-toc-0028",
@@ -1048,56 +1048,56 @@
       "chars": [
         {
           "char": "种",
-          "pinyin": null,
+          "pinyin": "zhòng",
           "polyphone": false
         },
         {
           "char": "棵",
-          "pinyin": null,
+          "pinyin": "kē",
           "polyphone": false
         },
         {
           "char": "以",
-          "pinyin": null,
+          "pinyin": "yǐ",
           "polyphone": false
         },
         {
           "char": "次",
-          "pinyin": null,
+          "pinyin": "cì",
           "polyphone": false
         },
         {
           "char": "想",
-          "pinyin": null,
+          "pinyin": "xiǎng",
           "polyphone": false
         },
         {
           "char": "邻",
-          "pinyin": null,
+          "pinyin": "lín",
           "polyphone": false
         },
         {
           "char": "居",
-          "pinyin": null,
+          "pinyin": "jū",
           "polyphone": false
         },
         {
           "char": "吧",
-          "pinyin": null,
+          "pinyin": "ba",
           "polyphone": false
         },
         {
           "char": "奇",
-          "pinyin": null,
+          "pinyin": "qí",
           "polyphone": false
         },
         {
           "char": "怪",
-          "pinyin": null,
+          "pinyin": "guài",
           "polyphone": false
         }
       ],
-      "pinyin_line": "",
+      "pinyin_line": "zhHng kE yJ cK xiAng lIn jO ba qI guSi",
       "hanzi_line": "13 种 棵 以 次 想 邻 居 吧 奇 怪",
       "unit": {
         "toc_id": "b21-toc-0029",
@@ -1117,16 +1117,16 @@
       "chars": [
         {
           "char": "货",
-          "pinyin": null,
+          "pinyin": "huò",
           "polyphone": false
         },
         {
           "char": "科",
-          "pinyin": null,
+          "pinyin": "kē",
           "polyphone": false
         }
       ],
-      "pinyin_line": "lYu dSi chuQn shK lK lM",
+      "pinyin_line": "huH kE",
       "hanzi_line": "     语文园地五  huH kE\n            货科",
       "unit": {
         "toc_id": "b21-toc-0030",
@@ -1146,36 +1146,36 @@
       "chars": [
         {
           "char": "楼",
-          "pinyin": null,
+          "pinyin": "lóu",
           "polyphone": false
         },
         {
           "char": "代",
-          "pinyin": null,
+          "pinyin": "dài",
           "polyphone": false
         },
         {
           "char": "穿",
-          "pinyin": null,
+          "pinyin": "chuān",
           "polyphone": false
         },
         {
           "char": "视",
-          "pinyin": null,
+          "pinyin": "shì",
           "polyphone": false
         },
         {
           "char": "利",
-          "pinyin": null,
+          "pinyin": "lì",
           "polyphone": false
         },
         {
           "char": "路",
-          "pinyin": null,
+          "pinyin": "lù",
           "polyphone": false
         }
       ],
-      "pinyin_line": "tYng zhK jOn dI chWng fEi mDi zhSn shK dSi",
+      "pinyin_line": "lYu dSi chuQn shK lK lM",
       "hanzi_line": "14 楼 代 穿 视 利 路",
       "unit": {
         "toc_id": "b21-toc-0032",
@@ -1195,56 +1195,56 @@
       "chars": [
         {
           "char": "同",
-          "pinyin": null,
+          "pinyin": "tóng",
           "polyphone": false
         },
         {
           "char": "志",
-          "pinyin": null,
+          "pinyin": "zhì",
           "polyphone": false
         },
         {
           "char": "军",
-          "pinyin": null,
+          "pinyin": "jūn",
           "polyphone": false
         },
         {
           "char": "敌",
-          "pinyin": null,
+          "pinyin": "dí",
           "polyphone": false
         },
         {
           "char": "常",
-          "pinyin": null,
+          "pinyin": "cháng",
           "polyphone": false
         },
         {
           "char": "非",
-          "pinyin": null,
+          "pinyin": "fēi",
           "polyphone": false
         },
         {
           "char": "每",
-          "pinyin": null,
+          "pinyin": "měi",
           "polyphone": false
         },
         {
           "char": "战",
-          "pinyin": null,
+          "pinyin": "zhàn",
           "polyphone": false
         },
         {
           "char": "士",
-          "pinyin": null,
+          "pinyin": "shì",
           "polyphone": false
         },
         {
           "char": "戴",
-          "pinyin": null,
+          "pinyin": "dài",
           "polyphone": false
         }
       ],
-      "pinyin_line": "nWn wSng mIn yUn lJ chuSn kM lKng",
+      "pinyin_line": "tYng zhK jOn dI chWng fEi mDi zhSn shK dSi",
       "hanzi_line": "15 同 志 军 敌 常 非 每 战 士 戴",
       "unit": {
         "toc_id": "b21-toc-0033",
@@ -1264,46 +1264,46 @@
       "chars": [
         {
           "char": "难",
-          "pinyin": null,
+          "pinyin": "nán",
           "polyphone": false
         },
         {
           "char": "忘",
-          "pinyin": null,
+          "pinyin": "wàng",
           "polyphone": false
         },
         {
           "char": "民",
-          "pinyin": null,
+          "pinyin": "mín",
           "polyphone": false
         },
         {
           "char": "因",
-          "pinyin": null,
+          "pinyin": "yīn",
           "polyphone": false
         },
         {
           "char": "理",
-          "pinyin": null,
+          "pinyin": "lǐ",
           "polyphone": false
         },
         {
           "char": "串",
-          "pinyin": null,
+          "pinyin": "chuàn",
           "polyphone": false
         },
         {
           "char": "裤",
-          "pinyin": null,
+          "pinyin": "kù",
           "polyphone": false
         },
         {
           "char": "令",
-          "pinyin": null,
+          "pinyin": "lìng",
           "polyphone": false
         }
       ],
-      "pinyin_line": "fAn cOn yYu yP yuWn bFi shEng suK xiQo xU",
+      "pinyin_line": "nWn wSng mIn yUn lJ chuSn kM lKng",
       "hanzi_line": "16 难 忘 民 因 理 串 裤 令",
       "unit": {
         "toc_id": "b21-toc-0034",
@@ -1323,56 +1323,56 @@
       "chars": [
         {
           "char": "反",
-          "pinyin": null,
+          "pinyin": "fǎn",
           "polyphone": false
         },
         {
           "char": "村",
-          "pinyin": null,
+          "pinyin": "cūn",
           "polyphone": false
         },
         {
           "char": "由",
-          "pinyin": null,
+          "pinyin": "yóu",
           "polyphone": false
         },
         {
           "char": "于",
-          "pinyin": null,
+          "pinyin": "yú",
           "polyphone": false
         },
         {
           "char": "员",
-          "pinyin": null,
+          "pinyin": "yuán",
           "polyphone": false
         },
         {
           "char": "被",
-          "pinyin": null,
+          "pinyin": "bèi",
           "polyphone": false
         },
         {
           "char": "声",
-          "pinyin": null,
+          "pinyin": "shēng",
           "polyphone": false
         },
         {
           "char": "岁",
-          "pinyin": null,
+          "pinyin": "suì",
           "polyphone": false
         },
         {
           "char": "消",
-          "pinyin": null,
+          "pinyin": "xiāo",
           "polyphone": false
         },
         {
           "char": "息",
-          "pinyin": null,
+          "pinyin": "xī",
           "polyphone": false
         }
       ],
-      "pinyin_line": "",
+      "pinyin_line": "fAn cOn yYu yP yuWn bFi shEng suK xiQo xU",
       "hanzi_line": "17 反 村 由 于 员 被 声 岁 消 息",
       "unit": {
         "toc_id": "b21-toc-0035",
@@ -1392,16 +1392,16 @@
       "chars": [
         {
           "char": "抄",
-          "pinyin": null,
+          "pinyin": "chāo",
           "polyphone": false
         },
         {
           "char": "炒",
-          "pinyin": null,
+          "pinyin": "chǎo",
           "polyphone": false
         }
       ],
-      "pinyin_line": "juR miF zhTu dP yUn sK yD dU",
+      "pinyin_line": "chQo chAo",
       "hanzi_line": "语文园地六  chQo chAo\n       抄炒",
       "unit": {
         "toc_id": "b21-toc-0036",
@@ -1421,46 +1421,46 @@
       "chars": [
         {
           "char": "绝",
-          "pinyin": null,
+          "pinyin": "jué",
           "polyphone": false
         },
         {
           "char": "灭",
-          "pinyin": null,
+          "pinyin": "miè",
           "polyphone": false
         },
         {
           "char": "舟",
-          "pinyin": null,
+          "pinyin": "zhōu",
           "polyphone": false
         },
         {
           "char": "独",
-          "pinyin": null,
+          "pinyin": "dú",
           "polyphone": false
         },
         {
           "char": "阴",
-          "pinyin": null,
+          "pinyin": "yīn",
           "polyphone": false
         },
         {
           "char": "似",
-          "pinyin": null,
+          "pinyin": "sì",
           "polyphone": false
         },
         {
           "char": "野",
-          "pinyin": null,
+          "pinyin": "yě",
           "polyphone": false
         },
         {
           "char": "低",
-          "pinyin": null,
+          "pinyin": "dī",
           "polyphone": false
         }
       ],
-      "pinyin_line": "lMn chuWn mQo qiF gQi sSn bM shU",
+      "pinyin_line": "juR miF zhTu dP yUn sK yD dU",
       "hanzi_line": "18 绝 灭 舟 独 阴 似 野 低",
       "unit": {
         "toc_id": "b21-toc-0038",
@@ -1480,46 +1480,46 @@
       "chars": [
         {
           "char": "论",
-          "pinyin": null,
+          "pinyin": "lùn",
           "polyphone": false
         },
         {
           "char": "船",
-          "pinyin": null,
+          "pinyin": "chuán",
           "polyphone": false
         },
         {
           "char": "猫",
-          "pinyin": null,
+          "pinyin": "māo",
           "polyphone": false
         },
         {
           "char": "切",
-          "pinyin": null,
+          "pinyin": "qiè",
           "polyphone": false
         },
         {
           "char": "该",
-          "pinyin": null,
+          "pinyin": "gāi",
           "polyphone": false
         },
         {
           "char": "散",
-          "pinyin": null,
+          "pinyin": "sàn",
           "polyphone": false
         },
         {
           "char": "步",
-          "pinyin": null,
+          "pinyin": "bù",
           "polyphone": false
         },
         {
           "char": "失",
-          "pinyin": null,
+          "pinyin": "shī",
           "polyphone": false
         }
       ],
-      "pinyin_line": "ySo huG bSn gE de bK mWng shuI qK",
+      "pinyin_line": "lMn chuWn mQo qiF gQi sSn bM shU",
       "hanzi_line": "19 论 船 猫 切 该 散 步 失",
       "unit": {
         "toc_id": "b21-toc-0041",
@@ -1539,51 +1539,51 @@
       "chars": [
         {
           "char": "要",
-          "pinyin": null,
+          "pinyin": "yào",
           "polyphone": false
         },
         {
           "char": "伙",
-          "pinyin": null,
+          "pinyin": "huǒ",
           "polyphone": false
         },
         {
           "char": "伴",
-          "pinyin": null,
+          "pinyin": "bàn",
           "polyphone": false
         },
         {
           "char": "歌",
-          "pinyin": null,
+          "pinyin": "gē",
           "polyphone": false
         },
         {
           "char": "得",
-          "pinyin": null,
+          "pinyin": "de",
           "polyphone": false
         },
         {
           "char": "闭",
-          "pinyin": null,
+          "pinyin": "bì",
           "polyphone": false
         },
         {
           "char": "忙",
-          "pinyin": null,
+          "pinyin": "máng",
           "polyphone": false
         },
         {
           "char": "谁",
-          "pinyin": null,
+          "pinyin": "shuí",
           "polyphone": false
         },
         {
           "char": "汽",
-          "pinyin": null,
+          "pinyin": "qì",
           "polyphone": false
         }
       ],
-      "pinyin_line": "",
+      "pinyin_line": "ySo huG bSn gE de bK mWng shuI qK",
       "hanzi_line": "20 要 伙 伴 歌 得 闭 忙 谁 汽",
       "unit": {
         "toc_id": "b21-toc-0042",
@@ -1603,26 +1603,26 @@
       "chars": [
         {
           "char": "饥",
-          "pinyin": null,
+          "pinyin": "jī",
           "polyphone": false
         },
         {
           "char": "饿",
-          "pinyin": null,
+          "pinyin": "è",
           "polyphone": false
         },
         {
           "char": "宁",
-          "pinyin": null,
+          "pinyin": "níng",
           "polyphone": false
         },
         {
           "char": "库",
-          "pinyin": null,
+          "pinyin": "kù",
           "polyphone": false
         }
       ],
-      "pinyin_line": "nW zJ jI sHng yJ zDn lQ shTu jiE",
+      "pinyin_line": "jU F nIng kM",
       "hanzi_line": "语文园地七   jU F nIng kM\n       饥饿宁库",
       "unit": {
         "toc_id": "b21-toc-0043",
@@ -1642,51 +1642,51 @@
       "chars": [
         {
           "char": "拿",
-          "pinyin": null,
+          "pinyin": "ná",
           "polyphone": false
         },
         {
           "char": "仔",
-          "pinyin": null,
+          "pinyin": "zǐ",
           "polyphone": false
         },
         {
           "char": "极",
-          "pinyin": null,
+          "pinyin": "jí",
           "polyphone": false
         },
         {
           "char": "送",
-          "pinyin": null,
+          "pinyin": "sòng",
           "polyphone": false
         },
         {
           "char": "椅",
-          "pinyin": null,
+          "pinyin": "yǐ",
           "polyphone": false
         },
         {
           "char": "怎",
-          "pinyin": null,
+          "pinyin": "zěn",
           "polyphone": false
         },
         {
           "char": "拉",
-          "pinyin": null,
+          "pinyin": "lā",
           "polyphone": false
         },
         {
           "char": "收",
-          "pinyin": null,
+          "pinyin": "shōu",
           "polyphone": false
         },
         {
           "char": "接",
-          "pinyin": null,
+          "pinyin": "jiē",
           "polyphone": false
         }
       ],
-      "pinyin_line": "zhJ zhuQ xiSn chAo dSn shHu jM kO",
+      "pinyin_line": "nW zJ jI sHng yJ zDn lQ shTu jiE",
       "hanzi_line": "21 拿 仔 极 送 椅 怎 拉 收 接",
       "unit": {
         "toc_id": "b21-toc-0045",
@@ -1706,46 +1706,46 @@
       "chars": [
         {
           "char": "纸",
-          "pinyin": null,
+          "pinyin": "zhǐ",
           "polyphone": false
         },
         {
           "char": "抓",
-          "pinyin": null,
+          "pinyin": "zhuā",
           "polyphone": false
         },
         {
           "char": "线",
-          "pinyin": null,
+          "pinyin": "xiàn",
           "polyphone": false
         },
         {
           "char": "吵",
-          "pinyin": null,
+          "pinyin": "chǎo",
           "polyphone": false
         },
         {
           "char": "但",
-          "pinyin": null,
+          "pinyin": "dàn",
           "polyphone": false
         },
         {
           "char": "受",
-          "pinyin": null,
+          "pinyin": "shòu",
           "polyphone": false
         },
         {
           "char": "句",
-          "pinyin": null,
+          "pinyin": "jù",
           "polyphone": false
         },
         {
           "char": "哭",
-          "pinyin": null,
+          "pinyin": "kū",
           "polyphone": false
         }
       ],
-      "pinyin_line": "yYu xK Si ne tiSo zWn",
+      "pinyin_line": "zhJ zhuQ xiSn chAo dSn shHu jM kO",
       "hanzi_line": "22 纸 抓 线 吵 但 受 句 哭",
       "unit": {
         "toc_id": "b21-toc-0046",
@@ -1765,36 +1765,36 @@
       "chars": [
         {
           "char": "游",
-          "pinyin": null,
+          "pinyin": "yóu",
           "polyphone": false
         },
         {
           "char": "戏",
-          "pinyin": null,
+          "pinyin": "xì",
           "polyphone": false
         },
         {
           "char": "爱",
-          "pinyin": null,
+          "pinyin": "ài",
           "polyphone": false
         },
         {
           "char": "呢",
-          "pinyin": null,
+          "pinyin": "ne",
           "polyphone": false
         },
         {
           "char": "跳",
-          "pinyin": null,
+          "pinyin": "tiào",
           "polyphone": false
         },
         {
           "char": "咱",
-          "pinyin": null,
+          "pinyin": "zán",
           "polyphone": false
         }
       ],
-      "pinyin_line": "",
+      "pinyin_line": "yYu xK Si ne tiSo zWn",
       "hanzi_line": "23 游 戏 爱 呢 跳 咱",
       "unit": {
         "toc_id": "b21-toc-0047",
@@ -1814,16 +1814,16 @@
       "chars": [
         {
           "char": "狼",
-          "pinyin": null,
+          "pinyin": "láng",
           "polyphone": false
         },
         {
           "char": "蛇",
-          "pinyin": null,
+          "pinyin": "shé",
           "polyphone": false
         }
       ],
-      "pinyin_line": "",
+      "pinyin_line": "lWng shR",
       "hanzi_line": "语文园地八  lWng shR\n       狼蛇",
       "unit": {
         "toc_id": "b21-toc-0048",

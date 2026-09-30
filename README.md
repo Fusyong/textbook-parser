@@ -24,14 +24,31 @@ python -m venv .venv
 ```
 material/{批次ID}/     # 如 2026-04-02、2026-09-16；放该学期 PDF 与版式 .md
 output/{批次ID}/       # 该批解析结果（历史批保留，勿删）
+tmp/parse-scratch/     # --scratch 兼容性测试输出（不覆盖正式 output）
 configs/books.yaml     # 槽位级默认（b11…b62 的栏数、extractors_drop 等）
 configs/batches.yaml   # 可选；批次清单与启用状态
+configs/active_sources.yaml  # 当前允许正式解析的教材路径白名单
 configs/defaults.yaml  # 提取器共用参数
 ```
 
 批次 ID 为 `YYYY-MM` 或 `YYYY-MM-DD`。册次按文件名中的「一年级上册」…「六年级下册」关键词识别，完整文件名可变。
 
-成套示例：选「2026五下」时，锚定该年该批的五下；其上一学期册来自上一批；锚定之后的年级空缺为正常；应有之批缺册时向前一套顶替并提示。
+**批次惯例**：每学期一批；下半年批次多为各年级**上册**，上半年批次多为各年级**下册**（不必凑齐 12 册）。
+
+**成套与界面**：用户可选的锚点**只来自最新一批**中实际有的册（如当前最新为 `2026-09-16` 上册，则可选「2026一上」…「2026六上」）。成套向历史批错位回溯（上一批一上 ↔ 下一批一下）；锚定之后的学期空缺为正常；应有之批缺册时顶替，下拉标「有替换」，并在页面顶部提示条写明教材替换情况。
+
+**当前解析白名单**：`configs/active_sources.yaml` 列出正在核对的版式文件（或批次目录）。启用后，`convert` / `extract` / `toc-chunk` 默认**只允许**写入与这些文件相关的正式数据；其它册会被拒绝或跳过，以免覆盖已核对结果。对历史批做兼容性测试时请加 `--scratch`，结果写入 `tmp/parse-scratch/{batch}/`。
+
+```bash
+# 查看当前白名单
+python -m textbook_parser active --project-root .
+
+# 正式解析（须在白名单内）
+python -m textbook_parser extract --book b11 --extractor 识字表 --project-root .
+
+# 兼容性测试：不改正式 output
+python -m textbook_parser extract --book b11 --batch 2025-12-01 --extractor 识字表 --scratch --project-root .
+```
 
 ## 每学期更新步骤
 
@@ -52,6 +69,7 @@ python -m textbook_parser extract-all --extractor 识字表 --project-root .
 python -m textbook_parser extract-all --extractor 写字表 --project-root .
 python -m textbook_parser extract-all --extractor 词语表 --project-root .
 python -m textbook_parser toc-chunk --project-root . --books --continue-on-error
+
 ```
 
 4. 导出网页数据（汇总**所有**已解析批次并生成成套目录）：
@@ -71,6 +89,8 @@ python scripts/export_web_data.py
 书册槽位配置见 `configs/books.yaml`（与批次无关）。
 
 可选 `configs/batches.yaml` 登记批次顺序；也可用扫描 `material/` 下日期目录自动发现。
+
+当前正在解析的教材路径见 `configs/active_sources.yaml`（白名单；`enabled: true` 时生效）。
 
 ## pdftotext !!! 小心覆盖，注意备份
 

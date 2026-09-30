@@ -1,7 +1,10 @@
 # 学期批次清单（按日期升序）。也可省略本文件，仅扫描 material/ 下 YYYY-MM / YYYY-MM-DD 目录。
 # enabled: false 可暂时排除某批。
+# 惯例：下半年批次多为各年级上册，上半年批次多为各年级下册。
 batches:
+  - id: "2025-12-01"
+    note: 2025年秋/冬上册
   - id: "2026-04-02"
-    note: 2026年春季文本（原 text-by-layout）
+    note: 2026年春下册（由原 text-by-layout 拆出）
   - id: "2026-09-16"
-    note: 2026年秋季文本
+    note: 2026年秋上册

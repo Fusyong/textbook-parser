@@ -5,10 +5,12 @@
   "toc_source": "output/2026-09-16/b61_目录.json",
   "body_start_line": 0,
   "body_start_line_note": "启发式：首个独占一行的「第×单元」；可用 body_start_override 覆盖",
+  "body_end_line": 4404,
+  "body_end_line_note": "遇「识字表 / 写字表 / 词语表」独占标题行即截断（不含该行）",
   "line_count": 4527,
   "chunk_entry_count": 56,
-  "chunk_matched_count": 9,
-  "chunk_unmatched_count": 47,
+  "chunk_matched_count": 29,
+  "chunk_unmatched_count": 27,
   "chunks": [
     {
       "id": "b61-toc-0002",
@@ -17,10 +19,10 @@
         "草原",
         "1草原"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 141,
+      "end_line": 244,
+      "match_mode": "window",
+      "ok": true,
       "toc_label": "1 草原",
       "toc_snapshot": {
         "kind": "lesson",
@@ -35,7 +37,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第一单元"
-      }
+      },
+      "start_line_text": "阅读  1 草  原 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b61-toc-0003",
@@ -44,10 +48,10 @@
         "丁香结",
         "2丁香结"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 244,
+      "end_line": 363,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "2 丁香结",
       "toc_snapshot": {
         "kind": "lesson",
@@ -62,7 +66,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第一单元"
-      }
+      },
+      "start_line_text": "                      2 丁香结 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b61-toc-0004",
@@ -233,7 +239,7 @@
         "4七律·长征"
       ],
       "start_line": 523,
-      "end_line": 1416,
+      "end_line": 595,
       "match_mode": "window",
       "ok": true,
       "toc_label": "4 七律·长征",
@@ -261,10 +267,10 @@
         "狼牙山五壮士",
         "5狼牙山五壮士"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 595,
+      "end_line": 700,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "5 狼牙山五壮士",
       "toc_snapshot": {
         "kind": "lesson",
@@ -279,7 +285,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第二单元"
-      }
+      },
+      "start_line_text": "                 5 狼牙山五壮士 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b61-toc-0013",
@@ -288,10 +296,10 @@
         "开国大典",
         "6开国大典"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 700,
+      "end_line": 833,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "6 开国大典",
       "toc_snapshot": {
         "kind": "lesson",
@@ -306,7 +314,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第二单元"
-      }
+      },
+      "start_line_text": "                    6 开国大典 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b61-toc-0014",
@@ -315,10 +325,10 @@
         "我的战友邱少云",
         "7我的战友邱少云"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 833,
+      "end_line": 1078,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "7 我的战友邱少云",
       "toc_snapshot": {
         "kind": "lesson",
@@ -333,7 +343,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第二单元"
-      }
+      },
+      "start_line_text": "                7 我的战友邱少云 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b61-toc-0015",
@@ -420,10 +432,10 @@
         "竹节人",
         "8竹节人"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 1078,
+      "end_line": 1271,
+      "match_mode": "window",
+      "ok": true,
       "toc_label": "8 竹节人",
       "toc_snapshot": {
         "kind": "lesson",
@@ -438,7 +450,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第三单元"
-      }
+      },
+      "start_line_text": "阅读  8 竹节人①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b61-toc-0020",
@@ -447,10 +461,10 @@
         "宇宙生命之谜",
         "9宇宙生命之谜"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 1271,
+      "end_line": 1416,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "9 宇宙生命之谜",
       "toc_snapshot": {
         "kind": "lesson",
@@ -465,7 +479,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第三单元"
-      }
+      },
+      "start_line_text": "          9 宇宙生命之谜 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b61-toc-0021",
@@ -477,7 +493,7 @@
         "10＊故宫博物院"
       ],
       "start_line": 1416,
-      "end_line": 2694,
+      "end_line": 1770,
       "match_mode": "single",
       "ok": true,
       "toc_label": "10* 故宫博物院",
@@ -556,10 +572,10 @@
       "keys_tried": [
         "11桥"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 1770,
+      "end_line": 1857,
+      "match_mode": "window",
+      "ok": true,
       "toc_label": "11 桥",
       "toc_snapshot": {
         "kind": "lesson",
@@ -574,7 +590,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第四单元"
-      }
+      },
+      "start_line_text": "阅读  11 桥 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b61-toc-0026",
@@ -583,10 +601,10 @@
         "穷人",
         "12穷人"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 1857,
+      "end_line": 1999,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "12 穷人",
       "toc_snapshot": {
         "kind": "lesson",
@@ -601,7 +619,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第四单元"
-      }
+      },
+      "start_line_text": "                     12 穷  人 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b61-toc-0027",
@@ -612,10 +632,10 @@
         "13*金色的鱼钩",
         "13＊金色的鱼钩"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 1999,
+      "end_line": 2398,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "13* 金色的鱼钩",
       "toc_snapshot": {
         "kind": "lesson",
@@ -630,7 +650,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第四单元"
-      }
+      },
+      "start_line_text": "                  13 * 金色的鱼钩 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b61-toc-0028",
@@ -743,10 +765,10 @@
         "灯光",
         "14灯光"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 2398,
+      "end_line": 2499,
+      "match_mode": "window",
+      "ok": true,
       "toc_label": "14 灯光",
       "toc_snapshot": {
         "kind": "lesson",
@@ -761,7 +783,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第五单元"
-      }
+      },
+      "start_line_text": "阅读  14 灯  光 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b61-toc-0034",
@@ -769,10 +793,10 @@
       "keys_tried": [
         "15盼"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 2499,
+      "end_line": 2694,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "15 盼",
       "toc_snapshot": {
         "kind": "lesson",
@@ -787,7 +811,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第五单元"
-      }
+      },
+      "start_line_text": "                        15 盼 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b61-toc-0035",
@@ -850,7 +876,7 @@
         "小站"
       ],
       "start_line": 2742,
-      "end_line": 3117,
+      "end_line": 2812,
       "match_mode": "single",
       "ok": true,
       "toc_label": "小站",
@@ -878,10 +904,10 @@
         "只有一个地球",
         "16只有一个地球"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 2812,
+      "end_line": 2900,
+      "match_mode": "window",
+      "ok": true,
       "toc_label": "16 只有一个地球",
       "toc_snapshot": {
         "kind": "lesson",
@@ -896,7 +922,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第六单元"
-      }
+      },
+      "start_line_text": "阅读  16 只有一个地球 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b61-toc-0040",
@@ -905,10 +933,10 @@
         "*青山不老",
         "17*青山不老"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 2900,
+      "end_line": 2979,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "17 * 青山不老",
       "toc_snapshot": {
         "kind": "lesson",
@@ -923,7 +951,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第六单元"
-      }
+      },
+      "start_line_text": "                      17 * 青山不老 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b61-toc-0041",
@@ -932,10 +962,10 @@
         "*三黑和土地",
         "18*三黑和土地"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 2979,
+      "end_line": 3117,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "18 * 三黑和土地",
       "toc_snapshot": {
         "kind": "lesson",
@@ -950,7 +980,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第六单元"
-      }
+      },
+      "start_line_text": "                  18 * 三黑和土地 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b61-toc-0042",
@@ -1145,7 +1177,7 @@
         "20文言文二则"
       ],
       "start_line": 3363,
-      "end_line": 3789,
+      "end_line": 3443,
       "match_mode": "window",
       "ok": true,
       "toc_label": "20 文言文二则",
@@ -1225,10 +1257,10 @@
         "表里的生物",
         "21表里的生物"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 3443,
+      "end_line": 3567,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "21 表里的生物",
       "toc_snapshot": {
         "kind": "lesson",
@@ -1243,7 +1275,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第七单元"
-      }
+      },
+      "start_line_text": "                  21 表里的生物 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b61-toc-0054",
@@ -1254,10 +1288,10 @@
         "22*他们那时候多有趣啊",
         "22＊他们那时候多有趣啊"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 3567,
+      "end_line": 3789,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "22* 他们那时候多有趣啊",
       "toc_snapshot": {
         "kind": "lesson",
@@ -1272,7 +1306,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第七单元"
-      }
+      },
+      "start_line_text": "            22 * 他们那时候多有趣啊 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b61-toc-0055",
@@ -1334,7 +1370,7 @@
         "23少年闰土"
       ],
       "start_line": 3789,
-      "end_line": 4527,
+      "end_line": 3949,
       "match_mode": "single",
       "ok": true,
       "toc_label": "23 少年闰土",
@@ -1362,10 +1398,10 @@
         "好的故事",
         "24好的故事"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 3949,
+      "end_line": 4084,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "24 好的故事",
       "toc_snapshot": {
         "kind": "lesson",
@@ -1380,7 +1416,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第八单元"
-      }
+      },
+      "start_line_text": "                    24 好的故事 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b61-toc-0060",
@@ -1391,10 +1429,10 @@
         "25*我的伯父鲁迅先生",
         "25＊我的伯父鲁迅先生"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 4084,
+      "end_line": 4238,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "25* 我的伯父鲁迅先生",
       "toc_snapshot": {
         "kind": "lesson",
@@ -1409,7 +1447,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第八单元"
-      }
+      },
+      "start_line_text": "              25 * 我的伯父鲁迅先生 ①",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b61-toc-0061",
@@ -1420,10 +1460,10 @@
         "26*有的人—纪念鲁迅有感",
         "26＊有的人—纪念鲁迅有感"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 4238,
+      "end_line": 4404,
+      "match_mode": "window",
+      "ok": true,
       "toc_label": "26* 有的人—纪念鲁迅有感",
       "toc_snapshot": {
         "kind": "lesson",
@@ -1438,7 +1478,9 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第八单元"
-      }
+      },
+      "start_line_text": "                                         —纪念鲁迅有感",
+      "chunk_tail_preview": ""
     },
     {
       "id": "b61-toc-0062",
@@ -1496,8 +1538,8 @@
       "id": "b61-toc-0064",
       "kind": "lesson",
       "keys_tried": [
-        "丁香结①",
-        "2丁香结①"
+        "丁香结",
+        "2丁香结"
       ],
       "start_line": null,
       "end_line": null,
@@ -1521,35 +1563,20 @@
     }
   ],
   "warnings": [
-    "未命中锚点: b61-toc-0002 1 草原 keys=['草原', '1草原']",
-    "未命中锚点: b61-toc-0003 2 丁香结 keys=['丁香结', '2丁香结']",
     "未命中锚点: b61-toc-0005 宿建德江 keys=['宿建德江']",
     "未命中锚点: b61-toc-0006 六月二十七日望湖楼醉书 keys=['六月二十七日望湖楼醉书']",
     "未命中锚点: b61-toc-0008 习作 变形记 keys=['习作变形记']",
     "未命中锚点: b61-toc-0009 语文园地 keys=['语文园地']",
-    "未命中锚点: b61-toc-0012 5 狼牙山五壮士 keys=['狼牙山五壮士', '5狼牙山五壮士']",
-    "未命中锚点: b61-toc-0013 6 开国大典 keys=['开国大典', '6开国大典']",
-    "未命中锚点: b61-toc-0014 7 我的战友邱少云 keys=['我的战友邱少云', '7我的战友邱少云']",
     "未命中锚点: b61-toc-0015 口语交际 演讲 keys=['口语交际演讲']",
     "未命中锚点: b61-toc-0016 习作 多彩的活动 keys=['习作多彩的活动']",
     "未命中锚点: b61-toc-0017 语文园地 keys=['语文园地']",
-    "未命中锚点: b61-toc-0019 8 竹节人 keys=['竹节人', '8竹节人']",
-    "未命中锚点: b61-toc-0020 9 宇宙生命之谜 keys=['宇宙生命之谜', '9宇宙生命之谜']",
     "未命中锚点: b61-toc-0022 习作 让生活更美好 keys=['习作让生活更美好']",
     "未命中锚点: b61-toc-0023 语文园地 keys=['语文园地']",
-    "未命中锚点: b61-toc-0025 11 桥 keys=['11桥']",
-    "未命中锚点: b61-toc-0026 12 穷人 keys=['穷人', '12穷人']",
-    "未命中锚点: b61-toc-0027 13* 金色的鱼钩 keys=['金色的鱼钩', '13金色的鱼钩', '13*金色的鱼钩']",
     "未命中锚点: b61-toc-0028 口语交际 请你支持我 keys=['口语交际请你支持我']",
     "未命中锚点: b61-toc-0029 习作 笔尖流出的故事 keys=['习作笔尖流出的故事']",
     "未命中锚点: b61-toc-0030 语文园地 keys=['语文园地']",
     "未命中锚点: b61-toc-0031 快乐读书吧 keys=['快乐读书吧']",
-    "未命中锚点: b61-toc-0033 14 灯光 keys=['灯光', '14灯光']",
-    "未命中锚点: b61-toc-0034 15 盼 keys=['15盼']",
     "未命中锚点: b61-toc-0035 习作 围绕中心意思写 keys=['习作围绕中心意思写']",
-    "未命中锚点: b61-toc-0039 16 只有一个地球 keys=['只有一个地球', '16只有一个地球']",
-    "未命中锚点: b61-toc-0040 17 * 青山不老 keys=['*青山不老', '17*青山不老']",
-    "未命中锚点: b61-toc-0041 18 * 三黑和土地 keys=['*三黑和土地', '18*三黑和土地']",
     "未命中锚点: b61-toc-0043 浪淘沙（其一） keys=['浪淘沙（其一）']",
     "未命中锚点: b61-toc-0044 江南春 keys=['江南春']",
     "未命中锚点: b61-toc-0045 书湖阴先生壁 keys=['书湖阴先生壁']",
@@ -1558,16 +1585,12 @@
     "未命中锚点: b61-toc-0048 语文园地 keys=['语文园地']",
     "未命中锚点: b61-toc-0051 两小儿辩日 keys=['两小儿辩日']",
     "未命中锚点: b61-toc-0052 曹冲称象 keys=['曹冲称象']",
-    "未命中锚点: b61-toc-0053 21 表里的生物 keys=['表里的生物', '21表里的生物']",
-    "未命中锚点: b61-toc-0054 22* 他们那时候多有趣啊 keys=['他们那时候多有趣啊', '22他们那时候多有趣啊', '22*他们那时候多有趣啊']",
     "未命中锚点: b61-toc-0055 习作 插上科学的翅膀飞 keys=['习作插上科学的翅膀飞']",
     "未命中锚点: b61-toc-0056 语文园地 keys=['语文园地']",
-    "未命中锚点: b61-toc-0059 24 好的故事 keys=['好的故事', '24好的故事']",
-    "未命中锚点: b61-toc-0060 25* 我的伯父鲁迅先生 keys=['我的伯父鲁迅先生', '25我的伯父鲁迅先生', '25*我的伯父鲁迅先生']",
-    "未命中锚点: b61-toc-0061 26* 有的人—纪念鲁迅有感 keys=['有的人—纪念鲁迅有感', '26有的人—纪念鲁迅有感', '26*有的人—纪念鲁迅有感']",
     "未命中锚点: b61-toc-0062 习作 传承好家风 keys=['习作传承好家风']",
     "未命中锚点: b61-toc-0063 语文园地 keys=['语文园地']",
-    "未命中锚点: b61-toc-0064 2 丁香结 ① keys=['丁香结①', '2丁香结①']"
+    "未命中锚点: b61-toc-0064 2 丁香结 ① keys=['丁香结', '2丁香结']",
+    "正文在 L4405「写字表」处截断，其后附录表未纳入分块"
   ],
   "batch": "2026-09-16"
 }

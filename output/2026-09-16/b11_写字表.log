@@ -1,0 +1,31 @@
+# textbook-parser extract
+# time: 2026-09-30T14:12:18
+# argv: D:\ah21\textbook-parser\src\textbook_parser\__main__.py extract --book b11 --batch 2026-09-16 --extractor 写字表 --project-root .
+# book_code: b11
+# log_file: D:\ah21\textbook-parser\output\2026-09-16\b11_写字表.log
+# 以下 stdout/stderr 均写入本日志（含警告、错误与提取器提示）。
+# project_root: D:\ah21\textbook-parser
+# batch: 2026-09-16
+# config: (--book)
+# extractor_only: 写字表
+
+[b11/写字表 抛弃] 识字                               识字
+[b11/写字表] 提示: 汉字与拼音不能一一对应 — 汉字 0 个, 拼音分词 4 个
+[b11/写字表] 提示: 汉字与拼音不能一一对应 — 汉字 0 个, 拼音分词 2 个
+[b11/写字表] 提示: 汉字与拼音不能一一对应 — 汉字 0 个, 拼音分词 4 个
+[b11/写字表] 提示: 汉字与拼音不能一一对应 — 汉字 13 个, 拼音分词 4 个
+[b11/写字表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 44 起）: '语文园地二      jiL wWng\n语文园地四      九王'
+[b11/写字表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 44 起）: ' 语文园地三\n午下'
+[b11/写字表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 44 起）: '语文园地四      九王\n个去'
+[b11/写字表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 48 起）: '1 了子大人'
+[b11/写字表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 48 起）: '2 可叶东西'
+[b11/写字表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 48 起）: '3 竹马牙用几'
+[b11/写字表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 48 起）: '4 四小鸟是天'
+[b11/写字表 TOC] 未在目录中找到与锚点行匹配的学习单位（自条目 53 起）: '语文园地五  nV kQi guQn xiQn\n            女 开 关 先 \u2002 语文园地八             牛羊爪白'
+[b11/写字表] 目录 JSON 对齐 — 锚点 24 条，成功绑定目录 16 条
+写字表: 行数 24，字数合计 105
+[写字表 目录对齐] 核对未通过: {'toc_anchor_group_count': 24, 'toc_assigned_count': 16, 'toc_layout_match_ok': False}
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b11_写字表.json
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b11_写字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b11_写字表.discard.log
+控制台输出已同步写入日志: D:\ah21\textbook-parser\output\2026-09-16\b11_写字表.log

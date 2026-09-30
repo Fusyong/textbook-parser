@@ -5,13 +5,15 @@
   "toc_source": "output/2026-09-16/b11_目录.json",
   "body_start_line": 0,
   "body_start_line_note": "启发式：首个独占一行的「第×单元」；可用 body_start_override 覆盖",
+  "body_end_line": 3352,
+  "body_end_line_note": "遇「识字表 / 写字表 / 词语表」独占标题行即截断（不含该行）",
   "line_count": 3659,
   "chunk_entry_count": 45,
-  "chunk_matched_count": 32,
-  "chunk_unmatched_count": 13,
+  "chunk_matched_count": 45,
+  "chunk_unmatched_count": 0,
   "chunks": [
     {
-      "id": "b11-toc-0001",
+      "id": "b11-toc-0002",
       "kind": "sublesson",
       "keys_tried": [
         "我是中国人"
@@ -23,7 +25,7 @@
       "toc_label": "我是中国人",
       "toc_snapshot": {
         "kind": "sublesson",
-        "id": "b11-toc-0001",
+        "id": "b11-toc-0002",
         "number": null,
         "title": "我是中国人",
         "label": null,
@@ -31,15 +33,15 @@
         "optional_reading": null,
         "subtitle": null,
         "block": null,
-        "unit_type": "课文",
+        "unit_type": "入学教育",
         "unit_subtype": null,
-        "group_label": null
+        "group_label": "我上学了"
       },
       "start_line_text": "      我是中国人",
       "chunk_tail_preview": ""
     },
     {
-      "id": "b11-toc-0002",
+      "id": "b11-toc-0003",
       "kind": "sublesson",
       "keys_tried": [
         "我爱我们的祖国"
@@ -51,7 +53,7 @@
       "toc_label": "我爱我们的祖国",
       "toc_snapshot": {
         "kind": "sublesson",
-        "id": "b11-toc-0002",
+        "id": "b11-toc-0003",
         "number": null,
         "title": "我爱我们的祖国",
         "label": null,
@@ -59,15 +61,15 @@
         "optional_reading": null,
         "subtitle": null,
         "block": null,
-        "unit_type": "课文",
+        "unit_type": "入学教育",
         "unit_subtype": null,
-        "group_label": null
+        "group_label": "我上学了"
       },
       "start_line_text": "        我爱我们的祖国",
       "chunk_tail_preview": ""
     },
     {
-      "id": "b11-toc-0003",
+      "id": "b11-toc-0004",
       "kind": "sublesson",
       "keys_tried": [
         "我是小学生"
@@ -79,7 +81,7 @@
       "toc_label": "我是小学生",
       "toc_snapshot": {
         "kind": "sublesson",
-        "id": "b11-toc-0003",
+        "id": "b11-toc-0004",
         "number": null,
         "title": "我是小学生",
         "label": null,
@@ -87,15 +89,15 @@
         "optional_reading": null,
         "subtitle": null,
         "block": null,
-        "unit_type": "课文",
+        "unit_type": "入学教育",
         "unit_subtype": null,
-        "group_label": null
+        "group_label": "我上学了"
       },
       "start_line_text": "            我是小学生",
       "chunk_tail_preview": ""
     },
     {
-      "id": "b11-toc-0004",
+      "id": "b11-toc-0005",
       "kind": "sublesson",
       "keys_tried": [
         "我爱学语文"
@@ -107,7 +109,7 @@
       "toc_label": "我爱学语文",
       "toc_snapshot": {
         "kind": "sublesson",
-        "id": "b11-toc-0004",
+        "id": "b11-toc-0005",
         "number": null,
         "title": "我爱学语文",
         "label": null,
@@ -115,28 +117,28 @@
         "optional_reading": null,
         "subtitle": null,
         "block": null,
-        "unit_type": "课文",
+        "unit_type": "入学教育",
         "unit_subtype": null,
-        "group_label": null
+        "group_label": "我上学了"
       },
       "start_line_text": "    我爱学语文",
       "chunk_tail_preview": ""
     },
     {
-      "id": "b11-toc-0006",
+      "id": "b11-toc-0007",
       "kind": "lesson",
       "keys_tried": [
         "天地人",
         "1天地人"
       ],
       "start_line": 239,
-      "end_line": 279,
+      "end_line": 248,
       "match_mode": "single",
       "ok": true,
       "toc_label": "1 天地人",
       "toc_snapshot": {
         "kind": "lesson",
-        "id": "b11-toc-0006",
+        "id": "b11-toc-0007",
         "number": "1",
         "title": "天地人",
         "label": null,
@@ -152,20 +154,20 @@
       "chunk_tail_preview": ""
     },
     {
-      "id": "b11-toc-0007",
+      "id": "b11-toc-0008",
       "kind": "lesson",
       "keys_tried": [
         "金木水火土",
         "2金木水火土"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 248,
+      "end_line": 279,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "2 金木水火土",
       "toc_snapshot": {
         "kind": "lesson",
-        "id": "b11-toc-0007",
+        "id": "b11-toc-0008",
         "number": "2",
         "title": "金木水火土",
         "label": null,
@@ -176,10 +178,12 @@
         "unit_type": "课文",
         "unit_subtype": "识字",
         "group_label": "第一单元·识字"
-      }
+      },
+      "start_line_text": "2 金木水火土①",
+      "chunk_tail_preview": ""
     },
     {
-      "id": "b11-toc-0008",
+      "id": "b11-toc-0009",
       "kind": "lesson",
       "keys_tried": [
         "口耳目手足",
@@ -192,7 +196,7 @@
       "toc_label": "3 口耳目手足",
       "toc_snapshot": {
         "kind": "lesson",
-        "id": "b11-toc-0008",
+        "id": "b11-toc-0009",
         "number": "3",
         "title": "口耳目手足",
         "label": null,
@@ -208,7 +212,7 @@
       "chunk_tail_preview": ""
     },
     {
-      "id": "b11-toc-0009",
+      "id": "b11-toc-0010",
       "kind": "lesson",
       "keys_tried": [
         "日月山川",
@@ -221,7 +225,7 @@
       "toc_label": "4 日月山川",
       "toc_snapshot": {
         "kind": "lesson",
-        "id": "b11-toc-0009",
+        "id": "b11-toc-0010",
         "number": "4",
         "title": "日月山川",
         "label": null,
@@ -237,7 +241,7 @@
       "chunk_tail_preview": ""
     },
     {
-      "id": "b11-toc-0010",
+      "id": "b11-toc-0011",
       "kind": "garden",
       "keys_tried": [
         "语文园地一"
@@ -249,7 +253,7 @@
       "toc_label": "语文园地一",
       "toc_snapshot": {
         "kind": "garden",
-        "id": "b11-toc-0010",
+        "id": "b11-toc-0011",
         "number": null,
         "title": null,
         "label": "语文园地一",
@@ -265,7 +269,7 @@
       "chunk_tail_preview": ""
     },
     {
-      "id": "b11-toc-0011",
+      "id": "b11-toc-0012",
       "kind": "reading_club",
       "keys_tried": [
         "快乐读书吧",
@@ -278,7 +282,7 @@
       "toc_label": "快乐读书吧（读书真快乐）",
       "toc_snapshot": {
         "kind": "reading_club",
-        "id": "b11-toc-0011",
+        "id": "b11-toc-0012",
         "number": null,
         "title": "快乐读书吧",
         "label": null,
@@ -294,7 +298,7 @@
       "chunk_tail_preview": ""
     },
     {
-      "id": "b11-toc-0013",
+      "id": "b11-toc-0014",
       "kind": "lesson",
       "keys_tried": [
         "aoe",
@@ -307,7 +311,7 @@
       "toc_label": "1 aoe",
       "toc_snapshot": {
         "kind": "lesson",
-        "id": "b11-toc-0013",
+        "id": "b11-toc-0014",
         "number": "1",
         "title": "aoe",
         "label": null,
@@ -323,7 +327,7 @@
       "chunk_tail_preview": ""
     },
     {
-      "id": "b11-toc-0014",
+      "id": "b11-toc-0015",
       "kind": "lesson",
       "keys_tried": [
         "iuü",
@@ -336,7 +340,7 @@
       "toc_label": "2 iuü",
       "toc_snapshot": {
         "kind": "lesson",
-        "id": "b11-toc-0014",
+        "id": "b11-toc-0015",
         "number": "2",
         "title": "iuü",
         "label": null,
@@ -352,7 +356,7 @@
       "chunk_tail_preview": ""
     },
     {
-      "id": "b11-toc-0015",
+      "id": "b11-toc-0016",
       "kind": "lesson",
       "keys_tried": [
         "bpmf",
@@ -365,7 +369,7 @@
       "toc_label": "3 bpmf",
       "toc_snapshot": {
         "kind": "lesson",
-        "id": "b11-toc-0015",
+        "id": "b11-toc-0016",
         "number": "3",
         "title": "bpmf",
         "label": null,
@@ -381,7 +385,7 @@
       "chunk_tail_preview": ""
     },
     {
-      "id": "b11-toc-0016",
+      "id": "b11-toc-0017",
       "kind": "lesson",
       "keys_tried": [
         "dtnl",
@@ -394,7 +398,7 @@
       "toc_label": "4 dtnl",
       "toc_snapshot": {
         "kind": "lesson",
-        "id": "b11-toc-0016",
+        "id": "b11-toc-0017",
         "number": "4",
         "title": "dtnl",
         "label": null,
@@ -410,7 +414,7 @@
       "chunk_tail_preview": ""
     },
     {
-      "id": "b11-toc-0017",
+      "id": "b11-toc-0018",
       "kind": "garden",
       "keys_tried": [
         "语文园地二"
@@ -422,7 +426,7 @@
       "toc_label": "语文园地二",
       "toc_snapshot": {
         "kind": "garden",
-        "id": "b11-toc-0017",
+        "id": "b11-toc-0018",
         "number": null,
         "title": null,
         "label": "语文园地二",
@@ -438,7 +442,7 @@
       "chunk_tail_preview": ""
     },
     {
-      "id": "b11-toc-0019",
+      "id": "b11-toc-0020",
       "kind": "lesson",
       "keys_tried": [
         "gh",
@@ -451,7 +455,7 @@
       "toc_label": "5 gh",
       "toc_snapshot": {
         "kind": "lesson",
-        "id": "b11-toc-0019",
+        "id": "b11-toc-0020",
         "number": "5",
         "title": "gh",
         "label": null,
@@ -467,7 +471,7 @@
       "chunk_tail_preview": ""
     },
     {
-      "id": "b11-toc-0020",
+      "id": "b11-toc-0021",
       "kind": "lesson",
       "keys_tried": [
         "jqx",
@@ -480,7 +484,7 @@
       "toc_label": "6 jqx",
       "toc_snapshot": {
         "kind": "lesson",
-        "id": "b11-toc-0020",
+        "id": "b11-toc-0021",
         "number": "6",
         "title": "jqx",
         "label": null,
@@ -496,7 +500,7 @@
       "chunk_tail_preview": ""
     },
     {
-      "id": "b11-toc-0021",
+      "id": "b11-toc-0022",
       "kind": "lesson",
       "keys_tried": [
         "zcs",
@@ -509,7 +513,7 @@
       "toc_label": "7 zcs",
       "toc_snapshot": {
         "kind": "lesson",
-        "id": "b11-toc-0021",
+        "id": "b11-toc-0022",
         "number": "7",
         "title": "zcs",
         "label": null,
@@ -525,7 +529,7 @@
       "chunk_tail_preview": ""
     },
     {
-      "id": "b11-toc-0022",
+      "id": "b11-toc-0023",
       "kind": "lesson",
       "keys_tried": [
         "zhchshr",
@@ -538,7 +542,7 @@
       "toc_label": "8 zh ch sh r",
       "toc_snapshot": {
         "kind": "lesson",
-        "id": "b11-toc-0022",
+        "id": "b11-toc-0023",
         "number": "8",
         "title": "zh ch sh r",
         "label": null,
@@ -554,7 +558,7 @@
       "chunk_tail_preview": "             y"
     },
     {
-      "id": "b11-toc-0023",
+      "id": "b11-toc-0024",
       "kind": "lesson",
       "keys_tried": [
         "yw",
@@ -567,7 +571,7 @@
       "toc_label": "9 yw",
       "toc_snapshot": {
         "kind": "lesson",
-        "id": "b11-toc-0023",
+        "id": "b11-toc-0024",
         "number": "9",
         "title": "yw",
         "label": null,
@@ -583,7 +587,7 @@
       "chunk_tail_preview": ""
     },
     {
-      "id": "b11-toc-0024",
+      "id": "b11-toc-0025",
       "kind": "garden",
       "keys_tried": [
         "语文园地三"
@@ -595,7 +599,7 @@
       "toc_label": "语文园地三",
       "toc_snapshot": {
         "kind": "garden",
-        "id": "b11-toc-0024",
+        "id": "b11-toc-0025",
         "number": null,
         "title": null,
         "label": "语文园地三",
@@ -611,7 +615,7 @@
       "chunk_tail_preview": ""
     },
     {
-      "id": "b11-toc-0026",
+      "id": "b11-toc-0027",
       "kind": "lesson",
       "keys_tried": [
         "aieiui",
@@ -624,7 +628,7 @@
       "toc_label": "10 ai ei ui",
       "toc_snapshot": {
         "kind": "lesson",
-        "id": "b11-toc-0026",
+        "id": "b11-toc-0027",
         "number": "10",
         "title": "ai ei ui",
         "label": null,
@@ -640,7 +644,7 @@
       "chunk_tail_preview": ""
     },
     {
-      "id": "b11-toc-0027",
+      "id": "b11-toc-0028",
       "kind": "lesson",
       "keys_tried": [
         "aoouiu",
@@ -653,7 +657,7 @@
       "toc_label": "11 ao ou iu",
       "toc_snapshot": {
         "kind": "lesson",
-        "id": "b11-toc-0027",
+        "id": "b11-toc-0028",
         "number": "11",
         "title": "ao ou iu",
         "label": null,
@@ -669,7 +673,7 @@
       "chunk_tail_preview": ""
     },
     {
-      "id": "b11-toc-0028",
+      "id": "b11-toc-0029",
       "kind": "lesson",
       "keys_tried": [
         "ieüeer",
@@ -682,7 +686,7 @@
       "toc_label": "12 ie üe er",
       "toc_snapshot": {
         "kind": "lesson",
-        "id": "b11-toc-0028",
+        "id": "b11-toc-0029",
         "number": "12",
         "title": "ie üe er",
         "label": null,
@@ -698,7 +702,7 @@
       "chunk_tail_preview": ""
     },
     {
-      "id": "b11-toc-0029",
+      "id": "b11-toc-0030",
       "kind": "lesson",
       "keys_tried": [
         "aneninunün",
@@ -711,7 +715,7 @@
       "toc_label": "13 an en in un ün",
       "toc_snapshot": {
         "kind": "lesson",
-        "id": "b11-toc-0029",
+        "id": "b11-toc-0030",
         "number": "13",
         "title": "an en in un ün",
         "label": null,
@@ -727,7 +731,7 @@
       "chunk_tail_preview": ""
     },
     {
-      "id": "b11-toc-0030",
+      "id": "b11-toc-0031",
       "kind": "lesson",
       "keys_tried": [
         "angengingong",
@@ -740,7 +744,7 @@
       "toc_label": "14 ang eng ing ong",
       "toc_snapshot": {
         "kind": "lesson",
-        "id": "b11-toc-0030",
+        "id": "b11-toc-0031",
         "number": "14",
         "title": "ang eng ing ong",
         "label": null,
@@ -756,19 +760,19 @@
       "chunk_tail_preview": ""
     },
     {
-      "id": "b11-toc-0031",
+      "id": "b11-toc-0032",
       "kind": "garden",
       "keys_tried": [
         "语文园地四"
       ],
       "start_line": 1557,
-      "end_line": 1999,
+      "end_line": 1722,
       "match_mode": "single",
       "ok": true,
       "toc_label": "语文园地四",
       "toc_snapshot": {
         "kind": "garden",
-        "id": "b11-toc-0031",
+        "id": "b11-toc-0032",
         "number": null,
         "title": null,
         "label": "语文园地四",
@@ -781,23 +785,23 @@
         "group_label": "第四单元·汉语拼音"
       },
       "start_line_text": "                    语文园地四",
-      "chunk_tail_preview": "                              冬天"
+      "chunk_tail_preview": ""
     },
     {
-      "id": "b11-toc-0033",
+      "id": "b11-toc-0034",
       "kind": "lesson",
       "keys_tried": [
         "秋天",
         "1秋天"
       ],
-      "start_line": 1999,
-      "end_line": 2162,
-      "match_mode": "window",
+      "start_line": 1722,
+      "end_line": 1784,
+      "match_mode": "single",
       "ok": true,
       "toc_label": "1 秋天",
       "toc_snapshot": {
         "kind": "lesson",
-        "id": "b11-toc-0033",
+        "id": "b11-toc-0034",
         "number": "1",
         "title": "秋天",
         "label": null,
@@ -809,24 +813,24 @@
         "unit_subtype": "阅读",
         "group_label": "第五单元·阅读"
       },
-      "start_line_text": "春天 夏天 秋天",
+      "start_line_text": "                            1 秋  天 ①",
       "chunk_tail_preview": ""
     },
     {
-      "id": "b11-toc-0034",
+      "id": "b11-toc-0035",
       "kind": "lesson",
       "keys_tried": [
         "江南",
         "2江南"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 1784,
+      "end_line": 1836,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "2 江南",
       "toc_snapshot": {
         "kind": "lesson",
-        "id": "b11-toc-0034",
+        "id": "b11-toc-0035",
         "number": "2",
         "title": "江南",
         "label": null,
@@ -837,23 +841,25 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第五单元·阅读"
-      }
+      },
+      "start_line_text": "    2 江  南",
+      "chunk_tail_preview": ""
     },
     {
-      "id": "b11-toc-0035",
+      "id": "b11-toc-0036",
       "kind": "lesson",
       "keys_tried": [
         "雪地里的小画家",
         "3雪地里的小画家"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 1836,
+      "end_line": 1899,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "3 雪地里的小画家",
       "toc_snapshot": {
         "kind": "lesson",
-        "id": "b11-toc-0035",
+        "id": "b11-toc-0036",
         "number": "3",
         "title": "雪地里的小画家",
         "label": null,
@@ -864,23 +870,25 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第五单元·阅读"
-      }
+      },
+      "start_line_text": "3 雪 地 里 的 小 画 家①",
+      "chunk_tail_preview": ""
     },
     {
-      "id": "b11-toc-0036",
+      "id": "b11-toc-0037",
       "kind": "lesson",
       "keys_tried": [
         "四季",
         "4四季"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 1899,
+      "end_line": 1973,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "4 四季",
       "toc_snapshot": {
         "kind": "lesson",
-        "id": "b11-toc-0036",
+        "id": "b11-toc-0037",
         "number": "4",
         "title": "四季",
         "label": null,
@@ -891,22 +899,24 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第五单元·阅读"
-      }
+      },
+      "start_line_text": "4 四  季 ①",
+      "chunk_tail_preview": ""
     },
     {
-      "id": "b11-toc-0037",
+      "id": "b11-toc-0038",
       "kind": "garden",
       "keys_tried": [
         "语文园地五"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 1973,
+      "end_line": 2162,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "语文园地五",
       "toc_snapshot": {
         "kind": "garden",
-        "id": "b11-toc-0037",
+        "id": "b11-toc-0038",
         "number": null,
         "title": null,
         "label": "语文园地五",
@@ -917,23 +927,25 @@
         "unit_type": "语文园地",
         "unit_subtype": null,
         "group_label": "第五单元·阅读"
-      }
+      },
+      "start_line_text": "                语文园地五",
+      "chunk_tail_preview": ""
     },
     {
-      "id": "b11-toc-0039",
+      "id": "b11-toc-0040",
       "kind": "lesson",
       "keys_tried": [
         "对韵歌",
         "5对韵歌"
       ],
       "start_line": 2162,
-      "end_line": 2268,
+      "end_line": 2198,
       "match_mode": "single",
       "ok": true,
       "toc_label": "5 对韵歌",
       "toc_snapshot": {
         "kind": "lesson",
-        "id": "b11-toc-0039",
+        "id": "b11-toc-0040",
         "number": "5",
         "title": "对韵歌",
         "label": null,
@@ -949,20 +961,20 @@
       "chunk_tail_preview": ""
     },
     {
-      "id": "b11-toc-0040",
+      "id": "b11-toc-0041",
       "kind": "lesson",
       "keys_tried": [
         "日月明",
         "6日月明"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 2198,
+      "end_line": 2268,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "6 日月明",
       "toc_snapshot": {
         "kind": "lesson",
-        "id": "b11-toc-0040",
+        "id": "b11-toc-0041",
         "number": "6",
         "title": "日月明",
         "label": null,
@@ -973,23 +985,25 @@
         "unit_type": "课文",
         "unit_subtype": "识字",
         "group_label": "第六单元·识字"
-      }
+      },
+      "start_line_text": "                      6 日 月 明①",
+      "chunk_tail_preview": ""
     },
     {
-      "id": "b11-toc-0041",
+      "id": "b11-toc-0042",
       "kind": "lesson",
       "keys_tried": [
         "小书包",
         "7小书包"
       ],
       "start_line": 2268,
-      "end_line": 2380,
+      "end_line": 2334,
       "match_mode": "single",
       "ok": true,
       "toc_label": "7 小书包",
       "toc_snapshot": {
         "kind": "lesson",
-        "id": "b11-toc-0041",
+        "id": "b11-toc-0042",
         "number": "7",
         "title": "小书包",
         "label": null,
@@ -1005,20 +1019,20 @@
       "chunk_tail_preview": ""
     },
     {
-      "id": "b11-toc-0042",
+      "id": "b11-toc-0043",
       "kind": "lesson",
       "keys_tried": [
         "升国旗",
         "8升国旗"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 2334,
+      "end_line": 2380,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "8 升国旗",
       "toc_snapshot": {
         "kind": "lesson",
-        "id": "b11-toc-0042",
+        "id": "b11-toc-0043",
         "number": "8",
         "title": "升国旗",
         "label": null,
@@ -1029,22 +1043,24 @@
         "unit_type": "课文",
         "unit_subtype": "识字",
         "group_label": "第六单元·识字"
-      }
+      },
+      "start_line_text": "8 升 国 旗①",
+      "chunk_tail_preview": ""
     },
     {
-      "id": "b11-toc-0043",
+      "id": "b11-toc-0044",
       "kind": "garden",
       "keys_tried": [
         "语文园地六"
       ],
       "start_line": 2380,
-      "end_line": 2725,
+      "end_line": 2545,
       "match_mode": "single",
       "ok": true,
       "toc_label": "语文园地六",
       "toc_snapshot": {
         "kind": "garden",
-        "id": "b11-toc-0043",
+        "id": "b11-toc-0044",
         "number": null,
         "title": null,
         "label": "语文园地六",
@@ -1060,20 +1076,20 @@
       "chunk_tail_preview": ""
     },
     {
-      "id": "b11-toc-0045",
+      "id": "b11-toc-0046",
       "kind": "lesson",
       "keys_tried": [
         "小小的船",
         "5小小的船"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 2545,
+      "end_line": 2596,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "5 小小的船",
       "toc_snapshot": {
         "kind": "lesson",
-        "id": "b11-toc-0045",
+        "id": "b11-toc-0046",
         "number": "5",
         "title": "小小的船",
         "label": null,
@@ -1084,23 +1100,25 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第七单元·阅读"
-      }
+      },
+      "start_line_text": "             5 小 小 的 船①",
+      "chunk_tail_preview": ""
     },
     {
-      "id": "b11-toc-0046",
+      "id": "b11-toc-0047",
       "kind": "lesson",
       "keys_tried": [
         "影子",
         "6影子"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 2596,
+      "end_line": 2657,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "6 影子",
       "toc_snapshot": {
         "kind": "lesson",
-        "id": "b11-toc-0046",
+        "id": "b11-toc-0047",
         "number": "6",
         "title": "影子",
         "label": null,
@@ -1111,23 +1129,25 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第七单元·阅读"
-      }
+      },
+      "start_line_text": "6 影  子 ①",
+      "chunk_tail_preview": ""
     },
     {
-      "id": "b11-toc-0047",
+      "id": "b11-toc-0048",
       "kind": "lesson",
       "keys_tried": [
         "两件宝",
         "7两件宝"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 2657,
+      "end_line": 2725,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "7 两件宝",
       "toc_snapshot": {
         "kind": "lesson",
-        "id": "b11-toc-0047",
+        "id": "b11-toc-0048",
         "number": "7",
         "title": "两件宝",
         "label": null,
@@ -1138,22 +1158,24 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第七单元·阅读"
-      }
+      },
+      "start_line_text": "            7 两 件 宝①",
+      "chunk_tail_preview": ""
     },
     {
-      "id": "b11-toc-0048",
+      "id": "b11-toc-0049",
       "kind": "garden",
       "keys_tried": [
         "语文园地七"
       ],
       "start_line": 2725,
-      "end_line": 3188,
+      "end_line": 2950,
       "match_mode": "single",
       "ok": true,
       "toc_label": "语文园地七",
       "toc_snapshot": {
         "kind": "garden",
-        "id": "b11-toc-0048",
+        "id": "b11-toc-0049",
         "number": null,
         "title": null,
         "label": "语文园地七",
@@ -1169,20 +1191,20 @@
       "chunk_tail_preview": ""
     },
     {
-      "id": "b11-toc-0050",
+      "id": "b11-toc-0051",
       "kind": "lesson",
       "keys_tried": [
         "比尾巴",
         "8比尾巴"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 2950,
+      "end_line": 3032,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "8 比尾巴",
       "toc_snapshot": {
         "kind": "lesson",
-        "id": "b11-toc-0050",
+        "id": "b11-toc-0051",
         "number": "8",
         "title": "比尾巴",
         "label": null,
@@ -1193,23 +1215,25 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第八单元·阅读"
-      }
+      },
+      "start_line_text": "            8 比 尾 巴①",
+      "chunk_tail_preview": ""
     },
     {
-      "id": "b11-toc-0051",
+      "id": "b11-toc-0052",
       "kind": "lesson",
       "keys_tried": [
         "乌鸦喝水",
         "9乌鸦喝水"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 3032,
+      "end_line": 3110,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "9 乌鸦喝水",
       "toc_snapshot": {
         "kind": "lesson",
-        "id": "b11-toc-0051",
+        "id": "b11-toc-0052",
         "number": "9",
         "title": "乌鸦喝水",
         "label": null,
@@ -1220,23 +1244,25 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第八单元·阅读"
-      }
+      },
+      "start_line_text": "         9 乌 鸦 喝 水①",
+      "chunk_tail_preview": ""
     },
     {
-      "id": "b11-toc-0052",
+      "id": "b11-toc-0053",
       "kind": "lesson",
       "keys_tried": [
         "雨点儿",
         "10雨点儿"
       ],
-      "start_line": null,
-      "end_line": null,
-      "match_mode": null,
-      "ok": false,
+      "start_line": 3110,
+      "end_line": 3188,
+      "match_mode": "single",
+      "ok": true,
       "toc_label": "10 雨点儿",
       "toc_snapshot": {
         "kind": "lesson",
-        "id": "b11-toc-0052",
+        "id": "b11-toc-0053",
         "number": "10",
         "title": "雨点儿",
         "label": null,
@@ -1247,22 +1273,24 @@
         "unit_type": "课文",
         "unit_subtype": "阅读",
         "group_label": "第八单元·阅读"
-      }
+      },
+      "start_line_text": "                   10 雨 点 儿 ①",
+      "chunk_tail_preview": ""
     },
     {
-      "id": "b11-toc-0053",
+      "id": "b11-toc-0054",
       "kind": "garden",
       "keys_tried": [
         "语文园地八"
       ],
       "start_line": 3188,
-      "end_line": 3659,
+      "end_line": 3352,
       "match_mode": "single",
       "ok": true,
       "toc_label": "语文园地八",
       "toc_snapshot": {
         "kind": "garden",
-        "id": "b11-toc-0053",
+        "id": "b11-toc-0054",
         "number": null,
         "title": null,
         "label": "语文园地八",
@@ -1279,19 +1307,7 @@
     }
   ],
   "warnings": [
-    "未命中锚点: b11-toc-0007 2 金木水火土 keys=['金木水火土', '2金木水火土']",
-    "未命中锚点: b11-toc-0034 2 江南 keys=['江南', '2江南']",
-    "未命中锚点: b11-toc-0035 3 雪地里的小画家 keys=['雪地里的小画家', '3雪地里的小画家']",
-    "未命中锚点: b11-toc-0036 4 四季 keys=['四季', '4四季']",
-    "未命中锚点: b11-toc-0037 语文园地五 keys=['语文园地五']",
-    "未命中锚点: b11-toc-0040 6 日月明 keys=['日月明', '6日月明']",
-    "未命中锚点: b11-toc-0042 8 升国旗 keys=['升国旗', '8升国旗']",
-    "未命中锚点: b11-toc-0045 5 小小的船 keys=['小小的船', '5小小的船']",
-    "未命中锚点: b11-toc-0046 6 影子 keys=['影子', '6影子']",
-    "未命中锚点: b11-toc-0047 7 两件宝 keys=['两件宝', '7两件宝']",
-    "未命中锚点: b11-toc-0050 8 比尾巴 keys=['比尾巴', '8比尾巴']",
-    "未命中锚点: b11-toc-0051 9 乌鸦喝水 keys=['乌鸦喝水', '9乌鸦喝水']",
-    "未命中锚点: b11-toc-0052 10 雨点儿 keys=['雨点儿', '10雨点儿']"
+    "正文在 L3353「识字表」处截断，其后附录表未纳入分块"
   ],
   "batch": "2026-09-16"
 }

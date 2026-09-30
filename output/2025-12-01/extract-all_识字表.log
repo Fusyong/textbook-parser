@@ -1,0 +1,70 @@
+# textbook-parser extract-all
+# time: 2026-09-30T08:48:26
+# argv: D:\ah21\textbook-parser\src\textbook_parser\__main__.py extract-all --extractor 识字表 --project-root . --batch 2025-12-01 --continue-on-error
+# book_code: b11,b21,b31,b41,b51,b61
+# log_file: D:\ah21\textbook-parser\output\2025-12-01\extract-all_识字表.log
+# 以下 stdout/stderr 均写入本日志（含警告、错误与提取器提示）。
+# extractor: 识字表
+# project_root: D:\ah21\textbook-parser
+# batch: 2025-12-01
+# books_arg: (本批全部书目)
+
+批次: 2025-12-01 → D:\ah21\textbook-parser\output\2025-12-01
+--- b11 ---
+[b11/识字表 抛弃]  识字
+[b11/识字表 抛弃]  汉语拼音
+[b11/识字表 抛弃] ① 识字表中蓝色的字此前已作为生字认读，此处作为多音字学习，不计入生字总数。
+[b11/识字表 抛弃]                                                                                          105
+[b11/识字表 抛弃]   阅读
+[b11/识字表 抛弃]   识字
+[b11/识字表 抛弃] 106
+[b11/识字表 抛弃]   阅读
+[b11/识字表] 目录 JSON 对齐 — 锚点全部匹配到目录
+识字表: 行数 38，字数合计 284
+已写入: D:\ah21\textbook-parser\output\2025-12-01\b11_识字表.json
+已写入: D:\ah21\textbook-parser\output\2025-12-01\b11_识字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\2025-12-01\b11_识字表.discard.log
+--- b21 ---
+[b21/识字表 抛弃]       阅读
+[b21/识字表 抛弃]       识字
+[b21/识字表 抛弃] ① 识字表中蓝色的字此前已作为生字认读，此处作为多音字学习，不计入生字总数。
+[b21/识字表 抛弃] 108
+[b21/识字表 抛弃] 阅读
+[b21/识字表 抛弃]                                                                                           109
+[b21/识字表 抛弃] 110
+[b21/识字表 抛弃]                                                                                            111
+[b21/识字表] 目录 JSON 对齐 — 锚点全部匹配到目录
+识字表: 行数 35，字数合计 480
+已写入: D:\ah21\textbook-parser\output\2025-12-01\b21_识字表.json
+已写入: D:\ah21\textbook-parser\output\2025-12-01\b21_识字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\2025-12-01\b21_识字表.discard.log
+--- b31 ---
+[b31/识字表 抛弃] ① 识字表中蓝色的字此前已作为生字认读，此处作为多音字学习，不计入生字总数。
+[b31/识字表 抛弃]                                                                                      109
+[b31/识字表 抛弃] 110
+[b31/识字表] 目录 JSON 对齐 — 锚点全部匹配到目录
+识字表: 行数 30，字数合计 276
+已写入: D:\ah21\textbook-parser\output\2025-12-01\b31_识字表.json
+已写入: D:\ah21\textbook-parser\output\2025-12-01\b31_识字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\2025-12-01\b31_识字表.discard.log
+--- b41 ---
+[b41/识字表 抛弃] 识字表中蓝色的字是多音字，不计入生字总数。
+[b41/识字表 抛弃]                                                                                  123
+[b41/识字表 抛弃] 124
+[b41/识字表] 目录 JSON 对齐 — 锚点全部匹配到目录
+识字表: 行数 31，字数合计 271
+已写入: D:\ah21\textbook-parser\output\2025-12-01\b41_识字表.json
+已写入: D:\ah21\textbook-parser\output\2025-12-01\b41_识字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\2025-12-01\b41_识字表.discard.log
+--- b51 ---
+[b51/识字表 抛弃] 识字表中蓝色的字是多音字，不计入生字总数。
+[b51/识字表 抛弃]                                                                                     117
+[b51/识字表 抛弃] 118
+[b51/识字表] 目录 JSON 对齐 — 锚点全部匹配到目录
+识字表: 行数 26，字数合计 216
+已写入: D:\ah21\textbook-parser\output\2025-12-01\b51_识字表.json
+已写入: D:\ah21\textbook-parser\output\2025-12-01\b51_识字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\2025-12-01\b51_识字表.discard.log
+--- b61 ---
+b61: 跳过（本册未配置 «识字表»，多为 extractors_drop）
+控制台输出已同步写入日志: D:\ah21\textbook-parser\output\2025-12-01\extract-all_识字表.log
