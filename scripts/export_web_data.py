@@ -1,10 +1,9 @@
 """
-将 output/ 下的识字表、写字表、词语表、正文分块与版式正文合并导出为
-web/generated/data.js，供静态网页使用。
+将 output/{batch}/ 下的识字表、写字表、词语表、正文分块与版式正文合并导出为
+web/generated/data.js，供静态网页按「成套教材」切换使用。
 
 - 标准库即可完成表数据与分块元数据；
-- 组词用正文预分词列表 chunkTokensByBook（与分块一一对齐，需安装 jieba；
-  丢弃仅 ASCII 字母、仅数字、仅标点（含全角/半角）的词形，各分块内去重后按 Unicode 排序）：
+- 组词用正文预分词列表（需 jieba）：
     pip install -e ".[web]"
   或: pip install jieba
 
@@ -22,9 +21,23 @@ import unicodedata
 from collections import defaultdict
 from pathlib import Path
 
+# 保证可从项目根直接运行脚本
+_ROOT = Path(__file__).resolve().parent.parent
+if str(_ROOT / "src") not in sys.path:
+    sys.path.insert(0, str(_ROOT / "src"))
+
+from textbook_parser.batch import (  # noqa: E402
+    SLOT_CODES,
+    SLOT_KEYWORDS,
+    build_all_sets,
+    discover_batch_ids,
+    list_slots_in_batch,
+    set_assembly_to_dict,
+)
+
 
 def _root() -> Path:
-    return Path(__file__).resolve().parent.parent
+    return _ROOT
 
 
 def _load_json(path: Path) -> dict | None:
@@ -35,13 +48,28 @@ def _load_json(path: Path) -> dict | None:
 
 def _discover_book_codes(out_dir: Path) -> list[str]:
     codes: set[str] = set()
-    for pat in ("*_识字表.json", "*_写字表.json", "*_正文分块.json", "*_词语表.json"):
+    for pat in ("*_识字表.json", "*_写字表.json", "*_正文分块.json", "*_词语表.json", "*_目录.json"):
         for p in out_dir.glob(pat):
             stem = p.name
             if "_" not in stem:
                 continue
             codes.add(stem.split("_", 1)[0])
-    return sorted(codes)
+    order = {c: i for i, c in enumerate(SLOT_CODES)}
+    return sorted(codes, key=lambda c: order.get(c, 999))
+
+
+def _discover_output_batches(root: Path) -> list[str]:
+    """有解析产物的批次（与 material 批次求交，按日期升序）。"""
+    out = root / "output"
+    material_batches = discover_batch_ids(root)
+    found: list[str] = []
+    if out.is_dir():
+        for p in out.iterdir():
+            if p.is_dir() and p.name in set(material_batches):
+                if _discover_book_codes(p):
+                    found.append(p.name)
+    # 保持 material 顺序
+    return [b for b in material_batches if b in set(found)]
 
 
 def _layout_path(root: Path, out_dir: Path, book_code: str) -> tuple[Path | None, str]:
@@ -99,13 +127,13 @@ def _toc_entry_label(e: dict) -> str:
         t = str(e.get("title") or "").strip()
         if blk and t:
             return f"{blk} · {t}"
-        return (blk or t or str(e.get("id") or ""))
+        return blk or t or str(e.get("id") or "")
     if k == "reading_club":
         t = str(e.get("title") or "").strip()
         st = str(e.get("subtitle") or "").strip()
         if t and st:
             return f"{t} · {st}"
-        return (t or st or str(e.get("id") or ""))
+        return t or st or str(e.get("id") or "")
     if k == "toc_belt":
         return str(e.get("label") or e.get("title") or "").strip() or str(e.get("id") or "")
     return str(e.get("label") or e.get("title") or e.get("id") or "")
@@ -162,7 +190,6 @@ def _char_rows(table_json: dict | None) -> list[dict]:
 
 
 def _word_items_from_row(row: dict) -> list[dict[str, str]]:
-    """词语表行：仅使用 JSON 中已有的拼音（若有）；否则 pinyin 为空字符串。"""
     raw = row.get("words") or []
     out: list[dict[str, str]] = []
     for w in raw:
@@ -205,7 +232,6 @@ def _chunk_records(
     chunk_json: dict | None,
     layout_path: Path | None,
 ) -> tuple[list[dict], list[str]]:
-    """返回带 text 的完整分块（仅导出流程内部使用），warnings 供写入 payload。"""
     warnings: list[str] = []
     if not chunk_json:
         return [], warnings
@@ -240,7 +266,6 @@ def _chunk_records(
 
 
 def _public_chunks_meta(chunks_with_text: list[dict]) -> list[dict]:
-    """写入 JS：不含正文，仅保留检索过滤所需字段。"""
     return [
         {"id": c["id"], "label": c["label"], "ok": c["ok"]}
         for c in chunks_with_text
@@ -248,17 +273,14 @@ def _public_chunks_meta(chunks_with_text: list[dict]) -> list[dict]:
 
 
 def _is_pure_ascii_alpha_token(s: str) -> bool:
-    """仅由 ASCII 拉丁字母构成（无数字、空格、符号）。"""
     return bool(s) and s.isascii() and s.isalpha()
 
 
 def _is_pure_digit_token(s: str) -> bool:
-    """仅由 Unicode 十进制数字字符构成（如 12、３４）。"""
     return bool(s) and all(ch.isdigit() for ch in s)
 
 
 def _is_pure_punctuation_token(s: str) -> bool:
-    """仅由标点构成（Unicode 大类 P：含中文全角标点、ASCII 半角标点等）。"""
     if not s:
         return False
     return all(unicodedata.category(ch).startswith("P") for ch in s)
@@ -281,11 +303,6 @@ def _tokenize_chunks(
     chunks: list[dict],
     jieba_cut,
 ) -> list[list[str]]:
-    """与 chunks 等长的分词结果列表；无正文则为空列表。
-
-    各分块：去掉纯英文（ASCII 字母）、纯数字、纯标点（全角/半角）词形，去重后
-    按 Unicode 码点排序（不保留原文出现顺序）。
-    """
     out: list[list[str]] = []
     for ci, ch in enumerate(chunks):
         text = (ch.get("text") or "").strip()
@@ -312,7 +329,6 @@ def _build_word_freq(
     chunk_tokens_by_book: dict[str, list],
     word_by_book: dict[str, dict],
 ) -> dict[str, int]:
-    """全套教材：正文分词 + 词语表词形，出现次数合计（词频）。"""
     freq: dict[str, int] = defaultdict(int)
     for _code, rows in chunk_tokens_by_book.items():
         for row in rows:
@@ -335,7 +351,134 @@ def _build_word_freq(
     return dict(freq)
 
 
-def build_payload(root: Path, out_dir: Path) -> dict:
+def _export_one_batch(
+    root: Path,
+    batch_id: str,
+    jieba_cut,
+    jieba_ok: bool,
+) -> tuple[dict, list[str]]:
+    """导出单批；返回 (batchPayload, warnings)。"""
+    out_dir = root / "output" / batch_id
+    warnings: list[str] = []
+    books_meta: list[dict] = []
+    char_by_book: dict[str, dict] = {}
+    word_by_book: dict[str, dict] = {}
+    chunks_meta_by_book: dict[str, list] = {}
+    chunk_tokens_by_book: dict[str, list] = {}
+    toc_by_book: dict[str, list] = {}
+
+    for code in _discover_book_codes(out_dir):
+        layout_path, title = _layout_path(root, out_dir, code)
+        display_title = SLOT_KEYWORDS.get(code, title)
+        books_meta.append(
+            {
+                "code": code,
+                "title": display_title,
+                "fileTitle": title,
+            }
+        )
+
+        shizi = _load_json(out_dir / f"{code}_识字表.json")
+        xiezi = _load_json(out_dir / f"{code}_写字表.json")
+        ciyi = _load_json(out_dir / f"{code}_词语表.json")
+        chunk_j = _load_json(out_dir / f"{code}_正文分块.json")
+        toc_j = _load_json(out_dir / f"{code}_目录.json")
+        toc_by_book[code] = _toc_entries_web(toc_j)
+        if not toc_by_book[code]:
+            warnings.append(f"{batch_id}/{code}: 缺少或空的 目录.json")
+
+        char_by_book[code] = {
+            "识字表": _char_rows(shizi),
+            "写字表": _char_rows(xiezi),
+        }
+        word_by_book[code] = {"词语表": _word_rows(ciyi)}
+
+        chunks_raw, w = _chunk_records(chunk_j, layout_path)
+        for x in w:
+            warnings.append(f"{batch_id}/{code}: {x}")
+
+        chunks_meta_by_book[code] = _public_chunks_meta(chunks_raw)
+
+        if jieba_ok and jieba_cut:
+            chunk_tokens_by_book[code] = _tokenize_chunks(
+                f"{batch_id}/{code}", chunks_raw, jieba_cut
+            )
+        else:
+            chunk_tokens_by_book[code] = [[] for _ in chunks_raw]
+
+    return {
+        "id": batch_id,
+        "books": books_meta,
+        "tocByBook": toc_by_book,
+        "charByBook": char_by_book,
+        "wordByBook": word_by_book,
+        "chunksByBook": chunks_meta_by_book,
+        "chunkTokensByBook": chunk_tokens_by_book,
+    }, warnings
+
+
+def _inventory_from_batches(batch_payloads: dict[str, dict]) -> dict[str, set[str]]:
+    inv: dict[str, set[str]] = {}
+    for bid, payload in batch_payloads.items():
+        codes = {b["code"] for b in payload.get("books") or [] if b.get("code")}
+        inv[bid] = codes
+    return inv
+
+
+def _assemble_set_view(
+    set_dict: dict,
+    batch_payloads: dict[str, dict],
+) -> dict:
+    """
+    将成套 slots 展平为与旧版兼容的视图字段：
+    books / tocByBook / charByBook / … / wordFreq
+    """
+    books: list[dict] = []
+    toc_by_book: dict[str, list] = {}
+    char_by_book: dict[str, dict] = {}
+    word_by_book: dict[str, dict] = {}
+    chunks_by_book: dict[str, list] = {}
+    chunk_tokens_by_book: dict[str, list] = {}
+    sources: dict[str, dict] = {}
+
+    for ref in set_dict.get("slots") or []:
+        if not ref:
+            continue
+        bid = ref.get("batch")
+        code = ref.get("code")
+        if not bid or not code:
+            continue
+        bp = batch_payloads.get(bid) or {}
+        # 书目元数据
+        meta = next((b for b in (bp.get("books") or []) if b.get("code") == code), None)
+        title = (meta or {}).get("title") or SLOT_KEYWORDS.get(code, code)
+        books.append({"code": code, "title": title, "batch": bid})
+        sources[code] = {"batch": bid}
+
+        toc_by_book[code] = (bp.get("tocByBook") or {}).get(code) or []
+        char_by_book[code] = (bp.get("charByBook") or {}).get(code) or {
+            "识字表": [],
+            "写字表": [],
+        }
+        word_by_book[code] = (bp.get("wordByBook") or {}).get(code) or {"词语表": []}
+        chunks_by_book[code] = (bp.get("chunksByBook") or {}).get(code) or []
+        chunk_tokens_by_book[code] = (bp.get("chunkTokensByBook") or {}).get(code) or []
+
+    word_freq = _build_word_freq(chunk_tokens_by_book, word_by_book)
+
+    return {
+        "books": books,
+        "tocByBook": toc_by_book,
+        "charByBook": char_by_book,
+        "wordByBook": word_by_book,
+        "chunksByBook": chunks_by_book,
+        "chunkTokensByBook": chunk_tokens_by_book,
+        "wordFreq": word_freq,
+        "bookSources": sources,
+    }
+
+
+def build_payload(root: Path) -> dict:
     try:
         import jieba
 
@@ -345,67 +488,111 @@ def build_payload(root: Path, out_dir: Path) -> dict:
         jieba_cut = None
         jieba_ok = False
 
-    books_meta: list[dict] = []
-    char_by_book: dict[str, dict] = {}
-    word_by_book: dict[str, dict] = {}
-    chunks_meta_by_book: dict[str, list] = {}
-    chunk_tokens_by_book: dict[str, list] = {}
-    toc_by_book: dict[str, list] = {}
     all_warnings: list[str] = []
-
     if not jieba_ok:
         all_warnings.append(
-            "未安装 jieba，已跳过正文预分词（chunkTokensByBook 将为空列表）；请执行: pip install jieba 或 pip install -e \".[web]\" 后重新导出。",
+            "未安装 jieba，已跳过正文预分词（chunkTokensByBook 将为空列表）；"
+            "请执行: pip install jieba 或 pip install -e \".[web]\" 后重新导出。",
         )
 
-    for code in _discover_book_codes(out_dir):
-        layout_path, title = _layout_path(root, out_dir, code)
-        books_meta.append({"code": code, "title": title})
+    batch_ids = _discover_output_batches(root)
+    if not batch_ids:
+        raise FileNotFoundError(
+            f"未在 {root / 'output'} 下找到任何批次解析结果（output/YYYY-MM…/）"
+        )
 
-        shizi = _load_json(out_dir / f"{code}_识字表.json")
-        xiezi = _load_json(out_dir / f"{code}_写字表.json")
-        ciyi = _load_json(out_dir / f"{code}_词语表.json")
-        chunk_j = _load_json(out_dir / f"{code}_正文分块.json")
-        toc_j = _load_json(out_dir / f"{code}_目录.json")
-        toc_by_book[code] = _toc_entries_web(toc_j)
-        if not toc_by_book[code]:
-            all_warnings.append(f"{code}: 缺少或空的 目录.json，无法按「课」筛选范围")
+    # 成套错位按 material 全部批次回溯；界面锚点仅最新一批（见 build_all_sets）
+    material_batches = discover_batch_ids(root)
+    if not material_batches:
+        material_batches = list(batch_ids)
 
-        char_by_book[code] = {
-            "识字表": _char_rows(shizi),
-            "写字表": _char_rows(xiezi),
-        }
-        word_rows = _word_rows(ciyi)
-        word_by_book[code] = {"词语表": word_rows}
+    batch_payloads: dict[str, dict] = {}
+    batches_meta: list[dict] = []
+    for bid in batch_ids:
+        payload, warns = _export_one_batch(root, bid, jieba_cut, jieba_ok)
+        batch_payloads[bid] = payload
+        batches_meta.append({"id": bid, "label": bid})
+        all_warnings.extend(warns)
 
-        chunks_raw, w = _chunk_records(chunk_j, layout_path)
-        for x in w:
-            all_warnings.append(f"{code}: {x}")
+    # 拼装清单以 material 为准（避免 output 残留错册污染错位）
+    inventory: dict[str, set[str]] = {
+        b: set(list_slots_in_batch(root, b)) for b in material_batches
+    }
 
-        chunks_meta_by_book[code] = _public_chunks_meta(chunks_raw)
+    latest_material = material_batches[-1]
+    assemblies = build_all_sets(
+        root,
+        material_batches,
+        inventory=inventory,
+        anchor_batch=latest_material,
+    )
 
-        if jieba_ok and jieba_cut:
-            chunk_tokens_by_book[code] = _tokenize_chunks(code, chunks_raw, jieba_cut)
-        else:
-            chunk_tokens_by_book[code] = [[] for _ in chunks_raw]
+    sets_out: list[dict] = []
+    for asm in assemblies:
+        sd = set_assembly_to_dict(asm)
+        view = _assemble_set_view(sd, batch_payloads)
+        # 槽位有 material 但无 output 时提示
+        for ref in sd.get("slots") or []:
+            if not ref:
+                continue
+            bid, code = ref.get("batch"), ref.get("code")
+            if bid and code and bid not in batch_payloads:
+                all_warnings.append(
+                    f"成套 {sd['id']}: {code} 依赖批次 {bid}，但尚无 output/{bid}/，请先解析该批"
+                )
+            elif bid and code and code not in {
+                b["code"] for b in (batch_payloads.get(bid) or {}).get("books") or []
+            }:
+                all_warnings.append(
+                    f"成套 {sd['id']}: {bid}/{code} 缺少解析产物"
+                )
+        sd["view"] = view
+        sets_out.append(sd)
 
-    word_freq = _build_word_freq(chunk_tokens_by_book, word_by_book)
+    # 默认套：最新一批中学习序列最后一册
+    default_set_id = sets_out[-1]["id"] if sets_out else None
+    latest_codes = [c for c in SLOT_CODES if c in inventory.get(latest_material, set())]
+    if latest_codes:
+        want = f"{latest_material}/{latest_codes[-1]}"
+        if any(s["id"] == want for s in sets_out):
+            default_set_id = want
+
+    # 兼容旧前端：顶层仍提供默认套的展平字段
+    default_view = next(
+        (s["view"] for s in sets_out if s["id"] == default_set_id),
+        sets_out[-1]["view"] if sets_out else {},
+    )
 
     return {
-        "version": 8,
-        "books": books_meta,
-        "tocByBook": toc_by_book,
-        "charByBook": char_by_book,
-        "wordByBook": word_by_book,
-        "chunksByBook": chunks_meta_by_book,
-        "chunkTokensByBook": chunk_tokens_by_book,
-        "wordFreq": word_freq,
+        "version": 9,
+        "batches": batches_meta,
+        "booksByBatch": {
+            bid: {
+                "books": batch_payloads[bid]["books"],
+                "tocByBook": batch_payloads[bid]["tocByBook"],
+                "charByBook": batch_payloads[bid]["charByBook"],
+                "wordByBook": batch_payloads[bid]["wordByBook"],
+                "chunksByBook": batch_payloads[bid]["chunksByBook"],
+                "chunkTokensByBook": batch_payloads[bid]["chunkTokensByBook"],
+            }
+            for bid in batch_ids
+        },
+        "sets": sets_out,
+        "defaultSetId": default_set_id,
+        # 旧字段 = 默认套视图（首屏无需选套也能用）
+        "books": default_view.get("books") or [],
+        "tocByBook": default_view.get("tocByBook") or {},
+        "charByBook": default_view.get("charByBook") or {},
+        "wordByBook": default_view.get("wordByBook") or {},
+        "chunksByBook": default_view.get("chunksByBook") or {},
+        "chunkTokensByBook": default_view.get("chunkTokensByBook") or {},
+        "wordFreq": default_view.get("wordFreq") or {},
         "exportWarnings": all_warnings,
     }
 
 
 def main() -> int:
-    ap = argparse.ArgumentParser(description="导出静态网页用 data.js")
+    ap = argparse.ArgumentParser(description="导出静态网页用 data.js（多批次成套）")
     ap.add_argument(
         "--output",
         type=Path,
@@ -414,15 +601,15 @@ def main() -> int:
     )
     args = ap.parse_args()
     root = _root()
-    out_dir = root / "output"
     dest = (args.output or (root / "web" / "generated" / "data.js")).resolve()
     dest.parent.mkdir(parents=True, exist_ok=True)
 
-    if not out_dir.is_dir():
-        print(f"缺少目录: {out_dir}", file=sys.stderr)
+    try:
+        payload = build_payload(root)
+    except FileNotFoundError as e:
+        print(str(e), file=sys.stderr)
         return 1
 
-    payload = build_payload(root, out_dir)
     js = (
         "// AUTO-GENERATED by scripts/export_web_data.py — 请勿手改\n"
         "window.TEXTBOOK_WEB_DATA = "
@@ -433,11 +620,18 @@ def main() -> int:
 
     size_mb = dest.stat().st_size / (1024 * 1024)
     print(f"已写入: {dest}（约 {size_mb:.2f} MB）")
+    print(
+        f"批次 {len(payload.get('batches') or [])}，"
+        f"成套 {len(payload.get('sets') or [])}，"
+        f"默认套 {payload.get('defaultSetId')}"
+    )
     warns = payload.get("exportWarnings") or []
     if warns:
         print("提示:", file=sys.stderr)
-        for w in warns:
+        for w in warns[:20]:
             print(f"  - {w}", file=sys.stderr)
+        if len(warns) > 20:
+            print(f"  …共 {len(warns)} 条", file=sys.stderr)
     return 0
 
 

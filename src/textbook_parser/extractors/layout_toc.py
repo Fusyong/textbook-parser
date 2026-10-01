@@ -34,6 +34,8 @@ _SECTION_PREFIX_RE = re.compile(
 )
 # 一年级「入学教育」等：整行标题即分组头（非「第×单元」形式）
 _SECTION_EXTRA_RE = re.compile(r"^我上学了$")
+# 「目录」与左侧标题挤在同一行时（compact 如「我上学了目录」），剥离左侧作分组头
+_TOC_START_WITH_SIDE_TITLE_RE = re.compile(r"^(.+)目录$")
 # 六年级下册等：目录右栏「古诗词诵读」块（非单元），其后篇目独立成组
 _SECTION_ANCIENT_POETRY_RECITATION_RE = re.compile(r"^(?:古诗词诵读|古诗诵读)$")
 _SECTION_ANCIENT_POETRY_LABEL = "古诗词诵读"
@@ -943,10 +945,29 @@ def _toc_region_line_bounds(full_text: str, inner: dict[str, Any]) -> tuple[int,
     return start_idx, end_idx
 
 
+def _toc_start_side_title(start_line: str) -> str | None:
+    """
+    双栏/挤行：「我上学了            目录」compact 为「我上学了目录」。
+    该行被当作目录起始标题排除后，左侧标题须补回正文，否则入学教育分组丢失。
+    """
+    c = compact_for_match(_strip_tabs(start_line)).replace("\f", "")
+    if c == "目录":
+        return None
+    m = _TOC_START_WITH_SIDE_TITLE_RE.fullmatch(c)
+    if not m:
+        return None
+    prefix = (m.group(1) or "").strip()
+    return prefix or None
+
+
 def slice_toc_region(full_text: str, inner: dict[str, Any]) -> list[str]:
     start_idx, end_idx = _toc_region_line_bounds(full_text, inner)
     lines = full_text.splitlines()
-    return lines[start_idx + 1 : end_idx + 1]
+    body = list(lines[start_idx + 1 : end_idx + 1])
+    side = _toc_start_side_title(lines[start_idx])
+    if side:
+        body.insert(0, side)
+    return body
 
 
 def slice_toc_region_pages(full_text: str, inner: dict[str, Any]) -> list[list[str]]:
@@ -955,6 +976,8 @@ def slice_toc_region_pages(full_text: str, inner: dict[str, Any]) -> list[list[s
     splitlines() 会吞掉行界 \\f，故从原文截取子串后按 \\f 分割才能保留分页。
     """
     start_idx, end_idx = _toc_region_line_bounds(full_text, inner)
+    lines = full_text.splitlines()
+    side = _toc_start_side_title(lines[start_idx])
     lines_ke = full_text.splitlines(keepends=True)
     off_b = sum(len(lines_ke[i]) for i in range(start_idx + 1))
     off_e = sum(len(lines_ke[i]) for i in range(end_idx + 1))
@@ -964,7 +987,11 @@ def slice_toc_region_pages(full_text: str, inner: dict[str, Any]) -> list[list[s
         pg = [ln.rstrip("\r") for ln in chunk.splitlines()]
         if any(x.strip() for x in pg):
             pages.append(pg)
-    return pages if pages else [[]]
+    if not pages:
+        pages = [[]]
+    if side:
+        pages[0] = [side] + pages[0]
+    return pages
 
 
 def _catalog_line_for_unit_rules(e: dict[str, Any]) -> str:

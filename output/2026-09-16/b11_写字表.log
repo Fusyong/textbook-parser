@@ -1,0 +1,18 @@
+# textbook-parser extract
+# time: 2026-09-30T15:11:33
+# argv: D:\ah21\textbook-parser\src\textbook_parser\__main__.py extract --book b11 --batch 2026-09-16 --extractor 写字表 --project-root .
+# book_code: b11
+# log_file: D:\ah21\textbook-parser\output\2026-09-16\b11_写字表.log
+# 以下 stdout/stderr 均写入本日志（含警告、错误与提取器提示）。
+# project_root: D:\ah21\textbook-parser
+# batch: 2026-09-16
+# config: (--book)
+# extractor_only: 写字表
+
+[b11/写字表 抛弃] 识字                               识字
+[b11/写字表] 目录 JSON 对齐 — 锚点全部匹配到目录
+写字表: 行数 25，字数合计 100
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b11_写字表.json
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b11_写字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b11_写字表.discard.log
+控制台输出已同步写入日志: D:\ah21\textbook-parser\output\2026-09-16\b11_写字表.log

@@ -1,12 +1,47 @@
 /**
  * 小学语文教材字词工具 — 依赖 window.TEXTBOOK_WEB_DATA（由 scripts/export_web_data.py 生成）
  * 文本检查、组词范围均由「册 + 目录项」起点/终点确定（按书目顺序与目录顺序比较，可跨册）。
+ * v9+：可按「成套教材」切换数据视图。
  */
 
 const HAN_RE = /\p{Script=Han}/u;
 
-function data() {
+/** @type {string | null} */
+let activeSetId = null;
+
+function rawData() {
   return window.TEXTBOOK_WEB_DATA;
+}
+
+/**
+ * 当前成套视图（含 books / tocByBook / wordFreq 等）。
+ * 无 sets 时退回顶层字段（兼容旧 data.js）。
+ */
+function data() {
+  const r = rawData();
+  if (!r) return r;
+  const sets = r.sets;
+  if (!Array.isArray(sets) || !sets.length) {
+    return r;
+  }
+  const id = activeSetId || r.defaultSetId || sets[sets.length - 1]?.id;
+  const set = sets.find((s) => s.id === id) || sets[sets.length - 1];
+  const view = set?.view;
+  if (!view) {
+    return { ...r, _set: set };
+  }
+  return {
+    ...r,
+    books: view.books || [],
+    tocByBook: view.tocByBook || {},
+    charByBook: view.charByBook || {},
+    wordByBook: view.wordByBook || {},
+    chunksByBook: view.chunksByBook || {},
+    chunkTokensByBook: view.chunkTokensByBook || {},
+    wordFreq: view.wordFreq || {},
+    bookSources: view.bookSources || {},
+    _set: set,
+  };
 }
 
 function showDataBanner(msg) {
@@ -19,6 +54,100 @@ function showDataBanner(msg) {
   }
   el.textContent = msg;
   el.classList.remove("hidden");
+}
+
+function formatSubstitutionTip(subs) {
+  if (!subs?.length) return "";
+  return (
+    "教材替换情况：" +
+    subs
+      .map((s) => {
+        if (s.message) return s.message;
+        const expect = s.expectedBatch ? `本应由 ${s.expectedBatch} 提供，` : "";
+        return `${s.code}：${expect}现以 ${s.fromBatch || "?"} 顶替`;
+      })
+      .join("；")
+  );
+}
+
+function setBannerForActiveSet() {
+  const d = data();
+  const set = d?._set;
+  const subs = set?.substitutions || [];
+  const setId = set?.id || "";
+  const exportWarns = (rawData()?.exportWarnings || [])
+    .filter((w) => !setId || String(w).includes(setId))
+    .slice(0, 3);
+  const parts = [];
+  const subTip = formatSubstitutionTip(subs);
+  if (subTip) {
+    parts.push(subTip);
+  }
+  if (exportWarns.length) {
+    parts.push(`导出提示：${exportWarns.join("；")}`);
+  }
+  // 仅在有替换或导出告警时显示横幅，避免无事也占一条警告条
+  showDataBanner(parts.length ? parts.join("。") : "");
+}
+
+function fillSetSelect() {
+  const sel = document.getElementById("textbook-set");
+  if (!sel) return;
+  const r = rawData();
+  const sets = r?.sets || [];
+  sel.innerHTML = "";
+  if (!sets.length) {
+    const opt = document.createElement("option");
+    opt.value = "";
+    opt.textContent = "（单批数据）";
+    sel.appendChild(opt);
+    sel.disabled = true;
+    return;
+  }
+  sel.disabled = false;
+  // 较新的套排前面，便于选择
+  const ordered = [...sets].reverse();
+  for (const s of ordered) {
+    const opt = document.createElement("option");
+    opt.value = s.id;
+    const n = (s.slots || []).filter(Boolean).length;
+    const subs = s.substitutions || [];
+    opt.textContent = subs.length
+      ? `${s.label}（${n}册，有替换）`
+      : `${s.label}（${n}册）`;
+    const tip = formatSubstitutionTip(subs);
+    if (tip) opt.title = tip;
+    sel.appendChild(opt);
+  }
+  const want = activeSetId || r.defaultSetId || ordered[0]?.id;
+  if (want && [...sel.options].some((o) => o.value === want)) {
+    sel.value = want;
+    activeSetId = want;
+  }
+}
+
+function applyActiveSet() {
+  const d = data();
+  for (const id of [
+    "char-start-book",
+    "char-end-book",
+    "word-start-book",
+    "word-end-book",
+    "lexicon-book",
+  ]) {
+    fillBookSelect(id);
+  }
+  for (const prefix of ["char-start", "char-end", "word-start", "word-end"]) {
+    const bookSel = document.getElementById(`${prefix}-book`);
+    if (bookSel) fillTocSelect(bookSel.value, `${prefix}-toc`);
+  }
+  defaultLessonEndpoints();
+  if (d.books?.[0]?.code) {
+    const lexBook = document.getElementById("lexicon-book");
+    if (lexBook) lexBook.value = d.books[0].code;
+  }
+  renderLexicon();
+  setBannerForActiveSet();
 }
 
 function isHanChar(ch) {
@@ -757,6 +886,7 @@ function fillBookSelect(selectId) {
     const opt = document.createElement("option");
     opt.value = b.code;
     opt.textContent = b.code;
+    opt.title = b.batch ? `${b.title || b.code}（${b.batch}）` : b.title || b.code;
     sel.appendChild(opt);
   }
   if (cur && [...sel.options].some((o) => o.value === cur)) sel.value = cur;
@@ -976,12 +1106,30 @@ function runWordSearch() {
 }
 
 function init() {
-  const d = data();
-  if (!d || !Array.isArray(d.books) || d.books.length === 0) {
+  const r = rawData();
+  if (!r || (!Array.isArray(r.books) && !Array.isArray(r.sets))) {
     showDataBanner(
       "未找到数据：请在项目根目录运行 python scripts/export_web_data.py，生成 web/generated/data.js 后刷新。",
     );
     setupTabs();
+    return;
+  }
+
+  if (Array.isArray(r.sets) && r.sets.length) {
+    activeSetId = r.defaultSetId || r.sets[r.sets.length - 1]?.id || null;
+  }
+
+  const d = data();
+  if (!d || !Array.isArray(d.books) || d.books.length === 0) {
+    showDataBanner(
+      "当前教材套无可用分册数据。请确认已解析各批次并重新导出 data.js。",
+    );
+    setupTabs();
+    fillSetSelect();
+    document.getElementById("textbook-set")?.addEventListener("change", (e) => {
+      activeSetId = e.target.value || null;
+      applyActiveSet();
+    });
     return;
   }
 
@@ -993,29 +1141,17 @@ function init() {
     return;
   }
 
-  const warns = d.exportWarnings || [];
-  if (warns.length) {
-    showDataBanner(`数据已加载；导出提示：${warns.slice(0, 3).join("；")}${warns.length > 3 ? "…" : ""}`);
-  } else {
-    showDataBanner("");
-  }
-
   setupTabs();
-
-  for (const id of [
-    "char-start-book",
-    "char-end-book",
-    "word-start-book",
-    "word-end-book",
-    "lexicon-book",
-  ]) {
-    fillBookSelect(id);
-  }
+  fillSetSelect();
+  document.getElementById("textbook-set")?.addEventListener("change", (e) => {
+    activeSetId = e.target.value || null;
+    applyActiveSet();
+  });
   bindBookTocPair("char-start");
   bindBookTocPair("char-end");
   bindBookTocPair("word-start");
   bindBookTocPair("word-end");
-  defaultLessonEndpoints();
+  applyActiveSet();
 
   document.getElementById("char-run")?.addEventListener("click", runCharCheck);
   document.getElementById("word-run")?.addEventListener("click", runWordSearch);
@@ -1023,7 +1159,6 @@ function init() {
 
   const lexBook = document.getElementById("lexicon-book");
   const lexKind = document.getElementById("lexicon-kind");
-  if (lexBook && d.books?.[0]?.code) lexBook.value = d.books[0].code;
   lexBook?.addEventListener("change", renderLexicon);
   lexKind?.addEventListener("change", renderLexicon);
 }

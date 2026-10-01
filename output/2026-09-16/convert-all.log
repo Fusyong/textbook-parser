@@ -1,0 +1,15 @@
+# textbook-parser convert-all
+# time: 2026-09-30T08:27:56
+# argv: D:\ah21\textbook-parser\src\textbook_parser\__main__.py convert-all --project-root . --batch 2026-09-16
+# book_code: 12_books
+# log_file: D:\ah21\textbook-parser\output\2026-09-16\convert-all.log
+# 以下 stdout/stderr 均写入本日志（含警告、错误与提取器提示）。
+# project_root: D:\ah21\textbook-parser
+# batch: 2026-09-16
+# books_arg: (本批全部书目)
+
+批次: 2026-09-16
+--- b11 ---
+缺少 PDF: D:\ah21\textbook-parser\material\2026-09-16\（含「一年级上册」的 PDF）
+控制台输出已同步写入日志: D:\ah21\textbook-parser\material\2026-09-16\（根据2022年版课程标准修订）义务教育教科书·语文一年级上册.convert.log
+控制台输出已同步写入日志: D:\ah21\textbook-parser\output\2026-09-16\convert-all.log

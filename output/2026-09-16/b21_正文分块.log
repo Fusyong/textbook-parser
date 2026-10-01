@@ -1,0 +1,21 @@
+# textbook-parser toc-chunk
+# time: 2026-09-30T13:40:35
+# argv: D:\ah21\textbook-parser\src\textbook_parser\__main__.py toc-chunk --project-root . --books --continue-on-error
+# book_code: b21
+# log_file: D:\ah21\textbook-parser\output\2026-09-16\b21_正文分块.log
+# 以下 stdout/stderr 均写入本日志（含警告、错误与提取器提示）。
+# project_root: D:\ah21\textbook-parser
+# batch: 2026-09-16
+# output: D:\ah21\textbook-parser\output\2026-09-16
+
+正文分块: 条目 40, 命中 34, 未命中 6
+  [问题] 未命中锚点: b21-toc-0006 快乐读书吧 keys=['快乐读书吧']
+  [问题] 未命中锚点: b21-toc-0015 1 场景歌 keys=['场景歌', '1场景歌']
+  [问题] 未命中锚点: b21-toc-0016 2 树之歌 keys=['树之歌', '2树之歌']
+  [问题] 未命中锚点: b21-toc-0017 3 拍手歌 keys=['拍手歌', '3拍手歌']
+  [问题] 未命中锚点: b21-toc-0018 4 田家四季歌 keys=['田家四季歌', '4田家四季歌']
+  [问题] 未命中锚点: b21-toc-0019 语文园地二 keys=['语文园地二']
+  [问题] 正文在 L4306「识字表」处截断，其后附录表未纳入分块
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b21_正文分块.json
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b21_正文分块.md
+控制台输出已同步写入日志: D:\ah21\textbook-parser\output\2026-09-16\b21_正文分块.log
