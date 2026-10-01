@@ -144,171 +144,12 @@
       "id": "b51-toc-0014"
     },
     {
-      "kind": "lesson",
-      "number": "9",
-      "title": "牛郎织女（一）",
-      "page": 37,
-      "optional_reading": false,
-      "unit_type": "课文",
-      "unit_subtype": "阅读",
-      "group_label": "第二单元",
-      "id": "b51-toc-0015"
-    },
-    {
-      "kind": "lesson",
-      "number": "10",
-      "title": "牛郎织女（二）",
-      "page": 42,
-      "optional_reading": true,
-      "unit_type": "课文",
-      "unit_subtype": "阅读",
-      "group_label": "第二单元",
-      "id": "b51-toc-0016"
-    },
-    {
-      "kind": "block_activity",
-      "block": "口语交际",
-      "title": "讲民间故事",
-      "page": 45,
-      "unit_type": "口语交际",
-      "unit_subtype": null,
-      "group_label": "第二单元",
-      "id": "b51-toc-0017"
-    },
-    {
-      "kind": "block_activity",
-      "block": "习作",
-      "title": "故事新编",
-      "page": 46,
-      "unit_type": "习作",
-      "unit_subtype": null,
-      "group_label": "第二单元",
-      "id": "b51-toc-0018"
-    },
-    {
-      "kind": "garden",
-      "label": "语文园地",
-      "page": 47,
-      "unit_type": "语文园地",
-      "unit_subtype": null,
-      "group_label": "第二单元",
-      "id": "b51-toc-0019"
-    },
-    {
-      "kind": "reading_club",
-      "title": "快乐读书吧",
-      "page": 49,
-      "unit_type": "快乐读书吧",
-      "unit_subtype": null,
-      "group_label": "第二单元",
-      "sublesson_title": "从前有座山",
-      "id": "b51-toc-0020"
-    },
-    {
-      "kind": "section",
-      "label": "第四单元",
-      "unit_type": "分组",
-      "unit_subtype": null,
-      "group_label": "第四单元",
-      "id": "b51-toc-0021"
-    },
-    {
-      "kind": "lesson",
-      "number": "11",
-      "title": "古诗三首",
-      "page": 52,
-      "optional_reading": false,
-      "unit_type": "课文",
-      "unit_subtype": "阅读",
-      "group_label": "第四单元",
-      "id": "b51-toc-0022"
-    },
-    {
-      "kind": "sublesson",
-      "title": "示儿",
-      "page": 52,
-      "unit_type": "课文",
-      "unit_subtype": "阅读",
-      "group_label": "第四单元",
-      "id": "b51-toc-0023"
-    },
-    {
-      "kind": "sublesson",
-      "title": "题临安邸",
-      "page": 52,
-      "unit_type": "课文",
-      "unit_subtype": "阅读",
-      "group_label": "第四单元",
-      "id": "b51-toc-0024"
-    },
-    {
-      "kind": "sublesson",
-      "title": "己亥杂诗",
-      "page": 53,
-      "unit_type": "课文",
-      "unit_subtype": "阅读",
-      "group_label": "第四单元",
-      "id": "b51-toc-0025"
-    },
-    {
-      "kind": "lesson",
-      "number": "12",
-      "title": "少年中国说（节选）",
-      "page": 54,
-      "optional_reading": false,
-      "unit_type": "课文",
-      "unit_subtype": "阅读",
-      "group_label": "第四单元",
-      "id": "b51-toc-0026"
-    },
-    {
-      "kind": "lesson",
-      "number": "13",
-      "title": "圆明园的毁灭",
-      "page": 56,
-      "optional_reading": false,
-      "unit_type": "课文",
-      "unit_subtype": "阅读",
-      "group_label": "第四单元",
-      "id": "b51-toc-0027"
-    },
-    {
-      "kind": "lesson",
-      "number": "14",
-      "title": "梅兰芳蓄须明志",
-      "page": 59,
-      "optional_reading": true,
-      "unit_type": "课文",
-      "unit_subtype": "阅读",
-      "group_label": "第四单元",
-      "id": "b51-toc-0028"
-    },
-    {
-      "kind": "block_activity",
-      "block": "习作",
-      "title": "二十年后的家乡",
-      "page": 62,
-      "unit_type": "习作",
-      "unit_subtype": null,
-      "group_label": "第四单元",
-      "id": "b51-toc-0029"
-    },
-    {
-      "kind": "garden",
-      "label": "语文园地",
-      "page": 63,
-      "unit_type": "语文园地",
-      "unit_subtype": null,
-      "group_label": "第四单元",
-      "id": "b51-toc-0030"
-    },
-    {
       "kind": "section",
       "label": "第三单元",
       "unit_type": "分组",
       "unit_subtype": null,
       "group_label": "第三单元",
-      "id": "b51-toc-0031"
+      "id": "b51-toc-0015"
     },
     {
       "kind": "lesson",
@@ -319,6 +160,165 @@
       "unit_type": "课文",
       "unit_subtype": "阅读",
       "group_label": "第三单元",
+      "id": "b51-toc-0016"
+    },
+    {
+      "kind": "lesson",
+      "number": "9",
+      "title": "牛郎织女（一）",
+      "page": 37,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第三单元",
+      "id": "b51-toc-0017"
+    },
+    {
+      "kind": "lesson",
+      "number": "10",
+      "title": "牛郎织女（二）",
+      "page": 42,
+      "optional_reading": true,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第三单元",
+      "id": "b51-toc-0018"
+    },
+    {
+      "kind": "block_activity",
+      "block": "口语交际",
+      "title": "讲民间故事",
+      "page": 45,
+      "unit_type": "口语交际",
+      "unit_subtype": null,
+      "group_label": "第三单元",
+      "id": "b51-toc-0019"
+    },
+    {
+      "kind": "block_activity",
+      "block": "习作",
+      "title": "故事新编",
+      "page": 46,
+      "unit_type": "习作",
+      "unit_subtype": null,
+      "group_label": "第三单元",
+      "id": "b51-toc-0020"
+    },
+    {
+      "kind": "garden",
+      "label": "语文园地",
+      "page": 47,
+      "unit_type": "语文园地",
+      "unit_subtype": null,
+      "group_label": "第三单元",
+      "id": "b51-toc-0021"
+    },
+    {
+      "kind": "reading_club",
+      "title": "快乐读书吧",
+      "page": 49,
+      "unit_type": "快乐读书吧",
+      "unit_subtype": null,
+      "group_label": "第三单元",
+      "sublesson_title": "从前有座山",
+      "id": "b51-toc-0022"
+    },
+    {
+      "kind": "section",
+      "label": "第四单元",
+      "unit_type": "分组",
+      "unit_subtype": null,
+      "group_label": "第四单元",
+      "id": "b51-toc-0023"
+    },
+    {
+      "kind": "lesson",
+      "number": "11",
+      "title": "古诗三首",
+      "page": 52,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第四单元",
+      "id": "b51-toc-0024"
+    },
+    {
+      "kind": "sublesson",
+      "title": "示儿",
+      "page": 52,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第四单元",
+      "id": "b51-toc-0025"
+    },
+    {
+      "kind": "sublesson",
+      "title": "题临安邸",
+      "page": 52,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第四单元",
+      "id": "b51-toc-0026"
+    },
+    {
+      "kind": "sublesson",
+      "title": "己亥杂诗",
+      "page": 53,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第四单元",
+      "id": "b51-toc-0027"
+    },
+    {
+      "kind": "lesson",
+      "number": "12",
+      "title": "少年中国说（节选）",
+      "page": 54,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第四单元",
+      "id": "b51-toc-0028"
+    },
+    {
+      "kind": "lesson",
+      "number": "13",
+      "title": "圆明园的毁灭",
+      "page": 56,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第四单元",
+      "id": "b51-toc-0029"
+    },
+    {
+      "kind": "lesson",
+      "number": "14",
+      "title": "梅兰芳蓄须明志",
+      "page": 59,
+      "optional_reading": true,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第四单元",
+      "id": "b51-toc-0030"
+    },
+    {
+      "kind": "block_activity",
+      "block": "习作",
+      "title": "二十年后的家乡",
+      "page": 62,
+      "unit_type": "习作",
+      "unit_subtype": null,
+      "group_label": "第四单元",
+      "id": "b51-toc-0031"
+    },
+    {
+      "kind": "garden",
+      "label": "语文园地",
+      "page": 63,
+      "unit_type": "语文园地",
+      "unit_subtype": null,
+      "group_label": "第四单元",
       "id": "b51-toc-0032"
     },
     {
@@ -786,168 +786,11 @@
           "unit_subtype": null,
           "group_label": "第二单元",
           "id": "b51-toc-0014"
-        },
-        {
-          "kind": "lesson",
-          "number": "9",
-          "title": "牛郎织女（一）",
-          "page": 37,
-          "optional_reading": false,
-          "unit_type": "课文",
-          "unit_subtype": "阅读",
-          "group_label": "第二单元",
-          "id": "b51-toc-0015"
-        },
-        {
-          "kind": "lesson",
-          "number": "10",
-          "title": "牛郎织女（二）",
-          "page": 42,
-          "optional_reading": true,
-          "unit_type": "课文",
-          "unit_subtype": "阅读",
-          "group_label": "第二单元",
-          "id": "b51-toc-0016"
-        },
-        {
-          "kind": "block_activity",
-          "block": "口语交际",
-          "title": "讲民间故事",
-          "page": 45,
-          "unit_type": "口语交际",
-          "unit_subtype": null,
-          "group_label": "第二单元",
-          "id": "b51-toc-0017"
-        },
-        {
-          "kind": "block_activity",
-          "block": "习作",
-          "title": "故事新编",
-          "page": 46,
-          "unit_type": "习作",
-          "unit_subtype": null,
-          "group_label": "第二单元",
-          "id": "b51-toc-0018"
-        },
-        {
-          "kind": "garden",
-          "label": "语文园地",
-          "page": 47,
-          "unit_type": "语文园地",
-          "unit_subtype": null,
-          "group_label": "第二单元",
-          "id": "b51-toc-0019"
-        },
-        {
-          "kind": "reading_club",
-          "title": "快乐读书吧",
-          "page": 49,
-          "unit_type": "快乐读书吧",
-          "unit_subtype": null,
-          "group_label": "第二单元",
-          "sublesson_title": "从前有座山",
-          "id": "b51-toc-0020"
         }
       ]
     },
     {
       "group_id": 3,
-      "group_label": "第四单元",
-      "units": [
-        {
-          "kind": "lesson",
-          "number": "11",
-          "title": "古诗三首",
-          "page": 52,
-          "optional_reading": false,
-          "unit_type": "课文",
-          "unit_subtype": "阅读",
-          "group_label": "第四单元",
-          "id": "b51-toc-0022"
-        },
-        {
-          "kind": "sublesson",
-          "title": "示儿",
-          "page": 52,
-          "unit_type": "课文",
-          "unit_subtype": "阅读",
-          "group_label": "第四单元",
-          "id": "b51-toc-0023"
-        },
-        {
-          "kind": "sublesson",
-          "title": "题临安邸",
-          "page": 52,
-          "unit_type": "课文",
-          "unit_subtype": "阅读",
-          "group_label": "第四单元",
-          "id": "b51-toc-0024"
-        },
-        {
-          "kind": "sublesson",
-          "title": "己亥杂诗",
-          "page": 53,
-          "unit_type": "课文",
-          "unit_subtype": "阅读",
-          "group_label": "第四单元",
-          "id": "b51-toc-0025"
-        },
-        {
-          "kind": "lesson",
-          "number": "12",
-          "title": "少年中国说（节选）",
-          "page": 54,
-          "optional_reading": false,
-          "unit_type": "课文",
-          "unit_subtype": "阅读",
-          "group_label": "第四单元",
-          "id": "b51-toc-0026"
-        },
-        {
-          "kind": "lesson",
-          "number": "13",
-          "title": "圆明园的毁灭",
-          "page": 56,
-          "optional_reading": false,
-          "unit_type": "课文",
-          "unit_subtype": "阅读",
-          "group_label": "第四单元",
-          "id": "b51-toc-0027"
-        },
-        {
-          "kind": "lesson",
-          "number": "14",
-          "title": "梅兰芳蓄须明志",
-          "page": 59,
-          "optional_reading": true,
-          "unit_type": "课文",
-          "unit_subtype": "阅读",
-          "group_label": "第四单元",
-          "id": "b51-toc-0028"
-        },
-        {
-          "kind": "block_activity",
-          "block": "习作",
-          "title": "二十年后的家乡",
-          "page": 62,
-          "unit_type": "习作",
-          "unit_subtype": null,
-          "group_label": "第四单元",
-          "id": "b51-toc-0029"
-        },
-        {
-          "kind": "garden",
-          "label": "语文园地",
-          "page": 63,
-          "unit_type": "语文园地",
-          "unit_subtype": null,
-          "group_label": "第四单元",
-          "id": "b51-toc-0030"
-        }
-      ]
-    },
-    {
-      "group_id": 4,
       "group_label": "第三单元",
       "units": [
         {
@@ -959,6 +802,163 @@
           "unit_type": "课文",
           "unit_subtype": "阅读",
           "group_label": "第三单元",
+          "id": "b51-toc-0016"
+        },
+        {
+          "kind": "lesson",
+          "number": "9",
+          "title": "牛郎织女（一）",
+          "page": 37,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第三单元",
+          "id": "b51-toc-0017"
+        },
+        {
+          "kind": "lesson",
+          "number": "10",
+          "title": "牛郎织女（二）",
+          "page": 42,
+          "optional_reading": true,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第三单元",
+          "id": "b51-toc-0018"
+        },
+        {
+          "kind": "block_activity",
+          "block": "口语交际",
+          "title": "讲民间故事",
+          "page": 45,
+          "unit_type": "口语交际",
+          "unit_subtype": null,
+          "group_label": "第三单元",
+          "id": "b51-toc-0019"
+        },
+        {
+          "kind": "block_activity",
+          "block": "习作",
+          "title": "故事新编",
+          "page": 46,
+          "unit_type": "习作",
+          "unit_subtype": null,
+          "group_label": "第三单元",
+          "id": "b51-toc-0020"
+        },
+        {
+          "kind": "garden",
+          "label": "语文园地",
+          "page": 47,
+          "unit_type": "语文园地",
+          "unit_subtype": null,
+          "group_label": "第三单元",
+          "id": "b51-toc-0021"
+        },
+        {
+          "kind": "reading_club",
+          "title": "快乐读书吧",
+          "page": 49,
+          "unit_type": "快乐读书吧",
+          "unit_subtype": null,
+          "group_label": "第三单元",
+          "sublesson_title": "从前有座山",
+          "id": "b51-toc-0022"
+        }
+      ]
+    },
+    {
+      "group_id": 4,
+      "group_label": "第四单元",
+      "units": [
+        {
+          "kind": "lesson",
+          "number": "11",
+          "title": "古诗三首",
+          "page": 52,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第四单元",
+          "id": "b51-toc-0024"
+        },
+        {
+          "kind": "sublesson",
+          "title": "示儿",
+          "page": 52,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第四单元",
+          "id": "b51-toc-0025"
+        },
+        {
+          "kind": "sublesson",
+          "title": "题临安邸",
+          "page": 52,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第四单元",
+          "id": "b51-toc-0026"
+        },
+        {
+          "kind": "sublesson",
+          "title": "己亥杂诗",
+          "page": 53,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第四单元",
+          "id": "b51-toc-0027"
+        },
+        {
+          "kind": "lesson",
+          "number": "12",
+          "title": "少年中国说（节选）",
+          "page": 54,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第四单元",
+          "id": "b51-toc-0028"
+        },
+        {
+          "kind": "lesson",
+          "number": "13",
+          "title": "圆明园的毁灭",
+          "page": 56,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第四单元",
+          "id": "b51-toc-0029"
+        },
+        {
+          "kind": "lesson",
+          "number": "14",
+          "title": "梅兰芳蓄须明志",
+          "page": 59,
+          "optional_reading": true,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第四单元",
+          "id": "b51-toc-0030"
+        },
+        {
+          "kind": "block_activity",
+          "block": "习作",
+          "title": "二十年后的家乡",
+          "page": 62,
+          "unit_type": "习作",
+          "unit_subtype": null,
+          "group_label": "第四单元",
+          "id": "b51-toc-0031"
+        },
+        {
+          "kind": "garden",
+          "label": "语文园地",
+          "page": 63,
+          "unit_type": "语文园地",
+          "unit_subtype": null,
+          "group_label": "第四单元",
           "id": "b51-toc-0032"
         }
       ]
@@ -1298,6 +1298,7 @@
     "7 “诺曼底号”遇难记",
     "习作 “漫画”老师",
     "语文园地",
+    "8 猎人海力布",
     "9 牛郎织女（一）",
     "10* 牛郎织女（二）",
     "口语交际 讲民间故事",
@@ -1313,7 +1314,6 @@
     "14* 梅兰芳蓄须明志",
     "习作 二十年后的家乡",
     "语文园地",
-    "8 猎人海力布",
     "15 太阳",
     "16 金字塔",
     "习作 介绍一种事物",

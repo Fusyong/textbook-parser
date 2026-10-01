@@ -64,80 +64,11 @@
     },
     {
       "kind": "section",
-      "label": "第三单元·阅读",
-      "unit_type": "分组",
-      "unit_subtype": null,
-      "group_label": "第三单元·阅读",
-      "id": "b21-toc-0007"
-    },
-    {
-      "kind": "lesson",
-      "number": "4",
-      "title": "彩虹",
-      "page": 28,
-      "optional_reading": false,
-      "unit_type": "课文",
-      "unit_subtype": "阅读",
-      "group_label": "第三单元·阅读",
-      "id": "b21-toc-0008"
-    },
-    {
-      "kind": "lesson",
-      "number": "5",
-      "title": "去外婆家",
-      "page": 30,
-      "optional_reading": false,
-      "unit_type": "课文",
-      "unit_subtype": "阅读",
-      "group_label": "第三单元·阅读",
-      "id": "b21-toc-0009"
-    },
-    {
-      "kind": "lesson",
-      "number": "6",
-      "title": "数星星的孩子",
-      "page": 32,
-      "optional_reading": false,
-      "unit_type": "课文",
-      "unit_subtype": "阅读",
-      "group_label": "第三单元·阅读",
-      "id": "b21-toc-0010"
-    },
-    {
-      "kind": "garden",
-      "label": "语文园地三",
-      "page": 35,
-      "unit_type": "语文园地",
-      "unit_subtype": null,
-      "group_label": "第三单元·阅读",
-      "id": "b21-toc-0011"
-    },
-    {
-      "kind": "section",
-      "label": "第四单元·阅读",
-      "unit_type": "分组",
-      "unit_subtype": null,
-      "group_label": "第四单元·阅读",
-      "id": "b21-toc-0012"
-    },
-    {
-      "kind": "lesson",
-      "number": "7",
-      "title": "古诗二首",
-      "page": 39,
-      "optional_reading": false,
-      "unit_type": "课文",
-      "unit_subtype": "阅读",
-      "group_label": "第四单元·阅读",
-      "id": "b21-toc-0013"
-    },
-    {
-      "kind": "section",
       "label": "第二单元·识字",
       "unit_type": "分组",
       "unit_subtype": null,
       "group_label": "第二单元·识字",
-      "id": "b21-toc-0014"
+      "id": "b21-toc-0007"
     },
     {
       "kind": "lesson",
@@ -148,7 +79,7 @@
       "unit_type": "课文",
       "unit_subtype": "识字",
       "group_label": "第二单元·识字",
-      "id": "b21-toc-0015"
+      "id": "b21-toc-0008"
     },
     {
       "kind": "lesson",
@@ -159,7 +90,7 @@
       "unit_type": "课文",
       "unit_subtype": "识字",
       "group_label": "第二单元·识字",
-      "id": "b21-toc-0016"
+      "id": "b21-toc-0009"
     },
     {
       "kind": "lesson",
@@ -170,7 +101,7 @@
       "unit_type": "课文",
       "unit_subtype": "识字",
       "group_label": "第二单元·识字",
-      "id": "b21-toc-0017"
+      "id": "b21-toc-0010"
     },
     {
       "kind": "lesson",
@@ -181,7 +112,7 @@
       "unit_type": "课文",
       "unit_subtype": "识字",
       "group_label": "第二单元·识字",
-      "id": "b21-toc-0018"
+      "id": "b21-toc-0011"
     },
     {
       "kind": "garden",
@@ -190,6 +121,75 @@
       "unit_type": "语文园地",
       "unit_subtype": null,
       "group_label": "第二单元·识字",
+      "id": "b21-toc-0012"
+    },
+    {
+      "kind": "section",
+      "label": "第三单元·阅读",
+      "unit_type": "分组",
+      "unit_subtype": null,
+      "group_label": "第三单元·阅读",
+      "id": "b21-toc-0013"
+    },
+    {
+      "kind": "lesson",
+      "number": "4",
+      "title": "彩虹",
+      "page": 28,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第三单元·阅读",
+      "id": "b21-toc-0014"
+    },
+    {
+      "kind": "lesson",
+      "number": "5",
+      "title": "去外婆家",
+      "page": 30,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第三单元·阅读",
+      "id": "b21-toc-0015"
+    },
+    {
+      "kind": "lesson",
+      "number": "6",
+      "title": "数星星的孩子",
+      "page": 32,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第三单元·阅读",
+      "id": "b21-toc-0016"
+    },
+    {
+      "kind": "garden",
+      "label": "语文园地三",
+      "page": 35,
+      "unit_type": "语文园地",
+      "unit_subtype": null,
+      "group_label": "第三单元·阅读",
+      "id": "b21-toc-0017"
+    },
+    {
+      "kind": "section",
+      "label": "第四单元·阅读",
+      "unit_type": "分组",
+      "unit_subtype": null,
+      "group_label": "第四单元·阅读",
+      "id": "b21-toc-0018"
+    },
+    {
+      "kind": "lesson",
+      "number": "7",
+      "title": "古诗二首",
+      "page": 39,
+      "optional_reading": false,
+      "unit_type": "课文",
+      "unit_subtype": "阅读",
+      "group_label": "第四单元·阅读",
       "id": "b21-toc-0019"
     },
     {
@@ -197,8 +197,8 @@
       "title": "登鹳雀楼",
       "page": 39,
       "unit_type": "课文",
-      "unit_subtype": "识字",
-      "group_label": "第二单元·识字",
+      "unit_subtype": "阅读",
+      "group_label": "第四单元·阅读",
       "id": "b21-toc-0020"
     },
     {
@@ -206,8 +206,8 @@
       "title": "望庐山瀑布",
       "page": 40,
       "unit_type": "课文",
-      "unit_subtype": "识字",
-      "group_label": "第二单元·识字",
+      "unit_subtype": "阅读",
+      "group_label": "第四单元·阅读",
       "id": "b21-toc-0021"
     },
     {
@@ -217,8 +217,8 @@
       "page": 42,
       "optional_reading": false,
       "unit_type": "课文",
-      "unit_subtype": "识字",
-      "group_label": "第二单元·识字",
+      "unit_subtype": "阅读",
+      "group_label": "第四单元·阅读",
       "id": "b21-toc-0022"
     },
     {
@@ -228,8 +228,8 @@
       "page": 45,
       "optional_reading": false,
       "unit_type": "课文",
-      "unit_subtype": "识字",
-      "group_label": "第二单元·识字",
+      "unit_subtype": "阅读",
+      "group_label": "第四单元·阅读",
       "id": "b21-toc-0023"
     },
     {
@@ -239,8 +239,8 @@
       "page": 47,
       "optional_reading": false,
       "unit_type": "课文",
-      "unit_subtype": "识字",
-      "group_label": "第二单元·识字",
+      "unit_subtype": "阅读",
+      "group_label": "第四单元·阅读",
       "id": "b21-toc-0024"
     },
     {
@@ -249,7 +249,7 @@
       "page": 50,
       "unit_type": "语文园地",
       "unit_subtype": null,
-      "group_label": "第二单元·识字",
+      "group_label": "第四单元·阅读",
       "id": "b21-toc-0025"
     },
     {
@@ -543,71 +543,6 @@
     },
     {
       "group_id": 2,
-      "group_label": "第三单元·阅读",
-      "units": [
-        {
-          "kind": "lesson",
-          "number": "4",
-          "title": "彩虹",
-          "page": 28,
-          "optional_reading": false,
-          "unit_type": "课文",
-          "unit_subtype": "阅读",
-          "group_label": "第三单元·阅读",
-          "id": "b21-toc-0008"
-        },
-        {
-          "kind": "lesson",
-          "number": "5",
-          "title": "去外婆家",
-          "page": 30,
-          "optional_reading": false,
-          "unit_type": "课文",
-          "unit_subtype": "阅读",
-          "group_label": "第三单元·阅读",
-          "id": "b21-toc-0009"
-        },
-        {
-          "kind": "lesson",
-          "number": "6",
-          "title": "数星星的孩子",
-          "page": 32,
-          "optional_reading": false,
-          "unit_type": "课文",
-          "unit_subtype": "阅读",
-          "group_label": "第三单元·阅读",
-          "id": "b21-toc-0010"
-        },
-        {
-          "kind": "garden",
-          "label": "语文园地三",
-          "page": 35,
-          "unit_type": "语文园地",
-          "unit_subtype": null,
-          "group_label": "第三单元·阅读",
-          "id": "b21-toc-0011"
-        }
-      ]
-    },
-    {
-      "group_id": 3,
-      "group_label": "第四单元·阅读",
-      "units": [
-        {
-          "kind": "lesson",
-          "number": "7",
-          "title": "古诗二首",
-          "page": 39,
-          "optional_reading": false,
-          "unit_type": "课文",
-          "unit_subtype": "阅读",
-          "group_label": "第四单元·阅读",
-          "id": "b21-toc-0013"
-        }
-      ]
-    },
-    {
-      "group_id": 4,
       "group_label": "第二单元·识字",
       "units": [
         {
@@ -619,7 +554,7 @@
           "unit_type": "课文",
           "unit_subtype": "识字",
           "group_label": "第二单元·识字",
-          "id": "b21-toc-0015"
+          "id": "b21-toc-0008"
         },
         {
           "kind": "lesson",
@@ -630,7 +565,7 @@
           "unit_type": "课文",
           "unit_subtype": "识字",
           "group_label": "第二单元·识字",
-          "id": "b21-toc-0016"
+          "id": "b21-toc-0009"
         },
         {
           "kind": "lesson",
@@ -641,7 +576,7 @@
           "unit_type": "课文",
           "unit_subtype": "识字",
           "group_label": "第二单元·识字",
-          "id": "b21-toc-0017"
+          "id": "b21-toc-0010"
         },
         {
           "kind": "lesson",
@@ -652,7 +587,7 @@
           "unit_type": "课文",
           "unit_subtype": "识字",
           "group_label": "第二单元·识字",
-          "id": "b21-toc-0018"
+          "id": "b21-toc-0011"
         },
         {
           "kind": "garden",
@@ -661,6 +596,71 @@
           "unit_type": "语文园地",
           "unit_subtype": null,
           "group_label": "第二单元·识字",
+          "id": "b21-toc-0012"
+        }
+      ]
+    },
+    {
+      "group_id": 3,
+      "group_label": "第三单元·阅读",
+      "units": [
+        {
+          "kind": "lesson",
+          "number": "4",
+          "title": "彩虹",
+          "page": 28,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第三单元·阅读",
+          "id": "b21-toc-0014"
+        },
+        {
+          "kind": "lesson",
+          "number": "5",
+          "title": "去外婆家",
+          "page": 30,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第三单元·阅读",
+          "id": "b21-toc-0015"
+        },
+        {
+          "kind": "lesson",
+          "number": "6",
+          "title": "数星星的孩子",
+          "page": 32,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第三单元·阅读",
+          "id": "b21-toc-0016"
+        },
+        {
+          "kind": "garden",
+          "label": "语文园地三",
+          "page": 35,
+          "unit_type": "语文园地",
+          "unit_subtype": null,
+          "group_label": "第三单元·阅读",
+          "id": "b21-toc-0017"
+        }
+      ]
+    },
+    {
+      "group_id": 4,
+      "group_label": "第四单元·阅读",
+      "units": [
+        {
+          "kind": "lesson",
+          "number": "7",
+          "title": "古诗二首",
+          "page": 39,
+          "optional_reading": false,
+          "unit_type": "课文",
+          "unit_subtype": "阅读",
+          "group_label": "第四单元·阅读",
           "id": "b21-toc-0019"
         },
         {
@@ -668,8 +668,8 @@
           "title": "登鹳雀楼",
           "page": 39,
           "unit_type": "课文",
-          "unit_subtype": "识字",
-          "group_label": "第二单元·识字",
+          "unit_subtype": "阅读",
+          "group_label": "第四单元·阅读",
           "id": "b21-toc-0020"
         },
         {
@@ -677,8 +677,8 @@
           "title": "望庐山瀑布",
           "page": 40,
           "unit_type": "课文",
-          "unit_subtype": "识字",
-          "group_label": "第二单元·识字",
+          "unit_subtype": "阅读",
+          "group_label": "第四单元·阅读",
           "id": "b21-toc-0021"
         },
         {
@@ -688,8 +688,8 @@
           "page": 42,
           "optional_reading": false,
           "unit_type": "课文",
-          "unit_subtype": "识字",
-          "group_label": "第二单元·识字",
+          "unit_subtype": "阅读",
+          "group_label": "第四单元·阅读",
           "id": "b21-toc-0022"
         },
         {
@@ -699,8 +699,8 @@
           "page": 45,
           "optional_reading": false,
           "unit_type": "课文",
-          "unit_subtype": "识字",
-          "group_label": "第二单元·识字",
+          "unit_subtype": "阅读",
+          "group_label": "第四单元·阅读",
           "id": "b21-toc-0023"
         },
         {
@@ -710,8 +710,8 @@
           "page": 47,
           "optional_reading": false,
           "unit_type": "课文",
-          "unit_subtype": "识字",
-          "group_label": "第二单元·识字",
+          "unit_subtype": "阅读",
+          "group_label": "第四单元·阅读",
           "id": "b21-toc-0024"
         },
         {
@@ -720,7 +720,7 @@
           "page": 50,
           "unit_type": "语文园地",
           "unit_subtype": null,
-          "group_label": "第二单元·识字",
+          "group_label": "第四单元·阅读",
           "id": "b21-toc-0025"
         }
       ]
@@ -953,16 +953,16 @@
     "3 植物妈妈有办法",
     "语文园地一",
     "快乐读书吧 读读童话故事",
-    "4 彩虹",
-    "5 去外婆家",
-    "6 数星星的孩子",
-    "语文园地三",
-    "7 古诗二首",
     "1 场景歌",
     "2 树之歌",
     "3 拍手歌",
     "4 田家四季歌",
     "语文园地二",
+    "4 彩虹",
+    "5 去外婆家",
+    "6 数星星的孩子",
+    "语文园地三",
+    "7 古诗二首",
     "登鹳雀楼",
     "望庐山瀑布",
     "8 黄山奇石",

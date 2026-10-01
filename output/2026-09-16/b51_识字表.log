@@ -1,0 +1,20 @@
+# textbook-parser extract
+# time: 2026-10-01T12:24:13
+# argv: D:\ah21\textbook-parser\src\textbook_parser\__main__.py extract --book b51 --batch 2026-09-16 --extractor 识字表 --project-root .
+# book_code: b51
+# log_file: D:\ah21\textbook-parser\output\2026-09-16\b51_识字表.log
+# 以下 stdout/stderr 均写入本日志（含警告、错误与提取器提示）。
+# project_root: D:\ah21\textbook-parser
+# batch: 2026-09-16
+# config: (--book)
+# extractor_only: 识字表
+
+[b51/识字表 抛弃] ① 识字表中蓝色的字此前已作为生字认读，此处作为多音字学习，不计入生字总数。
+[b51/识字表 抛弃]                                                                                                  115
+[b51/识字表 抛弃] 116
+[b51/识字表] 目录 JSON 对齐 — 锚点全部匹配到目录
+识字表: 行数 27，字数合计 209
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b51_识字表.json
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b51_识字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b51_识字表.discard.log
+控制台输出已同步写入日志: D:\ah21\textbook-parser\output\2026-09-16\b51_识字表.log

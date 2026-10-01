@@ -1,0 +1,30 @@
+# textbook-parser extract
+# time: 2026-10-01T11:52:11
+# argv: D:\ah21\textbook-parser\src\textbook_parser\__main__.py extract --book b21 --batch 2026-09-16 --extractor 写字表 --project-root .
+# book_code: b21
+# log_file: D:\ah21\textbook-parser\output\2026-09-16\b21_写字表.log
+# 以下 stdout/stderr 均写入本日志（含警告、错误与提取器提示）。
+# project_root: D:\ah21\textbook-parser
+# batch: 2026-09-16
+# config: (--book)
+# extractor_only: 写字表
+
+[b21/写字表 抛弃] 阅读
+[b21/写字表] 提示: 汉字与拼音不能一一对应 — 汉字 0 个, 拼音分词 2 个
+[b21/写字表 抛弃] 识字
+[b21/写字表] 提示: 汉字与拼音不能一一对应 — 汉字 0 个, 拼音分词 2 个
+[b21/写字表 抛弃] 阅读
+[b21/写字表 抛弃]                                                    113
+[b21/写字表] 提示: 汉字与拼音不能一一对应 — 汉字 0 个, 拼音分词 4 个
+[b21/写字表] 提示: 汉字与拼音不能一一对应 — 汉字 0 个, 拼音分词 2 个
+[b21/写字表] 提示: 汉字与拼音不能一一对应 — 汉字 0 个, 拼音分词 2 个
+[b21/写字表 抛弃] 114
+[b21/写字表] 提示: 汉字与拼音不能一一对应 — 汉字 0 个, 拼音分词 2 个
+[b21/写字表] 提示: 汉字与拼音不能一一对应 — 汉字 0 个, 拼音分词 4 个
+[b21/写字表] 提示: 汉字与拼音不能一一对应 — 汉字 0 个, 拼音分词 2 个
+[b21/写字表] 目录 JSON 对齐 — 锚点全部匹配到目录
+写字表: 行数 35，字数合计 250
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b21_写字表.json
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b21_写字表.md
+抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b21_写字表.discard.log
+控制台输出已同步写入日志: D:\ah21\textbook-parser\output\2026-09-16\b21_写字表.log

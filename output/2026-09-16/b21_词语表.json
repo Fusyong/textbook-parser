@@ -24,7 +24,7 @@
       "unit": {
         "toc_id": "b21-toc-0002",
         "toc_kind": "lesson",
-        "toc_index": 0,
+        "toc_index": 1,
         "unit_type": "lesson",
         "lesson": "1",
         "garden_cn": null,
@@ -57,7 +57,7 @@
       "unit": {
         "toc_id": "b21-toc-0003",
         "toc_kind": "lesson",
-        "toc_index": 1,
+        "toc_index": 2,
         "unit_type": "lesson",
         "lesson": "2",
         "garden_cn": null,
@@ -88,7 +88,7 @@
       "unit": {
         "toc_id": "b21-toc-0004",
         "toc_kind": "lesson",
-        "toc_index": 2,
+        "toc_index": 3,
         "unit_type": "lesson",
         "lesson": "3",
         "garden_cn": null,
@@ -109,9 +109,9 @@
         "    1 花园  飞鸟  红领巾  欢笑"
       ],
       "unit": {
-        "toc_id": "b21-toc-0015",
+        "toc_id": "b21-toc-0008",
         "toc_kind": "lesson",
-        "toc_index": 3,
+        "toc_index": 7,
         "unit_type": "lesson",
         "lesson": "1",
         "garden_cn": null,
@@ -133,9 +133,9 @@
         "    2 杨树  树叶  松柏  化石  开花"
       ],
       "unit": {
-        "toc_id": "b21-toc-0016",
+        "toc_id": "b21-toc-0009",
         "toc_kind": "lesson",
-        "toc_index": 4,
+        "toc_index": 8,
         "unit_type": "lesson",
         "lesson": "2",
         "garden_cn": null,
@@ -159,9 +159,9 @@
         "    3 拍手  世界  云彩  丛林  竹林  朋友  保护"
       ],
       "unit": {
-        "toc_id": "b21-toc-0017",
+        "toc_id": "b21-toc-0010",
         "toc_kind": "lesson",
-        "toc_index": 5,
+        "toc_index": 9,
         "unit_type": "lesson",
         "lesson": "3",
         "garden_cn": null,
@@ -187,9 +187,9 @@
         "        大家"
       ],
       "unit": {
-        "toc_id": "b21-toc-0018",
+        "toc_id": "b21-toc-0011",
         "toc_kind": "lesson",
-        "toc_index": 6,
+        "toc_index": 10,
         "unit_type": "lesson",
         "lesson": "4",
         "garden_cn": null,
@@ -215,7 +215,16 @@
         "    4 天上  美丽  爸爸  下来  不用  高兴  哥哥",
         "        秋千  彩云"
       ],
-      "unit": null
+      "unit": {
+        "toc_id": "b21-toc-0014",
+        "toc_kind": "lesson",
+        "toc_index": 13,
+        "unit_type": "lesson",
+        "lesson": "4",
+        "garden_cn": null,
+        "title": "彩虹",
+        "label": "4 彩虹"
+      }
     },
     {
       "section": "阅读",
@@ -236,7 +245,16 @@
         "5 宝贝  干活  回来  一些  天气  欢快  它们",
         "     告诉  名字  出门"
       ],
-      "unit": null
+      "unit": {
+        "toc_id": "b21-toc-0015",
+        "toc_kind": "lesson",
+        "toc_index": 14,
+        "unit_type": "lesson",
+        "lesson": "5",
+        "garden_cn": null,
+        "title": "去外婆家",
+        "label": "5 去外婆家"
+      }
     },
     {
       "section": "阅读",
@@ -259,7 +277,16 @@
         "6 星星  晚上  无数  奶奶  中间  总是  爷爷",
         "     北边  勺子  转动  这个  后来"
       ],
-      "unit": null
+      "unit": {
+        "toc_id": "b21-toc-0016",
+        "toc_kind": "lesson",
+        "toc_index": 15,
+        "unit_type": "lesson",
+        "lesson": "6",
+        "garden_cn": null,
+        "title": "数星星的孩子",
+        "label": "6 数星星的孩子"
+      }
     },
     {
       "section": "阅读",
@@ -276,7 +303,16 @@
       "lines": [
         "8 那些  山顶  山头  云海  仙人  前方  仙女"
       ],
-      "unit": null
+      "unit": {
+        "toc_id": "b21-toc-0022",
+        "toc_kind": "lesson",
+        "toc_index": 21,
+        "unit_type": "lesson",
+        "lesson": "8",
+        "garden_cn": null,
+        "title": "黄山奇石",
+        "label": "8 黄山奇石"
+      }
     },
     {
       "section": "阅读",
@@ -296,7 +332,16 @@
         "9 山区  群山  树木  灯光  中午  眼前  细雨",
         "     风光  中外"
       ],
-      "unit": null
+      "unit": {
+        "toc_id": "b21-toc-0023",
+        "toc_kind": "lesson",
+        "toc_index": 22,
+        "unit_type": "lesson",
+        "lesson": "9",
+        "garden_cn": null,
+        "title": "日月潭",
+        "label": "9 日月潭"
+      }
     },
     {
       "section": "阅读",
@@ -321,7 +366,16 @@
         "10 地方  水果  月份  枝叶  五光十色  好客  老乡",
         "     有的  城市  空气  水分  这里  味道  有名"
       ],
-      "unit": null
+      "unit": {
+        "toc_id": "b21-toc-0024",
+        "toc_kind": "lesson",
+        "toc_index": 23,
+        "unit_type": "lesson",
+        "lesson": "10",
+        "garden_cn": null,
+        "title": "葡萄沟",
+        "label": "10 葡萄沟"
+      }
     },
     {
       "section": "阅读",
@@ -341,7 +395,7 @@
       "unit": {
         "toc_id": "b21-toc-0027",
         "toc_kind": "lesson",
-        "toc_index": 7,
+        "toc_index": 26,
         "unit_type": "lesson",
         "lesson": "11",
         "garden_cn": null,
@@ -375,7 +429,7 @@
       "unit": {
         "toc_id": "b21-toc-0028",
         "toc_kind": "lesson",
-        "toc_index": 8,
+        "toc_index": 27,
         "unit_type": "lesson",
         "lesson": "12",
         "garden_cn": null,
@@ -404,7 +458,7 @@
       "unit": {
         "toc_id": "b21-toc-0029",
         "toc_kind": "lesson",
-        "toc_index": 9,
+        "toc_index": 28,
         "unit_type": "lesson",
         "lesson": "13",
         "garden_cn": null,
@@ -429,7 +483,7 @@
       "unit": {
         "toc_id": "b21-toc-0032",
         "toc_kind": "lesson",
-        "toc_index": 10,
+        "toc_index": 31,
         "unit_type": "lesson",
         "lesson": "14",
         "garden_cn": null,
@@ -459,7 +513,7 @@
       "unit": {
         "toc_id": "b21-toc-0033",
         "toc_kind": "lesson",
-        "toc_index": 11,
+        "toc_index": 32,
         "unit_type": "lesson",
         "lesson": "15",
         "garden_cn": null,
@@ -490,7 +544,7 @@
       "unit": {
         "toc_id": "b21-toc-0034",
         "toc_kind": "lesson",
-        "toc_index": 12,
+        "toc_index": 33,
         "unit_type": "lesson",
         "lesson": "16",
         "garden_cn": null,
@@ -517,7 +571,7 @@
       "unit": {
         "toc_id": "b21-toc-0035",
         "toc_kind": "lesson",
-        "toc_index": 13,
+        "toc_index": 34,
         "unit_type": "lesson",
         "lesson": "17",
         "garden_cn": null,
@@ -550,7 +604,7 @@
       "unit": {
         "toc_id": "b21-toc-0041",
         "toc_kind": "lesson",
-        "toc_index": 14,
+        "toc_index": 40,
         "unit_type": "lesson",
         "lesson": "19",
         "garden_cn": null,
@@ -582,7 +636,7 @@
       "unit": {
         "toc_id": "b21-toc-0042",
         "toc_kind": "lesson",
-        "toc_index": 15,
+        "toc_index": 41,
         "unit_type": "lesson",
         "lesson": "20",
         "garden_cn": null,
@@ -612,7 +666,7 @@
       "unit": {
         "toc_id": "b21-toc-0045",
         "toc_kind": "lesson",
-        "toc_index": 16,
+        "toc_index": 44,
         "unit_type": "lesson",
         "lesson": "21",
         "garden_cn": null,
@@ -637,7 +691,7 @@
       "unit": {
         "toc_id": "b21-toc-0046",
         "toc_kind": "lesson",
-        "toc_index": 17,
+        "toc_index": 45,
         "unit_type": "lesson",
         "lesson": "22",
         "garden_cn": null,
@@ -669,7 +723,7 @@
       "unit": {
         "toc_id": "b21-toc-0047",
         "toc_kind": "lesson",
-        "toc_index": 18,
+        "toc_index": 46,
         "unit_type": "lesson",
         "lesson": "23",
         "garden_cn": null,
@@ -947,77 +1001,77 @@
     {
       "id": "b21-toc-0008",
       "kind": "lesson",
-      "line": "4 彩虹 · p.28 · b21-toc-0008 · 课文 / 阅读"
+      "line": "1 场景歌 · p.16 · b21-toc-0008 · 课文 / 识字"
     },
     {
       "id": "b21-toc-0009",
       "kind": "lesson",
-      "line": "5 去外婆家 · p.30 · b21-toc-0009 · 课文 / 阅读"
+      "line": "2 树之歌 · p.18 · b21-toc-0009 · 课文 / 识字"
     },
     {
       "id": "b21-toc-0010",
       "kind": "lesson",
-      "line": "6 数星星的孩子 · p.32 · b21-toc-0010 · 课文 / 阅读"
+      "line": "3 拍手歌 · p.20 · b21-toc-0010 · 课文 / 识字"
     },
     {
       "id": "b21-toc-0011",
-      "kind": "garden",
-      "line": "语文园地三 · p.35 · b21-toc-0011 · 语文园地"
+      "kind": "lesson",
+      "line": "4 田家四季歌 · p.23 · b21-toc-0011 · 课文 / 识字"
     },
     {
-      "id": "b21-toc-0013",
+      "id": "b21-toc-0012",
+      "kind": "garden",
+      "line": "语文园地二 · p.25 · b21-toc-0012 · 语文园地"
+    },
+    {
+      "id": "b21-toc-0014",
       "kind": "lesson",
-      "line": "7 古诗二首 · p.39 · b21-toc-0013 · 课文 / 阅读"
+      "line": "4 彩虹 · p.28 · b21-toc-0014 · 课文 / 阅读"
     },
     {
       "id": "b21-toc-0015",
       "kind": "lesson",
-      "line": "1 场景歌 · p.16 · b21-toc-0015 · 课文 / 识字"
+      "line": "5 去外婆家 · p.30 · b21-toc-0015 · 课文 / 阅读"
     },
     {
       "id": "b21-toc-0016",
       "kind": "lesson",
-      "line": "2 树之歌 · p.18 · b21-toc-0016 · 课文 / 识字"
+      "line": "6 数星星的孩子 · p.32 · b21-toc-0016 · 课文 / 阅读"
     },
     {
       "id": "b21-toc-0017",
-      "kind": "lesson",
-      "line": "3 拍手歌 · p.20 · b21-toc-0017 · 课文 / 识字"
-    },
-    {
-      "id": "b21-toc-0018",
-      "kind": "lesson",
-      "line": "4 田家四季歌 · p.23 · b21-toc-0018 · 课文 / 识字"
+      "kind": "garden",
+      "line": "语文园地三 · p.35 · b21-toc-0017 · 语文园地"
     },
     {
       "id": "b21-toc-0019",
-      "kind": "garden",
-      "line": "语文园地二 · p.25 · b21-toc-0019 · 语文园地"
+      "kind": "lesson",
+      "line": "7 古诗二首 · p.39 · b21-toc-0019 · 课文 / 阅读"
     },
     {
       "id": "b21-toc-0020",
       "kind": "sublesson",
-      "line": "登鹳雀楼 · p.39 · b21-toc-0020 · 课文 / 识字"
+      "line": "登鹳雀楼 · p.39 · b21-toc-0020 · 课文 / 阅读"
     },
     {
       "id": "b21-toc-0021",
       "kind": "sublesson",
-      "line": "望庐山瀑布 · p.40 · b21-toc-0021 · 课文 / 识字"
+      "line": "望庐山瀑布 · p.40 · b21-toc-0021 · 课文 / 阅读"
     },
     {
       "id": "b21-toc-0022",
       "kind": "lesson",
-      "line": "8 黄山奇石 · p.42 · b21-toc-0022 · 课文 / 识字"
+      "line": "8 黄山奇石 · p.42 · b21-toc-0022 · 课文 / 阅读"
     },
     {
       "id": "b21-toc-0023",
       "kind": "lesson",
-      "line": "9 日月潭 · p.45 · b21-toc-0023 · 课文 / 识字"
+      "line": "9 日月潭 · p.45 · b21-toc-0023 · 课文 / 阅读"
     },
     {
       "id": "b21-toc-0024",
       "kind": "lesson",
-      "line": "10 葡萄沟 · p.47 · b21-toc-0024 · 课文 / 识字"
+      "line": "10 葡萄沟 · p.47 · b21-toc-0024 · 课文 / 阅读"
     },
     {
       "id": "b21-toc-0025",
@@ -1123,17 +1177,9 @@
   "toc_layout_source": "output\\2026-09-16\\b21_目录.json",
   "toc_alignment": {
     "toc_anchor_group_count": 25,
-    "toc_assigned_count": 19,
-    "toc_layout_match_ok": false
+    "toc_assigned_count": 25,
+    "toc_layout_match_ok": true
   },
-  "toc_warnings": [
-    "未在目录中找到与锚点行匹配的学习单位（自条目 18 起）: ['    4 天上\\u2003 美丽\\u2003 爸爸\\u2003 下来\\u2003 不用\\u2003 高兴\\u2003 哥哥', '        秋千\\u2003 彩云']",
-    "未在目录中找到与锚点行匹配的学习单位（自条目 18 起）: ['5 宝贝\\u2003 干活\\u2003 回来\\u2003 一些\\u2003 天气\\u2003 欢快\\u2003 它们', '     告诉\\u2003 名字\\u2003 出门']",
-    "未在目录中找到与锚点行匹配的学习单位（自条目 18 起）: ['6 星星\\u2003 晚上\\u2003 无数\\u2003 奶奶\\u2003 中间\\u2003 总是\\u2003 爷爷', '     北边\\u2003 勺子\\u2003 转动\\u2003 这个\\u2003 后来']",
-    "未在目录中找到与锚点行匹配的学习单位（自条目 18 起）: ['8 那些\\u2003 山顶\\u2003 山头\\u2003 云海\\u2003 仙人\\u2003 前方\\u2003 仙女']",
-    "未在目录中找到与锚点行匹配的学习单位（自条目 18 起）: ['9 山区\\u2003 群山\\u2003 树木\\u2003 灯光\\u2003 中午\\u2003 眼前\\u2003 细雨', '     风光\\u2003 中外']",
-    "未在目录中找到与锚点行匹配的学习单位（自条目 18 起）: ['10 地方\\u2003 水果\\u2003 月份\\u2003 枝叶\\u2003 五光十色\\u2003 好客\\u2003 老乡', '     有的\\u2003 城市\\u2003 空气\\u2003 水分\\u2003 这里\\u2003 味道\\u2003 有名']"
-  ],
   "word_count_matches_stated": true,
   "discard_log": "D:\\ah21\\textbook-parser\\output\\2026-09-16\\b21_词语表.discard.log"
 }

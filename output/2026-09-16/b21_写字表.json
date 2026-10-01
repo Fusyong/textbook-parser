@@ -53,7 +53,7 @@
       "unit": {
         "toc_id": "b21-toc-0002",
         "toc_kind": "lesson",
-        "toc_index": 0,
+        "toc_index": 1,
         "unit_type": "lesson",
         "lesson": "1",
         "garden_cn": null,
@@ -112,7 +112,7 @@
       "unit": {
         "toc_id": "b21-toc-0003",
         "toc_kind": "lesson",
-        "toc_index": 1,
+        "toc_index": 2,
         "unit_type": "lesson",
         "lesson": "2",
         "garden_cn": null,
@@ -181,7 +181,7 @@
       "unit": {
         "toc_id": "b21-toc-0004",
         "toc_kind": "lesson",
-        "toc_index": 2,
+        "toc_index": 3,
         "unit_type": "lesson",
         "lesson": "3",
         "garden_cn": null,
@@ -206,11 +206,11 @@
         }
       ],
       "pinyin_line": "zhuAn jiQ",
-      "hanzi_line": "语文园地一  zhuAn jiQ\n       转夹",
+      "hanzi_line": "语文园地一  zhuAn jiQ\n转夹",
       "unit": {
         "toc_id": "b21-toc-0005",
         "toc_kind": "garden",
-        "toc_index": 3,
+        "toc_index": 4,
         "unit_type": "garden",
         "lesson": null,
         "garden_cn": "一",
@@ -262,9 +262,9 @@
       "pinyin_line": "chM kuSi zuH yuWn qPn duK lJng",
       "hanzi_line": "1 处块座园群队领",
       "unit": {
-        "toc_id": "b21-toc-0015",
+        "toc_id": "b21-toc-0008",
         "toc_kind": "lesson",
-        "toc_index": 4,
+        "toc_index": 7,
         "unit_type": "lesson",
         "lesson": "1",
         "garden_cn": null,
@@ -321,9 +321,9 @@
       "pinyin_line": "shM zhU yWng sTng bAi huS jUn guK",
       "hanzi_line": "2 树之杨松柏化金桂",
       "unit": {
-        "toc_id": "b21-toc-0016",
+        "toc_id": "b21-toc-0009",
         "toc_kind": "lesson",
-        "toc_index": 5,
+        "toc_index": 8,
         "unit_type": "lesson",
         "lesson": "2",
         "garden_cn": null,
@@ -390,9 +390,9 @@
       "pinyin_line": "pQi shK jiF cAi cYng xiO pRng yGu bAo hM",
       "hanzi_line": "3 拍世界彩丛休朋友保护",
       "unit": {
-        "toc_id": "b21-toc-0017",
+        "toc_id": "b21-toc-0010",
         "toc_kind": "lesson",
-        "toc_index": 6,
+        "toc_index": 9,
         "unit_type": "lesson",
         "lesson": "3",
         "garden_cn": null,
@@ -459,9 +459,9 @@
       "pinyin_line": "jK fRi nYng shK gL tJ xUn kL chO niWn",
       "hanzi_line": "4 季肥农事谷体辛苦初年",
       "unit": {
-        "toc_id": "b21-toc-0018",
+        "toc_id": "b21-toc-0011",
         "toc_kind": "lesson",
-        "toc_index": 7,
+        "toc_index": 10,
         "unit_type": "lesson",
         "lesson": "4",
         "garden_cn": null,
@@ -486,11 +486,11 @@
         }
       ],
       "pinyin_line": "chGu chRng",
-      "hanzi_line": "语文园地二  chGu chRng\n       丑诚",
+      "hanzi_line": "语文园地二  chGu chRng\n丑诚",
       "unit": {
-        "toc_id": "b21-toc-0019",
+        "toc_id": "b21-toc-0012",
         "toc_kind": "garden",
-        "toc_index": 8,
+        "toc_index": 11,
         "unit_type": "garden",
         "lesson": null,
         "garden_cn": "二",
@@ -546,7 +546,16 @@
       ],
       "pinyin_line": "lK tI ma yuWn gE qiO guS a",
       "hanzi_line": "4 丽提吗圆哥秋挂啊",
-      "unit": null
+      "unit": {
+        "toc_id": "b21-toc-0014",
+        "toc_kind": "lesson",
+        "toc_index": 13,
+        "unit_type": "lesson",
+        "lesson": "4",
+        "garden_cn": null,
+        "title": "彩虹",
+        "label": "4 彩虹"
+      }
     },
     {
       "section": "阅读",
@@ -606,7 +615,16 @@
       ],
       "pinyin_line": "bAo wWn huY xiE zGng gDi sM qL mIng xiQng",
       "hanzi_line": "     5 宝玩活些总给诉曲名香",
-      "unit": null
+      "unit": {
+        "toc_id": "b21-toc-0015",
+        "toc_kind": "lesson",
+        "toc_index": 14,
+        "unit_type": "lesson",
+        "lesson": "5",
+        "garden_cn": null,
+        "title": "去外婆家",
+        "label": "5 去外婆家"
+      }
     },
     {
       "section": "阅读",
@@ -666,7 +684,16 @@
       ],
       "pinyin_line": "shL wAn nAi nIn yR hDn biSn shWo zhQng hSn",
       "hanzi_line": "     6 数晚奶您爷很变勺张汉",
-      "unit": null
+      "unit": {
+        "toc_id": "b21-toc-0016",
+        "toc_kind": "lesson",
+        "toc_index": 15,
+        "unit_type": "lesson",
+        "lesson": "6",
+        "garden_cn": null,
+        "title": "数星星的孩子",
+        "label": "6 数星星的孩子"
+      }
     },
     {
       "section": "阅读",
@@ -695,8 +722,17 @@
         }
       ],
       "pinyin_line": "tP nI tiD huWn",
-      "hanzi_line": "     语文园地三   tP nI tiD huWn\n            图泥铁环",
-      "unit": null
+      "hanzi_line": "     语文园地三   tP nI tiD huWn\n图泥铁环",
+      "unit": {
+        "toc_id": "b21-toc-0017",
+        "toc_kind": "garden",
+        "toc_index": 16,
+        "unit_type": "garden",
+        "lesson": null,
+        "garden_cn": "三",
+        "title": null,
+        "label": "语文园地三"
+      }
     },
     {
       "section": "阅读",
@@ -756,7 +792,16 @@
       ],
       "pinyin_line": "yU jKn qiYng cRng zhSo lP yQn chuQn zhI yIn",
       "hanzi_line": "     7 依尽穷层照炉烟川直银",
-      "unit": null
+      "unit": {
+        "toc_id": "b21-toc-0019",
+        "toc_kind": "lesson",
+        "toc_index": 18,
+        "unit_type": "lesson",
+        "lesson": "7",
+        "garden_cn": null,
+        "title": "古诗二首",
+        "label": "7 古诗二首"
+      }
     },
     {
       "section": "阅读",
@@ -806,7 +851,16 @@
       ],
       "pinyin_line": "xiQn dJng jM wFi shAn gGu xIng zhuSng",
       "hanzi_line": "     8 仙顶巨位闪狗形状",
-      "unit": null
+      "unit": {
+        "toc_id": "b21-toc-0022",
+        "toc_kind": "lesson",
+        "toc_index": 21,
+        "unit_type": "lesson",
+        "lesson": "8",
+        "garden_cn": null,
+        "title": "黄山奇石",
+        "label": "8 黄山奇石"
+      }
     },
     {
       "section": "阅读",
@@ -856,7 +910,16 @@
       ],
       "pinyin_line": "hP qO shFng dAo wQn xiSn jiM wSi",
       "hanzi_line": "     9 湖区胜岛弯现就外",
-      "unit": null
+      "unit": {
+        "toc_id": "b21-toc-0023",
+        "toc_kind": "lesson",
+        "toc_index": 22,
+        "unit_type": "lesson",
+        "lesson": "9",
+        "garden_cn": null,
+        "title": "日月潭",
+        "label": "9 日月潭"
+      }
     },
     {
       "section": "阅读",
@@ -906,7 +969,16 @@
       ],
       "pinyin_line": "fFn zhU kF chRng shK kGng dKng wFi",
       "hanzi_line": "10 份 枝 客 城 市 孔 钉 味",
-      "unit": null
+      "unit": {
+        "toc_id": "b21-toc-0024",
+        "toc_kind": "lesson",
+        "toc_index": 23,
+        "unit_type": "lesson",
+        "lesson": "10",
+        "garden_cn": null,
+        "title": "葡萄沟",
+        "label": "10 葡萄沟"
+      }
     },
     {
       "section": "阅读",
@@ -925,8 +997,17 @@
         }
       ],
       "pinyin_line": "hSo fEng",
-      "hanzi_line": "     语文园地四  hSo fEng\n            号丰",
-      "unit": null
+      "hanzi_line": "     语文园地四  hSo fEng\n号丰",
+      "unit": {
+        "toc_id": "b21-toc-0025",
+        "toc_kind": "garden",
+        "toc_index": 24,
+        "unit_type": "garden",
+        "lesson": null,
+        "garden_cn": "四",
+        "title": null,
+        "label": "语文园地四"
+      }
     },
     {
       "section": "阅读",
@@ -974,7 +1055,7 @@
       "unit": {
         "toc_id": "b21-toc-0027",
         "toc_kind": "lesson",
-        "toc_index": 9,
+        "toc_index": 26,
         "unit_type": "lesson",
         "lesson": "11",
         "garden_cn": null,
@@ -1033,7 +1114,7 @@
       "unit": {
         "toc_id": "b21-toc-0028",
         "toc_kind": "lesson",
-        "toc_index": 10,
+        "toc_index": 27,
         "unit_type": "lesson",
         "lesson": "12",
         "garden_cn": null,
@@ -1102,7 +1183,7 @@
       "unit": {
         "toc_id": "b21-toc-0029",
         "toc_kind": "lesson",
-        "toc_index": 11,
+        "toc_index": 28,
         "unit_type": "lesson",
         "lesson": "13",
         "garden_cn": null,
@@ -1127,11 +1208,11 @@
         }
       ],
       "pinyin_line": "huH kE",
-      "hanzi_line": "     语文园地五  huH kE\n            货科",
+      "hanzi_line": "     语文园地五  huH kE\n货科",
       "unit": {
         "toc_id": "b21-toc-0030",
         "toc_kind": "garden",
-        "toc_index": 12,
+        "toc_index": 29,
         "unit_type": "garden",
         "lesson": null,
         "garden_cn": "五",
@@ -1180,7 +1261,7 @@
       "unit": {
         "toc_id": "b21-toc-0032",
         "toc_kind": "lesson",
-        "toc_index": 13,
+        "toc_index": 31,
         "unit_type": "lesson",
         "lesson": "14",
         "garden_cn": null,
@@ -1249,7 +1330,7 @@
       "unit": {
         "toc_id": "b21-toc-0033",
         "toc_kind": "lesson",
-        "toc_index": 14,
+        "toc_index": 32,
         "unit_type": "lesson",
         "lesson": "15",
         "garden_cn": null,
@@ -1308,7 +1389,7 @@
       "unit": {
         "toc_id": "b21-toc-0034",
         "toc_kind": "lesson",
-        "toc_index": 15,
+        "toc_index": 33,
         "unit_type": "lesson",
         "lesson": "16",
         "garden_cn": null,
@@ -1377,7 +1458,7 @@
       "unit": {
         "toc_id": "b21-toc-0035",
         "toc_kind": "lesson",
-        "toc_index": 16,
+        "toc_index": 34,
         "unit_type": "lesson",
         "lesson": "17",
         "garden_cn": null,
@@ -1402,11 +1483,11 @@
         }
       ],
       "pinyin_line": "chQo chAo",
-      "hanzi_line": "语文园地六  chQo chAo\n       抄炒",
+      "hanzi_line": "语文园地六  chQo chAo\n抄炒",
       "unit": {
         "toc_id": "b21-toc-0036",
         "toc_kind": "garden",
-        "toc_index": 17,
+        "toc_index": 35,
         "unit_type": "garden",
         "lesson": null,
         "garden_cn": "六",
@@ -1465,7 +1546,7 @@
       "unit": {
         "toc_id": "b21-toc-0038",
         "toc_kind": "lesson",
-        "toc_index": 18,
+        "toc_index": 37,
         "unit_type": "lesson",
         "lesson": "18",
         "garden_cn": null,
@@ -1524,7 +1605,7 @@
       "unit": {
         "toc_id": "b21-toc-0041",
         "toc_kind": "lesson",
-        "toc_index": 19,
+        "toc_index": 40,
         "unit_type": "lesson",
         "lesson": "19",
         "garden_cn": null,
@@ -1588,7 +1669,7 @@
       "unit": {
         "toc_id": "b21-toc-0042",
         "toc_kind": "lesson",
-        "toc_index": 20,
+        "toc_index": 41,
         "unit_type": "lesson",
         "lesson": "20",
         "garden_cn": null,
@@ -1623,11 +1704,11 @@
         }
       ],
       "pinyin_line": "jU F nIng kM",
-      "hanzi_line": "语文园地七   jU F nIng kM\n       饥饿宁库",
+      "hanzi_line": "语文园地七   jU F nIng kM\n饥饿宁库",
       "unit": {
         "toc_id": "b21-toc-0043",
         "toc_kind": "garden",
-        "toc_index": 21,
+        "toc_index": 42,
         "unit_type": "garden",
         "lesson": null,
         "garden_cn": "七",
@@ -1691,7 +1772,7 @@
       "unit": {
         "toc_id": "b21-toc-0045",
         "toc_kind": "lesson",
-        "toc_index": 22,
+        "toc_index": 44,
         "unit_type": "lesson",
         "lesson": "21",
         "garden_cn": null,
@@ -1750,7 +1831,7 @@
       "unit": {
         "toc_id": "b21-toc-0046",
         "toc_kind": "lesson",
-        "toc_index": 23,
+        "toc_index": 45,
         "unit_type": "lesson",
         "lesson": "22",
         "garden_cn": null,
@@ -1799,7 +1880,7 @@
       "unit": {
         "toc_id": "b21-toc-0047",
         "toc_kind": "lesson",
-        "toc_index": 24,
+        "toc_index": 46,
         "unit_type": "lesson",
         "lesson": "23",
         "garden_cn": null,
@@ -1824,11 +1905,11 @@
         }
       ],
       "pinyin_line": "lWng shR",
-      "hanzi_line": "语文园地八  lWng shR\n       狼蛇",
+      "hanzi_line": "语文园地八  lWng shR\n狼蛇",
       "unit": {
         "toc_id": "b21-toc-0048",
         "toc_kind": "garden",
-        "toc_index": 25,
+        "toc_index": 47,
         "unit_type": "garden",
         "lesson": null,
         "garden_cn": "八",
@@ -1868,77 +1949,77 @@
     {
       "id": "b21-toc-0008",
       "kind": "lesson",
-      "line": "4 彩虹 · p.28 · b21-toc-0008 · 课文 / 阅读"
+      "line": "1 场景歌 · p.16 · b21-toc-0008 · 课文 / 识字"
     },
     {
       "id": "b21-toc-0009",
       "kind": "lesson",
-      "line": "5 去外婆家 · p.30 · b21-toc-0009 · 课文 / 阅读"
+      "line": "2 树之歌 · p.18 · b21-toc-0009 · 课文 / 识字"
     },
     {
       "id": "b21-toc-0010",
       "kind": "lesson",
-      "line": "6 数星星的孩子 · p.32 · b21-toc-0010 · 课文 / 阅读"
+      "line": "3 拍手歌 · p.20 · b21-toc-0010 · 课文 / 识字"
     },
     {
       "id": "b21-toc-0011",
-      "kind": "garden",
-      "line": "语文园地三 · p.35 · b21-toc-0011 · 语文园地"
+      "kind": "lesson",
+      "line": "4 田家四季歌 · p.23 · b21-toc-0011 · 课文 / 识字"
     },
     {
-      "id": "b21-toc-0013",
+      "id": "b21-toc-0012",
+      "kind": "garden",
+      "line": "语文园地二 · p.25 · b21-toc-0012 · 语文园地"
+    },
+    {
+      "id": "b21-toc-0014",
       "kind": "lesson",
-      "line": "7 古诗二首 · p.39 · b21-toc-0013 · 课文 / 阅读"
+      "line": "4 彩虹 · p.28 · b21-toc-0014 · 课文 / 阅读"
     },
     {
       "id": "b21-toc-0015",
       "kind": "lesson",
-      "line": "1 场景歌 · p.16 · b21-toc-0015 · 课文 / 识字"
+      "line": "5 去外婆家 · p.30 · b21-toc-0015 · 课文 / 阅读"
     },
     {
       "id": "b21-toc-0016",
       "kind": "lesson",
-      "line": "2 树之歌 · p.18 · b21-toc-0016 · 课文 / 识字"
+      "line": "6 数星星的孩子 · p.32 · b21-toc-0016 · 课文 / 阅读"
     },
     {
       "id": "b21-toc-0017",
-      "kind": "lesson",
-      "line": "3 拍手歌 · p.20 · b21-toc-0017 · 课文 / 识字"
-    },
-    {
-      "id": "b21-toc-0018",
-      "kind": "lesson",
-      "line": "4 田家四季歌 · p.23 · b21-toc-0018 · 课文 / 识字"
+      "kind": "garden",
+      "line": "语文园地三 · p.35 · b21-toc-0017 · 语文园地"
     },
     {
       "id": "b21-toc-0019",
-      "kind": "garden",
-      "line": "语文园地二 · p.25 · b21-toc-0019 · 语文园地"
+      "kind": "lesson",
+      "line": "7 古诗二首 · p.39 · b21-toc-0019 · 课文 / 阅读"
     },
     {
       "id": "b21-toc-0020",
       "kind": "sublesson",
-      "line": "登鹳雀楼 · p.39 · b21-toc-0020 · 课文 / 识字"
+      "line": "登鹳雀楼 · p.39 · b21-toc-0020 · 课文 / 阅读"
     },
     {
       "id": "b21-toc-0021",
       "kind": "sublesson",
-      "line": "望庐山瀑布 · p.40 · b21-toc-0021 · 课文 / 识字"
+      "line": "望庐山瀑布 · p.40 · b21-toc-0021 · 课文 / 阅读"
     },
     {
       "id": "b21-toc-0022",
       "kind": "lesson",
-      "line": "8 黄山奇石 · p.42 · b21-toc-0022 · 课文 / 识字"
+      "line": "8 黄山奇石 · p.42 · b21-toc-0022 · 课文 / 阅读"
     },
     {
       "id": "b21-toc-0023",
       "kind": "lesson",
-      "line": "9 日月潭 · p.45 · b21-toc-0023 · 课文 / 识字"
+      "line": "9 日月潭 · p.45 · b21-toc-0023 · 课文 / 阅读"
     },
     {
       "id": "b21-toc-0024",
       "kind": "lesson",
-      "line": "10 葡萄沟 · p.47 · b21-toc-0024 · 课文 / 识字"
+      "line": "10 葡萄沟 · p.47 · b21-toc-0024 · 课文 / 阅读"
     },
     {
       "id": "b21-toc-0025",
@@ -2044,19 +2125,8 @@
   "toc_layout_source": "output\\2026-09-16\\b21_目录.json",
   "toc_alignment": {
     "toc_anchor_group_count": 35,
-    "toc_assigned_count": 26,
-    "toc_layout_match_ok": false
+    "toc_assigned_count": 35,
+    "toc_layout_match_ok": true
   },
-  "toc_warnings": [
-    "未在目录中找到与锚点行匹配的学习单位（自条目 19 起）: '4 丽提吗圆哥秋挂啊'",
-    "未在目录中找到与锚点行匹配的学习单位（自条目 19 起）: '     5 宝玩活些总给诉曲名香'",
-    "未在目录中找到与锚点行匹配的学习单位（自条目 19 起）: '     6 数晚奶您爷很变勺张汉'",
-    "未在目录中找到与锚点行匹配的学习单位（自条目 19 起）: '     语文园地三   tP nI tiD huWn\\n            图泥铁环'",
-    "未在目录中找到与锚点行匹配的学习单位（自条目 19 起）: '     7 依尽穷层照炉烟川直银'",
-    "未在目录中找到与锚点行匹配的学习单位（自条目 19 起）: '     8 仙顶巨位闪狗形状'",
-    "未在目录中找到与锚点行匹配的学习单位（自条目 19 起）: '     9 湖区胜岛弯现就外'",
-    "未在目录中找到与锚点行匹配的学习单位（自条目 19 起）: '10 份 枝 客 城 市 孔 钉 味'",
-    "未在目录中找到与锚点行匹配的学习单位（自条目 19 起）: '     语文园地四  hSo fEng\\n            号丰'"
-  ],
   "discard_log": "D:\\ah21\\textbook-parser\\output\\2026-09-16\\b21_写字表.discard.log"
 }

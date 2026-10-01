@@ -1,0 +1,19 @@
+# textbook-parser extract
+# time: 2026-10-01T12:16:29
+# argv: D:\ah21\textbook-parser\src\textbook_parser\__main__.py extract --book b51 --batch 2026-09-16 --extractor 词语表 --project-root .
+# book_code: b51
+# log_file: D:\ah21\textbook-parser\output\2026-09-16\b51_词语表.log
+# 以下 stdout/stderr 均写入本日志（含警告、错误与提取器提示）。
+# project_root: D:\ah21\textbook-parser
+# batch: 2026-09-16
+# config: (--book)
+# extractor_only: 词语表
+
+[b51/词语表 抛弃] 120
+[b51/词语表 抛弃]                                                                                                  121
+[b51/词语表] 目录 JSON 对齐 — 锚点全部匹配到目录
+词语表: 行数 18，词语合计 213
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b51_词语表.json
+已写入: D:\ah21\textbook-parser\output\2026-09-16\b51_词语表.md
+抛弃行日志: D:\ah21\textbook-parser\output\2026-09-16\b51_词语表.discard.log
+控制台输出已同步写入日志: D:\ah21\textbook-parser\output\2026-09-16\b51_词语表.log

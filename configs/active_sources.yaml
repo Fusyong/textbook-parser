@@ -14,4 +14,4 @@ scratch_dir: tmp/parse-scratch
 #   - "批次:册码" 简写：2026-09-16:b11
 #   - 映射：{ batch: 2026-09-16, codes: [b11, b21] }；省略 codes 表示该批全部已有册
 sources:
-  - material/2026-09-16/
+  # - material/2026-09-16/

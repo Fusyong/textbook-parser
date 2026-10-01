@@ -1735,18 +1735,37 @@ def extract_layout_toc(
             line_no_ff = raw_line.replace("\f", "").replace("\r", "")
             line = _strip_tabs(line_no_ff)
             if not line.strip():
-                nxt = _next_nonempty_line(page, i + 1)
+                # 空行且下一非空行是「单元」起头时，可能要提前冲刷双栏。
+                # 同页双栏未结束时不可冲刷，否则变成「左1→右1→左2→右2」：
+                # - 下一单元行分列后右栏仍有正文（左栏新单元 | 右栏续课）
+                # - 或右栏缓冲已有正文（下一单元仅为左栏续段，如五年级「第三单元」独占行）
+                nxt_raw: str | None = None
+                for k in range(i + 1, len(page)):
+                    cand = page[k].replace("\f", "").replace("\r", "")
+                    if _strip_tabs(cand).strip():
+                        nxt_raw = cand
+                        break
                 if (
                     column_major
                     and dual_left
-                    and nxt
-                    and _line_starts_section(nxt)
+                    and nxt_raw is not None
+                    and _line_starts_section(nxt_raw)
                 ):
-                    entries.extend(
-                        _flush_dual_column_buffers(
-                            dual_left, dual_right, options, discard_sink
+                    should_flush = True
+                    if any(c.strip() for c in dual_right):
+                        should_flush = False
+                    elif cn == 2:
+                        _nle, nri = _split_line_two_columns_rule(
+                            nxt_raw.rstrip(), options
                         )
-                    )
+                        if nri.strip():
+                            should_flush = False
+                    if should_flush:
+                        entries.extend(
+                            _flush_dual_column_buffers(
+                                dual_left, dual_right, options, discard_sink
+                            )
+                        )
                 continue
 
             if cn == 2:

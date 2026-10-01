@@ -1,5 +1,5 @@
 # textbook-parser extract
-# time: 2026-09-30T15:11:40
+# time: 2026-10-01T10:56:22
 # argv: D:\ah21\textbook-parser\src\textbook_parser\__main__.py extract --book b11 --batch 2026-09-16 --extractor 识字表 --project-root .
 # book_code: b11
 # log_file: D:\ah21\textbook-parser\output\2026-09-16\b11_识字表.log
@@ -17,11 +17,6 @@
 [b11/识字表 抛弃] 识字
 [b11/识字表 抛弃] 106
 [b11/识字表 抛弃] 阅读
-[b11/识字表] 提示: 汉字与拼音不能一一对应 — 汉字 0 个, 拼音分词 16 个
-[b11/识字表] 提示: 汉字与拼音不能一一对应 — 汉字 0 个, 拼音分词 18 个
-[b11/识字表] 提示: 汉字与拼音不能一一对应 — 汉字 0 个, 拼音分词 18 个
-[b11/识字表] 提示: 汉字与拼音不能一一对应 — 汉字 0 个, 拼音分词 10 个
-[b11/识字表] 提示: 汉字与拼音不能一一对应 — 汉字 0 个, 拼音分词 12 个
 [b11/识字表] 目录 JSON 对齐 — 锚点全部匹配到目录
 识字表: 行数 38，字数合计 284
 已写入: D:\ah21\textbook-parser\output\2026-09-16\b11_识字表.json

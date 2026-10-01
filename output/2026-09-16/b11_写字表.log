@@ -1,5 +1,5 @@
 # textbook-parser extract
-# time: 2026-09-30T15:11:33
+# time: 2026-10-01T10:56:30
 # argv: D:\ah21\textbook-parser\src\textbook_parser\__main__.py extract --book b11 --batch 2026-09-16 --extractor 写字表 --project-root .
 # book_code: b11
 # log_file: D:\ah21\textbook-parser\output\2026-09-16\b11_写字表.log

@@ -434,6 +434,19 @@ def _dual_hanzi_halves(hanzi_raw: str) -> tuple[str, str] | None:
             if _is_garden_head_line(sub[1]) or _is_garden_head_line(wide[1]):
                 return sub[0], wide[1] if _is_garden_head_line(wide[1]) else sub[1]
     if wide and _is_dual_half(wide[0]) and _is_dual_half(wide[1]):
+        # 「语文园地　　孝喻…」：标题与生字仅被宽空白隔开，应整行解析，勿当左右栏
+        left_p = _parse_hanzi_line(wide[0])
+        if (
+            left_p is not None
+            and not left_p["chars"]
+            and not left_p.get("embedded_pinyin")
+            and (
+                left_p.get("garden") is not None
+                or left_p.get("lesson") is not None
+            )
+            and _is_bare_char_half(wide[1])
+        ):
+            return None
         # 至少一侧是课号/园地/栏目/拼音，避免两段普通正文误切
         if _is_dual_unit_half(wide[0]) or _is_dual_unit_half(wide[1]):
             return wide
@@ -1148,7 +1161,11 @@ def parse_char_table_body(
                 py_h = f"{pending_pinyin} {py_h}".strip() if py_h else pending_pinyin
                 pending_pinyin = ""
         if emb and not parsed["chars"]:
-            py_h = emb if not py_h else f"{py_h} {emb}".strip()
+            # 调用方常已把 embedded_pinyin 传入 py；相同则勿再拼，否则拼音翻倍
+            if not py_h:
+                py_h = emb
+            elif _normalize_spaces(py_h) != _normalize_spaces(emb):
+                py_h = f"{py_h} {emb}".strip()
         if parsed["chars"] and try_fill_any(
             parsed["chars"], py_h, parsed.get("raw") or hz
         ):
@@ -1203,7 +1220,11 @@ def parse_char_table_body(
             py_h = f"{pending_pinyin} {py_h}".strip() if py_h else pending_pinyin
             pending_pinyin = ""
         if emb and not parsed_h["chars"]:
-            py_h = emb if not py_h else f"{py_h} {emb}".strip()
+            # 与 buffer_dual_half 同：勿把已传入的行内拼音再拼一次
+            if not py_h:
+                py_h = emb
+            elif _normalize_spaces(py_h) != _normalize_spaces(emb):
+                py_h = f"{py_h} {emb}".strip()
         emit_row(
             hanzi_raw=hz,
             parsed=parsed_h,
