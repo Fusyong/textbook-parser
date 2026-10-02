@@ -14,18 +14,18 @@
         <select id="textbook-set" aria-label="选择成套教材"></select>
       </label>
       <nav class="tabs" aria-label="功能切换">
-        <button type="button" class="tab active" data-tab="chars">文本生字词检查</button>
+        <button type="button" class="tab" data-tab="chars">文本生字词检查</button>
         <button type="button" class="tab" data-tab="words">组词</button>
         <button type="button" class="tab" data-tab="lookup">字词查询</button>
         <button type="button" class="tab" data-tab="lexicon">字词表</button>
-        <button type="button" class="tab" data-tab="print">字词打印</button>
+        <button type="button" class="tab active" data-tab="print">打印书写纸</button>
       </nav>
     </header>
 
     <div id="data-banner" class="banner banner-warn hidden" role="status"></div>
 
     <main class="app-main">
-      <section id="panel-chars" class="panel panel-fill active">
+      <section id="panel-chars" class="panel panel-fill">
         <div class="panel-head">
           <div class="panel-toolbar">
             <label class="lbl-compact lbl-book"
@@ -191,22 +191,17 @@
         <div id="lexicon-body" class="lexicon-body" aria-live="polite"></div>
       </section>
 
-      <section id="panel-print" class="panel panel-fill">
+      <section id="panel-print" class="panel panel-fill active">
         <div class="panel-head">
           <div class="panel-toolbar print-toolbar">
-            <fieldset class="fieldset fieldset-inline">
-              <legend>输入方式</legend>
-              <label class="inline"
-                ><input type="radio" name="print-input-mode" value="lesson" checked />课次字词列表</label
-              >
-              <label class="inline"
-                ><input type="radio" name="print-input-mode" value="manual" />手动输入</label
-              >
-            </fieldset>
             <details class="hint-fold">
               <summary><mark>说明</mark></summary>
               <span class="hint-fold-body"
-                >生成 A4 描红练习纸 PDF。课次模式从识字表／写字表／词语表选字（词语拆为单字）；手动模式可输入字词与可选拼音（空格分词，单换行→空格，双换行→分段）。<strong>字体</strong>来自本机，不随页面下载；详见「字体说明」。</span
+                >生成描红练习纸 PDF（可选 A4／A5、横／竖版）。可从课次列表勾选字词后点「加入输入框」（可多次），也可直接编辑下方输入框。格式：一个或多个空格分隔一组（字／词／句），如
+                <code>我 我们 我（wǒ） 春天来了。</code>；括号就近注音（兼容全角／半角）；括号内含汉字则括号与内容均占格；标点占格，相邻两标点合并一格。双换行分段。「练习节奏」按<strong>整组</strong>重复范字／描红／空格（非组内逐字）。排版自动避头点。<br />
+                <strong>边距与版心</strong>：四边距界定版心。「允许超版心」先按版心排、再按外扩试排，仅当内容尺寸收益足够（如多排一格、少一页）才采用；最终左右居中。<br />
+                <strong>间距与方向</strong>：行间距为字格行／列之间；组间距用于分组间及连续／断行的双换行分段。竖向自右向左排栏，拼音在格右侧并顺时针旋转 90°。分组：横写并排、竖写纵叠，并尝试多行／多列折行后居中。<strong>输入分行与空格</strong>：按输入换行分组；横写每行独占一行且行左齐，竖写每行独占一列且列顶齐，整块居中；行首／行中／行尾每个空格各占一格；<em>只有空格的行也有效</em>（排出相应个数的空字格）；适合古诗等分行整齐的篇章。<br />
+                <strong>字体</strong>来自本机，详见字格区「正文字体」说明。</span
               >
             </details>
           </div>
@@ -215,13 +210,13 @@
         <div class="print-body">
           <div id="print-panel-lesson" class="print-input-panel">
             <div class="print-lesson-toolbar">
-              <label class="lbl-compact lbl-book"
+              <label class="inline lbl-book"
                 >册 <select id="print-book"></select
               ></label>
-              <label class="lbl-compact lbl-toc"
+              <label class="inline lbl-toc"
                 >课 <select id="print-toc"></select
               ></label>
-              <label class="lbl-compact"
+              <label class="inline lbl-kind"
                 >表
                 <select id="print-kind">
                   <option value="识字表">识字表</option>
@@ -231,156 +226,278 @@
               >
               <button type="button" id="print-select-all" class="btn-secondary">全选</button>
               <button type="button" id="print-select-none" class="btn-secondary">清空</button>
+              <button type="button" id="print-append-input" class="btn-secondary">加入输入框</button>
             </div>
             <div id="print-char-checklist" class="print-char-checklist" aria-live="polite"></div>
           </div>
 
-          <div id="print-panel-manual" class="print-input-panel hidden">
-            <div class="dual-textareas print-manual-textareas">
-              <label class="ta-wrap">
-                <span class="ta-label">汉字</span>
+          <div id="print-panel-compose" class="print-input-panel">
+            <label class="ta-wrap print-compose-wrap">
+              <span class="ta-label">输入框（可编辑）</span>
+              <div class="lined-editor" id="print-input-editor">
+                <pre class="lined-editor-gutter" aria-hidden="true">1</pre>
                 <textarea
-                  id="print-manual-hanzi"
-                  placeholder="春 夏 冬&#10;&#10;下一组字词"
+                  id="print-input"
+                  rows="4"
+                  placeholder="我 我们 我（wǒ） 我们（wǒ men） 我们（men） 我（wǒ）们（men）"
                   spellcheck="false"
                 ></textarea>
-              </label>
-              <label class="ta-wrap">
-                <span class="ta-label">拼音（可选，可留空）</span>
-                <textarea
-                  id="print-manual-pinyin"
-                  placeholder="chūn xià dōng（与汉字空格对应）"
-                  spellcheck="false"
-                ></textarea>
-              </label>
-            </div>
+              </div>
+              <span id="print-space-hint" class="hint hint-tight print-space-hint" hidden
+                >空格显示为「□」并占一格；行首／行尾／整行均可</span
+              >
+            </label>
           </div>
 
           <div class="print-options">
-            <fieldset class="fieldset fieldset-inline">
+            <fieldset
+              class="fieldset print-opt print-opt-page"
+              title="四边距界定版心。允许超版心：有足够收益才外扩；结果左右居中。行间距为字格行／列之间；组间距用于分组间及连续／断行双换行分段。"
+            >
+              <legend>页面</legend>
+              <div class="print-opt-row">
+                <span class="print-opt-label">纸张</span>
+                <div class="print-opt-controls">
+                  <select id="print-paper" title="纸张规格与横／竖版（与书写方向无关）">
+                    <option value="a4-portrait" selected>A4 竖版</option>
+                    <option value="a4-landscape">A4 横版</option>
+                    <option value="a5-portrait">A5 竖版</option>
+                    <option value="a5-landscape">A5 横版</option>
+                  </select>
+                </div>
+              </div>
+              <div class="print-opt-row">
+                <span class="print-opt-label">边距</span>
+                <div class="print-opt-controls">
+                  <label class="inline"
+                    >上
+                    <input type="number" id="print-margin-top" min="0" max="40" step="1" value="15"
+                  /></label>
+                  <label class="inline"
+                    >下
+                    <input type="number" id="print-margin-bottom" min="0" max="40" step="1" value="15"
+                  /></label>
+                  <label class="inline"
+                    >左
+                    <input type="number" id="print-margin-left" min="0" max="40" step="1" value="15"
+                  /></label>
+                  <label class="inline"
+                    >右
+                    <input type="number" id="print-margin-right" min="0" max="40" step="1" value="15"
+                  /></label>
+                  <span class="print-unit">mm</span>
+                </div>
+              </div>
+              <div class="print-opt-row">
+                <span class="print-opt-label">外扩</span>
+                <div class="print-opt-controls">
+                  <label
+                    class="inline"
+                    title="每个方向允许超出版心的毫米数；仅当试排收益足够时才采用。"
+                  >
+                    允许超版心
+                    <input
+                      type="range"
+                      id="print-overflow-mm"
+                      min="0"
+                      max="15"
+                      step="1"
+                      value="5"
+                    />
+                    <span id="print-overflow-mm-val" class="print-size-readout">5</span>
+                    <span class="print-unit">mm</span></label
+                  >
+                </div>
+              </div>
+              <div class="print-opt-row">
+                <span class="print-opt-label">间距</span>
+                <div class="print-opt-controls">
+                  <label class="inline"
+                    >行
+                    <input type="number" id="print-row-gap" min="0" max="30" step="1" value="0"
+                  /></label>
+                  <label class="inline"
+                    >组
+                    <input type="number" id="print-group-gap" min="0" max="40" step="1" value="2"
+                  /></label>
+                  <span class="print-unit">mm</span>
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="fieldset print-opt print-opt-grid">
               <legend>字格</legend>
-              <select id="print-grid">
-                <option value="tian">田字格</option>
-                <option value="mi" selected>米字格</option>
-                <option value="jiugong">九宫格</option>
-                <option value="huigong">回宫格</option>
-                <option value="fang">方格</option>
-                <option value="hengxian">横线格</option>
-              </select>
+              <div class="print-opt-row">
+                <span class="print-opt-label">样式</span>
+                <div class="print-opt-controls">
+                  <select id="print-grid">
+                    <option value="tian" selected>田字格</option>
+                    <option value="mi">米字格</option>
+                    <option value="jiugong">九宫格</option>
+                    <option value="huigong">回宫格</option>
+                    <option value="huitian">回田格</option>
+                    <option value="huimi">回米格</option>
+                    <option value="fang">方格</option>
+                    <option value="hengxian">横线格</option>
+                  </select>
+                  <label class="inline"
+                    ><input type="checkbox" id="print-show-pinyin" checked />显示拼音</label
+                  >
+                </div>
+              </div>
+              <div class="print-opt-row print-size-row">
+                <span class="print-opt-label">尺寸</span>
+                <div class="print-opt-controls">
+                  <button type="button" class="btn-secondary" data-print-size="0.8">0.8</button>
+                  <button type="button" class="btn-secondary" data-print-size="1.2">1.2</button>
+                  <button type="button" class="btn-secondary" data-print-size="1.4">1.4</button>
+                  <input
+                    type="range"
+                    id="print-cell-size"
+                    min="0.8"
+                    max="2.5"
+                    step="0.1"
+                    value="1.5"
+                  />
+                  <span id="print-cell-size-val" class="print-size-readout">1.5</span>
+                  <span class="print-unit">cm</span>
+                </div>
+              </div>
+              <div class="print-opt-row">
+                <span class="print-opt-label">占格比例</span>
+                <div class="print-opt-controls">
+                  <input
+                    type="number"
+                    id="print-char-fill"
+                    min="0.4"
+                    max="1"
+                    step="0.05"
+                    value="0.85"
+                    title="汉字边长相对字格边长的比例，默认 0.85"
+                  />
+                </div>
+              </div>
+              <div class="print-opt-row">
+                <span class="print-opt-label">正文字体</span>
+                <div class="print-opt-controls">
+                  <select id="print-font" title="PDF 使用本机楷体；首次可能询问字体访问权限。">
+                    <option value="kaiti_gb2312">楷体_GB2312</option>
+                    <option value="kaiti" selected>楷体</option>
+                    <option value="stkaiti">华文楷体</option>
+                  </select>
+                  <details class="hint-fold print-font-hint">
+                    <summary><mark>说明</mark></summary>
+                    <span class="hint-fold-body"
+                      >PDF 使用本机已安装的楷体。首次生成时浏览器可能询问「是否允许访问本地字体」，请点允许。推荐
+                      <strong>Chrome / Edge 桌面版</strong>；须通过 http://localhost 或 https:// 打开。Firefox、Safari
+                      不支持自动读取系统字体，请用「指定字体文件」。Windows 常见路径：<code>C:\Windows\Fonts\simkai.ttf</code>（楷体）、<code>STKAITI.TTF</code>（华文楷体）。手动指定的字体仅在本次浏览会话内有效。</span
+                    >
+                  </details>
+                  <div id="print-font-file-wrap" class="print-font-file-wrap">
+                    <details id="print-font-file-details">
+                      <summary>指定字体文件</summary>
+                      <input type="file" id="print-font-file" accept=".ttf,.otf,.ttc" />
+                    </details>
+                  </div>
+                </div>
+              </div>
             </fieldset>
 
-            <fieldset class="fieldset fieldset-inline print-size-fieldset">
-              <legend>格子尺寸 (cm)</legend>
-              <button type="button" class="btn-secondary" data-print-size="0.8">0.8</button>
-              <button type="button" class="btn-secondary" data-print-size="1.2">1.2</button>
-              <button type="button" class="btn-secondary" data-print-size="1.4">1.4</button>
-              <input
-                type="range"
-                id="print-cell-size"
-                min="0.8"
-                max="2.5"
-                step="0.1"
-                value="1.2"
-              />
-              <span id="print-cell-size-val" class="print-size-readout">1.2</span>
+            <fieldset class="fieldset print-opt print-opt-rhythm">
+              <legend>练习节奏</legend>
+              <div class="print-opt-row">
+                <span class="print-opt-label">遍数</span>
+                <div class="print-opt-controls">
+                  <label class="inline"
+                    >范字
+                    <select id="print-model-count">
+                      <option value="0">0</option>
+                      <option value="1" selected>1</option>
+                    </select></label
+                  >
+                  <label class="inline"
+                    >描红
+                    <select id="print-trace-count">
+                      <option value="0">0</option>
+                      <option value="1">1</option>
+                      <option value="2" selected>2</option>
+                      <option value="3">3</option>
+                    </select></label
+                  >
+                  <label class="inline"
+                    >空格
+                    <select id="print-blank-count">
+                      <option value="0">0</option>
+                      <option value="1">1</option>
+                      <option value="2" selected>2</option>
+                      <option value="3">3</option>
+                    </select></label
+                  >
+                </div>
+              </div>
+              <div class="print-opt-row">
+                <span class="print-opt-label">描红</span>
+                <div class="print-opt-controls">
+                  <label class="inline"
+                    >颜色 <input type="color" id="print-trace-color" value="#cc0000"
+                  /></label>
+                  <label class="inline"
+                    >透明度
+                    <input
+                      type="range"
+                      id="print-trace-opacity"
+                      min="0.3"
+                      max="1"
+                      step="0.05"
+                      value="0.7"
+                  /></label>
+                </div>
+              </div>
             </fieldset>
 
-            <fieldset class="fieldset fieldset-inline">
-              <legend>重分布</legend>
-              <label class="inline lbl-compact"
-                >范字
-                <select id="print-model-count">
-                  <option value="0">0</option>
-                  <option value="1" selected>1</option>
-                </select></label
-              >
-              <label class="inline lbl-compact"
-                >描红
-                <select id="print-trace-count">
-                  <option value="1">1</option>
-                  <option value="2" selected>2</option>
-                  <option value="3">3</option>
-                </select></label
-              >
-              <label class="inline lbl-compact"
-                >空格
-                <select id="print-blank-count">
-                  <option value="1">1</option>
-                  <option value="2" selected>2</option>
-                  <option value="3">3</option>
-                </select></label
-              >
-              <label class="inline lbl-compact"
-                >描红色 <input type="color" id="print-trace-color" value="#cc0000"
-              /></label>
-              <label class="inline lbl-compact"
-                >透明度
-                <input
-                  type="range"
-                  id="print-trace-opacity"
-                  min="0.3"
-                  max="1"
-                  step="0.05"
-                  value="0.7"
-              /></label>
+            <fieldset
+              class="fieldset print-opt print-opt-layout"
+              title="连续：整段流水。断行：整组尽量不拆行。分组：组块并排／纵叠后再折行。输入分行与空格：按换行分组、空格占格；仅空格的行也排出空字格；适合古诗等。竖向自右向左，拼音在格右侧。"
+            >
+              <legend>文本流</legend>
+              <div class="print-opt-row">
+                <span class="print-opt-label">断续</span>
+                <div class="print-opt-controls">
+                  <label class="inline"
+                    ><input type="radio" name="print-flow" value="continuous" />连续</label
+                  >
+                  <label class="inline"
+                    ><input type="radio" name="print-flow" value="break" />断行</label
+                  >
+                  <label class="inline"
+                    ><input type="radio" name="print-flow" value="group" checked />分组</label
+                  >
+                  <label
+                    class="inline"
+                    title="按输入换行分组；横写每行独占一行且左齐，竖写每行独占一列且顶齐；空格占格；适合古诗等"
+                    ><input type="radio" name="print-flow" value="group-line" />输入分行与空格</label
+                  >
+                </div>
+              </div>
+              <div class="print-opt-row">
+                <span class="print-opt-label">方向</span>
+                <div class="print-opt-controls">
+                  <label class="inline"
+                    ><input type="radio" name="print-direction" value="horizontal" checked />横向</label
+                  >
+                  <label class="inline"
+                    ><input type="radio" name="print-direction" value="vertical" />竖向</label
+                  >
+                </div>
+              </div>
             </fieldset>
-
-            <fieldset class="fieldset fieldset-inline">
-              <legend>拼音</legend>
-              <label class="inline"
-                ><input type="checkbox" id="print-show-pinyin" checked />显示拼音</label
-              >
-            </fieldset>
-
-            <fieldset class="fieldset fieldset-inline">
-              <legend>排版</legend>
-              <label class="inline"
-                ><input type="radio" name="print-layout" value="continuous" checked />横向连续</label
-              >
-              <label class="inline"
-                ><input type="radio" name="print-layout" value="grouped" />纵向分组</label
-              >
-              <label class="inline lbl-compact"
-                >行间距(mm)
-                <input type="number" id="print-row-gap" min="0" max="30" step="1" value="4"
-              /></label>
-              <label class="inline lbl-compact"
-                >组间距(mm)
-                <input type="number" id="print-group-gap" min="0" max="40" step="1" value="10"
-              /></label>
-            </fieldset>
-
-            <fieldset class="fieldset fieldset-inline print-font-fieldset">
-              <legend>字体</legend>
-              <select id="print-font">
-                <option value="kaiti_gb2312">楷体_GB2312</option>
-                <option value="kaiti" selected>楷体</option>
-                <option value="stkaiti">华文楷体</option>
-              </select>
-              <details class="hint-fold print-font-hint">
-                <summary><mark>字体说明</mark></summary>
-                <span class="hint-fold-body"
-                  >PDF 使用本机已安装的楷体。首次生成时浏览器可能询问「是否允许访问本地字体」，请点允许。推荐
-                  <strong>Chrome / Edge 桌面版</strong>；须通过 http://localhost 或 https:// 打开。Firefox、Safari
-                  不支持自动读取系统字体，请用下方「指定字体文件」。Windows 常见路径：<code>C:\Windows\Fonts\simkai.ttf</code>（楷体）、<code>STKAITI.TTF</code>（华文楷体）。手动指定的字体仅在本次浏览会话内有效。</span
-                >
-              </details>
-            </fieldset>
-            <p class="hint hint-tight print-font-short-hint">
-              PDF 使用本机楷体；首次生成时浏览器可能询问字体访问权限。详见「字体说明」。
-            </p>
-
-            <div id="print-font-file-wrap" class="print-font-file-wrap">
-              <details id="print-font-file-details">
-                <summary>指定字体文件（.ttf / .otf，可选）</summary>
-                <input type="file" id="print-font-file" accept=".ttf,.otf,.ttc" />
-              </details>
-            </div>
           </div>
 
           <div class="print-actions">
-            <p id="print-estimate" class="hint" aria-live="polite">尚未选择字词。</p>
-            <p id="print-font-status" class="hint" aria-live="polite"></p>
+            <div class="print-actions-status">
+              <p id="print-estimate" class="hint" aria-live="polite">尚未选择字词。</p>
+              <p id="print-font-status" class="hint" aria-live="polite"></p>
+            </div>
             <button type="button" id="print-generate" class="btn-run">生成 PDF</button>
           </div>
         </div>

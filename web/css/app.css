@@ -598,7 +598,7 @@ body.app:has(#panel-lexicon.active) {
   overflow: visible;
 }
 
-/* —— 字词打印 —— */
+/* —— 打印书写纸 —— */
 .btn-secondary {
   border: 1px solid var(--border);
   background: var(--card);
@@ -616,19 +616,56 @@ body.app:has(#panel-lexicon.active) {
 .print-body {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
   overflow: auto;
   flex: 1;
   min-height: 0;
   padding-bottom: 8px;
 }
 
+.print-input-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
 .print-lesson-toolbar {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 8px;
+  gap: 8px 10px;
   margin-bottom: 6px;
+}
+
+.print-lesson-toolbar .inline {
+  font-size: var(--font-sm);
+  color: var(--muted);
+  gap: 6px;
+}
+
+.print-lesson-toolbar select {
+  width: auto;
+  padding: 4px 8px;
+}
+
+.print-lesson-toolbar .lbl-book select {
+  width: 80px;
+  max-width: 80px;
+}
+
+.print-lesson-toolbar .lbl-toc {
+  flex: 1 1 12rem;
+  min-width: 10rem;
+  max-width: 22rem;
+}
+
+.print-lesson-toolbar .lbl-toc select {
+  width: 100%;
+  min-width: 0;
+}
+
+.print-lesson-toolbar .lbl-kind select {
+  min-width: 5.5rem;
 }
 
 .print-char-checklist {
@@ -664,52 +701,298 @@ body.app:has(#panel-lexicon.active) {
   min-height: 100px;
 }
 
+.print-compose-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+}
+
+.print-compose-wrap textarea {
+  min-height: 96px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: "KaiTi", "楷体", "STKaiti", serif;
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+.lined-editor {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: stretch;
+  min-height: 96px;
+  min-width: 0;
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.lined-editor-gutter {
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 6px 8px;
+  min-width: 2.25em;
+  box-sizing: border-box;
+  text-align: right;
+  border-right: 1px solid var(--border);
+  background: #f6f5f2;
+  color: var(--muted);
+  font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  font-size: var(--font-base);
+  line-height: 1.55;
+  overflow: hidden;
+  user-select: none;
+  white-space: pre;
+}
+
+.lined-editor textarea {
+  flex: 1 1 auto;
+  min-width: 0;
+  width: auto !important;
+  min-height: 96px;
+  height: auto;
+  margin: 0;
+  border: none !important;
+  border-radius: 0;
+  resize: vertical;
+  line-height: 1.55;
+  overflow: auto;
+}
+
+.print-compose-wrap .lined-editor {
+  min-height: 120px;
+}
+
+.print-compose-wrap .lined-editor-gutter {
+  font-family: "KaiTi", "楷体", "STKaiti", serif;
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+.print-compose-wrap .lined-editor textarea {
+  min-height: 120px;
+  font-family: "KaiTi", "楷体", "STKaiti", serif;
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+.print-space-hint {
+  margin: 0;
+}
+
+.print-input-show-spaces {
+  letter-spacing: 0.02em;
+}
+
 .print-options {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  align-items: stretch;
+}
+
+@media (max-width: 860px) {
+  .print-options {
+    grid-template-columns: 1fr;
+  }
+}
+
+.print-opt {
+  margin: 0;
+  padding: 8px 12px 10px;
+  min-width: 0;
+  background: var(--card);
+}
+
+.print-opt-page,
+.print-opt-rhythm,
+.print-opt-grid {
+  padding-top: 6px;
+  padding-bottom: 8px;
+}
+
+.print-opt-page .print-opt-row,
+.print-opt-rhythm .print-opt-row,
+.print-opt-grid .print-opt-row {
+  align-items: center;
+  margin-top: 4px;
+  gap: 6px 8px;
+}
+
+.print-opt-page .print-opt-row:first-of-type,
+.print-opt-rhythm .print-opt-row:first-of-type,
+.print-opt-grid .print-opt-row:first-of-type {
+  margin-top: 0;
+}
+
+.print-opt-page .print-opt-label,
+.print-opt-rhythm .print-opt-label,
+.print-opt-grid .print-opt-label {
+  padding-top: 0;
+  line-height: 1.2;
+}
+
+.print-opt-page .print-opt-controls,
+.print-opt-rhythm .print-opt-controls,
+.print-opt-grid .print-opt-controls {
+  gap: 4px 8px;
+}
+
+.print-opt-page .print-opt-controls input[type="number"] {
+  width: 3.2rem;
+  padding: 2px 4px;
+}
+
+.print-opt-page .print-opt-controls input[type="range"],
+.print-opt-rhythm .print-opt-controls input[type="range"],
+.print-opt-grid .print-opt-controls input[type="range"] {
+  width: 88px;
+  max-width: none;
+}
+
+.print-opt-rhythm .print-opt-controls select {
+  min-width: 3rem;
+  padding: 2px 4px;
+}
+
+.print-opt-rhythm .print-opt-controls input[type="color"] {
+  width: 1.75rem;
+  height: 1.45rem;
+}
+
+.print-opt-grid .print-opt-label {
+  flex-basis: 4.5rem;
+}
+
+.print-opt-grid .print-opt-controls > select,
+.print-opt-grid .print-opt-controls #print-font {
+  min-width: 6.5rem;
+  padding: 2px 6px;
+}
+
+.print-opt-grid .btn-secondary {
+  padding: 2px 8px;
+  font-size: var(--font-sm);
+}
+
+.print-opt-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px 10px;
+  margin-top: 6px;
+}
+
+.print-opt-row:first-of-type {
+  margin-top: 2px;
+}
+
+.print-opt-label {
+  flex: 0 0 2.5rem;
+  padding-top: 5px;
+  font-size: var(--font-sm);
+  color: var(--muted);
+  line-height: 1.3;
+}
+
+.print-opt-controls {
+  flex: 1;
+  min-width: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 14px;
-  align-items: flex-start;
-}
-
-.print-size-fieldset {
   align-items: center;
+  gap: 6px 12px;
 }
 
-.print-size-fieldset input[type="range"] {
+.print-opt-controls select {
+  width: auto;
+  max-width: 100%;
+}
+
+.print-opt-controls > select,
+.print-opt-controls #print-font {
+  min-width: 7rem;
+}
+
+.print-opt-controls .lbl-compact select {
+  min-width: 3.25rem;
+  padding: 4px 6px;
+}
+
+.print-opt-controls input[type="number"] {
+  width: 3.6rem;
+  padding: 4px 6px;
+}
+
+.print-opt-controls input[type="range"] {
   width: 100px;
+  max-width: 40%;
   vertical-align: middle;
 }
 
-.print-size-readout {
-  min-width: 2.5rem;
-  font-variant-numeric: tabular-nums;
+.print-opt-controls input[type="color"] {
+  width: 2rem;
+  height: 1.6rem;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  background: #fff;
+  cursor: pointer;
 }
 
-.print-font-fieldset {
-  flex-direction: column;
-  align-items: flex-start;
+.print-unit {
+  font-size: var(--font-sm);
+  color: var(--muted);
+}
+
+.print-size-readout {
+  min-width: 1.75rem;
+  font-variant-numeric: tabular-nums;
+  font-size: var(--font-sm);
 }
 
 .print-font-hint {
-  margin-top: 4px;
-}
-
-.print-font-short-hint {
-  flex-basis: 100%;
   margin: 0;
 }
 
 .print-font-file-wrap {
-  flex-basis: 100%;
+  display: inline-flex;
+  align-items: center;
+}
+
+.print-font-file-wrap details {
+  font-size: var(--font-sm);
+  color: var(--muted);
+}
+
+.print-font-file-wrap input[type="file"] {
+  display: block;
+  margin-top: 6px;
+  max-width: 16rem;
 }
 
 .print-actions {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  justify-content: space-between;
   gap: 10px 16px;
-  padding-top: 4px;
+  padding-top: 8px;
   border-top: 1px solid var(--border);
+}
+
+.print-actions-status {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  flex: 1 1 12rem;
+}
+
+.print-actions .btn-run {
+  margin-left: auto;
 }
 
 body.app:has(#panel-print.active) {

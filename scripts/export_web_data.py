@@ -549,14 +549,13 @@ def build_payload(root: Path) -> dict:
         sd["view"] = view
         sets_out.append(sd)
 
-    # 默认套：最新一批中学习序列最后一册
-    default_set_id = sets_out[-1]["id"] if sets_out else None
+    # 默认套：最新一批中学习序列第一册（一年级）
+    default_set_id = sets_out[0]["id"] if sets_out else None
     latest_codes = [c for c in SLOT_CODES if c in inventory.get(latest_material, set())]
     if latest_codes:
-        want = f"{latest_material}/{latest_codes[-1]}"
+        want = f"{latest_material}/{latest_codes[0]}"
         if any(s["id"] == want for s in sets_out):
             default_set_id = want
-
     # 兼容旧前端：顶层仍提供默认套的展平字段
     default_view = next(
         (s["view"] for s in sets_out if s["id"] == default_set_id),

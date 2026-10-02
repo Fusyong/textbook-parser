@@ -24,8 +24,8 @@ function data() {
   if (!Array.isArray(sets) || !sets.length) {
     return r;
   }
-  const id = activeSetId || r.defaultSetId || sets[sets.length - 1]?.id;
-  const set = sets.find((s) => s.id === id) || sets[sets.length - 1];
+  const id = activeSetId || r.defaultSetId || sets[0]?.id;
+  const set = sets.find((s) => s.id === id) || sets[0];
   const view = set?.view;
   if (!view) {
     return { ...r, _set: set };
@@ -119,7 +119,7 @@ function fillSetSelect() {
     if (tip) opt.title = tip;
     sel.appendChild(opt);
   }
-  const want = activeSetId || r.defaultSetId || ordered[0]?.id;
+  const want = activeSetId || r.defaultSetId || sets[0]?.id;
   if (want && [...sel.options].some((o) => o.value === want)) {
     sel.value = want;
     activeSetId = want;
@@ -134,6 +134,7 @@ function applyActiveSet() {
     "word-start-book",
     "word-end-book",
     "lexicon-book",
+    "print-book",
   ]) {
     fillBookSelect(id);
   }
@@ -145,7 +146,10 @@ function applyActiveSet() {
   if (d.books?.[0]?.code) {
     const lexBook = document.getElementById("lexicon-book");
     if (lexBook) lexBook.value = d.books[0].code;
+    const printBook = document.getElementById("print-book");
+    if (printBook) printBook.value = d.books[0].code;
   }
+  refreshPrintLessonPanel();
   renderLexicon();
   setBannerForActiveSet();
 }
@@ -780,9 +784,205 @@ function setupTabs() {
         if (el) el.classList.toggle("active", k === id);
       });
       if (id === "lexicon") renderLexicon();
-      if (id === "print" && window.initPrintSheet) window.initPrintSheet();
+      if (id === "print") {
+        refreshPrintLessonPanel();
+        if (window.initPrintSheet) window.initPrintSheet();
+      }
     });
   });
+}
+
+/**
+ * 课次字词勾选项（识字／写字按字；词语表按整词，便于写入输入框）。
+ * @returns {{ text: string, pinyin: string }[]}
+ */
+function loadLessonPrintItems(d, book, tocId, kind) {
+  if (!book || !tocId) return [];
+
+  if (kind === "词语表") {
+    const rows = d.wordByBook?.[book]?.["词语表"] || [];
+    const row = rows.find((r) => r?.tocId === tocId);
+    if (!row) return [];
+    const wordItems =
+      row.wordItems?.length > 0
+        ? row.wordItems
+        : (row.words || []).map((w) => ({ word: w, pinyin: "" }));
+    return wordItems
+      .map((it) => ({
+        text: String(it.word || ""),
+        pinyin: (it.pinyin && String(it.pinyin).trim()) || "",
+      }))
+      .filter((it) => it.text);
+  }
+
+  const rows = d.charByBook?.[book]?.[kind] || [];
+  const row = rows.find((r) => r?.tocId === tocId);
+  if (!row) return [];
+
+  const charItems =
+    row.charItems?.length > 0
+      ? row.charItems
+      : (row.chars || []).map((c) => ({ char: c, pinyin: "" }));
+
+  return charItems
+    .map((it) => ({
+      text: String(it.char || ""),
+      pinyin: (it.pinyin && String(it.pinyin).trim()) || "",
+    }))
+    .filter((it) => it.text && isHanChar(it.text));
+}
+
+/** @deprecated */
+function loadLessonCharItems(d, book, tocId, kind) {
+  return loadLessonPrintItems(d, book, tocId, kind).map((it) => ({
+    char: it.text,
+    pinyin: it.pinyin,
+  }));
+}
+
+/** 若当前课无字词，自动跳到本册第一个有数据的目录项。 */
+function preferPrintTocWithContent() {
+  const d = data();
+  const book = document.getElementById("print-book")?.value;
+  const kind = document.getElementById("print-kind")?.value || "写字表";
+  const tocSel = document.getElementById("print-toc");
+  if (!book || !tocSel) return;
+  if (loadLessonPrintItems(d, book, tocSel.value, kind).length) return;
+  for (const e of d.tocByBook?.[book] || []) {
+    if (loadLessonPrintItems(d, book, e.id, kind).length) {
+      tocSel.value = e.id;
+      return;
+    }
+  }
+}
+
+function renderPrintLessonChecklist() {
+  const wrap = document.getElementById("print-char-checklist");
+  if (!wrap) return;
+  const d = data();
+  const book = document.getElementById("print-book")?.value;
+  const tocId = document.getElementById("print-toc")?.value;
+  const kind = document.getElementById("print-kind")?.value || "写字表";
+  const items = loadLessonPrintItems(d, book, tocId, kind);
+
+  wrap.replaceChildren();
+  if (!items.length) {
+    const p = document.createElement("p");
+    p.className = "hint";
+    p.textContent = "本课暂无字词，请换课次或表类型。";
+    wrap.appendChild(p);
+    if (typeof window.updatePrintEstimate === "function") window.updatePrintEstimate();
+    return;
+  }
+
+  const frag = document.createDocumentFragment();
+  for (let i = 0; i < items.length; i++) {
+    const it = items[i];
+    const lab = document.createElement("label");
+    lab.className = "print-char-check";
+    const cb = document.createElement("input");
+    cb.type = "checkbox";
+    cb.checked = true;
+    cb.setAttribute("data-text", it.text);
+    cb.setAttribute("data-pinyin", it.pinyin);
+    cb.id = `print-ch-${i}`;
+    lab.appendChild(cb);
+    const span = document.createElement("span");
+    span.className = "print-char-check-label";
+    span.textContent = it.pinyin ? `${it.text}（${it.pinyin}）` : it.text;
+    lab.appendChild(span);
+    frag.appendChild(lab);
+  }
+  wrap.appendChild(frag);
+  if (typeof window.updatePrintEstimate === "function") window.updatePrintEstimate();
+}
+
+function getCheckedPrintLessonItems() {
+  /** @type {{ text: string, pinyin: string }[]} */
+  const items = [];
+  document
+    .querySelectorAll("#print-char-checklist input[type=checkbox][data-text]:checked")
+    .forEach((cb) => {
+      items.push({
+        text: cb.getAttribute("data-text") || "",
+        pinyin: cb.getAttribute("data-pinyin") || "",
+      });
+    });
+  return items;
+}
+
+function appendCheckedLessonToPrintInput() {
+  const selected = getCheckedPrintLessonItems();
+  if (!selected.length) {
+    if (typeof window.setPrintFontStatus === "function") {
+      window.setPrintFontStatus("请先勾选要加入的字词。");
+    }
+    return;
+  }
+  const ta = document.getElementById("print-input");
+  if (!ta) return;
+  const fragment = selected
+    .map((it) => {
+      const text = String(it.text || "").trim();
+      if (!text) return "";
+      const py = String(it.pinyin || "").trim();
+      return py ? `${text}（${py}）` : text;
+    })
+    .filter(Boolean)
+    .join(" ");
+  const cur = ta.value.replace(/\s+$/, "");
+  ta.value = cur ? `${cur} ${fragment}` : fragment;
+  ta.dispatchEvent(new Event("input", { bubbles: true }));
+  if (typeof window.updatePrintEstimate === "function") window.updatePrintEstimate();
+  if (typeof window.setPrintFontStatus === "function") {
+    window.setPrintFontStatus(`已加入 ${selected.length} 项，可继续勾选或编辑输入框。`);
+  }
+}
+
+function refreshPrintLessonPanel() {
+  const bookSel = document.getElementById("print-book");
+  if (!bookSel) return;
+  fillBookSelect("print-book");
+  if (!bookSel.value && data()?.books?.[0]?.code) {
+    bookSel.value = data().books[0].code;
+  }
+  fillTocSelect(bookSel.value, "print-toc");
+  preferPrintTocWithContent();
+  renderPrintLessonChecklist();
+}
+
+function bindPrintLessonControls() {
+  const bookSel = document.getElementById("print-book");
+  const tocSel = document.getElementById("print-toc");
+  const kindSel = document.getElementById("print-kind");
+  if (!bookSel || !tocSel) return;
+
+  bookSel.addEventListener("change", () => {
+    fillTocSelect(bookSel.value, "print-toc");
+    preferPrintTocWithContent();
+    renderPrintLessonChecklist();
+  });
+  tocSel.addEventListener("change", renderPrintLessonChecklist);
+  kindSel?.addEventListener("change", () => {
+    preferPrintTocWithContent();
+    renderPrintLessonChecklist();
+  });
+
+  document.getElementById("print-select-all")?.addEventListener("click", () => {
+    document
+      .querySelectorAll("#print-char-checklist input[type=checkbox]")
+      .forEach((cb) => {
+        cb.checked = true;
+      });
+  });
+  document.getElementById("print-select-none")?.addEventListener("click", () => {
+    document
+      .querySelectorAll("#print-char-checklist input[type=checkbox]")
+      .forEach((cb) => {
+        cb.checked = false;
+      });
+  });
+  document.getElementById("print-append-input")?.addEventListener("click", appendCheckedLessonToPrintInput);
 }
 
 function renderLexicon() {
@@ -1116,7 +1316,7 @@ function init() {
   }
 
   if (Array.isArray(r.sets) && r.sets.length) {
-    activeSetId = r.defaultSetId || r.sets[r.sets.length - 1]?.id || null;
+    activeSetId = r.defaultSetId || r.sets[0]?.id || null;
   }
 
   const d = data();
@@ -1151,6 +1351,7 @@ function init() {
   bindBookTocPair("char-end");
   bindBookTocPair("word-start");
   bindBookTocPair("word-end");
+  bindPrintLessonControls();
   applyActiveSet();
 
   document.getElementById("char-run")?.addEventListener("click", runCharCheck);
@@ -1162,6 +1363,10 @@ function init() {
   lexBook?.addEventListener("change", renderLexicon);
   lexKind?.addEventListener("change", renderLexicon);
 }
+
+/** 供打印书写纸模块读取当前成套视图（含 books / tocByBook / charByBook 等）。 */
+window.getTextbookData = data;
+window.refreshPrintLessonPanel = refreshPrintLessonPanel;
 
 function bindInputEnterShortcuts() {
   const onEnter = (id, fn) => {
