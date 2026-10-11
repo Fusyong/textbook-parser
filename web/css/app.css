@@ -144,9 +144,9 @@ body.app {
   gap: 6px;
 }
 
-/* 组词：工具栏与结果表之间不留缝，避免表头「终点课」上方一块空 */
+/* 组词：查询条与结果之间只留查询条自己的间距 */
 #panel-words.panel-fill.active {
-  gap: 0;
+  gap: 6px;
 }
 
 .panel-head {
@@ -373,6 +373,164 @@ textarea {
   line-height: 1.45;
 }
 
+.word-query-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+}
+
+.word-mode {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.word-mode-name,
+.word-head-name {
+  font-size: var(--font-title);
+  font-weight: 650;
+  color: var(--text);
+  line-height: 1;
+}
+
+.word-mode-switch {
+  display: inline-flex;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.word-mode-opt {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+  padding: 7px 18px;
+  cursor: pointer;
+  font-size: var(--font-base);
+  font-weight: 650;
+  color: var(--muted);
+  user-select: none;
+}
+
+.word-mode-opt input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.word-mode-opt:has(input:checked) {
+  background: var(--accent);
+  color: #fff;
+}
+
+.word-mode-opt:focus-within {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+
+.word-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1 1 16rem;
+  max-width: 36rem;
+  min-width: 10rem;
+}
+
+.word-head input {
+  flex: 1;
+  width: auto;
+  min-width: 0;
+}
+
+.word-status:empty {
+  display: none;
+}
+
+.word-single-result {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.word-result-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.word-result-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.word-result-block {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.word-result-block textarea {
+  flex: 0 0 auto;
+  min-height: 2.75rem;
+  height: 2.75rem;
+  resize: vertical;
+  font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+}
+
+.word-batch-result {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.word-batch-result textarea {
+  flex: 1;
+  min-height: 0;
+  resize: none;
+  font-family: ui-monospace, "Cascadia Mono", "Consolas", monospace;
+  font-size: var(--font-base);
+  line-height: 1.5;
+}
+
+.word-config {
+  flex: 1 1 100%;
+  margin: 0;
+  font-size: var(--font-sm);
+  color: var(--muted);
+}
+
+.word-config summary {
+  cursor: pointer;
+  user-select: none;
+}
+
+.word-config-body {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 8px 12px;
+  padding-top: 6px;
+}
+
+.word-config .lbl-num input[type="number"] {
+  width: 4.2rem;
+  padding: 4px 6px;
+}
+
 .btn-run {
   padding: 8px 18px;
   border: none;
@@ -387,6 +545,12 @@ textarea {
 
 .btn-run:hover {
   filter: brightness(1.06);
+}
+
+.btn-run:disabled,
+.btn-secondary:disabled {
+  opacity: 0.55;
+  cursor: wait;
 }
 
 .hint {
@@ -868,7 +1032,8 @@ body.app:has(#panel-lexicon.active) {
 }
 
 .print-opt-grid .print-opt-controls > select,
-.print-opt-grid .print-opt-controls #print-font {
+.print-opt-grid .print-opt-controls #print-font,
+.print-opt-grid .print-opt-controls #print-pinyin-font {
   min-width: 6.5rem;
   padding: 2px 6px;
 }
@@ -912,7 +1077,8 @@ body.app:has(#panel-lexicon.active) {
 }
 
 .print-opt-controls > select,
-.print-opt-controls #print-font {
+.print-opt-controls #print-font,
+.print-opt-controls #print-pinyin-font {
   min-width: 7rem;
 }
 
@@ -991,8 +1157,61 @@ body.app:has(#panel-lexicon.active) {
   flex: 1 1 12rem;
 }
 
-.print-actions .btn-run {
+.print-actions-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
   margin-left: auto;
+}
+
+.print-preview {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  background: #3c3f44;
+}
+
+.print-preview-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+  padding: 8px 12px;
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+}
+
+.print-preview-meta {
+  flex: 1 1 8rem;
+  min-width: 0;
+  margin: 0;
+}
+
+.print-preview-tab {
+  color: var(--accent);
+  font-size: var(--font-sm);
+}
+
+.print-preview-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.print-preview-frame {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  border: 0;
+  background: #525659;
+}
+
+body.app.print-preview-open {
+  overflow: hidden !important;
 }
 
 body.app:has(#panel-print.active) {

@@ -593,14 +593,16 @@ function firstHanCharFromInput(s) {
 }
 
 /**
+ * 范围内的正文分词（不按字过滤，供单字与批量共用）。
  * @param {{ lo, hi }} range
- * @param {string} needle
  * @param {boolean} onlyOk
+ * @returns {{ hits: { w: string, src: 'c', book: string, i: number, l: string, tocId: string }[], scanned: number }}
  */
-function collectChunkTokenHits(range, needle, onlyOk) {
+function collectChunkTokens(range, onlyOk) {
   const d = data();
-  /** @type {{ w: string, src: 'c', book: string, i: number, l: string }[]} */
+  /** @type {{ w: string, src: 'c', book: string, i: number, l: string, tocId: string }[]} */
   const flat = [];
+  let scanned = 0;
 
   for (const b of d.books || []) {
     const code = b.code;
@@ -615,10 +617,11 @@ function collectChunkTokenHits(range, needle, onlyOk) {
       if (!p || !posInRange(p, range)) continue;
       if (onlyOk && !meta.ok) continue;
       const toks = tokenLists[i] || [];
+      scanned += toks.length;
       const seenTok = new Set();
       for (const tok of toks) {
         const t = String(tok).trim();
-        if (!t || !t.includes(needle) || seenTok.has(t)) continue;
+        if (!t || seenTok.has(t)) continue;
         seenTok.add(t);
         flat.push({
           w: t,
@@ -631,16 +634,16 @@ function collectChunkTokenHits(range, needle, onlyOk) {
       }
     }
   }
-  return flat;
+  return { hits: flat, scanned };
 }
 
 /**
  * @param {{ lo, hi }} range
- * @param {string} needle
+ * @returns {{ w: string, src: 't', book: string, ri: number, l: string, tocId: string }[]}
  */
-function collectTableHits(range, needle) {
+function collectTableTokens(range) {
   const d = data();
-  /** @type {{ w: string, src: 't', book: string, ri: number, l: string }[]} */
+  /** @type {{ w: string, src: 't', book: string, ri: number, l: string, tocId: string }[]} */
   const flat = [];
 
   for (const b of d.books || []) {
@@ -655,7 +658,7 @@ function collectTableHits(range, needle) {
       const seenW = new Set();
       for (const w of row.words || []) {
         const word = String(w);
-        if (!word.includes(needle) || seenW.has(word)) continue;
+        if (!word || seenW.has(word)) continue;
         seenW.add(word);
         flat.push({
           w: word,
@@ -669,6 +672,12 @@ function collectTableHits(range, needle) {
     }
   }
   return flat;
+}
+
+/** @param {{ w: string }[]} hits @param {boolean} skipMono */
+function filterWordHits(hits, skipMono) {
+  if (!skipMono) return hits;
+  return hits.filter((h) => [...String(h.w || "")].length >= 2);
 }
 
 /** 全套教材目录项顺序（册顺序 × 每册目录顺序） */
@@ -724,10 +733,11 @@ function sortWordsByFreq(words, freqMap) {
  * @param {{ w: string, book: string, tocId?: string }[]} hits
  * @param {string} endBook
  * @param {string} endTocId
- * @returns {Record<"last"|"near"|"other", string>}
+ * @param {{ book: string, id: string }[]} [flatList]
+ * @returns {Record<"last"|"near"|"other", string[]>}
  */
-function bucketedWordText(hits, d, endBook, endTocId) {
-  const flat = buildFlatTocList(d);
+function bucketWordLists(hits, d, endBook, endTocId, flatList) {
+  const flat = flatList || buildFlatTocList(d);
   /** @type {Record<string, Set<string>>} */
   const buckets = {
     last: new Set(),
@@ -745,11 +755,20 @@ function bucketedWordText(hits, d, endBook, endTocId) {
     buckets[b].add(h.w);
   }
   const freq = d.wordFreq && typeof d.wordFreq === "object" ? d.wordFreq : {};
-  const sep = "  ";
   return {
-    last: sortWordsByFreq([...buckets.last], freq).join(sep),
-    near: sortWordsByFreq([...buckets.near], freq).join(sep),
-    other: sortWordsByFreq([...buckets.other], freq).join(sep),
+    last: sortWordsByFreq([...buckets.last], freq),
+    near: sortWordsByFreq([...buckets.near], freq),
+    other: sortWordsByFreq([...buckets.other], freq),
+  };
+}
+
+/** @param {Record<"last"|"near"|"other", string[]>} lists @param {number} n */
+function capWordLists(lists, n) {
+  if (!n) return lists;
+  return {
+    last: lists.last.slice(0, n),
+    near: lists.near.slice(0, n),
+    other: lists.other.slice(0, n),
   };
 }
 
@@ -761,10 +780,353 @@ function clearWordOutputCells() {
     "word-out-table-last",
     "word-out-table-near",
     "word-out-table-other",
+    "word-picked",
   ]) {
     const el = document.getElementById(id);
     if (el) el.value = "";
   }
+}
+
+function clearWordOutputs() {
+  clearWordOutputCells();
+  const batch = document.getElementById("word-batch-output");
+  if (batch) batch.value = "";
+}
+
+function setWordStatus(msg) {
+  const el = document.getElementById("word-status");
+  if (el) el.textContent = msg || "";
+}
+
+function wordResultApi() {
+  const api = window.WordResult;
+  if (!api) {
+    showDataBanner("组词模块未加载（word-result.js）。");
+    return null;
+  }
+  return api;
+}
+
+const WORD_SETTINGS_KEY = "textbook-parser.word-settings.v1";
+
+/** 最近一次单字检索实际使用的汉字，供「按格子重填选用」。 */
+let lastSingleNeedle = "";
+
+function readIntInput(id, fallback, min, max) {
+  const el = document.getElementById(id);
+  const v = parseInt(el?.value ?? "", 10);
+  const n = Number.isFinite(v) ? Math.min(max, Math.max(min, v)) : fallback;
+  if (el && el.value !== String(n)) el.value = String(n);
+  return n;
+}
+
+function readWordPickOptions() {
+  const prefer = document.querySelector('input[name="word-prefer"]:checked')?.value;
+  return {
+    limit: readIntInput("word-per-char", 6, 1, 30),
+    perBucket: readIntInput("word-per-bucket", 0, 0, 50),
+    include: {
+      last: document.getElementById("word-bucket-last")?.checked !== false,
+      near: document.getElementById("word-bucket-near")?.checked !== false,
+      other: document.getElementById("word-bucket-other")?.checked !== false,
+    },
+    prefer: prefer === "body" ? "body" : "table",
+    skipMono: document.getElementById("word-skip-mono")?.checked !== false,
+    withNotes: document.getElementById("word-with-notes")?.checked !== false,
+  };
+}
+
+function wordModeIsBatch() {
+  return document.querySelector('input[name="word-mode"]:checked')?.value === "batch";
+}
+
+function applyWordMode() {
+  const batch = wordModeIsBatch();
+  document.getElementById("word-single-result")?.classList.toggle("hidden", batch);
+  document.getElementById("word-batch-result")?.classList.toggle("hidden", !batch);
+  const input = document.getElementById("word-char");
+  if (input) {
+    input.placeholder = batch ? "春夏秋冬" : "春";
+    input.title = batch ? "" : "多个汉字时只取第一个。";
+  }
+}
+
+function collectWordSettings() {
+  const opts = readWordPickOptions();
+  return {
+    mode: wordModeIsBatch() ? "batch" : "single",
+    onlyOk: document.getElementById("word-only-ok")?.checked !== false,
+    includeTable: document.getElementById("word-include-words-table")?.checked !== false,
+    perChar: opts.limit,
+    perBucket: opts.perBucket,
+    bucketLast: opts.include.last,
+    bucketNear: opts.include.near,
+    bucketOther: opts.include.other,
+    prefer: opts.prefer,
+    skipMono: opts.skipMono,
+    withNotes: opts.withNotes,
+  };
+}
+
+function saveWordSettings() {
+  try {
+    localStorage.setItem(WORD_SETTINGS_KEY, JSON.stringify(collectWordSettings()));
+  } catch {
+    // 隐私模式或配额不足时忽略。
+  }
+}
+
+function loadWordSettings() {
+  let saved = null;
+  try {
+    const raw = localStorage.getItem(WORD_SETTINGS_KEY);
+    if (raw) saved = JSON.parse(raw);
+  } catch {
+    saved = null;
+  }
+  if (!saved || typeof saved !== "object") return;
+
+  const setCheck = (id, value) => {
+    const el = document.getElementById(id);
+    if (el && typeof value === "boolean") el.checked = value;
+  };
+  const setNum = (id, value) => {
+    const el = document.getElementById(id);
+    if (el && Number.isFinite(Number(value))) el.value = String(value);
+  };
+  const setRadio = (name, value) => {
+    const el = document.querySelector(`input[name="${name}"][value="${value}"]`);
+    if (el) el.checked = true;
+  };
+
+  setRadio("word-mode", saved.mode === "batch" ? "batch" : "single");
+  setCheck("word-only-ok", saved.onlyOk);
+  setCheck("word-include-words-table", saved.includeTable);
+  setNum("word-per-char", saved.perChar);
+  setNum("word-per-bucket", saved.perBucket);
+  setCheck("word-bucket-last", saved.bucketLast);
+  setCheck("word-bucket-near", saved.bucketNear);
+  setCheck("word-bucket-other", saved.bucketOther);
+  setRadio("word-prefer", saved.prefer === "body" ? "body" : "table");
+  setCheck("word-skip-mono", saved.skipMono);
+  setCheck("word-with-notes", saved.withNotes);
+}
+
+function bindWordSettings() {
+  const root = document.getElementById("panel-words");
+  root?.addEventListener("change", (e) => {
+    const t = e.target;
+    if (!(t instanceof Element)) return;
+    const id = t.id || "";
+    const name = t.getAttribute("name") || "";
+    const tracked =
+      id.startsWith("word-") || name === "word-mode" || name === "word-prefer";
+    if (!tracked) return;
+    if (id === "word-char" || id === "word-batch-output" || id === "word-picked") return;
+    if (id.startsWith("word-out-")) return;
+    if (name === "word-mode") applyWordMode();
+    saveWordSettings();
+  });
+}
+
+function fillWordGrid(body, table) {
+  const WR = wordResultApi();
+  if (!WR) return;
+  const put = (id, words) => {
+    const el = document.getElementById(id);
+    if (el) el.value = WR.joinWords(words);
+  };
+  put("word-out-body-last", body.last);
+  put("word-out-body-near", body.near);
+  put("word-out-body-other", body.other);
+  put("word-out-table-last", table.last);
+  put("word-out-table-near", table.near);
+  put("word-out-table-other", table.other);
+}
+
+function bucketNotes(body, table) {
+  const WR = wordResultApi();
+  if (!WR) return [];
+  return [
+    WR.formatBucketNote("终点课·正文", body.last),
+    WR.formatBucketNote("终点课·词语表", table.last),
+    WR.formatBucketNote("前两课·正文", body.near),
+    WR.formatBucketNote("前两课·词语表", table.near),
+    WR.formatBucketNote("其他·正文", body.other),
+    WR.formatBucketNote("其他·词语表", table.other),
+  ].filter(Boolean);
+}
+
+function listsFromCell(id) {
+  const WR = wordResultApi();
+  if (!WR) return [];
+  return WR.splitWords(document.getElementById(id)?.value || "");
+}
+
+/**
+ * 校验目录范围与导出数据。失败时写提示并返回 null。
+ * @returns {{ d: object, range: object, eb: string, et: string, onlyOk: boolean, inclTable: boolean, chunkHits: object[], tableHits: object[], scanned: number } | null}
+ */
+function prepareWordQuery() {
+  const d = data();
+  const sb = document.getElementById("word-start-book")?.value;
+  const st = document.getElementById("word-start-toc")?.value;
+  const eb = document.getElementById("word-end-book")?.value;
+  const et = document.getElementById("word-end-toc")?.value;
+  const range = normalizeLessonRange(d, sb, st, eb, et);
+  if (!range) {
+    showDataBanner("无法确定目录范围：请确认已导出 目录.json，且起点、终点的「课」有效。");
+    clearWordOutputs();
+    setWordStatus("");
+    return null;
+  }
+
+  let chunkTokenMismatch = false;
+  for (const b of d.books || []) {
+    const c = d.chunksByBook?.[b.code] || [];
+    const t = d.chunkTokensByBook?.[b.code];
+    if (!Array.isArray(t) || t.length !== c.length) {
+      chunkTokenMismatch = true;
+      break;
+    }
+  }
+  if (chunkTokenMismatch) {
+    showDataBanner(
+      "chunkTokensByBook 与分块数量不一致。请安装 jieba 后重新运行: python scripts/export_web_data.py",
+    );
+    clearWordOutputs();
+    setWordStatus("");
+    return null;
+  }
+  if (!d.wordFreq || typeof d.wordFreq !== "object") {
+    showDataBanner(
+      "数据缺少 wordFreq（请重新运行 scripts/export_web_data.py 重新导出）以按全套教材词频排序。",
+    );
+    clearWordOutputs();
+    setWordStatus("");
+    return null;
+  }
+
+  const onlyOk = document.getElementById("word-only-ok")?.checked;
+  const inclTable = document.getElementById("word-include-words-table")?.checked;
+  const chunk = collectChunkTokens(range, !!onlyOk);
+  return {
+    d,
+    range,
+    eb,
+    et,
+    onlyOk: !!onlyOk,
+    inclTable: !!inclTable,
+    chunkHits: chunk.hits,
+    tableHits: inclTable ? collectTableTokens(range) : [],
+    scanned: chunk.scanned,
+  };
+}
+
+function indexesFor(ctx, skipMono) {
+  const WR = wordResultApi();
+  if (!WR) return null;
+  return {
+    chunkIndex: WR.indexByChar(filterWordHits(ctx.chunkHits, skipMono)),
+    tableIndex: WR.indexByChar(filterWordHits(ctx.tableHits, skipMono)),
+    flat: buildFlatTocList(ctx.d),
+  };
+}
+
+function bucketsForChar(indexes, ch, ctx, perBucket) {
+  const body = capWordLists(
+    bucketWordLists(indexes.chunkIndex.get(ch) || [], ctx.d, ctx.eb, ctx.et, indexes.flat),
+    perBucket,
+  );
+  const table = capWordLists(
+    bucketWordLists(indexes.tableIndex.get(ch) || [], ctx.d, ctx.eb, ctx.et, indexes.flat),
+    perBucket,
+  );
+  return { body, table };
+}
+
+function refillPickedFromGrid() {
+  const WR = wordResultApi();
+  if (!WR) return;
+  const ch =
+    firstHanCharFromInput(document.getElementById("word-char")?.value || "") || lastSingleNeedle;
+  if (!ch) {
+    setWordStatus("请先检索一个字。");
+    return;
+  }
+  const opts = readWordPickOptions();
+  const body = {
+    last: listsFromCell("word-out-body-last"),
+    near: listsFromCell("word-out-body-near"),
+    other: listsFromCell("word-out-body-other"),
+  };
+  const table = {
+    last: listsFromCell("word-out-table-last"),
+    near: listsFromCell("word-out-table-near"),
+    other: listsFromCell("word-out-table-other"),
+  };
+  const picked = WR.pickWords({ body, table }, opts);
+  const el = document.getElementById("word-picked");
+  if (el) el.value = WR.formatPickedLine(ch, picked);
+  const bucketNote =
+    !opts.include.last && !opts.include.near && !opts.include.other
+      ? "未勾选纳入分桶，选用为空。"
+      : `已按当前格子重填选用（${picked.length} 个词）。`;
+  setWordStatus(bucketNote);
+}
+
+function keepWordPickedOnly() {
+  const WR = wordResultApi();
+  const el = document.getElementById("word-batch-output");
+  if (!WR || !el) return;
+  el.value = WR.keepPickedLines(el.value);
+  setWordStatus("已去掉参考行和空行。");
+}
+
+async function copyWordResult() {
+  const batch = wordModeIsBatch();
+  const el = document.getElementById(batch ? "word-batch-output" : "word-picked");
+  let text = el?.value || "";
+  if (batch && window.WordResult) text = window.WordResult.keepPickedLines(text);
+  if (!text.trim()) {
+    setWordStatus("没有可复制的选用。");
+    return;
+  }
+  try {
+    await navigator.clipboard.writeText(text);
+    setWordStatus("已复制到剪贴板。");
+    return;
+  } catch {
+    // 剪贴板权限不足时改用选区复制。
+  }
+  const helper = document.createElement("textarea");
+  helper.value = text;
+  helper.setAttribute("readonly", "");
+  helper.style.position = "fixed";
+  helper.style.left = "-9999px";
+  document.body.appendChild(helper);
+  helper.select();
+  let ok = false;
+  try {
+    ok = document.execCommand("copy");
+  } catch {
+    ok = false;
+  }
+  helper.remove();
+  setWordStatus(ok ? "已复制到剪贴板。" : "复制失败，请在结果框中手动选择。");
+}
+
+function bootWordSettings() {
+  loadWordSettings();
+  applyWordMode();
+  bindWordSettings();
+  document.getElementById("word-refill-picked")?.addEventListener("click", refillPickedFromGrid);
+  document.getElementById("word-keep-picked")?.addEventListener("click", keepWordPickedOnly);
+  document.querySelectorAll(".word-copy").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      copyWordResult();
+    });
+  });
 }
 
 function setupTabs() {
@@ -1201,108 +1563,93 @@ function runCharCheck() {
   showDataBanner("");
 }
 
+function runSingleWordSearch(ctx, rawTarget, needle) {
+  const WR = wordResultApi();
+  if (!WR) return;
+  const opts = readWordPickOptions();
+  const indexes = indexesFor(ctx, opts.skipMono);
+  if (!indexes) return;
+  const { body, table } = bucketsForChar(indexes, needle, ctx, opts.perBucket);
+  fillWordGrid(body, table);
+  const picked = WR.pickWords({ body, table }, opts);
+  const pickedEl = document.getElementById("word-picked");
+  if (pickedEl) pickedEl.value = WR.formatPickedLine(needle, picked);
+  lastSingleNeedle = needle;
+
+  const chunkFor = indexes.chunkIndex.get(needle) || [];
+  const tableFor = indexes.tableIndex.get(needle) || [];
+  const uniqChunkWords = new Set(chunkFor.map((h) => h.w)).size;
+  const uniqTableWords = new Set(tableFor.map((h) => h.w)).size;
+  const usedNote =
+    rawTarget.trim() !== needle && rawTarget.trim().length > 0 ? `（已用首字「${needle}」）` : "";
+  const noBucket = !opts.include.last && !opts.include.near && !opts.include.other;
+  const total = chunkFor.length + tableFor.length;
+  if (total === 0) {
+    setWordStatus(`所选范围内无匹配（可扩大目录范围，或取消「仅正文」）。${usedNote}`);
+  } else {
+    const bucketTip = noBucket ? "未勾选纳入分桶，选用为空。" : `选用 ${picked.length} 个。`;
+    setWordStatus(
+      `已在约 ${ctx.scanned} 个预分词中筛选：正文 ${chunkFor.length} 条（${uniqChunkWords} 个不同词），词语表 ${tableFor.length} 条（${uniqTableWords} 个不同词）。${bucketTip}${usedNote}`,
+    );
+  }
+  showDataBanner("");
+}
+
+function runBatchWordSearch(ctx, chars) {
+  const WR = wordResultApi();
+  if (!WR) return;
+  const opts = readWordPickOptions();
+  const indexes = indexesFor(ctx, opts.skipMono);
+  if (!indexes) return;
+  const noBucket = !opts.include.last && !opts.include.near && !opts.include.other;
+  let hitChars = 0;
+  const blocks = chars.map((ch) => {
+    const chunkFor = indexes.chunkIndex.get(ch) || [];
+    const tableFor = indexes.tableIndex.get(ch) || [];
+    if (chunkFor.length || tableFor.length) hitChars += 1;
+    const { body, table } = bucketsForChar(indexes, ch, ctx, opts.perBucket);
+    const notes = opts.withNotes ? bucketNotes(body, table) : [];
+    if (opts.withNotes && !notes.length) notes.push("（无符合配置的词）");
+    return {
+      ch,
+      picked: WR.pickWords({ body, table }, opts),
+      notes,
+    };
+  });
+  const out = document.getElementById("word-batch-output");
+  if (out) out.value = WR.formatBatchText(blocks);
+  const noteTip = opts.withNotes ? "参考行以 # 开头。" : "未附带分桶参考。";
+  const bucketTip = noBucket ? "未勾选纳入分桶，选用为空。" : noteTip;
+  setWordStatus(
+    `共 ${chars.length} 个不重复的字，其中 ${hitChars} 个在范围内有词。选用已按配置填好，可直接改。${bucketTip}`,
+  );
+  showDataBanner("");
+}
+
 function runWordSearch() {
-  const d = data();
+  if (!wordResultApi()) return;
+  const batch = wordModeIsBatch();
+  if (batch) {
+    const chars = window.WordResult.hanCharsInOrder(document.getElementById("word-char")?.value || "");
+    if (!chars.length) {
+      showDataBanner("请输入至少一个汉字。");
+      return;
+    }
+    const ctx = prepareWordQuery();
+    if (!ctx) return;
+    runBatchWordSearch(ctx, chars);
+    return;
+  }
+
   const rawTarget = document.getElementById("word-char")?.value || "";
   const needle = firstHanCharFromInput(rawTarget);
-  const statusEl = document.getElementById("word-status");
-
   if (!needle) {
     showDataBanner("请输入至少一个汉字（多字时只取第一个汉字参与检索）。");
     return;
   }
-
-  const sb = document.getElementById("word-start-book")?.value;
-  const st = document.getElementById("word-start-toc")?.value;
-  const eb = document.getElementById("word-end-book")?.value;
-  const et = document.getElementById("word-end-toc")?.value;
-
-  const range = normalizeLessonRange(d, sb, st, eb, et);
-  if (!range) {
-    showDataBanner("无法确定目录范围：请确认已导出 目录.json，且起点、终点的「课」有效。");
-    clearWordOutputCells();
-    if (statusEl) statusEl.textContent = "";
-    return;
-  }
-
-  const onlyOk = document.getElementById("word-only-ok")?.checked;
-  const inclTable = document.getElementById("word-include-words-table")?.checked;
-
-  let chunkTokenMismatch = false;
-  for (const b of d.books || []) {
-    const c = d.chunksByBook?.[b.code] || [];
-    const t = d.chunkTokensByBook?.[b.code];
-    if (!Array.isArray(t) || t.length !== c.length) {
-      chunkTokenMismatch = true;
-      break;
-    }
-  }
-
-  if (chunkTokenMismatch) {
-    showDataBanner(
-      "chunkTokensByBook 与分块数量不一致。请安装 jieba 后重新运行: python scripts/export_web_data.py",
-    );
-    clearWordOutputCells();
-    if (statusEl) statusEl.textContent = "";
-    return;
-  }
-
-  if (!d.wordFreq || typeof d.wordFreq !== "object") {
-    showDataBanner(
-      "数据缺少 wordFreq（请重新运行 scripts/export_web_data.py 重新导出）以按全套教材词频排序。",
-    );
-    clearWordOutputCells();
-    if (statusEl) statusEl.textContent = "";
-    return;
-  }
-
-  const chunkHits = collectChunkTokenHits(range, needle, onlyOk);
-  const tableHits = inclTable ? collectTableHits(range, needle) : [];
-
-  const bodyCols = bucketedWordText(chunkHits, d, eb, et);
-  const tableCols = bucketedWordText(tableHits, d, eb, et);
-
-  const setVal = (id, text) => {
-    const el = document.getElementById(id);
-    if (el) el.value = text;
-  };
-  setVal("word-out-body-last", bodyCols.last);
-  setVal("word-out-body-near", bodyCols.near);
-  setVal("word-out-body-other", bodyCols.other);
-  setVal("word-out-table-last", tableCols.last);
-  setVal("word-out-table-near", tableCols.near);
-  setVal("word-out-table-other", tableCols.other);
-
-  if (statusEl) {
-    const total = chunkHits.length + tableHits.length;
-    const uniqChunkWords = new Set(chunkHits.map((h) => h.w)).size;
-    const uniqTableWords = new Set(tableHits.map((h) => h.w)).size;
-    let scannedTokens = 0;
-    for (const b of d.books || []) {
-      const code = b.code;
-      const chunks = d.chunksByBook?.[code] || [];
-      const tokenLists = d.chunkTokensByBook?.[code] || [];
-      for (let i = 0; i < chunks.length; i++) {
-        const meta = chunks[i];
-        if (!meta?.id) continue;
-        const p = tocPosition(d, code, meta.id);
-        if (!p || !posInRange(p, range)) continue;
-        if (onlyOk && !meta.ok) continue;
-        scannedTokens += (tokenLists[i] || []).length;
-      }
-    }
-    const usedNote =
-      firstHanCharFromInput(rawTarget) &&
-      rawTarget.trim() !== needle &&
-      rawTarget.trim().length > 0
-        ? `（已用首字「${needle}」）`
-        : "";
-    statusEl.textContent =
-      total === 0
-        ? `所选范围内无匹配（可扩大目录范围，或取消「仅 ok」）。${usedNote}`
-        : `已在约 ${scannedTokens} 个预分词中筛选：正文命中 ${chunkHits.length} 条（${uniqChunkWords} 个不同词），词语表 ${tableHits.length} 条（${uniqTableWords} 个不同词）。${usedNote}`;
-  }
-  showDataBanner("");
+  const ctx = prepareWordQuery();
+  if (!ctx) return;
+  runSingleWordSearch(ctx, rawTarget, needle);
 }
 
 function init() {
@@ -1364,9 +1711,32 @@ function init() {
   lexKind?.addEventListener("change", renderLexicon);
 }
 
+/**
+ * 恢复打印页保存的册 / 课 / 表。不自动跳到「有内容的课」。
+ * @param {{ book?: string, toc?: string, kind?: string }} sel
+ */
+function applyPrintLessonSelection(sel) {
+  const bookSel = document.getElementById("print-book");
+  const tocSel = document.getElementById("print-toc");
+  const kindSel = document.getElementById("print-kind");
+  if (!bookSel || !tocSel) return;
+  if (sel?.book && [...bookSel.options].some((o) => o.value === sel.book)) {
+    bookSel.value = sel.book;
+  }
+  fillTocSelect(bookSel.value, "print-toc");
+  if (sel?.toc && [...tocSel.options].some((o) => o.value === sel.toc)) {
+    tocSel.value = sel.toc;
+  }
+  if (kindSel && sel?.kind && [...kindSel.options].some((o) => o.value === sel.kind)) {
+    kindSel.value = sel.kind;
+  }
+  renderPrintLessonChecklist();
+}
+
 /** 供打印书写纸模块读取当前成套视图（含 books / tocByBook / charByBook 等）。 */
 window.getTextbookData = data;
 window.refreshPrintLessonPanel = refreshPrintLessonPanel;
+window.applyPrintLessonSelection = applyPrintLessonSelection;
 
 function bindInputEnterShortcuts() {
   const onEnter = (id, fn) => {
@@ -1384,3 +1754,4 @@ function bindInputEnterShortcuts() {
 
 init();
 bindInputEnterShortcuts();
+bootWordSettings();

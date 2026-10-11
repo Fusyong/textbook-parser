@@ -80,6 +80,32 @@
 
       <section id="panel-words" class="panel panel-fill">
         <div class="panel-head">
+          <div class="word-query-bar">
+            <div class="word-mode" role="radiogroup" aria-label="方式">
+              <span class="word-mode-name">方式</span>
+              <div class="word-mode-switch">
+                <label class="word-mode-opt"
+                  ><input type="radio" name="word-mode" value="single" checked />单字</label
+                >
+                <label class="word-mode-opt"
+                  ><input type="radio" name="word-mode" value="batch" />批量</label
+                >
+              </div>
+            </div>
+            <label class="word-head">
+              <span class="word-head-name">字</span>
+              <input
+                type="text"
+                id="word-char"
+                maxlength="2000"
+                placeholder="春"
+                spellcheck="false"
+                autocomplete="off"
+              />
+            </label>
+            <button type="button" id="word-run" class="btn-run">检索</button>
+          </div>
+          <p id="word-status" class="hint word-status"></p>
           <div class="panel-toolbar">
             <label class="lbl-compact lbl-book"
               >起点册 <select id="word-start-book"></select
@@ -93,37 +119,108 @@
             <label class="lbl-compact lbl-toc"
               >终点课 <select id="word-end-toc"></select
             ></label>
-            <label class="lbl-compact lbl-replace"
-              >目标字
-              <input type="text" id="word-char" maxlength="80" placeholder="首字有效" spellcheck="false"
-            /></label>
             <label class="inline"><input type="checkbox" id="word-only-ok" checked />仅正文</label>
             <label class="inline"><input type="checkbox" id="word-include-words-table" checked />词语表</label>
-            <button type="button" id="word-run" class="btn-run">检索</button>
+            <details id="word-config" class="word-config">
+              <summary>选用配置</summary>
+              <div class="word-config-body">
+                <label class="lbl-compact lbl-num"
+                  >每字最多
+                  <input
+                    type="number"
+                    id="word-per-char"
+                    min="1"
+                    max="30"
+                    step="1"
+                    value="6"
+                    title="每个字自动写入选用的词数"
+                /></label>
+                <label class="lbl-compact lbl-num"
+                  >每桶最多
+                  <input
+                    type="number"
+                    id="word-per-bucket"
+                    min="0"
+                    max="50"
+                    step="1"
+                    value="0"
+                    title="每个分桶最多保留多少词。0 表示不限制"
+                /></label>
+                <fieldset class="fieldset fieldset-inline" title="自动填写选用时包含哪些分桶">
+                  <legend>纳入选用</legend>
+                  <label class="inline"><input type="checkbox" id="word-bucket-last" checked />终点课</label>
+                  <label class="inline"><input type="checkbox" id="word-bucket-near" checked />前两课</label>
+                  <label class="inline"><input type="checkbox" id="word-bucket-other" checked />其他</label>
+                </fieldset>
+                <fieldset class="fieldset fieldset-inline">
+                  <legend>同桶优先</legend>
+                  <label class="inline"><input type="radio" name="word-prefer" value="body" />正文</label>
+                  <label class="inline"><input type="radio" name="word-prefer" value="table" checked />词语表</label>
+                </fieldset>
+                <label class="inline" title="不把单个汉字当作词"
+                  ><input type="checkbox" id="word-skip-mono" checked />跳过单字词</label
+                >
+                <label class="inline" title="批量结果里附上分桶参考，行首为 #"
+                  ><input type="checkbox" id="word-with-notes" checked />附带分桶参考</label
+                >
+              </div>
+            </details>
             <details class="hint-fold">
               <summary><mark>说明</mark></summary>
               <span class="hint-fold-body"
-                >「册」为书目简称（如 <code>b11</code> 指一年级上册）。目标字多字时只取<strong>第一个汉字</strong>。三列分桶以<strong>所选「终点课」</strong>为锚（在当前教材套目录顺序上）：该课、其<strong>前两课</strong>、其余；列内词语按<strong>当前套词频</strong>（正文分词 + 词语表出现次数）从高到低排列。</span
+                >「册」为书目简称（如 <code>b11</code> 指一年级上册）。「字」里连续输入汉字即可：单字只用<strong>第一个</strong>，批量按出现顺序取<strong>不重复</strong>的字。分桶以所选「终点课」为锚：该课、其前两课、其余，桶内按<strong>当前套词频</strong>从高到低。「仅正文」只统计成功对上目录的课文分块。<br />
+                选用配置记在本机浏览器。每个字先取终点课，再前两课，再其他；同一桶内可改正文或词语表谁先。「每桶最多」为 0 表示不截断。参考行过长时只显示前 40 个词。<br />
+                批量结果每个字一块：首行是「字 + 制表符 + 选用词」（词之间为全角空格），可直接删改。以 <code>#</code> 开头的是分桶参考。「只留选用」去掉参考行和空行，得到两列文本，便于粘贴到表格里筛选。单字可在格子里删词，再点「按格子重填选用」。</span
               >
             </details>
-            <span id="word-status" class="hint hint-toolbar-status"></span>
           </div>
         </div>
-        <div class="word-hit-panel">
-          <div class="word-hit-grid" aria-label="组词结果">
-            <div class="word-hit-corner" aria-hidden="true"></div>
-            <div class="word-hit-colhead">终点课</div>
-            <div class="word-hit-colhead">前两课</div>
-            <div class="word-hit-colhead">其他</div>
-            <div class="word-hit-rowhead">正文</div>
-            <textarea id="word-out-body-last" class="word-hit-cell" readonly rows="6"></textarea>
-            <textarea id="word-out-body-near" class="word-hit-cell" readonly rows="6"></textarea>
-            <textarea id="word-out-body-other" class="word-hit-cell" readonly rows="6"></textarea>
-            <div class="word-hit-rowhead">词语表</div>
-            <textarea id="word-out-table-last" class="word-hit-cell" readonly rows="6"></textarea>
-            <textarea id="word-out-table-near" class="word-hit-cell" readonly rows="6"></textarea>
-            <textarea id="word-out-table-other" class="word-hit-cell" readonly rows="6"></textarea>
+        <div id="word-single-result" class="word-single-result">
+          <div class="word-hit-panel">
+            <div class="word-hit-grid" aria-label="组词结果" title="可直接删改词语，再点「按格子重填选用」">
+              <div class="word-hit-corner" aria-hidden="true"></div>
+              <div class="word-hit-colhead">终点课</div>
+              <div class="word-hit-colhead">前两课</div>
+              <div class="word-hit-colhead">其他</div>
+              <div class="word-hit-rowhead">正文</div>
+              <textarea id="word-out-body-last" class="word-hit-cell" rows="6" spellcheck="false"></textarea>
+              <textarea id="word-out-body-near" class="word-hit-cell" rows="6" spellcheck="false"></textarea>
+              <textarea id="word-out-body-other" class="word-hit-cell" rows="6" spellcheck="false"></textarea>
+              <div class="word-hit-rowhead">词语表</div>
+              <textarea id="word-out-table-last" class="word-hit-cell" rows="6" spellcheck="false"></textarea>
+              <textarea id="word-out-table-near" class="word-hit-cell" rows="6" spellcheck="false"></textarea>
+              <textarea id="word-out-table-other" class="word-hit-cell" rows="6" spellcheck="false"></textarea>
+            </div>
           </div>
+          <div class="word-result-block">
+            <div class="word-result-bar">
+              <span class="ta-label">选用</span>
+              <span class="word-result-actions">
+                <button type="button" id="word-refill-picked" class="btn-secondary">按格子重填选用</button>
+                <button type="button" class="btn-secondary word-copy">复制选用</button>
+              </span>
+            </div>
+            <textarea
+              id="word-picked"
+              rows="2"
+              spellcheck="false"
+              placeholder="检索后出现在这里，可直接修改"
+            ></textarea>
+          </div>
+        </div>
+        <div id="word-batch-result" class="word-batch-result hidden">
+          <div class="word-result-bar">
+            <span class="ta-label">结果</span>
+            <span class="word-result-actions">
+              <button type="button" id="word-keep-picked" class="btn-secondary">只留选用</button>
+              <button type="button" class="btn-secondary word-copy">复制选用</button>
+            </span>
+          </div>
+          <textarea
+            id="word-batch-output"
+            spellcheck="false"
+            placeholder="每个字一块。首行可改，以 # 开头的是参考。"
+          ></textarea>
         </div>
       </section>
 
@@ -199,11 +296,12 @@
             <details class="hint-fold">
               <summary><mark>说明</mark></summary>
               <span class="hint-fold-body"
-                >生成描红练习纸 PDF（可选 A4／A5、横／竖版）。可从课次列表勾选字词后点「加入输入框」（可多次），也可直接编辑下方输入框。格式：一个或多个空格分隔一组（字／词／句），如
+                >「预览」在当前页面打开 PDF，「生成 PDF」直接下载。版式选项记在本机浏览器（手动指定的字体文件除外）。<br />
+                生成描红练习纸 PDF（可选 A4／A5、横／竖版）。可从课次列表勾选字词后点「加入输入框」（可多次），也可直接编辑下方输入框。格式：一个或多个空格分隔一组（字／词／句），如
                 <code>我 我们 我（wǒ） 春天来了。</code>；括号就近注音（兼容全角／半角）；括号内含汉字则括号与内容均占格；标点占格，相邻两标点合并一格。双换行分段。「练习节奏」按<strong>整组</strong>重复范字／描红／空格（非组内逐字）。排版自动避头点。<br />
                 <strong>边距与版心</strong>：四边距界定版心。「允许超版心」先按版心排、再按外扩试排，仅当内容尺寸收益足够（如多排一格、少一页）才采用；最终左右居中。<br />
                 <strong>间距与方向</strong>：行间距为字格行／列之间；组间距用于分组间及连续／断行的双换行分段。竖向自右向左排栏，拼音在格右侧并顺时针旋转 90°。分组：横写并排、竖写纵叠，并尝试多行／多列折行后居中。<strong>输入分行与空格</strong>：按输入换行分组；横写每行独占一行且行左齐，竖写每行独占一列且列顶齐，整块居中；行首／行中／行尾每个空格各占一格；<em>只有空格的行也有效</em>（排出相应个数的空字格）；适合古诗等分行整齐的篇章。<br />
-                <strong>字体</strong>来自本机，详见字格区「正文字体」说明。</span
+                <strong>字体</strong>默认自动选用本机字体，也可手选或指定文件。详见字格区说明。</span
               >
             </details>
           </div>
@@ -380,25 +478,44 @@
                 </div>
               </div>
               <div class="print-opt-row">
-                <span class="print-opt-label">正文字体</span>
+                <span class="print-opt-label">范字</span>
                 <div class="print-opt-controls">
-                  <select id="print-font" title="PDF 使用本机楷体；首次可能询问字体访问权限。">
+                  <select id="print-font" title="自动：优先楷体，没有则用其他楷体、华文细黑或微软雅黑。">
+                    <option value="auto" selected>自动</option>
                     <option value="kaiti_gb2312">楷体_GB2312</option>
-                    <option value="kaiti" selected>楷体</option>
+                    <option value="kaiti">楷体</option>
                     <option value="stkaiti">华文楷体</option>
                   </select>
                   <details class="hint-fold print-font-hint">
                     <summary><mark>说明</mark></summary>
                     <span class="hint-fold-body"
-                      >PDF 使用本机已安装的楷体。首次生成时浏览器可能询问「是否允许访问本地字体」，请点允许。推荐
-                      <strong>Chrome / Edge 桌面版</strong>；须通过 http://localhost 或 https:// 打开。Firefox、Safari
-                      不支持自动读取系统字体，请用「指定字体文件」。Windows 常见路径：<code>C:\Windows\Fonts\simkai.ttf</code>（楷体）、<code>STKAITI.TTF</code>（华文楷体）。手动指定的字体仅在本次浏览会话内有效。</span
+                      >不必先选字体。范字自动用本机楷体，没有则依次试楷体_GB2312、华文楷体、华文细黑、微软雅黑。拼音自动用
+                      <strong>Wukong Pinyin Sans ExtraLight</strong>，没有则用华文细黑、微软雅黑、Noto Sans。手选某一款时，若本机没有，仍会改用后面的字体。首次生成时浏览器可能询问「是否允许访问本地字体」，请点允许。推荐
+                      <strong>Chrome / Edge 桌面版</strong>，并通过 http://localhost 或 https:// 打开。指定的字体文件仅在本次浏览有效。</span
                     >
                   </details>
                   <div id="print-font-file-wrap" class="print-font-file-wrap">
                     <details id="print-font-file-details">
-                      <summary>指定字体文件</summary>
+                      <summary>指定范字文件</summary>
                       <input type="file" id="print-font-file" accept=".ttf,.otf,.ttc" />
+                    </details>
+                  </div>
+                </div>
+              </div>
+              <div class="print-opt-row">
+                <span class="print-opt-label">拼音</span>
+                <div class="print-opt-controls">
+                  <select id="print-pinyin-font" title="自动：Wukong 拼音 ExtraLight，其次华文细黑、微软雅黑、Noto Sans。">
+                    <option value="auto" selected>自动</option>
+                    <option value="wukong-extralight">Wukong 拼音 ExtraLight</option>
+                    <option value="stxihei">华文细黑</option>
+                    <option value="yahei">微软雅黑</option>
+                    <option value="noto">Noto Sans</option>
+                  </select>
+                  <div class="print-font-file-wrap">
+                    <details id="print-pinyin-file-details">
+                      <summary>指定拼音文件</summary>
+                      <input type="file" id="print-pinyin-file" accept=".ttf,.otf,.ttc" />
                     </details>
                   </div>
                 </div>
@@ -500,13 +617,33 @@
               <p id="print-estimate" class="hint" aria-live="polite">尚未选择字词。</p>
               <p id="print-font-status" class="hint" aria-live="polite"></p>
             </div>
-            <button type="button" id="print-generate" class="btn-run">生成 PDF</button>
+            <div class="print-actions-buttons">
+              <button type="button" id="print-reset" class="btn-secondary" title="恢复纸张、边距、字格、节奏和文本流的默认值">
+                恢复默认
+              </button>
+              <button type="button" id="print-preview-btn" class="btn-secondary">预览</button>
+              <button type="button" id="print-generate" class="btn-run">生成 PDF</button>
+            </div>
           </div>
         </div>
       </section>
     </main>
 
+    <div id="print-preview" class="print-preview hidden" role="dialog" aria-modal="true" aria-labelledby="print-preview-title">
+      <div class="print-preview-bar">
+        <strong id="print-preview-title">书写纸预览</strong>
+        <span id="print-preview-meta" class="hint print-preview-meta"></span>
+        <a id="print-preview-tab" class="print-preview-tab" href="#" target="_blank" rel="noopener">在新标签页打开</a>
+        <div class="print-preview-actions">
+          <button type="button" id="print-preview-download" class="btn-run">下载 PDF</button>
+          <button type="button" id="print-preview-close" class="btn-secondary">关闭</button>
+        </div>
+      </div>
+      <iframe id="print-preview-frame" class="print-preview-frame" title="书写纸预览"></iframe>
+    </div>
+
     <script src="generated/data.js"></script>
+    <script src="js/word-result.js"></script>
     <script src="vendor/pdf-fontkit/fontkit.umd.min.js"></script>
     <script src="js/app.js"></script>
     <script type="module" src="js/print/ui.js"></script>
