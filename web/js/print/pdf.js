@@ -1,13 +1,17 @@
 import { PDFDocument, rgb, StandardFonts } from "../../vendor/pdf-lib/pdf-lib.esm.min.js";
 import { buildLayout, cmToPt, mmToPt } from "./layout.js";
 import { drawCellContent, hexToRgb } from "./grid.js";
-import { resolveFontBytes, resolvePinyinFontBytes, PINYIN_FONT_SIZE_PT, PINYIN_GAP_FROM_CELL_PT } from "./fonts.js";
+import {
+  resolveHanFont,
+  resolvePinyinFont,
+  fontkitWithCollections,
+  PINYIN_FONT_SIZE_PT,
+  PINYIN_GAP_FROM_CELL_PT,
+} from "./fonts.js";
 
-/** @returns {object} fontkit from UMD script */
+/** @returns {object} fontkit；集合字体（.ttc）会先拆出常规字面 */
 function getFontkit() {
-  const fk = window.fontkit;
-  if (!fk) throw new Error("FONTKIT_MISSING");
-  return fk;
+  return fontkitWithCollections();
 }
 
 /** @typedef {'a4-portrait'|'a4-landscape'|'a5-portrait'|'a5-landscape'} PaperId */
@@ -82,7 +86,8 @@ export async function generatePracticePdf(groups, config) {
   if (!groups.length) throw new Error("EMPTY_CONTENT");
 
   const {
-    fontChoice = "kaiti",
+    fontChoice = "auto",
+    pinyinFontChoice = "auto",
     gridType = "tian",
     traceColorHex = "#CC0000",
     traceOpacity = 0.7,
@@ -96,25 +101,30 @@ export async function generatePracticePdf(groups, config) {
   const pdfDoc = await PDFDocument.create();
   pdfDoc.registerFontkit(getFontkit());
 
-  const { buffer: fontBytes } = await resolveFontBytes(fontChoice);
-  const hanFont = await pdfDoc.embedFont(fontBytes, { subset: true });
+  const embed = (buffer) => pdfDoc.embedFont(buffer, { subset: true });
+  const hanResolved = await resolveHanFont(fontChoice, embed);
+  const hanFont = hanResolved.font;
   const footerFont = await pdfDoc.embedFont(StandardFonts.Helvetica);
 
   /**
-   * 拼音字体：优先系统拼音字体；找不到时用汉字字体。
+   * 拼音字体：按用户指定顺序自动选择；都不可用时用范字字体。
    * 不可回退 Helvetica——带调号拼音（ā á ǎ à 等）超出 WinAnsi，会导致整份 PDF 生成失败。
    */
   let pinyinFont = hanFont;
+  /** @type {{ label: string, source: string, fallbackFrom: string } | null} */
+  let pinyinResolved = null;
   if (showPinyin) {
-    const pyResolved = await resolvePinyinFontBytes();
-    if (pyResolved?.buffer) {
-      try {
-        pinyinFont = await pdfDoc.embedFont(pyResolved.buffer, { subset: true });
-      } catch {
-        pinyinFont = hanFont;
-      }
-    }
+    pinyinResolved = await resolvePinyinFont(pinyinFontChoice, embed);
+    if (pinyinResolved?.font) pinyinFont = pinyinResolved.font;
   }
+  const fontReport = {
+    hanLabel: hanResolved.label,
+    hanSource: hanResolved.source,
+    hanFallback: hanResolved.fallbackFrom,
+    pinyinLabel: pinyinResolved?.label || "",
+    pinyinFallback: pinyinResolved?.fallbackFrom || "",
+    pinyinHidden: !showPinyin,
+  };
 
   const traceColor = hexToRgb(traceColorHex);
   const totalPages = layout.pages.length;
@@ -160,7 +170,7 @@ export async function generatePracticePdf(groups, config) {
   }
 
   const bytes = await pdfDoc.save();
-  return new Blob([bytes], { type: "application/pdf" });
+  return { blob: new Blob([bytes], { type: "application/pdf" }), fontReport };
 }
 
 /** @param {Date} d */

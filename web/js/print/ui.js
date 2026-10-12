@@ -3,15 +3,15 @@ import {
   estimateStats,
 } from "./input.js";
 import {
-  FONT_PRESETS,
   supportsLocalFonts,
   setManualFontFile,
-  getManualFontMeta,
+  setManualPinyinFontFile,
   initialFontStatus,
-  resolveFontBytes,
+  formatFontReport,
 } from "./fonts.js";
 import { generatePracticePdf, estimatePageCount } from "./pdf.js";
 import { attachLineNumbers, refreshLineNumbers } from "../line-numbers.js";
+import { PRINT_DEFAULTS, loadPrintSettings, savePrintSettings } from "./settings.js";
 
 /** 与 app.js 成套视图对齐；无桥接时退回顶层 data.js。 */
 function data() {
@@ -111,7 +111,8 @@ function readConfig() {
   };
   return {
     paperSize: document.getElementById("print-paper")?.value || "a4-portrait",
-    fontChoice: document.getElementById("print-font")?.value || "kaiti",
+    fontChoice: document.getElementById("print-font")?.value || "auto",
+    pinyinFontChoice: document.getElementById("print-pinyin-font")?.value || "auto",
     gridType: document.getElementById("print-grid")?.value || "tian",
     cellSizeCm: num("print-cell-size", 1.5),
     charFillRatio: num("print-char-fill", 0.85),
@@ -157,66 +158,230 @@ function updateFontFileWrap() {
   }
 }
 
-async function onGeneratePdf() {
-  const btn = document.getElementById("print-generate");
-  if (btn) btn.disabled = true;
+function pdfFileName() {
+  return `字词练习_${formatLocalDate(new Date())}.pdf`;
+}
+
+function setGenerating(on) {
+  generating = on;
+  for (const id of ["print-generate", "print-preview-btn"]) {
+    const btn = document.getElementById(id);
+    if (btn) btn.disabled = on;
+  }
+}
+
+function explainFontError(err) {
+  const code = err?.message || "";
+  if (code === "NO_LOCAL_FONT_API") {
+    return "当前浏览器不能读取系统字体。请用 Chrome / Edge，或指定字体文件。";
+  }
+  if (code === "FONT_PERMISSION_DENIED") {
+    return "未允许访问本机字体。请在浏览器提示中点允许；若之前拒绝过，可在地址栏的网站设置里重新允许，或指定字体文件。";
+  }
+  if (code === "FONT_NOT_FOUND") {
+    return "本机没有可用的范字字体。请安装楷体，或指定一个 .ttf 文件。";
+  }
+  if (code === "FONT_EMBED_FAILED") {
+    return "指定的字体文件无法嵌入，请换用 .ttf。";
+  }
+  if (code === "FONTKIT_MISSING") return "字体组件未加载，请刷新页面。";
+  if (code === "EMPTY_CONTENT") return "内容为空。";
+  return "生成失败，请检查字词与字体。";
+}
+
+/** @returns {Promise<{ blob: Blob, cfg: object, fontReport: object } | null>} */
+async function createPracticePdf() {
+  const groups = collectGroups();
+  if (!groups.length || !groups.some((g) => g.items.length)) {
+    setFontStatus("请先加入或输入字词。");
+    return null;
+  }
+  const cfg = readConfig();
+  setFontStatus("正在加载字体…");
+  const { blob, fontReport } = await generatePracticePdf(groups, cfg);
+  return { blob, cfg, fontReport };
+}
+
+function downloadBlob(blob) {
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = pdfFileName();
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
+let previewBlobUrl = "";
+let generating = false;
+
+function showPreview(blob) {
+  const frame = document.getElementById("print-preview-frame");
+  const overlay = document.getElementById("print-preview");
+  const tab = document.getElementById("print-preview-tab");
+  if (frame) frame.src = "about:blank";
+  if (previewBlobUrl) URL.revokeObjectURL(previewBlobUrl);
+  previewBlobUrl = URL.createObjectURL(blob);
+  if (frame) frame.src = previewBlobUrl;
+  if (tab) tab.href = previewBlobUrl;
+  const meta = document.getElementById("print-preview-meta");
+  if (meta) meta.textContent = document.getElementById("print-estimate")?.textContent || "";
+  overlay?.classList.remove("hidden");
+  document.body.classList.add("print-preview-open");
+  document.getElementById("print-preview-close")?.focus();
+}
+
+function hidePreview() {
+  document.getElementById("print-preview")?.classList.add("hidden");
+  document.body.classList.remove("print-preview-open");
+  const frame = document.getElementById("print-preview-frame");
+  if (frame) frame.src = "about:blank";
+  document.getElementById("print-preview-btn")?.focus();
+}
+
+function downloadPreview() {
+  if (!previewBlobUrl) return;
+  const a = document.createElement("a");
+  a.href = previewBlobUrl;
+  a.download = pdfFileName();
+  a.click();
+}
+
+async function onPreview() {
+  if (generating) return;
+  setGenerating(true);
   try {
-    const groups = collectGroups();
-    if (!groups.length || !groups.some((g) => g.items.length)) {
-      setFontStatus("请先加入或输入字词。");
-      return;
-    }
-
-    const cfg = readConfig();
-    setFontStatus("正在加载字体…");
-
-    try {
-      const resolved = await resolveFontBytes(cfg.fontChoice);
-      if (resolved.source === "system") {
-        setFontStatus(`已就绪：${resolved.label}（系统）`);
-      } else {
-        setFontStatus(`已指定字体文件：${resolved.label}`);
-      }
-    } catch (err) {
-      const code = err?.message || "";
-      if (code === "NO_LOCAL_FONT_API") {
-        setFontStatus("请指定楷体 .ttf 文件，或改用 Chrome / Edge。");
-        return;
-      }
-      if (code === "FONT_PERMISSION_DENIED") {
-        setFontStatus("未获字体访问权限，请指定字体文件后重试。");
-        return;
-      }
-      if (code === "FONT_NOT_FOUND") {
-        const preset = FONT_PRESETS[cfg.fontChoice];
-        setFontStatus(`未找到「${preset?.label || cfg.fontChoice}」，请指定字体文件或换选其他字体。`);
-        return;
-      }
-      setFontStatus("字体加载失败，请换用 .ttf 格式重试。");
-      return;
-    }
-
-    setFontStatus("正在生成 PDF…");
-    const blob = await generatePracticePdf(groups, cfg);
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = `字词练习_${formatLocalDate(new Date())}.pdf`;
-    a.click();
-    URL.revokeObjectURL(url);
-
-    const manual = getManualFontMeta();
-    if (manual) setFontStatus(`已指定字体文件：${manual.name}`);
-    else {
-      const msg = initialFontStatus(cfg.fontChoice);
-      setFontStatus(msg.startsWith("将尝试") ? msg.replace("将尝试读取", "已就绪：") : msg);
-    }
+    const result = await createPracticePdf();
+    if (!result) return;
+    showPreview(result.blob);
+    setFontStatus(`已在本页打开预览。${formatFontReport(result.fontReport)}。若画面空白，可用「在新标签页打开」。`);
   } catch (err) {
     console.error(err);
-    setFontStatus(err?.message === "EMPTY_CONTENT" ? "内容为空。" : "生成失败，请检查字词与字体。");
+    setFontStatus(explainFontError(err));
   } finally {
-    if (btn) btn.disabled = false;
+    setGenerating(false);
   }
+}
+
+async function onGeneratePdf() {
+  if (generating) return;
+  setGenerating(true);
+  try {
+    const result = await createPracticePdf();
+    if (!result) return;
+    downloadBlob(result.blob);
+    setFontStatus(formatFontReport(result.fontReport));
+  } catch (err) {
+    console.error(err);
+    setFontStatus(explainFontError(err));
+  } finally {
+    setGenerating(false);
+  }
+}
+
+function setSelectValue(id, value) {
+  const el = document.getElementById(id);
+  if (!el || value == null || value === "") return;
+  const want = String(value);
+  if ([...el.options].some((o) => o.value === want)) el.value = want;
+}
+
+function setNumberValue(id, value) {
+  const el = document.getElementById(id);
+  if (!el || value == null || value === "") return;
+  const n = Number(value);
+  if (!Number.isFinite(n)) return;
+  el.value = String(n);
+}
+
+function setCheckedValue(id, value) {
+  const el = document.getElementById(id);
+  if (el && typeof value === "boolean") el.checked = value;
+}
+
+function setRadioValue(name, value) {
+  if (value == null || value === "") return;
+  const el = document.querySelector(`input[name="${name}"][value="${CSS.escape(String(value))}"]`);
+  if (el) el.checked = true;
+}
+
+function applyPrintControls(s) {
+  if (!s) return;
+  setSelectValue("print-paper", s.paperSize);
+  setSelectValue("print-grid", s.gridType);
+  setSelectValue("print-font", s.fontChoice);
+  setSelectValue("print-pinyin-font", s.pinyinFontChoice);
+  setSelectValue("print-model-count", s.modelCount);
+  setSelectValue("print-trace-count", s.traceCount);
+  setSelectValue("print-blank-count", s.blankCount);
+  setNumberValue("print-cell-size", s.cellSizeCm);
+  setNumberValue("print-char-fill", s.charFillRatio);
+  setNumberValue("print-trace-opacity", s.traceOpacity);
+  setNumberValue("print-row-gap", s.rowGapMm);
+  setNumberValue("print-group-gap", s.groupGapMm);
+  setNumberValue("print-margin-top", s.marginTopMm);
+  setNumberValue("print-margin-bottom", s.marginBottomMm);
+  setNumberValue("print-margin-left", s.marginLeftMm);
+  setNumberValue("print-margin-right", s.marginRightMm);
+  setNumberValue("print-overflow-mm", s.overflowMm);
+  if (typeof s.traceColorHex === "string" && /^#[0-9a-fA-F]{6}$/.test(s.traceColorHex)) {
+    const color = document.getElementById("print-trace-color");
+    if (color) color.value = s.traceColorHex;
+  }
+  setCheckedValue("print-show-pinyin", s.showPinyin);
+  setRadioValue("print-flow", s.layoutMode);
+  setRadioValue("print-direction", s.writeDirection);
+}
+
+function collectPrintSettings() {
+  return {
+    ...readConfig(),
+    book: document.getElementById("print-book")?.value || "",
+    toc: document.getElementById("print-toc")?.value || "",
+    kind: document.getElementById("print-kind")?.value || "",
+  };
+}
+
+function persistPrintSettings() {
+  savePrintSettings(collectPrintSettings());
+}
+
+function syncPrintReadouts() {
+  const sizeSlider = document.getElementById("print-cell-size");
+  const sizeReadout = document.getElementById("print-cell-size-val");
+  if (sizeSlider && sizeReadout) sizeReadout.textContent = sizeSlider.value;
+  const overflowSlider = document.getElementById("print-overflow-mm");
+  const overflowReadout = document.getElementById("print-overflow-mm-val");
+  if (overflowSlider && overflowReadout) overflowReadout.textContent = overflowSlider.value;
+}
+
+function onPrintOptionChanged() {
+  syncPrintReadouts();
+  persistPrintSettings();
+  updateEstimate();
+}
+
+function applySavedPrintSettings() {
+  const saved = loadPrintSettings();
+  if (!saved) return;
+  applyPrintControls(saved);
+  if (typeof window.applyPrintLessonSelection === "function") {
+    window.applyPrintLessonSelection({
+      book: saved.book,
+      toc: saved.toc,
+      kind: saved.kind,
+    });
+  }
+  syncSpaceDisplayForFlow();
+  syncPrintReadouts();
+}
+
+function resetPrintSettings() {
+  applyPrintControls(PRINT_DEFAULTS);
+  syncSpaceDisplayForFlow();
+  syncPrintReadouts();
+  persistPrintSettings();
+  updateEstimate();
+  setFontStatus("已恢复默认版式。");
 }
 
 function formatLocalDate(d) {
@@ -229,99 +394,89 @@ function formatLocalDate(d) {
 let printSheetInitialized = false;
 
 export function initPrintSheet() {
-  const d = data();
-  if (!d?.books?.length) return;
   if (printSheetInitialized) {
     updateEstimate();
     return;
   }
   printSheetInitialized = true;
 
-  if (typeof window.refreshPrintLessonPanel === "function") {
+  if (data()?.books?.length && typeof window.refreshPrintLessonPanel === "function") {
     window.refreshPrintLessonPanel();
   }
 
   document.getElementById("print-input")?.addEventListener("input", onPrintInputEdit);
 
-  [
-    "print-paper",
-    "print-grid",
-    "print-cell-size",
-    "print-char-fill",
-    "print-model-count",
-    "print-trace-count",
-    "print-blank-count",
-    "print-show-pinyin",
-    "print-row-gap",
-    "print-group-gap",
-    "print-margin-top",
-    "print-margin-bottom",
-    "print-margin-left",
-    "print-margin-right",
-    "print-overflow-mm",
-  ].forEach((id) => {
-    document.getElementById(id)?.addEventListener("input", updateEstimate);
-    document.getElementById(id)?.addEventListener("change", updateEstimate);
-  });
-  document.querySelectorAll('input[name="print-flow"]').forEach((el) => {
-    el.addEventListener("change", () => {
+  const options = document.querySelector(".print-options");
+  options?.addEventListener("input", onPrintOptionChanged);
+  options?.addEventListener("change", (e) => {
+    if (e.target instanceof Element && e.target.getAttribute("name") === "print-flow") {
       syncSpaceDisplayForFlow();
-      updateEstimate();
-    });
+    }
+    onPrintOptionChanged();
   });
-  document.querySelectorAll('input[name="print-direction"]').forEach((el) => {
-    el.addEventListener("change", updateEstimate);
-  });
+  for (const id of ["print-book", "print-toc", "print-kind"]) {
+    document.getElementById(id)?.addEventListener("change", persistPrintSettings);
+  }
   document.querySelectorAll("[data-print-size]").forEach((btn) => {
     btn.addEventListener("click", () => {
       const val = btn.getAttribute("data-print-size");
       const slider = document.getElementById("print-cell-size");
-      const sizeReadout = document.getElementById("print-cell-size-val");
       if (slider && val) {
         slider.value = val;
-        if (sizeReadout) sizeReadout.textContent = val;
-        updateEstimate();
+        onPrintOptionChanged();
       }
     });
   });
 
-  document.getElementById("print-font")?.addEventListener("change", () => {
-    const choice = document.getElementById("print-font")?.value || "kaiti";
-    setFontStatus(initialFontStatus(choice));
-  });
+  const refreshFontPlan = () => {
+    setFontStatus(
+      initialFontStatus(
+        document.getElementById("print-font")?.value || "auto",
+        document.getElementById("print-pinyin-font")?.value || "auto",
+      ),
+    );
+  };
+  document.getElementById("print-font")?.addEventListener("change", refreshFontPlan);
+  document.getElementById("print-pinyin-font")?.addEventListener("change", refreshFontPlan);
 
   document.getElementById("print-font-file")?.addEventListener("change", async (e) => {
     const file = e.target.files?.[0];
     if (!file) return;
     await setManualFontFile(file);
-    setFontStatus(`已指定字体文件：${file.name}`);
+    setFontStatus(`已指定范字文件：${file.name}（仅本次浏览有效）`);
+  });
+  document.getElementById("print-pinyin-file")?.addEventListener("change", async (e) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    await setManualPinyinFontFile(file);
+    setFontStatus(`已指定拼音文件：${file.name}（仅本次浏览有效）`);
   });
 
   document.getElementById("print-generate")?.addEventListener("click", onGeneratePdf);
+  document.getElementById("print-preview-btn")?.addEventListener("click", onPreview);
+  document.getElementById("print-reset")?.addEventListener("click", resetPrintSettings);
+  document.getElementById("print-preview-close")?.addEventListener("click", hidePreview);
+  document.getElementById("print-preview-download")?.addEventListener("click", downloadPreview);
+  document.getElementById("print-preview-tab")?.addEventListener("click", (e) => {
+    if (!previewBlobUrl) e.preventDefault();
+  });
+  document.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape") return;
+    const overlay = document.getElementById("print-preview");
+    if (!overlay || overlay.classList.contains("hidden")) return;
+    hidePreview();
+  });
 
+  applySavedPrintSettings();
   updateFontFileWrap();
-  setFontStatus(initialFontStatus(document.getElementById("print-font")?.value || "kaiti"));
+  setFontStatus(
+    initialFontStatus(
+      document.getElementById("print-font")?.value || "auto",
+      document.getElementById("print-pinyin-font")?.value || "auto",
+    ),
+  );
   bootLineNumbers();
-  syncSpaceDisplayForFlow();
   updateEstimate();
-
-  const sizeSlider = document.getElementById("print-cell-size");
-  const sizeReadout = document.getElementById("print-cell-size-val");
-  const syncSizeReadout = () => {
-    if (sizeReadout && sizeSlider) sizeReadout.textContent = sizeSlider.value;
-  };
-  sizeSlider?.addEventListener("input", syncSizeReadout);
-  syncSizeReadout();
-
-  const overflowSlider = document.getElementById("print-overflow-mm");
-  const overflowReadout = document.getElementById("print-overflow-mm-val");
-  const syncOverflowReadout = () => {
-    if (overflowReadout && overflowSlider) {
-      overflowReadout.textContent = overflowSlider.value;
-    }
-  };
-  overflowSlider?.addEventListener("input", syncOverflowReadout);
-  syncOverflowReadout();
 }
 
 window.initPrintSheet = initPrintSheet;
